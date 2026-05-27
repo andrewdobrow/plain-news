@@ -1477,8 +1477,9 @@ def main():
 
     # Write data.json for the iOS app
     import json as _json
+    _timestamp = now_et()
     app_data = {
-        "updated": timestamp,
+        "updated": _timestamp,
         "market": {
             "live": market_live,
             "sp500": market_data.get("sp500") if market_data else None,
