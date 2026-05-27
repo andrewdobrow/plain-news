@@ -1475,7 +1475,46 @@ def main():
     index_html = render_index(all_categories, market_data, market_live)
     (OUTPUT_DIR / "index.html").write_text(index_html, encoding="utf-8")
 
-    print(f"\nDone. {len(all_categories)} categories written to index.html.")
+    # Write data.json for the iOS app
+    import json as _json
+    app_data = {
+        "updated": timestamp,
+        "market": {
+            "live": market_live,
+            "sp500": market_data.get("sp500") if market_data else None,
+            "dow":   market_data.get("dow")   if market_data else None,
+            "nasdaq":market_data.get("nasdaq") if market_data else None,
+            "oil":   market_data.get("oil")   if market_data else None,
+        },
+        "categories": [
+            {
+                "key":   cat["category_key"],
+                "label": cat["category_label"],
+                "hero": {
+                    "headline":      cat["hero"].get("headline", ""),
+                    "teaser":        cat["hero"].get("teaser", ""),
+                    "body":          cat["hero"].get("body", ""),
+                    "image_url":     cat["hero"].get("image_url", ""),
+                    "image_credit":  cat["hero"].get("image_credit", ""),
+                    "published":     cat["hero"].get("published", ""),
+                    "urgency_score": cat["hero"].get("urgency_score", 0),
+                },
+                "cards": [
+                    {
+                        "headline":      c.get("headline", ""),
+                        "teaser":        c.get("teaser", ""),
+                        "body":          c.get("body", ""),
+                        "published":     c.get("published", ""),
+                        "urgency_score": c.get("urgency_score", 0),
+                    }
+                    for c in cat.get("cards", [])
+                ]
+            }
+            for cat in all_categories
+        ]
+    }
+    (OUTPUT_DIR / "data.json").write_text(_json.dumps(app_data, indent=2), encoding="utf-8")
+    print(f"\nDone. {len(all_categories)} categories written to index.html + data.json.")
 
 
 if __name__ == "__main__":
