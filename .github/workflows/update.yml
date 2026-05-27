@@ -1,1 +1,36 @@
-404: Not Found
+name: Update News
+
+on:
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install feedparser anthropic requests json-repair
+
+      - name: Generate news
+        run: python scripts/generate.py
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GUARDIAN_API_KEY: ${{ secrets.GUARDIAN_API_KEY }}
+
+      - name: Commit and push
+        run: |
+          git config user.name "Plain Bot"
+          git config user.email "bot@plainnews.app"
+          git add -A
+          git diff --staged --quiet || git commit -m "Update: $(date -u '+%b %d %Y %H:%M UTC')"
+          git push
