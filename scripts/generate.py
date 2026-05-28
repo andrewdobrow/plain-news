@@ -1022,6 +1022,61 @@ def format_age(published_str):
         return ""
 
 
+def promote_duplicate_heroes(top_cat, all_categories):
+    """If any other category's hero covers the same underlying story as the front page
+    hero, promote that category's next non-duplicate card to be its hero instead.
+    Uses Claude for reliable semantic matching (string matching is too brittle for
+    rewritten headlines). Mutates all_categories in place."""
+    fp_headline = top_cat["hero"].get("headline", "")
+    fp_key      = top_cat["category_key"]
+    others      = [c for c in all_categories if c["category_key"] != fp_key]
+    if not others or not fp_headline:
+        return
+
+    listing = "\n".join(f"{i+1}. {c['hero'].get('headline','')}" for i, c in enumerate(others))
+    prompt = (
+        f"The lead front-page story is:\n\"{fp_headline}\"\n\n"
+        f"Here are other section lead headlines:\n{listing}\n\n"
+        "Which of these numbered headlines cover the SAME underlying event as the lead story? "
+        "Same event means the same action by the same actors at the same time, even if worded "
+        "completely differently (e.g. 'US strikes Iran' and 'US military hits Iranian launch site' "
+        "are the same event).\n"
+        "Return ONLY a JSON array of the numbers that are duplicates of the lead story. "
+        "If none are duplicates, return []."
+    )
+    try:
+        resp = client.messages.create(
+            model="claude-haiku-4-5-20251001",
+            max_tokens=200,
+            messages=[{"role": "user", "content": prompt}]
+        )
+        raw = resp.content[0].text.strip()
+        if raw.startswith("```"):
+            raw = raw.split("```")[1].lstrip("json").strip()
+        dupes = set(int(x) for x in json.loads(raw))
+    except Exception as e:
+        print(f"  Hero dedup failed ({e}), leaving heroes as-is")
+        return
+
+    for i, cat in enumerate(others):
+        if (i + 1) in dupes:
+            cards = cat.get("cards", [])
+            if cards:
+                promoted = cards[0]
+                cat["hero"] = {
+                    "headline":      promoted.get("headline", ""),
+                    "body":          promoted.get("body", ""),
+                    "teaser":        promoted.get("teaser", ""),
+                    "urgency_score": promoted.get("urgency_score", 0),
+                    "published":     promoted.get("published", ""),
+                    "image_url":     promoted.get("image_url", ""),
+                    "image_credit":  promoted.get("image_credit", ""),
+                    "link":          promoted.get("link", ""),
+                }
+                cat["cards"] = cards[1:]
+                print(f"  Promoted next card to hero for {cat['category_label']} (was duplicate of front page hero)")
+
+
 def global_rank(all_cards, dedupe_against=None):
     """Final global ranking — sends all headlines to Claude for true cross-category
     ordering AND semantic deduplication. Claude identifies stories that cover the same
@@ -1544,6 +1599,10 @@ def main():
     if _fp_score(top_cat) < 5:
         top_cat = max(all_categories, key=_fp_score)
 
+    # Ensure no other category leads with the same story as the front page hero.
+    # Any category whose hero duplicates the front page hero gets its next card promoted.
+    promote_duplicate_heroes(top_cat, all_categories)
+
     # Global deduplication — one story, one appearance across all categories
     import re as _re2
 
@@ -1646,7 +1705,7 @@ def main():
                 "cat_label":     top_cat["category_label"],
                 "urgency_score": top_cat["hero"].get("urgency_score", 0),
             },
-            "cards": [card_to_dict(c) for c in _all_cards]
+            "cards": [card_to_dict(c) for c in _all_cards[:6]]
         },
         "categories": [
             {
@@ -1669,7 +1728,7 @@ def main():
                         "published":     c.get("published", ""),
                         "urgency_score": c.get("urgency_score", 0),
                     }
-                    for c in cat.get("cards", [])
+                    for c in cat.get("cards", [])[:6]
                 ]
             }
             for cat in all_categories
