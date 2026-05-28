@@ -87,9 +87,18 @@ document.querySelectorAll(".cat-btn").forEach(btn => {
       // Filter article cards (skip support card)
       document.querySelectorAll(".article-card").forEach(card => {
         if (card.classList.contains("support-card")) return;
-        const matchesCat  = cat === "all" || card.dataset.cat === cat;
-        const isDupeInCat = cat !== "all" && card.dataset.isHero === "true" && card.dataset.cat === cat;
-        card.style.display = (matchesCat && !isDupeInCat) ? "block" : "none";
+        let show;
+        if (cat === "all") {
+          // Top News: only show the deduped front page set
+          show = card.dataset.topnews === "true";
+        } else {
+          // Category view: show all cards for this category, minus the category hero
+          // (the hero is already displayed in the hero section above)
+          const matchesCat  = card.dataset.cat === cat;
+          const isHeroInCat = card.dataset.isHero === "true" && card.dataset.cat === cat;
+          show = matchesCat && !isHeroInCat;
+        }
+        card.style.display = show ? "block" : "none";
       });
 
       // Reposition support card to 3rd visible slot
@@ -105,6 +114,14 @@ document.querySelectorAll(".cat-btn").forEach(btn => {
     } catch(e) {
       console.error("Category filter error:", e);
     }
+  });
+});
+
+// -- INITIAL STATE: show only Top News (deduped) cards on load --
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".article-card").forEach(card => {
+    if (card.classList.contains("support-card")) return;
+    card.style.display = card.dataset.topnews === "true" ? "block" : "none";
   });
 });
 
