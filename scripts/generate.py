@@ -1532,18 +1532,33 @@ def main():
         overlap = len(wa & wb) / min(len(wa), len(wb))
         return overlap >= 0.55
 
-    # Step 1: Deduplicate heroes across categories
+    # Step 1: Deduplicate heroes across categories using aggressive matching
     # Higher priority categories (earlier in list) keep their hero
+    def _hero_similar(a, b):
+        """More aggressive similarity for hero deduplication — lower threshold."""
+        ka, kb = _headline_key(a), _headline_key(b)
+        if ka[:50] == kb[:50] or ka in kb or kb in ka:
+            return True
+        stops = {"a","an","the","in","on","at","to","for","of","and","or","is","are",
+                 "was","were","with","its","by","as","from","that","this","after",
+                 "over","into","about","amid","during","says","say","new","s"}
+        wa = set(ka.split()) - stops
+        wb = set(kb.split()) - stops
+        if not wa or not wb:
+            return False
+        overlap = len(wa & wb) / min(len(wa), len(wb))
+        return overlap >= 0.35
+
     seen_hero_headlines = set()
     for cat in all_categories:
         hero_h = cat["hero"].get("headline", "")
-        if any(_similar(hero_h, s) for s in seen_hero_headlines):
+        if any(_hero_similar(hero_h, s) for s in seen_hero_headlines):
             # Hero is a duplicate — promote top non-duplicate card to hero
             promoted = None
             remaining_cards = []
             for card in cat.get("cards", []):
                 card_h = card.get("headline", "")
-                if promoted is None and not any(_similar(card_h, s) for s in seen_hero_headlines):
+                if promoted is None and not any(_hero_similar(card_h, s) for s in seen_hero_headlines):
                     promoted = card
                 else:
                     remaining_cards.append(card)
@@ -1688,3 +1703,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+        
