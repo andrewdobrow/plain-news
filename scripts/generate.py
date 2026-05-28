@@ -1374,28 +1374,10 @@ def main():
     print("Building content bank...")
     content_bank = build_content_bank()
 
-    used_hero_titles = set()  # Track raw titles already used as heroes
-
     for cat_key, cat_config in CATEGORIES.items():
         print(f"Processing: {cat_config['label']}...")
         headlines = fetch_headlines(cat_config["feeds"])
-        # Filter out headlines whose titles are too similar to already-used hero titles
-        import re as _refilter
-        def _title_key(t):
-            return _refilter.sub(r'[^a-z0-9 ]', '', t.lower().strip())
-        def _title_overlap(a, b):
-            stops = {"a","an","the","in","on","at","to","for","of","and","or","is","are",
-                     "was","were","with","its","by","as","from","that","this","after",
-                     "over","into","about","amid","during","says","say","new","s"}
-            wa = set(_title_key(a).split()) - stops
-            wb = set(_title_key(b).split()) - stops
-            if not wa or not wb:
-                return 0
-            return len(wa & wb) / min(len(wa), len(wb))
-        if used_hero_titles:
-            headlines = [h for h in headlines
-                        if not any(_title_overlap(h.get("title",""), t) >= 0.55
-                                   for t in used_hero_titles)]
+
         # Filter headlines older than 48 hours — unparseable dates are treated as stale
         from datetime import timezone as _tz2
         _now2 = datetime.now(_tz2.utc)
@@ -1489,12 +1471,6 @@ def main():
                     print(f"  Enhancement skipped: insufficient keyword overlap")
 
             all_categories.append(data)
-            # Track the raw source title used for this hero to prevent other categories picking it
-            hero_src_idx = data["hero"].get("source_index")
-            if hero_src_idx is not None and 0 < hero_src_idx <= len(headlines):
-                used_hero_titles.add(headlines[hero_src_idx - 1].get("title", ""))
-            else:
-                used_hero_titles.add(data["hero"].get("headline", ""))
             print(f"  Hero: {data['hero']['headline'][:60]}... (urgency: {data['hero'].get('urgency_score')}, image: {'yes' if img else 'no'})")
 
             # Enrich cards with content bank + related summaries
@@ -1547,10 +1523,8 @@ def main():
         overlap = len(wa & wb) / min(len(wa), len(wb))
         return overlap >= 0.65
 
-    # Step 1: Deduplicate heroes across categories using aggressive matching
-    # Higher priority categories (earlier in list) keep their hero
+    # Define _hero_similar for use in front page dedup below
     def _hero_similar(a, b):
-        """More aggressive similarity for hero deduplication — lower threshold."""
         ka, kb = _headline_key(a), _headline_key(b)
         if ka[:50] == kb[:50] or ka in kb or kb in ka:
             return True
@@ -1564,50 +1538,8 @@ def main():
         overlap = len(wa & wb) / min(len(wa), len(wb))
         return overlap >= 0.35
 
-    seen_hero_headlines = set()
-    for cat in all_categories:
-        hero_h = cat["hero"].get("headline", "")
-        if any(_hero_similar(hero_h, s) for s in seen_hero_headlines):
-            # Hero is a duplicate — promote top non-duplicate card to hero
-            promoted = None
-            remaining_cards = []
-            for card in cat.get("cards", []):
-                card_h = card.get("headline", "")
-                if promoted is None and not any(_hero_similar(card_h, s) for s in seen_hero_headlines):
-                    promoted = card
-                else:
-                    remaining_cards.append(card)
-            if promoted:
-                # Promote card to hero
-                cat["hero"] = {
-                    "headline":      promoted.get("headline", ""),
-                    "body":          promoted.get("body", ""),
-                    "teaser":        promoted.get("teaser", ""),
-                    "urgency_score": promoted.get("urgency_score", 0),
-                    "published":     promoted.get("published", ""),
-                    "image_url":     cat["hero"].get("image_url", ""),
-                    "image_credit":  cat["hero"].get("image_credit", ""),
-                }
-                cat["cards"] = remaining_cards
-                seen_hero_headlines.add(_headline_key(promoted.get("headline", "")))
-            # If no non-duplicate card available, keep original hero but still mark seen
-            else:
-                seen_hero_headlines.add(_headline_key(hero_h))
-        else:
-            seen_hero_headlines.add(_headline_key(hero_h))
-
-    # Step 2: Deduplicate cards only within each category
-    # Cards are NOT filtered against other categories' heroes or cards
-    # This preserves card counts while preventing duplicate heroes
-    for cat in all_categories:
-        seen_within_cat = {_headline_key(cat["hero"].get("headline", ""))}
-        clean_cards = []
-        for card in cat.get("cards", []):
-            card_h = card.get("headline", "")
-            if not any(_similar(card_h, s) for s in seen_within_cat):
-                seen_within_cat.add(_headline_key(card_h))
-                clean_cards.append(card)
-        cat["cards"] = clean_cards
+    # Categories are NOT deduplicated — World, U.S., Politics can all cover Iran
+    # Deduplication only happens on the front page (_all_cards) below
 
     index_html = render_index(all_categories, market_data, market_live)
     (OUTPUT_DIR / "index.html").write_text(index_html, encoding="utf-8")
@@ -1641,17 +1573,15 @@ def main():
             })
     _all_cards.sort(key=lambda c: int(c.get("urgency_score", 0) or 0), reverse=True)
 
-    # Remove the front page hero from cards to avoid duplication
-    _fp_headline = top_cat["hero"].get("headline", "")
-    _all_cards = [c for c in _all_cards if not _similar(c.get("headline", ""), _fp_headline)]
-
-    # Also deduplicate within _all_cards — only remove near-identical headlines
-    _seen = set()
+    # Deduplicate _all_cards aggressively for the front page
+    # Seed with front page hero so it can NEVER appear as a card
+    _fp_hero_headline = top_cat["hero"].get("headline", "")
+    _seen_fp = {_headline_key(_fp_hero_headline)}
     _deduped = []
     for c in _all_cards:
-        k = _headline_key(c.get("headline", ""))
-        if not any(_hero_similar(c.get("headline", ""), s) for s in _seen):
-            _seen.add(k)
+        h = c.get("headline", "")
+        if not any(_hero_similar(h, s) for s in _seen_fp):
+            _seen_fp.add(_headline_key(h))
             _deduped.append(c)
     _all_cards = _deduped
 
