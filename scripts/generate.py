@@ -1249,7 +1249,18 @@ def render_index(all_categories, market_data=None, market_live=False):
             })
 
     all_cards.sort(key=lambda c: int(c.get("urgency_score", 0) or 0), reverse=True)  # Pre-sort
-    all_cards = global_rank(all_cards, dedupe_against=top_cat["hero"]["headline"])  # Rank + dedup
+
+    # Deduped set for the Top News front page (semantic dedup via Claude)
+    topnews_cards = global_rank(all_cards, dedupe_against=top_cat["hero"]["headline"])
+
+    # Mark which cards are in the Top News set (by identity) so the JS filter can
+    # show the deduped set for "Top News" but the full set for category views
+    topnews_ids = {id(c) for c in topnews_cards}
+
+    # Order: Top News cards first (in ranked order), then remaining cards grouped after.
+    # This way the grid contains every card, but the front page only reveals the deduped set.
+    remaining_cards = [c for c in all_cards if id(c) not in topnews_ids]
+    all_cards = topnews_cards + remaining_cards
 
     # Static support card injected at position 3
     support_card = """
@@ -1273,8 +1284,9 @@ def render_index(all_categories, market_data=None, market_live=False):
         cl        = card["cat_label"]
         card_time = card.get("published") or timestamp
         is_hero_attr = ' data-is-hero="true"' if card.get("is_hero") else ""
+        topnews_attr = ' data-topnews="true"' if id(card) in topnews_ids else ""
         cards_html += f"""
-      <div class="article-card fade-in" data-cat="{ck}"{is_hero_attr}>
+      <div class="article-card fade-in" data-cat="{ck}"{is_hero_attr}{topnews_attr}>
         <span class="card-tag">{cl}</span>
         <h2 class="card-headline">{card["headline"]}</h2>
         <p class="card-summary">{teaser}</p>
