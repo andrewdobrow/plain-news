@@ -1494,9 +1494,20 @@ def main():
         return re.sub(r'[^a-z0-9 ]', '', h.lower().strip())[:80]
 
     def _similar(a, b):
-        # Check if first 60 chars match or one contains the other
         ka, kb = _headline_key(a), _headline_key(b)
-        return ka[:60] == kb[:60] or ka in kb or kb in ka
+        # Exact or substring match
+        if ka[:60] == kb[:60] or ka in kb or kb in ka:
+            return True
+        # Word overlap check — if 60%+ of meaningful words match, treat as duplicate
+        stops = {"a","an","the","in","on","at","to","for","of","and","or","is","are",
+                 "was","were","with","its","by","as","from","that","this","after",
+                 "over","into","about","amid","during","says","say","new"}
+        wa = set(ka.split()) - stops
+        wb = set(kb.split()) - stops
+        if not wa or not wb:
+            return False
+        overlap = len(wa & wb) / min(len(wa), len(wb))
+        return overlap >= 0.6
 
     seen_headlines = set()
 
