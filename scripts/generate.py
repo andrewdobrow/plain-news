@@ -1479,7 +1479,30 @@ def main():
     import json as _json
     _timestamp = now_et()
 
-    # Recompute top_cat (front page hero) using same logic as render_index
+    # Rebuild all_cards for data.json from all_categories
+    _all_cards = []
+    for cat in all_categories:
+        hero = cat["hero"]
+        _all_cards.append({
+            "headline":      hero.get("headline", ""),
+            "teaser":        hero.get("teaser", ""),
+            "body":          hero.get("body", ""),
+            "published":     hero.get("published", ""),
+            "cat_label":     cat["category_label"],
+            "urgency_score": hero.get("urgency_score", 0),
+            "is_hero":       True,
+        })
+        for card in cat.get("cards", []):
+            _all_cards.append({
+                "headline":      card.get("headline", ""),
+                "teaser":        card.get("teaser", ""),
+                "body":          card.get("body", ""),
+                "published":     card.get("published", ""),
+                "cat_label":     cat["category_label"],
+                "urgency_score": card.get("urgency_score", 0),
+                "is_hero":       False,
+            })
+    _all_cards.sort(key=lambda c: c.get("urgency_score", 0), reverse=True)
     def _is_fp_eligible(cat):
         if not CATEGORIES.get(cat["category_key"], {}).get("front_page_hero", True):
             us_words = ["us strikes", "us military", "american forces", "u.s. strikes",
@@ -1525,7 +1548,7 @@ def main():
                 "cat_label":     top_cat["category_label"],
                 "urgency_score": top_cat["hero"].get("urgency_score", 0),
             },
-            "cards": [card_to_dict(c) for c in all_cards]
+            "cards": [card_to_dict(c) for c in _all_cards]
         },
         "categories": [
             {
