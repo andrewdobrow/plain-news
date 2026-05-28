@@ -1548,7 +1548,8 @@ def main():
     import json as _json
     _timestamp = now_et()
 
-    # Rebuild all_cards for data.json from all_categories
+    # Rebuild all_cards for data.json — heroes + cards
+    # Front page dedup below will filter any hero too similar to the front page hero
     _all_cards = []
     for cat in all_categories:
         hero = cat["hero"]
