@@ -171,7 +171,7 @@ IMAGE_BANK_FEEDS = [
     "https://news.yahoo.com/rss/science",
     "https://news.yahoo.com/rss/health",
 ]
-CARDS_PER_CATEGORY     = 5
+CARDS_PER_CATEGORY     = 8
 OUTPUT_DIR             = Path(__file__).parent.parent
 
 client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
@@ -616,6 +616,9 @@ Return ONLY valid JSON:
     "source_index": <the number of the chosen headline, e.g. 3>
   }},
   "cards": [
+    {{"headline": "...", "teaser": "...", "body": "two paragraphs...", "urgency_score": <1-10>, "published": "copy timestamp", "source_index": <number>}},
+    {{"headline": "...", "teaser": "...", "body": "two paragraphs...", "urgency_score": <1-10>, "published": "copy timestamp", "source_index": <number>}},
+    {{"headline": "...", "teaser": "...", "body": "two paragraphs...", "urgency_score": <1-10>, "published": "copy timestamp", "source_index": <number>}},
     {{"headline": "...", "teaser": "...", "body": "two paragraphs...", "urgency_score": <1-10>, "published": "copy timestamp", "source_index": <number>}},
     {{"headline": "...", "teaser": "...", "body": "two paragraphs...", "urgency_score": <1-10>, "published": "copy timestamp", "source_index": <number>}},
     {{"headline": "...", "teaser": "...", "body": "two paragraphs...", "urgency_score": <1-10>, "published": "copy timestamp", "source_index": <number>}},
@@ -1530,7 +1533,7 @@ def main():
         if not wa or not wb:
             return False
         overlap = len(wa & wb) / min(len(wa), len(wb))
-        return overlap >= 0.55
+        return overlap >= 0.65
 
     # Step 1: Deduplicate heroes across categories using aggressive matching
     # Higher priority categories (earlier in list) keep their hero
@@ -1581,14 +1584,16 @@ def main():
         else:
             seen_hero_headlines.add(_headline_key(hero_h))
 
-    # Step 2: Deduplicate cards against all seen headlines (heroes + prior cards)
-    seen_all = set(seen_hero_headlines)
+    # Step 2: Deduplicate cards only within each category
+    # Cards are NOT filtered against other categories' heroes or cards
+    # This preserves card counts while preventing duplicate heroes
     for cat in all_categories:
+        seen_within_cat = {_headline_key(cat["hero"].get("headline", ""))}
         clean_cards = []
         for card in cat.get("cards", []):
             card_h = card.get("headline", "")
-            if not any(_similar(card_h, s) for s in seen_all):
-                seen_all.add(_headline_key(card_h))
+            if not any(_similar(card_h, s) for s in seen_within_cat):
+                seen_within_cat.add(_headline_key(card_h))
                 clean_cards.append(card)
         cat["cards"] = clean_cards
 
@@ -1628,12 +1633,12 @@ def main():
     _fp_headline = top_cat["hero"].get("headline", "")
     _all_cards = [c for c in _all_cards if not _similar(c.get("headline", ""), _fp_headline)]
 
-    # Also deduplicate within _all_cards itself
+    # Also deduplicate within _all_cards — only remove near-identical headlines
     _seen = set()
     _deduped = []
     for c in _all_cards:
         k = _headline_key(c.get("headline", ""))
-        if not any(_similar(c.get("headline", ""), s) for s in _seen):
+        if not any(_hero_similar(c.get("headline", ""), s) for s in _seen):
             _seen.add(k)
             _deduped.append(c)
     _all_cards = _deduped
@@ -1703,4 +1708,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-        
