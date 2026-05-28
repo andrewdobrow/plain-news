@@ -1479,6 +1479,22 @@ def main():
     import json as _json
     _timestamp = now_et()
 
+    # Recompute top_cat (front page hero) using same logic as render_index
+    def _is_fp_eligible(cat):
+        if not CATEGORIES.get(cat["category_key"], {}).get("front_page_hero", True):
+            us_words = ["us strikes", "us military", "american forces", "u.s. strikes",
+                        "u.s. military", "united states strikes", "trump orders", "pentagon"]
+            return any(w in cat["hero"].get("headline", "").lower() for w in us_words)
+        return True
+    def _fp_score(cat):
+        score = cat["hero"].get("urgency_score", 0)
+        cap   = CATEGORIES.get(cat["category_key"], {}).get("front_page_cap", 10)
+        return min(score, cap)
+    _eligible = [c for c in all_categories if _is_fp_eligible(c)]
+    top_cat   = max(_eligible if _eligible else all_categories, key=_fp_score)
+    if _fp_score(top_cat) < 5:
+        top_cat = max(all_categories, key=_fp_score)
+
     def card_to_dict(c):
         return {
             "headline":      c.get("headline", ""),
