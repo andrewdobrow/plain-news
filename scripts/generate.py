@@ -604,7 +604,7 @@ Tasks:
 1. Pick the single most important/urgent story.
 2. Write an accurate headline reflecting the current state (frame updates as updates, not new events).
 3. Write a 420-480 word factual article. Use only confirmed facts from the source. Write in your own words.
-4. For the next {CARDS_PER_CATEGORY} most important stories write a teaser (one sentence), body (two short paragraphs ~120 words), and urgency_score (1-10). Card bodies must only contain confirmed facts from the headline and summary. Never use phrases like "no information was disclosed", "details were not available", "it remains unclear", "has not been confirmed", "officials have not commented", or any similar absence language. If details are limited write fewer words and stop — do not pad.
+4. For the next {CARDS_PER_CATEGORY} most important stories write a teaser (one sentence), body (two short paragraphs ~120 words), and urgency_score (1-10). The cards MUST be different stories from the hero — never repeat or reframe the hero story as a card. Card bodies must only contain confirmed facts from the headline and summary. Never use phrases like "no information was disclosed", "details were not available", "it remains unclear", "has not been confirmed", "officials have not commented", or any similar absence language. If details are limited write fewer words and stop — do not pad.
 
 Return ONLY valid JSON:
 {{
@@ -1537,7 +1537,17 @@ def main():
 
     # Remove the front page hero from cards to avoid duplication
     _fp_headline = top_cat["hero"].get("headline", "")
-    _all_cards = [c for c in _all_cards if c.get("headline", "") != _fp_headline]
+    _all_cards = [c for c in _all_cards if not _similar(c.get("headline", ""), _fp_headline)]
+
+    # Also deduplicate within _all_cards itself
+    _seen = set()
+    _deduped = []
+    for c in _all_cards:
+        k = _headline_key(c.get("headline", ""))
+        if not any(_similar(c.get("headline", ""), s) for s in _seen):
+            _seen.add(k)
+            _deduped.append(c)
+    _all_cards = _deduped
     def _is_fp_eligible(cat):
         if not CATEGORIES.get(cat["category_key"], {}).get("front_page_hero", True):
             us_words = ["us strikes", "us military", "american forces", "u.s. strikes",
