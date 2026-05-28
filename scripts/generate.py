@@ -723,44 +723,56 @@ Return ONLY valid JSON:
     decay_score(data["hero"])
     for card in data.get("cards", []): decay_score(card)
 
-    # Age cap function — same logic for heroes and cards
+    # Age cap function — parses RSS timestamps properly
     def apply_age_cap(item):
-        pub = item.get("published", "")
-        if not pub:
-            return
+        from email.utils import parsedate_to_datetime
+        from datetime import timezone, timedelta
         import re as _re
-        is_fresh     = any(w in pub.lower() for w in ["minute", "hour", "a few"])
-        is_today     = bool(_re.search(r"^\d{1,2}:\d{2}\s*(am|pm)", pub.lower().strip()))
-        is_yesterday = "yesterday" in pub.lower()
-        is_old       = not is_fresh and not is_today and not is_yesterday
-        score        = item.get("urgency_score", 5)
-        if is_old:
+        score = item.get("urgency_score", 5)
+        # Try to get age from source headline timestamp via source_index
+        idx = item.get("source_index")
+        pub_raw = ""
+        if idx is not None:
+            try:
+                pub_raw = headlines[int(idx) - 1].get("published", "")
+            except Exception:
+                pass
+        if not pub_raw:
+            pub_raw = item.get("published", "")
+        if not pub_raw:
+            return
+        try:
+            dt  = parsedate_to_datetime(pub_raw).astimezone(timezone.utc)
+            now = datetime.now(timezone.utc)
+            hrs = (now - dt).total_seconds() / 3600
+        except Exception:
+            return
+
+        headline_lower = item.get("headline", "").lower()
+        body_lower     = item.get("body", "").lower()[:400]
+        one_time_events = ["resigns", "resigned", "steps down", "fired", "dies", "dead at",
+                           "killed in", "found dead", "passed away", "obituary"]
+
+        if hrs > 48:
             item["urgency_score"] = min(score, 4)
-        elif is_yesterday:
-            # One-time events can't be "fresh" a day later — hard cap
-            headline_lower = item.get("headline", "").lower()
-            one_time_events = ["resigns", "resigned", "steps down", "fired", "dies", "dead", "killed"]
+        elif hrs > 24:
             if any(w in headline_lower for w in one_time_events):
                 item["urgency_score"] = min(score, 4)
             else:
                 item["urgency_score"] = min(score, 6)
-        elif is_today:
-            headline_lower = item.get("headline", "").lower()
-            body_lower     = item.get("body", "").lower()[:400]
-            # Check if article body reveals this is actually an old story
-            # Build dynamic past date signals based on current date
-            from datetime import timezone, timedelta
-            _now   = datetime.now(timezone.utc)
-            _dates = [(_now - timedelta(days=d)).strftime("%B %d").lower().replace(" 0", " ") for d in range(2, 14)]
-            _months_gone = [(_now - timedelta(days=d*30)).strftime("%B").lower() for d in range(1, 6)]
-            stale_body_signals = ["last week", "last month", "a week ago", "days ago",
-                                  "on monday", "on tuesday", "on wednesday", "on thursday",
-                                  "on friday", "on saturday", "on sunday"] + _dates + _months_gone
-            body_is_stale = any(s in body_lower for s in stale_body_signals)
-            # Also catch death/obit stories with refreshed timestamps
-            one_time_today = ["dies at", "dead at", "obituary", "passed away", "has died", "killed in", "found dead"]
-            if body_is_stale or any(w in headline_lower for w in one_time_today):
+        elif hrs > 12:
+            if any(w in headline_lower for w in one_time_events):
                 item["urgency_score"] = min(score, 6)
+            else:
+                # Check for stale body signals
+                _now   = datetime.now(timezone.utc)
+                _dates = [(_now - timedelta(days=d)).strftime("%B %d").lower().replace(" 0", " ") for d in range(2, 14)]
+                _months_gone = [(_now - timedelta(days=d*30)).strftime("%B").lower() for d in range(1, 6)]
+                stale_body_signals = ["last week", "last month", "a week ago", "days ago",
+                                      "on monday", "on tuesday", "on wednesday", "on thursday",
+                                      "on friday", "on saturday", "on sunday"] + _dates + _months_gone
+                if any(s in body_lower for s in stale_body_signals):
+                    item["urgency_score"] = min(score, 6)
 
     apply_age_cap(data["hero"])
     if data["hero"].get("published", "") and not any(w in data["hero"]["published"].lower() for w in ["minute", "hour", "a few", ":"]):
@@ -1207,7 +1219,7 @@ def render_index(all_categories, market_data=None, market_live=False):
                 "is_hero":   False,
             })
 
-    all_cards.sort(key=lambda c: c.get("urgency_score", 0), reverse=True)  # Pre-sort
+    all_cards.sort(key=lambda c: int(c.get("urgency_score", 0) or 0), reverse=True)  # Pre-sort
     all_cards = global_rank(all_cards)  # Final true global ranking
 
     # Static support card injected at position 3
@@ -1627,7 +1639,7 @@ def main():
                 "urgency_score": card.get("urgency_score", 0),
                 "is_hero":       False,
             })
-    _all_cards.sort(key=lambda c: c.get("urgency_score", 0), reverse=True)
+    _all_cards.sort(key=lambda c: int(c.get("urgency_score", 0) or 0), reverse=True)
 
     # Remove the front page hero from cards to avoid duplication
     _fp_headline = top_cat["hero"].get("headline", "")
