@@ -1472,6 +1472,37 @@ def main():
     print("Fetching market data...")
     market_data, market_live = fetch_market_data()
 
+    # Global deduplication — remove stories whose headlines are too similar
+    # to a story already seen in a higher-priority category
+    def _headline_key(h):
+        import re
+        return re.sub(r'[^a-z0-9 ]', '', h.lower().strip())[:80]
+
+    def _similar(a, b):
+        # Check if first 60 chars match or one contains the other
+        ka, kb = _headline_key(a), _headline_key(b)
+        return ka[:60] == kb[:60] or ka in kb or kb in ka
+
+    seen_headlines = set()
+
+    for cat in all_categories:
+        hero_h = cat["hero"].get("headline", "")
+        hero_key = _headline_key(hero_h)
+
+        # Check if hero is a duplicate
+        is_dupe = any(_similar(hero_h, s) for s in seen_headlines)
+        if not is_dupe:
+            seen_headlines.add(hero_key)
+
+        # Deduplicate cards — remove any card too similar to seen headlines
+        clean_cards = []
+        for card in cat.get("cards", []):
+            card_h = card.get("headline", "")
+            if not any(_similar(card_h, s) for s in seen_headlines):
+                seen_headlines.add(_headline_key(card_h))
+                clean_cards.append(card)
+        cat["cards"] = clean_cards
+
     index_html = render_index(all_categories, market_data, market_live)
     (OUTPUT_DIR / "index.html").write_text(index_html, encoding="utf-8")
 
@@ -1503,6 +1534,10 @@ def main():
                 "is_hero":       False,
             })
     _all_cards.sort(key=lambda c: c.get("urgency_score", 0), reverse=True)
+
+    # Remove the front page hero from cards to avoid duplication
+    _fp_headline = top_cat["hero"].get("headline", "")
+    _all_cards = [c for c in _all_cards if c.get("headline", "") != _fp_headline]
     def _is_fp_eligible(cat):
         if not CATEGORIES.get(cat["category_key"], {}).get("front_page_hero", True):
             us_words = ["us strikes", "us military", "american forces", "u.s. strikes",
