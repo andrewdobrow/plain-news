@@ -1472,6 +1472,21 @@ def main():
     print("Fetching market data...")
     market_data, market_live = fetch_market_data()
 
+    def _is_fp_eligible(cat):
+        if not CATEGORIES.get(cat["category_key"], {}).get("front_page_hero", True):
+            us_words = ["us strikes", "us military", "american forces", "u.s. strikes",
+                        "u.s. military", "united states strikes", "trump orders", "pentagon"]
+            return any(w in cat["hero"].get("headline", "").lower() for w in us_words)
+        return True
+    def _fp_score(cat):
+        score = cat["hero"].get("urgency_score", 0)
+        cap   = CATEGORIES.get(cat["category_key"], {}).get("front_page_cap", 10)
+        return min(score, cap)
+    _eligible = [c for c in all_categories if _is_fp_eligible(c)]
+    top_cat   = max(_eligible if _eligible else all_categories, key=_fp_score)
+    if _fp_score(top_cat) < 5:
+        top_cat = max(all_categories, key=_fp_score)
+
     # Global deduplication — remove stories whose headlines are too similar
     # to a story already seen in a higher-priority category
     def _headline_key(h):
@@ -1548,20 +1563,6 @@ def main():
             _seen.add(k)
             _deduped.append(c)
     _all_cards = _deduped
-    def _is_fp_eligible(cat):
-        if not CATEGORIES.get(cat["category_key"], {}).get("front_page_hero", True):
-            us_words = ["us strikes", "us military", "american forces", "u.s. strikes",
-                        "u.s. military", "united states strikes", "trump orders", "pentagon"]
-            return any(w in cat["hero"].get("headline", "").lower() for w in us_words)
-        return True
-    def _fp_score(cat):
-        score = cat["hero"].get("urgency_score", 0)
-        cap   = CATEGORIES.get(cat["category_key"], {}).get("front_page_cap", 10)
-        return min(score, cap)
-    _eligible = [c for c in all_categories if _is_fp_eligible(c)]
-    top_cat   = max(_eligible if _eligible else all_categories, key=_fp_score)
-    if _fp_score(top_cat) < 5:
-        top_cat = max(all_categories, key=_fp_score)
 
     def card_to_dict(c):
         return {
