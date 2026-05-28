@@ -1448,6 +1448,7 @@ def render_index(all_categories, market_data=None, market_live=False):
         <a href="about.html">About</a>
         <a href="https://buymeacoffee.com/andrewdobrow" target="_blank">Support</a>
         <a href="mailto:anjrued123@gmail.com">Contact</a>
+        <a href="privacy.html">Privacy</a>
         <a href="https://lowsignal.dev" target="_blank">Built by Low Signal Labs</a>
       </div>
     </div>
