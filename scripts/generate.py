@@ -1022,8 +1022,14 @@ def format_age(published_str):
         return ""
 
 
-def global_rank(all_cards):
-    """Final global ranking — sends all headlines to Claude for true cross-category ordering."""
+def global_rank(all_cards, dedupe_against=None):
+    """Final global ranking — sends all headlines to Claude for true cross-category
+    ordering AND semantic deduplication. Claude identifies stories that cover the same
+    underlying event and keeps only the most important version.
+
+    dedupe_against: optional headline string (e.g. the front page hero) that stories
+    should also be deduplicated against — any story covering that same event is dropped.
+    """
     if not all_cards:
         return all_cards
 
@@ -1035,22 +1041,42 @@ def global_rank(all_cards):
         stories.append(f"{i+1}. [{cat}] {head}")
     stories_text = "\n".join(stories)
     n = len(ranked_input)
+
+    dedupe_clause = ""
+    if dedupe_against:
+        dedupe_clause = (
+            f"\nThe lead story already shown is: \"{dedupe_against}\"\n"
+            "EXCLUDE any story from your list that covers this same underlying event, "
+            "even if worded very differently or framed from a different angle.\n"
+        )
+
     prompt = (
         f"Rank these {n} news stories by true global importance and urgency.\n"
         "This site serves a primarily US audience. The front page hero must be relevant to US readers.\n"
+        "\n"
+        "CRITICAL DEDUPLICATION RULE: Many of these stories cover the SAME underlying event "
+        "from different angles or with different wording (e.g. 'US strikes Iran' and "
+        "'US military shoots down Iranian drones, hits launch site' are the SAME event). "
+        "Identify every cluster of stories about the same event and keep ONLY the single "
+        "best version of each. Drop all the others entirely. Two stories are the same event "
+        "if they describe the same action, by the same actors, at the same time — regardless "
+        "of how differently they are phrased.\n"
+        + dedupe_clause +
+        "\n"
         "PRIMARY signal: consequence and US relevance combined.\n"
         "SECONDARY signal: recency — edited timestamps do not make old stories new.\n"
         "Apply this weighting:\n"
-        "1. Stories with direct US impact (economy, security, foreign policy, domestic policy, US deaths): highest priority — these should lead\n"
+        "1. Stories with direct US impact (economy, security, foreign policy, domestic policy, US deaths): highest priority\n"
         "2. Major geopolitical developments affecting oil, trade, US allies, or global stability with US consequences: very high\n"
-        "3. US military action, direct US involvement in foreign conflicts, or events with immediate major US consequences (oil supply, allied security, direct economic impact): treat as top tier regardless of category.\n"
-        "4. International tragedies or crises with no direct US connection (foreign train bombings, foreign political crackdowns, regional conflicts not involving the US): these belong in the World section but should NOT lead the front page. Rank them below any story with direct US relevance, no matter how many casualties.\n"
-        "4. Follow-up stories: rank below genuinely new stories\n"
-        "5. Sports, entertainment: rank below policy and crisis stories unless exceptionally significant\n"
-        "When two stories seem equally important, use the timestamp as a tiebreaker.\n\n"
+        "3. US military action or direct US involvement in foreign conflicts: top tier regardless of category.\n"
+        "4. International tragedies with no direct US connection: belong in World but should NOT lead. Rank below any US-relevant story.\n"
+        "5. Follow-up stories: rank below genuinely new stories\n"
+        "6. Sports, entertainment: rank below policy and crisis stories unless exceptionally significant\n"
+        "When two stories seem equally important, use recency as a tiebreaker.\n\n"
         f"{stories_text}\n\n"
-        "Return ONLY a JSON array of the original numbers in ranked order, most important first.\n"
-        "Example: [4, 1, 12, 7, ...]"
+        "Return ONLY a JSON array of the original numbers, in ranked order, most important first, "
+        "with all duplicates removed (only the best version of each distinct event included).\n"
+        "Example: [4, 1, 12, 7]"
     )
     try:
         resp = client.messages.create(
@@ -1068,10 +1094,13 @@ def global_rank(all_cards):
             if 0 <= i < n and i not in seen:
                 seen.add(i)
                 ranked.append(ranked_input[i])
-        for i, card in enumerate(ranked_input):
-            if i not in seen:
-                ranked.append(card)
-        print(f"  Global ranking: {len(ranked)} stories ordered")
+        # NOTE: stories Claude omitted are treated as duplicates and intentionally dropped.
+        # Only append back un-ranked stories if Claude returned suspiciously few (failure guard).
+        if len(ranked) < max(3, n // 3):
+            for i, card in enumerate(ranked_input):
+                if i not in seen:
+                    ranked.append(card)
+        print(f"  Global ranking: {len(ranked)} stories after dedup (from {n})")
         return ranked
     except Exception as e:
         print(f"  Global ranking failed ({e}), using urgency_score fallback")
@@ -1220,7 +1249,7 @@ def render_index(all_categories, market_data=None, market_live=False):
             })
 
     all_cards.sort(key=lambda c: int(c.get("urgency_score", 0) or 0), reverse=True)  # Pre-sort
-    all_cards = global_rank(all_cards)  # Final true global ranking
+    all_cards = global_rank(all_cards, dedupe_against=top_cat["hero"]["headline"])  # Rank + dedup
 
     # Static support card injected at position 3
     support_card = """
@@ -1548,8 +1577,7 @@ def main():
     import json as _json
     _timestamp = now_et()
 
-    # Rebuild all_cards for data.json — heroes + cards
-    # Front page dedup below will filter any hero too similar to the front page hero
+    # Build front page cards for the app using the SAME semantic dedup as the website
     _all_cards = []
     for cat in all_categories:
         hero = cat["hero"]
@@ -1573,18 +1601,8 @@ def main():
                 "is_hero":       False,
             })
     _all_cards.sort(key=lambda c: int(c.get("urgency_score", 0) or 0), reverse=True)
-
-    # Deduplicate _all_cards aggressively for the front page
-    # Seed with front page hero so it can NEVER appear as a card
-    _fp_hero_headline = top_cat["hero"].get("headline", "")
-    _seen_fp = {_headline_key(_fp_hero_headline)}
-    _deduped = []
-    for c in _all_cards:
-        h = c.get("headline", "")
-        if not any(_hero_similar(h, s) for s in _seen_fp):
-            _seen_fp.add(_headline_key(h))
-            _deduped.append(c)
-    _all_cards = _deduped
+    # Semantic dedup via Claude — same approach as the website front page
+    _all_cards = global_rank(_all_cards, dedupe_against=top_cat["hero"].get("headline", ""))
 
     def card_to_dict(c):
         return {
