@@ -1283,7 +1283,7 @@ def render_index(all_categories, market_data=None, market_live=False):
     <div class="header-inner">
       <a href="/" class="wordmark">plain</a>
       <nav class="category-nav">
-        <button class="cat-btn active" data-cat="all">All</button>
+        <button class="cat-btn active" data-cat="all">Top News</button>
         <button class="cat-btn" data-cat="world">World</button>
         <button class="cat-btn" data-cat="us">U.S.</button>
         <button class="cat-btn" data-cat="politics">Politics</button>
@@ -1478,6 +1478,17 @@ def main():
     # Write data.json for the iOS app
     import json as _json
     _timestamp = now_et()
+
+    def card_to_dict(c):
+        return {
+            "headline":      c.get("headline", ""),
+            "teaser":        c.get("teaser", ""),
+            "body":          c.get("body", ""),
+            "published":     c.get("published", ""),
+            "cat_label":     c.get("cat_label", ""),
+            "urgency_score": c.get("urgency_score", 0),
+        }
+
     app_data = {
         "updated": _timestamp,
         "market": {
@@ -1486,6 +1497,19 @@ def main():
             "dow":   market_data.get("dow")   if market_data else None,
             "nasdaq":market_data.get("nasdaq") if market_data else None,
             "oil":   market_data.get("oil")   if market_data else None,
+        },
+        "front_page": {
+            "hero": {
+                "headline":      top_cat["hero"].get("headline", ""),
+                "teaser":        top_cat["hero"].get("teaser", ""),
+                "body":          top_cat["hero"].get("body", ""),
+                "image_url":     top_cat["hero"].get("image_url", ""),
+                "image_credit":  top_cat["hero"].get("image_credit", ""),
+                "published":     top_cat["hero"].get("published", ""),
+                "cat_label":     top_cat["category_label"],
+                "urgency_score": top_cat["hero"].get("urgency_score", 0),
+            },
+            "cards": [card_to_dict(c) for c in all_cards]
         },
         "categories": [
             {
