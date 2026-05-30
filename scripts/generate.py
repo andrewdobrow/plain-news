@@ -1022,6 +1022,92 @@ def format_age(published_str):
         return ""
 
 
+def select_front_page_hero(all_categories):
+    """Use Claude to pick the most front-page-worthy hero across all categories.
+    Considers systemic impact and US relevance — not just raw urgency or casualty count.
+    Localized tragedies (regional accidents) lose to geopolitical events with broad reach,
+    even when casualty counts are similar."""
+    if not all_categories:
+        return None
+
+    def _is_eligible(cat):
+        if not CATEGORIES.get(cat["category_key"], {}).get("front_page_hero", True):
+            us_words = ["us strikes", "us military", "american forces", "u.s. strikes",
+                        "u.s. military", "united states strikes", "trump orders", "pentagon"]
+            return any(w in cat["hero"].get("headline", "").lower() for w in us_words)
+        return True
+
+    def _fp_score(cat):
+        score = int(cat["hero"].get("urgency_score", 0) or 0)
+        cap   = CATEGORIES.get(cat["category_key"], {}).get("front_page_cap", 10)
+        return min(score, cap)
+
+    eligible   = [c for c in all_categories if _is_eligible(c)]
+    candidates = eligible if eligible else all_categories
+    if len(candidates) == 1:
+        return candidates[0]
+
+    listing = "\n".join(
+        f"{i+1}. [{c['category_label']}] {c['hero'].get('headline','')}"
+        for i, c in enumerate(candidates)
+    )
+    prompt = (
+        "You are selecting the SINGLE most front-page-worthy story for a US news app from these section heroes.\n\n"
+        f"{listing}\n\n"
+        "AUDIENCE: This app is for US readers. Skew toward stories that matter MOST to a US reader.\n"
+        "But \"matters to US readers\" is about national/systemic relevance, NOT just whether it happened on US soil. "
+        "A regional US tragedy is local to that region; a foreign event involving US allies or US interests can have "
+        "broader national implications.\n"
+        "\n"
+        "Pick the story with the GREATEST systemic impact for the US audience — not just the highest casualty count.\n"
+        "\n"
+        "STRONG front-page heroes (in rough priority order):\n"
+        "1. Major US national policy/political developments affecting millions (Supreme Court rulings, major legislation, executive actions with broad impact)\n"
+        "2. US national security crises, attacks on US soil, US military action\n"
+        "3. Major economic events affecting US consumers/markets (Fed decisions, market crashes, major industry collapses, jobs reports)\n"
+        "4. Major geopolitical events involving US allies or US interests (attacks on NATO countries, peace deals, sanctions, treaties) — these affect US foreign policy even when they happen abroad\n"
+        "5. Major US infrastructure/space/scientific events with national consequence (NASA missions, major tech failures with national impact)\n"
+        "\n"
+        "WEAK front-page heroes (these belong as cards, NOT as the lead):\n"
+        "- Localized US tragedies (regional bus/car crashes, single-building fires, local crime) even with casualties — affect their region, not the nation\n"
+        "- Foreign tragedies without US connection (foreign domestic crime, regional conflicts not involving US allies/interests)\n"
+        "- Single-company news (funding rounds, IPOs, executive shakeups, single-quarter earnings)\n"
+        "- Sports/entertainment unless truly historic\n"
+        "- Celebrity deaths unless of major historical/cultural figures\n"
+        "- Routine policy proposals without immediate broad impact\n"
+        "\n"
+        "Examples:\n"
+        "- 'Russian drone strikes NATO ally Romania' BEATS 'Bus crash kills 5 in Virginia' — the drone strike has NATO/Article 5 implications affecting US foreign policy; the bus crash, however tragic, is regional.\n"
+        "- 'Supreme Court rules on major case' BEATS 'Tech company raises $10B' — court rulings reshape US law for millions.\n"
+        "- 'US bus crash kills 5' BEATS 'European train delay' — between two local stories, US readers care more about US events.\n"
+        "\n"
+        "Return ONLY the number of the chosen story. Just the number, nothing else."
+    )
+    try:
+        resp = client.messages.create(
+            model="claude-haiku-4-5-20251001",
+            max_tokens=10,
+            messages=[{"role": "user", "content": prompt}]
+        )
+        raw = resp.content[0].text.strip()
+        import re as _re
+        match = _re.search(r"\d+", raw)
+        if match:
+            idx = int(match.group()) - 1
+            if 0 <= idx < len(candidates):
+                chosen = candidates[idx]
+                print(f"  Front page hero: [{chosen['category_label']}] {chosen['hero'].get('headline','')[:60]}")
+                return chosen
+    except Exception as e:
+        print(f"  Front page hero selection failed ({e}), falling back to score-based")
+
+    # Fallback: score-based selection
+    top_cat = max(candidates, key=_fp_score)
+    if _fp_score(top_cat) < 5:
+        top_cat = max(all_categories, key=_fp_score)
+    return top_cat
+
+
 def promote_duplicate_heroes(top_cat, all_categories):
     """If any other category's hero covers the same underlying story as the front page
     hero, promote that category's next non-duplicate card to be its hero instead.
@@ -1206,7 +1292,7 @@ def fetch_market_data():
     return results, live
 
 
-def render_index(all_categories, market_data=None, market_live=False):
+def render_index(all_categories, market_data=None, market_live=False, top_cat=None):
     timestamp = now_et()
     # World excluded from front page hero unless it involves direct US action
     us_action_words = ["us strikes", "us military", "american forces", "u.s. strikes",
@@ -1221,10 +1307,11 @@ def render_index(all_categories, market_data=None, market_live=False):
         cap   = CATEGORIES.get(cat["category_key"], {}).get("front_page_cap", 10)
         return min(score, cap)
     eligible = [c for c in all_categories if is_front_page_eligible(c)]
-    top_cat  = max(eligible if eligible else all_categories, key=front_page_score)
-    # If best eligible story scores below 5, include World as fallback
-    if front_page_score(top_cat) < 5:
-        top_cat = max(all_categories, key=front_page_score)
+    if top_cat is None:
+        top_cat  = max(eligible if eligible else all_categories, key=front_page_score)
+        # If best eligible story scores below 5, include World as fallback
+        if front_page_score(top_cat) < 5:
+            top_cat = max(all_categories, key=front_page_score)
     hero_desc = top_cat["hero"].get("headline", "News without the noise")[:120]
 
     # Build market ticker HTML from server-side data
@@ -1597,10 +1684,25 @@ def main():
         score = cat["hero"].get("urgency_score", 0)
         cap   = CATEGORIES.get(cat["category_key"], {}).get("front_page_cap", 10)
         return min(score, cap)
-    _eligible = [c for c in all_categories if _is_fp_eligible(c)]
-    top_cat   = max(_eligible if _eligible else all_categories, key=_fp_score)
-    if _fp_score(top_cat) < 5:
-        top_cat = max(all_categories, key=_fp_score)
+    # Semantic front page hero selection — Claude picks the most front-page-worthy story
+    # across all candidate category heroes (not just highest urgency_score)
+    top_cat = select_front_page_hero(all_categories)
+    if top_cat is None:
+        # Fallback to score-based if Claude call totally failed
+        def _is_fp_eligible(cat):
+            if not CATEGORIES.get(cat["category_key"], {}).get("front_page_hero", True):
+                us_words = ["us strikes", "us military", "american forces", "u.s. strikes",
+                            "u.s. military", "united states strikes", "trump orders", "pentagon"]
+                return any(w in cat["hero"].get("headline", "").lower() for w in us_words)
+            return True
+        def _fp_score(cat):
+            score = int(cat["hero"].get("urgency_score", 0) or 0)
+            cap   = CATEGORIES.get(cat["category_key"], {}).get("front_page_cap", 10)
+            return min(score, cap)
+        _eligible = [c for c in all_categories if _is_fp_eligible(c)]
+        top_cat   = max(_eligible if _eligible else all_categories, key=_fp_score)
+        if _fp_score(top_cat) < 5:
+            top_cat = max(all_categories, key=_fp_score)
 
     # Ensure no other category leads with the same story as the front page hero.
     # Any category whose hero duplicates the front page hero gets its next card promoted.
@@ -1644,7 +1746,7 @@ def main():
     # Categories are NOT deduplicated — World, U.S., Politics can all cover Iran
     # Deduplication only happens on the front page (_all_cards) below
 
-    index_html = render_index(all_categories, market_data, market_live)
+    index_html = render_index(all_categories, market_data, market_live, top_cat=top_cat)
     (OUTPUT_DIR / "index.html").write_text(index_html, encoding="utf-8")
 
     # Write data.json for the iOS app
