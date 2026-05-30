@@ -1052,6 +1052,66 @@ def select_front_page_hero(all_categories):
     from datetime import timezone as _tz, timedelta
     _now = datetime.now(_tz.utc)
 
+    # HARD pre-filter: exclude candidates that are clearly stale events.
+    # This runs before Claude sees anything, so Claude cannot pick a known-stale story.
+    # A candidate is filtered out if:
+    #   (1) its timestamp is more than 18 hours old AND content has no fresh-development language, OR
+    #   (2) its content explicitly mentions a past day-name when today is a different day
+    _today_name      = _now.strftime("%A").lower()
+    _yesterday_name  = (_now - timedelta(days=1)).strftime("%A").lower()
+    _two_days_name   = (_now - timedelta(days=2)).strftime("%A").lower()
+    _three_days_name = (_now - timedelta(days=3)).strftime("%A").lower()
+    _stale_day_names = {_yesterday_name, _two_days_name, _three_days_name}
+
+    _stale_event_phrases = [
+        "yesterday", "two days ago", "three days ago", "earlier this week",
+        "last week", "days ago", "happened on", "occurred on",
+    ]
+    _fresh_dev_phrases = [
+        "today", "this morning", "this afternoon", "this evening",
+        "hours ago", "minutes ago", "just announced", "just released",
+        "breaking", "moments ago", "earlier today",
+    ]
+
+    def _is_stale(cat):
+        hero = cat["hero"]
+        content = (hero.get("teaser", "") + " " + hero.get("body", "")[:800]).lower()
+        # Fresh-development language wins regardless of timestamp
+        if any(p in content for p in _fresh_dev_phrases):
+            return False
+        # Check for past day-name references (e.g. "Thursday" when today is Saturday)
+        for day in _stale_day_names:
+            # Check the day appears as a standalone word
+            if f" {day} " in content or content.startswith(f"{day} ") or f" {day}." in content or f" {day}," in content:
+                return True
+        # Check for stale-event phrases
+        if any(p in content for p in _stale_event_phrases):
+            return True
+        # Check timestamp — 18+ hours old with no fresh-development language is stale
+        pub = hero.get("published", "")
+        if pub:
+            try:
+                dt  = parsedate_to_datetime(pub).astimezone(_tz.utc)
+                hrs = (_now - dt).total_seconds() / 3600
+                if hrs >= 18:
+                    return True
+            except Exception:
+                pass
+        return False
+
+    fresh_candidates = [c for c in candidates if not _is_stale(c)]
+    if fresh_candidates:
+        filtered_out = [c["hero"].get("headline", "")[:60] for c in candidates if c not in fresh_candidates]
+        if filtered_out:
+            print(f"  Hero pre-filter excluded {len(filtered_out)} stale candidate(s): {filtered_out}")
+        candidates = fresh_candidates
+    else:
+        print(f"  Hero pre-filter: no fresh candidates, keeping all for Claude to decide")
+
+    if len(candidates) == 1:
+        print(f"  Front page hero: [{candidates[0]['category_label']}] {candidates[0]['hero'].get('headline','')[:60]} (only fresh candidate)")
+        return candidates[0]
+
     def _age_label(cat):
         pub = cat["hero"].get("published", "")
         if not pub:
