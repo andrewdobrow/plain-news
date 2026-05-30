@@ -1049,7 +1049,7 @@ def select_front_page_hero(all_categories):
 
     # Compute age for each candidate so Claude can weight freshness
     from email.utils import parsedate_to_datetime
-    from datetime import timezone as _tz
+    from datetime import timezone as _tz, timedelta
     _now = datetime.now(_tz.utc)
 
     def _age_label(cat):
@@ -1071,10 +1071,17 @@ def select_front_page_hero(all_categories):
 
     listing = "\n\n".join(
         f"{i+1}. [{c['category_label']}] (timestamp: {_age_label(c)}) {c['hero'].get('headline','')}\n"
-        f"   Teaser: {(c['hero'].get('teaser') or c['hero'].get('body','')[:200] or '').strip()}"
+        f"   Content: {(c['hero'].get('teaser','') + ' ' + c['hero'].get('body','')[:500]).strip()}"
         for i, c in enumerate(candidates)
     )
+    _today_label = _now.strftime("%A, %B %d, %Y")
+    _yesterday   = (_now - timedelta(days=1)).strftime("%A")
+    _two_days    = (_now - timedelta(days=2)).strftime("%A")
+    _three_days  = (_now - timedelta(days=3)).strftime("%A")
     prompt = (
+        f"TODAY IS: {_today_label}\n"
+        f"Yesterday was {_yesterday}. Two days ago was {_two_days}. Three days ago was {_three_days}.\n"
+        "Use this date context to evaluate when events actually happened.\n\n"
         "You are selecting the SINGLE most front-page-worthy story for a US news app from these section heroes.\n\n"
         f"{listing}\n\n"
         "AUDIENCE: This app is for US readers. Skew toward stories that matter MOST to a US reader.\n"
