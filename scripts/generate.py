@@ -1047,8 +1047,31 @@ def select_front_page_hero(all_categories):
     if len(candidates) == 1:
         return candidates[0]
 
-    listing = "\n".join(
-        f"{i+1}. [{c['category_label']}] {c['hero'].get('headline','')}"
+    # Compute age for each candidate so Claude can weight freshness
+    from email.utils import parsedate_to_datetime
+    from datetime import timezone as _tz
+    _now = datetime.now(_tz.utc)
+
+    def _age_label(cat):
+        pub = cat["hero"].get("published", "")
+        if not pub:
+            return "unknown age"
+        try:
+            dt  = parsedate_to_datetime(pub).astimezone(_tz.utc)
+            hrs = (_now - dt).total_seconds() / 3600
+            if hrs < 1:
+                mins = max(1, int((_now - dt).total_seconds() / 60))
+                return f"{mins} minutes ago"
+            if hrs < 24:
+                return f"{int(hrs)} hours ago"
+            days = int(hrs / 24)
+            return f"{days} day{'s' if days != 1 else ''} ago"
+        except Exception:
+            return "unknown age"
+
+    listing = "\n\n".join(
+        f"{i+1}. [{c['category_label']}] (timestamp: {_age_label(c)}) {c['hero'].get('headline','')}\n"
+        f"   Teaser: {(c['hero'].get('teaser') or c['hero'].get('body','')[:200] or '').strip()}"
         for i, c in enumerate(candidates)
     )
     prompt = (
@@ -1059,9 +1082,39 @@ def select_front_page_hero(all_categories):
         "A regional US tragedy is local to that region; a foreign event involving US allies or US interests can have "
         "broader national implications.\n"
         "\n"
-        "Pick the story with the GREATEST systemic impact for the US audience — not just the highest casualty count.\n"
+        "FRESHNESS IS CRITICAL: This app updates throughout the day. The front page hero must be CURRENT news — what is "
+        "happening NOW, not what already happened. Each candidate has a timestamp label, but BE SKEPTICAL OF TIMESTAMPS — "
+        "publishers often re-publish or update old articles with minor changes, which refreshes the timestamp even though "
+        "the event itself is old.\n"
         "\n"
-        "STRONG front-page heroes (in rough priority order):\n"
+        "CRITICAL DISTINCTION: differentiate between (A) an OLD EVENT being republished with a refreshed timestamp, vs "
+        "(B) a NEW DEVELOPMENT in an ongoing story. The former is stale; the latter is fresh and can absolutely be hero-worthy.\n"
+        "- (A) STALE: The article describes an event that already happened, with no new action today. Example: \"Blue Origin "
+        "rocket exploded yesterday at Cape Canaveral\" — this is yesterday's explosion being recapped. Avoid as hero.\n"
+        "- (B) FRESH: The article describes a NEW action, decision, arrest, ruling, statement, or development today, even if "
+        "it's connected to an older story. Example: \"Suspect in Trump assassination attempt arrested\" — even though the "
+        "attempt was days ago, the arrest is happening NOW and is breaking news. This IS hero-worthy.\n"
+        "\n"
+        "Look at the teaser to determine which case applies:\n"
+        "- Phrases like \"announced today\", \"arrested today\", \"ruled today\", \"said this morning\", \"hours ago\", "
+        "\"just\", \"breaking\" — these signal a NEW development happening now, even in an old story. TREAT AS FRESH.\n"
+        "- Phrases that recap an old event with no new action today — \"yesterday's\", \"earlier this week\", \"last "
+        "Monday's\", and the article is just summarizing what already happened — TREAT AS STALE.\n"
+        "- When in doubt, ask: \"Is something new happening today in this story, or is this just a recap of an old event?\"\n"
+        "\n"
+        "Freshness tiers (combining timestamp AND content signals):\n"
+        "- New event or new development from the past few hours: strong hero candidate\n"
+        "- New development today in an older ongoing story: also strong (arrests, rulings, statements, decisions)\n"
+        "- From 6-12 hours ago and still actively unfolding: still acceptable\n"
+        "- Pure recap of an event from yesterday or earlier with no new development: AVOID as hero — it belongs as a card if at all\n"
+        "\n"
+        "When comparing, ask: \"Is something NEW happening in this story right now, or did it already happen and move on?\" "
+        "If something new is happening, it's fresh regardless of when the original event occurred. If it has moved on with "
+        "no new development, pick a fresher story.\n"
+        "\n"
+        "Pick the story with the GREATEST systemic impact for the US audience among CURRENT stories — not the biggest story regardless of when it happened.\n"
+        "\n"
+        "STRONG front-page heroes (in rough priority order, all assuming the story is fresh):\n"
         "1. Major US national policy/political developments affecting millions (Supreme Court rulings, major legislation, executive actions with broad impact)\n"
         "2. US national security crises, attacks on US soil, US military action\n"
         "3. Major economic events affecting US consumers/markets (Fed decisions, market crashes, major industry collapses, jobs reports)\n"
