@@ -1069,14 +1069,25 @@ def select_front_page_hero(all_categories):
         "5. Major US infrastructure/space/scientific events with national consequence (NASA missions, major tech failures with national impact)\n"
         "\n"
         "WEAK front-page heroes (these belong as cards, NOT as the lead):\n"
-        "- Localized US tragedies (regional bus/car crashes, single-building fires, local crime) even with casualties — affect their region, not the nation\n"
+        "- Smaller-scale localized US tragedies — single bus/car crashes, single-building fires, industrial accidents, factory explosions, mine collapses, single-aircraft small plane crashes, local crime. These affect their region/industry, not the nation broadly.\n"
         "- Foreign tragedies without US connection (foreign domestic crime, regional conflicts not involving US allies/interests)\n"
         "- Single-company news (funding rounds, IPOs, executive shakeups, single-quarter earnings)\n"
         "- Sports/entertainment unless truly historic\n"
         "- Celebrity deaths unless of major historical/cultural figures\n"
         "- Routine policy proposals without immediate broad impact\n"
         "\n"
+        "Casualty/disaster events that DO warrant hero status are large in scale or national in reach:\n"
+        "- Major commercial airline crashes (large passenger jets, dozens+ killed)\n"
+        "- Mass shootings or terrorism at historic scale\n"
+        "- Multi-state natural disasters (major hurricanes, large wildfires across regions, earthquakes affecting populated areas)\n"
+        "- Bridge collapses or major infrastructure failures with national implications\n"
+        "- Attacks on US military or significant US security events\n"
+        "- Industrial disasters with broad consequences (e.g. nuclear incidents, chemical releases affecting large populations)\n"
+        "\n"
+        "Rule of thumb: if a tragedy is contained to one workplace, one road, one building, or one small town, it is a card, not a hero — even with multiple casualties. If it affects multiple states, a major industry, or hundreds of lives, it can be hero-worthy.\n"
+        "\n"
         "Examples:\n"
+        "- 'Trump delays Iran ceasefire' BEATS 'Nine dead in Oregon paper mill disaster' — the ceasefire decision is active US foreign policy reshaping a major conflict; the mill disaster, however tragic, is a regional industrial accident with no national policy consequence.\n"
         "- 'Russian drone strikes NATO ally Romania' BEATS 'Bus crash kills 5 in Virginia' — the drone strike has NATO/Article 5 implications affecting US foreign policy; the bus crash, however tragic, is regional.\n"
         "- 'Supreme Court rules on major case' BEATS 'Tech company raises $10B' — court rulings reshape US law for millions.\n"
         "- 'US bus crash kills 5' BEATS 'European train delay' — between two local stories, US readers care more about US events.\n"
@@ -1589,7 +1600,22 @@ def main():
 
             # Images — source_index already attached image_url, fall back to image bank
             source_img = data["hero"].get("image_url", "")
-            bank_img, bank_credit = match_image(data["hero"]["headline"], image_bank, cat_key)
+            # Use the ORIGINAL RSS title for image bank matching when available — Claude rewrites
+            # the headline enough that 3-word overlap with bank entries often fails. Bank entries
+            # are unaltered RSS titles, so original-to-original matching is far more reliable.
+            src_idx       = data["hero"].get("source_index")
+            original_title = ""
+            if src_idx is not None:
+                try:
+                    original_title = headlines[int(src_idx) - 1].get("title", "")
+                except Exception:
+                    original_title = ""
+            bank_img, bank_credit = ("", "")
+            if original_title:
+                bank_img, bank_credit = match_image(original_title, image_bank, cat_key)
+            if not bank_img:
+                # Fallback to Claude-rewritten headline if original didn't match
+                bank_img, bank_credit = match_image(data["hero"]["headline"], image_bank, cat_key)
             img    = source_img or bank_img
             credit = bank_credit  # bank_credit is empty string if no match, that's fine
             data["hero"]["image_credit"] = credit
@@ -1597,7 +1623,9 @@ def main():
             if not img:
                 for entry in content_bank:
                     entry_lower = entry.get("title", "").lower()
-                    hero_words  = [w for w in data["hero"]["headline"].lower().split() if len(w) > 4]
+                    # Use original title's words if available, else Claude headline
+                    src_for_words = original_title or data["hero"]["headline"]
+                    hero_words    = [w for w in src_for_words.lower().split() if len(w) > 4]
                     if sum(1 for w in hero_words if w in entry_lower) >= 2:
                         # Try to get image from matching content bank entry source feed
                         _fb = match_image(entry["title"], image_bank, cat_key)
