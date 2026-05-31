@@ -655,7 +655,7 @@ def generate_category_content(category_key, category_label, headlines):
 Tasks:
 1. Pick the single most important/urgent story.
 2. Write an accurate headline reflecting the current state (frame updates as updates, not new events).
-3. Write a 420-480 word factual article. Use only confirmed facts from the source. Write in your own words.
+3. Write a 420-480 word factual article in FOUR to FIVE full paragraphs. Use only confirmed facts from the source, written in your own words. This is the lead front-page story, so it must read as a complete article, not a brief summary. Cover the what, who, when, where, and the broader context or consequences. Do NOT write only two short paragraphs. If the source facts are limited, expand on confirmed context (background, why it matters, what happens next) rather than padding with filler or absence language.
 4. For the next {CARDS_PER_CATEGORY} most important stories write a teaser (one sentence), body (two short paragraphs ~120 words), and urgency_score (1-10). The cards MUST be different stories from the hero — never repeat or reframe the hero story as a card. Card bodies must only contain confirmed facts from the headline and summary. Never use phrases like "no information was disclosed", "details were not available", "it remains unclear", "has not been confirmed", "officials have not commented", or any similar absence language. If details are limited write fewer words and stop — do not pad.
 
 Return ONLY valid JSON:
@@ -1943,7 +1943,7 @@ def main():
                 geo_conflict = bool(hl_geo) and bool(src_geo) and not (hl_geo & src_geo)
                 if geo_conflict:
                     print(f"  Enhancement skipped: geographic mismatch ({hl_geo} vs {src_geo})")
-                elif len(hl_tok & src_tok) >= 3:
+                elif len(hl_tok & src_tok) >= 2:
                     data["hero"] = enhance_hero_article(data["hero"], source_text)
                     print(f"  Enhanced with: {'Guardian+' if guardian_text else ''}{'bank+' if bank_content else ''}{'related' if related_text else ''}")
                 else:
