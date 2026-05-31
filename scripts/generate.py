@@ -358,6 +358,37 @@ def match_image(headline, image_bank, cat_key=""):
     return best_img, best_credit
 
 
+def fetch_og_image(url):
+    """Fetch an article page and extract its og:image (or twitter:image) meta tag.
+    This is the most reliable image source because it comes from the article itself,
+    guaranteeing the image actually matches the story. Returns "" on any failure."""
+    if not url:
+        return ""
+    try:
+        import re as _re_og
+        resp = requests.get(url, timeout=10,
+                            headers={"User-Agent": "Mozilla/5.0 (compatible; PlainBot/1.0)"})
+        if resp.status_code != 200:
+            return ""
+        html = resp.text[:200000]  # only need the <head>
+        # Try og:image then twitter:image, in either attribute order
+        patterns = [
+            r'<meta[^>]+property=["\']og:image["\'][^>]+content=["\']([^"\']+)',
+            r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+property=["\']og:image["\']',
+            r'<meta[^>]+name=["\']twitter:image["\'][^>]+content=["\']([^"\']+)',
+            r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+name=["\']twitter:image["\']',
+        ]
+        for pat in patterns:
+            m = _re_og.search(pat, html, _re_og.IGNORECASE)
+            if m:
+                img = m.group(1).strip()
+                if img.startswith("http"):
+                    return img
+        return ""
+    except Exception:
+        return ""
+
+
 def find_image(headline, entries):
     """Match headline back to RSS entry for image, link, and publish time."""
     h = headline.lower()[:50]
@@ -1220,23 +1251,33 @@ def select_front_page_hero(all_categories):
         "- 'Supreme Court rules on major case' BEATS 'Tech company raises $10B' — court rulings reshape US law for millions.\n"
         "- 'US bus crash kills 5' BEATS 'European train delay' — between two local stories, US readers care more about US events.\n"
         "\n"
-        "Return ONLY the number of the chosen story. Just the number, nothing else."
+        "IMPORTANT ON CASUALTY COUNT: A high death toll does NOT by itself make a story front-page-worthy. The question is REACH — how many people BEYOND those directly involved are affected, and whether anything changes nationally. A chemical spill that kills 11 workers INSIDE one mill is a contained workplace accident — its reach is that facility and that town, NOT the nation. That is a card. The 'chemical release affecting large populations' exception means events like a city-wide toxic cloud forcing mass evacuation — NOT a fatal accident confined to one workplace. Do not let the word 'chemical' or a double-digit death count override the reach test.\n"
+        "\n"
+        "THINK FIRST, THEN ANSWER. For each candidate, briefly assess in one short line: (a) how recent the actual event is, and (b) its national reach — does it change US policy/markets/security, or affect Americans beyond those directly involved? Then state your pick.\n"
+        "\n"
+        "Format your response EXACTLY like this:\n"
+        "Reasoning: <one line per candidate, very brief>\n"
+        "PICK: <number>\n"
     )
     try:
         resp = client.messages.create(
             model="claude-haiku-4-5-20251001",
-            max_tokens=10,
+            max_tokens=500,
             messages=[{"role": "user", "content": prompt}]
         )
         raw = resp.content[0].text.strip()
         import re as _re
-        match = _re.search(r"\d+", raw)
-        if match:
-            idx = int(match.group()) - 1
-            if 0 <= idx < len(candidates):
-                chosen = candidates[idx]
-                print(f"  Front page hero: [{chosen['category_label']}] {chosen['hero'].get('headline','')[:60]}")
-                return chosen
+        # Prefer the explicit PICK: line; fall back to last number in the text
+        pick_match = _re.search(r"PICK:\s*(\d+)", raw, _re.IGNORECASE)
+        if pick_match:
+            idx = int(pick_match.group(1)) - 1
+        else:
+            nums = _re.findall(r"\d+", raw)
+            idx = int(nums[-1]) - 1 if nums else -1
+        if 0 <= idx < len(candidates):
+            chosen = candidates[idx]
+            print(f"  Front page hero: [{chosen['category_label']}] {chosen['hero'].get('headline','')[:60]}")
+            return chosen
     except Exception as e:
         print(f"  Front page hero selection failed ({e}), falling back to score-based")
 
@@ -1351,6 +1392,7 @@ def global_rank(all_cards, dedupe_against=None):
         "3. Significant domestic political developments (major legislation, executive actions with broad impact, presidential decisions): high\n"
         "4. Major business stories that affect consumers/economy broadly (Fed decisions, major industry collapses, jobs reports): high\n"
         "5. Company-specific news (funding rounds, single-company earnings, executive changes, IPO plans): MEDIUM — even huge funding rounds for private companies rank BELOW major foreign policy or national news. A $10B Anthropic round is less important than a US-Iran de-escalation deal.\n"
+        "5b. Foreign economic indicators (China factory/PMI data, foreign GDP, foreign central bank moves): LOWER for a US audience unless they trigger an immediate, named US market reaction. 'China factory activity contracts' is a routine indicator that interests economists but should NOT be a top card on a US front page — rank it well below US domestic news, US policy, and major US-relevant world events.\n"
         "6. International tragedies with no direct US connection: belong in World but should NOT lead. Rank below any US-relevant story.\n"
         "7. Follow-up stories: rank below genuinely new stories\n"
         "8. Sports, entertainment: rank below policy and crisis stories unless exceptionally significant\n"
@@ -1761,6 +1803,15 @@ def main():
                             img = _fb[0]
                             data["hero"]["image_credit"] = _fb[1]
                             break
+            # Final fallback: fetch the article's own og:image from its page.
+            # This is the most reliable source — guaranteed to match the story.
+            if not img:
+                link = data["hero"].get("link", "")
+                og_img = fetch_og_image(link)
+                if og_img:
+                    img = og_img
+                    data["hero"]["image_credit"] = get_image_credit(link)
+                    print(f"  Hero image via og:image fetch")
             data["hero"]["image_url"] = img
 
             # Hero enrichment — combine all available sources
@@ -2001,3 +2052,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+        
