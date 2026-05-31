@@ -296,7 +296,7 @@ def build_image_bank():
     for url in IMAGE_BANK_FEEDS:
         try:
             feed = feedparser.parse(url)
-            for entry in feed.entries[:30]:
+            for entry in feed.entries[:60]:
                 title = entry.get("title", "").strip()
                 img   = extract_image(entry)
                 if title and img:
@@ -355,6 +355,27 @@ def match_image(headline, image_bank, cat_key=""):
             best_score   = overlap
             best_img     = upscale_image_url(entry["image_url"])
             best_credit  = get_image_credit(entry.get("source", ""))
+
+    # Fallback pass: if no 3-token match, try distinctive long tokens (>=6 chars).
+    # Two shared distinctive terms (e.g. "longview"+"mill", "frankie"+"valli") are a
+    # confident match even when the rewritten headline shares few common words.
+    if not best_img:
+        distinctive = {w for w in hw if len(w) >= 6}
+        if distinctive:
+            for entry in image_bank:
+                source = entry.get("source", "").lower()
+                if any(b in source for b in blocked_sources):
+                    continue
+                entry_tokens = {w for w in tokens(entry["title"]) if len(w) >= 6}
+                overlap = len(distinctive & entry_tokens)
+                if overlap > best_score and overlap >= 2:
+                    entry_geo = tokens(entry["title"]) & geo_words
+                    if hl_geo and entry_geo and not (hl_geo & entry_geo):
+                        continue
+                    best_score  = overlap
+                    best_img    = upscale_image_url(entry["image_url"])
+                    best_credit = get_image_credit(entry.get("source", ""))
+
     return best_img, best_credit
 
 
@@ -810,6 +831,63 @@ Return ONLY valid JSON:
         print(f"  Hard age cap applied: hero is from {data['hero']['published']}")
     for card in data.get("cards", []):
         apply_age_cap(card)
+
+    # Stale-hero swap: if the chosen hero describes an OLD event (even with a refreshed
+    # timestamp), promote the freshest non-stale card to hero instead. Timestamp filtering
+    # alone misses stories that publishers re-touch, so we also scan the body content.
+    from email.utils import parsedate_to_datetime as _pdt
+    from datetime import timezone as _tzc, timedelta as _tdc
+    _now_c = datetime.now(_tzc.utc)
+    _yest  = (_now_c - _tdc(days=1)).strftime("%A").lower()
+    _2day  = (_now_c - _tdc(days=2)).strftime("%A").lower()
+    _3day  = (_now_c - _tdc(days=3)).strftime("%A").lower()
+    _4day  = (_now_c - _tdc(days=4)).strftime("%A").lower()
+    _stale_days = {_yest, _2day, _3day, _4day}
+    _fresh_override = ["today", "this morning", "this afternoon", "this evening",
+                       "hours ago", "minutes ago", "just announced", "just released",
+                       "breaking", "moments ago", "earlier today", "announced today",
+                       "arrested today", "ruled today", "confirmed today"]
+    _stale_phrases = ["yesterday", "two days ago", "three days ago", "earlier this week",
+                      "last week", "days ago", "happened on", "occurred on", "took place on"]
+
+    def _story_is_stale(item):
+        content = (item.get("teaser", "") + " " + item.get("body", "")[:800]).lower()
+        # Fresh-development language always wins (e.g. "suspect arrested today" in an old story)
+        if any(p in content for p in _fresh_override):
+            return False
+        # Past day-name reference (e.g. "on Thursday" when today is Saturday)
+        for day in _stale_days:
+            if f" {day} " in content or f" {day}," in content or f" {day}." in content or content.startswith(f"{day} "):
+                return True
+        # Stale-event phrases
+        if any(p in content for p in _stale_phrases):
+            return True
+        # Timestamp 24+ hours old via original RSS source
+        idx = item.get("source_index")
+        if idx is not None:
+            try:
+                pub_raw = headlines[int(idx) - 1].get("published", "")
+                if pub_raw:
+                    dt  = _pdt(pub_raw).astimezone(_tzc.utc)
+                    if (_now_c - dt).total_seconds() / 3600 >= 24:
+                        return True
+            except Exception:
+                pass
+        return False
+
+    if _story_is_stale(data["hero"]) and data.get("cards"):
+        for ci, card in enumerate(data["cards"]):
+            if not _story_is_stale(card):
+                old_hero = data["hero"]
+                print(f"  Stale hero swapped: '{old_hero.get('headline','')[:50]}' -> '{card.get('headline','')[:50]}'")
+                # Give the demoted hero a teaser (heroes lack one; cards need one)
+                if not old_hero.get("teaser"):
+                    _body = old_hero.get("body", "").strip()
+                    _first = _body.split(". ")[0].strip()
+                    old_hero["teaser"] = (_first[:160] + ".") if _first else ""
+                data["hero"] = card
+                data["cards"][ci] = old_hero
+                break
 
     return data
 
@@ -1803,6 +1881,14 @@ def main():
                             img = _fb[0]
                             data["hero"]["image_credit"] = _fb[1]
                             break
+            # Body-context bank match: the rewritten headline may share few words with
+            # the bank, but the body names the key entities. Try matching on those.
+            if not img:
+                body_context = (original_title or data["hero"]["headline"]) + " " + data["hero"].get("body", "")[:250]
+                _bb_img, _bb_credit = match_image(body_context, image_bank, cat_key)
+                if _bb_img:
+                    img = _bb_img
+                    data["hero"]["image_credit"] = _bb_credit
             # Final fallback: fetch the article's own og:image from its page.
             # This is the most reliable source — guaranteed to match the story.
             if not img:
@@ -2052,4 +2138,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-        
