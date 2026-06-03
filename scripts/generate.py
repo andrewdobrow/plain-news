@@ -2413,17 +2413,6 @@ def main():
         print("No categories generated. Aborting.")
         return
 
-    # Final pass — apply hosted fallback to any hero still missing an image
-    # (can happen when a promoted card becomes the hero after the image step)
-    for cat in all_categories:
-        hero = cat.get("hero", {})
-        if not hero.get("image_url"):
-            fb_img, fb_credit = get_fallback_image(cat.get("category_key","top_news"), hero.get("headline",""))
-            if fb_img:
-                hero["image_url"]    = fb_img
-                hero["image_credit"] = fb_credit
-                print(f"  {cat.get('category_key')}: fallback image applied after promotion")
-
     print("Fetching market data...")
     market_data, market_live = fetch_market_data()
 
@@ -2460,6 +2449,27 @@ def main():
     # Ensure no other category leads with the same story as the front page hero.
     # Any category whose hero duplicates the front page hero gets its next card promoted.
     promote_duplicate_heroes(top_cat, all_categories)
+
+    # Final pass — apply hosted fallback to any hero still missing an image.
+    # This MUST run after promote_duplicate_heroes(), because a card with no image
+    # can be promoted into a hero slot after the first image-assignment step.
+    for cat in all_categories:
+        hero = cat.get("hero", {})
+        if not hero.get("image_url"):
+            fb_img, fb_credit = get_fallback_image(cat.get("category_key", "top_news"), hero.get("headline", ""))
+            if fb_img:
+                hero["image_url"] = fb_img
+                hero["image_credit"] = fb_credit
+                print(f"  {cat.get('category_key')}: fallback image applied after hero promotion")
+
+    # Also protect the selected front-page hero in case top_cat points at a hero
+    # object that is missing an image after promotion/deduplication.
+    if top_cat and not top_cat.get("hero", {}).get("image_url"):
+        fb_img, fb_credit = get_fallback_image(top_cat.get("category_key", "top_news"), top_cat["hero"].get("headline", ""))
+        if fb_img:
+            top_cat["hero"]["image_url"] = fb_img
+            top_cat["hero"]["image_credit"] = fb_credit
+            print("  front page hero: fallback image applied after hero promotion")
 
     # Global deduplication — one story, one appearance across all categories
     import re as _re2
