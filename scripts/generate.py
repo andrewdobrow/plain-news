@@ -1658,8 +1658,8 @@ def render_index(all_categories, market_data=None, market_live=False, top_cat=No
             section_label = f'<div class="topic-section-label"><h2 class="county-label-text">{SECTION_LABELS[cat_key]}</h2></div>'
         return f"""
     <section class="hero{fade}" data-cat-hero="{cat_key}"{display}>
+      {section_label}
       <div class="hero-inner">
-        {section_label}
         {img_html}
         <span class="tag">{cat_label}</span>
         <h1>{hero["headline"]}</h1>
@@ -1671,8 +1671,8 @@ def render_index(all_categories, market_data=None, market_live=False, top_cat=No
         <div class="article-expand hero-expand">
           <div class="hero-expand-body">{paragraphs}</div>
           <div class="article-actions">
-            <button class="share-btn" data-headline="{hero["headline"].replace('"', "&quot;")}" data-url="{article_url}" onclick="event.stopPropagation();shareArticle(this)">Share &#8599;</button>
-            <button class="collapse-btn" onclick="event.stopPropagation();collapseThis(this)">Close &uarr;</button>
+            <button class="share-btn" data-headline="{hero["headline"].replace('"', "&quot;")}" data-url="{article_url}" onclick="shareArticle(this)">Share &#8599;</button>
+            <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
           </div>
         </div>
       </div>
@@ -1760,7 +1760,7 @@ def render_index(all_categories, market_data=None, market_live=False, top_cat=No
         </div>
         <div class="article-expand">
           <div class="card-expand-body">{card_paragraphs}</div>
-          <button class="collapse-btn" onclick="event.stopPropagation();collapseThis(this)">Close &uarr;</button>
+          <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
         </div>
       </div>"""
 
@@ -1788,80 +1788,6 @@ def render_index(all_categories, market_data=None, market_live=False, top_cat=No
   <meta name="twitter:description" content="Updated every hour. No ads. No paywalls. No agenda. Just the news that matters.">
   <meta name="twitter:image" content="https://plainnews.app/social-card.png">
   <link rel="stylesheet" href="style.css?v={datetime.utcnow().strftime('%Y%m%d%H')}">
-  <style>
-    /* Mobile hero safety override: keeps category SEO label, image, and headline in normal document flow. */
-    @media (max-width: 768px) {{
-      .hero {{
-        overflow: visible;
-      }}
-
-      .hero-inner {{
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-      }}
-
-      .hero .topic-section-label {{
-        order: 1;
-        position: relative;
-        z-index: 2;
-        display: block;
-        width: 100%;
-        clear: both;
-        margin: 0 0 16px;
-        padding: 0;
-      }}
-
-      .hero .county-label-text {{
-        display: block;
-        margin: 0;
-        line-height: 1.15;
-      }}
-
-      .hero .hero-image-wrap {{
-        order: 2;
-        position: relative;
-        z-index: 1;
-        display: block;
-        width: 100%;
-        float: none;
-        clear: both;
-        margin: 0 0 18px;
-      }}
-
-      .hero .hero-image {{
-        display: block;
-        width: 100%;
-        height: auto;
-        max-height: 260px;
-        object-fit: cover;
-      }}
-
-      .hero .tag {{
-        order: 3;
-      }}
-
-      .hero h1 {{
-        order: 4;
-        position: relative;
-        z-index: 2;
-        clear: both;
-        margin-top: 0;
-      }}
-
-      .hero .hero-summary {{
-        order: 5;
-      }}
-
-      .hero .hero-foot {{
-        order: 6;
-      }}
-
-      .hero .article-expand {{
-        order: 7;
-      }}
-    }}
-  </style>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-GZ5F591SL0"></script>
   <script>
@@ -2175,15 +2101,17 @@ def update_sitemap(archive_entries):
   </url>
   <url>
     <loc>{SITE_URL}/privacy.html</loc>
-    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>{SITE_URL}/terms.html</loc>
     <priority>0.3</priority>
   </url>"""
     article_urls = "".join(f"""
   <url>
     <loc>{SITE_URL}/articles/{e['slug']}.html</loc>
-    <changefreq>never</changefreq>
     <priority>0.7</priority>
-    <lastmod>{e['date']}</lastmod>
+    <lastmod>{e.get('lastmod') or e['date']}</lastmod>
   </url>""" for e in archive_entries)
     return f"""<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -2192,15 +2120,85 @@ def update_sitemap(archive_entries):
 </urlset>"""
 
 
+def update_news_sitemap(archive_entries):
+    """Google News sitemap — only articles from last 2 days."""
+    from datetime import timedelta
+    cutoff = (datetime.utcnow() - timedelta(days=2)).strftime("%Y-%m-%d")
+    recent = [e for e in archive_entries if e.get("date","") >= cutoff]
+    news_urls = ""
+    for e in recent:
+        pub_date = f"{e['date']}T00:00:00Z"
+        headline = e['headline'].replace('&','&amp;').replace('<','&lt;').replace('>','&gt;').replace('"','&quot;')
+        news_urls += f"""
+  <url>
+    <loc>{SITE_URL}/articles/{e['slug']}.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Plain</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>{pub_date}</news:publication_date>
+      <news:title>{headline}</news:title>
+    </news:news>
+  </url>"""
+    return f"""<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+{news_urls}
+</urlset>"""
+
+
+ARCHIVE_STOPS = {"the","a","an","in","of","for","to","and","or","on","at","is","was","are",
+                 "were","that","this","with","from","have","been","after","over","into","says",
+                 "said","will","than","more","also","when","s","county","florida","treasure",
+                 "coast","martin","lucie","indian","river","beach","port","city","news"}
+
+def _sig_tokens(text):
+    return frozenset(w.lower().strip(".,;:()") for w in text.split()
+                     if len(w) > 3 and w.lower() not in ARCHIVE_STOPS)
+
+def _is_duplicate_headline(headline, existing_token_sets):
+    new_tok = _sig_tokens(headline)
+    if len(new_tok) < 3:
+        return False
+    for ex_tok in existing_token_sets:
+        if len(new_tok & ex_tok) >= 4:
+            return True
+    return False
+
+
+def find_matching_entry(headline, archive, source_url=""):
+    """Find an existing archive entry for this story using two-tier matching:
+    1. source_url exact match (definitive — same RSS article, different Claude headline)
+    2. fuzzy headline match (catches rewrites and same story from different feeds)
+    Returns the matching entry dict or None."""
+    # Tier 1: source URL match
+    if source_url:
+        def norm_url(u):
+            return re.sub(r"[?#].*$", "", u.strip().rstrip("/").lower())
+        norm_src = norm_url(source_url)
+        for entry in archive:
+            if entry.get("source_url") and norm_url(entry["source_url"]) == norm_src:
+                return entry
+
+    # Tier 2: fuzzy headline match
+    tok = _sig_tokens(headline)
+    if len(tok) < 3:
+        return None
+    for entry in archive:
+        if len(tok & _sig_tokens(entry["headline"])) >= 4:
+            return entry
+    return None
+
 def write_archives(all_categories, top_cat):
     articles_dir = OUTPUT_DIR / "articles"
     archive_path = OUTPUT_DIR / "archive.json"
     articles_dir.mkdir(exist_ok=True)
 
-    archive        = load_archive(archive_path)
-    existing_slugs = {e["slug"] for e in archive}
-    today          = datetime.utcnow().strftime("%Y-%m-%d")
-    new_count      = 0
+    archive       = load_archive(archive_path)
+    today         = datetime.utcnow().strftime("%Y-%m-%d")
+    new_count     = 0
+    updated_count = 0
 
     heroes = [(top_cat["category_key"], top_cat["category_label"], top_cat["hero"])]
     for cat in all_categories:
@@ -2211,28 +2209,48 @@ def write_archives(all_categories, top_cat):
         headline = hero.get("headline", "").strip()
         if not headline:
             continue
-        base_slug = f"{today}-{slugify(headline)}"
-        slug = base_slug
-        counter = 1
-        while slug in existing_slugs:
-            slug = f"{base_slug}-{counter}"; counter += 1
-        (articles_dir / f"{slug}.html").write_text(
-            render_article_page(hero, cat_label, cat_key, today, slug), encoding="utf-8"
-        )
-        archive.append({
-            "slug": slug, "headline": headline,
-            "teaser": hero.get("teaser","") or hero.get("body","")[:180],
-            "category_key": cat_key, "category_label": cat_label,
-            "date": today, "image_url": hero.get("image_url",""),
-        })
-        existing_slugs.add(slug)
-        new_count += 1
+
+        source_url = hero.get("link", "")
+        existing   = find_matching_entry(headline, archive, source_url)
+
+        if existing:
+            # Same story — update existing page in place, keep original URL
+            slug = existing["slug"]
+            (articles_dir / f"{slug}.html").write_text(
+                render_article_page(hero, cat_label, cat_key, today, slug), encoding="utf-8"
+            )
+            existing["headline"]  = headline
+            existing["teaser"]    = hero.get("teaser","") or hero.get("body","")[:180]
+            existing["image_url"] = hero.get("image_url","")
+            existing["lastmod"]   = today
+            if source_url:
+                existing["source_url"] = source_url
+            updated_count += 1
+        else:
+            # New story — create new page
+            existing_slugs = {e["slug"] for e in archive}
+            base_slug = f"{today}-{slugify(headline)}"
+            slug = base_slug
+            counter = 1
+            while slug in existing_slugs:
+                slug = f"{base_slug}-{counter}"; counter += 1
+            (articles_dir / f"{slug}.html").write_text(
+                render_article_page(hero, cat_label, cat_key, today, slug), encoding="utf-8"
+            )
+            archive.append({
+                "slug": slug, "headline": headline,
+                "teaser": hero.get("teaser","") or hero.get("body","")[:180],
+                "category_key": cat_key, "category_label": cat_label,
+                "date": today, "lastmod": today,
+                "image_url": hero.get("image_url",""),
+            })
+            new_count += 1
 
     archive_path.write_text(json.dumps(archive, indent=2), encoding="utf-8")
     (OUTPUT_DIR / "archive.html").write_text(render_archive_page(archive), encoding="utf-8")
     (OUTPUT_DIR / "sitemap.xml").write_text(update_sitemap(archive), encoding="utf-8")
-    print(f"  Archived {new_count} new articles ({len(archive)} total)")
-
+    (OUTPUT_DIR / "news-sitemap.xml").write_text(update_news_sitemap(archive), encoding="utf-8")
+    print(f"  Archived {new_count} new, updated {updated_count} existing ({len(archive)} total)")
 
 def main():
     all_categories = []
