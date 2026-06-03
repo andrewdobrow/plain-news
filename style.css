@@ -81,6 +81,12 @@ main { max-width: 1200px; margin: 0 auto; padding: 44px 24px 80px; }
 
 /* -- HERO -- */
 .hero { border-bottom: 1px solid var(--border); padding-bottom: 40px; margin-bottom: 40px; cursor: pointer; }
+.topic-section-label { padding: 32px 0 0; margin-bottom: -8px; clear: both; }
+.county-label-text { font-family: "Fraunces", serif; font-size: 28px; font-weight: 600; color: var(--accent); margin: 0; letter-spacing: -0.03em; line-height: 1; }
+.article-actions { display: flex; align-items: center; gap: 20px; margin-top: 4px; }
+.article-actions .collapse-btn { padding: 0; }
+.share-btn { background: none; border: none; color: var(--accent); font-family: "DM Sans", sans-serif; font-size: 13px; font-weight: 500; cursor: pointer; padding: 0; transition: opacity 0.15s; }
+.share-btn:hover { opacity: 0.7; }
 .hero-inner { display: block; overflow: hidden; cursor: pointer; }
 figure.hero-image-wrap { float: right; margin: 6px 0 20px 32px; padding: 0; border: none; }
 .hero-image { width: 400px; height: 280px; object-fit: cover; border-radius: 8px; display: block; }
