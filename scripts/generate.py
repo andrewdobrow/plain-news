@@ -6,10 +6,12 @@ Fetches RSS headlines, ranks by urgency via Claude, writes articles, rebuilds si
 import os
 import json
 import re
+import hashlib
 import feedparser
 import anthropic
 from datetime import datetime
 from pathlib import Path
+from collections import defaultdict
 
 # -- CONFIG --
 
@@ -173,8 +175,45 @@ IMAGE_BANK_FEEDS = [
 ]
 CARDS_PER_CATEGORY     = 8
 OUTPUT_DIR             = Path(__file__).parent.parent
+SITE_URL               = "https://plainnews.app"
+SITE_NAME              = "Plain"
+
 
 client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+
+# ---------------------------------------------------------------------------
+# Local hosted fallback images — /images/fallback/ in the plain-news repo.
+# Three images per category, selected deterministically so the same headline
+# always gets the same image across pipeline runs.
+# ---------------------------------------------------------------------------
+FALLBACK_IMAGE_MAP = {
+    "top_news":     ["top_news-1.jpg",     "top_news-2.jpg",     "top_news-3.jpg"],
+    "world":        ["world-1.jpg",        "world-2.jpg",        "world-3.jpg"],
+    "us":           ["us-1.jpg",           "us-2.jpg",           "us-3.jpg"],
+    "politics":     ["politics-1.jpg",     "politics-2.jpg",     "politics-3.jpg"],
+    "business":     ["business-1.jpg",     "business-2.jpg",     "business-3.jpg"],
+    "tech":         ["tech-1.jpg",         "tech-2.jpg",         "tech-3.jpg"],
+    "sports":       ["sports-1.jpg",       "sports-2.jpg",       "sports-3.jpg"],
+    "entertainment":["entertainment-1.jpg","entertainment-2.jpg","entertainment-3.jpg"],
+}
+
+def get_fallback_image(category_key, headline=""):
+    """Pick a deterministic local fallback image for the given category.
+    Returns (url, credit) or ('', '') if no fallback images exist yet."""
+    base_names = FALLBACK_IMAGE_MAP.get(category_key, FALLBACK_IMAGE_MAP["top_news"])
+    available = []
+    for base in base_names:
+        stem = base.rsplit(".", 1)[0]
+        for ext in ["jpg", "jpeg", "png", "webp"]:
+            path = OUTPUT_DIR / "images" / "fallback" / f"{stem}.{ext}"
+            if path.exists():
+                available.append(f"{stem}.{ext}")
+                break
+    if not available:
+        return "", ""
+    seed = headline or category_key or "top_news"
+    idx  = int(hashlib.sha256(seed.encode("utf-8")).hexdigest(), 16) % len(available)
+    return f"{SITE_URL}/images/fallback/{available[idx]}", "Plain"
 
 
 # -- RSS FETCHING --
@@ -1589,6 +1628,16 @@ def render_index(all_categories, market_data=None, market_live=False, top_cat=No
     closed_html = '' if market_live else '<span class="ticker-closed">Market closed</span>'
 
     # -- Hero sections (one per category + "all") --
+    SECTION_LABELS = {
+        "world":         "World News",
+        "us":            "U.S. News",
+        "politics":      "Politics News",
+        "business":      "Business News",
+        "tech":          "Tech & Science News",
+        "sports":        "Sports News",
+        "entertainment": "Entertainment News",
+    }
+
     def hero_section(cat_key, cat_label, hero, visible):
         display    = "" if visible else ' style="display:none"'
         fade       = " fade-in" if visible else ""
@@ -1599,8 +1648,17 @@ def render_index(all_categories, market_data=None, market_live=False, top_cat=No
         credit_html = f'<figcaption class="img-credit">Photo: {img_credit}</figcaption>' if img_url and img_credit else ""
         img_html   = f'<figure class="hero-image-wrap"><img class="hero-image" src="{img_url}" alt="{hero["headline"]}" loading="lazy">{credit_html}</figure>' if img_url else ""
         pub_time   = hero.get("published") or f"Today, {timestamp}"
+        # Build permanent article URL for share button
+        today       = datetime.utcnow().strftime("%Y-%m-%d")
+        slug        = f"{today}-{slugify(hero.get('headline', ''))}"
+        article_url = f"{SITE_URL}/articles/{slug}.html"
+        # SEO section label for non-Top-News categories
+        section_label = ""
+        if cat_key in SECTION_LABELS:
+            section_label = f'<div class="topic-section-label"><h2 class="county-label-text">{SECTION_LABELS[cat_key]}</h2></div>'
         return f"""
     <section class="hero{fade}" data-cat-hero="{cat_key}"{display}>
+      {section_label}
       <div class="hero-inner">
         {img_html}
         <span class="tag">{cat_label}</span>
@@ -1612,7 +1670,10 @@ def render_index(all_categories, market_data=None, market_live=False, top_cat=No
         </div>
         <div class="article-expand hero-expand">
           <div class="hero-expand-body">{paragraphs}</div>
-          <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
+          <div class="article-actions">
+            <button class="share-btn" data-headline="{hero["headline"].replace('"', "&quot;")}" data-url="{article_url}" onclick="shareArticle(this)">Share &#8599;</button>
+            <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
+          </div>
         </div>
       </div>
     </section>"""
@@ -1750,6 +1811,7 @@ def render_index(all_categories, market_data=None, market_live=False, top_cat=No
         <button class="cat-btn" data-cat="tech">Tech & Science</button>
         <button class="cat-btn" data-cat="sports">Sports</button>
         <button class="cat-btn" data-cat="entertainment">Entertainment</button>
+        <a href="/archive.html" class="cat-btn" style="text-decoration:none">Archive</a>
       </nav>
       <div class="header-actions">
         <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">&#9790;</button>
@@ -1809,6 +1871,294 @@ def render_index(all_categories, market_data=None, market_live=False, top_cat=No
 
 
 # -- MAIN --
+
+def slugify(text):
+    text = text.lower().strip()
+    text = re.sub(r"[^\w\s-]", "", text)
+    text = re.sub(r"[\s_]+", "-", text)
+    text = re.sub(r"-+", "-", text)
+    return text[:80].strip("-")
+
+
+def load_archive(archive_path):
+    try:
+        if archive_path.exists():
+            return json.loads(archive_path.read_text(encoding="utf-8"))
+    except Exception:
+        pass
+    return []
+
+
+def render_article_page(hero, category_label, category_key, pub_date, slug):
+    """Render a permanent article page for a single Plain story."""
+    description = (hero.get("teaser") or hero.get("body", "")[:155]).replace('"', '')
+    image_url   = hero.get("image_url") or f"{SITE_URL}/social-card.png"
+    structured_data = {
+        "@context": "https://schema.org",
+        "@type":    "NewsArticle",
+        "headline": hero.get("headline", ""),
+        "description": description,
+        "image":    image_url,
+        "datePublished": pub_date,
+        "author":    {"@type": "Organization", "name": SITE_NAME},
+        "publisher": {
+            "@type": "Organization",
+            "name":  SITE_NAME,
+            "logo":  {"@type": "ImageObject", "url": f"{SITE_URL}/favicon.svg"},
+        },
+        "mainEntityOfPage": f"{SITE_URL}/articles/{slug}.html",
+    }
+    import json as _json
+    schema_tag = f'  <script type="application/ld+json">{_json.dumps(structured_data)}</script>'
+    body       = make_paragraphs(hero.get("body", ""))
+    img_html   = ""
+    if hero.get("image_url"):
+        credit   = f'<figcaption class="img-credit">Photo: {hero["image_credit"]}</figcaption>' if hero.get("image_credit") else ""
+        img_html = f'<figure class="article-hero-image"><img src="{hero["image_url"]}" alt="{hero["headline"]}" loading="eager">{credit}</figure>'
+
+    # Nav for article pages — all absolute URLs since page lives in /articles/
+    nav_links = " ".join([
+        f'<button class="cat-btn" data-cat="{k}" onclick="window.location=\'{SITE_URL}/?cat={k}\'">{l}</button>'
+        for k, l in [("all","Top News"),("world","World"),("us","U.S."),
+                     ("politics","Politics"),("business","Business"),
+                     ("tech","Tech & Science"),("sports","Sports"),("entertainment","Entertainment")]
+    ] + [f'<a href="{SITE_URL}/archive.html" class="cat-btn" style="text-decoration:none">Archive</a>'])
+
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{hero["headline"]} — Plain</title>
+  <meta name="description" content="{description}">
+  <link rel="canonical" href="{SITE_URL}/articles/{slug}.html">
+  <meta property="og:title" content="{hero["headline"]}">
+  <meta property="og:description" content="{description}">
+  <meta property="og:url" content="{SITE_URL}/articles/{slug}.html">
+  <meta property="og:image" content="{image_url}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="{image_url}">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+{schema_tag}
+  <style>
+    .article-wrap {{ max-width: 740px; margin: 0 auto; padding: 40px 24px 80px; }}
+    .article-meta {{ display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }}
+    .article-category {{ font-size: 10px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); }}
+    .article-date {{ font-size: 11px; color: var(--text-muted); }}
+    .article-headline {{ font-family: "Fraunces", serif; font-size: clamp(26px, 4vw, 42px); font-weight: 600; line-height: 1.15; letter-spacing: -.02em; color: var(--text); margin-bottom: 24px; }}
+    .article-hero-image {{ margin: 0 0 28px; }}
+    .article-hero-image img {{ width: 100%; max-height: 420px; object-fit: cover; border-radius: 8px; display: block; }}
+    .article-body p {{ font-size: 17px; line-height: 1.8; color: var(--text-secondary); margin-bottom: 20px; }}
+    .article-back {{ display: inline-block; font-size: 13px; color: var(--accent); text-decoration: none; margin-bottom: 32px; font-weight: 500; }}
+    .article-back:hover {{ opacity: .7; }}
+    .article-divider {{ border: none; border-top: 1px solid var(--border); margin: 40px 0; }}
+    .article-more {{ font-family: "Fraunces", serif; font-size: 20px; font-weight: 500; color: var(--text); margin-bottom: 16px; }}
+    .article-more-link {{ display: inline-block; color: var(--accent); font-size: 14px; font-weight: 500; text-decoration: none; }}
+    .article-more-link:hover {{ opacity: .7; }}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="{SITE_URL}" class="wordmark">plain</a>
+      <nav class="category-nav">{nav_links}</nav>
+    </div>
+  </header>
+  <main>
+    <div class="article-wrap">
+      <a href="{SITE_URL}" class="article-back">&larr; Back to Plain</a>
+      <div class="article-meta">
+        <span class="article-category">{category_label}</span>
+        <span class="article-date">{pub_date}</span>
+      </div>
+      <h1 class="article-headline">{hero["headline"]}</h1>
+      {img_html}
+      <div class="article-body">{body}</div>
+      <hr class="article-divider">
+      <p class="article-more">More news</p>
+      <a href="{SITE_URL}/?cat={category_key}" class="article-more-link">More {category_label} &rarr;</a>
+    </div>
+  </main>
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-wordmark">plain</span>
+      <div class="footer-links">
+        <a href="{SITE_URL}/archive.html">Archive</a>
+        <a href="{SITE_URL}/privacy.html">Privacy</a>
+        <a href="{SITE_URL}/terms.html">Terms</a>
+      </div>
+    </div>
+  </footer>
+  <script src="/main.js"></script>
+</body>
+</html>"""
+
+
+def render_archive_page(archive_entries):
+    by_month = defaultdict(list)
+    for e in sorted(archive_entries, key=lambda x: x.get("date",""), reverse=True):
+        try:
+            month = e["date"][:7]
+            label = datetime.strptime(month, "%Y-%m").strftime("%B %Y")
+        except Exception:
+            label = "Recent"; month = "recent"
+        by_month[(month, label)].append(e)
+
+    months_html = ""
+    for (month_key, month_label), entries in sorted(by_month.items(), reverse=True):
+        items = ""
+        for e in entries:
+            items += f"""
+        <li class="archive-item">
+          <a href="/articles/{e['slug']}.html" class="archive-link">
+            <span class="archive-cat">{e['category_label']}</span>
+            <span class="archive-headline">{e['headline']}</span>
+            <span class="archive-date">{e['date']}</span>
+          </a>
+        </li>"""
+        months_html += f"""
+      <div class="archive-month">
+        <h2 class="archive-month-label">{month_label}</h2>
+        <ul class="archive-list">{items}
+        </ul>
+      </div>"""
+
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Archive — Plain</title>
+  <meta name="description" content="Every story published on Plain, organized by month.">
+  <link rel="canonical" href="{SITE_URL}/archive.html">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <style>
+    .archive-wrap {{ max-width: 860px; margin: 0 auto; padding: 40px 24px 80px; }}
+    .archive-eyebrow {{ font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 14px; }}
+    .archive-headline {{ font-family: "Fraunces", serif; font-size: clamp(28px,4vw,40px); font-weight: 600; color: var(--text); margin-bottom: 8px; letter-spacing: -.02em; }}
+    .archive-sub {{ font-size: 15px; color: var(--text-secondary); margin-bottom: 48px; }}
+    .archive-month {{ margin-bottom: 40px; }}
+    .archive-month-label {{ font-family: "Fraunces", serif; font-size: 20px; font-weight: 500; color: var(--text); margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }}
+    .archive-list {{ list-style: none; }}
+    .archive-item {{ border-bottom: 1px solid var(--border); }}
+    .archive-link {{ display: flex; align-items: baseline; gap: 10px; padding: 12px 0; text-decoration: none; color: inherit; flex-wrap: wrap; }}
+    .archive-link:hover .archive-headline {{ color: var(--accent); }}
+    .archive-cat {{ font-size: 10px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); flex-shrink: 0; }}
+    .archive-headline {{ font-size: 15px; font-weight: 500; color: var(--text); flex: 1; line-height: 1.4; }}
+    .archive-date {{ font-size: 11px; color: var(--text-muted); flex-shrink: 0; margin-left: auto; }}
+    @media(max-width:580px) {{ .archive-date {{ display: none; }} }}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="{SITE_URL}" class="wordmark">plain</a>
+    </div>
+  </header>
+  <main>
+    <div class="archive-wrap">
+      <span class="archive-eyebrow">Archive</span>
+      <h1 class="archive-headline">All Articles</h1>
+      <p class="archive-sub">Every story published on Plain, organized by month.</p>
+      {months_html}
+    </div>
+  </main>
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-wordmark">plain</span>
+      <div class="footer-links">
+        <a href="{SITE_URL}/privacy.html">Privacy</a>
+        <a href="{SITE_URL}/terms.html">Terms</a>
+      </div>
+    </div>
+  </footer>
+  <script src="/main.js"></script>
+</body>
+</html>"""
+
+
+def update_sitemap(archive_entries):
+    now_str = datetime.utcnow().strftime("%Y-%m-%d")
+    static = f"""  <url>
+    <loc>{SITE_URL}/</loc>
+    <changefreq>hourly</changefreq>
+    <priority>1.0</priority>
+    <lastmod>{now_str}</lastmod>
+  </url>
+  <url>
+    <loc>{SITE_URL}/archive.html</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+    <lastmod>{now_str}</lastmod>
+  </url>
+  <url>
+    <loc>{SITE_URL}/privacy.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>"""
+    article_urls = "".join(f"""
+  <url>
+    <loc>{SITE_URL}/articles/{e['slug']}.html</loc>
+    <changefreq>never</changefreq>
+    <priority>0.7</priority>
+    <lastmod>{e['date']}</lastmod>
+  </url>""" for e in archive_entries)
+    return f"""<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{static}
+{article_urls}
+</urlset>"""
+
+
+def write_archives(all_categories, top_cat):
+    articles_dir = OUTPUT_DIR / "articles"
+    archive_path = OUTPUT_DIR / "archive.json"
+    articles_dir.mkdir(exist_ok=True)
+
+    archive        = load_archive(archive_path)
+    existing_slugs = {e["slug"] for e in archive}
+    today          = datetime.utcnow().strftime("%Y-%m-%d")
+    new_count      = 0
+
+    heroes = [(top_cat["category_key"], top_cat["category_label"], top_cat["hero"])]
+    for cat in all_categories:
+        if cat["category_key"] != top_cat["category_key"]:
+            heroes.append((cat["category_key"], cat["category_label"], cat["hero"]))
+
+    for cat_key, cat_label, hero in heroes:
+        headline = hero.get("headline", "").strip()
+        if not headline:
+            continue
+        base_slug = f"{today}-{slugify(headline)}"
+        slug = base_slug
+        counter = 1
+        while slug in existing_slugs:
+            slug = f"{base_slug}-{counter}"; counter += 1
+        (articles_dir / f"{slug}.html").write_text(
+            render_article_page(hero, cat_label, cat_key, today, slug), encoding="utf-8"
+        )
+        archive.append({
+            "slug": slug, "headline": headline,
+            "teaser": hero.get("teaser","") or hero.get("body","")[:180],
+            "category_key": cat_key, "category_label": cat_label,
+            "date": today, "image_url": hero.get("image_url",""),
+        })
+        existing_slugs.add(slug)
+        new_count += 1
+
+    archive_path.write_text(json.dumps(archive, indent=2), encoding="utf-8")
+    (OUTPUT_DIR / "archive.html").write_text(render_archive_page(archive), encoding="utf-8")
+    (OUTPUT_DIR / "sitemap.xml").write_text(update_sitemap(archive), encoding="utf-8")
+    print(f"  Archived {new_count} new articles ({len(archive)} total)")
+
 
 def main():
     all_categories = []
@@ -1898,6 +2248,13 @@ def main():
                     img = og_img
                     data["hero"]["image_credit"] = get_image_credit(link)
                     print(f"  Hero image via og:image fetch")
+            # Local hosted fallback — guaranteed image if all other sources fail
+            if not img:
+                fb_img, fb_credit = get_fallback_image(cat_key, data["hero"].get("headline", ""))
+                if fb_img:
+                    img = fb_img
+                    data["hero"]["image_credit"] = fb_credit
+                    print(f"  Hero image via local fallback")
             data["hero"]["image_url"] = img
 
             # Hero enrichment — combine all available sources
@@ -1963,6 +2320,17 @@ def main():
     if not all_categories:
         print("No categories generated. Aborting.")
         return
+
+    # Final pass — apply hosted fallback to any hero still missing an image
+    # (can happen when a promoted card becomes the hero after the image step)
+    for cat in all_categories:
+        hero = cat.get("hero", {})
+        if not hero.get("image_url"):
+            fb_img, fb_credit = get_fallback_image(cat.get("category_key","top_news"), hero.get("headline",""))
+            if fb_img:
+                hero["image_url"]    = fb_img
+                hero["image_credit"] = fb_credit
+                print(f"  {cat.get('category_key')}: fallback image applied after promotion")
 
     print("Fetching market data...")
     market_data, market_live = fetch_market_data()
@@ -2041,6 +2409,9 @@ def main():
 
     index_html = render_index(all_categories, market_data, market_live, top_cat=top_cat)
     (OUTPUT_DIR / "index.html").write_text(index_html, encoding="utf-8")
+
+    # Archive — permanent article pages, archive index, sitemap
+    write_archives(all_categories, top_cat)
 
     # Write data.json for the iOS app
     import json as _json
