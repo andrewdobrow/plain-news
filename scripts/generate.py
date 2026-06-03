@@ -1671,8 +1671,8 @@ def render_index(all_categories, market_data=None, market_live=False, top_cat=No
         <div class="article-expand hero-expand">
           <div class="hero-expand-body">{paragraphs}</div>
           <div class="article-actions">
-            <button class="share-btn" data-headline="{hero["headline"].replace('"', "&quot;")}" data-url="{article_url}" onclick="shareArticle(this)">Share &#8599;</button>
-            <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
+            <button class="share-btn" data-headline="{hero["headline"].replace('"', "&quot;")}" data-url="{article_url}" onclick="event.stopPropagation();shareArticle(this)">Share &#8599;</button>
+            <button class="collapse-btn" onclick="event.stopPropagation();collapseThis(this)">Close &uarr;</button>
           </div>
         </div>
       </div>
@@ -1760,7 +1760,7 @@ def render_index(all_categories, market_data=None, market_live=False, top_cat=No
         </div>
         <div class="article-expand">
           <div class="card-expand-body">{card_paragraphs}</div>
-          <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
+          <button class="collapse-btn" onclick="event.stopPropagation();collapseThis(this)">Close &uarr;</button>
         </div>
       </div>"""
 
