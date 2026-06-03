@@ -1,22 +1,3 @@
-// -- THEME --
-const html   = document.documentElement;
-const toggle = document.getElementById("themeToggle");
-
-function applyTheme(theme) {
-  html.setAttribute("data-theme", theme);
-  if (toggle) toggle.innerHTML = theme === "dark" ? "&#9728;" : "&#9790;";
-  localStorage.setItem("plain-theme", theme);
-}
-
-// Default to light — user can toggle to dark
-applyTheme(localStorage.getItem("plain-theme") || "light");
-
-if (toggle) {
-  toggle.addEventListener("click", () => {
-    applyTheme(html.getAttribute("data-theme") === "dark" ? "light" : "dark");
-  });
-}
-
 // -- EXPAND / COLLAPSE --
 function toggleExpand(btn) {
   const container = btn.closest(".hero, .article-card");
@@ -32,11 +13,12 @@ function expandContainer(container) {
   const isOpen  = expand.classList.contains("open");
 
   if (isOpen) {
-    expand.classList.remove("open");
-    if (summary) summary.style.display = "";
-    if (foot)    foot.style.display    = "";
-    if (btn)     btn.innerHTML = "Continue reading &darr;";
+    collapseContainer(container);
   } else {
+    // Store exactly where the top of this container is right now, before any
+    // content opens. We'll scroll back here on close.
+    container.dataset.scrollTarget = window.pageYOffset + container.getBoundingClientRect().top - 70;
+
     expand.classList.add("open");
     if (summary) summary.style.display = "none";
     if (foot)    foot.style.display    = "none";
@@ -45,26 +27,40 @@ function expandContainer(container) {
   }
 }
 
-function collapseThis(collapseBtn) {
-  const container = collapseBtn.closest(".hero, .article-card");
-  const expand    = container.querySelector(".article-expand");
-  const summary   = container.querySelector(".hero-summary, .card-summary");
-  const foot      = container.querySelector(".hero-foot, .card-foot");
-  const btn       = container.querySelector(".expand-btn");
+function collapseContainer(container) {
+  const expand  = container.querySelector(".article-expand");
+  const summary = container.querySelector(".hero-summary, .card-summary");
+  const foot    = container.querySelector(".hero-foot, .card-foot");
+  const btn     = container.querySelector(".expand-btn");
 
   expand.classList.remove("open");
   if (summary) summary.style.display = "";
   if (foot)    foot.style.display    = "";
   if (btn)     btn.innerHTML = "Continue reading &darr;";
+
+  // Scroll back to exactly where the user was when they opened this article
+  const target = parseFloat(container.dataset.scrollTarget);
+  if (!isNaN(target)) {
+    requestAnimationFrame(() => {
+      window.scrollTo({ top: Math.max(0, target), behavior: "auto" });
+    });
+  }
 }
 
-// Make entire card or hero clickable to toggle expand/collapse
+function collapseThis(collapseBtn) {
+  collapseContainer(collapseBtn.closest(".hero, .article-card"));
+}
+
+// Make entire card or hero clickable to toggle — but ignore clicks on any button or link
 document.addEventListener("click", e => {
+  // If the click landed on (or inside) any interactive control, let that control
+  // handle it and do NOT also toggle the container. This prevents the open-then-
+  // instantly-close double fire.
+  if (e.target.closest("button, a")) return;
+
   const container = e.target.closest(".article-card, .hero");
   if (!container) return;
   if (container.classList.contains("support-card")) return;
-  if (e.target.closest(".collapse-btn")) return;
-  if (e.target.closest(".expand-btn")) return;
   expandContainer(container);
 });
 
@@ -75,6 +71,28 @@ document.querySelectorAll(".cat-btn").forEach(btn => {
       document.querySelectorAll(".cat-btn").forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
       const cat = btn.dataset.cat;
+
+      // Update browser tab title when switching categories
+      const titleMap = {
+        "all":           "Plain | News without the noise",
+        "world":         "World News — Plain",
+        "us":            "U.S. News — Plain",
+        "politics":      "Politics — Plain",
+        "business":      "Business — Plain",
+        "tech":          "Tech & Science — Plain",
+        "sports":        "Sports — Plain",
+        "entertainment": "Entertainment — Plain",
+      };
+      if (titleMap[cat]) document.title = titleMap[cat];
+
+      // Persist the active category in the URL so a refresh stays on this section
+      // instead of resetting to Top News.
+      try {
+        const newUrl = cat && cat !== "all"
+          ? `${window.location.pathname}?cat=${cat}`
+          : window.location.pathname;
+        history.replaceState(null, "", newUrl);
+      } catch (e) {}
 
       // Switch hero sections
       document.querySelectorAll("[data-cat-hero]").forEach(hero => {
@@ -119,10 +137,19 @@ document.querySelectorAll(".cat-btn").forEach(btn => {
 
 // -- INITIAL STATE: show only Top News (deduped) cards on load --
 document.addEventListener("DOMContentLoaded", () => {
+  // Default: show only top news cards
   document.querySelectorAll(".article-card").forEach(card => {
     if (card.classList.contains("support-card")) return;
     card.style.display = card.dataset.topnews === "true" ? "block" : "none";
   });
+
+  // If arriving from another page with ?cat= query param, auto-activate that category
+  const params = new URLSearchParams(window.location.search);
+  const catParam = params.get("cat");
+  if (catParam) {
+    const btn = document.querySelector(`.cat-btn[data-cat="${catParam}"]`);
+    if (btn) btn.click();
+  }
 });
 
 // -- COUNTDOWN --
@@ -134,3 +161,25 @@ function updateCountdown() {
 }
 updateCountdown();
 setInterval(updateCountdown, 60000);
+
+// -- SHARE --
+function shareArticle(btn) {
+  const headline  = btn.getAttribute("data-headline") || document.title;
+  const url       = btn.getAttribute("data-url") || window.location.origin + "/";
+  const siteName  = document.querySelector(".wordmark")?.textContent?.trim() || "Plain";
+  const shareText = headline + " — read more on " + siteName;
+
+  if (navigator.share) {
+    navigator.share({ title: headline, text: shareText, url: url }).catch(() => {});
+    return;
+  }
+
+  const clipText = shareText + "\n" + url;
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(clipText).then(() => {
+      const original = btn.innerHTML;
+      btn.innerHTML = "Copied &#10003;";
+      setTimeout(() => { btn.innerHTML = original; }, 1800);
+    }).catch(() => {});
+  }
+}
