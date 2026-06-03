@@ -1658,8 +1658,8 @@ def render_index(all_categories, market_data=None, market_live=False, top_cat=No
             section_label = f'<div class="topic-section-label"><h2 class="county-label-text">{SECTION_LABELS[cat_key]}</h2></div>'
         return f"""
     <section class="hero{fade}" data-cat-hero="{cat_key}"{display}>
-      {section_label}
       <div class="hero-inner">
+        {section_label}
         {img_html}
         <span class="tag">{cat_label}</span>
         <h1>{hero["headline"]}</h1>
@@ -1788,6 +1788,66 @@ def render_index(all_categories, market_data=None, market_live=False, top_cat=No
   <meta name="twitter:description" content="Updated every hour. No ads. No paywalls. No agenda. Just the news that matters.">
   <meta name="twitter:image" content="https://plainnews.app/social-card.png">
   <link rel="stylesheet" href="style.css?v={datetime.utcnow().strftime('%Y%m%d%H')}">
+  <style>
+    /* Mobile hero safety override: keeps category SEO label, image, and headline in normal document flow. */
+    @media (max-width: 768px) {
+      .hero {
+        overflow: visible;
+      }
+
+      .hero-inner {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .hero .topic-section-label {
+        order: 1;
+        position: relative;
+        z-index: 2;
+        margin: 0 0 14px;
+      }
+
+      .hero .hero-image-wrap {
+        order: 2;
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        margin: 0 0 18px;
+      }
+
+      .hero .hero-image {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-height: 260px;
+        object-fit: cover;
+      }
+
+      .hero .tag {
+        order: 3;
+      }
+
+      .hero h1 {
+        order: 4;
+        position: relative;
+        z-index: 2;
+        clear: both;
+        margin-top: 0;
+      }
+
+      .hero .hero-summary {
+        order: 5;
+      }
+
+      .hero .hero-foot {
+        order: 6;
+      }
+
+      .hero .article-expand {
+        order: 7;
+      }
+    }
+  </style>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-GZ5F591SL0"></script>
   <script>
