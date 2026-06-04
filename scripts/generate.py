@@ -710,12 +710,25 @@ def generate_category_content(category_key, category_label, headlines):
     # Final nuclear sanitization — encode to ASCII and back to strip any remaining bad chars
     headlines_text = headlines_text.encode("ascii", "ignore").decode("ascii")
 
-    prompt = f"""Top headlines for {category_label}:
+    # Category-specific hero selection rules
+    cat_rules = {
+        "world": "CRITICAL for World: pick a story about international geopolitics, foreign government actions, wars, diplomacy, or global crises. A celebrity death or cultural figure dying belongs in Entertainment, not World. Skip any story that is primarily about a single person's death unless they were a head of state or major political figure.",
+        "business": "CRITICAL for Business: pick a story about markets, economic policy, major corporate decisions, trade, financial regulation, or industry-wide developments. An accident at a factory or airport (Boeing gear collapse, workplace injury) is NOT a business story — it belongs in U.S. or World. Business heroes should be about economic consequences, not physical accidents.",
+        "us": "CRITICAL for U.S.: pick a story about something happening on US soil that affects American life broadly — policy, law, public safety, society. Avoid duplicating the Politics hero.",
+        "politics": "CRITICAL for Politics: pick a story where the US government, Congress, White House, or Supreme Court is the PRIMARY actor. Foreign political news without direct US government involvement belongs in World.",
+        "tech": "CRITICAL for Tech & Science: pick a story about technology products, companies, research, or scientific discoveries. Avoid general business stories that happen to involve a tech company.",
+        "entertainment": "CRITICAL for Entertainment: this is the correct home for celebrity deaths, cultural figures, film, music, television, and arts. A major author or artist dying belongs HERE, not in World.",
+        "sports": "CRITICAL for Sports: pick an actual sports result, trade, signing, or athletic achievement. Avoid crime or non-sports stories even if they involve athletes.",
+    }
+    rule = cat_rules.get(category_key, "")
+    rule_line = f"\n\nCATEGORY RULE: {rule}" if rule else ""
+
+    prompt = f"""Top headlines for {category_label}:{rule_line}
 
 {headlines_text}
 
 Tasks:
-1. Pick the single most important/urgent story.
+1. Pick the single most important/urgent story. Follow the CATEGORY RULE above strictly — if the most urgent story violates the category rule, pick the next best story that fits.
 2. Write an accurate headline reflecting the current state (frame updates as updates, not new events).
 3. Write a 420-480 word factual article in FOUR to FIVE full paragraphs. Use only confirmed facts from the source, written in your own words. This is the lead front-page story, so it must read as a complete article, not a brief summary. Cover the what, who, when, where, and the broader context or consequences. Do NOT write only two short paragraphs. If the source facts are limited, expand on confirmed context (background, why it matters, what happens next) rather than padding with filler or absence language.
 4. For the next {CARDS_PER_CATEGORY} most important stories write a teaser (one sentence), body (two short paragraphs ~120 words), and urgency_score (1-10). The cards MUST be different stories from the hero — never repeat or reframe the hero story as a card. Card bodies must only contain confirmed facts from the headline and summary. Never use phrases like "no information was disclosed", "details were not available", "it remains unclear", "has not been confirmed", "officials have not commented", or any similar absence language. If details are limited write fewer words and stop — do not pad.
