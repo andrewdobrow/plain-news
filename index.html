@@ -3,26 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Plain - News without the noise</title>
+  <title>Plain — News without the noise</title>
+  <meta name="description" content="Plain delivers the stories that matter — no ads, no paywall, no agenda. Read in minutes, not hours. Free iOS app.">
+  <meta property="og:title" content="Plain — News without the noise">
+  <meta property="og:description" content="No ads. No paywall. No agenda. Just the news.">
+  <meta property="og:image" content="https://plainnews.app/social-card.png">
+  <meta property="og:url" content="https://plainnews.app">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://plainnews.app/social-card.png">
+  <link rel="icon" href="/favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,300&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
-  <meta name="description" content="Plain: House rejects Lebanon war powers resolution in bipartisan vote — Updated every hour. No ads. No agenda. Always free.">
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://plainnews.app">
-  <meta property="og:title" content="Plain — News without the noise">
-  <meta property="og:description" content="Updated every hour. No ads. No paywalls. No agenda. Just the news that matters.">
-  <meta property="og:image" content="https://plainnews.app/social-card.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Plain — News without the noise">
-  <meta name="twitter:description" content="Updated every hour. No ads. No paywalls. No agenda. Just the news that matters.">
-  <meta name="twitter:image" content="https://plainnews.app/social-card.png">
-  <link rel="stylesheet" href="style.css?v=2026060422">
-  <!-- Google tag (gtag.js) -->
+  <!-- Google tag -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-GZ5F591SL0"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -30,822 +23,470 @@
     gtag('js', new Date());
     gtag('config', 'G-GZ5F591SL0');
   </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --accent:      #C84B31;
+      --bg:          #FAFAF8;
+      --bg-card:     #F2F2EF;
+      --text:        #0F0F0E;
+      --text-2:      #3A3A36;
+      --text-muted:  #9B9B93;
+      --border:      #E4E4DF;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg:         #0F0F0E;
+        --bg-card:    #1A1A18;
+        --text:       #F5F5F2;
+        --text-2:     #C8C8C0;
+        --text-muted: #6B6B65;
+        --border:     #2A2A27;
+      }
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ---- NAV ---- */
+    nav {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 28px 32px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .wordmark {
+      font-family: "Fraunces", serif;
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: -.02em;
+      text-decoration: none;
+    }
+
+    .nav-link {
+      font-size: 13px;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color .15s;
+    }
+
+    .nav-link:hover { color: var(--text); }
+
+    /* ---- HERO ---- */
+    .hero {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 72px 32px 80px;
+      display: grid;
+      grid-template-columns: 1fr 480px;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero-eyebrow {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 22px;
+    }
+
+    .hero-headline {
+      font-family: "Fraunces", serif;
+      font-size: clamp(44px, 5.5vw, 68px);
+      font-weight: 500;
+      line-height: 1.05;
+      letter-spacing: -.03em;
+      color: var(--text);
+      margin-bottom: 22px;
+    }
+
+    .hero-headline em {
+      font-style: italic;
+      font-weight: 300;
+      color: var(--text-2);
+    }
+
+    .hero-sub {
+      font-size: 18px;
+      color: var(--text-2);
+      line-height: 1.7;
+      margin-bottom: 40px;
+      max-width: 420px;
+    }
+
+    .cta-row {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .badge-link img {
+      height: 46px;
+      display: block;
+    }
+
+    .web-link {
+      font-size: 13px;
+      color: var(--text-muted);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 2px;
+      transition: color .15s, border-color .15s;
+    }
+
+    .web-link:hover {
+      color: var(--text);
+      border-color: var(--text-muted);
+    }
+
+    /* ---- PHONE MOCKUPS ---- */
+    .phones {
+      position: relative;
+      height: 500px;
+    }
+
+    .phone {
+      position: absolute;
+      border-radius: 40px;
+      overflow: hidden;
+      border: 1.5px solid var(--border);
+      background: var(--bg-card);
+    }
+
+    .phone img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+
+    .phone-front {
+      width: 220px;
+      height: 440px;
+      left: 60px;
+      top: 30px;
+      z-index: 2;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    }
+
+    .phone-back {
+      width: 210px;
+      height: 420px;
+      right: 30px;
+      top: 20px;
+      z-index: 1;
+      opacity: 0.7;
+      transform: rotate(3deg);
+    }
+
+    /* ---- DIVIDER ---- */
+    .section-divider {
+      max-width: 1000px;
+      margin: 0 auto;
+      border: none;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ---- FEATURES ---- */
+    .features {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 72px 32px 80px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px 48px;
+    }
+
+    .feat-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--bg-card);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      font-size: 18px;
+    }
+
+    .feat-title {
+      font-family: "Fraunces", serif;
+      font-size: 19px;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 8px;
+      letter-spacing: -.01em;
+    }
+
+    .feat-body {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
+
+    /* ---- PULLQUOTE ---- */
+    .pullquote {
+      max-width: 1000px;
+      margin: 0 auto 0;
+      padding: 0 32px 80px;
+    }
+
+    .pullquote-inner {
+      background: var(--bg-card);
+      border-radius: 20px;
+      padding: 48px 56px;
+      text-align: center;
+    }
+
+    .pullquote-text {
+      font-family: "Fraunces", serif;
+      font-size: clamp(22px, 3vw, 32px);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--text);
+      line-height: 1.45;
+      margin-bottom: 18px;
+      letter-spacing: -.01em;
+    }
+
+    .pullquote-attr {
+      font-size: 12px;
+      color: var(--text-muted);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    /* ---- BOTTOM CTA ---- */
+    .bottom-cta {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 32px 80px;
+      text-align: center;
+    }
+
+    .bottom-headline {
+      font-family: "Fraunces", serif;
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 500;
+      letter-spacing: -.02em;
+      color: var(--text);
+      margin-bottom: 14px;
+    }
+
+    .bottom-sub {
+      font-size: 16px;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+    }
+
+    .bottom-cta .badge-link img { height: 52px; margin: 0 auto; }
+
+    /* ---- FOOTER ---- */
+    footer {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 24px 32px 32px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .footer-logo {
+      font-family: "Fraunces", serif;
+      font-size: 20px;
+      color: var(--accent);
+      font-weight: 600;
+      letter-spacing: -.02em;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      font-size: 12px;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color .15s;
+    }
+
+    .footer-links a:hover { color: var(--text); }
+
+    /* ---- ANIMATIONS ---- */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-left > * {
+      animation: fadeUp .6s ease both;
+    }
+
+    .hero-eyebrow  { animation-delay: .05s; }
+    .hero-headline { animation-delay: .12s; }
+    .hero-sub      { animation-delay: .20s; }
+    .cta-row       { animation-delay: .28s; }
+
+    .phones {
+      animation: fadeUp .7s .15s ease both;
+    }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 820px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 48px 24px 56px;
+        gap: 48px;
+      }
+
+      .phones {
+        height: 320px;
+        order: -1;
+      }
+
+      .phone-front {
+        width: 150px;
+        height: 300px;
+        left: 40px;
+        top: 10px;
+      }
+
+      .phone-back {
+        width: 145px;
+        height: 290px;
+        right: 20px;
+        top: 10px;
+      }
+
+      .features {
+        grid-template-columns: 1fr 1fr;
+        padding: 56px 24px 64px;
+        gap: 32px;
+      }
+
+      .pullquote { padding: 0 24px 64px; }
+      .pullquote-inner { padding: 36px 28px; }
+      .bottom-cta { padding: 0 24px 64px; }
+      footer { padding: 24px 24px 32px; }
+    }
+
+    @media (max-width: 540px) {
+      .features { grid-template-columns: 1fr; }
+      footer { flex-direction: column; align-items: flex-start; }
+      .footer-links { gap: 16px; }
+    }
+  </style>
 </head>
 <body>
 
-  <header>
-    <div class="header-inner">
-      <a href="/" class="wordmark">plain</a>
-      <nav class="category-nav">
-        <button class="cat-btn active" data-cat="all">Top News</button>
-        <button class="cat-btn" data-cat="world">World</button>
-        <button class="cat-btn" data-cat="us">U.S.</button>
-        <button class="cat-btn" data-cat="politics">Politics</button>
-        <button class="cat-btn" data-cat="business">Business</button>
-        <button class="cat-btn" data-cat="tech">Tech & Science</button>
-        <button class="cat-btn" data-cat="sports">Sports</button>
-        <button class="cat-btn" data-cat="entertainment">Entertainment</button>
-        <a href="/archive.html" class="cat-btn" style="text-decoration:none">Archive</a>
-      </nav>
-      <div class="header-actions">
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">&#9790;</button>
-        <a href="https://apps.apple.com/us/app/plain-news-without-the-noise/id6774256916" target="_blank" class="appstore-btn" aria-label="Download on the App Store"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" style="height:28px;display:block;"></a>
-        <button class="support-btn" onclick="window.open('https://buymeacoffee.com/andrewdobrow','_blank')">Support Plain</button>
+  <nav>
+    <a href="/" class="wordmark">plain</a>
+    <a href="/news.html" class="nav-link">Read on web &rarr;</a>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-left">
+      <span class="hero-eyebrow">Free iOS app</span>
+      <h1 class="hero-headline">News without<br><em>the noise.</em></h1>
+      <p class="hero-sub">Plain delivers the stories that matter — no ads, no paywall, no agenda. Just the news.</p>
+      <div class="cta-row">
+        <a href="https://apps.apple.com/us/app/plain-news-without-the-noise/id6774256916" class="badge-link" target="_blank">
+          <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+        </a>
+        <a href="/news.html" class="web-link">or read on the web</a>
       </div>
     </div>
-  </header>
+    <div class="phones">
+      <div class="phone phone-back">
+        <img src="/assets/screenshot-2.png" alt="Plain app showing news feed" onerror="this.parentElement.style.background='var(--bg-card)'">
+      </div>
+      <div class="phone phone-front">
+        <img src="/assets/screenshot-1.png" alt="Plain app showing top story" onerror="this.parentElement.style.background='var(--bg-card)'">
+      </div>
+    </div>
+  </section>
 
-  <div class="update-bar">
-    Updated at <strong>6:00 PM ET</strong> &mdash; Next update in <strong id="countdown">57 min</strong>
+  <hr class="section-divider">
+
+  <section class="features">
+    <div class="feat">
+      <div class="feat-icon">&#128338;</div>
+      <h2 class="feat-title">Read in minutes</h2>
+      <p class="feat-body">Clean summaries, no rabbit holes, no algorithm keeping you scrolling.</p>
+    </div>
+    <div class="feat">
+      <div class="feat-icon">&#128683;</div>
+      <h2 class="feat-title">No ads. Ever.</h2>
+      <p class="feat-body">Supported by readers, not advertisers. No tracking, no sponsored content.</p>
+    </div>
+    <div class="feat">
+      <div class="feat-icon">&#128275;</div>
+      <h2 class="feat-title">No paywall</h2>
+      <p class="feat-body">The free tier gives you real news. Plain Pro unlocks every category.</p>
+    </div>
+    <div class="feat">
+      <div class="feat-icon">&#128200;</div>
+      <h2 class="feat-title">Live markets</h2>
+      <p class="feat-body">S&amp;P 500, Dow, Nasdaq, and oil — updating alongside the news that moves them.</p>
+    </div>
+    <div class="feat">
+      <div class="feat-icon">&#127760;</div>
+      <h2 class="feat-title">8 categories</h2>
+      <p class="feat-body">World, U.S., Politics, Business, Tech &amp; Science, Sports, Entertainment.</p>
+    </div>
+    <div class="feat">
+      <div class="feat-icon">&#127770;</div>
+      <h2 class="feat-title">Dark mode</h2>
+      <p class="feat-body">Beautiful in light or dark. Follows your system preference automatically.</p>
+    </div>
+  </section>
+
+  <div class="pullquote">
+    <div class="pullquote-inner">
+      <p class="pullquote-text">"Signal over noise, always."</p>
+      <p class="pullquote-attr">Low Signal Labs &mdash; builders of Plain</p>
+    </div>
   </div>
 
-  <div class="market-ticker">
-    <div class="ticker-inner">
-      <span class="ticker-label">Markets</span>
-      <span class="ticker-item">S&amp;P 500 <span class="ticker-val">7,584.31 <span class="ticker-up">+0.41%</span></span></span> <span class="ticker-item">DOW <span class="ticker-val">51,561.93 <span class="ticker-up">+1.73%</span></span></span> <span class="ticker-item">NASDAQ <span class="ticker-val">26,830.96 <span class="ticker-down">-0.09%</span></span></span> <span class="ticker-item">Oil <span class="ticker-val">92.91 <span class="ticker-down">-0.14%</span></span></span>
-      <span class="ticker-closed">Market closed</span>
-    </div>
+  <div class="bottom-cta">
+    <h2 class="bottom-headline">Start reading Plain today.</h2>
+    <p class="bottom-sub">Free download. No account required.</p>
+    <a href="https://apps.apple.com/us/app/plain-news-without-the-noise/id6774256916" class="badge-link" target="_blank">
+      <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+    </a>
   </div>
-
-  <main>
-    
-    <section class="hero fade-in" data-cat-hero="all">
-      
-      <div class="hero-inner">
-        <figure class="hero-image-wrap"><img class="hero-image" src="https://thehill.com/wp-content/uploads/sites/2/2025/09/tlaibrashida_091825gn01_w.jpg?w=900" alt="House rejects Lebanon war powers resolution in bipartisan vote" loading="lazy"><figcaption class="img-credit">Photo: BBC News</figcaption></figure>
-        <span class="tag">Politics</span>
-        <h1>House rejects Lebanon war powers resolution in bipartisan vote</h1>
-        <p class="hero-summary">The House of Representatives on Thursday narrowly rejected a war powers resolution that would have prevented further military action against Iran, with the vote falling just short of passage at 213-214.
-
-The resolution, introduced by Rep. Greg Meeks, the top Democrat on the House Foreign Affairs Committee, needed at least two additional votes to pass, as tied votes fail in the...</p>
-        <div class="hero-foot">
-          <span class="meta">A few minutes ago</span>
-          <button class="expand-btn" onclick="toggleExpand(this)">Continue reading &darr;</button>
-        </div>
-        <div class="article-expand hero-expand">
-          <div class="hero-expand-body"><p>The House of Representatives on Thursday narrowly rejected a war powers resolution that would have prevented further military action against Iran, with the vote falling just short of passage at 213-214.</p><p>The resolution, introduced by Rep. Greg Meeks, the top Democrat on the House Foreign Affairs Committee, needed at least two additional votes to pass, as tied votes fail in the chamber. One Republican member voted present.</p><p>The vote revealed significant shifts in Democratic support for the measure compared to a previous resolution in March. Three Democrats who had opposed the earlier attempt changed course: Henry Cuellar of Texas, Greg Landsman of Ohio, and Juan Vargas of California all voted in favor this time. However, Jared Golden of Maine was the sole Democrat to vote against the resolution, while Thomas Massie of Kentucky remained the only Republican supporting it. Warren Davidson of Ohio voted present after supporting the measure last month.</p><p>The Democrats who switched their positions cited concerns about the Trump administration's handling of the conflict. Landsman stated that while he trusted military planners to achieve their objectives, "it's time to be done" before the United States becomes entangled in a prolonged engagement.</p><p>Cuellar announced his support after Trump warned that a "whole civilization will die" if Iran did not meet his demands. The congressman expressed concern about the administration's rhetoric, saying America must maintain "restraint and moral clarity." He added that information provided about U.S. strategy had been insufficient.</p><p>Golden, who is retiring after his current term, took the opposite view. He argued that passing such a resolution would "weaken our hand" during intense ongoing negotiations between the U.S. and Iran. His statement noted that peace talks were occurring during a two-week ceasefire that was established before the vote.</p><p>The ceasefire followed discussions between Vice President JD Vance and Iranian officials, though those talks in Pakistan failed to reach agreement on extending the truce beyond its April 22 expiration date. The U.S. said Tehran refused to abandon its nuclear program. However, indirect negotiations continued this week, with Pakistan's army chief traveling to Iran to mediate further discussions.</p><p>The narrow rejection of the resolution reflects deep divisions within Congress over military involvement in the region. While Democrats showed increased willingness to challenge continued military action, they remained unable to unite sufficiently to force a change in policy. The vote demonstrates ongoing tension between congressional war powers authority and executive branch control over military operations abroad.</p></div>
-          <div class="article-actions">
-            <button class="share-btn" data-headline="House rejects Lebanon war powers resolution in bipartisan vote" data-url="https://plainnews.app/articles/2026-06-04-house-rejects-resolution-to-remove-troops-from-lebanon.html" onclick="shareArticle(this)">Share &#8599;</button>
-            <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="hero" data-cat-hero="world" style="display:none">
-      <div class="topic-section-label"><h2 class="county-label-text">World News</h2></div>
-      <div class="hero-inner">
-        <figure class="hero-image-wrap"><img class="hero-image" src="https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/2b28/live/06172180-6052-11f1-9e88-654a746d9a45.jpg" alt="Zelensky Proposes Direct Talks With Putin to End War" loading="lazy"><figcaption class="img-credit">Photo: BBC News</figcaption></figure>
-        <span class="tag">World</span>
-        <h1>Zelensky Proposes Direct Talks With Putin to End War</h1>
-        <p class="hero-summary">Ukrainian President Volodymyr Zelensky has called for face-to-face negotiations with Russian President Vladimir Putin in a public letter addressed directly to the Russian leader. The letter marks the first time Zelensky has written publicly to Putin since Russia launched its full-scale invasion in 2022, and represents a significant diplomatic overture.
-
-In the correspondence, Z...</p>
-        <div class="hero-foot">
-          <span class="meta">A few minutes ago</span>
-          <button class="expand-btn" onclick="toggleExpand(this)">Continue reading &darr;</button>
-        </div>
-        <div class="article-expand hero-expand">
-          <div class="hero-expand-body"><p>Ukrainian President Volodymyr Zelensky has called for face-to-face negotiations with Russian President Vladimir Putin in a public letter addressed directly to the Russian leader. The letter marks the first time Zelensky has written publicly to Putin since Russia launched its full-scale invasion in 2022, and represents a significant diplomatic overture.</p><p>In the correspondence, Zelensky proposes a meeting in a neutral third country and calls for a full ceasefire. The letter serves as a sweeping criticism of Putin's 26 years in power while simultaneously arguing that only direct engagement between the two nations could resolve the conflict.</p><p>The proposal comes as diplomatic efforts continue on multiple fronts. Trump has stated that both sides will need to "make compromises" to reach a resolution. However, the Kremlin has not yet publicly responded to Zelensky's direct appeal for negotiations.</p><p>The path to peace remains complicated by fundamental disagreements between the parties. Russian officials continue to demand that Ukraine withdraw from the eastern Donbas region as a precondition for serious talks. Ukraine has firmly rejected any suggestion that it would unilaterally abandon its own territory, a position reinforced by recent battlefield developments where Russian advances have largely stalled.</p><p>Analysts suggest that a diplomatic breakthrough appears unlikely in the near term. Both armies show signs of mounting exhaustion while sustaining heavy casualties. The conflict has also shifted to strikes on energy infrastructure, indicating the grinding nature of the current military situation.</p><p>Russia has also proposed mediators to facilitate discussions. Putin recently suggested that Gerhard Schröder, the former German chancellor and longtime Putin ally, could serve as a European mediator. However, the European Union has dismissed this idea. EU foreign policy chief Kaja Kallas stated that allowing Russia to appoint a negotiator on Europe's behalf would be unwise. She noted that Schröder's extensive work as a "high-level lobbyist for Russian state-owned companies," including roles with Nord Stream gas pipelines and Russian oil company Rosneft, disqualified him from serving as an impartial mediator.</p><p>German officials echoed these concerns. Defense Minister Boris Pistolius suggested that Putin's recent peace remarks may be a strategic deception aimed at diverting attention from Russian military weaknesses. Germany's Europe Minister Gunther Krichbaum questioned whether Schröder could act as an honest broker given his close relationship with Putin.</p><p>European leaders have increasingly insisted that any substantive peace negotiations must include Ukraine and that no decisions about the country should occur without Kyiv's involvement. Many European capitals fear that discussions between the US, Russia, and Ukraine have made limited progress while leaving the EU sidelined and vulnerable to accepting agreements it opposes.</p><p>A US-brokered ceasefire was scheduled to expire recently, with Moscow rejecting proposals to extend the truce.</p></div>
-          <div class="article-actions">
-            <button class="share-btn" data-headline="Zelensky Proposes Direct Talks With Putin to End War" data-url="https://plainnews.app/articles/2026-06-04-zelensky-proposes-direct-talks-with-putin-to-end-war.html" onclick="shareArticle(this)">Share &#8599;</button>
-            <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="hero" data-cat-hero="business" style="display:none">
-      <div class="topic-section-label"><h2 class="county-label-text">Business News</h2></div>
-      <div class="hero-inner">
-        <figure class="hero-image-wrap"><img class="hero-image" src="https://plainnews.app/images/fallback/business-3.jpg" alt="Dow Surges Nearly 900 Points to Record Close as Investors Shift From Tech" loading="lazy"><figcaption class="img-credit">Photo: Plain</figcaption></figure>
-        <span class="tag">Business</span>
-        <h1>Dow Surges Nearly 900 Points to Record Close as Investors Shift From Tech</h1>
-        <p class="hero-summary">The Dow Jones Industrial Average climbed nearly 900 points to reach a record closing level on Wednesday, marking one of its strongest single-day performances this year. The gain reflected a significant rotation in investor capital away from technology stocks and toward traditional sectors including industrials and financials.
-
-The technology-heavy Nasdaq declined during the ses...</p>
-        <div class="hero-foot">
-          <span class="meta">4:17 PM ET</span>
-          <button class="expand-btn" onclick="toggleExpand(this)">Continue reading &darr;</button>
-        </div>
-        <div class="article-expand hero-expand">
-          <div class="hero-expand-body"><p>The Dow Jones Industrial Average climbed nearly 900 points to reach a record closing level on Wednesday, marking one of its strongest single-day performances this year. The gain reflected a significant rotation in investor capital away from technology stocks and toward traditional sectors including industrials and financials.</p><p>The technology-heavy Nasdaq declined during the session as semiconductor stocks led the retreat. Broadcom, Micron, and ARM all posted substantial losses, pulling down the broader chip sector. The weakness in these high-profile technology names stood in sharp contrast to strength elsewhere in the market, creating one of the most pronounced sector rotations in recent months.</p><p>The market divergence underscored a shift in investor sentiment as capital moved out of the technology sector after its extended rally. The rotation raised questions about whether the move represented a temporary adjustment or a more sustained change in investment strategy. Investors appeared to be reassessing valuations and growth prospects across different parts of the economy.</p><p>Beyond the major semiconductor declines, other stocks moving markets included Quantinuum, UnitedHealth, Blackstone, and Ciena. These varied performances illustrated how the market rotation extended across multiple sectors and individual companies.</p><p>The record close for the Dow reflected broad-based buying momentum outside the technology sector. The nearly 900-point gain represented a significant milestone for the blue-chip index, which continued climbing despite volatility in other market areas. The strength in traditional sectors suggested investors were seeking value beyond the technology names that had dominated market gains for an extended period.</p><p>The semiconductor sector's decline appeared particularly influential on the overall technology performance. As some of the market's most widely followed companies, Broadcom and its peers exerted outsized influence on the Nasdaq's performance. The pullback in chip stocks highlighted investor concerns about valuations in the sector following recent earnings reports.</p><p>This market action demonstrated the ongoing debate about where value exists in the current investment landscape. The technology sector had led broader market advances for a considerable period, and the sudden reversal showed that investor preferences could shift rapidly in response to earnings results and other market developments.</p><p>The rotation away from growth-oriented technology stocks toward more traditional value sectors suggested a potential shift in market dynamics. Whether this movement would prove temporary or signal a longer-term change in investment patterns remained unclear. Market observers were watching closely to see if the technology sector would recover or if the shift would continue as investors reassessed their portfolios and risk tolerances across different segments of the market.</p></div>
-          <div class="article-actions">
-            <button class="share-btn" data-headline="Dow Surges Nearly 900 Points to Record Close as Investors Shift From Tech" data-url="https://plainnews.app/articles/2026-06-04-dow-rises-800-points-to-record-high-as-investors-shift-from-tech-to-banks.html" onclick="shareArticle(this)">Share &#8599;</button>
-            <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="hero" data-cat-hero="tech" style="display:none">
-      <div class="topic-section-label"><h2 class="county-label-text">Tech & Science News</h2></div>
-      <div class="hero-inner">
-        <figure class="hero-image-wrap"><img class="hero-image" src="https://plainnews.app/images/fallback/tech-1.jpg" alt="Fusion startup Helion raises $465 million to build power plant for Microsoft" loading="lazy"><figcaption class="img-credit">Photo: Plain</figcaption></figure>
-        <span class="tag">Tech & Science</span>
-        <h1>Fusion startup Helion raises $465 million to build power plant for Microsoft</h1>
-        <p class="hero-summary">Helion Energy, a fusion company backed by OpenAI CEO Sam Altman, has secured $465 million in new funding as it works toward completing a power plant for Microsoft by 2028. The capital injection represents a major milestone for the startup as it pursues its goal of delivering electricity through nuclear fusion technology.
-
-Under a power purchase agreement with Microsoft, Helion...</p>
-        <div class="hero-foot">
-          <span class="meta">2:54 PM ET</span>
-          <button class="expand-btn" onclick="toggleExpand(this)">Continue reading &darr;</button>
-        </div>
-        <div class="article-expand hero-expand">
-          <div class="hero-expand-body"><p>Helion Energy, a fusion company backed by OpenAI CEO Sam Altman, has secured $465 million in new funding as it works toward completing a power plant for Microsoft by 2028. The capital injection represents a major milestone for the startup as it pursues its goal of delivering electricity through nuclear fusion technology.</p><p>Under a power purchase agreement with Microsoft, Helion has committed to building and operating a fusion power plant that will supply the tech giant with clean energy. Fusion energy, which replicates the nuclear reactions that power the sun, has long been pursued as a potentially limitless source of clean electricity. Unlike nuclear fission reactors currently in operation, fusion reactions produce far less radioactive waste and cannot experience a meltdown.</p><p>Helion's technology uses magnetic fields to compress plasma until fusion reactions occur, releasing energy that can then be converted into electricity. While the concept shows promise, no fusion company has yet achieved sustained net energy production at a commercial scale. The 2028 deadline represents an ambitious timeline, giving Helion roughly two years to construct the facility and begin generating power for the grid.</p><p>Microsoft's participation reflects a broader trend among major technology companies seeking dedicated clean energy sources. As data centers and artificial intelligence systems consume ever-increasing amounts of electricity, tech firms have grown more aggressive in pursuing unconventional energy solutions. The partnership represents a significant wager that fusion technology can reach commercial viability sooner than many industry observers expect.</p><p>The funding will support Helion's construction phase and ongoing research and development efforts. Altman has been a vocal proponent of fusion energy, arguing that it represents essential infrastructure for powering future artificial intelligence systems. His backing underscores the growing convergence between the tech and energy sectors.</p><p>The investment comes as multiple fusion startups race to achieve commercial success, with billions of dollars flowing into the sector from private investors, venture capital firms, and government funding initiatives. Competition to become the first company to generate grid-scale fusion power has intensified as major technology companies and investors recognize both the potential rewards and the strategic importance of the technology.</p><p>The deal highlights how tech companies are increasingly willing to make substantial bets on emerging energy technologies to solve their power challenges. As computing demands continue to surge, securing reliable and abundant clean energy has become a critical strategic priority for the industry. Helion's partnership with Microsoft demonstrates confidence that fusion energy could play a significant role in meeting these growing power requirements in the coming years.</p></div>
-          <div class="article-actions">
-            <button class="share-btn" data-headline="Fusion startup Helion raises $465 million to build power plant for Microsoft" data-url="https://plainnews.app/articles/2026-06-04-helion-raises-465-million-to-build-fusion-power-plant-for-microsoft.html" onclick="shareArticle(this)">Share &#8599;</button>
-            <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="hero" data-cat-hero="sports" style="display:none">
-      <div class="topic-section-label"><h2 class="county-label-text">Sports News</h2></div>
-      <div class="hero-inner">
-        <figure class="hero-image-wrap"><img class="hero-image" src="https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/38dc/live/2b82a4d0-6048-11f1-8b8c-6d33e1d5abb6.png" alt="Liverpool appoints Andoni Iraola as head coach after sacking Arne Slot" loading="lazy"><figcaption class="img-credit">Photo: BBC News</figcaption></figure>
-        <span class="tag">Sports</span>
-        <h1>Liverpool appoints Andoni Iraola as head coach after sacking Arne Slot</h1>
-        <p class="hero-summary">Liverpool has confirmed the appointment of Andoni Iraola as its new head coach following the dismissal of Arne Slot. The 43-year-old Spanish manager has signed a two-year contract that will keep him at the club until the end of the 2027/28 season.
-
-The announcement came just six days after Liverpool decided to part ways with Slot. The club moved swiftly to identify and secure I...</p>
-        <div class="hero-foot">
-          <span class="meta">4:07 PM ET</span>
-          <button class="expand-btn" onclick="toggleExpand(this)">Continue reading &darr;</button>
-        </div>
-        <div class="article-expand hero-expand">
-          <div class="hero-expand-body"><p>Liverpool has confirmed the appointment of Andoni Iraola as its new head coach following the dismissal of Arne Slot. The 43-year-old Spanish manager has signed a two-year contract that will keep him at the club until the end of the 2027/28 season.</p><p>The announcement came just six days after Liverpool decided to part ways with Slot. The club moved swiftly to identify and secure Iraola, the former Bournemouth head coach, as their preferred replacement. While other candidates including Stuttgart's Sebastian Hoeness and Pierre Sage of Lens were considered, Iraola was Liverpool's favored option and the only manager formally interviewed for the position.</p><p>Several top European clubs, including AC Milan, Bayer Leverkusen, and Crystal Palace, had expressed interest in securing Iraola's services. However, the coach made clear from the outset that Liverpool was the only club he wanted to join after his contract with Bournemouth expired.</p><p>Liverpool's sporting director Richard Hughes, who also appointed Iraola at Bournemouth in 2023, led the approach. Hughes and Michael Edwards, Liverpool's chief executive of football, conducted a review into the team's poor title defense under Slot and concluded that a managerial change was necessary. They determined that a more aggressive, attacking style was needed to return the club to winning ways.</p><p>Formal negotiations with Iraola and his agent began earlier this week and progressed smoothly. The manager arrived on Merseyside on Thursday to complete the deal.</p><p>Speaking to Liverpool's media channel, Iraola expressed his understanding of the challenge ahead. "At the beginning when you arrive at any club, I think you need to kind of prove a little bit yourself," he said. "You need to earn the right also to belong. I want to do this as quickly as possible so I can also celebrate with them."</p><p>On his ambitions, Iraola stated: "I think Liverpool gives me the chance to coach top players, and top players give you the chance to fight for titles. To win titles. Obviously when you arrive at a place, you cannot promise everything. But it's true that I understand where I'm coming and what is expected. I'm ready for the challenge."</p><p>Iraola has built his reputation through his work with Bournemouth, where he established an exciting, high-pressing team while improving the club year-on-year despite limited resources compared to rivals. Liverpool's board was particularly attracted to his proven Premier League experience, his ability to develop individual and collective player performance, and his leadership qualities.</p><p>Iraola intends to bring members of his backroom team from Bournemouth, including assistants Tommy Elphick and Shaun Cooper, analyst Tom Webber, and fitness coach Pablo de la Torre to Anfield, though Liverpool has not yet finalized all additions to the coaching staff.</p></div>
-          <div class="article-actions">
-            <button class="share-btn" data-headline="Liverpool appoints Andoni Iraola as head coach after sacking Arne Slot" data-url="https://plainnews.app/articles/2026-06-04-liverpool-appoint-andoni-iraola-as-head-coach-after-arne-slot-firing.html" onclick="shareArticle(this)">Share &#8599;</button>
-            <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="hero" data-cat-hero="entertainment" style="display:none">
-      <div class="topic-section-label"><h2 class="county-label-text">Entertainment News</h2></div>
-      <div class="hero-inner">
-        <figure class="hero-image-wrap"><img class="hero-image" src="https://variety.com/wp-content/uploads/2026/06/Power-Tommy-Tariq.jpg" alt="Starz Orders Power: Legacy Series Reuniting Joseph Sikora and Michael Rainey Jr." loading="lazy"><figcaption class="img-credit">Photo: Variety</figcaption></figure>
-        <span class="tag">Entertainment</span>
-        <h1>Starz Orders Power: Legacy Series Reuniting Joseph Sikora and Michael Rainey Jr.</h1>
-        <p class="hero-summary">Starz has ordered a new Power franchise series titled Power: Legacy, the network confirmed. The show will reunite actors Joseph Sikora and Michael Rainey Jr., who previously led separate spinoff series within the Power universe. The network ordered eight episodes for the first season.
-
-The series will follow Tommy Egan, played by Sikora, and Tariq St. Patrick, played by Rainey...</p>
-        <div class="hero-foot">
-          <span class="meta">4:14 PM ET</span>
-          <button class="expand-btn" onclick="toggleExpand(this)">Continue reading &darr;</button>
-        </div>
-        <div class="article-expand hero-expand">
-          <div class="hero-expand-body"><p>Starz has ordered a new Power franchise series titled Power: Legacy, the network confirmed. The show will reunite actors Joseph Sikora and Michael Rainey Jr., who previously led separate spinoff series within the Power universe. The network ordered eight episodes for the first season.</p><p>The series will follow Tommy Egan, played by Sikora, and Tariq St. Patrick, played by Rainey Jr., the son of Tommy's late friend James Ghost St. Patrick. Both actors have established their characters through previous Power spinoffs. Sikora starred in Power Book IV: Force, while Rainey Jr. headlined Power Book II: Ghost.</p><p>The Power franchise began with the original series that premiered in 2014 and concluded in 2020. The show's success led Starz to develop multiple spinoff series exploring different characters and storylines within the same universe. The network has built an extensive franchise around the original concept, with various series focusing on different periods and characters from the Power world.</p><p>Power: Legacy represents another expansion of the franchise, bringing together characters who had been developed separately in their own series. The reunion of Tommy and Tariq connects storylines that have run parallel through different Power spinoffs. Tommy Egan was a central character in the original Power series before receiving his own spinoff, while Tariq's story began in the original series and continued as the focus of Power Book II: Ghost.</p><p>The greenlight comes as Starz continues to invest in the Power brand, which has become one of the network's most successful properties. The franchise has maintained a dedicated audience across its various iterations. Production details and a premiere date for Power: Legacy have not been announced.</p></div>
-          <div class="article-actions">
-            <button class="share-btn" data-headline="Starz Orders Power: Legacy Series Reuniting Joseph Sikora and Michael Rainey Jr." data-url="https://plainnews.app/articles/2026-06-04-starz-orders-power-legacy-series-reuniting-joseph-sikora-and-michael-rainey-jr.html" onclick="shareArticle(this)">Share &#8599;</button>
-            <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="hero" data-cat-hero="politics" style="display:none">
-      <div class="topic-section-label"><h2 class="county-label-text">Politics News</h2></div>
-      <div class="hero-inner">
-        <figure class="hero-image-wrap"><img class="hero-image" src="https://thehill.com/wp-content/uploads/sites/2/2025/09/tlaibrashida_091825gn01_w.jpg?w=900" alt="House rejects Lebanon war powers resolution in bipartisan vote" loading="lazy"><figcaption class="img-credit">Photo: BBC News</figcaption></figure>
-        <span class="tag">Politics</span>
-        <h1>House rejects Lebanon war powers resolution in bipartisan vote</h1>
-        <p class="hero-summary">The House of Representatives on Thursday narrowly rejected a war powers resolution that would have prevented further military action against Iran, with the vote falling just short of passage at 213-214.
-
-The resolution, introduced by Rep. Greg Meeks, the top Democrat on the House Foreign Affairs Committee, needed at least two additional votes to pass, as tied votes fail in the...</p>
-        <div class="hero-foot">
-          <span class="meta">A few minutes ago</span>
-          <button class="expand-btn" onclick="toggleExpand(this)">Continue reading &darr;</button>
-        </div>
-        <div class="article-expand hero-expand">
-          <div class="hero-expand-body"><p>The House of Representatives on Thursday narrowly rejected a war powers resolution that would have prevented further military action against Iran, with the vote falling just short of passage at 213-214.</p><p>The resolution, introduced by Rep. Greg Meeks, the top Democrat on the House Foreign Affairs Committee, needed at least two additional votes to pass, as tied votes fail in the chamber. One Republican member voted present.</p><p>The vote revealed significant shifts in Democratic support for the measure compared to a previous resolution in March. Three Democrats who had opposed the earlier attempt changed course: Henry Cuellar of Texas, Greg Landsman of Ohio, and Juan Vargas of California all voted in favor this time. However, Jared Golden of Maine was the sole Democrat to vote against the resolution, while Thomas Massie of Kentucky remained the only Republican supporting it. Warren Davidson of Ohio voted present after supporting the measure last month.</p><p>The Democrats who switched their positions cited concerns about the Trump administration's handling of the conflict. Landsman stated that while he trusted military planners to achieve their objectives, "it's time to be done" before the United States becomes entangled in a prolonged engagement.</p><p>Cuellar announced his support after Trump warned that a "whole civilization will die" if Iran did not meet his demands. The congressman expressed concern about the administration's rhetoric, saying America must maintain "restraint and moral clarity." He added that information provided about U.S. strategy had been insufficient.</p><p>Golden, who is retiring after his current term, took the opposite view. He argued that passing such a resolution would "weaken our hand" during intense ongoing negotiations between the U.S. and Iran. His statement noted that peace talks were occurring during a two-week ceasefire that was established before the vote.</p><p>The ceasefire followed discussions between Vice President JD Vance and Iranian officials, though those talks in Pakistan failed to reach agreement on extending the truce beyond its April 22 expiration date. The U.S. said Tehran refused to abandon its nuclear program. However, indirect negotiations continued this week, with Pakistan's army chief traveling to Iran to mediate further discussions.</p><p>The narrow rejection of the resolution reflects deep divisions within Congress over military involvement in the region. While Democrats showed increased willingness to challenge continued military action, they remained unable to unite sufficiently to force a change in policy. The vote demonstrates ongoing tension between congressional war powers authority and executive branch control over military operations abroad.</p></div>
-          <div class="article-actions">
-            <button class="share-btn" data-headline="House rejects Lebanon war powers resolution in bipartisan vote" data-url="https://plainnews.app/articles/2026-06-04-house-rejects-resolution-to-remove-troops-from-lebanon.html" onclick="shareArticle(this)">Share &#8599;</button>
-            <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <p class="section-label">Latest</p>
-
-    <div class="articles-grid" id="articlesGrid">
-      
-      <div class="article-card fade-in" data-cat="world" data-is-hero="true" data-topnews="true">
-        <span class="card-tag">World</span>
-        <h2 class="card-headline">Zelensky Proposes Direct Talks With Putin to End War</h2>
-        <p class="card-summary">Ukrainian President Volodymyr Zelensky has called for face-to-face negotiations with Russian President Vladimir Putin in a public letter addressed directly to the Russian leader. The letter marks the first time Zelensky...</p>
-        <div class="card-foot">
-          <span class="card-time">6:00 PM ET</span>
-          <button class="expand-btn" onclick="toggleExpand(this)">Continue reading &darr;</button>
-        </div>
-        <div class="article-expand">
-          <div class="card-expand-body"><p>Ukrainian President Volodymyr Zelensky has called for face-to-face negotiations with Russian President Vladimir Putin in a public letter addressed directly to the Russian leader. The letter marks the first time Zelensky has written publicly to Putin since Russia launched its full-scale invasion in 2022, and represents a significant diplomatic overture.</p><p>In the correspondence, Zelensky proposes a meeting in a neutral third country and calls for a full ceasefire. The letter serves as a sweeping criticism of Putin's 26 years in power while simultaneously arguing that only direct engagement between the two nations could resolve the conflict.</p><p>The proposal comes as diplomatic efforts continue on multiple fronts. Trump has stated that both sides will need to "make compromises" to reach a resolution. However, the Kremlin has not yet publicly responded to Zelensky's direct appeal for negotiations.</p><p>The path to peace remains complicated by fundamental disagreements between the parties. Russian officials continue to demand that Ukraine withdraw from the eastern Donbas region as a precondition for serious talks. Ukraine has firmly rejected any suggestion that it would unilaterally abandon its own territory, a position reinforced by recent battlefield developments where Russian advances have largely stalled.</p><p>Analysts suggest that a diplomatic breakthrough appears unlikely in the near term. Both armies show signs of mounting exhaustion while sustaining heavy casualties. The conflict has also shifted to strikes on energy infrastructure, indicating the grinding nature of the current military situation.</p><p>Russia has also proposed mediators to facilitate discussions. Putin recently suggested that Gerhard Schröder, the former German chancellor and longtime Putin ally, could serve as a European mediator. However, the European Union has dismissed this idea. EU foreign policy chief Kaja Kallas stated that allowing Russia to appoint a negotiator on Europe's behalf would be unwise. She noted that Schröder's extensive work as a "high-level lobbyist for Russian state-owned companies," including roles with Nord Stream gas pipelines and Russian oil company Rosneft, disqualified him from serving as an impartial mediator.</p><p>German officials echoed these concerns. Defense Minister Boris Pistolius suggested that Putin's recent peace remarks may be a strategic deception aimed at diverting attention from Russian military weaknesses. Germany's Europe Minister Gunther Krichbaum questioned whether Schröder could act as an honest broker given his close relationship with Putin.</p><p>European leaders have increasingly insisted that any substantive peace negotiations must include Ukraine and that no decisions about the country should occur without Kyiv's involvement. Many European capitals fear that discussions between the US, Russia, and Ukraine have made limited progress while leaving the EU sidelined and vulnerable to accepting agreements it opposes.</p><p>A US-brokered ceasefire was scheduled to expire recently, with Moscow rejecting proposals to extend the truce.</p></div>
-          <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
-        </div>
-      </div>
-      <div class="article-card fade-in" data-cat="world" data-topnews="true">
-        <span class="card-tag">World</span>
-        <h2 class="card-headline">Hezbollah Rejects Cease-Fire Deal Between Lebanon and Israel</h2>
-        <p class="card-summary">Hezbollah has rejected a cease-fire agreement reached between Lebanon and Israel, with the group's leader calling the U.S.-brokered deal an act of surrender.</p>
-        <div class="card-foot">
-          <span class="card-time">A few minutes ago</span>
-          <button class="expand-btn" onclick="toggleExpand(this)">Continue reading &darr;</button>
-        </div>
-        <div class="article-expand">
-          <div class="card-expand-body"><p>Hezbollah has rejected a cease-fire agreement reached between Israel and Lebanon, with the group's leader calling the U.S.-brokered deal a surrender. The Iran-backed organization was excluded from the negotiations that produced the truce between the Israeli government and Lebanese authorities, which the United States announced Wednesday night.</p><p>The rejection highlights the complex dynamics in Lebanon, where Hezbollah operates as both a political party in the government and an armed militia. A U.N. peacekeeper was killed and others were wounded by mortar fire in southeastern Lebanon as tensions continue.</p></div>
-          <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
-        </div>
-      </div>
-      <div class="article-card support-card fade-in" data-cat="all" data-support-card="true">
-        <span class="card-tag support-card-tag">Plain</span>
-        <h2 class="card-headline support-card-headline">Plain is free. Help keep it that way.</h2>
-        <p class="card-summary">No ads. No paywalls. No agenda. Plain runs entirely on reader support. If it's worth something to you, consider buying us a coffee.</p>
-        <div class="card-foot">
-          <a href="https://buymeacoffee.com/andrewdobrow" target="_blank" class="support-card-btn">Support Plain &#9829;</a>
-        </div>
-      </div>
-      <div class="article-card fade-in" data-cat="business" data-is-hero="true" data-topnews="true">
-        <span class="card-tag">Business</span>
-        <h2 class="card-headline">Dow Surges Nearly 900 Points to Record Close as Investors Shift From Tech</h2>
-        <p class="card-summary">The Dow Jones Industrial Average climbed nearly 900 points to reach a record closing level on Wednesday, marking one of its strongest single-day performances this year. The gain reflected a significant rotation in invest...</p>
-        <div class="card-foot">
-          <span class="card-time">6:00 PM ET</span>
-          <button class="expand-btn" onclick="toggleExpand(this)">Continue reading &darr;</button>
-        </div>
-        <div class="article-expand">
-          <div class="card-expand-body"><p>The Dow Jones Industrial Average climbed nearly 900 points to reach a record closing level on Wednesday, marking one of its strongest single-day performances this year. The gain reflected a significant rotation in investor capital away from technology stocks and toward traditional sectors including industrials and financials.</p><p>The technology-heavy Nasdaq declined during the session as semiconductor stocks led the retreat. Broadcom, Micron, and ARM all posted substantial losses, pulling down the broader chip sector. The weakness in these high-profile technology names stood in sharp contrast to strength elsewhere in the market, creating one of the most pronounced sector rotations in recent months.</p><p>The market divergence underscored a shift in investor sentiment as capital moved out of the technology sector after its extended rally. The rotation raised questions about whether the move represented a temporary adjustment or a more sustained change in investment strategy. Investors appeared to be reassessing valuations and growth prospects across different parts of the economy.</p><p>Beyond the major semiconductor declines, other stocks moving markets included Quantinuum, UnitedHealth, Blackstone, and Ciena. These varied performances illustrated how the market rotation extended across multiple sectors and individual companies.</p><p>The record close for the Dow reflected broad-based buying momentum outside the technology sector. The nearly 900-point gain represented a significant milestone for the blue-chip index, which continued climbing despite volatility in other market areas. The strength in traditional sectors suggested investors were seeking value beyond the technology names that had dominated market gains for an extended period.</p><p>The semiconductor sector's decline appeared particularly influential on the overall technology performance. As some of the market's most widely followed companies, Broadcom and its peers exerted outsized influence on the Nasdaq's performance. The pullback in chip stocks highlighted investor concerns about valuations in the sector following recent earnings reports.</p><p>This market action demonstrated the ongoing debate about where value exists in the current investment landscape. The technology sector had led broader market advances for a considerable period, and the sudden reversal showed that investor preferences could shift rapidly in response to earnings results and other market developments.</p><p>The rotation away from growth-oriented technology stocks toward more traditional value sectors suggested a potential shift in market dynamics. Whether this movement would prove temporary or signal a longer-term change in investment patterns remained unclear. Market observers were watching closely to see if the technology sector would recover or if the shift would continue as investors reassessed their portfolios and risk tolerances across different segments of the market.</p></div>
-          <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
-        </div>
-      </div>
-      <div class="article-card fade-in" data-cat="world" data-topnews="true">
-        <span class="card-tag">World</span>
-        <h2 class="card-headline">Ultra-Orthodox Israelis Riot Over Military Draft</h2>
-        <p class="card-summary">Haredi protesters escalated demonstrations against mandatory military service ahead of elections.</p>
-        <div class="card-foot">
-          <span class="card-time">3:18 PM ET</span>
-          <button class="expand-btn" onclick="toggleExpand(this)">Continue reading &darr;</button>
-        </div>
-        <div class="article-expand">
-          <div class="card-expand-body"><p>Ultra-Orthodox Jews in Israel staged violent protests against military conscription, shocking many Israelis with the intensity of the demonstrations. The Haredi community has escalated its opposition to mandatory military service in recent weeks.</p><p>The riots underscore deepening divisions within Israeli society as national elections approach. The ultra-Orthodox population has traditionally received exemptions from military service, but efforts to require their participation have sparked fierce resistance and highlighted tensions between secular and religious communities in Israel.</p></div>
-          <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
-        </div>
-      </div>
-      <div class="article-card fade-in" data-cat="world" data-topnews="true">
-        <span class="card-tag">World</span>
-        <h2 class="card-headline">Gun Battles Erupt in Mogadishu in Worst Fighting in Years</h2>
-        <p class="card-summary">Armed groups loyal to rival politicians clashed in Somalia's capital.</p>
-        <div class="card-foot">
-          <span class="card-time">A few minutes ago</span>
-          <button class="expand-btn" onclick="toggleExpand(this)">Continue reading &darr;</button>
-        </div>
-        <div class="article-expand">
-          <div class="card-expand-body"><p>Fighting broke out in Mogadishu on Thursday as armed factions loyal to competing politicians engaged in gun battles throughout the Somali capital. Residents described the clashes as the worst violence the city has experienced in years.</p><p>The armed confrontations between rival political groups represent a significant escalation of tensions in Somalia's capital. The fighting raised concerns about stability in a city that has faced decades of conflict and attempts at rebuilding government authority.</p></div>
-          <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
-        </div>
-      </div>
-      <div class="article-card fade-in" data-cat="politics" data-topnews="true">
-        <span class="card-tag">Politics</span>
-        <h2 class="card-headline">Justice Department opens investigations into 15 medical schools over admissions practices</h2>
-        <p class="card-summary">The Civil Rights Division will examine whether schools receiving federal funding engaged in racial discrimination in their admissions processes.</p>
-        <div class="card-foot">
-          <span class="card-time">A few minutes ago</span>
-          <button class="expand-btn" onclick="toggleExpand(this)">Continue reading &darr;</button>
-        </div>
-        <div class="article-expand">
-          <div class="card-expand-body"><p>The Department of Justice's Civil Rights Division announced investigations into 15 medical schools on Thursday, following allegations of racial discrimination in admissions. The move expands the department's recent enforcement actions against medical schools accused of using race-conscious admissions practices.</p><p>The investigations come after the DOJ found that medical schools at UCLA and Yale University illegally used race in their admissions decisions. The 15 schools under investigation receive millions in federal funding and will be examined for potential civil rights violations.</p></div>
-          <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
-        </div>
-      </div>
-      <div class="article-card fade-in" data-cat="politics" data-topnews="true">
-        <span class="card-tag">Politics</span>
-        <h2 class="card-headline">Oklahoma man charged with threatening to kill Senator John Thune</h2>
-        <p class="card-summary">Federal prosecutors say the threats were made in retaliation for the senator's official duties.</p>
-        <div class="card-foot">
-          <span class="card-time">A few minutes ago</span>
-          <button class="expand-btn" onclick="toggleExpand(this)">Continue reading &darr;</button>
-        </div>
-        <div class="article-expand">
-          <div class="card-expand-body"><p>Federal prosecutors charged an Oklahoma man with making death threats against Senator John Thune. The indictment describes the threats as retaliation for Thune's performance of his official duties as a senator.</p><p>The indictment does not allege a particular motive for the threats beyond the retaliation related to Thune's official work. Thune serves as a Republican senator and has held leadership positions in the Senate.</p></div>
-          <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
-        </div>
-      </div>
-      <div class="article-card fade-in" data-cat="politics" data-topnews="true">
-        <span class="card-tag">Politics</span>
-        <h2 class="card-headline">Condoleezza Rice says Iran war left regime weaker and more confused</h2>
-        <p class="card-summary">The former secretary of state praised U.S. efforts against Iran in an opinion article.</p>
-        <div class="card-foot">
-          <span class="card-time">A few minutes ago</span>
-          <button class="expand-btn" onclick="toggleExpand(this)">Continue reading &darr;</button>
-        </div>
-        <div class="article-expand">
-          <div class="card-expand-body"><p>Former Secretary of State Condoleezza Rice said the U.S.-Israeli conflict in Iran has left behind a weaker and more confused regime in charge of the country. Rice, who served in the George W. Bush administration, praised the U.S. efforts against Iran in an opinion piece for The Wall Street Journal published Wednesday.</p><p>Rice wrote that the conflict achieved its aims in weakening the Iranian government. Her assessment offers support for the military operations conducted against Iran by the United States and Israel.</p></div>
-          <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
-        </div>
-      </div>
-      <div class="article-card fade-in" data-cat="tech" data-topnews="true">
-        <span class="card-tag">Tech & Science</span>
-        <h2 class="card-headline">Elon Musk attempts to escape FTC audits of X data handling</h2>
-        <p class="card-summary">Musk is seeking to avoid Federal Trade Commission oversight of how X handles user data, drawing warnings from public commenters about privacy protections.</p>
-        <div class="card-foot">
-          <span class="card-time">3:49 PM ET</span>
-          <button class="expand-btn" onclick="toggleExpand(this)">Continue reading &darr;</button>
-        </div>
-        <div class="article-expand">
-          <div class="card-expand-body"><p>Elon Musk is making another attempt to escape Federal Trade Commission audits of how X, formerly Twitter, handles user data. The effort comes as the company remains under FTC oversight stemming from previous privacy and security concerns.</p><p>Public commenters have warned the FTC that Musk cannot be trusted to protect X user privacy without continued federal oversight. The audits were imposed as part of consent agreements related to past violations, and the FTC has authority to monitor compliance with data protection requirements.</p></div>
-          <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
-        </div>
-      </div>
-      <div class="article-card fade-in" data-cat="business" data-topnews="true">
-        <span class="card-tag">Business</span>
-        <h2 class="card-headline">Wall Street Banks Prepare for SpaceX IPO as Jamie Dimon Plans Investor Pitch</h2>
-        <p class="card-summary">JPMorgan Chase CEO Jamie Dimon will personally pitch investors on SpaceX's initial public offering, which is set to become the largest IPO ever.</p>
-        <div class="card-foot">
-          <span class="card-time">A few minutes ago</span>
-          <button class="expand-btn" onclick="toggleExpand(this)">Continue reading &darr;</button>
-        </div>
-        <div class="article-expand">
-          <div class="card-expand-body"><p>Jamie Dimon, CEO of JPMorgan Chase, is planning to pitch investors directly on SpaceX's initial public offering. Wall Street banks are preparing to handle what would be the largest IPO in history, positioning themselves to collect substantial fees from the transaction.</p><p>The involvement of Dimon at such a senior level underscores the magnitude of the offering and the competitive intensity among financial institutions to secure roles in the deal. SpaceX's IPO represents a significant moment for both the aerospace industry and capital markets, given the company's valuation and prominence in the commercial space sector.</p></div>
-          <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
-        </div>
-      </div>
-      <div class="article-card fade-in" data-cat="business" data-topnews="true">
-        <span class="card-tag">Business</span>
-        <h2 class="card-headline">Bitcoin Falls to Pre-Iran Conflict Levels as Crypto Decline Continues</h2>
-        <p class="card-summary">Bitcoin dropped to its lowest level since before the Iran conflict began, extending what analysts describe as its worst week in months.</p>
-        <div class="card-foot">
-          <span class="card-time">4:48 PM ET</span>
-          <button class="expand-btn" onclick="toggleExpand(this)">Continue reading &darr;</button>
-        </div>
-        <div class="article-expand">
-          <div class="card-expand-body"><p>Bitcoin fell to levels last seen before the Iran conflict, continuing a decline that has marked its worst performance in months. One analyst described the current downturn as being in the late stages of a bear market, though others cautioned against prematurely counting out the cryptocurrency.</p><p>The price drop reflected a broader rotation of liquidity away from digital assets and a fading of narratives that had previously supported crypto valuations. Despite the bearish sentiment from some market observers, other analysts argued it remained too early to declare a definitive end to bitcoin's viability as an investment.</p></div>
-          <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
-        </div>
-      </div>
-      <div class="article-card fade-in" data-cat="business" data-topnews="true">
-        <span class="card-tag">Business</span>
-        <h2 class="card-headline">Anthropic Co-Founder Warns AI Needs Brake Pedal as Technology Advances</h2>
-        <p class="card-summary">Jack Clark of Anthropic told the BBC that artificial intelligence could reach a point where it develops without human input.</p>
-        <div class="card-foot">
-          <span class="card-time">A few minutes ago</span>
-          <button class="expand-btn" onclick="toggleExpand(this)">Continue reading &darr;</button>
-        </div>
-        <div class="article-expand">
-          <div class="card-expand-body"><p>Jack Clark, co-founder of Anthropic, warned that artificial intelligence needs a brake pedal as the technology continues to advance. Speaking to BBC's Newsnight, Clark cautioned that AI could eventually reach a stage where it develops autonomously without human input or oversight.</p><p>The warning from a leading figure in AI safety research highlighted ongoing concerns about the trajectory of artificial intelligence development. Anthropic has positioned itself as a company focused on building AI systems with safety considerations at the forefront, making Clark's comments particularly significant within the industry.</p></div>
-          <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
-        </div>
-      </div>
-      <div class="article-card fade-in" data-cat="business" data-topnews="true">
-        <span class="card-tag">Business</span>
-        <h2 class="card-headline">Lululemon Cuts Annual Outlook Citing Media Commentary and Product Launches</h2>
-        <p class="card-summary">The athletic apparel company reduced its annual revenue forecast, pointing to negative media coverage and disappointing product launches.</p>
-        <div class="card-foot">
-          <span class="card-time">4:06 PM ET</span>
-          <button class="expand-btn" onclick="toggleExpand(this)">Continue reading &darr;</button>
-        </div>
-        <div class="article-expand">
-          <div class="card-expand-body"><p>Lululemon reduced its annual revenue forecast for fiscal 2026, citing negative media commentary and disappointing product launches as factors affecting its business. The athletic apparel company announced the revised outlook in its first quarter earnings report, trimming expectations for the full year ahead.</p><p>The downward revision added pressure on the company as it prepares for a new CEO to take the helm. Lululemon's challenges reflected difficulties in maintaining momentum in the competitive athletic wear market, where product reception and brand perception play critical roles in driving sales.</p></div>
-          <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
-        </div>
-      </div>
-      <div class="article-card fade-in" data-cat="tech" data-is-hero="true" data-topnews="true">
-        <span class="card-tag">Tech & Science</span>
-        <h2 class="card-headline">Fusion startup Helion raises $465 million to build power plant for Microsoft</h2>
-        <p class="card-summary">Helion Energy, a fusion company backed by OpenAI CEO Sam Altman, has secured $465 million in new funding as it works toward completing a power plant for Microsoft by 2028. The capital injection represents a major milesto...</p>
-        <div class="card-foot">
-          <span class="card-time">6:00 PM ET</span>
-          <button class="expand-btn" onclick="toggleExpand(this)">Continue reading &darr;</button>
-        </div>
-        <div class="article-expand">
-          <div class="card-expand-body"><p>Helion Energy, a fusion company backed by OpenAI CEO Sam Altman, has secured $465 million in new funding as it works toward completing a power plant for Microsoft by 2028. The capital injection represents a major milestone for the startup as it pursues its goal of delivering electricity through nuclear fusion technology.</p><p>Under a power purchase agreement with Microsoft, Helion has committed to building and operating a fusion power plant that will supply the tech giant with clean energy. Fusion energy, which replicates the nuclear reactions that power the sun, has long been pursued as a potentially limitless source of clean electricity. Unlike nuclear fission reactors currently in operation, fusion reactions produce far less radioactive waste and cannot experience a meltdown.</p><p>Helion's technology uses magnetic fields to compress plasma until fusion reactions occur, releasing energy that can then be converted into electricity. While the concept shows promise, no fusion company has yet achieved sustained net energy production at a commercial scale. The 2028 deadline represents an ambitious timeline, giving Helion roughly two years to construct the facility and begin generating power for the grid.</p><p>Microsoft's participation reflects a broader trend among major technology companies seeking dedicated clean energy sources. As data centers and artificial intelligence systems consume ever-increasing amounts of electricity, tech firms have grown more aggressive in pursuing unconventional energy solutions. The partnership represents a significant wager that fusion technology can reach commercial viability sooner than many industry observers expect.</p><p>The funding will support Helion's construction phase and ongoing research and development efforts. Altman has been a vocal proponent of fusion energy, arguing that it represents essential infrastructure for powering future artificial intelligence systems. His backing underscores the growing convergence between the tech and energy sectors.</p><p>The investment comes as multiple fusion startups race to achieve commercial success, with billions of dollars flowing into the sector from private investors, venture capital firms, and government funding initiatives. Competition to become the first company to generate grid-scale fusion power has intensified as major technology companies and investors recognize both the potential rewards and the strategic importance of the technology.</p><p>The deal highlights how tech companies are increasingly willing to make substantial bets on emerging energy technologies to solve their power challenges. As computing demands continue to surge, securing reliable and abundant clean energy has become a critical strategic priority for the industry. Helion's partnership with Microsoft demonstrates confidence that fusion energy could play a significant role in meeting these growing power requirements in the coming years.</p></div>
-          <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
-        </div>
-      </div>
-      <div class="article-card fade-in" data-cat="tech" data-topnews="true">
-        <span class="card-tag">Tech & Science</span>
-        <h2 class="card-headline">Apple approves first AI agent for Messages for Business platform</h2>
-        <p class="card-summary">Poke becomes the first AI agent authorized to operate on Apple's Messages for Business, allowing users to interact with artificial intelligence through text messages.</p>
-        <div class="card-foot">
-          <span class="card-time">3:20 PM ET</span>
-          <button class="expand-btn" onclick="toggleExpand(this)">Continue reading &darr;</button>
-        </div>
-        <div class="article-expand">
-          <div class="card-expand-body"><p>Poke has become the first AI agent approved for Apple's Messages for Business platform. The startup enables users to interact with AI agents directly through text messages on Apple devices.</p><p>This approval represents a significant expansion of Apple's messaging infrastructure, which businesses have traditionally used for customer communications. By allowing AI agents like Poke to operate within the Messages app, Apple is opening new possibilities for how users can access and interact with AI services on their devices.</p></div>
-          <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
-        </div>
-      </div>
-      <div class="article-card fade-in" data-cat="politics" data-topnews="true">
-        <span class="card-tag">Politics</span>
-        <h2 class="card-headline">House Oversight releases transcript of Bondi interview on Epstein files</h2>
-        <p class="card-summary">Former Attorney General Pam Bondi declined to answer numerous questions during a roughly four-hour closed-door meeting with lawmakers.</p>
-        <div class="card-foot">
-          <span class="card-time">5:08 PM ET</span>
-          <button class="expand-btn" onclick="toggleExpand(this)">Continue reading &darr;</button>
-        </div>
-        <div class="article-expand">
-          <div class="card-expand-body"><p>The House Oversight and Government Reform Committee released the transcript from its closed-door meeting with former Attorney General Pam Bondi on Thursday regarding her handling of the Jeffrey Epstein files. The transcript shows Bondi declined to answer a number of questions during the roughly four-hour session.</p><p>Bondi pointed to acting Attorney General Todd Blanche over matters related to the files during the interview. The committee's release of the transcript provides public access to Bondi's testimony about her role in handling materials related to the deceased financier.</p></div>
-          <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
-        </div>
-      </div>
-      <div class="article-card fade-in" data-cat="world" data-topnews="true">
-        <span class="card-tag">World</span>
-        <h2 class="card-headline">Lufthansa Plane's Nose Gear Collapses at Frankfurt Airport</h2>
-        <p class="card-summary">Several workers were injured when a Boeing 787-9 Dreamliner's landing gear failed.</p>
-        <div class="card-foot">
-          <span class="card-time">4:39 PM ET</span>
-          <button class="expand-btn" onclick="toggleExpand(this)">Continue reading &darr;</button>
-        </div>
-        <div class="article-expand">
-          <div class="card-expand-body"><p>The nose gear on a Lufthansa Boeing 787-9 Dreamliner collapsed at Frankfurt Airport, injuring several workers. The airline said the cause of the accident was under investigation.</p><p>The aircraft, which can weigh 279 tons at takeoff, experienced the landing gear failure while on the ground. The collapse occurred at one of Europe's busiest aviation hubs, though the airline has not disclosed the extent of injuries to the workers involved or the circumstances leading to the gear failure.</p></div>
-          <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
-        </div>
-      </div>
-      <div class="article-card fade-in" data-cat="politics" data-topnews="true">
-        <span class="card-tag">Politics</span>
-        <h2 class="card-headline">Trump proposes building pedestrian access from Lincoln Memorial to Potomac River</h2>
-        <p class="card-summary">The president outlined plans for a renovation project at the memorial.</p>
-        <div class="card-foot">
-          <span class="card-time">A few minutes ago</span>
-          <button class="expand-btn" onclick="toggleExpand(this)">Continue reading &darr;</button>
-        </div>
-        <div class="article-expand">
-          <div class="card-expand-body"><p>President Trump has announced plans to build pedestrian access connecting the Lincoln Memorial to the Potomac River. He described the project as his next renovation effort for a Washington monument.</p><p>The proposal would create a pathway between the memorial and the riverfront, continuing Trump's focus on undertaking renovation projects at federal properties in the capital.</p></div>
-          <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
-        </div>
-      </div>
-      <div class="article-card fade-in" data-cat="tech" data-topnews="true">
-        <span class="card-tag">Tech & Science</span>
-        <h2 class="card-headline">Geomagnetic storm could bring auroras to 23 states</h2>
-        <p class="card-summary">A strong geomagnetic storm forecast for Thursday and Friday could make northern lights visible across multiple states due to large solar flares.</p>
-        <div class="card-foot">
-          <span class="card-time">2:10 PM ET</span>
-          <button class="expand-btn" onclick="toggleExpand(this)">Continue reading &darr;</button>
-        </div>
-        <div class="article-expand">
-          <div class="card-expand-body"><p>Space weather forecasters have issued a warning for a strong geomagnetic storm that could produce visible auroras across 23 states. The storm results from large solar flares that have sent charged particles toward Earth.</p><p>The forecast includes states as far south as Massachusetts, with visibility expected on Thursday and Friday nights. Geomagnetic storms occur when solar wind interacts with Earth's magnetic field, creating the colorful light displays typically seen only in far northern latitudes. The storm has been classified as G3, indicating moderate to strong effects on the magnetosphere.</p></div>
-          <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
-        </div>
-      </div>
-      <div class="article-card fade-in" data-cat="politics" data-topnews="true">
-        <span class="card-tag">Politics</span>
-        <h2 class="card-headline">Hilton and Becerra lead in California governor primary</h2>
-        <p class="card-summary">Republicans Steve Hilton and Chad Bianco and Democrats Xavier Becerra, Katie Porter, and Tom Steyer are competing for their party nominations.</p>
-        <div class="card-foot">
-          <span class="card-time">A few minutes ago</span>
-          <button class="expand-btn" onclick="toggleExpand(this)">Continue reading &darr;</button>
-        </div>
-        <div class="article-expand">
-          <div class="card-expand-body"><p>Steve Hilton and Xavier Becerra held narrow leads in California's governor primary as vote-counting continued Thursday. The process of tallying remaining ballots could stretch over days or weeks, leaving the race unsettled.</p><p>Under California's top-two primary system, the leading candidates advance to the general election to replace Governor Gavin Newsom. Billionaire Tom Steyer trailed behind Hilton and Becerra in the race.</p></div>
-          <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
-        </div>
-      </div>
-      <div class="article-card fade-in" data-cat="tech" data-topnews="true">
-        <span class="card-tag">Tech & Science</span>
-        <h2 class="card-headline">Meta builds data centers in tents to cut costs</h2>
-        <p class="card-summary">Meta has adopted a tactic previously used by Tesla, constructing data center facilities in tent structures to reduce its infrastructure expenses.</p>
-        <div class="card-foot">
-          <span class="card-time">3:33 PM ET</span>
-          <button class="expand-btn" onclick="toggleExpand(this)">Continue reading &darr;</button>
-        </div>
-        <div class="article-expand">
-          <div class="card-expand-body"><p>Meta has found a way to reduce its data center construction costs by building facilities inside tent structures. The approach mirrors a strategy previously employed by Tesla for manufacturing operations.</p><p>The tent-based construction allows Meta to deploy data center capacity more quickly and at lower cost than traditional building methods. The company operates massive data center infrastructure to support its social media platforms and growing artificial intelligence operations, which require enormous computing power and generate substantial capital expenses.</p></div>
-          <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
-        </div>
-      </div>
-      <div class="article-card fade-in" data-cat="world" data-topnews="true">
-        <span class="card-tag">World</span>
-        <h2 class="card-headline">John Bolton Expected to Plead Guilty in Classified Documents Case</h2>
-        <p class="card-summary">The former Trump advisor reached a deal with prosecutors, sources said.</p>
-        <div class="card-foot">
-          <span class="card-time">6:00 PM ET</span>
-          <button class="expand-btn" onclick="toggleExpand(this)">Continue reading &darr;</button>
-        </div>
-        <div class="article-expand">
-          <div class="card-expand-body"><p>John Bolton, former national security adviser under President Trump who later became a vocal critic of the administration, has reached a plea agreement in a classified documents case. According to sources familiar with the matter, Bolton will plead guilty to one count of illegal retention of sensitive national security information, subject to court approval.</p><p>The Justice Department filed charges against Bolton in 2025 as part of a broader effort targeting the president's critics. The plea deal represents a resolution to the criminal case involving his handling of classified materials.</p></div>
-          <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
-        </div>
-      </div>
-      <div class="article-card fade-in" data-cat="tech" data-topnews="true">
-        <span class="card-tag">Tech & Science</span>
-        <h2 class="card-headline">Bumblebees demonstrate problem-solving abilities in new research</h2>
-        <p class="card-summary">A new experiment shows bumblebees can use tools to solve problems spontaneously, challenging assumptions about intelligence and brain size.</p>
-        <div class="card-foot">
-          <span class="card-time">2:01 PM ET</span>
-          <button class="expand-btn" onclick="toggleExpand(this)">Continue reading &darr;</button>
-        </div>
-        <div class="article-expand">
-          <div class="card-expand-body"><p>Researchers have documented bumblebees demonstrating spontaneous problem-solving abilities using tools, despite their tiny brains. The findings challenge conventional assumptions that complex cognitive abilities require large brain structures like those found in primates.</p><p>The study shows bumblebees can tackle complex problems without prior training, exhibiting behaviors previously associated with animals like chimpanzees. The research adds to growing evidence that insects possess sophisticated cognitive capabilities, suggesting intelligence may operate through different mechanisms than previously understood across the animal kingdom.</p></div>
-          <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
-        </div>
-      </div>
-      <div class="article-card fade-in" data-cat="business" data-topnews="true">
-        <span class="card-tag">Business</span>
-        <h2 class="card-headline">Quantinuum Stock Closes Flat After Upsized Quantum Computing IPO</h2>
-        <p class="card-summary">Quantinuum raised $1.68 billion in an upsized initial public offering but saw its stock close flat in its Nasdaq debut.</p>
-        <div class="card-foot">
-          <span class="card-time">4:43 PM ET</span>
-          <button class="expand-btn" onclick="toggleExpand(this)">Continue reading &darr;</button>
-        </div>
-        <div class="article-expand">
-          <div class="card-expand-body"><p>Quantinuum, the Honeywell-backed quantum computing company, closed flat in its first day of trading on Nasdaq despite raising $1.68 billion in an upsized initial public offering. The company announced it had increased the size of its offering beyond initial expectations, marking a significant public market moment for the quantum computing industry.</p><p>The flat debut came as a disappointment given the anticipation surrounding the IPO and the broader excitement about quantum computing technology. The offering represented one of the most prominent public debuts for a quantum computing company, an industry that has attracted substantial investor interest and research funding in recent years.</p></div>
-          <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
-        </div>
-      </div>
-      <div class="article-card fade-in" data-cat="entertainment" data-topnews="true">
-        <span class="card-tag">Entertainment</span>
-        <h2 class="card-headline">Producer Sues Amazon and Vice Studios Over Documentary Portrayal</h2>
-        <p class="card-summary">A producer filed a defamation lawsuit against Amazon Studios, Vice Studios, and a documentary director over his portrayal in a series about a convicted fraudster.</p>
-        <div class="card-foot">
-          <span class="card-time">A few minutes ago</span>
-          <button class="expand-btn" onclick="toggleExpand(this)">Continue reading &darr;</button>
-        </div>
-        <div class="article-expand">
-          <div class="card-expand-body"><p>Producer Julio Hallivis filed a defamation lawsuit Thursday against Amazon Studios, Vice Studios, and director Rebecca Chaiklin. The suit challenges his portrayal in the documentary series "Hollywood Hustler: Glitz, Glam, Scam," which examines the case of convicted fraudster Zach Horwitz.</p><p>Hallivis claims the documentary falsely depicted him as Horwitz's accomplice, causing damage to his professional reputation. The lawsuit targets both the production companies and the director involved in creating the series.</p></div>
-          <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
-        </div>
-      </div>
-      <div class="article-card fade-in" data-cat="entertainment" data-topnews="true">
-        <span class="card-tag">Entertainment</span>
-        <h2 class="card-headline">Dateline to Air Special on Luigi Mangione Investigation</h2>
-        <p class="card-summary">NBC's Dateline will broadcast a special investigation into Luigi Mangione on Friday evening, examining public reactions to the case.</p>
-        <div class="card-foot">
-          <span class="card-time">4:12 PM ET</span>
-          <button class="expand-btn" onclick="toggleExpand(this)">Continue reading &darr;</button>
-        </div>
-        <div class="article-expand">
-          <div class="card-expand-body"><p>Dateline will air a special on the Mangione investigation on Friday at 10 p.m. ET. The program will explore aspects of the case and how different people have interpreted it.</p><p>The special will examine how people use Mangione as what the program describes as a Rorschach test, reflecting varying perspectives on the investigation. The broadcast represents the news program's deeper look into the ongoing case.</p></div>
-          <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
-        </div>
-      </div>
-      <div class="article-card fade-in" data-cat="business" data-topnews="true">
-        <span class="card-tag">Business</span>
-        <h2 class="card-headline">Netflix Shifts Movie Strategy to Fewer, Higher Quality Films</h2>
-        <p class="card-summary">Dan Lin, leading Netflix's film division, has adopted an approach focused on producing fewer movies of higher quality rather than volume.</p>
-        <div class="card-foot">
-          <span class="card-time">6:00 PM ET</span>
-          <button class="expand-btn" onclick="toggleExpand(this)">Continue reading &darr;</button>
-        </div>
-        <div class="article-expand">
-          <div class="card-expand-body"><p>Netflix has changed its movie strategy under Dan Lin, who does not write blank checks for stars and instead focuses on quality over quantity. Lin continues to greenlight more movies than any other film executive, but the approach represents a shift from the streaming service's previous volume-focused model.</p><p>The new strategy reflects Netflix's evolving position in the entertainment industry as it seeks to balance content output with financial discipline. Lin's reputation for making selective decisions rather than automatically funding high-profile projects signals a more measured approach to film production at the streaming giant</p></div>
-          <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
-        </div>
-      </div>
-      <div class="article-card fade-in" data-cat="tech" data-topnews="true">
-        <span class="card-tag">Tech & Science</span>
-        <h2 class="card-headline">Cable industry warns FCC about foreign router ban</h2>
-        <p class="card-summary">The cable lobby is asking the</p>
-        <div class="card-foot">
-          <span class="card-time">6:00 PM ET</span>
-          <button class="expand-btn" onclick="toggleExpand(this)">Continue reading &darr;</button>
-        </div>
-        <div class="article-expand">
-          <div class="card-expand-body"></div>
-          <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
-        </div>
-      </div>
-      <div class="article-card fade-in" data-cat="sports" data-topnews="true">
-        <span class="card-tag">Sports</span>
-        <h2 class="card-headline">Northern Ireland defeats Guinea in friendly with record young squad</h2>
-        <p class="card-summary">Northern Ireland fielded its youngest ever side and secured a 1-0 friendly victory over Guinea in Spain.</p>
-        <div class="card-foot">
-          <span class="card-time">A few minutes ago</span>
-          <button class="expand-btn" onclick="toggleExpand(this)">Continue reading &darr;</button>
-        </div>
-        <div class="article-expand">
-          <div class="card-expand-body"><p>Northern Ireland won 1-0 against Guinea in a friendly match played in Spain. The team fielded a record youthful lineup, marking the youngest squad Northern Ireland has ever used in an international match. Despite their inexperience, the players showed resilience throughout the contest.</p><p>The young Northern Ireland side demonstrated maturity beyond their years in earning the victory. The match provided valuable experience for the next generation of players representing the national team. The result offers encouragement as Northern Ireland continues to develop its youth talent.</p></div>
-          <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
-        </div>
-      </div>
-      <div class="article-card fade-in" data-cat="world" data-topnews="true">
-        <span class="card-tag">World</span>
-        <h2 class="card-headline">Colombian Presidential Candidate Accused of Co-Opting National Soccer Jersey</h2>
-        <p class="card-summary">A Trump-endorsed candidate faces criticism for using the team's yellow jersey as a political symbol.</p>
-        <div class="card-foot">
-          <span class="card-time">3:42 PM ET</span>
-          <button class="expand-btn" onclick="toggleExpand(this)">Continue reading &darr;</button>
-        </div>
-        <div class="article-expand">
-          <div class="card-expand-body"><p>A Colombian presidential candidate endorsed by President Trump has been accused of turning the national soccer team's yellow jersey into a political statement. The uniform, traditionally seen as a symbol of unity for Colombians, has become a source of controversy.</p><p>Critics say the candidate has appropriated the beloved jersey for campaign purposes, dividing opinion among Colombians who view the national team's colors as belonging to all citizens regardless of political affiliation. The jersey holds particular significance as a unifying symbol in a country often marked by political divisions.</p></div>
-          <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
-        </div>
-      </div>
-      <div class="article-card fade-in" data-cat="tech" data-topnews="true">
-        <span class="card-tag">Tech & Science</span>
-        <h2 class="card-headline">Ad blocker app now blocks ads inside iPhone and Mac apps</h2>
-        <p class="card-summary">Filtr, a privacy tool for Apple devices, can now block advertisements from loading inside apps including web browsers, using a new feature in Apple's latest software.</p>
-        <div class="card-foot">
-          <span class="card-time">A few minutes ago</span>
-          <button class="expand-btn" onclick="toggleExpand(this)">Continue reading &darr;</button>
-        </div>
-        <div class="article-expand">
-          <div class="card-expand-body"><p>Filtr is a privacy tool that blocks ads across iPhone, iPad, and Mac apps. The app leverages a new feature in Apple's latest software to prevent advertisements from loading within applications, extending its capabilities beyond just web browsers.</p><p>This expanded ad blocking gives users greater control over advertising throughout their devices. The tool appeals to users looking to reduce data consumption and limit ad network tracking.</p></div>
-          <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
-        </div>
-      </div>
-      <div class="article-card fade-in" data-cat="entertainment" data-topnews="true">
-        <span class="card-tag">Entertainment</span>
-        <h2 class="card-headline">60 Minutes Producer Pledges Editorial Independence Amid Staff Uncertainty</h2>
-        <p class="card-summary">The new executive producer of 60 Minutes committed to pursuing stories without interference from ownership as CBS waits to learn whether remaining correspondents will stay.</p>
-        <div class="card-foot">
-          <span class="card-time">4:39 PM ET</span>
-          <button class="expand-btn" onclick="toggleExpand(this)">Continue reading &darr;</button>
-        </div>
-        <div class="article-expand">
-          <div class="card-expand-body"><p>The new executive producer of 60 Minutes sent a memo Thursday pledging to uphold the program's commitment to pursue stories without fear or favor, stating the show would not be instructed by company leadership on sensitive reports.</p><p>The memo comes as CBS News and parent company Paramount await word on whether remaining correspondents will continue with the program. The pledge addresses concerns about editorial independence after longtime correspondent Scott Pelley was fired following clashes with new management. Pelley accused executives of instructing him to inject falsehoods and bias into reporting and of silencing employees.</p></div>
-          <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
-        </div>
-      </div>
-      <div class="article-card fade-in" data-cat="politics" data-topnews="true">
-        <span class="card-tag">Politics</span>
-        <h2 class="card-headline">Women describe relationships with Maine Senate candidate Graham Platner as toxic</h2>
-        <p class="card-summary">Several women spoke to The New York Times about their romantic involvement with the Democratic candidate.</p>
-        <div class="card-foot">
-          <span class="card-time">A few minutes ago</span>
-          <button class="expand-btn" onclick="toggleExpand(this)">Continue reading &darr;</button>
-        </div>
-        <div class="article-expand">
-          <div class="card-expand-body"><p>Several women who were romantically involved with Maine Democratic Senate candidate Graham Platner described their relationships to The New York Times as unsettling and toxic. The accounts represent the latest scrutiny of Platner's past as he campaigns for a Senate seat.</p><p>Platner has faced growing examination of his background, including recent reports about his history. Democrats have long sought to win the Maine Senate seat that Platner is running for.</p></div>
-          <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
-        </div>
-      </div>
-      <div class="article-card fade-in" data-cat="entertainment" data-topnews="true">
-        <span class="card-tag">Entertainment</span>
-        <h2 class="card-headline">Jordan Klepper Takes Daily Show to New Orleans for America 250 Celebration</h2>
-        <p class="card-summary">The Daily Show host traveled to New Orleans for a segment celebrating the nation's 250th birthday during a maritime festival.</p>
-        <div class="card-foot">
-          <span class="card-time">A few minutes ago</span>
-          <button class="expand-btn" onclick="toggleExpand(this)">Continue reading &darr;</button>
-        </div>
-        <div class="article-expand">
-          <div class="card-expand-body"><p>Jordan Klepper went to New Orleans for a new installment of Jordan Klepper Fingers the Pulse, airing during Thursday night's episode of The Daily Show. The segment finds Klepper in New Orleans during Sail250, a traveling maritime celebration featuring ships and military vessels.</p><p>The segment celebrates America's 250th birthday. Klepper wandered the streets of New Orleans during the maritime festival for the exclusive segment.</p></div>
-          <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
-        </div>
-      </div>
-      <div class="article-card fade-in" data-cat="sports" data-topnews="true">
-        <span class="card-tag">Sports</span>
-        <h2 class="card-headline">Ollie Robinson returns to England Test team after rediscovering form</h2>
-        <p class="card-summary">Ollie Robinson said his recall to the England Test squad came after he rediscovered his love of cricket in recent months.</p>
-        <div class="card-foot">
-          <span class="card-time">6:00 PM ET</span>
-          <button class="expand-btn" onclick="toggleExpand(this)">Continue reading &darr;</button>
-        </div>
-        <div class="article-expand">
-          <div class="card-expand-body"><p>Ollie Robinson has made a stunning return to the England Test team, taking four wickets for 10 runs in six overs on the first day against New Zealand. The performance included a three-wicket maiden, marking his comeback after more than two years away from international cricket.</p><p>The 32-year-old had been dropped in 2024 over fitness and commitment concerns. Robinson admitted he feared he would never play for England again, but rediscovered his appetite for cricket while playing grade cricket for Sydney University during England's Ashes campaign. His extraordinary performance has given England hope as they begin their post-Ashes rebuild.</p></div>
-          <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
-        </div>
-      </div>
-      <div class="article-card fade-in" data-cat="entertainment" data-topnews="true">
-        <span class="card-tag">Entertainment</span>
-        <h2 class="card-headline">Sara Bareilles Documentary to Premiere at Tribeca Festival</h2>
-        <p class="card-summary">A documentary about Sara Bareilles creating an album about loss will premiere at the Tribeca Film Festival.</p>
-        <div class="card-foot">
-          <span class="card-time">4:03 PM ET</span>
-          <button class="expand-btn" onclick="toggleExpand(this)">Continue reading &darr;</button>
-        </div>
-        <div class="article-expand">
-          <div class="card-expand-body"><p>Sara Bareilles: Good Grief will premiere at the Tribeca Film Festival. The documentary follows singer-songwriter Sara Bareilles as she creates an album largely about loss, which she titled Good Grief.</p><p>Director Josh Alexander collaborated with Bareilles on the film. The documentary explores how Bareilles transformed experiences of loss into music, with the title playing on the common phrase to make it feel literal rather than contradictory.</p></div>
-          <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
-        </div>
-      </div>
-      <div class="article-card fade-in" data-cat="entertainment" data-is-hero="true" data-topnews="true">
-        <span class="card-tag">Entertainment</span>
-        <h2 class="card-headline">Starz Orders Power: Legacy Series Reuniting Joseph Sikora and Michael Rainey Jr.</h2>
-        <p class="card-summary">Starz has ordered a new Power franchise series titled Power: Legacy, the network confirmed. The show will reunite actors Joseph Sikora and Michael Rainey Jr., who previously led separate spinoff series within the Power u...</p>
-        <div class="card-foot">
-          <span class="card-time">6:00 PM ET</span>
-          <button class="expand-btn" onclick="toggleExpand(this)">Continue reading &darr;</button>
-        </div>
-        <div class="article-expand">
-          <div class="card-expand-body"><p>Starz has ordered a new Power franchise series titled Power: Legacy, the network confirmed. The show will reunite actors Joseph Sikora and Michael Rainey Jr., who previously led separate spinoff series within the Power universe. The network ordered eight episodes for the first season.</p><p>The series will follow Tommy Egan, played by Sikora, and Tariq St. Patrick, played by Rainey Jr., the son of Tommy's late friend James Ghost St. Patrick. Both actors have established their characters through previous Power spinoffs. Sikora starred in Power Book IV: Force, while Rainey Jr. headlined Power Book II: Ghost.</p><p>The Power franchise began with the original series that premiered in 2014 and concluded in 2020. The show's success led Starz to develop multiple spinoff series exploring different characters and storylines within the same universe. The network has built an extensive franchise around the original concept, with various series focusing on different periods and characters from the Power world.</p><p>Power: Legacy represents another expansion of the franchise, bringing together characters who had been developed separately in their own series. The reunion of Tommy and Tariq connects storylines that have run parallel through different Power spinoffs. Tommy Egan was a central character in the original Power series before receiving his own spinoff, while Tariq's story began in the original series and continued as the focus of Power Book II: Ghost.</p><p>The greenlight comes as Starz continues to invest in the Power brand, which has become one of the network's most successful properties. The franchise has maintained a dedicated audience across its various iterations. Production details and a premiere date for Power: Legacy have not been announced.</p></div>
-          <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
-        </div>
-      </div>
-      <div class="article-card fade-in" data-cat="sports" data-is-hero="true" data-topnews="true">
-        <span class="card-tag">Sports</span>
-        <h2 class="card-headline">Liverpool appoints Andoni Iraola as head coach after sacking Arne Slot</h2>
-        <p class="card-summary">Liverpool has confirmed the appointment of Andoni Iraola as its new head coach following the dismissal of Arne Slot. The 43-year-old Spanish manager has signed a two-year contract that will keep him at the club until the...</p>
-        <div class="card-foot">
-          <span class="card-time">6:00 PM ET</span>
-          <button class="expand-btn" onclick="toggleExpand(this)">Continue reading &darr;</button>
-        </div>
-        <div class="article-expand">
-          <div class="card-expand-body"><p>Liverpool has confirmed the appointment of Andoni Iraola as its new head coach following the dismissal of Arne Slot. The 43-year-old Spanish manager has signed a two-year contract that will keep him at the club until the end of the 2027/28 season.</p><p>The announcement came just six days after Liverpool decided to part ways with Slot. The club moved swiftly to identify and secure Iraola, the former Bournemouth head coach, as their preferred replacement. While other candidates including Stuttgart's Sebastian Hoeness and Pierre Sage of Lens were considered, Iraola was Liverpool's favored option and the only manager formally interviewed for the position.</p><p>Several top European clubs, including AC Milan, Bayer Leverkusen, and Crystal Palace, had expressed interest in securing Iraola's services. However, the coach made clear from the outset that Liverpool was the only club he wanted to join after his contract with Bournemouth expired.</p><p>Liverpool's sporting director Richard Hughes, who also appointed Iraola at Bournemouth in 2023, led the approach. Hughes and Michael Edwards, Liverpool's chief executive of football, conducted a review into the team's poor title defense under Slot and concluded that a managerial change was necessary. They determined that a more aggressive, attacking style was needed to return the club to winning ways.</p><p>Formal negotiations with Iraola and his agent began earlier this week and progressed smoothly. The manager arrived on Merseyside on Thursday to complete the deal.</p><p>Speaking to Liverpool's media channel, Iraola expressed his understanding of the challenge ahead. "At the beginning when you arrive at any club, I think you need to kind of prove a little bit yourself," he said. "You need to earn the right also to belong. I want to do this as quickly as possible so I can also celebrate with them."</p><p>On his ambitions, Iraola stated: "I think Liverpool gives me the chance to coach top players, and top players give you the chance to fight for titles. To win titles. Obviously when you arrive at a place, you cannot promise everything. But it's true that I understand where I'm coming and what is expected. I'm ready for the challenge."</p><p>Iraola has built his reputation through his work with Bournemouth, where he established an exciting, high-pressing team while improving the club year-on-year despite limited resources compared to rivals. Liverpool's board was particularly attracted to his proven Premier League experience, his ability to develop individual and collective player performance, and his leadership qualities.</p><p>Iraola intends to bring members of his backroom team from Bournemouth, including assistants Tommy Elphick and Shaun Cooper, analyst Tom Webber, and fitness coach Pablo de la Torre to Anfield, though Liverpool has not yet finalized all additions to the coaching staff.</p></div>
-          <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
-        </div>
-      </div>
-      <div class="article-card fade-in" data-cat="sports" data-topnews="true">
-        <span class="card-tag">Sports</span>
-        <h2 class="card-headline">Maja Chwalinska reaches French Open final as unsponsored qualifier</h2>
-        <p class="card-summary">Polish qualifier Maja Chwalinska defeated Diana Shnaider to reach the French Open final, continuing an unexpected run at Roland Garros.</p>
-        <div class="card-foot">
-          <span class="card-time">4:03 PM ET</span>
-          <button class="expand-btn" onclick="toggleExpand(this)">Continue reading &darr;</button>
-        </div>
-        <div class="article-expand">
-          <div class="card-expand-body"><p>Maja Chwalinska made history by becoming the first qualifier to reach the French Open final. The Polish player defeated 25th seed Diana Shnaider 7-6 (4), 6-4 in the semifinals, securing an emotional victory that left her sobbing into her towel.</p><p>Chwalinska will face Mirra Andreeva in Saturday's final as she pursues her first Grand Slam title. Her remarkable run through Roland Garros has defied expectations, transforming what she has described as the darkest period of her life into an improbable quest for the championship.</p></div>
-          <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
-        </div>
-      </div>
-      <div class="article-card fade-in" data-cat="sports" data-topnews="true">
-        <span class="card-tag">Sports</span>
-        <h2 class="card-headline">Leeds Rhinos extend Super League lead with win over St Helens</h2>
-        <p class="card-summary">Leeds Rhinos expanded their advantage at the top of the Super League table after defeating St Helens at Headingley.</p>
-        <div class="card-foot">
-          <span class="card-time">A few minutes ago</span>
-          <button class="expand-btn" onclick="toggleExpand(this)">Continue reading &darr;</button>
-        </div>
-        <div class="article-expand">
-          <div class="card-expand-body"><p>Leeds Rhinos strengthened their Super League title position with a 24-16 victory over St Helens at Headingley. The Rhinos mounted an impressive comeback after trailing by eight points at half-time to secure the win.</p><p>The victory holds particular significance as it ended a decade-long drought for Leeds, who had not won a home match against St Helens since 2017. This includes last year's playoff eliminator when St Helens snatched a dramatic late victory. The win consolidates Leeds' position at the top of the Super League table.</p></div>
-          <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
-        </div>
-      </div>
-      <div class="article-card fade-in" data-cat="sports" data-topnews="true">
-        <span class="card-tag">Sports</span>
-        <h2 class="card-headline">British athletes Caudery and Hunter Bell win at Rome Diamond League</h2>
-        <p class="card-summary">World indoor champions Molly Caudery and Georgia Hunter Bell claimed victories in their respective events at the Diamond League meeting in Rome.</p>
-        <div class="card-foot">
-          <span class="card-time">A few minutes ago</span>
-          <button class="expand-btn" onclick="toggleExpand(this)">Continue reading &darr;</button>
-        </div>
-        <div class="article-expand">
-          <div class="card-expand-body"><p>World indoor champions Molly Caudery and Georgia Hunter Bell both claimed victories at the Diamond League meeting in Rome. Caudery won the pole vault competition, while Hunter Bell triumphed in the 1500 meters with a season's best time of three minutes 58.63 seconds.</p><p>Hunter Bell's performance demonstrated strong race management as she timed her effort perfectly to secure the win. Both athletes' victories at the Rome meeting underline their status among the world's elite performers in their respective disciplines.</p></div>
-          <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
-        </div>
-      </div>
-      <div class="article-card fade-in" data-cat="sports" data-topnews="true">
-        <span class="card-tag">Sports</span>
-        <h2 class="card-headline">Formula 1 extends Las Vegas race contract through 2037</h2>
-        <p class="card-summary">Formula 1 will continue racing in Las Vegas for at least another decade after agreeing to a contract extension with the city.</p>
-        <div class="card-foot">
-          <span class="card-time">A few minutes ago</span>
-          <button class="expand-btn" onclick="toggleExpand(this)">Continue reading &darr;</button>
-        </div>
-        <div class="article-expand">
-          <div class="card-expand-body"><p>Formula 1 extended its agreement with Las Vegas by 10 years, ensuring the race will remain on the calendar until at least 2037. The extension secures the long-term future of the Las Vegas Grand Prix, which has become a prominent addition to the Formula 1 schedule.</p><p>The deal reflects the success of the Las Vegas race since its introduction. The event has generated significant interest and revenue, making it an attractive venue for Formula 1. The extended contract provides stability for teams, sponsors, and fans planning around the annual Las Vegas race weekend.</p></div>
-          <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
-        </div>
-      </div>
-      <div class="article-card fade-in" data-cat="world" data-topnews="true">
-        <span class="card-tag">World</span>
-        <h2 class="card-headline">Ex-Wife of Dubai Ruler's Nephew Held in Custody</h2>
-        <p class="card-summary">Zeynab Javadli has not contacted friends since Tuesday, prosecutors said.</p>
-        <div class="card-foot">
-          <span class="card-time">A few minutes ago</span>
-          <button class="expand-btn" onclick="toggleExpand(this)">Continue reading &darr;</button>
-        </div>
-        <div class="article-expand">
-          <div class="card-expand-body"><p>Prosecutors confirmed that Zeynab Javadli, the former wife of a nephew of Dubai's ruler, is in custody. She has not been in contact with any of her friends since Tuesday.</p><p>The announcement from prosecutors provided limited information about the circumstances of her detention or the charges she may face. Javadli's lack of communication with her social circle raised concerns among friends before authorities confirmed she was being held.</p></div>
-          <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
-        </div>
-      </div>
-      <div class="article-card fade-in" data-cat="entertainment" data-topnews="true">
-        <span class="card-tag">Entertainment</span>
-        <h2 class="card-headline">Trump to Attend NBA Finals Game 3 at Madison Square Garden</h2>
-        <p class="card-summary">The president confirmed he will attend Game 3 of the NBA Finals on Monday to watch the New York Knicks play at Madison Square Garden.</p>
-        <div class="card-foot">
-          <span class="card-time">A few minutes ago</span>
-          <button class="expand-btn" onclick="toggleExpand(this)">Continue reading &darr;</button>
-        </div>
-        <div class="article-expand">
-          <div class="card-expand-body"><p>President Trump confirmed he plans to attend Game 3 of the NBA Finals on Monday. He will watch his hometown New York Knicks play at Madison Square Garden.</p><p>The president also indicated he may attend Game 4 of the series. The Knicks are competing in the NBA Finals, bringing professional basketball's championship series to New York.</p></div>
-          <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
-        </div>
-      </div>
-      <div class="article-card fade-in" data-cat="entertainment" data-topnews="true">
-        <span class="card-tag">Entertainment</span>
-        <h2 class="card-headline">Seeker Music Acquires Cocteau Twins Member's Publishing Catalog</h2>
-        <p class="card-summary">Evan Bogart's Seeker Music purchased the music publishing catalog of Simon Raymonde, longtime member of Cocteau Twins.</p>
-        <div class="card-foot">
-          <span class="card-time">6:00 PM ET</span>
-          <button class="expand-btn" onclick="toggleExpand(this)">Continue reading &darr;</button>
-        </div>
-        <div class="article-expand">
-          <div class="card-expand-body"><p>Seeker Music acquired the music publishing catalog of Simon Raymonde, which includes his work as a longtime member of Cocteau Twins. The</p></div>
-          <button class="collapse-btn" onclick="collapseThis(this)">Close &uarr;</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="support-box" id="support">
-      <div class="support-box-text">
-        <p>Plain runs on reader support.</p>
-        <span>No ads. No investors. No agenda. Just a belief that clean news should be free and a real cost to keep it that way. If Plain is part of your day, consider buying us a coffee.</span>
-      </div>
-      <button class="support-box-btn" onclick="window.open('https://buymeacoffee.com/andrewdobrow','_blank')">Support Plain &#9829;</button>
-    </div>
-  </main>
 
   <footer>
-    <div class="footer-inner">
-      <span class="footer-wordmark">plain</span>
-      <span class="footer-tagline">Updated every hour. No ads. No noise. Always free.</span>
-      <div class="footer-links">
-        <a href="about.html">About</a>
-        <a href="https://buymeacoffee.com/andrewdobrow" target="_blank">Support</a>
-        <a href="mailto:anjrued123@gmail.com">Contact</a>
-        <a href="privacy.html">Privacy</a>
-        <a href="https://lowsignal.dev" target="_blank">Built by Low Signal Labs</a>
-      </div>
+    <span class="footer-logo">plain</span>
+    <div class="footer-links">
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a href="/about.html">About</a>
+      <a href="mailto:anjrued123@gmail.com">Contact</a>
     </div>
   </footer>
 
-  <script src="main.js?v=2026060422"></script>
 </body>
 </html>
