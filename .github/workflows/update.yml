@@ -21,9 +21,6 @@ jobs:
       - name: Install dependencies
         run: pip install feedparser anthropic requests json-repair
 
-      - name: Clean up duplicate archives
-        run: python cleanup_archive.py
-
       - name: Generate news
         run: python scripts/generate.py
         env:
