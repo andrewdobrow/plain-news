@@ -183,3 +183,37 @@ function shareArticle(btn) {
     }).catch(() => {});
   }
 }
+
+// -- THEME TOGGLE --
+(function() {
+  const root    = document.documentElement;
+  const btn     = document.getElementById("themeToggle");
+  const STORAGE = "plain-theme";
+
+  function applyTheme(theme) {
+    if (theme === "dark") {
+      root.setAttribute("data-theme", "dark");
+      if (btn) btn.innerHTML = "&#9788;";
+    } else if (theme === "light") {
+      root.setAttribute("data-theme", "light");
+      if (btn) btn.innerHTML = "&#9790;";
+    } else {
+      root.removeAttribute("data-theme");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      if (btn) btn.innerHTML = prefersDark ? "&#9788;" : "&#9790;";
+    }
+  }
+
+  // Apply saved preference on load
+  const saved = localStorage.getItem(STORAGE);
+  applyTheme(saved || "auto");
+
+  if (btn) {
+    btn.addEventListener("click", () => {
+      const current = localStorage.getItem(STORAGE) || "auto";
+      const next = current === "dark" ? "light" : "dark";
+      localStorage.setItem(STORAGE, next);
+      applyTheme(next);
+    });
+  }
+})();
