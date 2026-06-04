@@ -1856,7 +1856,7 @@ def render_index(all_categories, market_data=None, market_live=False, top_cat=No
       </nav>
       <div class="header-actions">
         <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">&#9790;</button>
-        <a href="https://apps.apple.com/us/app/plain-news-without-the-noise/id6774256916" target="_blank" class="appstore-btn" aria-label="Download on the App Store">&#xF8FF; App</a>
+        <a href="https://apps.apple.com/us/app/plain-news-without-the-noise/id6774256916" target="_blank" class="appstore-btn" aria-label="Download on the App Store"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" style="height:28px;display:block;"></a>
         <button class="support-btn" onclick="window.open('https://buymeacoffee.com/andrewdobrow','_blank')">Support Plain</button>
       </div>
     </div>
