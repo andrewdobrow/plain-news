@@ -2560,7 +2560,7 @@ def main():
     # Deduplication only happens on the front page (_all_cards) below
 
     index_html = render_index(all_categories, market_data, market_live, top_cat=top_cat)
-    (OUTPUT_DIR / "index.html").write_text(index_html, encoding="utf-8")
+    (OUTPUT_DIR / "news.html").write_text(index_html, encoding="utf-8")
 
     # Archive — permanent article pages, archive index, sitemap
     write_archives(all_categories, top_cat)
@@ -2656,7 +2656,7 @@ def main():
         ]
     }
     (OUTPUT_DIR / "data.json").write_text(_json.dumps(app_data, indent=2), encoding="utf-8")
-    print(f"\nDone. {len(all_categories)} categories written to index.html + data.json.")
+    print(f"\nDone. {len(all_categories)} categories written to news.html + data.json.")
 
 
 if __name__ == "__main__":
