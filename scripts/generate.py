@@ -423,7 +423,6 @@ PLACEHOLDER_URL_PATTERNS = [
     "default-image", "default_image", "defaultimage",
     "top_image", "top-image",
     "htv_default", "htv-default",
-    "fallback", "placeholder",
     "news-slate", "news_slate",
     "og-image.png", "og_image.png",
     "eenewslogo", "site-logo", "site_logo",
@@ -443,38 +442,627 @@ def is_placeholder_image(img_url):
 
 
 def fetch_og_image(url):
-    if not url: return ""
+    """Fetch an article page and extract its og:image (or twitter:image) meta tag.
+    This is the most reliable image source because it comes from the article itself,
+    guaranteeing the image actually matches the story. Returns "" on any failure."""
+    if not url:
+        return ""
     try:
-        resp = requests.get(url, timeout=6, allow_redirects=True, headers={"User-Agent":"Mozilla/5.0 (compatible; TCTBot/1.0)"})
-        if resp.status_code != 200: return ""
-        html = resp.text[:200000]
+        import re as _re_og
+        resp = requests.get(url, timeout=10,
+                            headers={"User-Agent": "Mozilla/5.0 (compatible; PlainBot/1.0)"})
+        if resp.status_code != 200:
+            return ""
+        html = resp.text[:200000]  # only need the <head>
+        # Try og:image then twitter:image, in either attribute order
         patterns = [
-            r'<meta[^>]+property=["\'"]og:image["\'"][^>]+content=["\'"]([^"\'"]+)',
-            r'<meta[^>]+content=["\'"]([^"\'"]+)["\'"][^>]+property=["\'"]og:image["\'"][^>]*>',
-            r'<meta[^>]+name=["\'"]twitter:image["\'"][^>]+content=["\'"]([^"\'"]+)',
+            r'<meta[^>]+property=["\']og:image["\'][^>]+content=["\']([^"\']+)',
+            r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+property=["\']og:image["\']',
+            r'<meta[^>]+name=["\']twitter:image["\'][^>]+content=["\']([^"\']+)',
+            r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+name=["\']twitter:image["\']',
         ]
         for pat in patterns:
-            m = re.search(pat, html, re.IGNORECASE)
+            m = _re_og.search(pat, html, _re_og.IGNORECASE)
             if m:
                 img = m.group(1).strip()
-                if not img.startswith("http"):
-                    continue
-                if is_placeholder_image(img):
-                    continue
-                try:
-                    img_resp = requests.head(img, timeout=4, allow_redirects=True,
-                                            headers={"User-Agent":"Mozilla/5.0 (compatible; TCTBot/1.0)"})
-                    ct = img_resp.headers.get("content-type","")
-                    cl = int(img_resp.headers.get("content-length", 0))
-                    if img_resp.status_code == 200 and "image" in ct:
-                        if cl > 0 and cl < 10000:
-                            continue
-                        return img
-                except Exception:
-                    continue
+                if img.startswith("http"):
+                    return img
         return ""
     except Exception:
         return ""
+
+
+def find_image(headline, entries):
+    """Match headline back to RSS entry for image, link, and publish time."""
+    h = headline.lower()[:50]
+    for entry in entries:
+        t = entry.get("title", "").lower()[:50]
+        if h in t or t in h:
+            return {
+                "image_url": entry.get("image_url", ""),
+                "link":      entry.get("link", ""),
+                "published": entry.get("published", ""),
+            }
+    return {"image_url": "", "link": "", "published": ""}
+
+
+def extract_publisher_url(entry):
+    """Extract actual publisher URL from a Google News RSS entry.
+    Google News embeds the publisher URL as an href in the description HTML.
+    Falls back to entry link for non-Google feeds.
+    """
+    link = entry.get("link", "")
+    if "news.google.com" not in link:
+        return link  # Already a direct publisher URL
+    desc = entry.get("summary", entry.get("description", ""))
+    if isinstance(desc, list):
+        desc = desc[0].get("value", "") if desc else ""
+    matches = re.findall(r'href="(https?://(?!news\.google)[^"]+)"', desc)
+    if matches:
+        return matches[0]
+    return link
+
+
+def sanitize_text(text):
+    """Remove characters that break JSON parsing."""
+    if not text:
+        return ""
+    return text.replace("\\", " ").replace('"', "'").replace("\n", " ").replace("\r", " ").replace("\t", " ").strip()
+
+
+def clean_summary(text):
+    """Strip navigation text, bylines, HTML tags, and noise from RSS summaries."""
+    if not text:
+        return ""
+    import re as _re
+    # Remove HTML tags
+    text = _re.sub(r"<[^>]+>", " ", text)
+    # Remove URLs
+    text = _re.sub(r"https?://\S+", "", text)
+    # Remove common RSS noise patterns
+    noise_patterns = [
+        r"(?i)read more.*$",
+        r"(?i)click here.*$",
+        r"(?i)continue reading.*$",
+        r"(?i)\[\+\d+ chars\].*$",
+        r"(?i)^by [A-Z][a-z]+ [A-Z][a-z]+",
+        r"(?i)related articles?:.*$",
+        r"(?i)also read:.*$",
+        r"(?i)share this:.*$",
+        r"(?i)follow us.*$",
+        r"&amp;|&lt;|&gt;|&quot;|&#\d+;",
+    ]
+    for pattern in noise_patterns:
+        text = _re.sub(pattern, "", text, flags=_re.MULTILINE)
+    # Remove characters that break JSON parsing
+    text = text.replace("\\", " ").replace('"', "'").replace("\n", " ").replace("\r", " ").replace("\t", " ")
+    # Collapse whitespace
+    text = _re.sub(r"\s+", " ", text).strip()
+    return text
+
+
+def fetch_headlines(feeds, limit=HEADLINES_PER_CATEGORY):
+    """Pull headlines from all feeds, deduplicate, then limit."""
+    seen, entries = set(), []
+    for url in feeds:
+        try:
+            feed = feedparser.parse(url)
+            count = 0
+            for entry in feed.entries[:15]:
+                title = sanitize_text(entry.get("title", "").strip())
+                if not title or title.lower() in seen:
+                    continue
+                seen.add(title.lower())
+                entries.append({
+                    "title":     title,
+                    "summary":   clean_summary(entry.get("summary", entry.get("description", "")))[:800],
+                    "link":      extract_publisher_url(entry),
+                    "image_url": extract_image(entry),
+                    "published": entry.get("published", ""),
+                })
+                count += 1
+        except Exception as e:
+            print(f"  Feed error ({url[:60]}): {e}")
+    # Sort by published date (freshest first) then limit
+    def pub_sort(h):
+        try:
+            from email.utils import parsedate_to_datetime
+            from datetime import timezone
+            return parsedate_to_datetime(h["published"]).astimezone(timezone.utc).timestamp()
+        except Exception:
+            return 0
+    entries.sort(key=pub_sort, reverse=True)
+    return entries[:limit]
+
+
+# -- CLAUDE EDITORIAL ENGINE --
+
+SYSTEM_PROMPT = """You are the editorial engine for Plain, a clean US-focused news site. Write factual, neutral, plain English articles. No jargon. No em dashes.
+
+EDITORIAL PRIORITIES (weigh together):
+1. CONSEQUENCE — how significantly does this affect people? Deaths, resignations, crises, economic decisions all score equally based on impact.
+2. RECENCY — fresh breaking news ranks above follow-ups. Edited timestamps do not make old stories new.
+3. SCOPE — how many people are meaningfully affected.
+
+SCORING GUIDE:
+- Government/national security changes, major deaths, active crises: 8-10
+- Economic policy, natural disasters with casualties: 7-9
+- Follow-ups on previous day's events: 4-6 (always below genuinely new stories)
+- Sports/entertainment: 4-8 based on cultural significance
+- Politics category: the story must be primarily ABOUT a US political actor, institution, or policy (Congress, White House, Supreme Court, US elections, US politicians). US-Iran negotiations belong here because the US government is the main actor. Turkish police raiding opposition offices do NOT — that is a World story. If the US government is not the primary subject, score it 1-2.
+- U.S. category: political news scores above 7 only if it directly affects economy, public safety, constitutional rights, or national security.
+
+ACCURACY — never violate:
+- Write only details explicitly in the provided source material. Never speculate or infer.
+- If a detail is unknown, omit it entirely. Never write about missing information in any form.
+- Never fabricate quotes, statistics, names, or events.
+- Use past tense for past events. Frame updates as updates, not new events.
+- Never reference a specific day of the week (Monday, Tuesday, etc.) unless it appears explicitly in the source material. Do not infer the day from context or current date knowledge.
+
+STYLE — never violate:
+- Never editorialize. No loaded words: controversial, rocky, embattled, slammed, blasted, chaotic, failed.
+- Never copy text verbatim from sources. Write in your own words; paraphrase everything except direct quotes from named individuals.
+- No newsletter openers like "Good morning."
+- Report what happened. Let readers draw their own conclusions."""
+
+
+def strip_absence_language(text):
+    """Remove sentences containing absence/uncertainty language from article text."""
+    if not text:
+        return text
+    absence_patterns = [
+        "no information was", "no details were", "no details have",
+        "details were not", "details have not", "details are not",
+        "has not been confirmed", "have not been confirmed",
+        "was not disclosed", "were not disclosed",
+        "it remains unclear", "it is unclear", "remains unknown",
+        "officials have not", "has not responded", "did not respond",
+        "not immediately available", "not yet available",
+        "could not be reached", "could not be confirmed",
+        "no official statement", "no statement has",
+        "reporting is ongoing", "investigation is ongoing",
+    ]
+    sentences = text.replace("\n\n", "<<PARA>>").split(".")
+    cleaned = []
+    for s in sentences:
+        s_lower = s.lower()
+        if not any(p in s_lower for p in absence_patterns):
+            cleaned.append(s)
+    result = ".".join(cleaned)
+    return result.replace("<<PARA>>", "\n\n").strip()
+
+
+def strip_markdown(text, headline=""):
+    """Remove markdown formatting and headline restatements from article text."""
+    if not text:
+        return text
+    text = re.sub(r"#{1,6}\s*", "", text)
+    text = re.sub(r"\*{1,2}([^*]+)\*{1,2}", r"\1", text)
+    text = re.sub(r"_([^_]+)_", r"\1", text)
+    text = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", text)
+    text = re.sub(r"^[-*]\s+", "", text, flags=re.MULTILINE)
+    text = re.sub(r"\n{3,}", "\n\n", text).strip()
+    # Remove common Guardian/newsletter openers
+    greetings = ["good morning.", "good afternoon.", "good evening.", "good morning,", "good afternoon,", "good evening,"]
+    lower = text.lower()
+    for g in greetings:
+        if lower.startswith(g):
+            text = text[len(g):].lstrip()
+            break
+
+    # Remove first paragraph if it looks like a headline restatement
+    if headline:
+        paragraphs = text.split("\n\n")
+        if paragraphs:
+            first = paragraphs[0].strip()
+            if len(first.split()) < 20:
+                hl_words = set(re.sub(r"[^a-z0-9 ]", " ", headline.lower()).split())
+                p_words  = set(re.sub(r"[^a-z0-9 ]", " ", first.lower()).split())
+                if len(hl_words & p_words) >= min(4, len(hl_words) // 2):
+                    text = "\n\n".join(paragraphs[1:]).strip()
+    return text
+
+
+def generate_category_content(category_key, category_label, headlines):
+    # Build headlines with raw published strings for Claude to copy back
+    def sanitize(text):
+        if not text:
+            return ""
+        import re as _re
+        # Remove characters that break JSON
+        text = text.replace("\\", " ").replace('"', "'").replace("\n", " ").replace("\r", " ").replace("\t", " ")
+        # Remove non-printable characters
+        text = "".join(c for c in text if c.isprintable())
+        # Remove any remaining control sequences
+        text = _re.sub(r"[\x00-\x1f\x7f-\x9f]", " ", text)
+        # Collapse whitespace
+        text = _re.sub(r"\s+", " ", text).strip()
+        return text
+
+    def hl_line(i, h):
+        pub     = sanitize(h.get("published", ""))
+        pub_str = f" [pub:{pub}]" if pub else ""
+        title   = sanitize(h.get("title", ""))
+        summary = sanitize(h.get("summary", ""))
+        return f"{i+1}. {title}{pub_str}\n   {summary[:550]}"
+    # Pre-filter headlines older than 48 hours before Claude sees them
+    from datetime import timezone as _tz
+    _now_utc = datetime.now(_tz.utc)
+    def _is_stale(h):
+        try:
+            from email.utils import parsedate_to_datetime
+            dt = parsedate_to_datetime(h.get("published","")).astimezone(_tz.utc)
+            age_hrs = (_now_utc - dt).total_seconds() / 3600
+            return age_hrs > 48
+        except Exception:
+            return True
+    if category_label == "Politics":
+        print(f"  Politics pre-filter: {len(headlines)} headlines incoming")
+        for h in headlines[:8]:
+            stale = _is_stale(h)
+            print(f"    [stale={stale}] [{h.get('published','NO DATE')}] {h.get('title','')[:55]}")
+    fresh = [h for h in headlines if not _is_stale(h)]
+    headlines = fresh if len(fresh) >= 1 else headlines
+
+    headlines_text = "\n".join(hl_line(i, h) for i, h in enumerate(headlines))
+    # Final safety pass — remove any remaining characters that break JSON
+    headlines_text = headlines_text.replace("\\", " ")
+    # Final nuclear sanitization — encode to ASCII and back to strip any remaining bad chars
+    headlines_text = headlines_text.encode("ascii", "ignore").decode("ascii")
+
+    prompt = f"""Top headlines for {category_label}:
+
+{headlines_text}
+
+Tasks:
+1. Pick the single most important/urgent story.
+2. Write an accurate headline reflecting the current state (frame updates as updates, not new events).
+3. Write a 420-480 word factual article in FOUR to FIVE full paragraphs. Use only confirmed facts from the source, written in your own words. This is the lead front-page story, so it must read as a complete article, not a brief summary. Cover the what, who, when, where, and the broader context or consequences. Do NOT write only two short paragraphs. If the source facts are limited, expand on confirmed context (background, why it matters, what happens next) rather than padding with filler or absence language.
+4. For the next {CARDS_PER_CATEGORY} most important stories write a teaser (one sentence), body (two short paragraphs ~120 words), and urgency_score (1-10). The cards MUST be different stories from the hero — never repeat or reframe the hero story as a card. Card bodies must only contain confirmed facts from the headline and summary. Never use phrases like "no information was disclosed", "details were not available", "it remains unclear", "has not been confirmed", "officials have not commented", or any similar absence language. If details are limited write fewer words and stop — do not pad.
+
+Return ONLY valid JSON:
+{{
+  "hero": {{
+    "headline": "accurate temporally-framed headline",
+    "body": "full article text with paragraph breaks",
+    "urgency_score": <1-10>,
+    "published": "copy the [pub:...] string from the chosen headline exactly, including the date",
+    "source_index": <the number of the chosen headline, e.g. 3>
+  }},
+  "cards": [
+    {{"headline": "...", "teaser": "...", "body": "two paragraphs...", "urgency_score": <1-10>, "published": "copy timestamp", "source_index": <number>}},
+    {{"headline": "...", "teaser": "...", "body": "two paragraphs...", "urgency_score": <1-10>, "published": "copy timestamp", "source_index": <number>}},
+    {{"headline": "...", "teaser": "...", "body": "two paragraphs...", "urgency_score": <1-10>, "published": "copy timestamp", "source_index": <number>}},
+    {{"headline": "...", "teaser": "...", "body": "two paragraphs...", "urgency_score": <1-10>, "published": "copy timestamp", "source_index": <number>}},
+    {{"headline": "...", "teaser": "...", "body": "two paragraphs...", "urgency_score": <1-10>, "published": "copy timestamp", "source_index": <number>}},
+    {{"headline": "...", "teaser": "...", "body": "two paragraphs...", "urgency_score": <1-10>, "published": "copy timestamp", "source_index": <number>}},
+    {{"headline": "...", "teaser": "...", "body": "two paragraphs...", "urgency_score": <1-10>, "published": "copy timestamp", "source_index": <number>}},
+    {{"headline": "...", "teaser": "...", "body": "two paragraphs...", "urgency_score": <1-10>, "published": "copy timestamp", "source_index": <number>}}
+  ]
+}}"""
+
+    response = client.messages.create(
+        model="claude-sonnet-4-5",
+        max_tokens=1800,
+        system=[{
+            "type": "text",
+            "text": SYSTEM_PROMPT,
+            "cache_control": {"type": "ephemeral"}
+        }],
+        messages=[{"role": "user", "content": prompt}],
+        extra_headers={"anthropic-beta": "prompt-caching-2024-07-31"},
+    )
+
+    raw = response.content[0].text.strip()
+    if raw.startswith("```"):
+        raw = raw.split("```")[1]
+        if raw.startswith("json"):
+            raw = raw[4:]
+    raw = raw.strip()
+
+    try:
+        from json_repair import repair_json
+        data = json.loads(repair_json(raw))
+    except Exception:
+        try:
+            data = json.loads(raw, strict=False)
+        except json.JSONDecodeError:
+            import re as _re
+            cleaned = raw.encode("ascii", "ignore").decode("ascii")
+            try:
+                data = json.loads(cleaned, strict=False)
+            except json.JSONDecodeError:
+                start = cleaned.index("{")
+                end   = cleaned.rindex("}") + 1
+                data  = json.loads(cleaned[start:end], strict=False)
+    data["category_key"]   = category_key
+    data["category_label"] = category_label
+
+    # Use source_index to attach original RSS link and image directly — no fuzzy matching needed
+    def attach_source(item, headlines):
+        idx = item.get("source_index")
+        if idx is not None:
+            try:
+                source = headlines[int(idx) - 1]
+                item["link"]      = source.get("link", "")
+                item["image_url"] = source.get("image_url", "")
+            except (IndexError, ValueError, TypeError):
+                item["link"]      = ""
+                item["image_url"] = ""
+        else:
+            item["link"]      = ""
+            item["image_url"] = ""
+
+        # Format published
+        raw_pub = item.get("published", "").replace("pub:", "").strip().strip("[]")
+        item["published"] = format_age(raw_pub)
+        return item
+
+    data["hero"] = attach_source(data["hero"], headlines)
+    data["hero"]["body"] = strip_markdown(data["hero"].get("body", ""), data["hero"].get("headline", ""))
+    for card in data.get("cards", []):
+        attach_source(card, headlines)
+        card["body"] = strip_absence_language(strip_markdown(card.get("body", ""), card.get("headline", "")))
+
+    # Age-based score decay for stale non-breaking stories
+    def decay_score(item):
+        score = item.get("urgency_score", 5)
+        idx = item.get("source_index")
+        if idx is None: return item
+        try:
+            pub_raw = headlines[int(idx) - 1].get("published", "")
+            if not pub_raw: return item
+            from email.utils import parsedate_to_datetime
+            from datetime import timezone
+            dt  = parsedate_to_datetime(pub_raw).astimezone(timezone.utc)
+            now = datetime.now(timezone.utc)
+            hrs = (now - dt).total_seconds() / 3600
+            headline = item.get("headline", "").lower()
+            fresh_words = ["confirms","confirmed","announces","announced","charges","charged",
+                          "arrested","arrest","resigns","resigned","fired","breaks","exclusive",
+                          "new details","emerges","emerged","discovered","uncovers","uncovered",
+                          "identified","named","ruled","plot","conspiracy","indicted","sentenced",
+                          "found guilty","linked","motive","cause of death"]
+            is_fresh = any(w in headline for w in fresh_words)
+            if not is_fresh:
+                if hrs > 48: score = min(score, 4)
+                elif hrs > 36: score = min(score, 5)
+                elif hrs > 24: score = min(score, 7)
+                elif hrs > 12: score = min(score, 8)
+        except Exception:
+            pass
+        item["urgency_score"] = score
+        return item
+
+    decay_score(data["hero"])
+    for card in data.get("cards", []): decay_score(card)
+
+    # Age cap function — parses RSS timestamps properly
+    def apply_age_cap(item):
+        from email.utils import parsedate_to_datetime
+        from datetime import timezone, timedelta
+        import re as _re
+        score = item.get("urgency_score", 5)
+        # Try to get age from source headline timestamp via source_index
+        idx = item.get("source_index")
+        pub_raw = ""
+        if idx is not None:
+            try:
+                pub_raw = headlines[int(idx) - 1].get("published", "")
+            except Exception:
+                pass
+        if not pub_raw:
+            pub_raw = item.get("published", "")
+        if not pub_raw:
+            return
+        try:
+            dt  = parsedate_to_datetime(pub_raw).astimezone(timezone.utc)
+            now = datetime.now(timezone.utc)
+            hrs = (now - dt).total_seconds() / 3600
+        except Exception:
+            return
+
+        headline_lower = item.get("headline", "").lower()
+        body_lower     = item.get("body", "").lower()[:400]
+        one_time_events = ["resigns", "resigned", "steps down", "fired", "dies", "dead at",
+                           "killed in", "found dead", "passed away", "obituary"]
+
+        if hrs > 48:
+            item["urgency_score"] = min(score, 4)
+        elif hrs > 24:
+            if any(w in headline_lower for w in one_time_events):
+                item["urgency_score"] = min(score, 4)
+            else:
+                item["urgency_score"] = min(score, 6)
+        elif hrs > 12:
+            if any(w in headline_lower for w in one_time_events):
+                item["urgency_score"] = min(score, 6)
+            else:
+                # Check for stale body signals
+                _now   = datetime.now(timezone.utc)
+                _dates = [(_now - timedelta(days=d)).strftime("%B %d").lower().replace(" 0", " ") for d in range(2, 14)]
+                _months_gone = [(_now - timedelta(days=d*30)).strftime("%B").lower() for d in range(1, 6)]
+                stale_body_signals = ["last week", "last month", "a week ago", "days ago",
+                                      "on monday", "on tuesday", "on wednesday", "on thursday",
+                                      "on friday", "on saturday", "on sunday"] + _dates + _months_gone
+                if any(s in body_lower for s in stale_body_signals):
+                    item["urgency_score"] = min(score, 6)
+
+    apply_age_cap(data["hero"])
+    if data["hero"].get("published", "") and not any(w in data["hero"]["published"].lower() for w in ["minute", "hour", "a few", ":"]):
+        print(f"  Hard age cap applied: hero is from {data['hero']['published']}")
+    for card in data.get("cards", []):
+        apply_age_cap(card)
+
+    # Stale-hero swap: if the chosen hero describes an OLD event (even with a refreshed
+    # timestamp), promote the freshest non-stale card to hero instead. Timestamp filtering
+    # alone misses stories that publishers re-touch, so we also scan the body content.
+    from email.utils import parsedate_to_datetime as _pdt
+    from datetime import timezone as _tzc, timedelta as _tdc
+    _now_c = datetime.now(_tzc.utc)
+    _yest  = (_now_c - _tdc(days=1)).strftime("%A").lower()
+    _2day  = (_now_c - _tdc(days=2)).strftime("%A").lower()
+    _3day  = (_now_c - _tdc(days=3)).strftime("%A").lower()
+    _4day  = (_now_c - _tdc(days=4)).strftime("%A").lower()
+    _stale_days = {_yest, _2day, _3day, _4day}
+    _fresh_override = ["today", "this morning", "this afternoon", "this evening",
+                       "hours ago", "minutes ago", "just announced", "just released",
+                       "breaking", "moments ago", "earlier today", "announced today",
+                       "arrested today", "ruled today", "confirmed today"]
+    _stale_phrases = ["yesterday", "two days ago", "three days ago", "earlier this week",
+                      "last week", "days ago", "happened on", "occurred on", "took place on"]
+
+    def _story_is_stale(item):
+        content = (item.get("teaser", "") + " " + item.get("body", "")[:800]).lower()
+        # Fresh-development language always wins (e.g. "suspect arrested today" in an old story)
+        if any(p in content for p in _fresh_override):
+            return False
+        # Past day-name reference (e.g. "on Thursday" when today is Saturday)
+        for day in _stale_days:
+            if f" {day} " in content or f" {day}," in content or f" {day}." in content or content.startswith(f"{day} "):
+                return True
+        # Stale-event phrases
+        if any(p in content for p in _stale_phrases):
+            return True
+        # Timestamp 24+ hours old via original RSS source
+        idx = item.get("source_index")
+        if idx is not None:
+            try:
+                pub_raw = headlines[int(idx) - 1].get("published", "")
+                if pub_raw:
+                    dt  = _pdt(pub_raw).astimezone(_tzc.utc)
+                    if (_now_c - dt).total_seconds() / 3600 >= 24:
+                        return True
+            except Exception:
+                pass
+        return False
+
+    if _story_is_stale(data["hero"]) and data.get("cards"):
+        for ci, card in enumerate(data["cards"]):
+            if not _story_is_stale(card):
+                old_hero = data["hero"]
+                print(f"  Stale hero swapped: '{old_hero.get('headline','')[:50]}' -> '{card.get('headline','')[:50]}'")
+                # Give the demoted hero a teaser (heroes lack one; cards need one)
+                if not old_hero.get("teaser"):
+                    _body = old_hero.get("body", "").strip()
+                    _first = _body.split(". ")[0].strip()
+                    old_hero["teaser"] = (_first[:160] + ".") if _first else ""
+                data["hero"] = card
+                data["cards"][ci] = old_hero
+                break
+
+    return data
+
+
+# -- HTML GENERATION --
+
+def now_et():
+    et_hour = (datetime.utcnow().hour - 4) % 24
+    suffix  = "AM" if et_hour < 12 else "PM"
+    display = et_hour % 12 or 12
+    return f"{display}:00 {suffix} ET"
+
+
+def make_paragraphs(text):
+    if not text:
+        return ""
+    # Split on double newlines first, fall back to single newlines
+    paragraphs = text.split("\n\n")
+    if len(paragraphs) == 1:
+        paragraphs = text.split("\n")
+    return "".join(
+        f"<p>{p.strip()}</p>"
+        for p in paragraphs
+        if p.strip() and len(p.strip()) > 30
+    )
+
+
+def build_content_bank():
+    """Build a bank of rich publisher content from direct RSS feeds.
+    These have far richer summaries than Google News and no redirect issues.
+    """
+    bank = []
+    seen = set()
+    for url in CONTENT_BANK_FEEDS:
+        try:
+            feed = feedparser.parse(url)
+            for entry in feed.entries[:25]:
+                title = sanitize_text(entry.get("title", ""))
+                if not title or title.lower() in seen:
+                    continue
+                seen.add(title.lower())
+                summary = entry.get("summary", entry.get("description", ""))[:1200]
+                if summary and len(summary) > 100:
+                    bank.append({
+                        "title":   title,
+                        "summary": summary,
+                        "source":  feed.feed.get("title", url),
+                    })
+        except Exception as e:
+            print(f"  Content bank feed error ({url[:50]}): {e}")
+    print(f"  Content bank built: {len(bank)} entries")
+    return bank
+
+
+def find_content(headline, content_bank, max_entries=5):
+    """Fuzzy-match a headline against the content bank and return combined rich summaries."""
+    stops = {"that","this","with","from","have","been","said","will","more",
+             "also","when","were","they","their","about","says","just","after"}
+    def tokens(text):
+        return set(re.sub(r"[^a-z0-9 ]", " ", text.lower()).split()) - stops
+    hero_tokens = tokens(headline)
+    matches = []
+    for entry in content_bank:
+        overlap = len(hero_tokens & tokens(entry["title"]))
+        if overlap >= 2:
+            matches.append((overlap, entry))
+    matches.sort(key=lambda x: x[0], reverse=True)
+    if not matches:
+        return ""
+    parts = []
+    for _, entry in matches[:max_entries]:
+        src     = entry["source"]
+        title   = entry["title"]
+        summary = entry["summary"]
+        parts.append(f"[{src}] {title}\n{summary}")
+    return "\n\n".join(parts)
+
+
+def fetch_guardian_article(headline):
+    """Search Guardian API for matching article and return full body text.
+    Free API key returns complete article content.
+    """
+    if not GUARDIAN_API_KEY:
+        return ""
+    try:
+        import requests as _req
+        # Build search query from key headline words
+        stops = {"that","this","with","from","have","been","said","will","more",
+                 "also","when","were","they","their","about","says","just","after","as","a","the","in","of","for","to","and","or","on","at","an"}
+        words = [w for w in re.sub(r"[^a-z0-9 ]", " ", headline.lower()).split()
+                 if len(w) > 3 and w not in stops][:6]
+        query = " ".join(words)
+        params = {
+            "q":            query,
+            "api-key":      GUARDIAN_API_KEY,
+            "show-fields":  "bodyText",
+            "page-size":    3,
+            "order-by":     "relevance",
+        }
+        resp = _req.get("https://content.guardianapis.com/search", params=params, timeout=8)
+        results = resp.json().get("response", {}).get("results", [])
+        for result in results:
+            body = result.get("fields", {}).get("bodyText", "")
+            if body and len(body.split()) > 150:
+                words_list = body.split()
+                truncated  = " ".join(words_list[:900])
+                print(f"  Guardian: {len(words_list)} words fetched")
+                return truncated
+    except Exception as e:
+        print(f"  Guardian fetch failed: {e}")
+    return ""
+
+
 def fetch_article_text(url, max_words=900):
     """Article fetch disabled — base articles from RSS summaries only."""
     return ""
@@ -1083,14 +1671,9 @@ def render_index(all_categories, market_data=None, market_live=False, top_cat=No
         credit_html = f'<figcaption class="img-credit">Photo: {img_credit}</figcaption>' if img_url and img_credit else ""
         img_html   = f'<figure class="hero-image-wrap"><img class="hero-image" src="{img_url}" alt="{hero["headline"]}" loading="lazy">{credit_html}</figure>' if img_url else ""
         pub_time   = hero.get("published") or f"Today, {timestamp}"
-        # Look up actual archived slug so share URL matches the real article page
-        archive    = load_archive(OUTPUT_DIR / "archive.json")
-        matched    = find_matching_entry(hero.get("headline",""), archive, hero.get("link",""))
-        if matched:
-            slug = matched["slug"]
-        else:
-            today = datetime.utcnow().strftime("%Y-%m-%d")
-            slug  = f"{today}-{slugify(hero.get('headline', ''))}"
+        # Build permanent article URL for share button
+        today       = datetime.utcnow().strftime("%Y-%m-%d")
+        slug        = f"{today}-{slugify(hero.get('headline', ''))}"
         article_url = f"{SITE_URL}/articles/{slug}.html"
         # SEO section label for non-Top-News categories
         section_label = ""
@@ -1653,6 +2236,13 @@ def write_archives(all_categories, top_cat):
 
         source_url = hero.get("link", "")
         existing   = find_matching_entry(headline, archive, source_url)
+
+        # Skip cross-category duplicates within the same run
+        if not existing and _is_duplicate_headline(headline, this_run_token_sets):
+            print(f"  Skipped cross-category duplicate: {headline[:60]}")
+            continue
+
+        this_run_token_sets.append(_sig_tokens(headline))
 
         if existing:
             # Same story — update existing page in place, keep original URL
