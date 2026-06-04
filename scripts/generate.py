@@ -2192,19 +2192,19 @@ def _is_duplicate_headline(headline, existing_token_sets):
 
 def find_matching_entry(headline, archive, source_url=""):
     """Find an existing archive entry for this story using two-tier matching:
-    1. source_url exact match (definitive — same RSS article, different Claude headline)
-    2. fuzzy headline match (catches rewrites and same story from different feeds)
+    1. source_url exact match — only when URL has a specific article path
+    2. fuzzy headline match — catches rewrites and same story from different feeds
     Returns the matching entry dict or None."""
-    # Tier 1: source URL match
     if source_url:
         def norm_url(u):
             return re.sub(r"[?#].*$", "", u.strip().rstrip("/").lower())
         norm_src = norm_url(source_url)
-        for entry in archive:
-            if entry.get("source_url") and norm_url(entry["source_url"]) == norm_src:
-                return entry
+        path_part = re.sub(r"^https?://[^/]+", "", norm_src)
+        if len(path_part) > 10:
+            for entry in archive:
+                if entry.get("source_url") and norm_url(entry["source_url"]) == norm_src:
+                    return entry
 
-    # Tier 2: fuzzy headline match
     tok = _sig_tokens(headline)
     if len(tok) < 3:
         return None
