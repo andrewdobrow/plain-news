@@ -28,8 +28,8 @@ header { position: sticky; top: 0; z-index: 100; background: var(--bg); border-b
 .theme-toggle:hover { background: var(--bg-secondary); color: var(--text); }
 .support-btn { background: none; color: var(--accent); border: 1px solid var(--accent); padding: 7px 16px; border-radius: 20px; font-family: "DM Sans", sans-serif; font-size: 13px; font-weight: 500; cursor: pointer; transition: all 0.15s; white-space: nowrap; }
 .support-btn:hover { background: var(--accent); color: #fff; }
-.appstore-btn { background: var(--accent); color: #fff; border: 1px solid var(--accent); padding: 7px 14px; border-radius: 20px; font-family: "DM Sans", sans-serif; font-size: 13px; font-weight: 600; text-decoration: none; white-space: nowrap; transition: all 0.15s; }
-.appstore-btn:hover { opacity: 0.85; }
+.appstore-btn { display: inline-flex; align-items: center; opacity: 0.9; transition: opacity 0.15s; }
+.appstore-btn:hover { opacity: 1; }
 .support-btn:hover { background: var(--accent); color: white; }
 
 /* -- UPDATE BAR -- */
