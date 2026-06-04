@@ -1648,9 +1648,14 @@ def render_index(all_categories, market_data=None, market_live=False, top_cat=No
         credit_html = f'<figcaption class="img-credit">Photo: {img_credit}</figcaption>' if img_url and img_credit else ""
         img_html   = f'<figure class="hero-image-wrap"><img class="hero-image" src="{img_url}" alt="{hero["headline"]}" loading="lazy">{credit_html}</figure>' if img_url else ""
         pub_time   = hero.get("published") or f"Today, {timestamp}"
-        # Build permanent article URL for share button
-        today       = datetime.utcnow().strftime("%Y-%m-%d")
-        slug        = f"{today}-{slugify(hero.get('headline', ''))}"
+        # Look up actual archived slug so share URL matches the real article page
+        archive    = load_archive(OUTPUT_DIR / "archive.json")
+        matched    = find_matching_entry(hero.get("headline",""), archive, hero.get("link",""))
+        if matched:
+            slug = matched["slug"]
+        else:
+            today = datetime.utcnow().strftime("%Y-%m-%d")
+            slug  = f"{today}-{slugify(hero.get('headline', ''))}"
         article_url = f"{SITE_URL}/articles/{slug}.html"
         # SEO section label for non-Top-News categories
         section_label = ""
