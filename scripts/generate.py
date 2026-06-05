@@ -399,15 +399,15 @@ def match_image(headline, image_bank, cat_key=""):
     # Two shared distinctive terms (e.g. "longview"+"mill", "frankie"+"valli") are a
     # confident match even when the rewritten headline shares few common words.
     if not best_img:
-        distinctive = {w for w in hw if len(w) >= 6}
+        distinctive = {w for w in hw if len(w) >= 7}
         if distinctive:
             for entry in image_bank:
                 source = entry.get("source", "").lower()
                 if any(b in source for b in blocked_sources):
                     continue
-                entry_tokens = {w for w in tokens(entry["title"]) if len(w) >= 6}
+                entry_tokens = {w for w in tokens(entry["title"]) if len(w) >= 7}
                 overlap = len(distinctive & entry_tokens)
-                if overlap > best_score and overlap >= 2:
+                if overlap > best_score and overlap >= 3:
                     entry_geo = tokens(entry["title"]) & geo_words
                     if hl_geo and entry_geo and not (hl_geo & entry_geo):
                         continue
