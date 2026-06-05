@@ -588,7 +588,7 @@ SCORING GUIDE:
 - Government/national security changes, major deaths, active crises: 8-10
 - Economic policy, natural disasters with casualties: 7-9
 - Follow-ups on previous day's events: 4-6 (always below genuinely new stories)
-- Sports/entertainment: 4-8 based on cultural significance
+- Sports/entertainment: 3-6 based on cultural significance. Cap at 6 — sports and entertainment NEVER score above 6 regardless of historic significance. A Grand Slam final, Super Bowl, or major award show belongs as a card, not a hero.
 - Politics category: the story must be primarily ABOUT a US political actor, institution, or policy (Congress, White House, Supreme Court, US elections, US politicians). US-Iran negotiations belong here because the US government is the main actor. Turkish police raiding opposition offices do NOT — that is a World story. If the US government is not the primary subject, score it 1-2.
 - U.S. category: political news scores above 7 only if it directly affects economy, public safety, constitutional rights, or national security.
 
@@ -1386,7 +1386,7 @@ def select_front_page_hero(all_categories):
         "- Single-company news (funding rounds, IPOs, executive shakeups, single-quarter earnings)\n"
         "- Executive opinions or statements about competitors \u2014 'CEO says X is too expensive', 'executive calls Y overrated' are cards, not heroes\n"
         "- Industry commentary, analyst takes, or opinion pieces without a concrete policy or market-moving event\n"
-        "- Sports/entertainment unless truly historic\n"
+        "- Sports/entertainment — these are ALWAYS cards, never heroes, regardless of historic significance. A Grand Slam final, championship game, or record-breaking performance belongs in the Sports section as a card.\n"
         "- Celebrity deaths unless of major historical/cultural figures\n"
         "- Routine policy proposals without immediate broad impact\n"
         "\n"
