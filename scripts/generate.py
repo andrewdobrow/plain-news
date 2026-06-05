@@ -1384,6 +1384,8 @@ def select_front_page_hero(all_categories):
         "- Smaller-scale localized US tragedies — single bus/car crashes, single-building fires, industrial accidents, factory explosions, mine collapses, single-aircraft small plane crashes, local crime. These affect their region/industry, not the nation broadly.\n"
         "- Foreign tragedies without US connection (foreign domestic crime, regional conflicts not involving US allies/interests)\n"
         "- Single-company news (funding rounds, IPOs, executive shakeups, single-quarter earnings)\n"
+        "- Executive opinions or statements about competitors \u2014 'CEO says X is too expensive', 'executive calls Y overrated' are cards, not heroes\n"
+        "- Industry commentary, analyst takes, or opinion pieces without a concrete policy or market-moving event\n"
         "- Sports/entertainment unless truly historic\n"
         "- Celebrity deaths unless of major historical/cultural figures\n"
         "- Routine policy proposals without immediate broad impact\n"
