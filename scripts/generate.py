@@ -9,7 +9,7 @@ import re
 import hashlib
 import feedparser
 import anthropic
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 from collections import defaultdict
 
@@ -756,7 +756,7 @@ Return ONLY valid JSON:
 
     response = client.messages.create(
         model="claude-sonnet-4-5",
-        max_tokens=1800,
+        max_tokens=2400,
         system=[{
             "type": "text",
             "text": SYSTEM_PROMPT,
@@ -1842,7 +1842,7 @@ def render_index(all_categories, market_data=None, market_live=False, top_cat=No
 
   <header>
     <div class="header-inner">
-      <a href="/" class="wordmark">plain</a>
+      <a href="/news.html" class="wordmark">plain</a>
       <nav class="category-nav">
         <button class="cat-btn active" data-cat="all">Top News</button>
         <button class="cat-btn" data-cat="world">World</button>
@@ -1960,7 +1960,7 @@ def render_article_page(hero, category_label, category_key, pub_date, slug):
 
     # Nav for article pages — all absolute URLs since page lives in /articles/
     nav_links = " ".join([
-        f'<button class="cat-btn" data-cat="{k}" onclick="window.location=\'{SITE_URL}/?cat={k}\'">{l}</button>'
+        f'<button class="cat-btn" data-cat="{k}" onclick="window.location=\'{SITE_URL}/news.html?cat={k}\'">{l}</button>'
         for k, l in [("all","Top News"),("world","World"),("us","U.S."),
                      ("politics","Politics"),("business","Business"),
                      ("tech","Tech & Science"),("sports","Sports"),("entertainment","Entertainment")]
@@ -2007,13 +2007,13 @@ def render_article_page(hero, category_label, category_key, pub_date, slug):
 <body>
   <header class="site-header">
     <div class="header-inner">
-      <a href="{SITE_URL}" class="wordmark">plain</a>
+      <a href="{SITE_URL}/news.html" class="wordmark">plain</a>
       <nav class="category-nav">{nav_links}</nav>
     </div>
   </header>
   <main>
     <div class="article-wrap">
-      <a href="{SITE_URL}" class="article-back">&larr; Back to Plain</a>
+      <a href="{SITE_URL}/news.html" class="article-back">&larr; Back to Plain</a>
       <div class="article-meta">
         <span class="article-category">{category_label}</span>
         <span class="article-date">{pub_date}</span>
@@ -2023,7 +2023,7 @@ def render_article_page(hero, category_label, category_key, pub_date, slug):
       <div class="article-body">{body}</div>
       <hr class="article-divider">
       <p class="article-more">More news</p>
-      <a href="{SITE_URL}/?cat={category_key}" class="article-more-link">More {category_label} &rarr;</a>
+      <a href="{SITE_URL}/news.html?cat={category_key}" class="article-more-link">More {category_label} &rarr;</a>
     </div>
   </main>
   <footer>
@@ -2102,7 +2102,7 @@ def render_archive_page(archive_entries):
 <body>
   <header class="site-header">
     <div class="header-inner">
-      <a href="{SITE_URL}" class="wordmark">plain</a>
+      <a href="{SITE_URL}/news.html" class="wordmark">plain</a>
     </div>
   </header>
   <main>
@@ -2451,12 +2451,19 @@ def main():
             all_categories.append(data)
             print(f"  Hero: {data['hero']['headline'][:60]}... (urgency: {data['hero'].get('urgency_score')}, image: {'yes' if img else 'no'})")
 
-            # Enrich cards with content bank + related summaries
-            for card in data.get("cards", []):
-                enhance_card(card, content_bank, headlines)
+            # Enrich cards in parallel
+            from concurrent.futures import ThreadPoolExecutor as _TPE, as_completed as _ac
+            with _TPE(max_workers=6) as _ex:
+                _futs = {_ex.submit(enhance_card, card, content_bank, headlines): card
+                         for card in data.get("cards", [])}
+                for _fut in _ac(_futs, timeout=45):
+                    try: _fut.result(timeout=10)
+                    except Exception: pass
 
         except Exception as e:
+            import traceback
             print(f"  Claude error for {cat_config['label']}: {e}")
+            print(traceback.format_exc())
             continue
 
     if not all_categories:
