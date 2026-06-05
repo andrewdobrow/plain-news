@@ -3,13 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Archive — Plain</title>
-  <meta name="description" content="Every story published on Plain, organized by month.">
-  <link rel="canonical" href="https://plainnews.app/archive.html">
-  <link rel="icon" href="/favicon.ico">
+  <title>Article Archive — Treasure Coast Today</title>
+  <meta name="description" content="Browse all local news articles from Treasure Coast Today covering Martin, St. Lucie, and Indian River counties.">
+  <link rel="canonical" href="https://treasurecoast.today/archive.html">
+  <meta property="og:title" content="Article Archive — Treasure Coast Today">
+  <meta property="og:description" content="Browse all local news articles from Treasure Coast Today covering Martin, St. Lucie, and Indian River counties.">
+  <meta property="og:url" content="https://treasurecoast.today/archive.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Treasure Coast Today">
+  <meta property="og:image" content="https://treasurecoast.today/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://treasurecoast.today/og-image.png">
+  <meta name="geo.region" content="US-FL">
+  <meta name="geo.placename" content="Treasure Coast, Florida">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,300&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GLJY7M6F3G"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-GLJY7M6F3G');
+  </script>
   <style>
     .archive-wrap { max-width: 860px; margin: 0 auto; padding: 40px 24px 80px; }
     .archive-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 14px; }
@@ -19,7 +40,7 @@
     .archive-month-label { font-family: "Fraunces", serif; font-size: 20px; font-weight: 500; color: var(--text); margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
     .archive-list { list-style: none; }
     .archive-item { border-bottom: 1px solid var(--border); }
-    .archive-link { display: flex; align-items: baseline; gap: 10px; padding: 12px 0; text-decoration: none; color: inherit; flex-wrap: wrap; }
+    .archive-link { display: flex; align-items: baseline; gap: 10px; padding: 12px 0; text-decoration: none; color: inherit; flex-wrap: wrap; transition: background .1s; }
     .archive-link:hover .archive-headline { color: var(--accent); }
     .archive-cat { font-size: 10px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); flex-shrink: 0; }
     .archive-headline { font-size: 15px; font-weight: 500; color: var(--text); flex: 1; line-height: 1.4; }
@@ -28,16 +49,38 @@
   </style>
 </head>
 <body>
-  <header class="site-header">
+  <header>
     <div class="header-inner">
-      <a href="https://plainnews.app/news.html" class="wordmark">plain</a>
+      <div class="header-top">
+        <a href="/" class="wordmark">Treasure Coast Today</a>
+      </div>
+
+      <nav class="category-nav">
+        <a href="/" class="cat-btn" style="text-decoration:none">Top News</a>
+        <a href="/?cat=local_gov" class="cat-btn" style="text-decoration:none">Local Gov</a>
+        <a href="/?cat=crime" class="cat-btn" style="text-decoration:none">Crime</a>
+        <a href="/?cat=business" class="cat-btn" style="text-decoration:none">Business</a>
+        <a href="/?cat=schools" class="cat-btn" style="text-decoration:none">Schools</a>
+        <a href="/?cat=sports" class="cat-btn" style="text-decoration:none">Sports</a>
+        <a href="/?cat=things_to_do" class="cat-btn" style="text-decoration:none">Things To Do</a>
+        <a href="/?cat=florida" class="cat-btn" style="text-decoration:none">Florida</a>
+        <a href="/?cat=martin" class="cat-btn" style="text-decoration:none">Martin Co.</a>
+        <a href="/?cat=st_lucie" class="cat-btn" style="text-decoration:none">St. Lucie Co.</a>
+        <a href="/?cat=indian_river" class="cat-btn" style="text-decoration:none">Indian River Co.</a>
+        <a href="archive.html" class="cat-btn" style="text-decoration:none">Archive</a>
+        <a href="events.html" class="cat-btn" style="text-decoration:none">Events</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="https://treasurecoast.today/advertise.html" class="support-btn" style="text-decoration:none">Advertise</a>
+      </div>
     </div>
   </header>
   <main>
     <div class="archive-wrap">
       <span class="archive-eyebrow">Archive</span>
       <h1 class="archive-headline">All Articles</h1>
-      <p class="archive-sub">Every story published on Plain, organized by month.</p>
+      <p class="archive-sub">Every story published on Treasure Coast Today, organized by month.</p>
       
       <div class="archive-month">
         <h2 class="archive-month-label">June 2026</h2>
@@ -102,6 +145,69 @@
           <a href="/articles/2026-06-05-senate-advances-70-billion-immigration-enforcement-bill.html" class="archive-link">
             <span class="archive-cat">Politics</span>
             <span class="archive-headline">Senate advances $70 billion immigration enforcement bill</span>
+            <span class="archive-date">2026-06-05</span>
+          </a>
+        </li>
+        <li class="archive-item">
+          <a href="/articles/2026-06-05-jupiter-island-officials-say-town-is-pretty-well-covered-despite-report-warning.html" class="archive-link">
+            <span class="archive-cat">Local Government</span>
+            <span class="archive-headline">Jupiter Island Officials Say Town Is 'Pretty Well Covered' Despite Report Warning of 9 Feet of Flooding</span>
+            <span class="archive-date">2026-06-05</span>
+          </a>
+        </li>
+        <li class="archive-item">
+          <a href="/articles/2026-06-05-12-make-a-wish-kids-sworn-in-as-junior-deputies-at-st-lucie-county-sheriffs-offi.html" class="archive-link">
+            <span class="archive-cat">Crime & Safety</span>
+            <span class="archive-headline">12 Make-A-Wish kids sworn in as junior deputies at St. Lucie County Sheriff's Office</span>
+            <span class="archive-date">2026-06-05</span>
+          </a>
+        </li>
+        <li class="archive-item">
+          <a href="/articles/2026-06-05-pulte-homes-targets-st-lucie-county-buyers-with-new-affordable-housing-push.html" class="archive-link">
+            <span class="archive-cat">Business & Development</span>
+            <span class="archive-headline">Pulte Homes targets St. Lucie County buyers with new affordable housing push</span>
+            <span class="archive-date">2026-06-05</span>
+          </a>
+        </li>
+        <li class="archive-item">
+          <a href="/articles/2026-06-05-pastor-and-school-bus-driver-arrested-on-child-sex-crime-allegations.html" class="archive-link">
+            <span class="archive-cat">Schools</span>
+            <span class="archive-headline">Pastor and school bus driver arrested on child sex crime allegations</span>
+            <span class="archive-date">2026-06-05</span>
+          </a>
+        </li>
+        <li class="archive-item">
+          <a href="/articles/2026-06-05-st-lucie-mets-and-clearwater-threshers-begin-six-game-series-at-clover-park.html" class="archive-link">
+            <span class="archive-cat">Sports</span>
+            <span class="archive-headline">St. Lucie Mets and Clearwater Threshers begin six-game series at Clover Park</span>
+            <span class="archive-date">2026-06-05</span>
+          </a>
+        </li>
+        <li class="archive-item">
+          <a href="/articles/2026-06-05-beetlejuice-the-musical-runs-through-june-7-at-kravis-center-in-west-palm-beach.html" class="archive-link">
+            <span class="archive-cat">Things To Do</span>
+            <span class="archive-headline">Beetlejuice the musical runs through June 7 at Kravis Center in West Palm Beach</span>
+            <span class="archive-date">2026-06-05</span>
+          </a>
+        </li>
+        <li class="archive-item">
+          <a href="/articles/2026-06-05-florida-supreme-court-upholds-gas-utility-rate-hike.html" class="archive-link">
+            <span class="archive-cat">Florida</span>
+            <span class="archive-headline">Florida Supreme Court Upholds Gas Utility Rate Hike</span>
+            <span class="archive-date">2026-06-05</span>
+          </a>
+        </li>
+        <li class="archive-item">
+          <a href="/articles/2026-06-05-one-airlifted-with-traumatic-injuries-after-suv-semi-crash-on-i-95-in-martin-cou.html" class="archive-link">
+            <span class="archive-cat">Martin County</span>
+            <span class="archive-headline">One airlifted with traumatic injuries after SUV-semi crash on I-95 in Martin County</span>
+            <span class="archive-date">2026-06-05</span>
+          </a>
+        </li>
+        <li class="archive-item">
+          <a href="/articles/2026-06-05-demolition-begins-at-indian-river-mall-in-vero-beach-for-mixed-use-redevelopment.html" class="archive-link">
+            <span class="archive-cat">Indian River County</span>
+            <span class="archive-headline">Demolition begins at Indian River Mall in Vero Beach for mixed-use redevelopment</span>
             <span class="archive-date">2026-06-05</span>
           </a>
         </li>
@@ -1000,10 +1106,15 @@
   </main>
   <footer>
     <div class="footer-inner">
-      <span class="footer-wordmark">plain</span>
+      <span class="footer-wordmark">Treasure Coast Today</span>
+      <span class="footer-tagline">Local news for Martin, St. Lucie &amp; Indian River counties.</span>
       <div class="footer-links">
-        <a href="https://plainnews.app/privacy.html">Privacy</a>
-        <a href="https://plainnews.app/terms.html">Terms</a>
+        <a href="/about.html">About</a>
+        <a href="/archive.html">Archive</a>
+        <a href="/events.html">Events</a>
+        <a href="/advertise.html">Advertise</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="mailto:hello@treasurecoast.today">Contact</a>
       </div>
     </div>
   </footer>
