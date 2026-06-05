@@ -3,116 +3,112 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About — Treasure Coast Today</title>
-  <meta name="description" content="Treasure Coast Today delivers local news for Martin, St. Lucie, and Indian River counties four times a day.">
-  <link rel="canonical" href="https://treasurecoast.today/about.html">
-  <meta property="og:title" content="About — Treasure Coast Today">
-  <meta property="og:description" content="Treasure Coast Today delivers local news for Martin, St. Lucie, and Indian River counties four times a day.">
-  <meta property="og:url" content="https://treasurecoast.today/about.html">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Treasure Coast Today">
-  <meta property="og:image" content="https://treasurecoast.today/og-image.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://treasurecoast.today/og-image.png">
-  <meta name="geo.region" content="US-FL">
-  <meta name="geo.placename" content="Treasure Coast, Florida">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/style.css">
+  <title>About - Plain</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,300&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
-
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GLJY7M6F3G"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-GLJY7M6F3G');
-  </script>
+  <meta name="description" content="News without the noise. Updated every hour. No ads. No agenda. Always free.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://plainnews.app/about.html">
+  <meta property="og:title" content="About Plain: News without the noise">
+  <meta property="og:description" content="Updated every hour. No ads. No paywalls. No agenda. Just the news that matters.">
+  <meta property="og:image" content="https://plainnews.app/social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://plainnews.app/social-card.png">
+  <link rel="stylesheet" href="style.css">
   <style>
-    .about-wrap { max-width: 720px; margin: 56px auto 80px; padding: 0 24px; }
-    .about-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; display: block; }
-    .about-headline { font-family: 'Fraunces', serif; font-size: clamp(32px, 5vw, 48px); font-weight: 600; line-height: 1.1; color: var(--text); margin: 0 0 24px; letter-spacing: -.02em; }
-    .about-body { font-size: 16px; color: var(--text-secondary); line-height: 1.75; }
-    .about-body p { margin: 0 0 20px; }
-    .about-body h2 { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 500; color: var(--text); margin: 40px 0 12px; }
-    .about-divider { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
-    .about-contact { display: inline-block; margin-top: 8px; color: var(--accent); font-weight: 500; }
+    .about-page { max-width: 680px; margin: 0 auto; padding: 60px 24px 100px; }
+    .about-page h2 { font-family: "Fraunces", serif; font-size: 28px; font-weight: 500; letter-spacing: -0.02em; color: var(--text); margin: 48px 0 16px; }
+    .about-page h2:first-of-type { margin-top: 0; }
+    .about-page p { font-size: 16px; line-height: 1.8; color: var(--text-secondary); margin-bottom: 16px; }
+    .about-page a { color: var(--accent); text-decoration: none; }
+    .about-page a:hover { text-decoration: underline; }
+    .about-lede { font-family: "Fraunces", serif; font-size: clamp(24px, 4vw, 38px); font-weight: 500; line-height: 1.2; letter-spacing: -0.02em; color: var(--text); margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+    .about-support { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 10px; padding: 28px 32px; margin-top: 48px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+    .about-support p { font-family: "Fraunces", serif; font-size: 18px; font-weight: 500; color: var(--text); margin: 0; letter-spacing: -0.01em; }
+    .about-support span { font-family: "DM Sans", sans-serif; font-size: 13px; color: var(--text-secondary); display: block; margin-top: 4px; font-weight: 400; }
+    .about-support-btn { background: var(--accent); color: white; border: none; padding: 11px 24px; border-radius: 24px; font-family: "DM Sans", sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; transition: opacity 0.15s; white-space: nowrap; text-decoration: none; display: inline-block; }
+    .about-support-btn:hover { opacity: 0.85; text-decoration: none; }
+    .how-it-works { list-style: none; padding: 0; margin: 0 0 16px; counter-reset: steps; }
+    .how-it-works li { counter-increment: steps; display: flex; gap: 16px; margin-bottom: 16px; font-size: 16px; line-height: 1.7; color: var(--text-secondary); }
+    .how-it-works li::before { content: counter(steps); font-family: "Fraunces", serif; font-size: 18px; font-weight: 500; color: var(--accent); flex-shrink: 0; width: 24px; padding-top: 1px; }
   </style>
 </head>
 <body>
+
   <header>
     <div class="header-inner">
-      <div class="header-top">
-        <a href="/" class="wordmark">Treasure Coast Today</a>
-      </div>
-
+      <a href="/news.html" class="wordmark">plain</a>
       <nav class="category-nav">
-        <a href="/" class="cat-btn" style="text-decoration:none">Top News</a>
-        <a href="/?cat=local_gov" class="cat-btn" style="text-decoration:none">Local Gov</a>
-        <a href="/?cat=crime" class="cat-btn" style="text-decoration:none">Crime</a>
-        <a href="/?cat=business" class="cat-btn" style="text-decoration:none">Business</a>
-        <a href="/?cat=schools" class="cat-btn" style="text-decoration:none">Schools</a>
-        <a href="/?cat=sports" class="cat-btn" style="text-decoration:none">Sports</a>
-        <a href="/?cat=things_to_do" class="cat-btn" style="text-decoration:none">Things To Do</a>
-        <a href="/?cat=florida" class="cat-btn" style="text-decoration:none">Florida</a>
-        <a href="/?cat=martin" class="cat-btn" style="text-decoration:none">Martin Co.</a>
-        <a href="/?cat=st_lucie" class="cat-btn" style="text-decoration:none">St. Lucie Co.</a>
-        <a href="/?cat=indian_river" class="cat-btn" style="text-decoration:none">Indian River Co.</a>
-        <a href="archive.html" class="cat-btn" style="text-decoration:none">Archive</a>
-        <a href="events.html" class="cat-btn" style="text-decoration:none">Events</a>
+        <button class="cat-btn" onclick="window.location='/news.html'">Top News</button>
+        <button class="cat-btn" onclick="window.location='/news.html?cat=world'">World</button>
+        <button class="cat-btn" onclick="window.location='/news.html?cat=us'">U.S.</button>
+        <button class="cat-btn" onclick="window.location='/news.html?cat=politics'">Politics</button>
+        <button class="cat-btn" onclick="window.location='/news.html?cat=business'">Business</button>
+        <button class="cat-btn" onclick="window.location='/news.html?cat=tech'">Tech &amp; Science</button>
+        <button class="cat-btn" onclick="window.location='/news.html?cat=sports'">Sports</button>
+        <button class="cat-btn" onclick="window.location='/news.html?cat=entertainment'">Entertainment</button>
+        <a href="/archive.html" class="cat-btn" style="text-decoration:none">Archive</a>
       </nav>
-
       <div class="header-actions">
-        <a href="https://treasurecoast.today/advertise.html" class="support-btn" style="text-decoration:none">Advertise</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">&#9790;</button>
+        <a href="https://apps.apple.com/us/app/plain-news-without-the-noise/id6774256916" target="_blank" class="appstore-btn"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" style="height:28px;display:block;"></a>
+        <button class="support-btn" onclick="window.open('https://buymeacoffee.com/andrewdobrow','_blank')">Support Plain</button>
       </div>
     </div>
   </header>
+
   <main>
-    <div class="about-wrap">
-      <span class="about-eyebrow">About</span>
-      <h1 class="about-headline">Local news for Florida's Treasure Coast.</h1>
-      <div class="about-body">
-        <p>Treasure Coast Today is a local news source covering Martin County, St. Lucie County, and Indian River County, Florida. We bring residents the stories that matter most close to home — local government, public safety, business and development, schools, sports, and things to do across the Treasure Coast.</p>
+    <div class="about-page">
 
-        <p>Our focus is simple: the news that actually affects the people who live and work here. From county commission decisions in Stuart to development in Port St. Lucie, school district news in Vero Beach to public safety in Fort Pierce, we keep the community informed about what's happening in their own backyard.</p>
+      <p class="about-lede">News without the noise. No ads. No autoplay video. No agenda. Just what matters, updated every hour.</p>
 
-        <h2>Our coverage area</h2>
-        <p>We cover all three Treasure Coast counties with equal dedication:</p>
-        <p><strong>Martin County</strong> — Stuart, Jensen Beach, Palm City, Hobe Sound, Port Salerno, and surrounding communities.</p>
-        <p><strong>St. Lucie County</strong> — Port St. Lucie, Fort Pierce, St. Lucie West, and the surrounding area.</p>
-        <p><strong>Indian River County</strong> — Vero Beach, Sebastian, Fellsmere, and nearby communities.</p>
-        <p>We also cover statewide Florida news that affects Treasure Coast residents, from legislation in Tallahassee to issues touching the entire region. Stories are organized by both topic and county, so readers can quickly find the local news most relevant to them.</p>
+      <h2>What is Plain?</h2>
+      <p>Plain is a free news site built around one idea: reading the news should not feel like an assault. Most news sites today are cluttered with ads, autoplaying video, cookie popups, and headlines engineered to provoke rather than inform. People have started getting their news from social media not because social media is good at news, but because everything else got so bad.</p>
+      <p>Plain is the antidote. Clean design. No ads. No tracking. No noise. Just the most important stories of the hour, clearly written and easy to read.</p>
 
-        <h2>Our mission</h2>
-        <p>Local news strengthens communities. When residents know what's happening in their towns, they make better decisions, get more involved, and hold their institutions accountable. Treasure Coast Today exists to make staying informed about local news effortless for everyone on the Treasure Coast.</p>
+      <h2>How it works</h2>
+      <ol class="how-it-works">
+        <li>Every hour, Plain pulls the latest headlines from wire services and major news sources across eight categories: World, U.S., Politics, Business, Tech &amp; Science, Sports, and Entertainment.</li>
+        <li>An AI editorial engine reviews the headlines and selects the most important story in each category, ranked by urgency and consequence, not clicks or engagement.</li>
+        <li>The engine writes a clear, factual article for each top story, then ranks all stories globally so the most impactful news leads the front page regardless of category.</li>
+        <li>The site rebuilds and publishes. The whole process takes about two minutes.</li>
+      </ol>
+      <p>Plain is transparent about being AI-written. The goal is not to replace journalism. The underlying reporting comes from professional newsrooms around the world. Plain synthesizes and presents it without the noise.</p>
 
-        <h2>Advertise with us</h2>
-        <p>Treasure Coast Today connects local businesses with engaged readers across Martin, St. Lucie, and Indian River counties. If your business serves the Treasure Coast community, we'd love to help you reach them. <a href="/advertise.html" class="about-contact">Learn more about advertising &rarr;</a></p>
+      <h2>Editorial priorities</h2>
+      <p>The AI engine ranks stories by three criteria, in order: <strong>urgency</strong> (what is actively unfolding right now), <strong>consequence</strong> (decisions or events that change something real for real people), and <strong>scope</strong> (how many people are meaningfully affected).</p>
+      <p>Plain explicitly avoids: sensationalism, outrage cycles, celebrity news, and conflict for its own sake. A major policy decision will always outrank a viral social media moment.</p>
 
-        <hr class="about-divider">
+      <h2>Who built this?</h2>
+      <p>Plain was built by <a href="https://buymeacoffee.com/andrewdobrow" target="_blank">Andrew Dobrow</a>, a news reader who got tired of news sites that made him feel worse for visiting them. It runs on a small server and a modest API budget. There are no investors, no advertisers, and no algorithm optimizing for your attention.</p>
 
-        <h2>Get in touch</h2>
-        <p>Have a news tip, question, or correction? We'd love to hear from you at <a href="mailto:hello@treasurecoast.today" class="about-contact">hello@treasurecoast.today</a></p>
+      <h2>Is it really free?</h2>
+      <p>Yes. Plain costs real money to keep running. It is free to read because news should be accessible to everyone. If you find it useful, consider supporting it below. Every contribution helps keep it running and independent.</p>
+
+      <div class="about-support">
+        <div>
+          <p>Plain is free to read. No ads. No agenda.</p>
+          <span>If it is worth something to you, a small contribution keeps it running.</span>
+        </div>
+        <a href="https://buymeacoffee.com/andrewdobrow" target="_blank" class="about-support-btn">Support Plain &#9829;</a>
       </div>
+
     </div>
   </main>
+
   <footer>
     <div class="footer-inner">
-      <span class="footer-wordmark">Treasure Coast Today</span>
-      <span class="footer-tagline">Local news for Martin, St. Lucie &amp; Indian River counties.</span>
+      <span class="footer-wordmark">plain</span>
+      <span class="footer-tagline">Updated every hour. No ads. No noise. Always free.</span>
       <div class="footer-links">
-        <a href="/about.html">About</a>
-        <a href="/archive.html">Archive</a>
-        <a href="/events.html">Events</a>
-        <a href="/advertise.html">Advertise</a>
-        <a href="/privacy.html">Privacy</a>
-        <a href="mailto:hello@treasurecoast.today">Contact</a>
+        <a href="about.html">About</a>
+        <a href="/#support">Support</a>
+        <a href="#">Contact</a>
       </div>
     </div>
   </footer>
-  <script src="/main.js"></script>
+
+  <script src="main.js"></script>
 </body>
 </html>
