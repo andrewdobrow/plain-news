@@ -585,10 +585,12 @@ EDITORIAL PRIORITIES (weigh together):
 3. SCOPE — how many people are meaningfully affected.
 
 SCORING GUIDE:
-- Government/national security changes, major deaths, active crises: 8-10
-- Economic policy, natural disasters with casualties: 7-9
+- Government/national security changes, active crises with broad reach: 8-10
+- Major deaths: heads of state, major political figures, or mass casualty events (50+ killed) only. A single person dying in an accident, however tragic, scores 3-4 MAX regardless of circumstances — it is a local/regional story.
+- Economic policy, natural disasters with widespread casualties: 7-9
 - Follow-ups on previous day's events: 4-6 (always below genuinely new stories)
 - Sports/entertainment: 3-6 based on cultural significance. Cap at 6 — sports and entertainment NEVER score above 6 regardless of historic significance. A Grand Slam final, Super Bowl, or major award show belongs as a card, not a hero.
+- Single-person tragedies, accidents, crimes: 3-4 MAX. A teen dying hiking, a fatal car crash, a single drowning — these are cards regardless of how dramatic the circumstances.
 - Politics category: the story must be primarily ABOUT a US political actor, institution, or policy (Congress, White House, Supreme Court, US elections, US politicians). US-Iran negotiations belong here because the US government is the main actor. Turkish police raiding opposition offices do NOT — that is a World story. If the US government is not the primary subject, score it 1-2.
 - U.S. category: political news scores above 7 only if it directly affects economy, public safety, constitutional rights, or national security.
 
