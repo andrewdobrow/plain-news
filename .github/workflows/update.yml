@@ -8,6 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    env:
+      # Production uses deterministic editorial enforcement. Local/manual runs
+      # default to shadow mode unless this is explicitly set.
+      PLAIN_ENGINE_MODE: enforce
 
     steps:
       - name: Checkout repo
@@ -19,13 +23,22 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install feedparser anthropic requests json-repair
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements-dev.txt
+
+      - name: Validate editorial package
+        run: python scripts/validate_package.py
+
+      - name: Run editorial regression tests
+        run: python -m pytest tests -q
 
       - name: Generate news
         run: python scripts/generate.py
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           GUARDIAN_API_KEY: ${{ secrets.GUARDIAN_API_KEY }}
+          PLAIN_ENGINE_MODE: enforce
 
       - name: Commit and push
         run: |
