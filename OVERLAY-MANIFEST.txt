@@ -1,0 +1,69 @@
+PLAIN NEWS CHANGE-ONLY OVERLAY — ZERO HISTORICAL ARTICLES
+
+This ZIP was generated from a byte-for-byte diff against the uploaded original Plain News repo.
+Modified existing files: 2
+MODIFIED  .github/workflows/update.yml
+MODIFIED  scripts/generate.py
+
+New files: 57
+NEW       .github/workflows/test-editorial-engine.yml
+NEW       .gitignore
+NEW       ARCHITECTURE_MIGRATION.md
+NEW       README.md
+NEW       plain_engine/__init__.py
+NEW       plain_engine/activation.py
+NEW       plain_engine/archive_identity.py
+NEW       plain_engine/assignment_editor_shadow.py
+NEW       plain_engine/canonical_story.py
+NEW       plain_engine/editorial_decision.py
+NEW       plain_engine/editorial_eligibility.py
+NEW       plain_engine/editorial_engine.py
+NEW       plain_engine/editorial_pipeline.py
+NEW       plain_engine/editorial_policy.py
+NEW       plain_engine/editorial_policy.yaml
+NEW       plain_engine/editorial_proximity.py
+NEW       plain_engine/editorial_rules.py
+NEW       plain_engine/event_identity.py
+NEW       plain_engine/event_identity_authority.py
+NEW       plain_engine/event_key.py
+NEW       plain_engine/fact_extraction.py
+NEW       plain_engine/incident_identity.py
+NEW       plain_engine/model_bakeoff.py
+NEW       plain_engine/model_usage.py
+NEW       plain_engine/models.py
+NEW       plain_engine/national_relevance.py
+NEW       plain_engine/observability.py
+NEW       plain_engine/production_router.py
+NEW       plain_engine/publication_identity.py
+NEW       plain_engine/ranking_recommendations.py
+NEW       plain_engine/registry_repair.py
+NEW       plain_engine/rss_adapter.py
+NEW       plain_engine/semantic_material_update.py
+NEW       plain_engine/semantic_publication_gate.py
+NEW       plain_engine/source_identity.py
+NEW       plain_engine/story_engine.py
+NEW       plain_engine/story_evolution.py
+NEW       plain_engine/story_importance.py
+NEW       plain_engine/story_lifecycle.py
+NEW       plain_engine/story_registry.py
+NEW       plain_engine/story_relationship.py
+NEW       plain_engine/story_resolver.py
+NEW       plain_engine/story_timeline.py
+NEW       plain_engine/timeline_coherence.py
+NEW       plain_engine/unified_incident_identity.py
+NEW       requirements-dev.txt
+NEW       requirements.txt
+NEW       scripts/__init__.py
+NEW       scripts/editorial_runtime.py
+NEW       scripts/validate_package.py
+NEW       tests/conftest.py
+NEW       tests/test_archive_identity.py
+NEW       tests/test_editorial_policy.py
+NEW       tests/test_editorial_runtime.py
+NEW       tests/test_national_relevance.py
+NEW       tests/test_ranking_bridge.py
+NEW       tests/test_story_importance_national.py
+
+Historical article files included: 0
+Unchanged original files included: 0
+Delete operations required: 0
