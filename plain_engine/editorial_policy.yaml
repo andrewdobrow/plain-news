@@ -1,0 +1,495 @@
+{
+  "policy_version": 1,
+  "default_source": {
+    "class": "unknown",
+    "trust": 55,
+    "eligible": true
+  },
+  "sources": {
+    "plainnews.app": {
+      "class": "plain_original",
+      "trust": 100,
+      "eligible": true
+    },
+    "apnews.com": {
+      "class": "wire_service",
+      "trust": 98,
+      "eligible": true
+    },
+    "reuters.com": {
+      "class": "wire_service",
+      "trust": 98,
+      "eligible": true
+    },
+    "npr.org": {
+      "class": "national_news",
+      "trust": 95,
+      "eligible": true
+    },
+    "nytimes.com": {
+      "class": "national_news",
+      "trust": 95,
+      "eligible": true
+    },
+    "washingtonpost.com": {
+      "class": "national_news",
+      "trust": 94,
+      "eligible": true
+    },
+    "bbc.com": {
+      "class": "international_news",
+      "trust": 94,
+      "eligible": true
+    },
+    "bbc.co.uk": {
+      "class": "international_news",
+      "trust": 94,
+      "eligible": true
+    },
+    "theguardian.com": {
+      "class": "international_news",
+      "trust": 91,
+      "eligible": true
+    },
+    "politico.com": {
+      "class": "politics_news",
+      "trust": 92,
+      "eligible": true
+    },
+    "thehill.com": {
+      "class": "politics_news",
+      "trust": 89,
+      "eligible": true
+    },
+    "axios.com": {
+      "class": "national_news",
+      "trust": 90,
+      "eligible": true
+    },
+    "arstechnica.com": {
+      "class": "technology_news",
+      "trust": 91,
+      "eligible": true
+    },
+    "theverge.com": {
+      "class": "technology_news",
+      "trust": 89,
+      "eligible": true
+    },
+    "techcrunch.com": {
+      "class": "technology_news",
+      "trust": 87,
+      "eligible": true
+    },
+    "espn.com": {
+      "class": "sports_news",
+      "trust": 92,
+      "eligible": true
+    },
+    "cbssports.com": {
+      "class": "sports_news",
+      "trust": 89,
+      "eligible": true
+    },
+    "variety.com": {
+      "class": "entertainment_news",
+      "trust": 90,
+      "eligible": true
+    },
+    "rollingstone.com": {
+      "class": "entertainment_news",
+      "trust": 86,
+      "eligible": true
+    },
+    "whitehouse.gov": {
+      "class": "government",
+      "trust": 100,
+      "eligible": true
+    },
+    "congress.gov": {
+      "class": "government",
+      "trust": 100,
+      "eligible": true
+    },
+    "senate.gov": {
+      "class": "government",
+      "trust": 100,
+      "eligible": true
+    },
+    "house.gov": {
+      "class": "government",
+      "trust": 100,
+      "eligible": true
+    },
+    "supremecourt.gov": {
+      "class": "government",
+      "trust": 100,
+      "eligible": true
+    },
+    "justice.gov": {
+      "class": "government",
+      "trust": 100,
+      "eligible": true
+    },
+    "state.gov": {
+      "class": "government",
+      "trust": 100,
+      "eligible": true
+    },
+    "defense.gov": {
+      "class": "government",
+      "trust": 100,
+      "eligible": true
+    },
+    "treasury.gov": {
+      "class": "government",
+      "trust": 100,
+      "eligible": true
+    },
+    "federalreserve.gov": {
+      "class": "government",
+      "trust": 100,
+      "eligible": true
+    },
+    "cdc.gov": {
+      "class": "government",
+      "trust": 100,
+      "eligible": true
+    },
+    "fda.gov": {
+      "class": "government",
+      "trust": 100,
+      "eligible": true
+    },
+    "epa.gov": {
+      "class": "government",
+      "trust": 100,
+      "eligible": true
+    },
+    "nasa.gov": {
+      "class": "government",
+      "trust": 100,
+      "eligible": true
+    },
+    "noaa.gov": {
+      "class": "government",
+      "trust": 100,
+      "eligible": true
+    },
+    "weather.gov": {
+      "class": "government",
+      "trust": 100,
+      "eligible": true
+    },
+    "bls.gov": {
+      "class": "government",
+      "trust": 100,
+      "eligible": true
+    },
+    "news.google.com": {
+      "class": "aggregator",
+      "trust": 48,
+      "eligible": true
+    },
+    "news.yahoo.com": {
+      "class": "aggregator",
+      "trust": 50,
+      "eligible": true
+    },
+    "yahoo.com": {
+      "class": "aggregator",
+      "trust": 45,
+      "eligible": true
+    },
+    "aol.com": {
+      "class": "aggregator",
+      "trust": 35,
+      "eligible": true
+    },
+    "realtor.com": {
+      "class": "listing",
+      "trust": 0,
+      "eligible": false
+    },
+    "zillow.com": {
+      "class": "listing",
+      "trust": 0,
+      "eligible": false
+    },
+    "apartments.com": {
+      "class": "listing",
+      "trust": 0,
+      "eligible": false
+    },
+    "redfin.com": {
+      "class": "listing",
+      "trust": 0,
+      "eligible": false
+    },
+    "gov": {
+      "class": "government",
+      "trust": 100,
+      "eligible": true
+    },
+    "mil": {
+      "class": "government",
+      "trust": 100,
+      "eligible": true
+    },
+    "cnn.com": {
+      "class": "national_news",
+      "trust": 88,
+      "eligible": true
+    },
+    "nbcnews.com": {
+      "class": "national_news",
+      "trust": 91,
+      "eligible": true
+    },
+    "abcnews.go.com": {
+      "class": "national_news",
+      "trust": 91,
+      "eligible": true
+    },
+    "cbsnews.com": {
+      "class": "national_news",
+      "trust": 91,
+      "eligible": true
+    },
+    "usatoday.com": {
+      "class": "national_news",
+      "trust": 88,
+      "eligible": true
+    },
+    "pbs.org": {
+      "class": "national_news",
+      "trust": 94,
+      "eligible": true
+    },
+    "propublica.org": {
+      "class": "national_news",
+      "trust": 95,
+      "eligible": true
+    },
+    "bloomberg.com": {
+      "class": "business_news",
+      "trust": 95,
+      "eligible": true
+    },
+    "wsj.com": {
+      "class": "business_news",
+      "trust": 95,
+      "eligible": true
+    },
+    "ft.com": {
+      "class": "business_news",
+      "trust": 95,
+      "eligible": true
+    },
+    "forbes.com": {
+      "class": "business_news",
+      "trust": 82,
+      "eligible": true
+    },
+    "cnbc.com": {
+      "class": "business_news",
+      "trust": 90,
+      "eligible": true
+    },
+    "marketwatch.com": {
+      "class": "business_news",
+      "trust": 88,
+      "eligible": true
+    },
+    "time.com": {
+      "class": "national_news",
+      "trust": 88,
+      "eligible": true
+    },
+    "theatlantic.com": {
+      "class": "national_news",
+      "trust": 90,
+      "eligible": true
+    },
+    "vox.com": {
+      "class": "national_news",
+      "trust": 84,
+      "eligible": true
+    },
+    "slate.com": {
+      "class": "national_news",
+      "trust": 80,
+      "eligible": true
+    },
+    "wired.com": {
+      "class": "technology_news",
+      "trust": 90,
+      "eligible": true
+    },
+    "engadget.com": {
+      "class": "technology_news",
+      "trust": 84,
+      "eligible": true
+    },
+    "nature.com": {
+      "class": "science_news",
+      "trust": 98,
+      "eligible": true
+    },
+    "science.org": {
+      "class": "science_news",
+      "trust": 98,
+      "eligible": true
+    },
+    "scientificamerican.com": {
+      "class": "science_news",
+      "trust": 92,
+      "eligible": true
+    },
+    "statnews.com": {
+      "class": "science_news",
+      "trust": 92,
+      "eligible": true
+    },
+    "latimes.com": {
+      "class": "regional_news",
+      "trust": 90,
+      "eligible": true
+    },
+    "chicagotribune.com": {
+      "class": "regional_news",
+      "trust": 88,
+      "eligible": true
+    },
+    "miamiherald.com": {
+      "class": "regional_news",
+      "trust": 88,
+      "eligible": true
+    },
+    "bostonglobe.com": {
+      "class": "regional_news",
+      "trust": 90,
+      "eligible": true
+    },
+    "sfchronicle.com": {
+      "class": "regional_news",
+      "trust": 89,
+      "eligible": true
+    },
+    "seattletimes.com": {
+      "class": "regional_news",
+      "trust": 89,
+      "eligible": true
+    },
+    "denverpost.com": {
+      "class": "regional_news",
+      "trust": 86,
+      "eligible": true
+    },
+    "dallasnews.com": {
+      "class": "regional_news",
+      "trust": 87,
+      "eligible": true
+    }
+  },
+  "never_publish_classes": [
+    "listing",
+    "search_page",
+    "archive_page",
+    "tag_page",
+    "category_page",
+    "product_listing",
+    "classified"
+  ],
+  "blocked_path_patterns": [
+    "/search",
+    "/tag/",
+    "/tags/",
+    "/category/",
+    "/archive/",
+    "/realestateandhomes-detail/",
+    "/apartments/",
+    "/rentals/"
+  ],
+  "listing_title_patterns": [
+    "for rent",
+    "for sale",
+    "monthly rent",
+    "unit for rent",
+    "home for sale",
+    "property listing",
+    "realtor.com",
+    "zillow",
+    "apartments.com"
+  ],
+  "canonical_priority": {
+    "plain_original": 100,
+    "government": 97,
+    "wire_service": 96,
+    "national_news": 92,
+    "international_news": 90,
+    "politics_news": 89,
+    "technology_news": 88,
+    "sports_news": 86,
+    "entertainment_news": 85,
+    "press_release": 72,
+    "aggregator": 40,
+    "unknown": 55,
+    "listing": 0,
+    "business_news": 91,
+    "science_news": 92,
+    "regional_news": 82
+  },
+  "source_aliases": {
+    "AP": {
+      "class": "wire_service",
+      "trust": 98,
+      "eligible": true
+    },
+    "Associated Press": {
+      "class": "wire_service",
+      "trust": 98,
+      "eligible": true
+    },
+    "Reuters": {
+      "class": "wire_service",
+      "trust": 98,
+      "eligible": true
+    },
+    "NPR": {
+      "class": "national_news",
+      "trust": 95,
+      "eligible": true
+    },
+    "BBC": {
+      "class": "international_news",
+      "trust": 94,
+      "eligible": true
+    },
+    "Politico": {
+      "class": "politics_news",
+      "trust": 92,
+      "eligible": true
+    },
+    "The Hill": {
+      "class": "politics_news",
+      "trust": 89,
+      "eligible": true
+    },
+    "Axios": {
+      "class": "national_news",
+      "trust": 90,
+      "eligible": true
+    },
+    "Google News": {
+      "class": "aggregator",
+      "trust": 48,
+      "eligible": true
+    },
+    "Yahoo": {
+      "class": "aggregator",
+      "trust": 45,
+      "eligible": true
+    }
+  }
+}

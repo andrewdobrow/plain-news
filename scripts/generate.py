@@ -4,6 +4,7 @@ Fetches RSS headlines, ranks by urgency via Claude, writes articles, rebuilds si
 """
 
 import os
+import sys
 import json
 import re
 import hashlib
@@ -12,6 +13,19 @@ import anthropic
 from datetime import datetime, timedelta
 from pathlib import Path
 from collections import defaultdict
+
+ROOT_DIR = Path(__file__).resolve().parent.parent
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
+
+from plain_engine.editorial_rules import SYSTEM_PROMPT, category_rule
+from plain_engine.archive_identity import (
+    find_matching_entry,
+    signature_tokens as _sig_tokens,
+    is_duplicate_headline as _is_duplicate_headline,
+)
+from plain_engine import write_homepage_ranking_recommendations
+from scripts.editorial_runtime import apply_editorial_engine
 
 # -- CONFIG --
 
@@ -179,7 +193,16 @@ SITE_URL               = "https://plainnews.app"
 SITE_NAME              = "Plain"
 
 
-client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+_client = None
+
+def get_client():
+    global _client
+    if _client is None:
+        api_key = os.environ.get("ANTHROPIC_API_KEY", "").strip()
+        if not api_key:
+            raise RuntimeError("ANTHROPIC_API_KEY is required to generate Plain News content")
+        _client = anthropic.Anthropic(api_key=api_key)
+    return _client
 
 # ---------------------------------------------------------------------------
 # Local hosted fallback images — /images/fallback/ in the plain-news repo.
@@ -577,36 +600,7 @@ def fetch_headlines(feeds, limit=HEADLINES_PER_CATEGORY):
 
 # -- CLAUDE EDITORIAL ENGINE --
 
-SYSTEM_PROMPT = """You are the editorial engine for Plain, a clean US-focused news site. Write factual, neutral, plain English articles. No jargon. No em dashes.
-
-EDITORIAL PRIORITIES (weigh together):
-1. CONSEQUENCE — how significantly does this affect people? Deaths, resignations, crises, economic decisions all score equally based on impact.
-2. RECENCY — fresh breaking news ranks above follow-ups. Edited timestamps do not make old stories new.
-3. SCOPE — how many people are meaningfully affected.
-
-SCORING GUIDE:
-- Government/national security changes, active crises with broad reach: 8-10
-- Major deaths: heads of state, major political figures, or mass casualty events (50+ killed) only. A single person dying in an accident, however tragic, scores 3-4 MAX regardless of circumstances — it is a local/regional story.
-- Economic policy, natural disasters with widespread casualties: 7-9
-- Follow-ups on previous day's events: 4-6 (always below genuinely new stories)
-- Sports/entertainment: 3-6 based on cultural significance. Cap at 6 — sports and entertainment NEVER score above 6 regardless of historic significance. A Grand Slam final, Super Bowl, or major award show belongs as a card, not a hero.
-- Single-person tragedies, accidents, crimes: 3-4 MAX. A teen dying hiking, a fatal car crash, a single drowning — these are cards regardless of how dramatic the circumstances.
-- Politics category: the story must be primarily ABOUT a US political actor, institution, or policy (Congress, White House, Supreme Court, US elections, US politicians). US-Iran negotiations belong here because the US government is the main actor. Turkish police raiding opposition offices do NOT — that is a World story. If the US government is not the primary subject, score it 1-2.
-- U.S. category: political news scores above 7 only if it directly affects economy, public safety, constitutional rights, or national security.
-
-ACCURACY — never violate:
-- Write only details explicitly in the provided source material. Never speculate or infer.
-- If a detail is unknown, omit it entirely. Never write about missing information in any form.
-- Never fabricate quotes, statistics, names, or events.
-- Use past tense for past events. Frame updates as updates, not new events.
-- Never reference a specific day of the week (Monday, Tuesday, etc.) unless it appears explicitly in the source material. Do not infer the day from context or current date knowledge.
-
-STYLE — never violate:
-- Never editorialize. No loaded words: controversial, rocky, embattled, slammed, blasted, chaotic, failed.
-- Never copy text verbatim from sources. Write in your own words; paraphrase everything except direct quotes from named individuals.
-- No newsletter openers like "Good morning."
-- Report what happened. Let readers draw their own conclusions."""
-
+# Model-facing editorial rules live in plain_engine/editorial_rules.py.
 
 def strip_absence_language(text):
     """Remove sentences containing absence/uncertainty language from article text."""
@@ -712,17 +706,8 @@ def generate_category_content(category_key, category_label, headlines):
     # Final nuclear sanitization — encode to ASCII and back to strip any remaining bad chars
     headlines_text = headlines_text.encode("ascii", "ignore").decode("ascii")
 
-    # Category-specific hero selection rules
-    cat_rules = {
-        "world": "CRITICAL for World: pick a story about international geopolitics, foreign government actions, wars, diplomacy, or global crises. A celebrity death or cultural figure dying belongs in Entertainment, not World. Skip any story that is primarily about a single person's death unless they were a head of state or major political figure.",
-        "business": "CRITICAL for Business: pick a story about markets, economic policy, major corporate decisions, trade, financial regulation, or industry-wide developments. An accident at a factory or airport (Boeing gear collapse, workplace injury) is NOT a business story — it belongs in U.S. or World. Business heroes should be about economic consequences, not physical accidents.",
-        "us": "CRITICAL for U.S.: pick a story about something happening on US soil that affects American life broadly — policy, law, public safety, society. Avoid duplicating the Politics hero.",
-        "politics": "CRITICAL for Politics: pick a story where the US government, Congress, White House, or Supreme Court is the PRIMARY actor. Foreign political news without direct US government involvement belongs in World.",
-        "tech": "CRITICAL for Tech & Science: pick a story about technology products, companies, research, or scientific discoveries. Avoid general business stories that happen to involve a tech company.",
-        "entertainment": "CRITICAL for Entertainment: this is the correct home for celebrity deaths, cultural figures, film, music, television, and arts. A major author or artist dying belongs HERE, not in World.",
-        "sports": "CRITICAL for Sports: pick an actual sports result, trade, signing, or athletic achievement. Avoid crime or non-sports stories even if they involve athletes.",
-    }
-    rule = cat_rules.get(category_key, "")
+    # Category-specific national editorial contract lives with the engine policy.
+    rule = category_rule(category_key)
     rule_line = f"\n\nCATEGORY RULE: {rule}" if rule else ""
 
     prompt = f"""Top headlines for {category_label}:{rule_line}
@@ -756,7 +741,7 @@ Return ONLY valid JSON:
   ]
 }}"""
 
-    response = client.messages.create(
+    response = get_client().messages.create(
         model="claude-sonnet-4-5",
         max_tokens=2400,
         system=[{
@@ -799,14 +784,23 @@ Return ONLY valid JSON:
         if idx is not None:
             try:
                 source = headlines[int(idx) - 1]
-                item["link"]      = source.get("link", "")
-                item["image_url"] = source.get("image_url", "")
+                item["link"]                 = source.get("link", "")
+                item["image_url"]            = source.get("image_url", "")
+                item["source_title"]         = source.get("title", "")
+                item["source_summary"]       = source.get("summary", "")
+                item["source_published_raw"] = source.get("published", "")
             except (IndexError, ValueError, TypeError):
-                item["link"]      = ""
-                item["image_url"] = ""
+                item["link"]                 = ""
+                item["image_url"]            = ""
+                item["source_title"]         = ""
+                item["source_summary"]       = ""
+                item["source_published_raw"] = ""
         else:
-            item["link"]      = ""
-            item["image_url"] = ""
+            item["link"]                 = ""
+            item["image_url"]            = ""
+            item["source_title"]         = ""
+            item["source_summary"]       = ""
+            item["source_published_raw"] = ""
 
         # Format published
         raw_pub = item.get("published", "").replace("pub:", "").strip().strip("[]")
@@ -1130,7 +1124,7 @@ def enhance_card(card, content_bank, headlines):
             "'it remains unclear', 'has not been confirmed', or any similar absence language. "
             "If details are limited write fewer words and stop — do not pad."
         )
-        resp = client.messages.create(
+        resp = get_client().messages.create(
             model="claude-haiku-4-5-20251001",
             max_tokens=300,
             messages=[{"role": "user", "content": prompt}]
@@ -1162,7 +1156,7 @@ def enhance_hero_article(hero, full_text):
         "Keep it 420-480 words. Plain direct English. No em dashes."
     )
     try:
-        resp = client.messages.create(
+        resp = get_client().messages.create(
             model="claude-haiku-4-5-20251001",
             max_tokens=1200,
             messages=[{"role": "user", "content": prompt}]
@@ -1417,7 +1411,7 @@ def select_front_page_hero(all_categories):
         "PICK: <number>\n"
     )
     try:
-        resp = client.messages.create(
+        resp = get_client().messages.create(
             model="claude-haiku-4-5-20251001",
             max_tokens=500,
             messages=[{"role": "user", "content": prompt}]
@@ -1468,7 +1462,7 @@ def promote_duplicate_heroes(top_cat, all_categories):
         "If none are duplicates, return []."
     )
     try:
-        resp = client.messages.create(
+        resp = get_client().messages.create(
             model="claude-haiku-4-5-20251001",
             max_tokens=200,
             messages=[{"role": "user", "content": prompt}]
@@ -1560,7 +1554,7 @@ def global_rank(all_cards, dedupe_against=None):
         "Example: [4, 1, 12, 7]"
     )
     try:
-        resp = client.messages.create(
+        resp = get_client().messages.create(
             model="claude-haiku-4-5-20251001",
             max_tokens=600,
             messages=[{"role": "user", "content": prompt}]
@@ -1690,7 +1684,7 @@ def render_index(all_categories, market_data=None, market_live=False, top_cat=No
         pub_time   = hero.get("published") or f"Today, {timestamp}"
         # Look up actual archived slug so share URL matches the real article page
         _archive   = load_archive(OUTPUT_DIR / "archive.json")
-        _matched   = find_matching_entry(hero.get("headline",""), _archive, hero.get("link",""))
+        _matched   = find_matching_entry(hero.get("headline",""), _archive, hero.get("link",""), hero.get("story_id",""))
         if _matched:
             slug = _matched["slug"]
         else:
@@ -2194,48 +2188,6 @@ def update_news_sitemap(archive_entries):
 </urlset>"""
 
 
-ARCHIVE_STOPS = {"the","a","an","in","of","for","to","and","or","on","at","is","was","are",
-                 "were","that","this","with","from","have","been","after","over","into","says",
-                 "said","will","than","more","also","when","s","county","florida","treasure",
-                 "coast","martin","lucie","indian","river","beach","port","city","news"}
-
-def _sig_tokens(text):
-    return frozenset(w.lower().strip(".,;:()") for w in text.split()
-                     if len(w) > 3 and w.lower() not in ARCHIVE_STOPS)
-
-def _is_duplicate_headline(headline, existing_token_sets):
-    new_tok = _sig_tokens(headline)
-    if len(new_tok) < 3:
-        return False
-    for ex_tok in existing_token_sets:
-        if len(new_tok & ex_tok) >= 4:
-            return True
-    return False
-
-
-def find_matching_entry(headline, archive, source_url=""):
-    """Find an existing archive entry for this story using two-tier matching:
-    1. source_url exact match — only when URL has a specific article path
-    2. fuzzy headline match — catches rewrites and same story from different feeds
-    Returns the matching entry dict or None."""
-    if source_url:
-        def norm_url(u):
-            return re.sub(r"[?#].*$", "", u.strip().rstrip("/").lower())
-        norm_src = norm_url(source_url)
-        path_part = re.sub(r"^https?://[^/]+", "", norm_src)
-        if len(path_part) > 10:
-            for entry in archive:
-                if entry.get("source_url") and norm_url(entry["source_url"]) == norm_src:
-                    return entry
-
-    tok = _sig_tokens(headline)
-    if len(tok) < 3:
-        return None
-    for entry in archive:
-        if len(tok & _sig_tokens(entry["headline"])) >= 4:
-            return entry
-    return None
-
 def write_archives(all_categories, top_cat):
     articles_dir = OUTPUT_DIR / "articles"
     archive_path = OUTPUT_DIR / "archive.json"
@@ -2245,6 +2197,7 @@ def write_archives(all_categories, top_cat):
     today         = datetime.utcnow().strftime("%Y-%m-%d")
     new_count     = 0
     updated_count = 0
+    unchanged_count = 0
     this_run_token_sets = []
 
     heroes = [(top_cat["category_key"], top_cat["category_label"], top_cat["hero"])]
@@ -2258,7 +2211,7 @@ def write_archives(all_categories, top_cat):
             continue
 
         source_url = hero.get("link", "")
-        existing   = find_matching_entry(headline, archive, source_url)
+        existing   = find_matching_entry(headline, archive, source_url, hero.get("story_id", ""))
 
         # Skip cross-category duplicates within the same run
         if not existing and _is_duplicate_headline(headline, this_run_token_sets):
@@ -2268,8 +2221,23 @@ def write_archives(all_categories, top_cat):
         this_run_token_sets.append(_sig_tokens(headline))
 
         if existing:
-            # Same story — update existing page in place, keep original URL
             slug = existing["slug"]
+            # The persistent editorial engine explicitly says an unchanged same-event
+            # observation should not rewrite the canonical article merely because the
+            # model paraphrased it again on this run. Keep the permanent page stable.
+            if hero.get("editorial_action") == "ignore":
+                if source_url:
+                    existing["source_url"] = source_url
+                if hero.get("story_id"):
+                    existing["story_id"] = hero.get("story_id")
+                if hero.get("event_key"):
+                    existing["event_key"] = hero.get("event_key")
+                existing["last_seen"] = today
+                existing["editorial_action"] = "ignore"
+                unchanged_count += 1
+                continue
+
+            # New material for an existing story updates the same permanent URL.
             (articles_dir / f"{slug}.html").write_text(
                 render_article_page(hero, cat_label, cat_key, today, slug), encoding="utf-8"
             )
@@ -2279,6 +2247,11 @@ def write_archives(all_categories, top_cat):
             existing["lastmod"]   = today
             if source_url:
                 existing["source_url"] = source_url
+            if hero.get("story_id"):
+                existing["story_id"] = hero.get("story_id")
+            if hero.get("event_key"):
+                existing["event_key"] = hero.get("event_key")
+            existing["editorial_action"] = hero.get("editorial_action", "")
             updated_count += 1
         else:
             # New story — create new page
@@ -2297,6 +2270,10 @@ def write_archives(all_categories, top_cat):
                 "category_key": cat_key, "category_label": cat_label,
                 "date": today, "lastmod": today,
                 "image_url": hero.get("image_url",""),
+                "source_url": source_url,
+                "story_id": hero.get("story_id", ""),
+                "event_key": hero.get("event_key", ""),
+                "editorial_action": hero.get("editorial_action", ""),
             })
             new_count += 1
 
@@ -2304,7 +2281,10 @@ def write_archives(all_categories, top_cat):
     (OUTPUT_DIR / "archive.html").write_text(render_archive_page(archive), encoding="utf-8")
     (OUTPUT_DIR / "sitemap.xml").write_text(update_sitemap(archive), encoding="utf-8")
     (OUTPUT_DIR / "news-sitemap.xml").write_text(update_news_sitemap(archive), encoding="utf-8")
-    print(f"  Archived {new_count} new, updated {updated_count} existing ({len(archive)} total)")
+    print(
+        f"  Archived {new_count} new, updated {updated_count} existing, "
+        f"left {unchanged_count} unchanged ({len(archive)} total)"
+    )
 
 def main():
     all_categories = []
@@ -2474,6 +2454,17 @@ def main():
         print("No categories generated. Aborting.")
         return
 
+    print("Applying persistent Plain editorial engine...")
+    editorial_audit = apply_editorial_engine(all_categories, output_dir=OUTPUT_DIR)
+    counts = editorial_audit.get("counts", {})
+    print(
+        "  Editorial engine: "
+        f"{counts.get('processed', 0)} processed, "
+        f"{counts.get('rejected', 0)} rejected, "
+        f"{counts.get('same_category_duplicates', 0)} same-category duplicates, "
+        f"mode={editorial_audit.get('mode', 'unknown')}"
+    )
+
     print("Fetching market data...")
     market_data, market_live = fetch_market_data()
 
@@ -2531,6 +2522,42 @@ def main():
             top_cat["hero"]["image_url"] = fb_img
             top_cat["hero"]["image_credit"] = fb_credit
             print("  front page hero: fallback image applied after hero promotion")
+
+    # Deterministic ranking remains shadow-only in this migration. It
+    # produces an explainable recommendation artifact without changing Plain's
+    # existing live front-page selection until separately validated.
+    try:
+        _ranking_cards = []
+        for _cat in all_categories:
+            for _item in [_cat.get("hero", {}), *_cat.get("cards", [])]:
+                if not isinstance(_item, dict) or not _item.get("headline"):
+                    continue
+                _row = dict(_item)
+                _row["cat_key"] = _cat.get("category_key", "")
+                _row["category_key"] = _cat.get("category_key", "")
+                _row["cat_label"] = _cat.get("category_label", "")
+                _row["published_raw"] = _item.get("source_published_raw", "")
+                _row["source_url"] = _item.get("link", "")
+                _ranking_cards.append(_row)
+        _ranking_hero = dict(top_cat.get("hero", {}))
+        _ranking_hero["cat_key"] = top_cat.get("category_key", "")
+        _ranking_hero["category_key"] = top_cat.get("category_key", "")
+        _ranking_hero["published_raw"] = top_cat.get("hero", {}).get("source_published_raw", "")
+        _ranking_hero["source_url"] = top_cat.get("hero", {}).get("link", "")
+        _ranking_report = write_homepage_ranking_recommendations(
+            _ranking_cards,
+            _ranking_hero,
+            registry_path=OUTPUT_DIR / "story-registry.json",
+            archive=load_archive(OUTPUT_DIR / "archive.json"),
+            output_path=OUTPUT_DIR / "ranking-recommendations.json",
+            review_path=OUTPUT_DIR / "ranking-review.md",
+        )
+        print(
+            "  Ranking shadow: "
+            f"{len(_ranking_report.get('recommendations', []))} recommendations written"
+        )
+    except Exception as _ranking_exc:
+        print(f"  Ranking shadow warning: {_ranking_exc}")
 
     # Global deduplication — one story, one appearance across all categories
     import re as _re2
@@ -2591,6 +2618,8 @@ def main():
             "published":     hero.get("published", ""),
             "cat_label":     cat["category_label"],
             "urgency_score": hero.get("urgency_score", 0),
+            "story_id":      hero.get("story_id", ""),
+            "event_key":     hero.get("event_key", ""),
             "is_hero":       True,
         })
         for card in cat.get("cards", []):
@@ -2601,6 +2630,8 @@ def main():
                 "published":     card.get("published", ""),
                 "cat_label":     cat["category_label"],
                 "urgency_score": card.get("urgency_score", 0),
+                "story_id":      card.get("story_id", ""),
+                "event_key":     card.get("event_key", ""),
                 "is_hero":       False,
             })
     _all_cards.sort(key=lambda c: int(c.get("urgency_score", 0) or 0), reverse=True)
@@ -2615,6 +2646,8 @@ def main():
             "published":     c.get("published", ""),
             "cat_label":     c.get("cat_label", ""),
             "urgency_score": c.get("urgency_score", 0),
+            "story_id":      c.get("story_id", ""),
+            "event_key":     c.get("event_key", ""),
         }
 
     app_data = {
@@ -2636,6 +2669,8 @@ def main():
                 "published":     top_cat["hero"].get("published", ""),
                 "cat_label":     top_cat["category_label"],
                 "urgency_score": top_cat["hero"].get("urgency_score", 0),
+                "story_id":      top_cat["hero"].get("story_id", ""),
+                "event_key":     top_cat["hero"].get("event_key", ""),
             },
             "cards": [card_to_dict(c) for c in _all_cards[:6]]
         },
@@ -2651,6 +2686,8 @@ def main():
                     "image_credit":  cat["hero"].get("image_credit", ""),
                     "published":     cat["hero"].get("published", ""),
                     "urgency_score": cat["hero"].get("urgency_score", 0),
+                    "story_id":      cat["hero"].get("story_id", ""),
+                    "event_key":     cat["hero"].get("event_key", ""),
                 },
                 "cards": [
                     {
@@ -2659,6 +2696,8 @@ def main():
                         "body":          c.get("body", ""),
                         "published":     c.get("published", ""),
                         "urgency_score": c.get("urgency_score", 0),
+                        "story_id":      c.get("story_id", ""),
+                        "event_key":     c.get("event_key", ""),
                     }
                     for c in cat.get("cards", [])[:6]
                 ]
