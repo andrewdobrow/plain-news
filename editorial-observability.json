@@ -1,0 +1,1717 @@
+{
+  "schema_version": 44,
+  "engine": {
+    "name": "plain-editorial-engine",
+    "version": "1.0.0",
+    "release": "national-architecture-port",
+    "resolver_version": "3.0",
+    "relationship_engine_version": "1.5"
+  },
+  "generated_at": "2026-09-04T22:44:58Z",
+  "mode": "enforce",
+  "publication_behavior_changed": false,
+  "activation": {},
+  "registry_path": "/home/runner/work/plain-news/plain-news/story-registry.json",
+  "audit": {
+    "candidates_processed": 63,
+    "routes": {
+      "generate_new": 60,
+      "skip": 2,
+      "unknown": 1
+    },
+    "eligibility": {
+      "low_value": 16,
+      "publishable": 47
+    },
+    "source_classes": {
+      "aggregator": 16,
+      "entertainment_news": 8,
+      "international_news": 14,
+      "national_news": 14,
+      "politics_news": 5,
+      "technology_news": 5,
+      "unknown": 1
+    },
+    "rejected_count": 0,
+    "rejected_examples": []
+  },
+  "relationships": {
+    "counts": {
+      "new_story": 59,
+      "same_event": 3
+    },
+    "examples": [
+      {
+        "story_id": "story_000001",
+        "title": "Flooding in Tibet Leaves Hundreds Missing as China Faces Criticism Over Response",
+        "event_key": "natural-disaster-ae9cbccfb2",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000002",
+        "title": "Russian Drone Strikes Ukrainian Intelligence Headquarters in Kyiv",
+        "event_key": "war-or-military-action-f38f2ff000",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000003",
+        "title": "Israel Expands Occupation in Southern Lebanon After Capturing Strategic Ridge",
+        "event_key": "unknown-event-048b58f789",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000004",
+        "title": "UN Adopts New World Map Showing Africa at True Size",
+        "event_key": "unknown-event-961fde3d06",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000005",
+        "title": "Trump Administration Partner in Venezuela Oil Deal Has History of Investigations",
+        "event_key": "unknown-event-aa5b14254e",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000006",
+        "title": "Netanyahu Releases AI-Generated Video Linking New York Mayor to Iranian Leadership",
+        "event_key": "election-new-york",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "reason": "Created new story: conservative merge requirements were not met",
+        "decision_trace": [
+          "No sufficiently supported match",
+          "Threshold: 0.78"
+        ]
+      },
+      {
+        "story_id": "story_000007",
+        "title": "Two Men Rescued After Nine Days Trapped in Nepal Hydropower Tunnel",
+        "event_key": "unknown-event-d5ac7020fa",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000008",
+        "title": "Argentine Couple to Return Nazi-Looted Painting After 80 Years",
+        "event_key": "war-or-military-action-ef39b6b77f",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000009",
+        "title": "Federal judge extends block on Trump executive order limiting mail voting in midterms",
+        "event_key": "election-north-carolina",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "reason": "Created new story: conservative merge requirements were not met",
+        "decision_trace": [
+          "No sufficiently supported match",
+          "Threshold: 0.78"
+        ]
+      },
+      {
+        "story_id": "story_000010",
+        "title": "Judge declares mistrial in Lindsay Clancy triple-murder case",
+        "event_key": "unknown-event-c1f4d6f03c",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000011",
+        "title": "Trump administration plans to break ground on memorial arch without final approval",
+        "event_key": "unknown-event-cbcb040420",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000012",
+        "title": "Labor Department report finds former secretary violated harassment policy",
+        "event_key": "unknown-event-c3cf81847d",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000013",
+        "title": "Trump signs executive orders affecting ranchers, wolves, and meat processing",
+        "event_key": "unknown-event-c6548eab93",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000014",
+        "title": "Immigration courts establish new locations, raising due process concerns",
+        "event_key": "unknown-event-00ac5b3502",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000015",
+        "title": "Commerce Secretary falsely claims data centers do not use water",
+        "event_key": "unknown-event-1b765604ed",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000016",
+        "title": "Catastrophic flooding in Nepal damages health facilities",
+        "event_key": "unknown-event-8c80142cb5",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000017",
+        "title": "Cleveland police chief says department lacks adequate funding",
+        "event_key": "unknown-event-1407d06d20",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000018",
+        "title": "August Jobs Report Shows Strong Hiring, Raising Pressure on Federal Reserve",
+        "event_key": "fire-37c370190a-37c370190a",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000019",
+        "title": "Trump Threatens Trade Halt Unless Federal Reserve Cuts Interest Rates",
+        "event_key": "unknown-event-aad2b7aa05",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000020",
+        "title": "Justice Department Expands Beef Price Investigation to Major Retailers",
+        "event_key": "unknown-event-cd7b07ae96",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      }
+    ],
+    "decision_trace_examples": [
+      {
+        "story_id": "story_000001",
+        "title": "Flooding in Tibet Leaves Hundreds Missing as China Faces Criticism Over Response",
+        "event_key": "natural-disaster-ae9cbccfb2",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "matched_existing": false,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000002",
+        "title": "Russian Drone Strikes Ukrainian Intelligence Headquarters in Kyiv",
+        "event_key": "war-or-military-action-f38f2ff000",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "matched_existing": false,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000003",
+        "title": "Israel Expands Occupation in Southern Lebanon After Capturing Strategic Ridge",
+        "event_key": "unknown-event-048b58f789",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "matched_existing": false,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000004",
+        "title": "UN Adopts New World Map Showing Africa at True Size",
+        "event_key": "unknown-event-961fde3d06",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "matched_existing": false,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000005",
+        "title": "Trump Administration Partner in Venezuela Oil Deal Has History of Investigations",
+        "event_key": "unknown-event-aa5b14254e",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "matched_existing": false,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000006",
+        "title": "Netanyahu Releases AI-Generated Video Linking New York Mayor to Iranian Leadership",
+        "event_key": "election-new-york",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "matched_existing": false,
+        "reason": "Created new story: conservative merge requirements were not met",
+        "decision_trace": [
+          "No sufficiently supported match",
+          "Threshold: 0.78"
+        ]
+      },
+      {
+        "story_id": "story_000007",
+        "title": "Two Men Rescued After Nine Days Trapped in Nepal Hydropower Tunnel",
+        "event_key": "unknown-event-d5ac7020fa",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "matched_existing": false,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000008",
+        "title": "Argentine Couple to Return Nazi-Looted Painting After 80 Years",
+        "event_key": "war-or-military-action-ef39b6b77f",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "matched_existing": false,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000009",
+        "title": "Federal judge extends block on Trump executive order limiting mail voting in midterms",
+        "event_key": "election-north-carolina",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "matched_existing": false,
+        "reason": "Created new story: conservative merge requirements were not met",
+        "decision_trace": [
+          "No sufficiently supported match",
+          "Threshold: 0.78"
+        ]
+      },
+      {
+        "story_id": "story_000010",
+        "title": "Judge declares mistrial in Lindsay Clancy triple-murder case",
+        "event_key": "unknown-event-c1f4d6f03c",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "matched_existing": false,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000011",
+        "title": "Trump administration plans to break ground on memorial arch without final approval",
+        "event_key": "unknown-event-cbcb040420",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "matched_existing": false,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000012",
+        "title": "Labor Department report finds former secretary violated harassment policy",
+        "event_key": "unknown-event-c3cf81847d",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "matched_existing": false,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000013",
+        "title": "Trump signs executive orders affecting ranchers, wolves, and meat processing",
+        "event_key": "unknown-event-c6548eab93",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "matched_existing": false,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000014",
+        "title": "Immigration courts establish new locations, raising due process concerns",
+        "event_key": "unknown-event-00ac5b3502",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "matched_existing": false,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000015",
+        "title": "Commerce Secretary falsely claims data centers do not use water",
+        "event_key": "unknown-event-1b765604ed",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "matched_existing": false,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000016",
+        "title": "Catastrophic flooding in Nepal damages health facilities",
+        "event_key": "unknown-event-8c80142cb5",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "matched_existing": false,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000017",
+        "title": "Cleveland police chief says department lacks adequate funding",
+        "event_key": "unknown-event-1407d06d20",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "matched_existing": false,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000018",
+        "title": "August Jobs Report Shows Strong Hiring, Raising Pressure on Federal Reserve",
+        "event_key": "fire-37c370190a-37c370190a",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "matched_existing": false,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000019",
+        "title": "Trump Threatens Trade Halt Unless Federal Reserve Cuts Interest Rates",
+        "event_key": "unknown-event-aad2b7aa05",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "matched_existing": false,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000020",
+        "title": "Justice Department Expands Beef Price Investigation to Major Retailers",
+        "event_key": "unknown-event-cd7b07ae96",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "matched_existing": false,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      }
+    ]
+  },
+  "follow_up_detection": {
+    "mode": "observe_only",
+    "publication_behavior_changed": false,
+    "candidate_count": 0,
+    "high_confidence_candidate_count": 0,
+    "unanchored_candidate_suppressed_count": 0,
+    "current_relationships": {},
+    "milestones": {},
+    "reason_codes": {},
+    "examples": [],
+    "retrospective_candidate_count": 0,
+    "retrospective_high_confidence_candidate_count": 0,
+    "retrospective_activation_eligible_candidate_count": 0,
+    "retrospective": {
+      "mode": "retrospective_observe_only",
+      "publication_behavior_changed": false,
+      "stories_with_timelines": 0,
+      "timeline_entries_examined": 0,
+      "transitions_examined": 0,
+      "candidate_scope": "distinct_article_transitions",
+      "candidate_count": 0,
+      "high_confidence_candidate_count": 0,
+      "activation_eligible_candidate_count": 0,
+      "same_source_evolution_count": 0,
+      "same_source_evolution_milestones": {},
+      "same_source_evolution_examples": [],
+      "identity_anchor_rejected_count": 0,
+      "incoherent_transition_count": 0,
+      "incoherent_story_count": 0,
+      "incoherent_stories": [],
+      "milestones": {},
+      "blocking_conflicts": {},
+      "excluded_entry_count": 0,
+      "exclusion_reasons": {},
+      "examples": [],
+      "review_ready": false,
+      "enforcement_ready": false,
+      "enforcement_readiness_reason": "Retrospective candidates are evidence for manual review only. Same-source article evolution is measured separately from distinct follow-up publications, event-family conflicts cannot become activation evidence, and incoherent timelines are quarantined from high-confidence evidence; no relationship, grouping, ranking or publication behavior changes."
+    },
+    "enforcement_ready": false,
+    "enforcement_readiness_reason": "Current-run and retrospective candidate evidence must be manually reviewed across production runs before broader follow-up grouping is activated."
+  },
+  "audience_relevance": {
+    "scopes": {
+      "global_major": 3,
+      "international": 2,
+      "unknown": 30,
+      "us_multistate": 1,
+      "us_national": 20,
+      "us_state_regional": 3
+    },
+    "average_score": 77.0
+  },
+  "editorial_proximity": {
+    "scopes": {
+      "global_major": 3,
+      "international": 2,
+      "unknown": 30,
+      "us_multistate": 1,
+      "us_national": 20,
+      "us_state_regional": 3
+    },
+    "average_priority": 18.32
+  },
+  "story_lifecycle": {
+    "counts": {
+      "active": 55,
+      "breaking": 4
+    }
+  },
+  "registry_health": {
+    "quarantined_story_records_retained": 0,
+    "active_story_count": 59
+  },
+  "stories": {
+    "total": 59,
+    "importance_levels": {
+      "breaking": 4,
+      "high": 2,
+      "normal": 10,
+      "low": 43,
+      "archived": 0
+    },
+    "average_importance": 17.75,
+    "top": [
+      {
+        "story_id": "story_000009",
+        "title": "Federal judge extends block on Trump executive order seeking to limit mail voting in the midterms - AP News",
+        "score": 100,
+        "editorial_priority": 99,
+        "editorial_score": 99,
+        "score_breakdown": {
+          "score": 99,
+          "importance": 100,
+          "proximity_multiplier": 1.0,
+          "freshness_multiplier": 1.0,
+          "source_multiplier": 0.994,
+          "source_trust": 48,
+          "age_hours": 0.6
+        },
+        "level": "breaking",
+        "importance_reasons": [
+          {
+            "code": "federal_action",
+            "label": "Federal/national government action",
+            "points": 32
+          },
+          {
+            "code": "election",
+            "label": "Major election/political consequence",
+            "points": 25
+          },
+          {
+            "code": "war_diplomacy",
+            "label": "War, diplomacy or national-security consequence",
+            "points": 30
+          },
+          {
+            "code": "court_action",
+            "label": "Significant court/criminal-justice action",
+            "points": 15
+          },
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "audience_relevance": {
+          "scope": "us_national",
+          "score": 100,
+          "regions": [
+            "North Carolina"
+          ],
+          "places": [
+            "North Carolina"
+          ]
+        },
+        "editorial_proximity": {
+          "score": 100,
+          "scope": "us_national",
+          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
+        },
+        "event_count": 1,
+        "timeline_entries": 1,
+        "relationship_decisions": 1,
+        "canonical_source_candidates": 1,
+        "lifecycle": {
+          "state": "breaking",
+          "reason": "Breaking importance with a current or undated update",
+          "last_updated": "2026-09-04T22:09:00+00:00",
+          "hours_since_update": 0.6,
+          "event_count": 1,
+          "timeline_entries": 1
+        }
+      },
+      {
+        "story_id": "story_000018",
+        "title": "Wall Street ends lower as solid jobs data fuels hawkish Fed bets - Reuters",
+        "score": 100,
+        "editorial_priority": 99,
+        "editorial_score": 99,
+        "score_breakdown": {
+          "score": 99,
+          "importance": 100,
+          "proximity_multiplier": 1.0,
+          "freshness_multiplier": 1.0,
+          "source_multiplier": 0.994,
+          "source_trust": 48,
+          "age_hours": 2.34
+        },
+        "level": "breaking",
+        "importance_reasons": [
+          {
+            "code": "federal_action",
+            "label": "Federal/national government action",
+            "points": 32
+          },
+          {
+            "code": "macroeconomy",
+            "label": "Broad economic consequence",
+            "points": 28
+          },
+          {
+            "code": "war_diplomacy",
+            "label": "War, diplomacy or national-security consequence",
+            "points": 30
+          },
+          {
+            "code": "public_safety",
+            "label": "Public-safety event",
+            "points": 10
+          },
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "audience_relevance": {
+          "scope": "us_national",
+          "score": 100,
+          "regions": [],
+          "places": []
+        },
+        "editorial_proximity": {
+          "score": 100,
+          "scope": "us_national",
+          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
+        },
+        "event_count": 2,
+        "timeline_entries": 1,
+        "relationship_decisions": 1,
+        "canonical_source_candidates": 1,
+        "lifecycle": {
+          "state": "breaking",
+          "reason": "Breaking importance with a current or undated update",
+          "last_updated": "2026-09-04T20:24:45+00:00",
+          "hours_since_update": 2.34,
+          "event_count": 2,
+          "timeline_entries": 1
+        }
+      },
+      {
+        "story_id": "story_000053",
+        "title": "In boost to GOP, Supreme Court says parties should get lower TV ad rates",
+        "score": 87,
+        "editorial_priority": 98,
+        "editorial_score": 98,
+        "score_breakdown": {
+          "score": 98,
+          "importance": 87,
+          "proximity_multiplier": 1.0,
+          "freshness_multiplier": 1.0,
+          "source_multiplier": 1.132,
+          "source_trust": 94,
+          "age_hours": 0.25
+        },
+        "level": "breaking",
+        "importance_reasons": [
+          {
+            "code": "federal_action",
+            "label": "Federal/national government action",
+            "points": 32
+          },
+          {
+            "code": "election",
+            "label": "Major election/political consequence",
+            "points": 25
+          },
+          {
+            "code": "court_action",
+            "label": "Significant court/criminal-justice action",
+            "points": 15
+          },
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "audience_relevance": {
+          "scope": "us_national",
+          "score": 100,
+          "regions": [],
+          "places": []
+        },
+        "editorial_proximity": {
+          "score": 100,
+          "scope": "us_national",
+          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
+        },
+        "event_count": 1,
+        "timeline_entries": 1,
+        "relationship_decisions": 1,
+        "canonical_source_candidates": 1,
+        "lifecycle": {
+          "state": "breaking",
+          "reason": "Breaking importance with a current or undated update",
+          "last_updated": "2026-09-04T22:29:59+00:00",
+          "hours_since_update": 0.25,
+          "event_count": 1,
+          "timeline_entries": 1
+        }
+      },
+      {
+        "story_id": "story_000019",
+        "title": "Trump Threatens to Halt Some Trade Unless the Fed Cuts Rates",
+        "score": 80,
+        "editorial_priority": 91,
+        "editorial_score": 91,
+        "score_breakdown": {
+          "score": 91,
+          "importance": 80,
+          "proximity_multiplier": 1.0,
+          "freshness_multiplier": 1.0,
+          "source_multiplier": 1.135,
+          "source_trust": 95,
+          "age_hours": 2.99
+        },
+        "level": "breaking",
+        "importance_reasons": [
+          {
+            "code": "federal_action",
+            "label": "Federal/national government action",
+            "points": 32
+          },
+          {
+            "code": "macroeconomy",
+            "label": "Broad economic consequence",
+            "points": 28
+          },
+          {
+            "code": "multi_agency",
+            "label": "Multiple agencies involved",
+            "points": 5
+          },
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "audience_relevance": {
+          "scope": "us_national",
+          "score": 100,
+          "regions": [],
+          "places": []
+        },
+        "editorial_proximity": {
+          "score": 100,
+          "scope": "us_national",
+          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
+        },
+        "event_count": 1,
+        "timeline_entries": 1,
+        "relationship_decisions": 1,
+        "canonical_source_candidates": 1,
+        "lifecycle": {
+          "state": "breaking",
+          "reason": "Breaking importance with a current or undated update",
+          "last_updated": "2026-09-04T19:45:22+00:00",
+          "hours_since_update": 2.99,
+          "event_count": 1,
+          "timeline_entries": 1
+        }
+      },
+      {
+        "story_id": "story_000056",
+        "title": "What to know about latest Missouri redistricting ruling",
+        "score": 62,
+        "editorial_priority": 69,
+        "editorial_score": 69,
+        "score_breakdown": {
+          "score": 69,
+          "importance": 62,
+          "proximity_multiplier": 1.0,
+          "freshness_multiplier": 1.0,
+          "source_multiplier": 1.117,
+          "source_trust": 89,
+          "age_hours": 1.92
+        },
+        "level": "high",
+        "importance_reasons": [
+          {
+            "code": "federal_action",
+            "label": "Federal/national government action",
+            "points": 32
+          },
+          {
+            "code": "court_action",
+            "label": "Significant court/criminal-justice action",
+            "points": 15
+          },
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "audience_relevance": {
+          "scope": "us_national",
+          "score": 100,
+          "regions": [
+            "Missouri"
+          ],
+          "places": [
+            "Missouri"
+          ]
+        },
+        "editorial_proximity": {
+          "score": 100,
+          "scope": "us_national",
+          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
+        },
+        "event_count": 1,
+        "timeline_entries": 1,
+        "relationship_decisions": 1,
+        "canonical_source_candidates": 1,
+        "lifecycle": {
+          "state": "active",
+          "reason": "Single-event story is current",
+          "last_updated": "2026-09-04T20:50:01+00:00",
+          "hours_since_update": 1.92,
+          "event_count": 1,
+          "timeline_entries": 1
+        }
+      },
+      {
+        "story_id": "story_000001",
+        "title": "‘Everyone seems to have forgotten’: In Tibet, flood-hit families search for the missing and grapple with China’s silence - The Guardian",
+        "score": 60,
+        "editorial_priority": 60,
+        "editorial_score": 60,
+        "score_breakdown": {
+          "score": 60,
+          "importance": 60,
+          "proximity_multiplier": 1.0,
+          "freshness_multiplier": 1.0,
+          "source_multiplier": 0.994,
+          "source_trust": 48,
+          "age_hours": 1.87
+        },
+        "level": "high",
+        "importance_reasons": [
+          {
+            "code": "mass_casualty",
+            "label": "Mass-casualty event",
+            "points": 45
+          },
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "audience_relevance": {
+          "scope": "us_national",
+          "score": 100,
+          "regions": [],
+          "places": []
+        },
+        "editorial_proximity": {
+          "score": 100,
+          "scope": "us_national",
+          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
+        },
+        "event_count": 1,
+        "timeline_entries": 1,
+        "relationship_decisions": 1,
+        "canonical_source_candidates": 1,
+        "lifecycle": {
+          "state": "active",
+          "reason": "Single-event story is current",
+          "last_updated": "2026-09-04T20:53:00+00:00",
+          "hours_since_update": 1.87,
+          "event_count": 1,
+          "timeline_entries": 1
+        }
+      },
+      {
+        "story_id": "story_000059",
+        "title": "Trump brushes off accusations of Russian sabotage against NATO allies",
+        "score": 47,
+        "editorial_priority": 53,
+        "editorial_score": 53,
+        "score_breakdown": {
+          "score": 53,
+          "importance": 47,
+          "proximity_multiplier": 1.0,
+          "freshness_multiplier": 1.0,
+          "source_multiplier": 1.126,
+          "source_trust": 92,
+          "age_hours": 4.78
+        },
+        "level": "normal",
+        "importance_reasons": [
+          {
+            "code": "federal_action",
+            "label": "Federal/national government action",
+            "points": 32
+          },
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "audience_relevance": {
+          "scope": "us_national",
+          "score": 100,
+          "regions": [],
+          "places": []
+        },
+        "editorial_proximity": {
+          "score": 100,
+          "scope": "us_national",
+          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
+        },
+        "event_count": 1,
+        "timeline_entries": 1,
+        "relationship_decisions": 1,
+        "canonical_source_candidates": 1,
+        "lifecycle": {
+          "state": "active",
+          "reason": "Single-event story is current",
+          "last_updated": "2026-09-04T17:58:05+00:00",
+          "hours_since_update": 4.78,
+          "event_count": 1,
+          "timeline_entries": 1
+        }
+      },
+      {
+        "story_id": "story_000015",
+        "title": "Examining US official's claim that data centres 'don't use water'",
+        "score": 45,
+        "editorial_priority": 51,
+        "editorial_score": 51,
+        "score_breakdown": {
+          "score": 51,
+          "importance": 45,
+          "proximity_multiplier": 1.0,
+          "freshness_multiplier": 1.0,
+          "source_multiplier": 1.132,
+          "source_trust": 94,
+          "age_hours": 2.63
+        },
+        "level": "normal",
+        "importance_reasons": [
+          {
+            "code": "war_diplomacy",
+            "label": "War, diplomacy or national-security consequence",
+            "points": 30
+          },
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "audience_relevance": {
+          "scope": "us_national",
+          "score": 100,
+          "regions": [],
+          "places": []
+        },
+        "editorial_proximity": {
+          "score": 100,
+          "scope": "us_national",
+          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
+        },
+        "event_count": 1,
+        "timeline_entries": 1,
+        "relationship_decisions": 1,
+        "canonical_source_candidates": 1,
+        "lifecycle": {
+          "state": "active",
+          "reason": "Single-event story is current",
+          "last_updated": "2026-09-04T20:06:56+00:00",
+          "hours_since_update": 2.63,
+          "event_count": 1,
+          "timeline_entries": 1
+        }
+      },
+      {
+        "story_id": "story_000023",
+        "title": "Iran War Helps to Drive U.S. Diesel Prices to New High",
+        "score": 45,
+        "editorial_priority": 51,
+        "editorial_score": 51,
+        "score_breakdown": {
+          "score": 51,
+          "importance": 45,
+          "proximity_multiplier": 1.0,
+          "freshness_multiplier": 1.0,
+          "source_multiplier": 1.135,
+          "source_trust": 95,
+          "age_hours": 5.08
+        },
+        "level": "normal",
+        "importance_reasons": [
+          {
+            "code": "war_diplomacy",
+            "label": "War, diplomacy or national-security consequence",
+            "points": 30
+          },
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "audience_relevance": {
+          "scope": "us_national",
+          "score": 100,
+          "regions": [],
+          "places": []
+        },
+        "editorial_proximity": {
+          "score": 100,
+          "scope": "us_national",
+          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
+        },
+        "event_count": 1,
+        "timeline_entries": 1,
+        "relationship_decisions": 1,
+        "canonical_source_candidates": 1,
+        "lifecycle": {
+          "state": "active",
+          "reason": "Single-event story is current",
+          "last_updated": "2026-09-04T17:40:08+00:00",
+          "hours_since_update": 5.08,
+          "event_count": 1,
+          "timeline_entries": 1
+        }
+      },
+      {
+        "story_id": "story_000020",
+        "title": "Publix, Walmart, other grocers under investigation over beef prices - thehill.com",
+        "score": 47,
+        "editorial_priority": 47,
+        "editorial_score": 47,
+        "score_breakdown": {
+          "score": 47,
+          "importance": 47,
+          "proximity_multiplier": 1.0,
+          "freshness_multiplier": 1.0,
+          "source_multiplier": 0.994,
+          "source_trust": 48,
+          "age_hours": 3.73
+        },
+        "level": "normal",
+        "importance_reasons": [
+          {
+            "code": "federal_action",
+            "label": "Federal/national government action",
+            "points": 32
+          },
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "audience_relevance": {
+          "scope": "us_national",
+          "score": 100,
+          "regions": [],
+          "places": []
+        },
+        "editorial_proximity": {
+          "score": 100,
+          "scope": "us_national",
+          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
+        },
+        "event_count": 1,
+        "timeline_entries": 1,
+        "relationship_decisions": 1,
+        "canonical_source_candidates": 1,
+        "lifecycle": {
+          "state": "active",
+          "reason": "Single-event story is current",
+          "last_updated": "2026-09-04T19:01:00+00:00",
+          "hours_since_update": 3.73,
+          "event_count": 1,
+          "timeline_entries": 1
+        }
+      },
+      {
+        "story_id": "story_000024",
+        "title": "Health-tracking smart ring maker Oura to list on US stock market - The Guardian",
+        "score": 43,
+        "editorial_priority": 43,
+        "editorial_score": 43,
+        "score_breakdown": {
+          "score": 43,
+          "importance": 43,
+          "proximity_multiplier": 1.0,
+          "freshness_multiplier": 1.0,
+          "source_multiplier": 0.994,
+          "source_trust": 48,
+          "age_hours": 5.25
+        },
+        "level": "normal",
+        "importance_reasons": [
+          {
+            "code": "macroeconomy",
+            "label": "Broad economic consequence",
+            "points": 28
+          },
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "audience_relevance": {
+          "scope": "us_national",
+          "score": 100,
+          "regions": [],
+          "places": []
+        },
+        "editorial_proximity": {
+          "score": 100,
+          "scope": "us_national",
+          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
+        },
+        "event_count": 1,
+        "timeline_entries": 1,
+        "relationship_decisions": 1,
+        "canonical_source_candidates": 1,
+        "lifecycle": {
+          "state": "active",
+          "reason": "Single-event story is current",
+          "last_updated": "2026-09-04T17:30:00+00:00",
+          "hours_since_update": 5.25,
+          "event_count": 1,
+          "timeline_entries": 1
+        }
+      },
+      {
+        "story_id": "story_000008",
+        "title": "Argentine couple to return Nazi-looted painting to rightful owner",
+        "score": 40,
+        "editorial_priority": 40,
+        "editorial_score": 40,
+        "score_breakdown": {
+          "score": 40,
+          "importance": 40,
+          "proximity_multiplier": 0.88,
+          "freshness_multiplier": 1.0,
+          "source_multiplier": 1.132,
+          "source_trust": 94,
+          "age_hours": 5.51
+        },
+        "level": "normal",
+        "importance_reasons": [
+          {
+            "code": "war_diplomacy",
+            "label": "War, diplomacy or national-security consequence",
+            "points": 30
+          },
+          {
+            "code": "global_scope",
+            "label": "Major international consequence",
+            "points": 10
+          }
+        ],
+        "audience_relevance": {
+          "scope": "global_major",
+          "score": 85,
+          "regions": [],
+          "places": []
+        },
+        "editorial_proximity": {
+          "score": 88,
+          "scope": "global_major",
+          "reason": "Major world development has broad consequence for a U.S. general-news audience"
+        },
+        "event_count": 1,
+        "timeline_entries": 1,
+        "relationship_decisions": 1,
+        "canonical_source_candidates": 1,
+        "lifecycle": {
+          "state": "active",
+          "reason": "Single-event story is current",
+          "last_updated": "2026-09-04T17:14:21+00:00",
+          "hours_since_update": 5.51,
+          "event_count": 1,
+          "timeline_entries": 1
+        }
+      },
+      {
+        "story_id": "story_000002",
+        "title": "Russian drone strikes Ukraine's security service HQ, escalating air war - Reuters",
+        "score": 40,
+        "editorial_priority": 35,
+        "editorial_score": 35,
+        "score_breakdown": {
+          "score": 35,
+          "importance": 40,
+          "proximity_multiplier": 0.88,
+          "freshness_multiplier": 1.0,
+          "source_multiplier": 0.994,
+          "source_trust": 48,
+          "age_hours": 2.72
+        },
+        "level": "normal",
+        "importance_reasons": [
+          {
+            "code": "war_diplomacy",
+            "label": "War, diplomacy or national-security consequence",
+            "points": 30
+          },
+          {
+            "code": "global_scope",
+            "label": "Major international consequence",
+            "points": 10
+          }
+        ],
+        "audience_relevance": {
+          "scope": "global_major",
+          "score": 88,
+          "regions": [],
+          "places": []
+        },
+        "editorial_proximity": {
+          "score": 88,
+          "scope": "global_major",
+          "reason": "Major world development has broad consequence for a U.S. general-news audience"
+        },
+        "event_count": 1,
+        "timeline_entries": 1,
+        "relationship_decisions": 1,
+        "canonical_source_candidates": 1,
+        "lifecycle": {
+          "state": "active",
+          "reason": "Single-event story is current",
+          "last_updated": "2026-09-04T20:01:33+00:00",
+          "hours_since_update": 2.72,
+          "event_count": 1,
+          "timeline_entries": 1
+        }
+      },
+      {
+        "story_id": "story_000045",
+        "title": "‘Spider-Noir’ Canceled by Prime Video After One Season - Variety",
+        "score": 40,
+        "editorial_priority": 35,
+        "editorial_score": 35,
+        "score_breakdown": {
+          "score": 35,
+          "importance": 40,
+          "proximity_multiplier": 0.88,
+          "freshness_multiplier": 1.0,
+          "source_multiplier": 0.994,
+          "source_trust": 48,
+          "age_hours": 1.75
+        },
+        "level": "normal",
+        "importance_reasons": [
+          {
+            "code": "war_diplomacy",
+            "label": "War, diplomacy or national-security consequence",
+            "points": 30
+          },
+          {
+            "code": "global_scope",
+            "label": "Major international consequence",
+            "points": 10
+          }
+        ],
+        "audience_relevance": {
+          "scope": "global_major",
+          "score": 85,
+          "regions": [],
+          "places": []
+        },
+        "editorial_proximity": {
+          "score": 88,
+          "scope": "global_major",
+          "reason": "Major world development has broad consequence for a U.S. general-news audience"
+        },
+        "event_count": 1,
+        "timeline_entries": 1,
+        "relationship_decisions": 1,
+        "canonical_source_candidates": 1,
+        "lifecycle": {
+          "state": "active",
+          "reason": "Single-event story is current",
+          "last_updated": "2026-09-04T21:00:00+00:00",
+          "hours_since_update": 1.75,
+          "event_count": 1,
+          "timeline_entries": 1
+        }
+      },
+      {
+        "story_id": "story_000006",
+        "title": "Netanyahu Posts A.I. Video Pairing Mamdani With Iranian Ruler",
+        "score": 25,
+        "editorial_priority": 23,
+        "editorial_score": 23,
+        "score_breakdown": {
+          "score": 23,
+          "importance": 25,
+          "proximity_multiplier": 0.82,
+          "freshness_multiplier": 1.0,
+          "source_multiplier": 1.135,
+          "source_trust": 95,
+          "age_hours": 2.17
+        },
+        "level": "normal",
+        "importance_reasons": [
+          {
+            "code": "election",
+            "label": "Major election/political consequence",
+            "points": 25
+          }
+        ],
+        "audience_relevance": {
+          "scope": "us_state_regional",
+          "score": 82,
+          "regions": [
+            "New York"
+          ],
+          "places": [
+            "New York"
+          ]
+        },
+        "editorial_proximity": {
+          "score": 82,
+          "scope": "us_state_regional",
+          "reason": "State or regional U.S. story remains relevant but has narrower reach"
+        },
+        "event_count": 1,
+        "timeline_entries": 1,
+        "relationship_decisions": 1,
+        "canonical_source_candidates": 1,
+        "lifecycle": {
+          "state": "active",
+          "reason": "Single-event story is current",
+          "last_updated": "2026-09-04T20:34:35+00:00",
+          "hours_since_update": 2.17,
+          "event_count": 1,
+          "timeline_entries": 1
+        }
+      },
+      {
+        "story_id": "story_000004",
+        "title": "UN votes to adopt new world map to reflect Africa's true size",
+        "score": 15,
+        "editorial_priority": 17,
+        "editorial_score": 17,
+        "score_breakdown": {
+          "score": 17,
+          "importance": 15,
+          "proximity_multiplier": 1.0,
+          "freshness_multiplier": 1.0,
+          "source_multiplier": 1.132,
+          "source_trust": 94,
+          "age_hours": 3.0
+        },
+        "level": "low",
+        "importance_reasons": [
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "audience_relevance": {
+          "scope": "us_national",
+          "score": 100,
+          "regions": [],
+          "places": []
+        },
+        "editorial_proximity": {
+          "score": 100,
+          "scope": "us_national",
+          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
+        },
+        "event_count": 1,
+        "timeline_entries": 1,
+        "relationship_decisions": 1,
+        "canonical_source_candidates": 1,
+        "lifecycle": {
+          "state": "active",
+          "reason": "Single-event story is current",
+          "last_updated": "2026-09-04T19:44:40+00:00",
+          "hours_since_update": 3.0,
+          "event_count": 1,
+          "timeline_entries": 1
+        }
+      },
+      {
+        "story_id": "story_000007",
+        "title": "Inside the Nepal Tunnel Rescue Operation",
+        "score": 15,
+        "editorial_priority": 17,
+        "editorial_score": 17,
+        "score_breakdown": {
+          "score": 17,
+          "importance": 15,
+          "proximity_multiplier": 1.0,
+          "freshness_multiplier": 1.0,
+          "source_multiplier": 1.135,
+          "source_trust": 95,
+          "age_hours": 0.76
+        },
+        "level": "low",
+        "importance_reasons": [
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "audience_relevance": {
+          "scope": "us_national",
+          "score": 100,
+          "regions": [],
+          "places": []
+        },
+        "editorial_proximity": {
+          "score": 100,
+          "scope": "us_national",
+          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
+        },
+        "event_count": 1,
+        "timeline_entries": 1,
+        "relationship_decisions": 1,
+        "canonical_source_candidates": 1,
+        "lifecycle": {
+          "state": "active",
+          "reason": "Single-event story is current",
+          "last_updated": "2026-09-04T21:59:13+00:00",
+          "hours_since_update": 0.76,
+          "event_count": 1,
+          "timeline_entries": 1
+        }
+      },
+      {
+        "story_id": "story_000012",
+        "title": "4 things investigators learned about the dysfunction at Trump's Labor Department",
+        "score": 15,
+        "editorial_priority": 17,
+        "editorial_score": 17,
+        "score_breakdown": {
+          "score": 17,
+          "importance": 15,
+          "proximity_multiplier": 1.0,
+          "freshness_multiplier": 1.0,
+          "source_multiplier": 1.135,
+          "source_trust": 95,
+          "age_hours": 4.96
+        },
+        "level": "low",
+        "importance_reasons": [
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "audience_relevance": {
+          "scope": "us_national",
+          "score": 100,
+          "regions": [],
+          "places": []
+        },
+        "editorial_proximity": {
+          "score": 100,
+          "scope": "us_national",
+          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
+        },
+        "event_count": 1,
+        "timeline_entries": 1,
+        "relationship_decisions": 1,
+        "canonical_source_candidates": 1,
+        "lifecycle": {
+          "state": "active",
+          "reason": "Single-event story is current",
+          "last_updated": "2026-09-04T17:47:19+00:00",
+          "hours_since_update": 4.96,
+          "event_count": 1,
+          "timeline_entries": 1
+        }
+      },
+      {
+        "story_id": "story_000036",
+        "title": "Improving Alcaraz underlines title credentials in wide-open draw",
+        "score": 15,
+        "editorial_priority": 17,
+        "editorial_score": 17,
+        "score_breakdown": {
+          "score": 17,
+          "importance": 15,
+          "proximity_multiplier": 1.0,
+          "freshness_multiplier": 1.0,
+          "source_multiplier": 1.132,
+          "source_trust": 94,
+          "age_hours": 0.12
+        },
+        "level": "low",
+        "importance_reasons": [
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "audience_relevance": {
+          "scope": "us_national",
+          "score": 100,
+          "regions": [],
+          "places": []
+        },
+        "editorial_proximity": {
+          "score": 100,
+          "scope": "us_national",
+          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
+        },
+        "event_count": 1,
+        "timeline_entries": 1,
+        "relationship_decisions": 1,
+        "canonical_source_candidates": 1,
+        "lifecycle": {
+          "state": "active",
+          "reason": "Single-event story is current",
+          "last_updated": "2026-09-04T22:37:42+00:00",
+          "hours_since_update": 0.12,
+          "event_count": 1,
+          "timeline_entries": 1
+        }
+      },
+      {
+        "story_id": "story_000037",
+        "title": "'It's so strong' - Sabalenka halts play over cannabis smell",
+        "score": 15,
+        "editorial_priority": 17,
+        "editorial_score": 17,
+        "score_breakdown": {
+          "score": 17,
+          "importance": 15,
+          "proximity_multiplier": 1.0,
+          "freshness_multiplier": 1.0,
+          "source_multiplier": 1.132,
+          "source_trust": 94,
+          "age_hours": 0.61
+        },
+        "level": "low",
+        "importance_reasons": [
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "audience_relevance": {
+          "scope": "us_national",
+          "score": 100,
+          "regions": [
+            "New York"
+          ],
+          "places": [
+            "New York"
+          ]
+        },
+        "editorial_proximity": {
+          "score": 100,
+          "scope": "us_national",
+          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
+        },
+        "event_count": 1,
+        "timeline_entries": 1,
+        "relationship_decisions": 1,
+        "canonical_source_candidates": 1,
+        "lifecycle": {
+          "state": "active",
+          "reason": "Single-event story is current",
+          "last_updated": "2026-09-04T22:08:20+00:00",
+          "hours_since_update": 0.61,
+          "event_count": 1,
+          "timeline_entries": 1
+        }
+      }
+    ]
+  },
+  "status": "healthy"
+}
