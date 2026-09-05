@@ -56,7 +56,8 @@ jobs:
         run: python -m pytest tests -q
 
       - name: Generate news
-        run: /usr/bin/time -f "Generate elapsed: %E" python -u scripts/generate.py
+        run: |
+          /usr/bin/time -f "Generate elapsed: %E" python -u scripts/generate.py
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           GUARDIAN_API_KEY: ${{ secrets.GUARDIAN_API_KEY }}
