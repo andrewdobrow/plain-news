@@ -4,41 +4,41 @@
 
 ## Hero
 
-- Current: **Trump plans to use Qatari plane for Ireland trip despite security concerns**
-- Recommended: **Virgin Atlantic founder blames rising flight prices on 'foolish leaders' starting wars**
+- Current: **AI safety researchers push for independent investigations after OpenAI agent swarms evade security controls**
+- Recommended: **Argentina escalates Falklands dispute as Trump questions US support for Britain**
 - Recommendation: CHANGE (not enforced)
 
 ## Top Stories deck
 
 | Rank | Current | Recommended | Score | Why |
 | ---: | --- | --- | ---: | --- |
-| 1 | Russia Suspected in Series of Sabotage Incidents Across Europe | Virgin Atlantic founder blames rising flight prices on 'foolish leaders' starting wars | 80 | importance 77; freshness 98.45; urgency 5/10 |
-| 2 | Flooding in Tibet Leaves Hundreds Missing as China Faces Criticism Over Response | August Jobs Report Shows Strong Hiring, Raising Pressure on Federal Reserve | 74 | importance 100; freshness 56.68; urgency 5/10 |
-| 3 | Germany accuses Russia of attempted drone attack on Leipzig airport | Supreme Court rules political parties entitled to lower TV ad rates | 69 | importance 87; freshness 56.68; urgency 3/10 |
-| 4 | Nepal and China flood disaster kills over 1,000 as rescuers search debris | UNC investigation into assistant coach and staff conduct could lead to for-cause firing of Bill Belichick | 59 | importance 25; freshness 96.81; urgency 5/10 |
-| 5 | China reports 261 foreigners from 23 countries missing after Tibet flood | Flooding in Tibet Leaves Hundreds Missing as China Faces Criticism Over Response | 56 | importance 60; freshness 56.68; urgency 3/10 |
-| 6 | Gunfire and explosions heard near presidential palace in Niger's capital | Trump plans to use Qatari plane for Ireland trip despite security concerns | 41 | importance 0; freshness 56.68; urgency 5/10 |
-| 7 | Glacier Collapse Triggers Floods in Nepal and Tibet, Killing at Least 273 | Microsoft imposes monthly hour limits on Xbox cloud gaming subscribers | 40 | importance 25; freshness 56.68; urgency 3/10 |
-| 8 | Gang attack in Haiti leaves 47 dead and more than 50 kidnapped | AI-generated restaurant menus create unappetizing sameness | 39 | importance 0; freshness 56.68; urgency 5/10 |
-| 9 | Virgin Atlantic founder blames rising flight prices on 'foolish leaders' starting wars | British Actor Richard O'Sullivan Dies at 82 | 38 | importance 0; freshness 56.68; urgency 5/10 |
-| 10 | August Jobs Report Shows Strong Hiring, Raising Pressure on Federal Reserve | Wheel of Fortune Announcer Jim Thornton Fired After Internal Investigation | 38 | importance 10; freshness 56.68; urgency 3/10 |
-| 11 | Employer Health Costs Expected to Jump 11 Percent in 2027 | Russia Suspected in Series of Sabotage Incidents Across Europe | 34 | importance 0; freshness 56.68; urgency 3/10 |
-| 12 | Government Borrowing Costs Hit Multi-Decade Highs Worldwide | — |  |  |
+| 1 | Trump envoys to visit Moscow and Kyiv this weekend as U.S. pushes new peace proposal | Argentina escalates Falklands dispute as Trump questions US support for Britain | 88 | importance 100; freshness 89.55; urgency 6/10 |
+| 2 | Germany's far-right AfD seeks first state majority in Saxony-Anhalt election | Trump threatens trade embargoes on deficit countries unless Federal Reserve cuts rates | 87 | importance 95; freshness 88.03; urgency 8/10 |
+| 3 | Argentina escalates Falklands dispute as Trump questions US support for Britain | Trump envoys to visit Moscow and Kyiv this weekend for talks on ending Russia-Ukraine war | 84 | importance 77; freshness 89.26; urgency 8/10 |
+| 4 | Nepal's hydropower dependence exposed as floods destroy 12 plants, kill over 1,300 | Mortgage rates reach 6.71 percent, highest in 13 months, as economists warn of 7 percent threshold | 82 | importance 75; freshness 89.55; urgency 7/10 |
+| 5 | Romanian prosecutors file new trafficking and sex crime charges against Andrew and Tristan Tate | Germany's far-right AfD seeks first state majority in Saxony-Anhalt election | 78 | importance 65; freshness 93.81; urgency 8/10 |
+| 6 | Judge declares mistrial in Lindsay Clancy case after jury deadlock | Jay-Z reunites with Lauryn Hill and Wyclef Jean at first UK headline show in over a decade | 73 | importance 63; freshness 98.43; urgency 4/10 |
+| 7 | Trump threatens trade embargoes on deficit countries unless Federal Reserve cuts rates | Nepal's hydropower dependence exposed as floods destroy 12 plants, kill over 1,300 | 77 | importance 60; freshness 92.02; urgency 7/10; -6 category saturation |
+| 8 | Mortgage rates reach 6.71 percent, highest in 13 months, as economists warn of 7 percent threshold | Trump envoys to visit Moscow and Kyiv this weekend as U.S. pushes new peace proposal | 74 | importance 45; freshness 88.71; urgency 8/10; -12 category saturation |
+| 9 | AI safety researchers push for independent investigations after OpenAI agent swarms evade security controls | Judge declares mistrial in Lindsay Clancy case after jury deadlock | 61 | importance 15; freshness 97.67; urgency 6/10 |
+| 10 | OpenAI agents posted 18,000 messages to public wiki discussing sandbox escape methods, researchers say | Federal judge rules X can block startup from using Twitter name but likely abandoned Tweet trademark and bird logo | 61 | importance 40; freshness 85.05; urgency 4/10 |
+| 11 | Federal judge rules X can block startup from using Twitter name but likely abandoned Tweet trademark and bird logo | Andrew Haigh's 'A Long Winter' premieres on festival circuit | 60 | importance 31; freshness 99.44; urgency 3/10 |
+| 12 | Robotics data startup XDOF in talks for Series B at $1.2 billion valuation | AI safety researchers push for independent investigations after OpenAI agent swarms evade security controls | 60 | importance 10; freshness 94.02; urgency 7/10 |
 
 ## Recommended moves
 
-- **Supreme Court rules political parties entitled to lower TV ad rates**: 39 → 3 — importance 87; freshness 56.68; urgency 3/10
-- **Trump plans to use Qatari plane for Ireland trip despite security concerns**: 38 → 6 — importance 0; freshness 56.68; urgency 5/10
-- **UNC investigation into assistant coach and staff conduct could lead to for-cause firing of Bill Belichick**: 28 → 4 — importance 25; freshness 96.81; urgency 5/10
-- **British Actor Richard O'Sullivan Dies at 82**: 29 → 9 — importance 0; freshness 56.68; urgency 5/10
-- **Wheel of Fortune Announcer Jim Thornton Fired After Internal Investigation**: 30 → 10 — importance 10; freshness 56.68; urgency 3/10
-- **Microsoft imposes monthly hour limits on Xbox cloud gaming subscribers**: 20 → 7 — importance 25; freshness 56.68; urgency 3/10
-- **AI-generated restaurant menus create unappetizing sameness**: 19 → 8 — importance 0; freshness 56.68; urgency 5/10
-- **Russia Suspected in Series of Sabotage Incidents Across Europe**: 1 → 11 — importance 0; freshness 56.68; urgency 3/10
-- **Germany accuses Russia of attempted drone attack on Leipzig airport**: 3 → 12 — importance 0; freshness 0.0; urgency 3/10
-- **Nepal and China flood disaster kills over 1,000 as rescuers search debris**: 4 → 13 — importance 0; freshness 0.0; urgency 3/10
-- **China reports 261 foreigners from 23 countries missing after Tibet flood**: 5 → 14 — importance 0; freshness 0.0; urgency 3/10
-- **Gunfire and explosions heard near presidential palace in Niger's capital**: 6 → 15 — importance 0; freshness 0.0; urgency 3/10
+- **Trump envoys to visit Moscow and Kyiv this weekend for talks on ending Russia-Ukraine war**: 27 → 3 — importance 77; freshness 89.26; urgency 8/10
+- **Jay-Z reunites with Lauryn Hill and Wyclef Jean at first UK headline show in over a decade**: 22 → 6 — importance 63; freshness 98.43; urgency 4/10
+- **Andrew Haigh's 'A Long Winter' premieres on festival circuit**: 26 → 11 — importance 31; freshness 99.44; urgency 3/10
+- **Romanian prosecutors file new trafficking and sex crime charges against Andrew and Tristan Tate**: 5 → 13 — importance 15; freshness 99.42; urgency 5/10
+- **Trump envoys to visit Moscow and Kyiv this weekend as U.S. pushes new peace proposal**: 1 → 8 — importance 45; freshness 88.71; urgency 8/10; -12 category saturation
+- **Trump threatens trade embargoes on deficit countries unless Federal Reserve cuts rates**: 7 → 2 — importance 95; freshness 88.03; urgency 8/10
+- **Mortgage rates reach 6.71 percent, highest in 13 months, as economists warn of 7 percent threshold**: 8 → 4 — importance 75; freshness 89.55; urgency 7/10
+- **OpenAI agents posted 18,000 messages to public wiki discussing sandbox escape methods, researchers say**: 10 → 14 — importance 0; freshness 92.43; urgency 6/10
+- **Germany's far-right AfD seeks first state majority in Saxony-Anhalt election**: 2 → 5 — importance 65; freshness 93.81; urgency 8/10
+- **Nepal's hydropower dependence exposed as floods destroy 12 plants, kill over 1,300**: 4 → 7 — importance 60; freshness 92.02; urgency 7/10; -6 category saturation
+- **Judge declares mistrial in Lindsay Clancy case after jury deadlock**: 6 → 9 — importance 15; freshness 97.67; urgency 6/10
+- **AI safety researchers push for independent investigations after OpenAI agent swarms evade security controls**: 9 → 12 — importance 10; freshness 94.02; urgency 7/10
 
 ## Guardrails
 
