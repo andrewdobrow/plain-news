@@ -1,84 +1,77 @@
 {
-  "generated_at": "2026-09-05T02:50:06.841524Z",
+  "generated_at": "2026-09-05T22:11:12.304680Z",
   "assignment_editor_model": "claude-sonnet-5",
   "writer_model": "claude-sonnet-4-5",
   "categories": [
     {
       "category_key": "world",
-      "hero_source_index": 13,
+      "hero_source_index": 8,
       "card_source_indexes": [
-        6,
-        12,
-        7,
-        1
+        1,
+        15,
+        2,
+        7
       ],
       "diagnostics": {
         "model": "claude-sonnet-5",
         "writer_model": "claude-sonnet-4-5",
         "rejected": [
           {
-            "source_index": 2,
-            "reason": "Thin discovery-only duplicate of the fuller UN map story (source 4)"
-          },
-          {
             "source_index": 3,
-            "reason": "Discovery-only duplicate of Nepal tunnel rescue covered more fully elsewhere"
+            "reason": "discovery_only stub with no article text; thin sourcing"
           },
-          {
-            "source_index": 8,
-            "reason": "Discovery-only thin duplicate of Nepal tunnel rescue story"
-          },
-          {
-            "source_index": 10,
-            "reason": "Brief aggregator listing with insufficient original reporting for standalone selection"
-          },
-          {
-            "source_index": 11,
-            "reason": "Discovery-only thin summary lacking sufficient detail for inclusion"
-          },
-          {
-            "source_index": 14,
-            "reason": "Duplicate of same Kyiv drone strike event already covered within selected hero story"
-          },
-          {
-            "source_index": 15,
-            "reason": "Discovery-only thin summary without sufficient detail"
-          },
-          {
-            "source_index": 16,
-            "reason": "Discovery-only thin summary, UK domestic party finance story of limited US relevance"
-          },
-          {
-            "source_index": 17,
-            "reason": "Discovery-only duplicate of Nepal tunnel rescue event"
-          },
-          {
-            "source_index": 18,
-            "reason": "Discovery-only duplicate of the same Kyiv drone strike covered in hero"
-          }
-        ],
-        "writer_failures": [
           {
             "source_index": 4,
-            "reason": [
-              "headline_entity_missing_from_lead"
-            ]
+            "reason": "discovery_only stub duplicating the fuller Iran tanker strike story selected as hero"
           },
           {
             "source_index": 5,
-            "reason": [
-              "generated_copy_drifted_from_source_focus"
-            ]
+            "reason": "discovery_only stub duplicating the Putin-Witkoff-Kushner meeting selected as hero-adjacent card"
+          },
+          {
+            "source_index": 6,
+            "reason": "discovery_only stub with no article text; election forecast piece lacking developed reporting"
           },
           {
             "source_index": 9,
-            "reason": [
-              "ValueError"
-            ]
+            "reason": "brief aggregator duplicate of the Iran tanker strikes covered fully in source 8"
+          },
+          {
+            "source_index": 10,
+            "reason": "summary/aggregator duplicate of Nepal rescue story, thin sourcing"
+          },
+          {
+            "source_index": 11,
+            "reason": "thin local air show crash without national or international policy consequence"
+          },
+          {
+            "source_index": 12,
+            "reason": "discovery_only stub duplicating Nepal flood rescue coverage"
+          },
+          {
+            "source_index": 13,
+            "reason": "discovery_only stub with minimal content, lacks developed sourcing"
+          },
+          {
+            "source_index": 14,
+            "reason": "brief aggregator forecast piece, thin sourcing and speculative timeline"
+          },
+          {
+            "source_index": 16,
+            "reason": "duplicate of source 15 covering the same Bolivia barracks explosion"
+          },
+          {
+            "source_index": 17,
+            "reason": "discovery_only stub, thin sourcing on Nepal flood aftermath"
+          },
+          {
+            "source_index": 18,
+            "reason": "brief aggregator duplicate of Nepal flood cremation story"
           }
         ],
+        "writer_failures": [],
         "protected_material_update_repairs": [],
-        "duration_seconds": 53.304
+        "duration_seconds": 39.906
       }
     },
     {
@@ -90,379 +83,354 @@
         "writer_model": "claude-sonnet-4-5",
         "rejected": [
           {
-            "source_index": 4,
-            "reason": "Same event as source 3 (Lindsay Clancy mistrial); duplicate coverage of the selected hero story."
-          }
-        ],
-        "writer_failures": [
-          {
             "source_index": 1,
-            "reason": [
-              "body_under_90_words",
-              "source_under_80_words"
-            ]
+            "reason": "Military feature on crew morale after deployment; not a domestic law, policy, or public safety story with national consequence."
           },
           {
-            "source_index": 2,
-            "reason": [
-              "body_under_90_words",
-              "source_under_80_words"
-            ]
+            "source_index": 3,
+            "reason": "Sports/entertainment story about an Irish boxer's retirement bout; not a U.S. news story."
+          },
+          {
+            "source_index": 4,
+            "reason": "Foreign diplomacy story centered on US-Russia-Ukraine talks; belongs in World, not U.S. domestic category."
           },
           {
             "source_index": 5,
-            "reason": [
-              "body_under_90_words",
-              "source_under_80_words"
-            ]
+            "reason": "UK local protest story with no U.S. relevance; belongs in World if anywhere."
           }
         ],
+        "writer_failures": [],
         "protected_material_update_repairs": [],
-        "duration_seconds": 22.328
+        "duration_seconds": 12.205
       }
     },
     {
       "category_key": "business",
-      "hero_source_index": 14,
-      "card_source_indexes": [
-        9
-      ],
+      "hero_source_index": 4,
+      "card_source_indexes": [],
       "diagnostics": {
         "model": "claude-sonnet-5",
         "writer_model": "claude-sonnet-4-5",
         "rejected": [
           {
             "source_index": 1,
-            "reason": "Primarily a foreign policy and war-coverage roundup on Iran; diesel price impact is a secondary thread better covered directly, and the bulk of content is outside the Business category rule."
-          },
-          {
-            "source_index": 3,
-            "reason": "Discovery-only stub duplicating the Novartis drug story already represented by source 2."
-          },
-          {
-            "source_index": 4,
-            "reason": "Brief duplicate of the jobs report and market reaction covered more substantively by source 5 and referenced in the trade deficit hero story."
-          },
-          {
-            "source_index": 5,
-            "reason": "Discovery-only stub on jobs data; core facts are incorporated into the selected hero story via source 14."
-          },
-          {
-            "source_index": 7,
-            "reason": "Discovery-only thin stub on Anthropic IPO investors, superseded by more substantive source 12 on the same underlying development."
-          },
-          {
-            "source_index": 8,
-            "reason": "Thin brief mixing market moves and opinion links without a single clear, sourced news angle distinct from other selected market stories."
-          },
-          {
-            "source_index": 10,
-            "reason": "Aggregator brief about Labor Day travel costs tied to gas prices; thin and largely overlapping with broader energy price coverage."
-          },
-          {
-            "source_index": 13,
-            "reason": "Discovery-only thin duplicate of the Trump trade/Fed threat story already selected as hero via source 14."
-          },
-          {
-            "source_index": 17,
-            "reason": "Discovery-only thin duplicate of the Tesla Cybercab federal probe story already selected via source 16."
-          }
-        ],
-        "writer_failures": [
-          {
-            "source_index": 15,
-            "reason": [
-              "body_under_90_words",
-              "source_under_80_words"
-            ]
-          },
-          {
-            "source_index": 11,
-            "reason": [
-              "body_under_90_words",
-              "source_under_80_words"
-            ]
-          },
-          {
-            "source_index": 16,
-            "reason": [
-              "body_under_90_words",
-              "headline_jurisdiction_missing_from_lead",
-              "source_under_80_words"
-            ]
-          },
-          {
-            "source_index": 6,
-            "reason": [
-              "body_under_90_words"
-            ]
-          },
-          {
-            "source_index": 12,
-            "reason": [
-              "body_under_90_words",
-              "source_under_80_words"
-            ]
+            "reason": "Discovery-only stub about a drug trial failure; a health/science story not suited to Business, and too thin to support coverage."
           },
           {
             "source_index": 2,
-            "reason": [
-              "body_under_90_words",
-              "source_under_80_words"
-            ]
-          }
-        ],
-        "protected_material_update_repairs": [],
-        "duration_seconds": 51.469
-      }
-    },
-    {
-      "category_key": "tech",
-      "hero_source_index": 2,
-      "card_source_indexes": [
-        6,
-        16,
-        1
-      ],
-      "diagnostics": {
-        "model": "claude-sonnet-5",
-        "writer_model": "claude-sonnet-4-5",
-        "rejected": [
+            "reason": "Discovery-only stub on a California housing/manufacturing legislative setback; local land-use story without clear national economic consequence."
+          },
           {
-            "source_index": 4,
-            "reason": "Duplicate of BepiColombo story already selected as card (source 3), same event and text"
+            "source_index": 3,
+            "reason": "Brief aggregation of headlines about data center insurance; too thin and discovery-adjacent to construct a factual story from."
+          },
+          {
+            "source_index": 5,
+            "reason": "Discovery-only stub on a Venezuela oil deal; thin sourcing, better suited to World if developed further."
+          },
+          {
+            "source_index": 6,
+            "reason": "Oura IPO filing is a legitimate business story, but overlaps heavily with hero/card selections already covering finance and tech; deprioritized in favor of broader-impact stories."
           },
           {
             "source_index": 7,
-            "reason": "Foreign archaeology discovery with no US policy or national consequence angle"
+            "reason": "Duplicate framing of the same gas price story as the hero diesel piece; would violate distinct-story requirement."
           },
           {
             "source_index": 8,
-            "reason": "Thin source with no article text, fails source quality threshold"
-          },
-          {
-            "source_index": 9,
-            "reason": "Routine consumer software update, not consequential enough for national tech coverage"
-          },
-          {
-            "source_index": 10,
-            "reason": "Generic corporate financing story about a private AI infrastructure company, not central tech/science development"
-          },
-          {
-            "source_index": 11,
-            "reason": "Generic corporate product announcement lacking broader consequence beyond company promotion"
-          },
-          {
-            "source_index": 12,
-            "reason": "Corporate real estate and layoffs story about a video game studio, not a tech/science central subject"
-          },
-          {
-            "source_index": 15,
-            "reason": "Corporate PR letter about an acquisition, not a consequential technology or science development"
-          },
-          {
-            "source_index": 17,
-            "reason": "Niche music gear product announcement without broader national significance"
-          },
-          {
-            "source_index": 18,
-            "reason": "Trade press story about enterprise software pricing complaints, lacks broad national consequence"
+            "reason": "Tesla Cybercab story centers on a physical safety/regulatory issue, not a core business/economic development, and overlaps with consumer tech coverage better suited elsewhere."
           }
         ],
         "writer_failures": [
           {
-            "source_index": 5,
-            "reason": [
-              "generated_copy_drifted_from_source_focus"
-            ]
-          },
-          {
-            "source_index": 3,
-            "reason": [
-              "generated_copy_drifted_from_source_focus"
-            ]
-          },
-          {
             "source_index": 14,
             "reason": [
-              "headline_entity_missing_from_lead"
+              "body_under_90_words",
+              "source_under_80_words"
             ]
           },
           {
             "source_index": 13,
+            "reason": [
+              "body_under_90_words",
+              "source_under_80_words"
+            ]
+          },
+          {
+            "source_index": 10,
+            "reason": [
+              "generated_copy_drifted_from_source_focus"
+            ]
+          },
+          {
+            "source_index": 9,
+            "reason": [
+              "generated_copy_drifted_from_source_focus"
+            ]
+          },
+          {
+            "source_index": 15,
+            "reason": [
+              "body_under_90_words",
+              "source_under_80_words"
+            ]
+          },
+          {
+            "source_index": 11,
+            "reason": [
+              "ValueError"
+            ]
+          },
+          {
+            "source_index": 12,
             "reason": [
               "ValueError"
             ]
           }
         ],
         "protected_material_update_repairs": [],
-        "duration_seconds": 60.258
+        "duration_seconds": 43.444
       }
     },
     {
-      "category_key": "sports",
-      "hero_source_index": 5,
+      "category_key": "tech",
+      "hero_source_index": 7,
       "card_source_indexes": [
-        1,
-        10,
-        14,
+        11,
+        8,
+        13,
         6,
-        16,
-        8
+        2
       ],
       "diagnostics": {
         "model": "claude-sonnet-5",
         "writer_model": "claude-sonnet-4-5",
         "rejected": [
           {
-            "source_index": 3,
-            "reason": "Thin brief with no substantive article text; routine pre-game travel logistics story lacks national significance"
+            "source_index": 1,
+            "reason": "Discovery-only lifestyle app roundup with no national news consequence"
           },
           {
             "source_index": 4,
-            "reason": "Duplicate of the Sabalenka cannabis incident already covered by source 10"
+            "reason": "Same underlying OpenAI wiki incident story as source 11; duplicate event coverage"
           },
           {
-            "source_index": 7,
-            "reason": "Duplicate of the Alcaraz US Open story already selected via source 14"
+            "source_index": 5,
+            "reason": "Consumer alarm app launch, promotional in nature with no broader consequence"
           },
           {
             "source_index": 9,
-            "reason": "Foreign club (Premier League) roster/personnel dispute with no U.S. national relevance"
-          },
-          {
-            "source_index": 11,
-            "reason": "Routine foreign league (La Liga) match result with no national significance"
-          },
-          {
-            "source_index": 12,
-            "reason": "Foreign domestic women's league season-opener recap, routine result without national U.S. relevance"
-          },
-          {
-            "source_index": 13,
-            "reason": "Duplicate follow-up quotes from the same Liverpool-Ipswich match already covered via source 8"
-          },
-          {
-            "source_index": 15,
-            "reason": "Thin near-empty brief duplicating the same Liverpool-Ipswich match result"
-          },
-          {
-            "source_index": 17,
-            "reason": "Thin near-empty brief duplicating the same Liverpool-Ipswich match, opposing manager reaction only"
-          }
-        ],
-        "writer_failures": [
-          {
-            "source_index": 2,
-            "reason": [
-              "generated_copy_drifted_from_source_focus"
-            ]
-          }
-        ],
-        "protected_material_update_repairs": [],
-        "duration_seconds": 61.057
-      }
-    },
-    {
-      "category_key": "entertainment",
-      "hero_source_index": 9,
-      "card_source_indexes": [
-        14,
-        2,
-        7,
-        5,
-        15,
-        1
-      ],
-      "diagnostics": {
-        "model": "claude-sonnet-5",
-        "writer_model": "claude-sonnet-4-5",
-        "rejected": [
-          {
-            "source_index": 3,
-            "reason": "Standalone film review with thin substance, no broader news significance beyond critique"
-          },
-          {
-            "source_index": 6,
-            "reason": "Same Club Kid film covered via Topic Studios card; awards-speculation piece is duplicative of source 4's festival angle"
-          },
-          {
-            "source_index": 11,
-            "reason": "Duplicate coverage of the same Jay-Z London concert already selected via source 2"
-          },
-          {
-            "source_index": 12,
-            "reason": "Celebrity personal commentary on cosmetic procedures lacks national news consequence"
-          },
-          {
-            "source_index": 13,
-            "reason": "Routine reality show contestant interview, not nationally consequential entertainment news"
-          },
-          {
-            "source_index": 8,
-            "reason": "Thin source with no article text, spoiler-focused recap lacking substantive news value"
+            "reason": "Live-blog style roundup of consumer gadget announcements at a European trade show, promotional and not centered on a single consequential development"
           },
           {
             "source_index": 10,
-            "reason": "Standard festival premiere reception piece without broader national significance"
+            "reason": "Thin source with no article text"
+          },
+          {
+            "source_index": 12,
+            "reason": "Feature on an independent short film/Kickstarter project, entertainment human-interest piece not a consequential tech/science development"
+          },
+          {
+            "source_index": 14,
+            "reason": "Discovery-only source with no article text"
           }
         ],
         "writer_failures": [
           {
-            "source_index": 4,
+            "source_index": 3,
             "reason": [
               "person_first_reference_not_full_name"
             ]
           }
         ],
         "protected_material_update_repairs": [],
-        "duration_seconds": 68.76
+        "duration_seconds": 51.419
       }
     },
     {
-      "category_key": "politics",
-      "hero_source_index": 15,
+      "category_key": "sports",
+      "hero_source_index": 1,
       "card_source_indexes": [
-        5
+        2,
+        13,
+        6,
+        8,
+        3
       ],
       "diagnostics": {
         "model": "claude-sonnet-5",
         "writer_model": "claude-sonnet-4-5",
         "rejected": [
           {
-            "source_index": 2,
-            "reason": "Tetris copyright dispute over a White House arcade game is a novelty item without governing consequence"
+            "source_index": 4,
+            "reason": "Transfer gossip roundup with unconfirmed rumors, not a confirmed move or signing"
           },
           {
-            "source_index": 4,
-            "reason": "Study on AI chatbot accuracy is a technology story, not primarily a U.S. governing or political actor story"
+            "source_index": 5,
+            "reason": "Pundit commentary and analysis on lower-tier English football results, routine domestic coverage"
           },
           {
             "source_index": 7,
-            "reason": "Discovery-only stub with minimal content; endangered species policy shift lacks sufficient sourcing to stand alone"
+            "reason": "Thin service piece about TV/streaming info, no factual news content"
+          },
+          {
+            "source_index": 10,
+            "reason": "Extremely thin summary of a routine Premier League draw with no material detail"
           },
           {
             "source_index": 11,
-            "reason": "Single case hearing update on a local prosecution matter lacks broader national consequence"
+            "reason": "Routine Super League match result without broader national significance"
           },
           {
-            "source_index": 13,
-            "reason": "Repeat of Trump rhetoric on data centers this week; not a materially new development beyond prior remarks"
+            "source_index": 12,
+            "reason": "Routine Premier League match result, one of several similar weekend results"
           },
           {
             "source_index": 14,
-            "reason": "Discovery-only stub on super PAC spending plans lacks depth for standalone card"
+            "reason": "Routine Premier League scoreless draw, no national significance"
+          },
+          {
+            "source_index": 15,
+            "reason": "Aggregator schedule/listicle piece, not a distinct news story"
           },
           {
             "source_index": 16,
-            "reason": "Discovery-only stub on a minor DOJ disclosure order lacks sufficient substance"
+            "reason": "Routine Premier League match result, one of several similar weekend results"
           },
           {
             "source_index": 17,
-            "reason": "Same event as source 1 on the Trump arch groundbreaking dispute; duplicate story"
+            "reason": "Routine Premier League match result, one of several similar weekend results"
+          },
+          {
+            "source_index": 18,
+            "reason": "Routine Premier League scoreless draw, no national significance"
           }
         ],
         "writer_failures": [
+          {
+            "source_index": 9,
+            "reason": [
+              "generated_copy_drifted_from_source_focus"
+            ]
+          }
+        ],
+        "protected_material_update_repairs": [],
+        "duration_seconds": 56.379
+      }
+    },
+    {
+      "category_key": "entertainment",
+      "hero_source_index": 15,
+      "card_source_indexes": [
+        14,
+        5,
+        3,
+        13,
+        9,
+        18,
+        6
+      ],
+      "diagnostics": {
+        "model": "claude-sonnet-5",
+        "writer_model": "claude-sonnet-4-5",
+        "rejected": [
+          {
+            "source_index": 1,
+            "reason": "Speculative awards-season trend piece on Penélope Cruz with no concrete news development; thin factual basis for hero or card placement."
+          },
+          {
+            "source_index": 2,
+            "reason": "Same Telluride/Venice festival documentary review cycle as other selected review pieces; review-only content with no material news event, and category already well represented by stronger stories."
+          },
+          {
+            "source_index": 4,
+            "reason": "Documentary review with no news event; category coverage already includes multiple festival-season entertainment pieces of similar weight."
+          },
+          {
+            "source_index": 7,
+            "reason": "Thin source (56 words), no article text, essentially a promotional interview snippet lacking substantive news value."
+          },
+          {
+            "source_index": 8,
+            "reason": "Duplicate of source 14 covering the same Bruce Campbell cancer prognosis interview; source 14 is fuller and selected instead."
+          },
+          {
+            "source_index": 10,
+            "reason": "Celebrity feud reconciliation and defense of past antisemitic remarks; lacks broader national consequence beyond music-world gossip."
+          },
+          {
+            "source_index": 11,
+            "reason": "Music trivia/history feature on a sample's cultural lineage; interesting but lacks timely news consequence for a nationwide general-news audience."
+          },
+          {
+            "source_index": 12,
+            "reason": "Media-industry personnel and viewer-reaction story that is more media-trade interest than national entertainment news; thin news development beyond a host's social media replies."
+          },
+          {
+            "source_index": 16,
+            "reason": "Celebrity birth announcement wrapped in an extensive listicle of other celebrity births; falls under promotional/listicle rule and lacks national consequence."
+          },
+          {
+            "source_index": 17,
+            "reason": "Routine awards-show hosting announcement with limited national consequence beyond country music fans; lower news urgency than selected cards."
+          }
+        ],
+        "writer_failures": [],
+        "protected_material_update_repairs": [],
+        "duration_seconds": 63.983
+      }
+    },
+    {
+      "category_key": "politics",
+      "hero_source_index": 3,
+      "card_source_indexes": [
+        13,
+        7,
+        14
+      ],
+      "diagnostics": {
+        "model": "claude-sonnet-5",
+        "writer_model": "claude-sonnet-4-5",
+        "rejected": [
+          {
+            "source_index": 1,
+            "reason": "Same event as source 7, which offers fuller reporting; duplicate coverage of the MAGA Inc. Paxton donation."
+          },
+          {
+            "source_index": 3,
+            "reason": "Same Witkoff/Kushner-Putin meeting event as hero source 9, which is the protected material-update canonical; avoid duplicating."
+          },
+          {
+            "source_index": 4,
+            "reason": "Thin brief on Sunday show previews, largely overlapping with source 5 and lacking independent news weight."
+          },
+          {
+            "source_index": 5,
+            "reason": "Minor scheduling update about convention speaking order; low consequence, thin brief."
+          },
+          {
+            "source_index": 6,
+            "reason": "Foreign policy statement about Israeli settler violence in the West Bank; primary actor and consequence is foreign, belongs in World if covered at all."
+          },
+          {
+            "source_index": 12,
+            "reason": "Duplicate of source 13's more detailed report on the same US-Iran tanker strikes."
+          }
+        ],
+        "writer_failures": [
+          {
+            "source_index": 11,
+            "reason": [
+              "body_under_90_words",
+              "source_under_80_words"
+            ]
+          },
+          {
+            "source_index": 2,
+            "reason": [
+              "source_under_80_words"
+            ]
+          },
           {
             "source_index": 10,
             "reason": [
@@ -471,48 +439,16 @@
             ]
           },
           {
-            "source_index": 12,
-            "reason": [
-              "body_under_90_words",
-              "source_under_80_words"
-            ]
-          },
-          {
-            "source_index": 3,
-            "reason": [
-              "body_under_90_words",
-              "source_under_80_words"
-            ]
-          },
-          {
-            "source_index": 1,
-            "reason": [
-              "body_under_90_words",
-              "source_under_80_words"
-            ]
-          },
-          {
-            "source_index": 9,
-            "reason": [
-              "ValueError"
-            ]
-          },
-          {
             "source_index": 8,
             "reason": [
-              "ValueError"
-            ]
-          },
-          {
-            "source_index": 6,
-            "reason": [
               "body_under_90_words",
+              "person_first_reference_not_full_name",
               "source_under_80_words"
             ]
           }
         ],
         "protected_material_update_repairs": [],
-        "duration_seconds": 39.815
+        "duration_seconds": 52.062
       }
     }
   ]

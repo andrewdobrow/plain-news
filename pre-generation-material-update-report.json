@@ -1,68 +1,50 @@
 {
-  "generated_at": "2026-09-05T02:39:32Z",
-  "evaluated": 5,
-  "material_updates": 0,
-  "duplicates_suppressed": 5,
+  "generated_at": "2026-09-05T22:01:59Z",
+  "evaluated": 3,
+  "material_updates": 1,
+  "duplicates_suppressed": 1,
   "holds_suppressed": 0,
-  "new_or_unmatched": 0,
+  "new_or_unmatched": 1,
   "items": [
     {
-      "category": "us",
-      "title": "Federal judge extends block on Trump executive order seeking to limit mail voting in the midterms - AP News",
-      "source_url": "https://apnews.com/article/election-2026-trump-mail-voting-postal-service-ce207ff2d0533de05cc2d299e91a0198",
+      "category": "business",
+      "title": "Trump says 'Stupidity causes inflation' and threatens to stop trade with foreign countries - fortune.com",
+      "source_url": "https://fortune.com/2026/09/05/trump-stupidity-inflation-trade-foreign-countries-retaliation-interest-rates/",
       "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-09-04-federal-judge-extends-block-on-trump-executive-order-limiting-mail-voting-in-mid",
-      "confidence": 0.95,
+      "selected_candidate_slug": "2026-09-05-trump-threatens-trade-embargoes-on-deficit-countries-unless-federal-reserve-cuts",
+      "confidence": 0.9,
       "novel_facts": [],
-      "reason": "The incoming article is a bare headline-only scrape with no body content beyond the headline itself, referencing the same federal judge's extension of the block on Trump's executive order limiting mail voting for the midterms. This matches the existing canonical article exactly in subject matter and framing, with no additional facts provided.",
+      "reason": "Both articles cover the same Friday Oval Office/Truth Social event where Trump reacted to the August jobs report by threatening to halt trade unless the Fed cuts rates. The incoming article adds quotes ('Stupidity causes inflation') and political framing/economic commentary but no new facts about outcomes, decisions, or consequences beyond what's already in the canonical article.",
       "cache_hit": false
     },
     {
       "category": "business",
-      "title": "Flight price rises due to 'foolish leaders' starting wars, Virgin's Branson says",
-      "source_url": "https://www.bbc.co.uk/news/articles/cje8wx2qw9vo?at_medium=RSS&at_campaign=rss",
-      "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-09-05-virgin-atlantic-founder-blames-rising-flight-prices-on-foolish-leaders-starting",
-      "confidence": 0.98,
+      "title": "U.S. labor market booms, with 162,000 jobs added in August - Axios",
+      "source_url": "https://www.axios.com/2026/09/04/august-jobs-federal-reserve-trump",
+      "action": "new_story",
+      "selected_candidate_slug": "",
+      "confidence": 0.9,
       "novel_facts": [
-        "Mentions Virgin securing Team GB/ParalympicsGB LA 2028 flight contract"
+        "August 2026 jobs report: 162,000 jobs added",
+        "Unemployment rate steady at 4.1%",
+        "Stocks fall after report",
+        "Women accounted for almost all job gains"
       ],
-      "reason": "Same BBC article, same speaker, same quotes and figures about fuel surcharges and Iran conflict; only a minor added detail about an Olympics contract, which is not a material update to the core story.",
-      "cache_hit": false
-    },
-    {
-      "category": "sports",
-      "title": "Ongoing UNC investigation could take out Bill Belichick, for cause - NBC Sports",
-      "source_url": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/ongoing-unc-investigation-could-take-out-bill-belichick-with-cause",
-      "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-09-05-unc-investigation-into-assistant-coach-and-staff-conduct-could-lead-to-for-cause",
-      "confidence": 0.97,
-      "novel_facts": [],
-      "reason": "Same source article and identical facts about UNC's investigation and Belichick's contract clause; no new developments beyond the existing canonical.",
-      "cache_hit": false
-    },
-    {
-      "category": "entertainment",
-      "title": "‘Wheel of Fortune’ Announcer Jim Thornton Fired After Investigation Into Allegations",
-      "source_url": "https://www.rollingstone.com/tv-movies/tv-movie-news/wheel-of-fortune-jim-thornton-fired-investigation-1235621967/",
-      "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-09-04-wheel-of-fortune-announcer-jim-thornton-fired-after-internal-investigation",
-      "confidence": 0.95,
-      "novel_facts": [
-        "American Airlines Flight 1276 detail and attorney statement are additional color already implied by prior candidate's flight reference, not a new development"
-      ],
-      "reason": "Both articles report the same firing of Jim Thornton by Sony Pictures Television following the same investigation, using the same official statement. The incoming article adds background detail (flight number, attorney quotes) but no new material fact like a new charge, ruling, or status change beyond what's already established as the firing.",
+      "reason": "This is a separate monthly jobs report (August 2026, 162,000 jobs, 4.1% unemployment) distinct from the candidate's May 2026 report (172,000 jobs, 4.3% unemployment). Different reference month and different figures mean this is a new recurring economic data release, not the same real-world event.",
       "cache_hit": false
     },
     {
       "category": "politics",
-      "title": "In boost to GOP, Supreme Court says parties should get lower TV ad rates",
-      "source_url": "https://www.washingtonpost.com/politics/2026/09/04/supreme-court-rules-political-parties-should-get-discounted-tv-ad-rates/",
-      "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-09-04-supreme-court-rules-political-parties-entitled-to-lower-tv-ad-rates",
-      "confidence": 0.98,
-      "novel_facts": [],
-      "reason": "Identical source URL and same Supreme Court ruling on discounted TV ad rates for political parties, reported same day with no new facts beyond the existing canonical article.",
+      "title": "U.S. envoys arrive in Moscow to revive peace talks with Ukraine",
+      "source_url": "https://thehill.com/homenews/administration/6073112-envoys-kushner-witkoff-moscow-kyiv-arrival/",
+      "action": "update_existing_canonical",
+      "selected_candidate_slug": "2026-09-05-trump-envoys-to-visit-moscow-and-kyiv-this-weekend-as-us-pushes-new-peace-propos",
+      "confidence": 0.85,
+      "novel_facts": [
+        "Envoys have now actually arrived in Moscow (confirmed, not just planned)",
+        "Putin authorized a 72-hour pause on strikes against Kyiv to facilitate the visit"
+      ],
+      "reason": "Same real-world event (Witkoff/Kushner Moscow trip for peace talks) as the candidate, which previously reported the planned weekend visit. The incoming article confirms the arrival occurred and adds a new concrete fact (72-hour strike pause on Kyiv), which is a material update but not a distinct accountability or consequence story warranting a new URL.",
       "cache_hit": false
     }
   ]
