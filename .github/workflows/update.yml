@@ -6,16 +6,26 @@ on:
 jobs:
   update:
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     permissions:
       contents: write
     env:
-      # Production uses deterministic editorial enforcement. Local/manual runs
-      # default to shadow mode unless this is explicitly set.
+      PYTHONDONTWRITEBYTECODE: '1'
       PLAIN_ENGINE_MODE: enforce
+      PLAIN_CATEGORY_GENERATION_BUDGET_SECONDS: '240'
 
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+
+      - name: Restore private generation cache
+        id: generation-cache-restore
+        uses: actions/cache/restore@v4
+        with:
+          path: data/generation-cache.json
+          key: plain-generation-v4-source-focus-${{ github.ref_name }}-${{ github.run_id }}
+          restore-keys: |
+            plain-generation-v4-source-focus-${{ github.ref_name }}-
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -27,18 +37,76 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install -r requirements-dev.txt
 
+      - name: Sanitize restored generation cache
+        run: python scripts/sanitize_generation_cache.py
+
+      - name: Repair persistent story registry
+        run: python scripts/repair_editorial_story_registry.py
+
       - name: Validate editorial package
         run: python scripts/validate_package.py
+
+      - name: Verify TCT backend parity contract
+        run: python scripts/backend_parity_check.py
+
+      - name: Compile production code
+        run: python -m compileall -q plain_engine scripts
 
       - name: Run editorial regression tests
         run: python -m pytest tests -q
 
       - name: Generate news
-        run: python scripts/generate.py
+        run: /usr/bin/time -f "Generate elapsed: %E" python -u scripts/generate.py
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           GUARDIAN_API_KEY: ${{ secrets.GUARDIAN_API_KEY }}
           PLAIN_ENGINE_MODE: enforce
+
+      - name: Save generation cache even when generation fails
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: data/generation-cache.json
+          key: plain-generation-v4-source-focus-${{ github.ref_name }}-${{ github.run_id }}
+
+      - name: Upload generation diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: plain-generation-diagnostics-${{ github.run_id }}
+          if-no-files-found: ignore
+          retention-days: 14
+          path: |
+            pre-generation-material-update-report.json
+            publication-integrity-report.json
+            source-quality-report.json
+            source-image-quality-report.json
+            article-quality-report.json
+            assignment-editor-report.json
+            editorial-audit.json
+            editorial-observability.json
+            ranking-recommendations.json
+            ranking-review.md
+            story-registry.json
+            editorial-state.json
+            data/model-usage-report.json
+            archive.json
+
+      - name: Remove transient Python artifacts
+        if: always()
+        run: |
+          find . -type d -name '__pycache__' -prune -exec rm -rf {} +
+          find . -type f \( -name '*.pyc' -o -name '*.pyo' \) -delete
+          rm -rf .pytest_cache
+
+      - name: Guard generated repository size
+        run: |
+          oversized=$(find . -path './.git' -prune -o -type f -size +90M -print)
+          if [ -n "$oversized" ]; then
+            echo "Generated repository contains file(s) above the 90 MiB safety ceiling:"
+            echo "$oversized"
+            exit 1
+          fi
 
       - name: Commit and push
         run: |
