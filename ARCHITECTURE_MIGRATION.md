@@ -1,38 +1,92 @@
-# TCT → Plain architecture migration
+# TCT → Plain backend migration
 
-## Preserved architecture
+## Goal
 
-The following TCT editorial concepts are retained because they are audience-agnostic infrastructure:
+Plain keeps its existing U.S.-wide product and presentation, while Treasure Coast Today is the reference implementation for reusable newsroom-backend protections. Local/Treasure-Coast policies are nationalized rather than copied literally.
 
-- persistent story registry and timelines
-- event/incident/source identity
-- canonical story selection
+## Reusable TCT systems now integrated
+
+- persistent story registry, canonical identity, timelines and lifecycle
+- event, incident and source identity
 - story evolution and material-update classification
-- eligibility and source trust policy
-- semantic publication gate and semantic material-update support
-- story lifecycle
-- deterministic ranking recommendations
-- observability / audit output
-- activation and production-routing infrastructure
-- assignment-editor/model bake-off infrastructure for future controlled experiments
+- deterministic editorial eligibility and source policy
+- semantic publication and material-update gates
+- ranking recommendations and observability
+- registry repair/compaction and production routing
+- model usage/cost instrumentation
+- shared RSS prefetch, source recovery and source-focus repair
+- national category-fit classification
+- assignment-editor / exact-source-writer role separation
+- publication-quality and source-drift contracts
+- persistent generation/source/materiality caches
+- source-image authority, image-quality rejection and fallback rotation
+- category-level failure containment
+- final publication-integrity checks
+
+The detailed maintained audit lives in `BACKEND_PARITY_AUDIT.md`. `scripts/backend_parity_check.py` enforces the structural/live-wiring contract in CI.
 
 ## Nationalized behavior
 
-The TCT-specific editorial assumptions were replaced rather than renamed:
+TCT-specific editorial assumptions are replaced rather than renamed:
 
-- `local_relevance` → `national_relevance`
-- county/local proximity → national U.S., multi-state, state/regional, major-global, international scope
-- local-government/public-safety importance weights → federal policy, elections, macroeconomics, national security, major disasters, business/technology consequence and true mass-casualty signals
-- Treasure Coast publisher policy → national wires, national outlets, specialist national sources and federal primary sources
-- local place/person stopword hacks and incident-specific Treasure Coast concepts removed
-- Plain category prompts rebuilt around a nationwide U.S. audience
+- local/county relevance → U.S.-national, federal, multi-state, state/regional, major-global and international scope
+- local-government/public-safety importance → federal policy, elections, macroeconomics, national security, major courts, major disasters, business/technology consequence and true mass-casualty scale
+- Treasure Coast source preference → national wires, major national outlets, specialist national sources and primary government/scientific sources
+- county routing → Plain's existing national categories
+
+Generic identity APIs still contain compatibility fields such as `county`; Plain does not give those fields local editorial weight.
+
+## Live production flow
+
+```text
+RSS/discovery feeds
+  ↓
+shared prefetch + publisher/source recovery + full-text extraction
+  ↓
+source quality / source-focus repair / Guardian alternate recovery
+  ↓
+national category-fit classification
+  ↓
+pre-generation duplicate/material-update semantic gate
+  ↓
+Sonnet 5 assignment editor (select exact source + angle)
+  ↓
+Sonnet 4.5 exact-source writer
+  ↓
+article/source-grounding quality contract
+  ↓
+persistent editorial identity + same-story placement handling
+  ↓
+source-image authority + image validation/recovery/fallback
+  ↓
+ranking + observability
+  ↓
+terminal semantic permalink barrier
+  ├─ duplicate/no change → no new canonical
+  ├─ material update → refresh established canonical URL
+  └─ genuinely new story → mint new permalink
+  ↓
+Plain renderer: hero + supporting snippets + archive/data output
+```
+
+## Material-update no-silent-loss contract
+
+A likely same-event material development is evaluated before writing. When validated, its target canonical identity travels through assignment, writing and placement. If the update survives into a hero or supporting snippet, a commit receipt requires the established canonical article to be updated—even when that live placement is only a snippet card. A validated update cannot silently disappear because an older same-story placement was processed first or because a writer failed; those cases fail closed or prefer the validated update.
+
+The final permalink barrier independently rechecks publication identity before any new URL is created.
 
 ## Presentation intentionally preserved
 
-This migration does not redesign the public Plain site. Existing categories, HTML/CSS, archive rendering, app `data.json`, image system and market ticker remain the presentation layer. The new engine sits between content enrichment and final ranking/publication.
+This migration does not redesign Plain. The existing hero, supporting snippets/cards, national categories, article/archive pages, branding, market ticker and public site shell remain the product layer.
 
-## Publication behavior
+## Historical-content safety
 
-A recognized unchanged story is still allowed to appear on a live category page. Recognition does **not** mean the story disappears from the current news product. Instead, persistent identity controls whether it is a new story/update and which permanent archive URL it belongs to.
+The migration itself does not rewrite historical files under `articles/`. Legacy duplicate groups are reportable but are not destructively repaired as part of installation. Forward publication receives the TCT-style canonical/update barriers.
 
-Within a category, two generated slots that resolve to the same persistent story are collapsed in `enforce` mode. Cross-category placement remains allowed because one national story can legitimately belong in, for example, both U.S. and Politics; homepage presentation deduplication remains a separate concern.
+## Intentionally excluded TCT product features
+
+- membership/paywall/protected-content systems
+- Treasure Coast county pages and local relevance policy
+- local weather products
+- TCT ad/newsletter/membership UI
+- local manual/custom-article queues and one-off local repair data

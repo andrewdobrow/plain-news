@@ -54,3 +54,23 @@ def test_same_story_keeps_persistent_id_across_runs(tmp_path: Path):
     apply_editorial_engine(second, output_dir=tmp_path, mode="enforce")
     assert second[0]["hero"]["story_id"] == story_id
     assert second[0]["hero"]["editorial_action"] == "ignore"
+
+
+def test_archive_recovery_bypasses_reingestion_as_new_source(tmp_path: Path):
+    recovered = _item(
+        "Previously published canonical story",
+        "https://plainnews.app/articles/2026-09-04-canonical.html",
+        "This is already-published Plain canonical copy reused only because the live category generation path was unavailable.",
+    )
+    recovered.update({
+        "_archive_recovery": True,
+        "_archived_slug": "2026-09-04-canonical",
+        "publication_quality_ok": True,
+        "editorial_action": "ignore",
+    })
+    categories = [{"category_key": "us", "category_label": "U.S.", "hero": recovered, "cards": []}]
+    audit = apply_editorial_engine(categories, output_dir=tmp_path, mode="enforce")
+    assert categories[0]["hero"]["_archived_slug"] == "2026-09-04-canonical"
+    assert categories[0]["hero"].get("story_id", "") == ""
+    assert audit["items"][0]["route"] == "archive_recovery"
+    assert audit["items"][0]["action"] == "ignore"

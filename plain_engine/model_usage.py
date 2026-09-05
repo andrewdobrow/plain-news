@@ -70,6 +70,8 @@ _WORKLOAD_CLASS_BY_FUNCTION = {
     "_run_model_bakeoff_variant": "model_bakeoff_challenger",
     "_run_assignment_editor": "assignment_editor",
     "_run_assignment_writer": "assignment_writer",
+    "run_assignment_editor": "assignment_editor",
+    "run_assignment_writer": "assignment_writer",
 }
 
 

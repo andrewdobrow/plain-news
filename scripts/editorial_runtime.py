@@ -35,9 +35,8 @@ def _entry(item: dict[str, Any]) -> dict[str, Any]:
     entry: dict[str, Any] = {
         "title": str(item.get("source_title") or item.get("headline") or "").strip(),
         "link": str(item.get("link") or "").strip(),
-        # Use the generated article as the richest same-source evidence currently
-        # available to the runtime; source summary is retained separately below.
-        "body": str(item.get("body") or item.get("source_summary") or item.get("teaser") or "").strip(),
+        # Ground identity/materiality in recovered source evidence, never model copy.
+        "body": str(item.get("article_text") or item.get("source_summary") or item.get("body") or item.get("teaser") or "").strip(),
         "summary": str(item.get("source_summary") or item.get("teaser") or "").strip(),
     }
     raw_pub = str(item.get("source_published_raw") or "").strip()
@@ -101,7 +100,7 @@ def apply_editorial_engine(
     presentation-level deduplication.
     """
     root = Path(output_dir)
-    selected_mode = (mode or os.environ.get("PLAIN_ENGINE_MODE", "shadow")).strip().lower()
+    selected_mode = (mode or os.environ.get("PLAIN_ENGINE_MODE", "enforce")).strip().lower()
     if selected_mode not in VALID_MODES:
         selected_mode = "shadow"
 
@@ -132,6 +131,7 @@ def apply_editorial_engine(
     for category in all_categories:
         cat_key = str(category.get("category_key") or "")
         seen_story_ids: set[str] = set()
+        kept_story_locations: dict[str, tuple[str, int | None]] = {}
 
         original_hero = category.get("hero") if isinstance(category.get("hero"), dict) else None
         cards = [c for c in category.get("cards", []) if isinstance(c, dict)]
@@ -147,6 +147,27 @@ def apply_editorial_engine(
             audit["counts"]["processed"] += 1
             link = str(item.get("link") or "").strip()
             title = str(item.get("headline") or item.get("source_title") or "").strip()
+            if item.get("_archive_recovery"):
+                # This is already-published canonical copy used only as failure
+                # containment. Do not re-ingest Plain's own permalink as a new
+                # source observation or mutate persistent story identity.
+                audit["items"].append({
+                    "mode": selected_mode,
+                    "slot": slot,
+                    "category_key": cat_key,
+                    "headline": title,
+                    "link": link,
+                    "action": "ignore",
+                    "route": "archive_recovery",
+                    "story_id": str(item.get("story_id") or ""),
+                    "event_key": str(item.get("event_key") or ""),
+                    "eligible": True,
+                })
+                if slot == "hero" and accepted_hero is None:
+                    accepted_hero = item
+                else:
+                    accepted_cards.append(item)
+                continue
             try:
                 if not title or not link:
                     raise ValueError("generated item is missing headline or source link")
@@ -168,15 +189,55 @@ def apply_editorial_engine(
                 if duplicate_in_category:
                     audit["counts"]["same_category_duplicates"] += 1
 
-                should_keep = selected_mode != "enforce" or (not reject and not duplicate_in_category)
+                def _placement_priority(candidate: dict[str, Any], candidate_slot: str) -> tuple[int, int, int]:
+                    protected_update = int(bool(candidate.get("pre_generation_material_update")))
+                    hero_slot = int(candidate_slot == "hero")
+                    urgency = int(candidate.get("urgency_score") or 0)
+                    # TCT parity: a validated material update outranks an ordinary
+                    # same-story clone even when the older clone occupied the hero.
+                    return protected_update, hero_slot, urgency
+
+                if selected_mode != "enforce":
+                    should_keep = True
+                elif reject:
+                    should_keep = False
+                elif duplicate_in_category and result.story_id:
+                    location = kept_story_locations.get(result.story_id)
+                    existing_item = None
+                    existing_slot = "card"
+                    if location:
+                        if location[0] == "hero":
+                            existing_item = accepted_hero
+                            existing_slot = "hero"
+                        elif location[1] is not None and 0 <= location[1] < len(accepted_cards):
+                            existing_item = accepted_cards[location[1]]
+                    if existing_item is not None and _placement_priority(item, slot) > _placement_priority(existing_item, existing_slot):
+                        item["editorial_replaced_same_story_clone"] = True
+                        existing_item["editorial_replaced_by_material_update"] = bool(item.get("pre_generation_material_update"))
+                        if location and location[0] == "hero":
+                            accepted_hero = item
+                            kept_story_locations[result.story_id] = ("hero", None)
+                        elif location and location[1] is not None:
+                            accepted_cards[location[1]] = item
+                            kept_story_locations[result.story_id] = ("card", location[1])
+                        should_keep = False  # replacement was already committed above
+                    else:
+                        should_keep = False
+                else:
+                    should_keep = True
+
                 if result.story_id:
                     seen_story_ids.add(result.story_id)
 
                 if should_keep:
                     if slot == "hero" and accepted_hero is None:
                         accepted_hero = item
+                        if result.story_id:
+                            kept_story_locations[result.story_id] = ("hero", None)
                     else:
                         accepted_cards.append(item)
+                        if result.story_id:
+                            kept_story_locations[result.story_id] = ("card", len(accepted_cards) - 1)
             except Exception as exc:
                 audit["counts"]["errors"] += 1
                 item["editorial_error"] = f"{type(exc).__name__}: {exc}"

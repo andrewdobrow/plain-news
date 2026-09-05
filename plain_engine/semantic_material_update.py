@@ -268,10 +268,10 @@ Editorial requirements:
 - Preserve the canonical story's original context while foregrounding the material development.
 - The FIRST paragraph must explicitly explain BOTH what originally happened and what is new now. It must make sense to a reader who never saw the earlier article.
 - Write 3 to 6 full paragraphs and roughly 220 to 500 words.
-- Use direct, neutral local-news language. No markdown, section headings, datelines, bullet lists, or commentary.
+- Use direct, neutral national-news language. No markdown, section headings, datelines, bullet lists, or commentary.
 - Do not use direct quotes unless the exact quote appears in the supplied text.
-- The headline MUST be refreshed to foreground the material development. Do not reuse or lightly paraphrase the old canonical headline when the story state has changed. It must remain accurate and locally specific.
-- Every specific city, county, or monetary claim stated in the headline must also be explicitly stated in the FIRST paragraph.
+- The headline MUST be refreshed to foreground the material development. Do not reuse or lightly paraphrase the old canonical headline when the story state has changed. It must remain accurate and specific about the relevant people, institutions, jurisdiction, or place.
+- Every specific jurisdiction, entity, place, or monetary claim stated in the headline must also be explicitly stated in the FIRST paragraph.
 - The teaser must be one or two complete sentences and explain the new development in context.
 
 Return ONLY this JSON object:

@@ -8,9 +8,16 @@ import sys
 import json
 import re
 import hashlib
-import feedparser
-import anthropic
-from datetime import datetime, timedelta
+import copy
+try:
+    import feedparser
+except Exception:
+    feedparser = None
+try:
+    import anthropic
+except Exception:
+    anthropic = None
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from collections import defaultdict
 
@@ -25,6 +32,15 @@ from plain_engine.archive_identity import (
     is_duplicate_headline as _is_duplicate_headline,
 )
 from plain_engine import write_homepage_ranking_recommendations
+from plain_engine.generation_cache import PersistentGenerationCache, CACHE_MISS, cache_hash
+from plain_engine.source_recovery import prefetch_feed_documents, fetch_headlines as recover_headlines, build_content_bank as build_recovered_content_bank, fetch_guardian_match
+from plain_engine.image_authority import extract_image as authoritative_extract_image, build_image_bank as build_authoritative_image_bank, ensure_item_image, FallbackRotator, write_image_quality_report
+from plain_engine.assignment_pipeline import run_live_assignment_category
+from plain_engine.category_classifier import classify_stories
+from plain_engine.article_quality import enforce_category_quality, write_quality_report
+from plain_engine.model_usage import ModelUsageTracker, instrument_anthropic_client
+from plain_engine.semantic_publication_gate import retrieve_recent_candidates, adjudicate_candidates, ACTION_DUPLICATE, ACTION_UPDATE, ACTION_NEW, ACTION_HOLD
+from plain_engine.semantic_material_update import compose_material_update
 from scripts.editorial_runtime import apply_editorial_engine
 
 # -- CONFIG --
@@ -194,15 +210,34 @@ SITE_NAME              = "Plain"
 
 
 _client = None
+_usage_tracker = None
+_generation_cache = None
+
+def get_generation_cache():
+    global _generation_cache
+    if _generation_cache is None:
+        _generation_cache = PersistentGenerationCache(OUTPUT_DIR / "data" / "generation-cache.json")
+    return _generation_cache
 
 def get_client():
-    global _client
+    global _client, _usage_tracker
     if _client is None:
         api_key = os.environ.get("ANTHROPIC_API_KEY", "").strip()
         if not api_key:
             raise RuntimeError("ANTHROPIC_API_KEY is required to generate Plain News content")
-        _client = anthropic.Anthropic(api_key=api_key)
+        if anthropic is None:
+            raise RuntimeError("anthropic package is required to generate Plain News content")
+        _usage_tracker = ModelUsageTracker(OUTPUT_DIR / "data" / "model-usage-report.json")
+        _client = instrument_anthropic_client(anthropic.Anthropic(api_key=api_key), _usage_tracker)
     return _client
+
+def write_model_usage_report():
+    if _usage_tracker is not None:
+        try:
+            report = _usage_tracker.write_report()
+            print(f"  Model usage: {report.get('totals',{}).get('requests',0)} requests, estimated ${report.get('totals',{}).get('estimated_list_cost_usd',0):.4f}")
+        except Exception as exc:
+            print(f"  Model usage report warning: {exc}")
 
 # ---------------------------------------------------------------------------
 # Local hosted fallback images — /images/fallback/ in the plain-news repo.
@@ -1182,7 +1217,10 @@ def format_age(published_str):
         from email.utils import parsedate_to_datetime
         from datetime import timezone, timedelta
         et      = timezone(timedelta(hours=-4))  # EDT approximation
-        dt_utc  = parsedate_to_datetime(published_str).astimezone(timezone.utc)
+        try:
+            dt_utc = parsedate_to_datetime(published_str).astimezone(timezone.utc)
+        except Exception:
+            dt_utc = datetime.fromisoformat(str(published_str).replace("Z", "+00:00")).astimezone(timezone.utc)
         now_utc = datetime.now(timezone.utc)
         mins    = int((now_utc - dt_utc).total_seconds() / 60)
         dt_et   = dt_utc.astimezone(et)
@@ -1684,12 +1722,14 @@ def render_index(all_categories, market_data=None, market_live=False, top_cat=No
         pub_time   = hero.get("published") or f"Today, {timestamp}"
         # Look up actual archived slug so share URL matches the real article page
         _archive   = load_archive(OUTPUT_DIR / "archive.json")
-        _matched   = find_matching_entry(hero.get("headline",""), _archive, hero.get("link",""), hero.get("story_id",""))
-        if _matched:
+        _matched = find_matching_entry(hero.get("headline",""), _archive, hero.get("link",""), hero.get("story_id",""))
+        if hero.get("_archived_slug"):
+            slug = hero["_archived_slug"]
+        elif _matched:
             slug = _matched["slug"]
         else:
             today = datetime.utcnow().strftime("%Y-%m-%d")
-            slug  = f"{today}-{slugify(hero.get('headline', ''))}"
+            slug = f"{today}-{slugify(hero.get('headline', ''))}"
         article_url = f"{SITE_URL}/articles/{slug}.html"
         # SEO section label for non-Top-News categories
         section_label = ""
@@ -1913,8 +1953,10 @@ def render_index(all_categories, market_data=None, market_live=False, top_cat=No
 # -- MAIN --
 
 def slugify(text):
+    import unicodedata
+    text = unicodedata.normalize("NFKD", str(text or "")).encode("ascii", "ignore").decode("ascii")
     text = text.lower().strip()
-    text = re.sub(r"[^\w\s-]", "", text)
+    text = re.sub(r"[^a-z0-9\s-]", "", text)
     text = re.sub(r"[\s_]+", "-", text)
     text = re.sub(r"-+", "-", text)
     return text[:80].strip("-")
@@ -2188,525 +2230,707 @@ def update_news_sitemap(archive_entries):
 </urlset>"""
 
 
-def write_archives(all_categories, top_cat):
-    articles_dir = OUTPUT_DIR / "articles"
-    archive_path = OUTPUT_DIR / "archive.json"
-    articles_dir.mkdir(exist_ok=True)
+def _archive_article_body(row):
+    body = str(row.get("body") or "").strip()
+    if body:
+        return body
+    slug = str(row.get("slug") or "").strip()
+    path = OUTPUT_DIR / "articles" / f"{slug}.html"
+    if not slug or not path.exists():
+        return ""
+    try:
+        import html as _html
+        text = path.read_text(encoding="utf-8", errors="ignore")
+        m = re.search(r'<div class="article-body">(.*?)</div>', text, flags=re.I | re.S)
+        if not m:
+            return ""
+        paras = []
+        for raw in re.findall(r"<p[^>]*>(.*?)</p>", m.group(1), flags=re.I | re.S):
+            clean = _html.unescape(re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", raw))).strip()
+            if clean:
+                paras.append(clean)
+        return "\n\n".join(paras)
+    except Exception:
+        return ""
 
-    archive       = load_archive(archive_path)
-    today         = datetime.utcnow().strftime("%Y-%m-%d")
-    new_count     = 0
-    updated_count = 0
-    unchanged_count = 0
-    this_run_token_sets = []
 
-    heroes = [(top_cat["category_key"], top_cat["category_label"], top_cat["hero"])]
-    for cat in all_categories:
-        if cat["category_key"] != top_cat["category_key"]:
-            heroes.append((cat["category_key"], cat["category_label"], cat["hero"]))
+def _canonical_for_gate(row):
+    out = dict(row)
+    out["body"] = _archive_article_body(row)
+    out.setdefault("source_headline", row.get("headline", ""))
+    out.setdefault("first_published", row.get("date", ""))
+    out.setdefault("published_at", row.get("lastmod", row.get("date", "")))
+    return out
 
-    for cat_key, cat_label, hero in heroes:
-        headline = hero.get("headline", "").strip()
-        if not headline:
-            continue
 
-        source_url = hero.get("link", "")
-        existing   = find_matching_entry(headline, archive, source_url, hero.get("story_id", ""))
+def _incoming_for_gate(hero):
+    return {
+        "headline": hero.get("headline", ""), "source_headline": hero.get("source_title", ""),
+        "teaser": hero.get("teaser", ""),
+        "body": hero.get("article_text") or hero.get("source_summary") or hero.get("body", ""),
+        "source_url": hero.get("link", ""), "published_at": hero.get("source_published_raw", ""),
+        "story_id": hero.get("story_id", ""), "event_key": hero.get("event_key", ""),
+    }
 
-        # Skip cross-category duplicates within the same run
-        if not existing and _is_duplicate_headline(headline, this_run_token_sets):
-            print(f"  Skipped cross-category duplicate: {headline[:60]}")
-            continue
 
-        this_run_token_sets.append(_sig_tokens(headline))
+def _source_incoming_for_gate(source):
+    """Build the semantic-gate payload from recovered publisher evidence only."""
+    return {
+        "headline": source.get("title", ""),
+        "source_headline": source.get("title", ""),
+        "teaser": source.get("summary", ""),
+        "body": source.get("article_text") or source.get("summary", ""),
+        "source_url": source.get("link", ""),
+        "published_at": source.get("published", ""),
+        "story_id": source.get("story_id", ""),
+        "event_key": source.get("event_key", ""),
+    }
 
-        if existing:
-            slug = existing["slug"]
-            # The persistent editorial engine explicitly says an unchanged same-event
-            # observation should not rewrite the canonical article merely because the
-            # model paraphrased it again on this run. Keep the permanent page stable.
-            if hero.get("editorial_action") == "ignore":
-                if source_url:
-                    existing["source_url"] = source_url
-                if hero.get("story_id"):
-                    existing["story_id"] = hero.get("story_id")
-                if hero.get("event_key"):
-                    existing["event_key"] = hero.get("event_key")
-                existing["last_seen"] = today
-                existing["editorial_action"] = "ignore"
-                unchanged_count += 1
+
+def _canonical_context_from_archive(row):
+    if not isinstance(row, dict):
+        return {}
+    return {
+        "slug": str(row.get("slug") or ""),
+        "headline": str(row.get("headline") or ""),
+        "body": _archive_article_body(row),
+        "teaser": str(row.get("teaser") or ""),
+        "date": str(row.get("date") or row.get("first_published") or ""),
+        "source_url": str(row.get("source_url") or ""),
+        "story_id": str(row.get("story_id") or ""),
+        "event_key": str(row.get("event_key") or ""),
+    }
+
+
+def _pre_generation_semantic_decision(source, archive, canonicals, client, cache):
+    """TCT-style late-source materiality check moved ahead of generation.
+
+    Only a bounded, high-similarity recent candidate set reaches the model.  The
+    result is cached and does not itself publish anything.
+    """
+    incoming = _source_incoming_for_gate(source)
+    candidates = retrieve_recent_candidates(incoming, canonicals, window_days=7, max_candidates=4)
+
+    # Exact pre-migration archive identity remains an admissible candidate even if
+    # the newer semantic retriever is conservative about an angle-shifted headline.
+    ctx = source.get("canonical_context") or {}
+    ctx_slug = str(ctx.get("slug") or "").strip() if isinstance(ctx, dict) else ""
+    if ctx_slug and all(str(c.get("slug") or "") != ctx_slug for c in candidates):
+        match = next((row for row in canonicals if str(row.get("slug") or "") == ctx_slug), None)
+        if match:
+            candidates = [{"slug": ctx_slug, "headline": match.get("headline", ""), "article": match, "evidence": {"eligible": True, "retrieval_score": 1.0, "reasons": ["exact_archive_identity"]}}, *candidates]
+            candidates = candidates[:4]
+
+    if not candidates:
+        return None
+
+    key = cache_hash({
+        "v": "plain-pre-generation-materiality-v2",
+        "incoming": incoming,
+        "candidates": [
+            {
+                "slug": c.get("slug"),
+                "headline": c.get("headline"),
+                "lastmod": (c.get("article") or {}).get("lastmod"),
+                "source_url": (c.get("article") or {}).get("source_url"),
+            }
+            for c in candidates
+        ],
+    })
+    cached = cache.get("pre_generation_materiality", key)
+    if cached is not CACHE_MISS:
+        decision = dict(cached or {})
+        decision["cache_hit"] = True
+        return decision
+
+    decision = adjudicate_candidates(
+        client,
+        model="claude-sonnet-5",
+        incoming=incoming,
+        candidates=candidates,
+        timeout_seconds=45,
+    )
+    if decision.get("action") == ACTION_HOLD:
+        broad = retrieve_recent_candidates(incoming, canonicals, window_days=14, max_candidates=10)
+        if broad:
+            decision = adjudicate_candidates(
+                client,
+                model="claude-sonnet-5",
+                incoming=incoming,
+                candidates=broad,
+                timeout_seconds=60,
+            )
+            decision["high_recall_resolution_pass"] = True
+    cache.put("pre_generation_materiality", key, decision, ttl_seconds=86400)
+    return decision
+
+
+def apply_pre_generation_materiality(source_sets, archive, client, cache):
+    """Suppress known no-change reprints and protect true updates before writing.
+
+    A validated material update receives target-bound canonical context that is
+    carried through the assignment editor, exact-source writer and final commit
+    queue.  This is the Plain adaptation of TCT's late material-update placement
+    and no-silent-loss authority.
+    """
+    canonicals = [_canonical_for_gate(row) for row in archive]
+    by_slug = {str(row.get("slug") or ""): row for row in archive if row.get("slug")}
+    report = {
+        "generated_at": datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
+        "evaluated": 0,
+        "material_updates": 0,
+        "duplicates_suppressed": 0,
+        "holds_suppressed": 0,
+        "new_or_unmatched": 0,
+        "items": [],
+    }
+
+    for cat_key, rows in list(source_sets.items()):
+        kept = []
+        for source in rows:
+            decision = _pre_generation_semantic_decision(source, archive, canonicals, client, cache)
+            if not decision:
+                kept.append(source)
+                continue
+            report["evaluated"] += 1
+            action = str(decision.get("action") or "")
+            selected = str(decision.get("selected_candidate_slug") or "").strip()
+            row = {
+                "category": cat_key,
+                "title": source.get("title", ""),
+                "source_url": source.get("link", ""),
+                "action": action,
+                "selected_candidate_slug": selected,
+                "confidence": decision.get("confidence"),
+                "novel_facts": list(decision.get("novel_facts") or []),
+                "reason": decision.get("reason", ""),
+                "cache_hit": bool(decision.get("cache_hit")),
+            }
+            report["items"].append(row)
+
+            if action == ACTION_UPDATE and selected:
+                canonical = by_slug.get(selected)
+                if not canonical:
+                    # Never allow an update authority without a concrete canonical
+                    # transaction target.  Keep it as an ordinary source so the
+                    # terminal permalink gate can adjudicate later.
+                    kept.append(source)
+                    row["authority_error"] = "selected canonical slug missing from archive"
+                    continue
+                source["pre_generation_material_update"] = True
+                source["pre_generation_material_update_canonical_slug"] = selected
+                source["semantic_material_update_decision"] = copy.deepcopy(decision)
+                source["canonical_context"] = _canonical_context_from_archive(canonical)
+                source["material_update_novel_facts"] = list(decision.get("novel_facts") or [])
+                source["material_update_confidence"] = float(decision.get("confidence") or 0.0)
+                kept.append(source)
+                report["material_updates"] += 1
                 continue
 
-            # New material for an existing story updates the same permanent URL.
-            (articles_dir / f"{slug}.html").write_text(
-                render_article_page(hero, cat_label, cat_key, today, slug), encoding="utf-8"
-            )
-            existing["headline"]  = headline
-            existing["teaser"]    = hero.get("teaser","") or hero.get("body","")[:180]
-            existing["image_url"] = hero.get("image_url","")
-            existing["lastmod"]   = today
-            if source_url:
-                existing["source_url"] = source_url
-            if hero.get("story_id"):
-                existing["story_id"] = hero.get("story_id")
-            if hero.get("event_key"):
-                existing["event_key"] = hero.get("event_key")
-            existing["editorial_action"] = hero.get("editorial_action", "")
-            updated_count += 1
-        else:
-            # New story — create new page
-            existing_slugs = {e["slug"] for e in archive}
-            base_slug = f"{today}-{slugify(headline)}"
-            slug = base_slug
-            counter = 1
-            while slug in existing_slugs:
-                slug = f"{base_slug}-{counter}"; counter += 1
-            (articles_dir / f"{slug}.html").write_text(
-                render_article_page(hero, cat_label, cat_key, today, slug), encoding="utf-8"
-            )
-            archive.append({
-                "slug": slug, "headline": headline,
-                "teaser": hero.get("teaser","") or hero.get("body","")[:180],
-                "category_key": cat_key, "category_label": cat_label,
-                "date": today, "lastmod": today,
-                "image_url": hero.get("image_url",""),
-                "source_url": source_url,
-                "story_id": hero.get("story_id", ""),
-                "event_key": hero.get("event_key", ""),
-                "editorial_action": hero.get("editorial_action", ""),
-            })
-            new_count += 1
+            if action == ACTION_DUPLICATE:
+                source["pre_generation_duplicate"] = True
+                report["duplicates_suppressed"] += 1
+                continue
 
-    archive_path.write_text(json.dumps(archive, indent=2), encoding="utf-8")
-    (OUTPUT_DIR / "archive.html").write_text(render_archive_page(archive), encoding="utf-8")
-    (OUTPUT_DIR / "sitemap.xml").write_text(update_sitemap(archive), encoding="utf-8")
-    (OUTPUT_DIR / "news-sitemap.xml").write_text(update_news_sitemap(archive), encoding="utf-8")
-    print(
-        f"  Archived {new_count} new, updated {updated_count} existing, "
-        f"left {unchanged_count} unchanged ({len(archive)} total)"
+            if action == ACTION_HOLD:
+                source["pre_generation_hold"] = True
+                report["holds_suppressed"] += 1
+                continue
+
+            kept.append(source)
+            report["new_or_unmatched"] += 1
+        source_sets[cat_key] = kept
+
+    (OUTPUT_DIR / "pre-generation-material-update-report.json").write_text(
+        json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8"
     )
+    return report
+
+
+def _semantic_publication_decision(hero, archive, client, cache):
+    incoming = _incoming_for_gate(hero)
+    canonicals = [_canonical_for_gate(row) for row in archive]
+    candidates = retrieve_recent_candidates(incoming, canonicals, window_days=7, max_candidates=4)
+    if not candidates:
+        return {"action": ACTION_NEW, "selected_candidate_slug": "", "status": "no_candidates", "confidence": 1.0}
+    key = cache_hash({"v":"plain-terminal-gate-v3","incoming":incoming,"candidates":[(x.get("slug"),x.get("headline"),x.get("lastmod")) for x in candidates]})
+    cached = cache.get("semantic_gate", key)
+    if cached is not CACHE_MISS:
+        return dict(cached or {})
+    decision = adjudicate_candidates(client, model="claude-sonnet-5", incoming=incoming, candidates=candidates, timeout_seconds=45)
+    if decision.get("action") == ACTION_HOLD:
+        broad = retrieve_recent_candidates(incoming, canonicals, window_days=14, max_candidates=12)
+        decision = adjudicate_candidates(client, model="claude-sonnet-5", incoming=incoming, candidates=broad, timeout_seconds=60)
+        decision["terminal_high_recall_pass"] = True
+    cache.put("semantic_gate", key, decision, ttl_seconds=86400)
+    return decision
+
+
+def _validated_material_update_target(item):
+    if not isinstance(item, dict) or not item.get("pre_generation_material_update"):
+        return ""
+    decision = item.get("semantic_material_update_decision") or {}
+    slug = str(item.get("pre_generation_material_update_canonical_slug") or "").strip()
+    return slug if (slug and decision.get("action") == ACTION_UPDATE and decision.get("same_real_world_event") is True and decision.get("material_new_update") is True) else ""
+
+
+def selected_material_update_commit_entries(all_categories):
+    """Return hidden canonical-write receipts for final surviving live placements.
+
+    Plain cards are snippets rather than permalink pages, but a validated update
+    selected into a card still creates a newsroom obligation: its established
+    canonical article must be refreshed.  This queue preserves that obligation
+    without changing Plain's visible card product.
+    """
+    best = {}
+    for category in all_categories:
+        cat_key = str(category.get("category_key") or "")
+        cat_label = str(category.get("category_label") or cat_key.replace("_", " ").title())
+        placements = [("hero", category.get("hero"))] + [("card", c) for c in category.get("cards", [])]
+        for surface, item in placements:
+            if not isinstance(item, dict):
+                continue
+            slug = _validated_material_update_target(item)
+            if not slug:
+                continue
+            if item.get("publication_quality_ok") is False or item.get("editorial_eligible") is False:
+                raise RuntimeError(
+                    f"Validated material update survived selection but is not publishable: {slug} / {item.get('headline','')}"
+                )
+            receipt = copy.deepcopy(item)
+            receipt["_material_update_commit_only"] = surface != "hero"
+            receipt["_material_update_selection_surface"] = f"{cat_key}:{surface}"
+            receipt["category_key"] = cat_key
+            receipt["category_label"] = cat_label
+            rank = (
+                float(receipt.get("material_update_confidence") or 0.0),
+                int(surface == "hero"),
+                len(str(receipt.get("article_text") or receipt.get("body") or "").split()),
+            )
+            current = best.get(slug)
+            if current is None or rank > current[0]:
+                best[slug] = (rank, (cat_key, cat_label, receipt))
+    return [best[slug][1] for slug in sorted(best)]
+
+
+def _write_publication_integrity_report(archive, *, selected_update_entries=(), committed_update_slugs=(), output_path=None):
+    """TCT-style forward publication health report without rewriting legacy pages."""
+    output_path = Path(output_path or (OUTPUT_DIR / "publication-integrity-report.json"))
+    story_groups = defaultdict(list)
+    source_groups = defaultdict(list)
+    missing_pages = []
+    for row in archive:
+        slug = str(row.get("slug") or "").strip()
+        sid = str(row.get("story_id") or "").strip()
+        src = re.sub(r"[?#].*$", "", str(row.get("source_url") or "").strip().rstrip("/").casefold())
+        if sid:
+            story_groups[sid].append(slug)
+        if src:
+            source_groups[src].append(slug)
+        if slug and not (OUTPUT_DIR / "articles" / f"{slug}.html").exists():
+            missing_pages.append(slug)
+    duplicate_story_ids = {k: v for k, v in story_groups.items() if len(set(v)) > 1}
+    duplicate_source_urls = {k: v for k, v in source_groups.items() if len(set(v)) > 1}
+    selected = sorted({_validated_material_update_target(entry[2]) for entry in selected_update_entries if _validated_material_update_target(entry[2])})
+    committed = sorted({str(x) for x in committed_update_slugs if str(x)})
+    uncommitted = sorted(set(selected) - set(committed))
+    report = {
+        "generated_at": datetime.utcnow().replace(microsecond=0).isoformat() + "Z",
+        "archive_records": len(archive),
+        "duplicate_story_id_groups": duplicate_story_ids,
+        "duplicate_source_url_groups": duplicate_source_urls,
+        "missing_article_pages": missing_pages,
+        "selected_material_update_targets": selected,
+        "committed_material_update_targets": committed,
+        "uncommitted_material_update_targets": uncommitted,
+        "legacy_duplicate_note": "Existing historical duplicate groups are reported, not destructively rewritten by this migration. Forward publication is guarded at the permalink barrier.",
+    }
+    output_path.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
+    if uncommitted:
+        raise RuntimeError(f"Validated material update(s) were selected but not committed: {uncommitted}")
+    return report
+
+
+def write_archives(all_categories, top_cat, *, client=None, cache=None, material_update_entries=None):
+    """Canonical publication barrier: duplicate/update/new is decided before URLs write."""
+    articles_dir = OUTPUT_DIR / "articles"; archive_path = OUTPUT_DIR / "archive.json"; articles_dir.mkdir(exist_ok=True)
+    client = client or get_client(); cache = cache or get_generation_cache(); archive = load_archive(archive_path)
+    working = [dict(x) for x in archive]; today = datetime.utcnow().strftime("%Y-%m-%d"); now_iso = datetime.utcnow().replace(microsecond=0).isoformat()+"Z"
+    staged=[]; new_count=updated_count=unchanged_count=0
+    committed_update_slugs=set()
+    material_update_entries=list(material_update_entries or selected_material_update_commit_entries(all_categories))
+    heroes=[(top_cat["category_key"],top_cat["category_label"],top_cat["hero"])] + [(c["category_key"],c["category_label"],c["hero"]) for c in all_categories if c["category_key"]!=top_cat["category_key"]]
+    publication_entries = heroes + material_update_entries
+    for cat_key,cat_label,hero in publication_entries:
+        headline=str(hero.get("headline") or "").strip()
+        if not headline: continue
+        source_url=str(hero.get("link") or ""); target_slug=_validated_material_update_target(hero); sem=None
+        existing=next((x for x in working if str(x.get("slug") or "")==target_slug),None) if target_slug else find_matching_entry(headline,working,source_url,hero.get("story_id",""))
+        if target_slug and not existing:
+            raise RuntimeError(f"Validated material update lost its canonical target before publication: {target_slug}")
+        if not existing:
+            sem=_semantic_publication_decision(hero,working,client,cache); action=sem.get("action"); selected=str(sem.get("selected_candidate_slug") or "")
+            if action in {ACTION_DUPLICATE,ACTION_UPDATE} and selected:
+                existing=next((x for x in working if x.get("slug")==selected),None)
+            elif action==ACTION_HOLD:
+                raise RuntimeError(f"Terminal publication gate held suspicious story; preserving previous site: {headline}")
+            elif action!=ACTION_NEW:
+                raise RuntimeError(f"Invalid terminal publication decision: {sem}")
+        if existing:
+            slug=existing["slug"];hero["_archived_slug"]=slug
+            editorial_action=str(hero.get("editorial_action") or "").casefold(); should_update=bool(target_slug) or editorial_action in {"update_existing","replace_canonical"} or (sem or {}).get("action")==ACTION_UPDATE
+            if not should_update:
+                canonical_body=_archive_article_body(existing)
+                if canonical_body:
+                    hero["headline"]=existing.get("headline",headline);hero["body"]=canonical_body;hero["teaser"]=existing.get("teaser",hero.get("teaser",""));hero["image_url"]=existing.get("source_image_url") or existing.get("image_url") or hero.get("image_url","");hero["image_credit"]=existing.get("image_credit",hero.get("image_credit",""))
+                existing["last_seen"]=now_iso;existing["last_seen_source_url"]=source_url
+                if hero.get("story_id"):existing["story_id"]=hero["story_id"]
+                if hero.get("event_key"):existing["event_key"]=hero["event_key"]
+                existing["editorial_action"]="ignore";unchanged_count+=1;continue
+            if target_slug and target_slug in committed_update_slugs:
+                continue
+            canonical=_canonical_for_gate(existing);incoming={"headline":hero.get("headline",""),"source_headline":hero.get("source_title",""),"teaser":hero.get("teaser",""),"body":hero.get("article_text") or hero.get("source_summary") or hero.get("body",""),"source_url":source_url,"published_at":hero.get("source_published_raw","")};decision=sem or hero.get("semantic_material_update_decision") or {"shared_anchors":[],"novel_facts":[],"reason":"Persistent editorial engine classified a material update."}
+            composed=compose_material_update(client,model="claude-sonnet-4-5",canonical=canonical,incoming=incoming,decision=decision,timeout_seconds=60)
+            if composed.get("status")!="validated":raise RuntimeError(f"Material update composition failed for {slug}: {composed.get('validation_errors')}")
+            hero["headline"]=composed["headline"];hero["teaser"]=composed["teaser"];hero["body"]=composed["body"]
+            staged.append((articles_dir/f"{slug}.html",render_article_page(hero,cat_label,cat_key,existing.get("date",today),slug)))
+            existing.update({"headline":hero["headline"],"teaser":hero["teaser"],"body":hero["body"],"category_key":cat_key,"category_label":cat_label,"lastmod":today,"last_seen":now_iso,"source_url":source_url,"source_headline":hero.get("source_title",""),"source_published_raw":hero.get("source_published_raw",""),"image_url":hero.get("image_url",""),"image_credit":hero.get("image_credit",""),"image_origin":hero.get("image_origin",""),"story_id":hero.get("story_id",existing.get("story_id","")),"event_key":hero.get("event_key",existing.get("event_key","")),"editorial_action":"update_existing"})
+            if not hero.get("is_fallback_image"):existing["source_image_url"]=hero.get("image_url","")
+            if target_slug:
+                committed_update_slugs.add(target_slug)
+            updated_count+=1
+        else:
+            existing_slugs={x.get("slug") for x in working};base=f"{today}-{slugify(headline)}";slug=base;i=1
+            while slug in existing_slugs:slug=f"{base}-{i}";i+=1
+            hero["_archived_slug"]=slug;staged.append((articles_dir/f"{slug}.html",render_article_page(hero,cat_label,cat_key,today,slug)))
+            row={"slug":slug,"headline":headline,"teaser":hero.get("teaser","") or hero.get("body","")[:180],"body":hero.get("body",""),"category_key":cat_key,"category_label":cat_label,"date":today,"first_published":now_iso,"lastmod":today,"last_seen":now_iso,"image_url":hero.get("image_url",""),"source_image_url":hero.get("image_url","") if not hero.get("is_fallback_image") else "","image_credit":hero.get("image_credit",""),"image_origin":hero.get("image_origin",""),"source_url":source_url,"source_headline":hero.get("source_title",""),"source_published_raw":hero.get("source_published_raw",""),"story_id":hero.get("story_id",""),"event_key":hero.get("event_key",""),"editorial_action":hero.get("editorial_action","publish_new")};working.append(row);new_count+=1
+    # No public files are mutated until every hero and every protected update has
+    # passed the terminal barrier and has a concrete commit receipt. This preserves
+    # TCT's fail-closed transaction ordering rather than discovering a lost update
+    # only after archive/article files have already been changed.
+    required_update_slugs = {
+        _validated_material_update_target(entry[2])
+        for entry in material_update_entries
+        if _validated_material_update_target(entry[2])
+    }
+    uncommitted_before_write = sorted(required_update_slugs - committed_update_slugs)
+    if uncommitted_before_write:
+        raise RuntimeError(
+            f"Validated material update(s) reached publication but have no commit receipt: {uncommitted_before_write}"
+        )
+    for path,content in staged:path.write_text(content,encoding="utf-8")
+    archive_path.write_text(json.dumps(working,ensure_ascii=False,indent=2),encoding="utf-8");(OUTPUT_DIR/"archive.html").write_text(render_archive_page(working),encoding="utf-8");(OUTPUT_DIR/"sitemap.xml").write_text(update_sitemap(working),encoding="utf-8");(OUTPUT_DIR/"news-sitemap.xml").write_text(update_news_sitemap(working),encoding="utf-8")
+    _write_publication_integrity_report(working,selected_update_entries=material_update_entries,committed_update_slugs=committed_update_slugs)
+    print(f"  Archived {new_count} new, updated {updated_count} existing, left {unchanged_count} unchanged ({len(working)} total); committed {len(committed_update_slugs)} protected material update(s)");return working
+
+def _is_source_stale(row, hours=72):
+    raw = str(row.get("published") or "")
+    if not raw:
+        return False
+    try:
+        from email.utils import parsedate_to_datetime
+        from datetime import timezone as _tz
+        dt = parsedate_to_datetime(raw).astimezone(_tz.utc)
+    except Exception:
+        try:
+            from datetime import datetime as _dt, timezone as _tz
+            dt = _dt.fromisoformat(raw.replace("Z", "+00:00")).astimezone(_tz.utc)
+        except Exception:
+            return False
+    from datetime import datetime as _dt, timezone as _tz
+    return (_dt.now(_tz.utc) - dt).total_seconds() > hours * 3600
+
+
+def _bind_canonical_context(rows, archive):
+    for row in rows:
+        existing = find_matching_entry(str(row.get("title") or ""), archive, str(row.get("link") or ""), "")
+        if existing:
+            row["canonical_context"] = {"slug": existing.get("slug", ""), "headline": existing.get("headline", ""), "body": _archive_article_body(existing), "teaser": existing.get("teaser", ""), "date": existing.get("date", "")}
+    return rows
+
+
+def _source_quality_report(source_sets):
+    from collections import Counter
+    counts = Counter(); rows = []
+    for cat, sources in source_sets.items():
+        for s in sources:
+            q = str(s.get("source_quality") or "unknown"); counts[q] += 1
+            rows.append({"category":cat,"title":s.get("title",""),"source_url":s.get("link",""),"publisher":s.get("publisher_name",""),"quality":q,"word_count":len(str(s.get("article_text") or s.get("summary") or "").split()),"recovery":s.get("source_recovery_status","")})
+    (OUTPUT_DIR/"source-quality-report.json").write_text(json.dumps({"generated_at":datetime.utcnow().isoformat()+"Z","counts":dict(counts),"items":rows},ensure_ascii=False,indent=2),encoding="utf-8")
+
+
+def _category_cache_key(cat_key, sources):
+    # Cache identity includes target-bound material-update authority. A source can
+    # have identical publisher text while its relationship to Plain's canonical
+    # changes as the archive/registry advances; reusing pre-decision generated copy
+    # in that case would silently lose the update transaction.
+    return cache_hash({
+        "v": "plain-live-assignment-v4-materiality-bound",
+        "category": cat_key,
+        "editor": "claude-sonnet-5",
+        "writer": "claude-sonnet-4-5",
+        "sources": [
+            {
+                "title": s.get("title", ""),
+                "url": s.get("link", ""),
+                "published": s.get("published", ""),
+                "quality": s.get("source_quality", ""),
+                "content": hashlib.sha256(str(s.get("article_text") or s.get("summary") or "").encode()).hexdigest()[:16],
+                "material_update": bool(s.get("pre_generation_material_update")),
+                "material_target": str(s.get("pre_generation_material_update_canonical_slug") or ""),
+                "material_novel_facts": list(s.get("material_update_novel_facts") or []),
+            }
+            for s in sources[:18]
+        ],
+    })
+
+
+def _format_generated_times(category):
+    for item in [category.get("hero", {}), *category.get("cards", [])]:
+        if isinstance(item, dict): item["published"] = format_age(item.get("source_published_raw") or item.get("published", ""))
+    return category
+
+
+def _deterministic_story_dedupe(cards, against_story_id=""):
+    seen = {against_story_id} if against_story_id else set(); out=[]
+    for card in cards:
+        sid=str(card.get("story_id") or "")
+        if sid and sid in seen: continue
+        if sid: seen.add(sid)
+        out.append(card)
+    return out
+
+
+def _archive_sort_value(row):
+    raw = str(row.get("lastmod") or row.get("date") or "")
+    try:
+        return datetime.fromisoformat(raw.replace("Z", "+00:00")).timestamp()
+    except Exception:
+        return 0.0
+
+
+def recover_category_from_archive(cat_key, cat_label, archive, *, card_count=CARDS_PER_CATEGORY, max_age_days=14):
+    """Fail closed to already-published canonicals when live generation is unavailable.
+
+    This mirrors TCT's category-level failure containment: one feed/model outage must
+    not destroy the entire edition, but recovery is allowed only from Plain's own
+    existing permanent archive. No new facts, URLs, or model copy are invented.
+    """
+    now = datetime.utcnow()
+    candidates=[]
+    for row in archive:
+        if str(row.get("category_key") or "") != cat_key:
+            continue
+        slug=str(row.get("slug") or "").strip(); headline=str(row.get("headline") or "").strip()
+        if not slug or not headline:
+            continue
+        raw_date=str(row.get("lastmod") or row.get("date") or "").strip()
+        try:
+            dt=datetime.fromisoformat(raw_date[:10])
+            if (now-dt).days > max_age_days:
+                continue
+        except Exception:
+            pass
+        body=_archive_article_body(row)
+        if len(body.split()) < 80:
+            continue
+        candidates.append((row,body))
+    candidates.sort(key=lambda pair:_archive_sort_value(pair[0]),reverse=True)
+    if not candidates:
+        return None
+
+    def hydrate(row, body, *, hero=False):
+        slug=str(row.get("slug") or "")
+        teaser=str(row.get("teaser") or "").strip() or body[:220].rstrip()+"..."
+        source_url=str(row.get("source_url") or "").strip()
+        item={
+            "headline":str(row.get("headline") or ""),
+            "teaser":teaser,
+            "body":body,
+            "article_text":body,
+            "source_summary":teaser,
+            "source_title":str(row.get("source_headline") or row.get("headline") or ""),
+            "source_published_raw":str(row.get("source_published_raw") or row.get("date") or ""),
+            "published":format_age(str(row.get("source_published_raw") or row.get("date") or "")),
+            "link":source_url or f"{SITE_URL}/articles/{slug}.html",
+            "image_url":str(row.get("source_image_url") or row.get("image_url") or ""),
+            "image_credit":str(row.get("image_credit") or ""),
+            "image_origin":str(row.get("image_origin") or "archive_recovery"),
+            "urgency_score":int(row.get("urgency_score") or (5 if hero else 3)),
+            "story_id":str(row.get("story_id") or ""),
+            "event_key":str(row.get("event_key") or ""),
+            "editorial_action":"ignore",
+            "editorial_eligible":True,
+            "publication_quality_ok":True,
+            "source_quality":"canonical_archive",
+            "_archive_recovery":True,
+            "_archived_slug":slug,
+        }
+        return item
+
+    hero_row,hero_body=candidates[0]
+    cards=[hydrate(row,body) for row,body in candidates[1:1+card_count]]
+    return {
+        "category_key":cat_key,
+        "category_label":cat_label,
+        "hero":hydrate(hero_row,hero_body,hero=True),
+        "cards":cards,
+        "archive_recovery":True,
+        "assignment_editor":{"status":"archive_recovery","reason":"Live source/generation path unavailable; reused recent published canonicals."},
+    }
+
 
 def main():
-    all_categories = []
+    cache = get_generation_cache(); cache.reset_stats(); client = get_client(); archive = load_archive(OUTPUT_DIR / "archive.json"); all_categories=[]
+    all_feed_urls=set(CONTENT_BANK_FEEDS)|set(IMAGE_BANK_FEEDS)
+    for cfg in CATEGORIES.values(): all_feed_urls.update(cfg.get("feeds",[]))
+    print(f"Prefetching {len(all_feed_urls)} shared RSS feeds...")
+    feed_documents=prefetch_feed_documents(all_feed_urls)
+    print("Building source/image banks...")
+    image_bank=build_authoritative_image_bank(feed_documents,IMAGE_BANK_FEEDS)
+    # Kept for source observability and future related-source recovery without a second feed fetch.
+    _content_bank=build_recovered_content_bank(feed_documents,CONTENT_BANK_FEEDS)
 
-    # Build image bank and content bank once per run
-    print("Building image bank...")
-    image_bank = build_image_bank()
-    print("Building content bank...")
-    content_bank = build_content_bank()
+    source_sets={}
+    for cat_key,cfg in CATEGORIES.items():
+        rows=recover_headlines(cfg["feeds"],cache=cache,limit=24,feed_documents=feed_documents,image_extractor=authoritative_extract_image)
+        max_age=72 if cat_key in {"world","business","tech","sports","entertainment"} else 60
+        rows=[r for r in rows if not _is_source_stale(r,max_age)] or rows[:12]
+        _bind_canonical_context(rows,archive);source_sets[cat_key]=rows
+        print(f"  {cfg['label']}: {len(rows)} exact-source candidates")
 
-    for cat_key, cat_config in CATEGORIES.items():
-        print(f"Processing: {cat_config['label']}...")
-        headlines = fetch_headlines(cat_config["feeds"])
+    # TCT-style classifier separates section eligibility from the writer.
+    unique=[];key_to_row={}
+    for rows in source_sets.values():
+        for row in rows:
+            k=(str(row.get("link") or ""),re.sub(r"[^a-z0-9]+"," ",str(row.get("title") or "").casefold()).strip())
+            if k not in key_to_row:key_to_row[k]=row;unique.append(row)
+    classifications={}
+    for start in range(0,len(unique),40):
+        batch=unique[start:start+40];res=classify_stories(client,batch,cache)
+        for i,cats in res.items():
+            row=batch[i-1];k=(str(row.get("link") or ""),re.sub(r"[^a-z0-9]+"," ",str(row.get("title") or "").casefold()).strip());classifications[k]=cats
+    for cat_key,rows in source_sets.items():
+        kept=[]
+        for row in rows:
+            k=(str(row.get("link") or ""),re.sub(r"[^a-z0-9]+"," ",str(row.get("title") or "").casefold()).strip());cats=classifications.get(k,[]);row["classified_categories"]=cats
+            if not cats or ("none" not in cats and cat_key in cats):kept.append(row)
+        if len(kept)<5:
+            kept.extend([r for r in rows if r not in kept and r.get("source_quality") in {"full","summary"} and "none" not in r.get("classified_categories",[])][:5-len(kept)])
+        source_sets[cat_key]=kept[:18]
 
-        # Filter headlines older than 48 hours — unparseable dates are treated as stale
-        from datetime import timezone as _tz2
-        _now2 = datetime.now(_tz2.utc)
-        def _headline_stale(h):
-            try:
-                from email.utils import parsedate_to_datetime
-                dt = parsedate_to_datetime(h.get("published","")).astimezone(_tz2.utc)
-                return (_now2 - dt).total_seconds() > 48 * 3600
-            except Exception:
-                return True  # Can't parse date = treat as stale, exclude it
-        fresh_h = [h for h in headlines if not _headline_stale(h)]
-        if cat_key == "politics":
-            print(f"  Politics debug: {len(headlines)} total, {len(fresh_h)} fresh")
-            for h in headlines[:5]:
-                print(f"    [{h.get('published','NO DATE')}] {h.get('title','')[:60]}")
-        if len(fresh_h) >= 6:
-            headlines = fresh_h
-        if not headlines:
-            print(f"  No headlines found for {cat_config['label']}, skipping.")
-            continue
-        try:
-            data = generate_category_content(cat_key, cat_config["label"], headlines)
+    # Guardian recovery is source-safe: it creates its own alternate source row.
+    if GUARDIAN_API_KEY:
+        for cat_key,rows in source_sets.items():
+            additions=[]
+            for row in rows:
+                if row.get("source_quality") in {"brief","thin","discovery_only"} and len(additions)<3:
+                    m=fetch_guardian_match(str(row.get("title") or ""),api_key=GUARDIAN_API_KEY,cache=cache)
+                    if m and m.get("link") and all(m.get("link")!=x.get("link") for x in rows+additions):additions.append(m)
+            if additions:_bind_canonical_context(additions,archive);rows.extend(additions);print(f"  {cat_key}: {len(additions)} Guardian full-text alternate source(s) recovered")
 
-            # Images — source_index already attached image_url, fall back to image bank
-            source_img = data["hero"].get("image_url", "")
-            # Use the ORIGINAL RSS title for image bank matching when available — Claude rewrites
-            # the headline enough that 3-word overlap with bank entries often fails. Bank entries
-            # are unaltered RSS titles, so original-to-original matching is far more reliable.
-            src_idx       = data["hero"].get("source_index")
-            original_title = ""
-            if src_idx is not None:
-                try:
-                    original_title = headlines[int(src_idx) - 1].get("title", "")
-                except Exception:
-                    original_title = ""
-            bank_img, bank_credit = ("", "")
-            if original_title:
-                bank_img, bank_credit = match_image(original_title, image_bank, cat_key)
-            if not bank_img:
-                # Fallback to Claude-rewritten headline if original didn't match
-                bank_img, bank_credit = match_image(data["hero"]["headline"], image_bank, cat_key)
-            img    = source_img or bank_img
-            credit = bank_credit  # bank_credit is empty string if no match, that's fine
-            data["hero"]["image_credit"] = credit
-            # Second fallback: check content bank entries for matching images
-            if not img:
-                for entry in content_bank:
-                    entry_lower = entry.get("title", "").lower()
-                    # Use original title's words if available, else Claude headline
-                    src_for_words = original_title or data["hero"]["headline"]
-                    hero_words    = [w for w in src_for_words.lower().split() if len(w) > 4]
-                    if sum(1 for w in hero_words if w in entry_lower) >= 2:
-                        # Try to get image from matching content bank entry source feed
-                        _fb = match_image(entry["title"], image_bank, cat_key)
-                        if _fb[0]:
-                            img = _fb[0]
-                            data["hero"]["image_credit"] = _fb[1]
-                            break
-            # Body-context bank match: the rewritten headline may share few words with
-            # the bank, but the body names the key entities. Try matching on those.
-            if not img:
-                body_context = (original_title or data["hero"]["headline"]) + " " + data["hero"].get("body", "")[:250]
-                _bb_img, _bb_credit = match_image(body_context, image_bank, cat_key)
-                if _bb_img:
-                    img = _bb_img
-                    data["hero"]["image_credit"] = _bb_credit
-            # Final fallback: fetch the article's own og:image from its page.
-            # This is the most reliable source — guaranteed to match the story.
-            if not img:
-                link = data["hero"].get("link", "")
-                og_img = fetch_og_image(link)
-                if og_img:
-                    img = og_img
-                    data["hero"]["image_credit"] = get_image_credit(link)
-                    print(f"  Hero image via og:image fetch")
-            # Local hosted fallback — guaranteed image if all other sources fail
-            if not img:
-                fb_img, fb_credit = get_fallback_image(cat_key, data["hero"].get("headline", ""))
-                if fb_img:
-                    img = fb_img
-                    data["hero"]["image_credit"] = fb_credit
-                    print(f"  Hero image via local fallback")
-            data["hero"]["image_url"] = img
+    print("Running pre-generation duplicate/material-update authority...")
+    materiality_report = apply_pre_generation_materiality(source_sets, archive, client, cache)
+    print(
+        "  Pre-generation semantic gate: "
+        f"{materiality_report.get('material_updates', 0)} material update(s), "
+        f"{materiality_report.get('duplicates_suppressed', 0)} no-change duplicate(s) suppressed, "
+        f"{materiality_report.get('holds_suppressed', 0)} unresolved hold(s) withheld"
+    )
+    _source_quality_report(source_sets)
 
-            # Hero enrichment — combine all available sources
-            hero_headline = data["hero"]["headline"]
+    for cat_key,cfg in CATEGORIES.items():
+        sources=source_sets.get(cat_key,[])
+        data=None; cacheable=False; live_error=None
+        if sources:
+            ck=_category_cache_key(cat_key,sources);cached=cache.get("categories",ck)
+            if cached is not CACHE_MISS:
+                data=dict((cached or {}).get("data") or cached);print(f"  {cfg['label']}: generation cache hit")
+            else:
+                print(f"Assigning/writing: {cfg['label']}...");budget=float(os.environ.get("PLAIN_CATEGORY_GENERATION_BUDGET_SECONDS","180") or 180);last=None
+                for attempt in range(1,3):
+                    try:data=run_live_assignment_category(client,cat_key,cfg["label"],sources,card_count=CARDS_PER_CATEGORY,timeout_seconds=budget);cacheable=True;break
+                    except Exception as exc:last=exc;print(f"  attempt {attempt}/2 failed: {type(exc).__name__}: {exc}")
+                if data is None:live_error=f"generation failed after bounded retries: {last}"
+        else:
+            live_error="no source candidates survived classification/recovery"
 
-            # 1. Guardian API — full article text (best source when available)
-            guardian_text = fetch_guardian_article(hero_headline)
+        if data is not None:
+            _format_generated_times(data);enforce_category_quality(data)
+            if not data.get("hero") or not data["hero"].get("publication_quality_ok",True):
+                live_error="publication-quality contract rejected live hero";data=None;cacheable=False
+        if data is None:
+            protected_failure = bool(
+                sources
+                and any(s.get("pre_generation_material_update") for s in sources)
+                and live_error
+                and "validated material update" in str(live_error).casefold()
+            )
+            if protected_failure:
+                raise RuntimeError(
+                    f"{cfg['label']} selected a validated material update but could not safely write it; "
+                    "failing closed instead of silently recovering an older category edition: "
+                    f"{live_error}"
+                )
+            data=recover_category_from_archive(cat_key,cfg["label"],archive)
+            if data is None:
+                raise RuntimeError(f"Required {cfg['label']} category has neither a safe live edition nor a recent canonical recovery: {live_error}")
+            print(f"  {cfg['label']}: archive recovery activated ({live_error})")
+        elif cacheable:
+            cache.put("categories",ck,{"data":data},ttl_seconds=6*3600)
+        all_categories.append(data)
+    if len(all_categories)!=len(CATEGORIES):raise RuntimeError(f"Required category coverage incomplete: {len(all_categories)}/{len(CATEGORIES)}")
 
-            # 2. Content bank — rich publisher summaries from BBC, NPR, Guardian RSS etc
-            bank_content  = find_content(hero_headline, content_bank)
-
-            # 3. Related RSS summaries from the category feed
-            hero_idx     = data["hero"].get("source_index", 1) - 1
-            related_parts = []
-            hero_tokens   = set(re.sub(r"[^a-z0-9 ]", " ", hero_headline.lower()).split())
-            stops         = {"that","this","with","from","have","been","said","will","more",
-                             "also","when","were","they","their","about","says","just"}
-            hero_tokens  -= stops
-            for h in headlines:
-                h_tokens = set(re.sub(r"[^a-z0-9 ]", " ", h.get("title","").lower()).split()) - stops
-                if len(hero_tokens & h_tokens) >= 2:
-                    related_parts.append(h.get("title","") + ". " + h.get("summary",""))
-            related_text = " | ".join(related_parts[:6])
-
-            # Combine: Guardian full text first, then bank content, then related summaries
-            source_parts = [p for p in [guardian_text, bank_content, related_text] if p]
-            source_text  = "\n\n".join(source_parts)
-
-            if source_text and len(source_text.split()) >= 100:
-                # Final relevance check — ensure source actually relates to hero headline
-                stops2 = {"the","a","an","in","of","for","to","and","or","on","at","is","was","are","were","that","this","with"}
-                hl_tok = set(re.sub(r"[^a-z0-9 ]", " ", hero_headline.lower()).split()) - stops2
-                src_tok = set(re.sub(r"[^a-z0-9 ]", " ", source_text[:500].lower()).split()) - stops2
-                # Geographic mismatch check — key country/place names must not conflict
-                geo_words = {"china","chinese","russia","russian","ukraine","ukrainian","iran","israeli","israel",
-                             "australia","australian","india","indian","france","french","germany","german",
-                             "britain","british","uk","japan","japanese","brazil","mexican","mexico",
-                             "congo","ebola","africa","african","europe","european","california","texas",
-                             "florida","washington","london","paris","beijing","moscow","gaza",
-                             "maralago","capitol","pentagon","whitehouse","nasa","nascar","senate","congress"}
-                hl_geo  = hl_tok & geo_words
-                src_geo = src_tok & geo_words
-                geo_conflict = bool(hl_geo) and bool(src_geo) and not (hl_geo & src_geo)
-                if geo_conflict:
-                    print(f"  Enhancement skipped: geographic mismatch ({hl_geo} vs {src_geo})")
-                elif len(hl_tok & src_tok) >= 2:
-                    data["hero"] = enhance_hero_article(data["hero"], source_text)
-                    print(f"  Enhanced with: {'Guardian+' if guardian_text else ''}{'bank+' if bank_content else ''}{'related' if related_text else ''}")
-                else:
-                    print(f"  Enhancement skipped: insufficient keyword overlap")
-
-            all_categories.append(data)
-            print(f"  Hero: {data['hero']['headline'][:60]}... (urgency: {data['hero'].get('urgency_score')}, image: {'yes' if img else 'no'})")
-
-            # Enrich cards in parallel
-            from concurrent.futures import ThreadPoolExecutor as _TPE, as_completed as _ac
-            with _TPE(max_workers=6) as _ex:
-                _futs = {_ex.submit(enhance_card, card, content_bank, headlines): card
-                         for card in data.get("cards", [])}
-                for _fut in _ac(_futs, timeout=45):
-                    try: _fut.result(timeout=10)
-                    except Exception: pass
-
-        except Exception as e:
-            import traceback
-            print(f"  Claude error for {cat_config['label']}: {e}")
-            print(traceback.format_exc())
-            continue
-
-    if not all_categories:
-        print("No categories generated. Aborting.")
-        return
+    assignment_report={"generated_at":datetime.utcnow().isoformat()+"Z","assignment_editor_model":"claude-sonnet-5","writer_model":"claude-sonnet-4-5","categories":[{"category_key":c.get("category_key"),"hero_source_index":c.get("hero",{}).get("source_index"),"card_source_indexes":[x.get("source_index") for x in c.get("cards",[])],"diagnostics":c.get("assignment_editor",{})} for c in all_categories]}
+    (OUTPUT_DIR/"assignment-editor-report.json").write_text(json.dumps(assignment_report,ensure_ascii=False,indent=2),encoding="utf-8")
 
     print("Applying persistent Plain editorial engine...")
-    editorial_audit = apply_editorial_engine(all_categories, output_dir=OUTPUT_DIR)
-    counts = editorial_audit.get("counts", {})
-    print(
-        "  Editorial engine: "
-        f"{counts.get('processed', 0)} processed, "
-        f"{counts.get('rejected', 0)} rejected, "
-        f"{counts.get('same_category_duplicates', 0)} same-category duplicates, "
-        f"mode={editorial_audit.get('mode', 'unknown')}"
-    )
+    audit=apply_editorial_engine(all_categories,output_dir=OUTPUT_DIR,mode=os.environ.get("PLAIN_ENGINE_MODE","enforce"));counts=audit.get("counts",{});print(f"  Editorial engine: {counts.get('processed',0)} processed, {counts.get('rejected',0)} rejected, {counts.get('same_category_duplicates',0)} same-category duplicates")
 
-    print("Fetching market data...")
-    market_data, market_live = fetch_market_data()
+    rotator=FallbackRotator(OUTPUT_DIR,SITE_URL);used=set()
+    for cat in all_categories:
+        for item in [cat.get("hero",{}),*cat.get("cards",[])]:
+            if isinstance(item,dict):ensure_item_image(item,category_key=cat.get("category_key","top_news"),image_bank=image_bank,archive=archive,rotator=rotator,used_images=used)
+    rotator.save();write_image_quality_report(all_categories,OUTPUT_DIR/"source-image-quality-report.json");write_quality_report(all_categories,OUTPUT_DIR/"article-quality-report.json")
 
-    def _is_fp_eligible(cat):
-        if not CATEGORIES.get(cat["category_key"], {}).get("front_page_hero", True):
-            us_words = ["us strikes", "us military", "american forces", "u.s. strikes",
-                        "u.s. military", "united states strikes", "trump orders", "pentagon"]
-            return any(w in cat["hero"].get("headline", "").lower() for w in us_words)
-        return True
-    def _fp_score(cat):
-        score = cat["hero"].get("urgency_score", 0)
-        cap   = CATEGORIES.get(cat["category_key"], {}).get("front_page_cap", 10)
-        return min(score, cap)
-    # Semantic front page hero selection — Claude picks the most front-page-worthy story
-    # across all candidate category heroes (not just highest urgency_score)
-    top_cat = select_front_page_hero(all_categories)
+    print("Fetching market data...");market_data,market_live=fetch_market_data();top_cat=select_front_page_hero(all_categories)
     if top_cat is None:
-        # Fallback to score-based if Claude call totally failed
-        def _is_fp_eligible(cat):
-            if not CATEGORIES.get(cat["category_key"], {}).get("front_page_hero", True):
-                us_words = ["us strikes", "us military", "american forces", "u.s. strikes",
-                            "u.s. military", "united states strikes", "trump orders", "pentagon"]
-                return any(w in cat["hero"].get("headline", "").lower() for w in us_words)
-            return True
-        def _fp_score(cat):
-            score = int(cat["hero"].get("urgency_score", 0) or 0)
-            cap   = CATEGORIES.get(cat["category_key"], {}).get("front_page_cap", 10)
-            return min(score, cap)
-        _eligible = [c for c in all_categories if _is_fp_eligible(c)]
-        top_cat   = max(_eligible if _eligible else all_categories, key=_fp_score)
-        if _fp_score(top_cat) < 5:
-            top_cat = max(all_categories, key=_fp_score)
+        def _score(cat):
+            score=int(cat.get("hero",{}).get("urgency_score",0) or 0);cap=CATEGORIES.get(cat.get("category_key"),{}).get("front_page_cap",10)
+            return min(score,4) if not CATEGORIES.get(cat.get("category_key"),{}).get("front_page_hero",True) else min(score,cap)
+        top_cat=max(all_categories,key=_score)
+    promote_duplicate_heroes(top_cat,all_categories)
+    for cat in all_categories:ensure_item_image(cat["hero"],category_key=cat.get("category_key","top_news"),image_bank=image_bank,archive=archive,rotator=rotator,used_images=used)
+    rotator.save()
 
-    # Ensure no other category leads with the same story as the front page hero.
-    # Any category whose hero duplicates the front page hero gets its next card promoted.
-    promote_duplicate_heroes(top_cat, all_categories)
-
-    # Final pass — apply hosted fallback to any hero still missing an image.
-    # This MUST run after promote_duplicate_heroes(), because a card with no image
-    # can be promoted into a hero slot after the first image-assignment step.
-    for cat in all_categories:
-        hero = cat.get("hero", {})
-        if not hero.get("image_url"):
-            fb_img, fb_credit = get_fallback_image(cat.get("category_key", "top_news"), hero.get("headline", ""))
-            if fb_img:
-                hero["image_url"] = fb_img
-                hero["image_credit"] = fb_credit
-                print(f"  {cat.get('category_key')}: fallback image applied after hero promotion")
-
-    # Also protect the selected front-page hero in case top_cat points at a hero
-    # object that is missing an image after promotion/deduplication.
-    if top_cat and not top_cat.get("hero", {}).get("image_url"):
-        fb_img, fb_credit = get_fallback_image(top_cat.get("category_key", "top_news"), top_cat["hero"].get("headline", ""))
-        if fb_img:
-            top_cat["hero"]["image_url"] = fb_img
-            top_cat["hero"]["image_credit"] = fb_credit
-            print("  front page hero: fallback image applied after hero promotion")
-
-    # Deterministic ranking remains shadow-only in this migration. It
-    # produces an explainable recommendation artifact without changing Plain's
-    # existing live front-page selection until separately validated.
     try:
-        _ranking_cards = []
-        for _cat in all_categories:
-            for _item in [_cat.get("hero", {}), *_cat.get("cards", [])]:
-                if not isinstance(_item, dict) or not _item.get("headline"):
-                    continue
-                _row = dict(_item)
-                _row["cat_key"] = _cat.get("category_key", "")
-                _row["category_key"] = _cat.get("category_key", "")
-                _row["cat_label"] = _cat.get("category_label", "")
-                _row["published_raw"] = _item.get("source_published_raw", "")
-                _row["source_url"] = _item.get("link", "")
-                _ranking_cards.append(_row)
-        _ranking_hero = dict(top_cat.get("hero", {}))
-        _ranking_hero["cat_key"] = top_cat.get("category_key", "")
-        _ranking_hero["category_key"] = top_cat.get("category_key", "")
-        _ranking_hero["published_raw"] = top_cat.get("hero", {}).get("source_published_raw", "")
-        _ranking_hero["source_url"] = top_cat.get("hero", {}).get("link", "")
-        _ranking_report = write_homepage_ranking_recommendations(
-            _ranking_cards,
-            _ranking_hero,
-            registry_path=OUTPUT_DIR / "story-registry.json",
-            archive=load_archive(OUTPUT_DIR / "archive.json"),
-            output_path=OUTPUT_DIR / "ranking-recommendations.json",
-            review_path=OUTPUT_DIR / "ranking-review.md",
-        )
-        print(
-            "  Ranking shadow: "
-            f"{len(_ranking_report.get('recommendations', []))} recommendations written"
-        )
-    except Exception as _ranking_exc:
-        print(f"  Ranking shadow warning: {_ranking_exc}")
+        ranking_cards=[]
+        for cat in all_categories:
+            for item in [cat.get("hero",{}),*cat.get("cards",[])]:
+                if not isinstance(item,dict) or not item.get("headline"):continue
+                row=dict(item);row["cat_key"]=row["category_key"]=cat.get("category_key","");row["cat_label"]=cat.get("category_label","");row["published_raw"]=item.get("source_published_raw","");row["source_url"]=item.get("link","");ranking_cards.append(row)
+        rh=dict(top_cat.get("hero",{}));rh["cat_key"]=rh["category_key"]=top_cat.get("category_key","");rh["source_url"]=rh.get("link","")
+        write_homepage_ranking_recommendations(ranking_cards,rh,registry_path=OUTPUT_DIR/"story-registry.json",archive=archive,output_path=OUTPUT_DIR/"ranking-recommendations.json",review_path=OUTPUT_DIR/"ranking-review.md")
+    except Exception as exc:print(f"  Ranking observability warning: {exc}")
 
-    # Global deduplication — one story, one appearance across all categories
-    import re as _re2
+    # Crucially publish/bind canonical URLs before rendering live share links.
+    # Hidden commit receipts ensure a validated update selected as a snippet/card
+    # still refreshes its established canonical without changing Plain's UI model.
+    material_update_entries = selected_material_update_commit_entries(all_categories)
+    if material_update_entries:
+        print(f"  Protected material-update commit queue: {len(material_update_entries)} canonical target(s)")
+    write_archives(all_categories,top_cat,client=client,cache=cache,material_update_entries=material_update_entries)
+    (OUTPUT_DIR/"news.html").write_text(render_index(all_categories,market_data,market_live,top_cat=top_cat),encoding="utf-8")
 
-    def _headline_key(h):
-        return _re2.sub(r'[^a-z0-9 ]', '', h.lower().strip())[:80]
-
-    def _similar(a, b):
-        ka, kb = _headline_key(a), _headline_key(b)
-        if ka[:60] == kb[:60] or ka in kb or kb in ka:
-            return True
-        stops = {"a","an","the","in","on","at","to","for","of","and","or","is","are",
-                 "was","were","with","its","by","as","from","that","this","after",
-                 "over","into","about","amid","during","says","say","new","s"}
-        wa = set(ka.split()) - stops
-        wb = set(kb.split()) - stops
-        if not wa or not wb:
-            return False
-        overlap = len(wa & wb) / min(len(wa), len(wb))
-        return overlap >= 0.65
-
-    # Define _hero_similar for use in front page dedup below
-    def _hero_similar(a, b):
-        ka, kb = _headline_key(a), _headline_key(b)
-        if ka[:50] == kb[:50] or ka in kb or kb in ka:
-            return True
-        stops = {"a","an","the","in","on","at","to","for","of","and","or","is","are",
-                 "was","were","with","its","by","as","from","that","this","after",
-                 "over","into","about","amid","during","says","say","new","s"}
-        wa = set(ka.split()) - stops
-        wb = set(kb.split()) - stops
-        if not wa or not wb:
-            return False
-        overlap = len(wa & wb) / min(len(wa), len(wb))
-        return overlap >= 0.35
-
-    # Categories are NOT deduplicated — World, U.S., Politics can all cover Iran
-    # Deduplication only happens on the front page (_all_cards) below
-
-    index_html = render_index(all_categories, market_data, market_live, top_cat=top_cat)
-    (OUTPUT_DIR / "news.html").write_text(index_html, encoding="utf-8")
-
-    # Archive — permanent article pages, archive index, sitemap
-    write_archives(all_categories, top_cat)
-
-    # Write data.json for the iOS app
-    import json as _json
-    _timestamp = now_et()
-
-    # Build front page cards for the app using the SAME semantic dedup as the website
-    _all_cards = []
+    all_cards=[]
     for cat in all_categories:
-        hero = cat["hero"]
-        _all_cards.append({
-            "headline":      hero.get("headline", ""),
-            "teaser":        hero.get("teaser", ""),
-            "body":          hero.get("body", ""),
-            "published":     hero.get("published", ""),
-            "cat_label":     cat["category_label"],
-            "urgency_score": hero.get("urgency_score", 0),
-            "story_id":      hero.get("story_id", ""),
-            "event_key":     hero.get("event_key", ""),
-            "is_hero":       True,
-        })
-        for card in cat.get("cards", []):
-            _all_cards.append({
-                "headline":      card.get("headline", ""),
-                "teaser":        card.get("teaser", ""),
-                "body":          card.get("body", ""),
-                "published":     card.get("published", ""),
-                "cat_label":     cat["category_label"],
-                "urgency_score": card.get("urgency_score", 0),
-                "story_id":      card.get("story_id", ""),
-                "event_key":     card.get("event_key", ""),
-                "is_hero":       False,
-            })
-    _all_cards.sort(key=lambda c: int(c.get("urgency_score", 0) or 0), reverse=True)
-    # Semantic dedup via Claude — same approach as the website front page
-    _all_cards = global_rank(_all_cards, dedupe_against=top_cat["hero"].get("headline", ""))
-
-    def card_to_dict(c):
-        return {
-            "headline":      c.get("headline", ""),
-            "teaser":        c.get("teaser", ""),
-            "body":          c.get("body", ""),
-            "published":     c.get("published", ""),
-            "cat_label":     c.get("cat_label", ""),
-            "urgency_score": c.get("urgency_score", 0),
-            "story_id":      c.get("story_id", ""),
-            "event_key":     c.get("event_key", ""),
-        }
-
-    app_data = {
-        "updated": _timestamp,
-        "market": {
-            "live": market_live,
-            "sp500": market_data.get("sp500") if market_data else None,
-            "dow":   market_data.get("dow")   if market_data else None,
-            "nasdaq":market_data.get("nasdaq") if market_data else None,
-            "oil":   market_data.get("oil")   if market_data else None,
-        },
-        "front_page": {
-            "hero": {
-                "headline":      top_cat["hero"].get("headline", ""),
-                "teaser":        top_cat["hero"].get("teaser", ""),
-                "body":          top_cat["hero"].get("body", ""),
-                "image_url":     top_cat["hero"].get("image_url", ""),
-                "image_credit":  top_cat["hero"].get("image_credit", ""),
-                "published":     top_cat["hero"].get("published", ""),
-                "cat_label":     top_cat["category_label"],
-                "urgency_score": top_cat["hero"].get("urgency_score", 0),
-                "story_id":      top_cat["hero"].get("story_id", ""),
-                "event_key":     top_cat["hero"].get("event_key", ""),
-            },
-            "cards": [card_to_dict(c) for c in _all_cards[:6]]
-        },
-        "categories": [
-            {
-                "key":   cat["category_key"],
-                "label": cat["category_label"],
-                "hero": {
-                    "headline":      cat["hero"].get("headline", ""),
-                    "teaser":        cat["hero"].get("teaser", ""),
-                    "body":          cat["hero"].get("body", ""),
-                    "image_url":     cat["hero"].get("image_url", ""),
-                    "image_credit":  cat["hero"].get("image_credit", ""),
-                    "published":     cat["hero"].get("published", ""),
-                    "urgency_score": cat["hero"].get("urgency_score", 0),
-                    "story_id":      cat["hero"].get("story_id", ""),
-                    "event_key":     cat["hero"].get("event_key", ""),
-                },
-                "cards": [
-                    {
-                        "headline":      c.get("headline", ""),
-                        "teaser":        c.get("teaser", ""),
-                        "body":          c.get("body", ""),
-                        "published":     c.get("published", ""),
-                        "urgency_score": c.get("urgency_score", 0),
-                        "story_id":      c.get("story_id", ""),
-                        "event_key":     c.get("event_key", ""),
-                    }
-                    for c in cat.get("cards", [])[:6]
-                ]
-            }
-            for cat in all_categories
-        ]
-    }
-    (OUTPUT_DIR / "data.json").write_text(_json.dumps(app_data, indent=2), encoding="utf-8")
-    print(f"\nDone. {len(all_categories)} categories written to news.html + data.json.")
+        for is_hero,item in [(True,cat["hero"]),*[(False,c) for c in cat.get("cards",[])]]:
+            all_cards.append({"headline":item.get("headline",""),"teaser":item.get("teaser",""),"body":item.get("body",""),"published":item.get("published",""),"cat_label":cat["category_label"],"urgency_score":item.get("urgency_score",0),"story_id":item.get("story_id",""),"event_key":item.get("event_key",""),"is_hero":is_hero})
+    all_cards.sort(key=lambda c:int(c.get("urgency_score",0) or 0),reverse=True);all_cards=_deterministic_story_dedupe(all_cards,top_cat["hero"].get("story_id",""));all_cards=global_rank(all_cards,dedupe_against=top_cat["hero"].get("headline",""))
+    def card_to_dict(c):return {k:c.get(k,"" if k!="urgency_score" else 0) for k in ("headline","teaser","body","published","cat_label","urgency_score","story_id","event_key")}
+    app_data={"updated":now_et(),"market":{"live":market_live,"sp500":market_data.get("sp500") if market_data else None,"dow":market_data.get("dow") if market_data else None,"nasdaq":market_data.get("nasdaq") if market_data else None,"oil":market_data.get("oil") if market_data else None},"front_page":{"hero":{"headline":top_cat["hero"].get("headline",""),"teaser":top_cat["hero"].get("teaser",""),"body":top_cat["hero"].get("body",""),"image_url":top_cat["hero"].get("image_url",""),"image_credit":top_cat["hero"].get("image_credit",""),"published":top_cat["hero"].get("published",""),"cat_label":top_cat["category_label"],"urgency_score":top_cat["hero"].get("urgency_score",0),"story_id":top_cat["hero"].get("story_id",""),"event_key":top_cat["hero"].get("event_key","")},"cards":[card_to_dict(c) for c in all_cards[:6]]},"categories":[{"key":cat["category_key"],"label":cat["category_label"],"hero":{"headline":cat["hero"].get("headline",""),"teaser":cat["hero"].get("teaser",""),"body":cat["hero"].get("body",""),"image_url":cat["hero"].get("image_url",""),"image_credit":cat["hero"].get("image_credit",""),"published":cat["hero"].get("published",""),"urgency_score":cat["hero"].get("urgency_score",0),"story_id":cat["hero"].get("story_id",""),"event_key":cat["hero"].get("event_key","")},"cards":[{"headline":c.get("headline",""),"teaser":c.get("teaser",""),"body":c.get("body",""),"published":c.get("published",""),"urgency_score":c.get("urgency_score",0),"story_id":c.get("story_id",""),"event_key":c.get("event_key","")} for c in cat.get("cards",[])[:6]]} for cat in all_categories]}
+    (OUTPUT_DIR/"data.json").write_text(json.dumps(app_data,ensure_ascii=False,indent=2),encoding="utf-8")
+    cache.save(force=True);write_model_usage_report();print(f"  Generation cache: {cache.summary()}");print(f"\nDone. {len(all_categories)} categories written with TCT-derived backend protections.")
 
 
 if __name__ == "__main__":
