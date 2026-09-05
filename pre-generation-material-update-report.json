@@ -1,0 +1,73 @@
+{
+  "generated_at": "2026-09-05T01:16:04Z",
+  "evaluated": 5,
+  "material_updates": 1,
+  "duplicates_suppressed": 4,
+  "holds_suppressed": 0,
+  "new_or_unmatched": 0,
+  "items": [
+    {
+      "category": "business",
+      "title": "Iran War Helps to Drive U.S. Diesel Prices to New High",
+      "source_url": "https://www.nytimes.com/2026/09/04/business/diesel-price-record-oil-iran.html",
+      "action": "duplicate_use_existing_canonical",
+      "selected_candidate_slug": "2026-06-10-us-launches-second-round-of-strikes-against-iran",
+      "confidence": 0.85,
+      "novel_facts": [],
+      "reason": "Both articles report the same event: US diesel prices reaching a new all-time high due to the Iran war, surpassing the 2022 record from the Ukraine invasion. The incoming article is a brief NYT piece with no additional facts beyond what the existing BBC canonical already covers in detail.",
+      "cache_hit": false
+    },
+    {
+      "category": "sports",
+      "title": "Isak's early double gives Liverpool victory over Ipswich",
+      "source_url": "https://www.bbc.co.uk/sport/football/videos/cgmr1z492k9o?at_medium=RSS&at_campaign=rss",
+      "action": "duplicate_use_existing_canonical",
+      "selected_candidate_slug": "2026-09-04-isaks-early-brace-gives-liverpool-first-win-of-season-at-ipswich",
+      "confidence": 0.95,
+      "novel_facts": [],
+      "reason": "Same match, same scoreline, same player, same source video URL, published same day. The incoming article is a shorter version with no new facts; the candidate already covers the event with more detail.",
+      "cache_hit": false
+    },
+    {
+      "category": "entertainment",
+      "title": "‘Wheel of Fortune’ Announcer Jim Thornton Fired After Investigation Into Allegations",
+      "source_url": "https://www.rollingstone.com/tv-movies/tv-movie-news/wheel-of-fortune-jim-thornton-fired-investigation-1235621967/",
+      "action": "duplicate_use_existing_canonical",
+      "selected_candidate_slug": "2026-09-04-wheel-of-fortune-announcer-jim-thornton-fired-after-internal-investigation",
+      "confidence": 0.95,
+      "novel_facts": [
+        "Additional detail about May 14 American Airlines Flight 1276 and attorney's denial of illegal conduct, but this was already referenced/foreshadowed in candidate's mention of flight-related suspension"
+      ],
+      "reason": "Both articles report the same firing of Jim Thornton by Sony Pictures Television following an internal investigation, using identical official statement language. The incoming article adds background on the flight incident but does not add a materially new development beyond what the canonical already covers.",
+      "cache_hit": false
+    },
+    {
+      "category": "entertainment",
+      "title": "‘Wheel of Fortune’ Announcer Jim Thornton Fired by Sony",
+      "source_url": "https://variety.com/2026/tv/news/wheel-of-fortune-announcer-jim-thornton-fired-sony-1236852104/",
+      "action": "update_existing_canonical",
+      "selected_candidate_slug": "2026-09-04-wheel-of-fortune-announcer-jim-thornton-fired-after-internal-investigation",
+      "confidence": 0.9,
+      "novel_facts": [
+        "TMZ photos allegedly showing Thornton's laptop with 'disturbing chat room' content described as pedophile-related",
+        "Incident occurred on an American Airlines flight in May, with authorities waiting at LAX",
+        "Attorney Allison Hart's statement about Thornton's suicide-prevention advocacy",
+        "Prior Sony suspension statement text and timeline (Tuesday suspension, Friday firing)",
+        "Detailed career background (KNX, KCBS, Celebrity Wheel of Fortune, Monsters Inc., etc.)"
+      ],
+      "reason": "Both articles report the identical firing of Jim Thornton by Sony from Wheel of Fortune, using the same source statement and URL. The existing canonical was vague about the reason for investigation/firing, while the incoming article provides the specific underlying allegations (TMZ laptop photos, flight incident, attorney's defense) that readers need to understand why Thornton was terminated. This constitutes a material update to the same event rather than a new story.",
+      "cache_hit": false
+    },
+    {
+      "category": "politics",
+      "title": "In boost to GOP, Supreme Court says parties should get lower TV ad rates",
+      "source_url": "https://www.washingtonpost.com/politics/2026/09/04/supreme-court-rules-political-parties-should-get-discounted-tv-ad-rates/",
+      "action": "duplicate_use_existing_canonical",
+      "selected_candidate_slug": "2026-09-04-supreme-court-rules-political-parties-entitled-to-lower-tv-ad-rates",
+      "confidence": 0.98,
+      "novel_facts": [],
+      "reason": "Incoming article is a shorter version of the same Washington Post story, same source URL, same ruling, no new facts beyond what's in the canonical.",
+      "cache_hit": false
+    }
+  ]
+}

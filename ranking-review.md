@@ -12,33 +12,33 @@
 
 | Rank | Current | Recommended | Score | Why |
 | ---: | --- | --- | ---: | --- |
-| 1 | Flooding in Tibet Leaves Hundreds Missing as China Faces Criticism Over Response | Federal judge extends block on Trump executive order limiting mail voting in midterms | 93 | importance 100; freshness 99.0; urgency 9/10 |
-| 2 | Russian Drone Strikes Ukrainian Intelligence Headquarters in Kyiv | August Jobs Report Shows Strong Hiring, Raising Pressure on Federal Reserve | 93 | importance 100; freshness 96.1; urgency 9/10 |
-| 3 | Israel Expands Occupation in Southern Lebanon After Capturing Strategic Ridge | Supreme Court rules political parties entitled to lower TV ad rates | 91 | importance 87; freshness 99.58; urgency 8/10 |
-| 4 | UN Adopts New World Map Showing Africa at True Size | Trump Threatens Trade Halt Unless Federal Reserve Cuts Interest Rates | 87 | importance 80; freshness 95.01; urgency 8/10 |
-| 5 | Trump Administration Partner in Venezuela Oil Deal Has History of Investigations | Flooding in Tibet Leaves Hundreds Missing as China Faces Criticism Over Response | 77 | importance 60; freshness 96.89; urgency 8/10 |
-| 6 | Netanyahu Releases AI-Generated Video Linking New York Mayor to Iranian Leadership | Missouri Supreme Court blocks new GOP redistricting maps | 77 | importance 62; freshness 96.8; urgency 6/10 |
-| 7 | Two Men Rescued After Nine Days Trapped in Nepal Hydropower Tunnel | Russian Drone Strikes Ukrainian Intelligence Headquarters in Kyiv | 71 | importance 40; freshness 95.46; urgency 9/10 |
-| 8 | Argentine Couple to Return Nazi-Looted Painting After 80 Years | Commerce Secretary falsely claims data centers do not use water | 69 | importance 45; freshness 95.61; urgency 5/10 |
-| 9 | Nigel Farage to Address Reform UK Conference Amid Foreign Donation Scandal | Iran Conflict Drives U.S. Diesel Prices to Record High | 74 | importance 45; freshness 91.53; urgency 8/10; -6 category saturation |
-| 10 | Federal judge extends block on Trump executive order limiting mail voting in midterms | Trump dismisses NATO sabotage concerns | 73 | importance 47; freshness 92.03; urgency 7/10; -6 category saturation |
-| 11 | Judge declares mistrial in Lindsay Clancy triple-murder case | Alcaraz Advances to US Open Fourth Round with Straight-Sets Win | 62 | importance 15; freshness 99.79; urgency 6/10 |
-| 12 | Trump administration plans to break ground on memorial arch without final approval | Prime Video Cancels Spider-Noir After One Season Despite 11 Emmy Nominations | 62 | importance 40; freshness 97.08; urgency 5/10 |
+| 1 | US diesel prices reach all-time high as Iran conflict disrupts fuel supply | August Jobs Report Shows Strong Hiring, Raising Pressure on Federal Reserve | 75 | importance 100; freshness 57.63; urgency 5/10 |
+| 2 | Russia Suspected in Series of Sabotage Incidents Across Europe | Federal judge extends block on Trump executive order limiting mail voting in midterms | 70 | importance 100; freshness 57.63; urgency 3/10 |
+| 3 | Flooding in Tibet Leaves Hundreds Missing as China Faces Criticism Over Response | Supreme Court rules political parties entitled to lower TV ad rates | 70 | importance 87; freshness 57.63; urgency 3/10 |
+| 4 | Germany accuses Russia of attempted drone attack on Leipzig airport | Flooding in Tibet Leaves Hundreds Missing as China Faces Criticism Over Response | 57 | importance 60; freshness 57.63; urgency 3/10 |
+| 5 | Nepal and China flood disaster kills over 1,000 as rescuers search debris | Florida Panhandle battle over beach access prompts call for constitutional amendment | 41 | importance 0; freshness 57.63; urgency 5/10 |
+| 6 | China reports 261 foreigners from 23 countries missing after Tibet flood | Trump plans to use Qatari plane for Ireland trip despite security concerns | 41 | importance 0; freshness 57.63; urgency 5/10 |
+| 7 | Gunfire and explosions heard near presidential palace in Niger's capital | AI-generated restaurant menus create unappetizing sameness | 40 | importance 0; freshness 57.63; urgency 5/10 |
+| 8 | Glacier Collapse Triggers Floods in Nepal and Tibet, Killing at Least 273 | Microsoft imposes monthly hour limits on Xbox cloud gaming subscribers | 40 | importance 25; freshness 57.63; urgency 3/10 |
+| 9 | Gang attack in Haiti leaves 47 dead and more than 50 kidnapped | British Actor Richard O'Sullivan Dies at 82 | 38 | importance 0; freshness 57.63; urgency 5/10 |
+| 10 | Florida Panhandle battle over beach access prompts call for constitutional amendment | Wheel of Fortune Announcer Jim Thornton Fired After Internal Investigation | 38 | importance 10; freshness 57.63; urgency 3/10 |
+| 11 | Federal judge extends block on Trump executive order limiting mail voting in midterms | Russia Suspected in Series of Sabotage Incidents Across Europe | 34 | importance 0; freshness 57.63; urgency 3/10 |
+| 12 | ICE detainee dies hours after admission to detention facility | — |  |  |
 
 ## Recommended moves
 
-- **Supreme Court rules political parties entitled to lower TV ad rates**: 54 → 3 — importance 87; freshness 99.58; urgency 8/10
-- **Missouri Supreme Court blocks new GOP redistricting maps**: 57 → 6 — importance 62; freshness 96.8; urgency 6/10
-- **Trump dismisses NATO sabotage concerns**: 60 → 10 — importance 47; freshness 92.03; urgency 7/10; -6 category saturation
-- **Prime Video Cancels Spider-Noir After One Season Despite 11 Emmy Nominations**: 46 → 12 — importance 40; freshness 97.08; urgency 5/10
-- **Alcaraz Advances to US Open Fourth Round with Straight-Sets Win**: 37 → 11 — importance 15; freshness 99.79; urgency 6/10
-- **August Jobs Report Shows Strong Hiring, Raising Pressure on Federal Reserve**: 19 → 2 — importance 100; freshness 96.1; urgency 9/10
-- **Trump Threatens Trade Halt Unless Federal Reserve Cuts Interest Rates**: 20 → 4 — importance 80; freshness 95.01; urgency 8/10
-- **Iran Conflict Drives U.S. Diesel Prices to Record High**: 24 → 9 — importance 45; freshness 91.53; urgency 8/10; -6 category saturation
-- **Netanyahu Releases AI-Generated Video Linking New York Mayor to Iranian Leadership**: 6 → 16 — importance 25; freshness 96.37; urgency 7/10
-- **Argentine Couple to Return Nazi-Looted Painting After 80 Years**: 8 → 18 — importance 40; freshness 90.81; urgency 5/10
-- **Two Men Rescued After Nine Days Trapped in Nepal Hydropower Tunnel**: 7 → 17 — importance 15; freshness 98.73; urgency 6/10
-- **UN Adopts New World Map Showing Africa at True Size**: 4 → 14 — importance 15; freshness 94.99; urgency 6/10
+- **Supreme Court rules political parties entitled to lower TV ad rates**: 56 → 3 — importance 87; freshness 57.63; urgency 3/10
+- **Trump plans to use Qatari plane for Ireland trip despite security concerns**: 55 → 6 — importance 0; freshness 57.63; urgency 5/10
+- **British Actor Richard O'Sullivan Dies at 82**: 46 → 9 — importance 0; freshness 57.63; urgency 5/10
+- **Wheel of Fortune Announcer Jim Thornton Fired After Internal Investigation**: 47 → 10 — importance 10; freshness 57.63; urgency 3/10
+- **AI-generated restaurant menus create unappetizing sameness**: 28 → 7 — importance 0; freshness 57.63; urgency 5/10
+- **Microsoft imposes monthly hour limits on Xbox cloud gaming subscribers**: 29 → 8 — importance 25; freshness 57.63; urgency 3/10
+- **August Jobs Report Shows Strong Hiring, Raising Pressure on Federal Reserve**: 19 → 1 — importance 100; freshness 57.63; urgency 5/10
+- **US diesel prices reach all-time high as Iran conflict disrupts fuel supply**: 1 → 12 — importance 0; freshness 0.0; urgency 5/10
+- **Federal judge extends block on Trump executive order limiting mail voting in midterms**: 11 → 2 — importance 100; freshness 57.63; urgency 3/10
+- **Russia Suspected in Series of Sabotage Incidents Across Europe**: 2 → 11 — importance 0; freshness 57.63; urgency 3/10
+- **Germany accuses Russia of attempted drone attack on Leipzig airport**: 4 → 13 — importance 0; freshness 0.0; urgency 3/10
+- **Nepal and China flood disaster kills over 1,000 as rescuers search debris**: 5 → 14 — importance 0; freshness 0.0; urgency 3/10
 
 ## Guardrails
 
