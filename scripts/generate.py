@@ -39,7 +39,7 @@ from plain_engine.assignment_pipeline import run_live_assignment_category
 from plain_engine.category_classifier import classify_stories
 from plain_engine.article_quality import enforce_category_quality, write_quality_report, publication_quality, protected_material_update_pending_recomposition
 from plain_engine.model_usage import ModelUsageTracker, instrument_anthropic_client
-from plain_engine.model_response import extract_model_text
+from plain_engine.model_response import extract_model_text, parse_first_json_value
 from plain_engine.semantic_publication_gate import retrieve_recent_candidates, adjudicate_candidates, ACTION_DUPLICATE, ACTION_UPDATE, ACTION_NEW, ACTION_HOLD
 from plain_engine.semantic_material_update import compose_material_update
 from scripts.editorial_runtime import apply_editorial_engine
@@ -1509,7 +1509,7 @@ def promote_duplicate_heroes(top_cat, all_categories):
         raw = extract_model_text(resp)
         if raw.startswith("```"):
             raw = raw.split("```")[1].lstrip("json").strip()
-        dupes = set(int(x) for x in json.loads(raw))
+        dupes = set(int(x) for x in parse_first_json_value(raw, expected_type=list))
     except Exception as e:
         print(f"  Hero dedup failed ({e}), leaving heroes as-is")
         return
@@ -1601,7 +1601,7 @@ def global_rank(all_cards, dedupe_against=None):
         raw = extract_model_text(resp)
         if raw.startswith("```"):
             raw = raw.split("```")[1].lstrip("json").strip()
-        indices = json.loads(raw)
+        indices = parse_first_json_value(raw, expected_type=list)
         seen, ranked = set(), []
         for idx in indices:
             i = int(idx) - 1
@@ -2674,7 +2674,7 @@ def _category_cache_key(cat_key, sources):
     # changes as the archive/registry advances; reusing pre-decision generated copy
     # in that case would silently lose the update transaction.
     return cache_hash({
-        "v": "plain-live-assignment-v4-materiality-bound",
+        "v": "plain-live-assignment-v5-section-depth",
         "category": cat_key,
         "editor": "claude-sonnet-5",
         "writer": "claude-sonnet-4-5",
@@ -2789,6 +2789,25 @@ def recover_category_from_archive(cat_key, cat_label, archive, *, card_count=CAR
     }
 
 
+def _apply_category_classification(rows, cat_key, classifications, *, limit=18):
+    """Preserve section depth while treating the classifier as a safety signal."""
+    positive, secondary = [], []
+    for row in rows:
+        key=(str(row.get("link") or ""),re.sub(r"[^a-z0-9]+"," ",str(row.get("title") or "").casefold()).strip())
+        cats=list(classifications.get(key,[]) or [])
+        row["classified_categories"]=cats
+        if cats == ["none"] or ("none" in cats and len(cats)==1):
+            row["category_fit_hint"]="rejected_none"
+            continue
+        if not cats or cat_key in cats:
+            row["category_fit_hint"]="positive" if cat_key in cats else "unclassified"
+            positive.append(row)
+        else:
+            row["category_fit_hint"]="cross_tagged"
+            secondary.append(row)
+    return (positive+secondary)[:max(1,int(limit or 18))]
+
+
 def main():
     cache = get_generation_cache(); cache.reset_stats(); client = get_client(); archive = load_archive(OUTPUT_DIR / "archive.json"); all_categories=[]
     all_feed_urls=set(CONTENT_BANK_FEEDS)|set(IMAGE_BANK_FEEDS)
@@ -2820,13 +2839,11 @@ def main():
         for i,cats in res.items():
             row=batch[i-1];k=(str(row.get("link") or ""),re.sub(r"[^a-z0-9]+"," ",str(row.get("title") or "").casefold()).strip());classifications[k]=cats
     for cat_key,rows in source_sets.items():
-        kept=[]
-        for row in rows:
-            k=(str(row.get("link") or ""),re.sub(r"[^a-z0-9]+"," ",str(row.get("title") or "").casefold()).strip());cats=classifications.get(k,[]);row["classified_categories"]=cats
-            if not cats or ("none" not in cats and cat_key in cats):kept.append(row)
-        if len(kept)<5:
-            kept.extend([r for r in rows if r not in kept and r.get("source_quality") in {"full","summary"} and "none" not in r.get("classified_categories",[])][:5-len(kept)])
-        source_sets[cat_key]=kept[:18]
+        before=len(rows)
+        source_sets[cat_key]=_apply_category_classification(rows,cat_key,classifications,limit=18)
+        positive=sum(1 for r in source_sets[cat_key] if r.get("category_fit_hint") in {"positive","unclassified"})
+        cross=sum(1 for r in source_sets[cat_key] if r.get("category_fit_hint")=="cross_tagged")
+        print(f"  {CATEGORIES[cat_key]['label']}: {len(source_sets[cat_key])}/{before} candidates retained after classification ({positive} positive, {cross} cross-tagged; none rejected)")
 
     # Guardian recovery is source-safe: it creates its own alternate source row.
     if GUARDIAN_API_KEY:
@@ -2866,6 +2883,16 @@ def main():
 
         if data is not None:
             _format_generated_times(data);enforce_category_quality(data)
+            _diag=(data.get("assignment_editor") or {})
+            print(
+                f"  {cfg['label']}: {len(data.get('cards',[]))}/{CARDS_PER_CATEGORY} live cards accepted "
+                f"(editor selected {_diag.get('editor_selected_card_count','?')}; "
+                f"writer attempts {_diag.get('writer_card_attempts','?')}; "
+                f"depth backfill {_diag.get('depth_backfill_writer_attempts',0)}; "
+                f"writer failures {len(_diag.get('writer_failures') or [])})"
+            )
+            if len(data.get("cards",[]))<CARDS_PER_CATEGORY:
+                print(f"  {cfg['label']}: section-depth shortfall {len(data.get('cards',[]))}/{CARDS_PER_CATEGORY}; no additional safe current source passed quality")
             repairs=((data.get("assignment_editor") or {}).get("protected_material_update_repairs") or [])
             if repairs:
                 for repair in repairs:

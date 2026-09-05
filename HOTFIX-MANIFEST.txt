@@ -1,11 +1,15 @@
-Plain material-update recomposition hotfix v3
-Payload files: 6
-Articles paths: 0
-HTML paths: 0
+Plain Section Depth Hotfix v4
+Apply on top of: TCT backend parity overlay + ThinkingBlock hotfix + Sonnet 5 assignment hotfix v2 + Material Update Recomposition hotfix v3.
 
-7fe2caa9877bd4559e0160dbeaf7185e23e2aa23f01ce0aa6914f0d6f0d2a0b9  MATERIAL-UPDATE-RECOMPOSITION-HOTFIX.md
-95c4c961bcbf79df5c19705163515b0ac418b91e38dd77e1b2e18effaa4f716a  plain_engine/article_quality.py
-3dd2d05f85fe2bb0faf748aedef0a141b93f4609aac9f965c343ea309b49446e  plain_engine/assignment_pipeline.py
-0604dc04a7c34e5a08d7287ed21cd19e238b11a91883f884a534ff1ca56decbd  scripts/backend_parity_check.py
-5f8b1fad46a219f978b0e5be5d95dfa7ca3f79ba064f1cbc02f68e49c8cdcd8b  scripts/generate.py
-b4dca9adb22f2b680cf69aaa01395665f12f8e162e868cc2a90ff924cbd795be  tests/test_full_backend_port.py
+Payload files: 7
+Articles included: 0
+HTML files included: 0
+
+FILES:
+29990d8b2b461c3869a3feeffe1f21dfe006b419f7d175ac0fa2ab4033a04004  .github/workflows/update.yml
+f06695cc483e96bd903c9500987fc26401e3bb57432ee6e3671915a643e83900  SECTION-DEPTH-HOTFIX.md
+761a5508054316f221c951e374883fa143d266ad4ea23fc4aa4256271cdf5fb4  plain_engine/assignment_pipeline.py
+16eda4df48096ad847b957d404f7fa85f9582649796ce93e55f16c40cd1214e4  plain_engine/model_response.py
+a6b23fc9c2064a8f8d88e4d70ae4fa6105b5bf1e43566bd3f3b883a411ab54ba  scripts/backend_parity_check.py
+a2f98307070d42be3a231287654447075b5df88069a1ccf8b5def927d50406b4  scripts/generate.py
+d67092a33fed84cd4a763e7f03af5e5fc82475cd8360dfb9ebd6bfbfd345306a  tests/test_full_backend_port.py

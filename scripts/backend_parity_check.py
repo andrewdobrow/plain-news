@@ -65,12 +65,16 @@ REQUIRED_LIVE_GENERATOR_HOOKS = {
     "_write_publication_integrity_report": "final publication integrity report",
     "write_model_usage_report": "model cost/token observability",
     "protected_material_update_pending_recomposition": "protected update canonical recomposition barrier",
+    "_apply_category_classification": "classifier preserves non-none section depth",
+    "parse_first_json_value": "robust ranking/dedupe JSON parsing",
 }
 
 REQUIRED_ASSIGNMENT_PIPELINE_HOOKS = {
     "ASSIGNMENT_EDITOR_THINKING={'type':'disabled'}": "Sonnet 5 adaptive-thinking disablement",
     "thinking=ASSIGNMENT_EDITOR_THINKING": "assignment request applies non-thinking mode",
     "defer_protected_material_update_quality_failure": "repairable material-update quality deferral",
+    "section_depth_target": "Plain eight-card section-depth contract",
+    "_backfill_assignments": "safe replacement of omitted/failed supporting cards",
 }
 
 REQUIRED_RUNTIME_HOOKS = {

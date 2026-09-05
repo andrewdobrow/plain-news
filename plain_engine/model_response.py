@@ -45,3 +45,30 @@ def extract_model_text(response, *, require_text: bool = True) -> str:
             f"output_tokens={output_tokens!r})"
         )
     return text
+
+
+def parse_first_json_value(text, *, expected_type=None):
+    """Parse the first JSON value from a model response, tolerating prose/fences after it."""
+    import json
+    raw = str(text or "").strip()
+    if raw.startswith("```"):
+        parts = raw.split("```")
+        raw = parts[1] if len(parts) > 1 else raw
+        if raw.lstrip().lower().startswith("json"):
+            raw = raw.lstrip()[4:]
+        raw = raw.strip()
+    decoder = json.JSONDecoder()
+    starts = [i for i, ch in enumerate(raw) if ch in "[{"]
+    last_error = None
+    for start in starts:
+        try:
+            value, _ = decoder.raw_decode(raw[start:])
+        except Exception as exc:
+            last_error = exc
+            continue
+        if expected_type is not None and not isinstance(value, expected_type):
+            continue
+        return value
+    if last_error is not None:
+        raise ValueError(f"Model response contained no parseable JSON value: {last_error}")
+    raise ValueError("Model response contained no JSON value")

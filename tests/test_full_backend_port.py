@@ -323,3 +323,104 @@ def test_write_barrier_recomposes_repairable_material_update_before_public_rende
     assert hero['publication_quality_ok'] is True
     assert hero['material_update_recomposition_completed'] is True
     assert '_force_material_update_recomposition' not in hero
+
+
+def test_parse_first_json_value_tolerates_trailing_model_commentary():
+    from plain_engine.model_response import parse_first_json_value
+    raw='[2, 1, 4]\n\nI ranked these by importance.'
+    assert parse_first_json_value(raw, expected_type=list)==[2,1,4]
+
+
+def test_plain_category_classification_keeps_non_none_pool_depth():
+    import scripts.generate as gen
+    rows=[];mapping={}
+    for i in range(12):
+        row={'title':f'Business source {i}','link':f'https://example.com/{i}','source_quality':'full'}
+        rows.append(row)
+        key=(row['link'],f'business source {i}')
+        if i < 3:
+            mapping[key]=['business']
+        elif i == 11:
+            mapping[key]=['none']
+        else:
+            mapping[key]=['us']
+    kept=gen._apply_category_classification(rows,'business',mapping,limit=18)
+    assert len(kept)==11
+    assert [r['category_fit_hint'] for r in kept[:3]]==['positive']*3
+    assert all(r['category_fit_hint']=='cross_tagged' for r in kept[3:])
+    assert not any(r['title']=='Business source 11' for r in kept)
+
+
+def test_assignment_pipeline_backfills_to_section_depth_without_weakening_quality(monkeypatch):
+    import plain_engine.assignment_pipeline as ap
+    now='Sat, 05 Sep 2026 18:00:00 GMT'
+    sources=[]
+    for i in range(12):
+        sources.append({
+            'title':['Chipmaker unveils new processor architecture','Space telescope detects distant exoplanet atmosphere','Cybersecurity firm patches enterprise flaw','Battery startup opens advanced manufacturing plant','Researchers publish quantum networking breakthrough','Cloud provider launches new database service','Robotics company demonstrates warehouse automation','Scientists map deep ocean microbial ecosystem','Semiconductor consortium sets packaging standard','Satellite operator expands broadband constellation','University team develops flexible solar material','AI lab releases open evaluation benchmark'][i],
+            'summary':('Confirmed reporting about technology development number %d. ' % i)+words('detail',120),
+            'article_text':('Confirmed reporting about technology development number %d. ' % i)+words('detail',180),
+            'link':f'https://example.com/tech/{i}',
+            'source_quality':'full','published':now,'publisher_name':'Example',
+        })
+    def fake_editor(client,category_key,category_label,sources,*,card_count,timeout_seconds):
+        return {
+            'hero':{'source_index':1,'angle':'lead','urgency_score':8},
+            'cards':[{'source_index':2,'angle':'card one','urgency_score':7},{'source_index':3,'angle':'card two','urgency_score':6}],
+            'rejected':[],
+        }
+    def fake_writer(client,*,category_key,category_label,source,assignment,hero,timeout_seconds):
+        idx=int(assignment['source_index'])
+        return {
+            'headline':source['title'],
+            'body':_long_body(),
+            'teaser':'A concise confirmed update for this story.',
+            'source_index':idx,
+            'published':source['published'],'source_published_raw':source['published'],
+            'link':source['link'],'source_title':source['title'],'source_summary':source['summary'],
+            'article_text':source['article_text'],'source_quality':'full','source_name':'Example',
+            'publication_quality_ok':True,'publication_quality_reasons':[],
+        }
+    monkeypatch.setattr(ap,'run_assignment_editor',fake_editor)
+    monkeypatch.setattr(ap,'run_assignment_writer',fake_writer)
+    result=ap.run_live_assignment_category(object(),'tech','Tech & Science',sources,card_count=8,timeout_seconds=240)
+    assert len(result['cards'])==8
+    diag=result['assignment_editor']
+    assert diag['editor_selected_card_count']==2
+    assert diag['section_depth_accepted_cards']==8
+    assert diag['section_depth_shortfall']==0
+    assert diag['depth_backfill_writer_attempts']==6
+
+
+def test_assignment_pipeline_replaces_failed_card_with_next_safe_source(monkeypatch):
+    import plain_engine.assignment_pipeline as ap
+    now='Sat, 05 Sep 2026 18:00:00 GMT'
+    sources=[]
+    for i in range(7):
+        sources.append({
+            'title':['Mars orbiter returns new mineral survey','Biotech researchers report vaccine trial results','Astronomers observe unusual stellar explosion','Energy lab improves fusion magnet performance','Ocean researchers document coral recovery','Materials team creates heat resistant coating','Weather satellite begins new forecasting mission'][i],
+            'summary':('Confirmed reporting about science development number %d. ' % i)+words('detail',120),
+            'article_text':('Confirmed reporting about science development number %d. ' % i)+words('detail',180),
+            'link':f'https://example.com/science/{i}',
+            'source_quality':'full','published':now,'publisher_name':'Example',
+        })
+    def fake_editor(client,category_key,category_label,sources,*,card_count,timeout_seconds):
+        return {'hero':{'source_index':1,'angle':'lead','urgency_score':8},'cards':[{'source_index':2,'angle':'bad card','urgency_score':7},{'source_index':3,'angle':'good card','urgency_score':6}], 'rejected':[]}
+    def fake_writer(client,*,category_key,category_label,source,assignment,hero,timeout_seconds):
+        idx=int(assignment['source_index'])
+        ok = hero or idx != 2
+        return {
+            'headline':source['title'],'body':_long_body() if ok else 'too short',
+            'teaser':'A concise confirmed update.','source_index':idx,'published':source['published'],
+            'source_published_raw':source['published'],'link':source['link'],'source_title':source['title'],
+            'source_summary':source['summary'],'article_text':source['article_text'],'source_quality':'full',
+            'source_name':'Example','publication_quality_ok':ok,
+            'publication_quality_reasons':[] if ok else ['body_under_90_words'],
+        }
+    monkeypatch.setattr(ap,'run_assignment_editor',fake_editor)
+    monkeypatch.setattr(ap,'run_assignment_writer',fake_writer)
+    result=ap.run_live_assignment_category(object(),'tech','Tech & Science',sources,card_count=4,timeout_seconds=240)
+    assert len(result['cards'])==4
+    assert 2 not in [c['source_index'] for c in result['cards']]
+    assert len(result['assignment_editor']['writer_failures'])==1
+    assert result['assignment_editor']['section_depth_shortfall']==0
