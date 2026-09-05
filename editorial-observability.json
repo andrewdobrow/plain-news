@@ -7,31 +7,64 @@
     "resolver_version": "3.0",
     "relationship_engine_version": "1.5"
   },
-  "generated_at": "2026-09-05T01:25:14Z",
+  "generated_at": "2026-09-05T01:59:19Z",
   "mode": "enforce",
   "publication_behavior_changed": false,
   "activation": {},
   "registry_path": "/home/runner/work/plain-news/plain-news/story-registry.json",
   "audit": {
-    "candidates_processed": 63,
+    "candidates_processed": 47,
     "routes": {
-      "archive_recovery": 63
+      "archive_recovery": 45,
+      "generate_new": 2
     },
     "eligibility": {
-      "publishable": 63
+      "publishable": 47
     },
     "source_classes": {
-      "unknown": 63
+      "international_news": 1,
+      "unknown": 46
     },
     "rejected_count": 0,
     "rejected_examples": []
   },
   "relationships": {
     "counts": {
-      "new_story": 118,
-      "same_event": 61
+      "new_story": 2
     },
     "examples": [
+      {
+        "story_id": "story_000060",
+        "title": "Virgin Atlantic founder blames rising flight prices on 'foolish leaders' starting wars",
+        "event_key": "war-or-military-action-e9bae49374",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000061",
+        "title": "UNC investigation into assistant coach and staff conduct could lead to for-cause firing of Bill Belichick",
+        "event_key": "business-transaction-north-carolina",
+        "relationship": "new_story",
+        "confidence": 0.235733,
+        "reason": "Created new story: conservative merge requirements were not met",
+        "decision_trace": [
+          "Category: business",
+          "Facts overlap: 0.00",
+          "Locations overlap: 1.00",
+          "Agencies overlap: 0.00",
+          "Event types overlap: 0.00",
+          "Entities overlap: 0.20",
+          "Title support: 0.00",
+          "Event-key support: 0.67",
+          "Identity anchors: 2",
+          "Threshold: 0.78"
+        ]
+      },
       {
         "story_id": "story_000009",
         "title": "Federal judge extends block on Trump executive order seeking to limit mail voting in the midterms - AP News",
@@ -60,6 +93,18 @@
         "story_id": "story_000053",
         "title": "In boost to GOP, Supreme Court says parties should get lower TV ad rates",
         "event_key": "election-c055f94d7c",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000060",
+        "title": "Flight price rises due to 'foolish leaders' starting wars, Virgin's Branson says",
+        "event_key": "war-or-military-action-e9bae49374",
         "relationship": "new_story",
         "confidence": 0.0,
         "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
@@ -201,6 +246,26 @@
         ]
       },
       {
+        "story_id": "story_000061",
+        "title": "Ongoing UNC investigation could take out Bill Belichick, for cause - NBC Sports",
+        "event_key": "business-transaction-north-carolina",
+        "relationship": "new_story",
+        "confidence": 0.235733,
+        "reason": "Created new story: conservative merge requirements were not met",
+        "decision_trace": [
+          "Category: business",
+          "Facts overlap: 0.00",
+          "Locations overlap: 1.00",
+          "Agencies overlap: 0.00",
+          "Event types overlap: 0.00",
+          "Entities overlap: 0.20",
+          "Title support: 0.00",
+          "Event-key support: 0.67",
+          "Identity anchors: 2",
+          "Threshold: 0.78"
+        ]
+      },
+      {
         "story_id": "story_000006",
         "title": "Netanyahu Posts A.I. Video Pairing Mamdani With Iranian Ruler",
         "event_key": "election-new-york",
@@ -210,18 +275,6 @@
         "decision_trace": [
           "No sufficiently supported match",
           "Threshold: 0.78"
-        ]
-      },
-      {
-        "story_id": "story_000004",
-        "title": "UN votes to adopt new world map to reflect Africa's true size",
-        "event_key": "unknown-event-961fde3d06",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
         ]
       },
       {
@@ -235,45 +288,43 @@
           "Sparse event-key resolver guard: true",
           "Resolver same-event merge bypassed: true"
         ]
-      },
-      {
-        "story_id": "story_000036",
-        "title": "Improving Alcaraz underlines title credentials in wide-open draw",
-        "event_key": "unknown-event-3e3cd27ad3",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
-        "story_id": "story_000037",
-        "title": "'It's so strong' - Sabalenka halts play over cannabis smell",
-        "event_key": "unknown-event-79cf9b17b6",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
-        "story_id": "story_000055",
-        "title": "US economy adds 162,000 jobs in August",
-        "event_key": "unknown-event-26b25ed6c7",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
-        ]
       }
     ],
     "decision_trace_examples": [
+      {
+        "story_id": "story_000060",
+        "title": "Virgin Atlantic founder blames rising flight prices on 'foolish leaders' starting wars",
+        "event_key": "war-or-military-action-e9bae49374",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "matched_existing": false,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000061",
+        "title": "UNC investigation into assistant coach and staff conduct could lead to for-cause firing of Bill Belichick",
+        "event_key": "business-transaction-north-carolina",
+        "relationship": "new_story",
+        "confidence": 0.235733,
+        "matched_existing": false,
+        "reason": "Created new story: conservative merge requirements were not met",
+        "decision_trace": [
+          "Category: business",
+          "Facts overlap: 0.00",
+          "Locations overlap: 1.00",
+          "Agencies overlap: 0.00",
+          "Event types overlap: 0.00",
+          "Entities overlap: 0.20",
+          "Title support: 0.00",
+          "Event-key support: 0.67",
+          "Identity anchors: 2",
+          "Threshold: 0.78"
+        ]
+      },
       {
         "story_id": "story_000009",
         "title": "Federal judge extends block on Trump executive order seeking to limit mail voting in the midterms - AP News",
@@ -388,6 +439,19 @@
         ]
       },
       {
+        "story_id": "story_000060",
+        "title": "Flight price rises due to 'foolish leaders' starting wars, Virgin's Branson says",
+        "event_key": "war-or-military-action-e9bae49374",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "matched_existing": false,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
         "story_id": "story_000019",
         "title": "Trump Threatens to Halt Some Trade Unless the Fed Cuts Rates",
         "event_key": "unknown-event-aad2b7aa05",
@@ -511,62 +575,63 @@
           "Sparse event-key resolver guard: true",
           "Resolver same-event merge bypassed: true"
         ]
-      },
-      {
-        "story_id": "story_000059",
-        "title": "Trump brushes off accusations of Russian sabotage against NATO allies",
-        "event_key": "unknown-event-2a3522fa4c",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "matched_existing": true,
-        "reason": "Exact event key already belongs to this story",
-        "decision_trace": [
-          "Relationship: same_event",
-          "Exact event-key mapping: true",
-          "No novel follow-up milestone: true",
-          "Confidence: 1.00"
-        ]
-      },
-      {
-        "story_id": "story_000023",
-        "title": "Iran War Helps to Drive U.S. Diesel Prices to New High",
-        "event_key": "war-or-military-action-cc37c03802",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "matched_existing": false,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
-        "story_id": "story_000023",
-        "title": "Iran War Helps to Drive U.S. Diesel Prices to New High",
-        "event_key": "war-or-military-action-cc37c03802",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "matched_existing": true,
-        "reason": "Exact event key already belongs to this story",
-        "decision_trace": [
-          "Relationship: same_event",
-          "Exact event-key mapping: true",
-          "No novel follow-up milestone: true",
-          "Confidence: 1.00"
-        ]
       }
     ]
   },
   "follow_up_detection": {
     "mode": "observe_only",
     "publication_behavior_changed": false,
-    "candidate_count": 0,
+    "candidate_count": 1,
     "high_confidence_candidate_count": 0,
     "unanchored_candidate_suppressed_count": 0,
-    "current_relationships": {},
-    "milestones": {},
-    "reason_codes": {},
-    "examples": [],
+    "current_relationships": {
+      "new_story": 1
+    },
+    "milestones": {
+      "investigation": 1
+    },
+    "reason_codes": {
+      "entity_match": 1,
+      "event_type_conflict": 1,
+      "identity_anchor_qualified": 1,
+      "location_match": 1,
+      "novel_milestone": 1
+    },
+    "examples": [
+      {
+        "headline": "UNC investigation into assistant coach and staff conduct could lead to for-cause firing of Bill Belichick",
+        "event_key": "business-transaction-north-carolina",
+        "current_story_id": "story_000061",
+        "current_relationship": "new_story",
+        "candidate_story_id": "story_000009",
+        "candidate_confidence": 0.54,
+        "candidate_milestones": [
+          "investigation"
+        ],
+        "candidate_reason_codes": [
+          "novel_milestone",
+          "location_match",
+          "entity_match",
+          "identity_anchor_qualified",
+          "event_type_conflict"
+        ],
+        "candidate_trace": [
+          "Follow-up candidate mode: observe_only",
+          "Candidate story: story_000009",
+          "Novel milestones: investigation",
+          "Exact event-key anchor: False",
+          "Facts overlap: 0.00",
+          "Title overlap: 0.00",
+          "Location match: True",
+          "Agency match: False",
+          "Event type match: False",
+          "Entity match: True",
+          "Agency conflict: False",
+          "Event type conflict: True",
+          "Candidate confidence: 0.54"
+        ]
+      }
+    ],
     "retrospective_candidate_count": 0,
     "retrospective_high_confidence_candidate_count": 0,
     "retrospective_activation_eligible_candidate_count": 0,
@@ -605,10 +670,10 @@
       "international": 2,
       "unknown": 30,
       "us_multistate": 1,
-      "us_national": 20,
+      "us_national": 22,
       "us_state_regional": 3
     },
-    "average_score": 77.0
+    "average_score": 77.75
   },
   "editorial_proximity": {
     "scopes": {
@@ -616,21 +681,21 @@
       "international": 2,
       "unknown": 30,
       "us_multistate": 1,
-      "us_national": 20,
+      "us_national": 22,
       "us_state_regional": 3
     },
-    "average_priority": 18.08
+    "average_priority": 19.23
   },
   "story_lifecycle": {
     "counts": {
-      "active": 55,
+      "active": 57,
       "breaking": 4
     }
   },
   "registry_health": {
     "repair_version": 16,
-    "changed": true,
-    "status": "repaired",
+    "changed": false,
+    "status": "clean",
     "active_stories_before": 59,
     "active_stories_after": 59,
     "quarantined_story_count": 0,
@@ -661,20 +726,20 @@
     "unified_incident_groups_resolved": 0,
     "unified_incident_story_records_removed": 0,
     "remaining_unified_incident_groups": 0,
-    "generated_at": "2026-09-05T01:25:14Z",
+    "generated_at": "2026-09-05T01:59:18Z",
     "quarantined_story_records_retained": 0,
-    "active_story_count": 59
+    "active_story_count": 61
   },
   "stories": {
-    "total": 59,
+    "total": 61,
     "importance_levels": {
       "breaking": 4,
-      "high": 2,
-      "normal": 10,
+      "high": 3,
+      "normal": 11,
       "low": 43,
       "archived": 0
     },
-    "average_importance": 17.75,
+    "average_importance": 18.84,
     "top": [
       {
         "story_id": "story_000009",
@@ -689,7 +754,7 @@
           "freshness_multiplier": 1.0,
           "source_multiplier": 0.994,
           "source_trust": 48,
-          "age_hours": 3.27
+          "age_hours": 3.84
         },
         "level": "breaking",
         "importance_reasons": [
@@ -742,7 +807,7 @@
           "state": "breaking",
           "reason": "Breaking importance with a current or undated update",
           "last_updated": "2026-09-04T22:09:00+00:00",
-          "hours_since_update": 3.27,
+          "hours_since_update": 3.84,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -760,7 +825,7 @@
           "freshness_multiplier": 1.0,
           "source_multiplier": 0.994,
           "source_trust": 48,
-          "age_hours": 5.01
+          "age_hours": 5.58
         },
         "level": "breaking",
         "importance_reasons": [
@@ -809,7 +874,7 @@
           "state": "breaking",
           "reason": "Breaking importance with a current or undated update",
           "last_updated": "2026-09-04T20:24:45+00:00",
-          "hours_since_update": 5.01,
+          "hours_since_update": 5.58,
           "event_count": 2,
           "timeline_entries": 1
         }
@@ -827,7 +892,7 @@
           "freshness_multiplier": 1.0,
           "source_multiplier": 1.132,
           "source_trust": 94,
-          "age_hours": 2.92
+          "age_hours": 3.49
         },
         "level": "breaking",
         "importance_reasons": [
@@ -871,7 +936,64 @@
           "state": "breaking",
           "reason": "Breaking importance with a current or undated update",
           "last_updated": "2026-09-04T22:29:59+00:00",
-          "hours_since_update": 2.92,
+          "hours_since_update": 3.49,
+          "event_count": 1,
+          "timeline_entries": 1
+        }
+      },
+      {
+        "story_id": "story_000060",
+        "title": "Flight price rises due to 'foolish leaders' starting wars, Virgin's Branson says",
+        "score": 77,
+        "editorial_priority": 87,
+        "editorial_score": 87,
+        "score_breakdown": {
+          "score": 87,
+          "importance": 77,
+          "proximity_multiplier": 1.0,
+          "freshness_multiplier": 1.0,
+          "source_multiplier": 1.132,
+          "source_trust": 94,
+          "age_hours": 0.93
+        },
+        "level": "high",
+        "importance_reasons": [
+          {
+            "code": "federal_action",
+            "label": "Federal/national government action",
+            "points": 32
+          },
+          {
+            "code": "war_diplomacy",
+            "label": "War, diplomacy or national-security consequence",
+            "points": 30
+          },
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "audience_relevance": {
+          "scope": "us_national",
+          "score": 100,
+          "regions": [],
+          "places": []
+        },
+        "editorial_proximity": {
+          "score": 100,
+          "scope": "us_national",
+          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
+        },
+        "event_count": 1,
+        "timeline_entries": 1,
+        "relationship_decisions": 1,
+        "canonical_source_candidates": 1,
+        "lifecycle": {
+          "state": "active",
+          "reason": "Single-event story is current",
+          "last_updated": "2026-09-05T01:03:35+00:00",
+          "hours_since_update": 0.93,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -880,16 +1002,16 @@
         "story_id": "story_000019",
         "title": "Trump Threatens to Halt Some Trade Unless the Fed Cuts Rates",
         "score": 80,
-        "editorial_priority": 91,
-        "editorial_score": 91,
+        "editorial_priority": 86,
+        "editorial_score": 86,
         "score_breakdown": {
-          "score": 91,
+          "score": 86,
           "importance": 80,
           "proximity_multiplier": 1.0,
-          "freshness_multiplier": 1.0,
+          "freshness_multiplier": 0.95,
           "source_multiplier": 1.135,
           "source_trust": 95,
-          "age_hours": 5.66
+          "age_hours": 6.23
         },
         "level": "breaking",
         "importance_reasons": [
@@ -933,7 +1055,7 @@
           "state": "breaking",
           "reason": "Breaking importance with a current or undated update",
           "last_updated": "2026-09-04T19:45:22+00:00",
-          "hours_since_update": 5.66,
+          "hours_since_update": 6.23,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -951,7 +1073,7 @@
           "freshness_multiplier": 1.0,
           "source_multiplier": 1.117,
           "source_trust": 89,
-          "age_hours": 4.59
+          "age_hours": 5.15
         },
         "level": "high",
         "importance_reasons": [
@@ -994,7 +1116,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-09-04T20:50:01+00:00",
-          "hours_since_update": 4.59,
+          "hours_since_update": 5.15,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1012,7 +1134,7 @@
           "freshness_multiplier": 1.0,
           "source_multiplier": 0.994,
           "source_trust": 48,
-          "age_hours": 4.54
+          "age_hours": 5.11
         },
         "level": "high",
         "importance_reasons": [
@@ -1046,7 +1168,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-09-04T20:53:00+00:00",
-          "hours_since_update": 4.54,
+          "hours_since_update": 5.11,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1064,7 +1186,7 @@
           "freshness_multiplier": 1.0,
           "source_multiplier": 1.132,
           "source_trust": 94,
-          "age_hours": 5.31
+          "age_hours": 5.87
         },
         "level": "normal",
         "importance_reasons": [
@@ -1098,7 +1220,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-09-04T20:06:56+00:00",
-          "hours_since_update": 5.31,
+          "hours_since_update": 5.87,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1116,7 +1238,7 @@
           "freshness_multiplier": 0.95,
           "source_multiplier": 1.126,
           "source_trust": 92,
-          "age_hours": 7.45
+          "age_hours": 8.02
         },
         "level": "normal",
         "importance_reasons": [
@@ -1150,7 +1272,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-09-04T17:58:05+00:00",
-          "hours_since_update": 7.45,
+          "hours_since_update": 8.02,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1168,7 +1290,7 @@
           "freshness_multiplier": 0.95,
           "source_multiplier": 1.135,
           "source_trust": 95,
-          "age_hours": 7.75
+          "age_hours": 8.32
         },
         "level": "normal",
         "importance_reasons": [
@@ -1202,7 +1324,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-09-04T17:40:08+00:00",
-          "hours_since_update": 7.75,
+          "hours_since_update": 8.32,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1220,7 +1342,7 @@
           "freshness_multiplier": 0.95,
           "source_multiplier": 0.994,
           "source_trust": 48,
-          "age_hours": 6.4
+          "age_hours": 6.97
         },
         "level": "normal",
         "importance_reasons": [
@@ -1254,7 +1376,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-09-04T19:01:00+00:00",
-          "hours_since_update": 6.4,
+          "hours_since_update": 6.97,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1272,7 +1394,7 @@
           "freshness_multiplier": 0.95,
           "source_multiplier": 0.994,
           "source_trust": 48,
-          "age_hours": 7.92
+          "age_hours": 8.49
         },
         "level": "normal",
         "importance_reasons": [
@@ -1306,7 +1428,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-09-04T17:30:00+00:00",
-          "hours_since_update": 7.92,
+          "hours_since_update": 8.49,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1324,7 +1446,7 @@
           "freshness_multiplier": 0.95,
           "source_multiplier": 1.132,
           "source_trust": 94,
-          "age_hours": 8.18
+          "age_hours": 8.75
         },
         "level": "normal",
         "importance_reasons": [
@@ -1358,7 +1480,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-09-04T17:14:21+00:00",
-          "hours_since_update": 8.18,
+          "hours_since_update": 8.75,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1376,7 +1498,7 @@
           "freshness_multiplier": 1.0,
           "source_multiplier": 0.994,
           "source_trust": 48,
-          "age_hours": 5.39
+          "age_hours": 5.96
         },
         "level": "normal",
         "importance_reasons": [
@@ -1410,7 +1532,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-09-04T20:01:33+00:00",
-          "hours_since_update": 5.39,
+          "hours_since_update": 5.96,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1428,7 +1550,7 @@
           "freshness_multiplier": 1.0,
           "source_multiplier": 0.994,
           "source_trust": 48,
-          "age_hours": 4.42
+          "age_hours": 4.99
         },
         "level": "normal",
         "importance_reasons": [
@@ -1462,7 +1584,63 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-09-04T21:00:00+00:00",
-          "hours_since_update": 4.42,
+          "hours_since_update": 4.99,
+          "event_count": 1,
+          "timeline_entries": 1
+        }
+      },
+      {
+        "story_id": "story_000061",
+        "title": "Ongoing UNC investigation could take out Bill Belichick, for cause - NBC Sports",
+        "score": 25,
+        "editorial_priority": 25,
+        "editorial_score": 25,
+        "score_breakdown": {
+          "score": 25,
+          "importance": 25,
+          "proximity_multiplier": 1.0,
+          "freshness_multiplier": 1.0,
+          "source_multiplier": 1.015,
+          "source_trust": 55,
+          "age_hours": 1.91
+        },
+        "level": "normal",
+        "importance_reasons": [
+          {
+            "code": "public_safety",
+            "label": "Public-safety event",
+            "points": 10
+          },
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "audience_relevance": {
+          "scope": "us_national",
+          "score": 100,
+          "regions": [
+            "North Carolina"
+          ],
+          "places": [
+            "North Carolina"
+          ]
+        },
+        "editorial_proximity": {
+          "score": 100,
+          "scope": "us_national",
+          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
+        },
+        "event_count": 1,
+        "timeline_entries": 1,
+        "relationship_decisions": 1,
+        "canonical_source_candidates": 1,
+        "lifecycle": {
+          "state": "active",
+          "reason": "Single-event story is current",
+          "last_updated": "2026-09-05T00:04:45+00:00",
+          "hours_since_update": 1.91,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1480,7 +1658,7 @@
           "freshness_multiplier": 1.0,
           "source_multiplier": 1.135,
           "source_trust": 95,
-          "age_hours": 4.84
+          "age_hours": 5.41
         },
         "level": "normal",
         "importance_reasons": [
@@ -1513,54 +1691,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-09-04T20:34:35+00:00",
-          "hours_since_update": 4.84,
-          "event_count": 1,
-          "timeline_entries": 1
-        }
-      },
-      {
-        "story_id": "story_000004",
-        "title": "UN votes to adopt new world map to reflect Africa's true size",
-        "score": 15,
-        "editorial_priority": 17,
-        "editorial_score": 17,
-        "score_breakdown": {
-          "score": 17,
-          "importance": 15,
-          "proximity_multiplier": 1.0,
-          "freshness_multiplier": 1.0,
-          "source_multiplier": 1.132,
-          "source_trust": 94,
-          "age_hours": 5.68
-        },
-        "level": "low",
-        "importance_reasons": [
-          {
-            "code": "national_scope",
-            "label": "Nationwide U.S. scope",
-            "points": 15
-          }
-        ],
-        "audience_relevance": {
-          "scope": "us_national",
-          "score": 100,
-          "regions": [],
-          "places": []
-        },
-        "editorial_proximity": {
-          "score": 100,
-          "scope": "us_national",
-          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
-        },
-        "event_count": 1,
-        "timeline_entries": 1,
-        "relationship_decisions": 1,
-        "canonical_source_candidates": 1,
-        "lifecycle": {
-          "state": "active",
-          "reason": "Single-event story is current",
-          "last_updated": "2026-09-04T19:44:40+00:00",
-          "hours_since_update": 5.68,
+          "hours_since_update": 5.41,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1578,7 +1709,7 @@
           "freshness_multiplier": 1.0,
           "source_multiplier": 1.135,
           "source_trust": 95,
-          "age_hours": 3.43
+          "age_hours": 4.0
         },
         "level": "low",
         "importance_reasons": [
@@ -1607,7 +1738,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-09-04T21:59:13+00:00",
-          "hours_since_update": 3.43,
+          "hours_since_update": 4.0,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1625,7 +1756,7 @@
           "freshness_multiplier": 1.0,
           "source_multiplier": 1.132,
           "source_trust": 94,
-          "age_hours": 2.79
+          "age_hours": 3.36
         },
         "level": "low",
         "importance_reasons": [
@@ -1654,7 +1785,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-09-04T22:37:42+00:00",
-          "hours_since_update": 2.79,
+          "hours_since_update": 3.36,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1672,7 +1803,7 @@
           "freshness_multiplier": 1.0,
           "source_multiplier": 1.132,
           "source_trust": 94,
-          "age_hours": 3.28
+          "age_hours": 3.85
         },
         "level": "low",
         "importance_reasons": [
@@ -1705,54 +1836,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-09-04T22:08:20+00:00",
-          "hours_since_update": 3.28,
-          "event_count": 1,
-          "timeline_entries": 1
-        }
-      },
-      {
-        "story_id": "story_000055",
-        "title": "US economy adds 162,000 jobs in August",
-        "score": 15,
-        "editorial_priority": 17,
-        "editorial_score": 17,
-        "score_breakdown": {
-          "score": 17,
-          "importance": 15,
-          "proximity_multiplier": 1.0,
-          "freshness_multiplier": 1.0,
-          "source_multiplier": 1.117,
-          "source_trust": 89,
-          "age_hours": 4.41
-        },
-        "level": "low",
-        "importance_reasons": [
-          {
-            "code": "national_scope",
-            "label": "Nationwide U.S. scope",
-            "points": 15
-          }
-        ],
-        "audience_relevance": {
-          "scope": "us_national",
-          "score": 100,
-          "regions": [],
-          "places": []
-        },
-        "editorial_proximity": {
-          "score": 100,
-          "scope": "us_national",
-          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
-        },
-        "event_count": 1,
-        "timeline_entries": 1,
-        "relationship_decisions": 1,
-        "canonical_source_candidates": 1,
-        "lifecycle": {
-          "state": "active",
-          "reason": "Single-event story is current",
-          "last_updated": "2026-09-04T21:00:54+00:00",
-          "hours_since_update": 4.41,
+          "hours_since_update": 3.85,
           "event_count": 1,
           "timeline_entries": 1
         }

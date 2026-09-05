@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-05T01:25:14.273703Z",
+  "generated_at": "2026-09-05T01:59:18.538967Z",
   "assignment_editor_model": "claude-sonnet-5",
   "writer_model": "claude-sonnet-4-5",
   "categories": [
@@ -23,20 +23,27 @@
     },
     {
       "category_key": "us",
-      "hero_source_index": null,
-      "card_source_indexes": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
+      "hero_source_index": 1,
+      "card_source_indexes": [],
       "diagnostics": {
-        "status": "archive_recovery",
-        "reason": "Live source/generation path unavailable; reused recent published canonicals."
+        "model": "claude-sonnet-5",
+        "writer_model": "claude-sonnet-4-5",
+        "rejected": [
+          {
+            "source_index": 1,
+            "reason": "Primarily a UK/global airline and oil-price story tied to Middle East conflict; not a U.S. domestic law, safety, health, or infrastructure story and lacks a clear U.S.-specific consequence for this category."
+          },
+          {
+            "source_index": 2,
+            "reason": "UN General Assembly vote on world maps is a global/diplomatic story; while the U.S. cast the lone dissenting vote, the substance is not U.S. domestic policy, law, or public safety and belongs in World coverage."
+          },
+          {
+            "source_index": 3,
+            "reason": "Duplicate report of the same UN map resolution as source 2; not a distinct U"
+          }
+        ],
+        "writer_failures": [],
+        "duration_seconds": 30.304
       }
     },
     {
@@ -77,20 +84,14 @@
     },
     {
       "category_key": "sports",
-      "hero_source_index": null,
-      "card_source_indexes": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
+      "hero_source_index": 3,
+      "card_source_indexes": [],
       "diagnostics": {
-        "status": "archive_recovery",
-        "reason": "Live source/generation path unavailable; reused recent published canonicals."
+        "model": "claude-sonnet-5",
+        "writer_model": "claude-sonnet-4-5",
+        "rejected": [],
+        "writer_failures": [],
+        "duration_seconds": 30.795
       }
     },
     {

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-05T01:25:14.273964+00:00",
+  "generated_at": "2026-09-05T01:59:18.539332+00:00",
   "mode": "enforce",
   "items": [
     {
@@ -114,110 +114,37 @@
     {
       "mode": "enforce",
       "slot": "hero",
+      "action": "publish_new",
+      "route": "generate_new",
+      "story_id": "story_000060",
+      "event_key": "war-or-military-action-e9bae49374",
+      "eligible": true,
+      "eligibility_status": "publishable",
+      "eligibility_reasons": [
+        "Candidate passed deterministic editorial eligibility rules"
+      ],
+      "relationship": "new_story",
+      "relationship_confidence": 0.0,
+      "relationship_reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+      "source_class": "international_news",
+      "source_trust": 94,
+      "new_facts": [],
+      "canonical_title": "Flight price rises due to 'foolish leaders' starting wars, Virgin's Branson says",
+      "canonical_source": "bbc.co.uk",
+      "canonical_url": "https://www.bbc.co.uk/news/articles/cje8wx2qw9vo?at_medium=RSS&at_campaign=rss",
+      "decision_trace": [
+        "Sparse event-key resolver guard: true",
+        "Resolver same-event merge bypassed: true"
+      ],
+      "follow_up_candidate_story_id": "",
+      "follow_up_candidate_confidence": 0.0,
+      "follow_up_candidate_milestones": [],
+      "follow_up_candidate_reason_codes": [],
+      "follow_up_candidate_trace": [],
+      "follow_up_candidate_mode": "observe_only",
       "category_key": "us",
-      "headline": "Florida Panhandle battle over beach access prompts call for constitutional amendment",
-      "link": "https://plainnews.app/articles/2026-09-04-florida-panhandle-battle-over-beach-access-prompts-call-for-constitutional-amend.html",
-      "action": "ignore",
-      "route": "archive_recovery",
-      "story_id": "",
-      "event_key": "",
-      "eligible": true
-    },
-    {
-      "mode": "enforce",
-      "slot": "card:0",
-      "category_key": "us",
-      "headline": "Federal judge extends block on Trump executive order limiting mail voting in midterms",
-      "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQeEJVY1JzX1RFS2Q5bnFqRDFXRXBsNVNoVDEyOGVTS19yVTRuWXlLaXVjN3lJV2ZlNGtRNFJWWXkxUk1QbzZPVlJHWGtXcUpEVzNUMVFyOTc0a1o5amhfRmdLU0x1NUNyLS1KZjVEV21fMlRyYllpOVdGbnl1OGVmekZRVDJVVFlhT3BlTlR0eGNOc3RDM1YzVHZtcVJIZ01lVkZBbHh2SEJkUQ?oc=5",
-      "action": "ignore",
-      "route": "archive_recovery",
-      "story_id": "story_000009",
-      "event_key": "election-north-carolina",
-      "eligible": true
-    },
-    {
-      "mode": "enforce",
-      "slot": "card:1",
-      "category_key": "us",
-      "headline": "ICE detainee dies hours after admission to detention facility",
-      "link": "https://plainnews.app/articles/2026-09-02-ice-detainee-dies-hours-after-admission-to-detention-facility.html",
-      "action": "ignore",
-      "route": "archive_recovery",
-      "story_id": "",
-      "event_key": "",
-      "eligible": true
-    },
-    {
-      "mode": "enforce",
-      "slot": "card:2",
-      "category_key": "us",
-      "headline": "Tropical Storm Edouard threatens Gulf Coast, expected to strengthen before landfall",
-      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPbG92RncyZXJpblp2ZmJDdXBzWWdSVldzaVFBT0xBdEx3VDltZUhvTGJWQXdlTmxiTWhjSWV4SUE4cFZ0bmtQLTJLZkFfNVJOYlA2bWdqcGtSY1dZWkFlZVdrYkJXWk9nb2pkOV83LWtZTm1vOW9lb0s3OWIxVmNvYUZ3NjNSdw?oc=5",
-      "action": "ignore",
-      "route": "archive_recovery",
-      "story_id": "",
-      "event_key": "",
-      "eligible": true
-    },
-    {
-      "mode": "enforce",
-      "slot": "card:3",
-      "category_key": "us",
-      "headline": "One dead, 15 missing after flash flood tears through Grand Canyon",
-      "link": "https://plainnews.app/articles/2026-08-31-one-dead-15-missing-after-flash-flood-tears-through-grand-canyon.html",
-      "action": "ignore",
-      "route": "archive_recovery",
-      "story_id": "",
-      "event_key": "",
-      "eligible": true
-    },
-    {
-      "mode": "enforce",
-      "slot": "card:4",
-      "category_key": "us",
-      "headline": "Postal Service rule threatens mail voting access for millions ahead of midterms",
-      "link": "https://plainnews.app/articles/2026-08-30-postal-service-rule-threatens-mail-voting-access-for-millions-ahead-of-midterms.html",
-      "action": "ignore",
-      "route": "archive_recovery",
-      "story_id": "",
-      "event_key": "",
-      "eligible": true
-    },
-    {
-      "mode": "enforce",
-      "slot": "card:5",
-      "category_key": "us",
-      "headline": "Trump administration considering land transfer of Yosemite National Park to private developer",
-      "link": "https://plainnews.app/articles/2026-08-29-trump-administration-considering-land-transfer-of-yosemite-national-park-to-priv.html",
-      "action": "ignore",
-      "route": "archive_recovery",
-      "story_id": "",
-      "event_key": "",
-      "eligible": true
-    },
-    {
-      "mode": "enforce",
-      "slot": "card:6",
-      "category_key": "us",
-      "headline": "Tropical Storm Dolly forms in Atlantic, moves toward Caribbean",
-      "link": "https://plainnews.app/articles/2026-08-28-tropical-storm-dolly-forms-in-atlantic-moves-toward-caribbean.html",
-      "action": "ignore",
-      "route": "archive_recovery",
-      "story_id": "",
-      "event_key": "",
-      "eligible": true
-    },
-    {
-      "mode": "enforce",
-      "slot": "card:7",
-      "category_key": "us",
-      "headline": "Plug-in solar panels coming to retail stores as government promotes energy bill cuts",
-      "link": "https://plainnews.app/articles/2026-08-27-plug-in-solar-panels-coming-to-retail-stores-as-government-promotes-energy-bill.html",
-      "action": "ignore",
-      "route": "archive_recovery",
-      "story_id": "",
-      "event_key": "",
-      "eligible": true
+      "headline": "Virgin Atlantic founder blames rising flight prices on 'foolish leaders' starting wars",
+      "link": "https://www.bbc.co.uk/news/articles/cje8wx2qw9vo?at_medium=RSS&at_campaign=rss"
     },
     {
       "mode": "enforce",
@@ -438,110 +365,67 @@
     {
       "mode": "enforce",
       "slot": "hero",
+      "action": "publish_new",
+      "route": "generate_new",
+      "story_id": "story_000061",
+      "event_key": "business-transaction-north-carolina",
+      "eligible": true,
+      "eligibility_status": "publishable",
+      "eligibility_reasons": [
+        "Candidate passed deterministic editorial eligibility rules"
+      ],
+      "relationship": "new_story",
+      "relationship_confidence": 0.235733,
+      "relationship_reason": "Created new story: conservative merge requirements were not met",
+      "source_class": "unknown",
+      "source_trust": 55,
+      "new_facts": [],
+      "canonical_title": "Ongoing UNC investigation could take out Bill Belichick, for cause - NBC Sports",
+      "canonical_source": "nbcsports.com",
+      "canonical_url": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/ongoing-unc-investigation-could-take-out-bill-belichick-with-cause",
+      "decision_trace": [
+        "Category: business",
+        "Facts overlap: 0.00",
+        "Locations overlap: 1.00",
+        "Agencies overlap: 0.00",
+        "Event types overlap: 0.00",
+        "Entities overlap: 0.20",
+        "Title support: 0.00",
+        "Event-key support: 0.67",
+        "Identity anchors: 2",
+        "Threshold: 0.78"
+      ],
+      "follow_up_candidate_story_id": "story_000009",
+      "follow_up_candidate_confidence": 0.54,
+      "follow_up_candidate_milestones": [
+        "investigation"
+      ],
+      "follow_up_candidate_reason_codes": [
+        "novel_milestone",
+        "location_match",
+        "entity_match",
+        "identity_anchor_qualified",
+        "event_type_conflict"
+      ],
+      "follow_up_candidate_trace": [
+        "Follow-up candidate mode: observe_only",
+        "Candidate story: story_000009",
+        "Novel milestones: investigation",
+        "Exact event-key anchor: False",
+        "Facts overlap: 0.00",
+        "Title overlap: 0.00",
+        "Location match: True",
+        "Agency match: False",
+        "Event type match: False",
+        "Entity match: True",
+        "Agency conflict: False",
+        "Event type conflict: True",
+        "Candidate confidence: 0.54"
+      ],
+      "follow_up_candidate_mode": "observe_only",
       "category_key": "sports",
-      "headline": "Louisiana Judge Rules Against NCAA, Allows Former NFL Players to Join College Teams",
-      "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQTVZEWjZkRC10bWlDVWViZ0NSV2hoLW9BNHhfRXZzRjUtMEIxZlRUMFo1UG54TmVsRU5YMFJxa2pEOV9jeW4wUDV0Si0tLTVJLTJmbm1MQVgzVmx3cVJQdVE3SmVHN3U0WExWTlJiSjlKcGNyRDlMd3dDTlRJNHhpUkJQOWRRWTVUbUFtOXZpUWpPTFRXZFR0c29QRGlERzFZa21ERFRvdHlTWktDZC1ENmZ2ai04dVFkS3NzWkRQRy14dkZ3R2Rz?oc=5",
-      "action": "ignore",
-      "route": "archive_recovery",
-      "story_id": "",
-      "event_key": "",
-      "eligible": true
-    },
-    {
-      "mode": "enforce",
-      "slot": "card:0",
-      "category_key": "sports",
-      "headline": "Isak's Early Brace Gives Liverpool First Win of Season at Ipswich",
-      "link": "https://www.bbc.co.uk/sport/football/videos/cgmr1z492k9o?at_medium=RSS&at_campaign=rss",
-      "action": "ignore",
-      "route": "archive_recovery",
-      "story_id": "story_000035",
-      "event_key": "unknown-event-6ea4372ded",
-      "eligible": true
-    },
-    {
-      "mode": "enforce",
-      "slot": "card:1",
-      "category_key": "sports",
-      "headline": "Brighton sign winger Femi Azeez from Millwall for up to £15 million",
-      "link": "https://plainnews.app/articles/2026-09-02-brighton-sign-winger-femi-azeez-from-millwall-for-up-to-15-million.html",
-      "action": "ignore",
-      "route": "archive_recovery",
-      "story_id": "",
-      "event_key": "",
-      "eligible": true
-    },
-    {
-      "mode": "enforce",
-      "slot": "card:2",
-      "category_key": "sports",
-      "headline": "Everton agree loan deal to bring Jack Grealish back from Manchester City",
-      "link": "https://plainnews.app/articles/2026-09-01-everton-agree-loan-deal-to-bring-jack-grealish-back-from-manchester-city.html",
-      "action": "ignore",
-      "route": "archive_recovery",
-      "story_id": "",
-      "event_key": "",
-      "eligible": true
-    },
-    {
-      "mode": "enforce",
-      "slot": "card:3",
-      "category_key": "sports",
-      "headline": "Djokovic exits US Open in first round",
-      "link": "https://plainnews.app/articles/2026-08-31-djokovic-exits-us-open-in-first-round.html",
-      "action": "ignore",
-      "route": "archive_recovery",
-      "story_id": "",
-      "event_key": "",
-      "eligible": true
-    },
-    {
-      "mode": "enforce",
-      "slot": "card:4",
-      "category_key": "sports",
-      "headline": "Liverpool Agree £123 Million Deal for PSG Winger Bradley Barcola",
-      "link": "https://www.bbc.co.uk/sport/football/articles/ceqewejnpr3o?at_medium=RSS&at_campaign=rss",
-      "action": "ignore",
-      "route": "archive_recovery",
-      "story_id": "",
-      "event_key": "",
-      "eligible": true
-    },
-    {
-      "mode": "enforce",
-      "slot": "card:5",
-      "category_key": "sports",
-      "headline": "Chris Sale throws complete-game shutout as Braves sweep Dodgers",
-      "link": "https://plainnews.app/articles/2026-08-28-chris-sale-throws-complete-game-shutout-as-braves-sweep-dodgers.html",
-      "action": "ignore",
-      "route": "archive_recovery",
-      "story_id": "",
-      "event_key": "",
-      "eligible": true
-    },
-    {
-      "mode": "enforce",
-      "slot": "card:6",
-      "category_key": "sports",
-      "headline": "Manchester City sign Morocco midfielder Bouaddi from Lille for £86 million",
-      "link": "https://plainnews.app/articles/2026-08-26-manchester-city-sign-morocco-midfielder-bouaddi-from-lille-for-86-million.html",
-      "action": "ignore",
-      "route": "archive_recovery",
-      "story_id": "",
-      "event_key": "",
-      "eligible": true
-    },
-    {
-      "mode": "enforce",
-      "slot": "card:7",
-      "category_key": "sports",
-      "headline": "Tottenham sign Brazil winger Savinho from Manchester City for £75m",
-      "link": "https://www.bbc.co.uk/sport/football/articles/cy7z637nj8jo?at_medium=RSS&at_campaign=rss",
-      "action": "ignore",
-      "route": "archive_recovery",
-      "story_id": "",
-      "event_key": "",
-      "eligible": true
+      "headline": "UNC investigation into assistant coach and staff conduct could lead to for-cause firing of Bill Belichick",
+      "link": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/ongoing-unc-investigation-could-take-out-bill-belichick-with-cause"
     },
     {
       "mode": "enforce",
@@ -761,15 +645,15 @@
     }
   ],
   "counts": {
-    "processed": 63,
+    "processed": 47,
     "rejected": 0,
     "same_category_duplicates": 0,
     "errors": 0
   },
   "registry_health": {
     "repair_version": 16,
-    "changed": true,
-    "status": "repaired",
+    "changed": false,
+    "status": "clean",
     "active_stories_before": 59,
     "active_stories_after": 59,
     "quarantined_story_count": 0,
@@ -800,9 +684,9 @@
     "unified_incident_groups_resolved": 0,
     "unified_incident_story_records_removed": 0,
     "remaining_unified_incident_groups": 0,
-    "generated_at": "2026-09-05T01:25:14Z",
+    "generated_at": "2026-09-05T01:59:18Z",
     "quarantined_story_records_retained": 0,
-    "active_story_count": 59
+    "active_story_count": 61
   },
   "observability": {
     "engine": {
