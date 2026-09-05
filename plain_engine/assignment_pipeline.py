@@ -3,7 +3,7 @@ from __future__ import annotations
 import json,re,time
 from datetime import datetime,timezone
 from email.utils import parsedate_to_datetime
-from .article_quality import publication_quality
+from .article_quality import publication_quality,defer_protected_material_update_quality_failure
 from .editorial_rules import SYSTEM_PROMPT,category_rule
 from .model_response import extract_model_text
 ASSIGNMENT_EDITOR_MODEL='claude-sonnet-5';WRITER_MODEL='claude-sonnet-4-5';DEFAULT_CARD_COUNT=8
@@ -83,20 +83,40 @@ def run_live_assignment_category(client,category_key,category_label,sources,*,ca
   left=deadline-time.perf_counter()
   if left<=1:raise TimeoutError(f'category budget exhausted for {category_label}')
   return min(default,left)
- plan=run_assignment_editor(client,category_key,category_label,sources,card_count=card_count,timeout_seconds=remaining(60));ha=plan['hero'];hero_source=sources[int(ha['source_index'])-1];hero=run_assignment_writer(client,category_key=category_key,category_label=category_label,source=hero_source,assignment=ha,hero=True,timeout_seconds=remaining(90))
+ plan=run_assignment_editor(client,category_key,category_label,sources,card_count=card_count,timeout_seconds=remaining(60))
+ ha=plan['hero'];hero_source=sources[int(ha['source_index'])-1]
+ hero=run_assignment_writer(client,category_key=category_key,category_label=category_label,source=hero_source,assignment=ha,hero=True,timeout_seconds=remaining(90))
+ protected_repairs=[]
  if hero_source.get('pre_generation_material_update') and not hero.get('publication_quality_ok'):
-  raise RuntimeError('selected validated material update hero failed publication-quality contract')
- cards=[];fail=[]
+  if defer_protected_material_update_quality_failure(hero,hero.get('publication_quality_reasons',[]),guard='assignment_writer_hero'):
+   protected_repairs.append({'surface':'hero','source_index':ha.get('source_index'),'reasons':list(hero.get('publication_quality_reasons') or []),'canonical_slug':hero.get('pre_generation_material_update_canonical_slug','')})
+  else:
+   raise RuntimeError('selected validated material update hero failed non-repairable publication-quality contract: '+','.join(hero.get('publication_quality_reasons') or ['unknown']))
+ cards=[];fail=[];hidden_repairs=[]
  for a in plan.get('cards',[]):
   source=sources[int(a['source_index'])-1]
   try:
    c=run_assignment_writer(client,category_key=category_key,category_label=category_label,source=source,assignment=a,hero=False,timeout_seconds=remaining(90))
-   if c.get('publication_quality_ok'):cards.append(c)
+   if c.get('publication_quality_ok'):
+    cards.append(c)
    elif source.get('pre_generation_material_update'):
-    raise RuntimeError('selected validated material update failed publication-quality contract')
-   else:fail.append({'source_index':a.get('source_index'),'reason':c.get('publication_quality_reasons',[])})
+    if defer_protected_material_update_quality_failure(c,c.get('publication_quality_reasons',[]),guard='assignment_writer_card'):
+     hidden_repairs.append(c)
+     protected_repairs.append({'surface':'card_hidden_commit','source_index':a.get('source_index'),'reasons':list(c.get('publication_quality_reasons') or []),'canonical_slug':c.get('pre_generation_material_update_canonical_slug','')})
+    else:
+     raise RuntimeError('selected validated material update failed non-repairable publication-quality contract: '+','.join(c.get('publication_quality_reasons') or ['unknown']))
+   else:
+    fail.append({'source_index':a.get('source_index'),'reason':c.get('publication_quality_reasons',[])})
   except Exception as e:
    if source.get('pre_generation_material_update'):
     raise RuntimeError(f'selected validated material update failed writer path: {type(e).__name__}: {e}') from e
    fail.append({'source_index':a.get('source_index'),'reason':[type(e).__name__]})
- return {'category_key':category_key,'category_label':category_label,'hero':hero,'cards':cards,'assignment_editor':{'model':ASSIGNMENT_EDITOR_MODEL,'writer_model':WRITER_MODEL,'rejected':plan.get('rejected',[]),'writer_failures':fail,'duration_seconds':round(time.perf_counter()-started,3)}}
+ return {
+  'category_key':category_key,'category_label':category_label,'hero':hero,'cards':cards,
+  'protected_material_update_commits':hidden_repairs,
+  'assignment_editor':{
+   'model':ASSIGNMENT_EDITOR_MODEL,'writer_model':WRITER_MODEL,'rejected':plan.get('rejected',[]),
+   'writer_failures':fail,'protected_material_update_repairs':protected_repairs,
+   'duration_seconds':round(time.perf_counter()-started,3),
+  },
+ }

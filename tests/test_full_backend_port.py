@@ -125,9 +125,9 @@ def test_pre_generation_materiality_suppresses_no_change_and_stamps_update(monke
     assert (tmp_path/'pre-generation-material-update-report.json').exists()
 
 
-def test_selected_material_update_writer_failure_is_not_silently_dropped():
-    import pytest
+def test_repairable_material_update_card_is_hidden_and_retained_for_canonical_recomposition():
     from plain_engine.assignment_pipeline import run_live_assignment_category
+    from scripts.generate import selected_material_update_commit_entries
     hero_source={'title':'National policy announcement','summary':words('hero',180),'article_text':words('hero',180),'link':'https://x/hero','source_quality':'full','published':'Fri, 04 Sep 2026 16:00:00 GMT'}
     update_source={'title':'Existing story materially advances','summary':words('update',180),'article_text':words('update',180),'link':'https://x/update','source_quality':'full','published':'Fri, 04 Sep 2026 16:05:00 GMT','pre_generation_material_update':True,'pre_generation_material_update_canonical_slug':'old','semantic_material_update_decision':{'action':'update_existing_canonical','same_real_world_event':True,'material_new_update':True,'selected_candidate_slug':'old'}}
     client=FakeClient([
@@ -135,8 +135,65 @@ def test_selected_material_update_writer_failure_is_not_silently_dropped():
         json.dumps({'headline':'Federal agency announces national policy action','body':_long_body()}),
         json.dumps({'headline':'Existing story materially advances','teaser':'New development','body':'Too short.'}),
     ])
-    with pytest.raises(RuntimeError, match='validated material update'):
-        run_live_assignment_category(client,'us','U.S.',[hero_source,update_source],card_count=1)
+    result=run_live_assignment_category(client,'us','U.S.',[hero_source,update_source],card_count=1)
+    assert result['cards']==[]
+    assert len(result['protected_material_update_commits'])==1
+    repair=result['protected_material_update_commits'][0]
+    assert repair['_force_material_update_recomposition'] is True
+    assert repair['publication_quality_ok'] is False
+    entries=selected_material_update_commit_entries([result])
+    assert len(entries)==1
+    assert entries[0][2]['_material_update_commit_only'] is True
+    assert entries[0][2]['_material_update_selection_surface']=='us:hidden_repair'
+
+
+def test_dangerous_material_update_source_drift_still_fails_closed():
+    import pytest
+    from plain_engine.assignment_pipeline import run_live_assignment_category
+    source_text=('Entertainment company executives confirmed a major acquisition agreement Friday in Los Angeles. ' +
+                 'The transaction concerns the same entertainment company and acquisition agreement. ' + words('entertainment',170))
+    update_source={
+        'title':'Entertainment company confirms major acquisition agreement Friday',
+        'summary':source_text[:800],'article_text':source_text,'link':'https://x/update','source_quality':'full',
+        'published':'Fri, 04 Sep 2026 16:05:00 GMT','pre_generation_material_update':True,
+        'pre_generation_material_update_canonical_slug':'old',
+        'semantic_material_update_decision':{'action':'update_existing_canonical','same_real_world_event':True,'material_new_update':True,'selected_candidate_slug':'old'},
+    }
+    unrelated_body=('Astronomers reported a distant stellar observation from a telescope facility on Friday, describing a new set of measurements unrelated to corporate transactions. ' + words('astronomy',190))
+    client=FakeClient([
+        json.dumps({'hero':{'source_index':1,'angle':'acquisition','urgency_score':8},'cards':[]}),
+        json.dumps({'headline':'Astronomers report distant stellar observation from telescope facility','body':unrelated_body}),
+    ])
+    with pytest.raises(RuntimeError,match='non-repairable publication-quality contract'):
+        run_live_assignment_category(client,'entertainment','Entertainment',[update_source],card_count=0)
+
+
+def test_repairable_material_update_hero_survives_quality_gate_for_write_barrier():
+    from plain_engine.assignment_pipeline import run_live_assignment_category
+    from plain_engine.article_quality import enforce_category_quality,protected_material_update_pending_recomposition
+    source_text='Federal officials confirmed Friday a new development in an existing national investigation. '+words('update',200)
+    source={
+        'title':'Federal officials confirm new development in existing investigation','summary':source_text[:800],
+        'article_text':source_text,'link':'https://x/update','source_quality':'full','published':'Fri, 04 Sep 2026 16:05:00 GMT',
+        'pre_generation_material_update':True,'pre_generation_material_update_canonical_slug':'old',
+        'semantic_material_update_decision':{'action':'update_existing_canonical','same_real_world_event':True,'material_new_update':True,'selected_candidate_slug':'old','novel_facts':['new development confirmed']},
+        'material_update_novel_facts':['new development confirmed'],
+        'canonical_context':{'slug':'old','headline':'Federal officials opened national investigation earlier','body':'Federal officials opened the national investigation earlier this year. '+words('prior',160)},
+    }
+    # Deliberately omit the old-event context from the writer lead. That is repairable
+    # by the canonical composer and must not kill the category.
+    body='Federal officials confirmed Friday a new development and released additional information about the matter. '+words('update',150)
+    client=FakeClient([
+        json.dumps({'hero':{'source_index':1,'angle':'confirmed development','urgency_score':8},'cards':[]}),
+        json.dumps({'headline':'Federal officials confirm new development in national investigation','body':body}),
+    ])
+    result=run_live_assignment_category(client,'us','U.S.',[source],card_count=0)
+    assert result['hero']['publication_quality_ok'] is False
+    assert protected_material_update_pending_recomposition(result['hero'])
+    enforce_category_quality(result)
+    assert result['hero']['headline'].startswith('Federal officials confirm')
+    assert protected_material_update_pending_recomposition(result['hero'])
+
 
 def test_national_headline_claims_must_be_in_lead():
     from plain_engine.article_quality import lead_headline_integrity
@@ -218,3 +275,51 @@ def test_model_response_parser_raises_clear_error_when_no_text_block():
     )
     with pytest.raises(ValueError, match=r"no text blocks .*stop_reason='max_tokens'.*thinking.*1800"):
         extract_model_text(response)
+
+
+def test_write_barrier_recomposes_repairable_material_update_before_public_render(monkeypatch,tmp_path):
+    import scripts.generate as gen
+    class ComposerMessages:
+        def create(self,**kwargs):
+            body=(
+                'Federal officials said Friday that the national investigation opened earlier this year now includes a newly confirmed enforcement action, a development the agency announced after its latest review. The new enforcement action changes the status of the existing investigation and applies nationwide.\n\n'
+                + 'The agency said the investigation began earlier this year after officials identified concerns involving the same program and institutions. The newly confirmed action follows that investigation and adds a formal enforcement step to the case. ' * 6
+                + '\n\nOfficials said the enforcement action is now in effect and provided additional details about how it applies to the institutions covered by the investigation. The agency did not describe any broader consequences beyond the action contained in the supplied reports. ' * 5
+            )
+            return SimpleNamespace(content=[SimpleNamespace(type='text',text=json.dumps({
+                'headline':'Federal agency adds enforcement action to national investigation',
+                'teaser':'The agency added a newly confirmed enforcement action to an investigation opened earlier this year, advancing the same national case.',
+                'body':body,
+            }))])
+    class ComposerClient:
+        def __init__(self): self.messages=ComposerMessages()
+        def with_options(self,**kwargs): return self
+    class NoopCache:
+        def get(self,*args,**kwargs): return CACHE_MISS
+        def put(self,*args,**kwargs): return None
+
+    monkeypatch.setattr(gen,'OUTPUT_DIR',tmp_path)
+    (tmp_path/'articles').mkdir()
+    archive=[{
+        'slug':'2026-09-03-existing','headline':'Federal agency opens national investigation',
+        'teaser':'Federal officials opened a national investigation earlier this year.',
+        'body':'Federal officials opened a national investigation earlier this year involving the same program and institutions. '+('The agency described the original investigation and its scope. '*30),
+        'category_key':'us','category_label':'U.S.','date':'2026-09-03','source_url':'https://old.example/a',
+    }]
+    (tmp_path/'archive.json').write_text(json.dumps(archive),encoding='utf-8')
+    hero={
+        'headline':'Federal agency confirms new enforcement action','body':'Too short.','teaser':'New action.',
+        'article_text':'Federal officials confirmed Friday a new enforcement action in the national investigation opened earlier this year. '+('The agency described the enforcement action and the investigation. '*50),
+        'source_title':'Federal agency confirms new enforcement action','link':'https://new.example/u',
+        'source_published_raw':'Fri, 04 Sep 2026 16:00:00 GMT','pre_generation_material_update':True,
+        'pre_generation_material_update_canonical_slug':'2026-09-03-existing',
+        'semantic_material_update_decision':{'action':'update_existing_canonical','same_real_world_event':True,'material_new_update':True,'selected_candidate_slug':'2026-09-03-existing','novel_facts':['new enforcement action']},
+        'publication_quality_ok':False,'publication_quality_reasons':['body_under_120_words'],
+        '_force_material_update_recomposition':True,
+    }
+    category={'category_key':'us','category_label':'U.S.','hero':hero,'cards':[]}
+    result=gen.write_archives([category],category,client=ComposerClient(),cache=NoopCache(),material_update_entries=[])
+    assert result[0]['headline']=='Federal agency adds enforcement action to national investigation'
+    assert hero['publication_quality_ok'] is True
+    assert hero['material_update_recomposition_completed'] is True
+    assert '_force_material_update_recomposition' not in hero

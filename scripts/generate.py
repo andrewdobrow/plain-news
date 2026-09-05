@@ -37,7 +37,7 @@ from plain_engine.source_recovery import prefetch_feed_documents, fetch_headline
 from plain_engine.image_authority import extract_image as authoritative_extract_image, build_image_bank as build_authoritative_image_bank, ensure_item_image, FallbackRotator, write_image_quality_report
 from plain_engine.assignment_pipeline import run_live_assignment_category
 from plain_engine.category_classifier import classify_stories
-from plain_engine.article_quality import enforce_category_quality, write_quality_report
+from plain_engine.article_quality import enforce_category_quality, write_quality_report, publication_quality, protected_material_update_pending_recomposition
 from plain_engine.model_usage import ModelUsageTracker, instrument_anthropic_client
 from plain_engine.model_response import extract_model_text
 from plain_engine.semantic_publication_gate import retrieve_recent_candidates, adjudicate_candidates, ACTION_DUPLICATE, ACTION_UPDATE, ACTION_NEW, ACTION_HOLD
@@ -2488,18 +2488,21 @@ def selected_material_update_commit_entries(all_categories):
         cat_key = str(category.get("category_key") or "")
         cat_label = str(category.get("category_label") or cat_key.replace("_", " ").title())
         placements = [("hero", category.get("hero"))] + [("card", c) for c in category.get("cards", [])]
+        placements += [("hidden_repair", c) for c in category.get("protected_material_update_commits", []) if isinstance(c, dict)]
         for surface, item in placements:
             if not isinstance(item, dict):
                 continue
             slug = _validated_material_update_target(item)
             if not slug:
                 continue
-            if item.get("publication_quality_ok") is False or item.get("editorial_eligible") is False:
+            if (item.get("publication_quality_ok") is False and not protected_material_update_pending_recomposition(item)) or item.get("editorial_eligible") is False:
                 raise RuntimeError(
-                    f"Validated material update survived selection but is not publishable: {slug} / {item.get('headline','')}"
+                    f"Validated material update survived selection but is not publishable or repairable: {slug} / {item.get('headline','')} / {item.get('publication_quality_reasons',[])}"
                 )
             receipt = copy.deepcopy(item)
             receipt["_material_update_commit_only"] = surface != "hero"
+            if surface == "hidden_repair":
+                receipt["_material_update_commit_only"] = True
             receipt["_material_update_selection_surface"] = f"{cat_key}:{surface}"
             receipt["category_key"] = cat_key
             receipt["category_label"] = cat_label
@@ -2593,7 +2596,12 @@ def write_archives(all_categories, top_cat, *, client=None, cache=None, material
             canonical=_canonical_for_gate(existing);incoming={"headline":hero.get("headline",""),"source_headline":hero.get("source_title",""),"teaser":hero.get("teaser",""),"body":hero.get("article_text") or hero.get("source_summary") or hero.get("body",""),"source_url":source_url,"published_at":hero.get("source_published_raw","")};decision=sem or hero.get("semantic_material_update_decision") or {"shared_anchors":[],"novel_facts":[],"reason":"Persistent editorial engine classified a material update."}
             composed=compose_material_update(client,model="claude-sonnet-4-5",canonical=canonical,incoming=incoming,decision=decision,timeout_seconds=60)
             if composed.get("status")!="validated":raise RuntimeError(f"Material update composition failed for {slug}: {composed.get('validation_errors')}")
+            composed_item=dict(hero);composed_item["headline"]=composed["headline"];composed_item["teaser"]=composed["teaser"];composed_item["body"]=composed["body"]
+            final_ok,final_reasons=publication_quality(composed_item,hero=True)
+            if not final_ok:
+                raise RuntimeError(f"Material update canonical recomposition failed final publication-quality contract for {slug}: {final_reasons}")
             hero["headline"]=composed["headline"];hero["teaser"]=composed["teaser"];hero["body"]=composed["body"]
+            hero["publication_quality_ok"]=True;hero["publication_quality_reasons"]=[];hero.pop("_force_material_update_recomposition",None);hero["material_update_recomposition_completed"]=True
             staged.append((articles_dir/f"{slug}.html",render_article_page(hero,cat_label,cat_key,existing.get("date",today),slug)))
             existing.update({"headline":hero["headline"],"teaser":hero["teaser"],"body":hero["body"],"category_key":cat_key,"category_label":cat_label,"lastmod":today,"last_seen":now_iso,"source_url":source_url,"source_headline":hero.get("source_title",""),"source_published_raw":hero.get("source_published_raw",""),"image_url":hero.get("image_url",""),"image_credit":hero.get("image_credit",""),"image_origin":hero.get("image_origin",""),"story_id":hero.get("story_id",existing.get("story_id","")),"event_key":hero.get("event_key",existing.get("event_key","")),"editorial_action":"update_existing"})
             if not hero.get("is_fallback_image"):existing["source_image_url"]=hero.get("image_url","")
@@ -2858,7 +2866,16 @@ def main():
 
         if data is not None:
             _format_generated_times(data);enforce_category_quality(data)
-            if not data.get("hero") or not data["hero"].get("publication_quality_ok",True):
+            repairs=((data.get("assignment_editor") or {}).get("protected_material_update_repairs") or [])
+            if repairs:
+                for repair in repairs:
+                    print(
+                        f"  {cfg['label']}: protected material update queued for canonical recomposition "
+                        f"({repair.get('surface')}; {','.join(repair.get('reasons') or ['unknown'])})"
+                    )
+            hero_item=data.get("hero") or {}
+            hero_quality_ok=bool(hero_item.get("publication_quality_ok",True) or protected_material_update_pending_recomposition(hero_item))
+            if not hero_item or not hero_quality_ok:
                 live_error="publication-quality contract rejected live hero";data=None;cacheable=False
         if data is None:
             protected_failure = bool(
@@ -2921,6 +2938,9 @@ def main():
     if material_update_entries:
         print(f"  Protected material-update commit queue: {len(material_update_entries)} canonical target(s)")
     write_archives(all_categories,top_cat,client=client,cache=cache,material_update_entries=material_update_entries)
+    # Canonical recomposition can repair a protected hero after the earlier writer-stage
+    # report was emitted. Rewrite the quality report from the final publishable state.
+    write_quality_report(all_categories,OUTPUT_DIR/"article-quality-report.json")
     (OUTPUT_DIR/"news.html").write_text(render_index(all_categories,market_data,market_live,top_cat=top_cat),encoding="utf-8")
 
     all_cards=[]

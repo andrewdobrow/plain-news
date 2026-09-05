@@ -85,6 +85,69 @@ def source_focus_diagnostics(item):
  title_overlap=len(gh&st)/max(1,min(len(gh),len(st)));lead_overlap=len(gl&sl)/max(1,min(len(gl),len(sl)))
  drifted=title_overlap<.38 and len(gh&st)<=3 and lead_overlap<.30
  return {'required':True,'passed':not drifted,'title_overlap':round(title_overlap,3),'lead_overlap':round(lead_overlap,3),'missing':['generated_copy_drifted_from_source_focus'] if drifted else []}
+
+_MATERIAL_UPDATE_REPAIRABLE_REASONS = {
+    "weak_or_missing_headline",
+    "lead_too_thin",
+    "headline_money_claim_missing_from_lead",
+    "headline_percentage_claim_missing_from_lead",
+    "headline_jurisdiction_missing_from_lead",
+    "headline_named_measure_missing_from_lead",
+    "headline_entity_missing_from_lead",
+    "person_first_reference_not_full_name",
+    "original_event_context_missing",
+    "new_development_missing",
+    "insufficient_article_structure",
+}
+
+def _repairable_material_update_reason(reason):
+    reason=str(reason or "").strip()
+    return bool(reason in _MATERIAL_UPDATE_REPAIRABLE_REASONS or reason.startswith("body_under_"))
+
+def defer_protected_material_update_quality_failure(item,reasons,*,guard="publication_quality"):
+    """Keep a validated update alive only when the failed rule is safely repairable.
+
+    TCT's production pipeline does not throw away a target-bound material update just
+    because the first writer pass is thin or lacks enough old-event context.  Those
+    defects are repaired later by the canonical composer, which receives both the
+    existing article and the exact incoming source.  Source drift and weak source
+    evidence are deliberately *not* repairable here and still fail closed.
+    """
+    if not isinstance(item,dict) or not item.get("pre_generation_material_update"):
+        return False
+    slug=str(item.get("pre_generation_material_update_canonical_slug") or "").strip()
+    decision=item.get("semantic_material_update_decision") or {}
+    ctx=item.get("canonical_context") or {}
+    valid_authority=bool(
+        slug
+        and isinstance(decision,dict)
+        and decision.get("action")=="update_existing_canonical"
+        and decision.get("same_real_world_event") is True
+        and decision.get("material_new_update") is True
+        and str(decision.get("selected_candidate_slug") or "").strip()==slug
+        and (not isinstance(ctx,dict) or not ctx.get("slug") or str(ctx.get("slug"))==slug)
+    )
+    if not valid_authority:
+        return False
+    reasons=[str(r) for r in (reasons or []) if str(r)]
+    if not reasons or not all(_repairable_material_update_reason(r) for r in reasons):
+        return False
+    item["_force_material_update_recomposition"]=True
+    item["publication_quality_deferred_for_material_update"]=True
+    item.setdefault("protected_material_update_quality_holds",[]).append({
+        "guard":str(guard or "publication_quality"),
+        "reasons":sorted(set(reasons)),
+    })
+    return True
+
+def protected_material_update_pending_recomposition(item):
+    return bool(
+        isinstance(item,dict)
+        and item.get("_force_material_update_recomposition")
+        and item.get("pre_generation_material_update")
+        and item.get("pre_generation_material_update_canonical_slug")
+    )
+
 def publication_quality(item,*,hero=False):
  reasons=[];body=str(item.get('body') or '');source=str(item.get('article_text') or item.get('source_summary') or '');minimum=MIN_HERO_BODY_WORDS if hero else MIN_CARD_BODY_WORDS
  if word_count(body)<minimum:reasons.append(f'body_under_{minimum}_words')
@@ -98,7 +161,12 @@ def enforce_category_quality(category):
   if ok:good.append(c)
  if isinstance(hero,dict):
   ok,r=publication_quality(hero,hero=True);hero['publication_quality_ok']=ok;hero['publication_quality_reasons']=r
-  if not ok:
+  if not ok and protected_material_update_pending_recomposition(hero):
+   # Do not swap away a validated update that has been explicitly queued for
+   # canonical recomposition. write_archives() repairs this exact hero before the
+   # public index/data surfaces are rendered.
+   hero['publication_quality_deferred_for_material_update']=True
+  elif not ok:
    for i,c in enumerate(good):
     hok,hr=publication_quality(c,hero=True)
     if hok:c['publication_quality_ok']=True;c['publication_quality_reasons']=hr;c['promoted_for_quality']=True;category['hero']=c;good.pop(i);break
