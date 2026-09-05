@@ -160,3 +160,51 @@ def test_material_update_lead_requires_old_event_and_new_development():
     }
     issues=lead_headline_integrity(item)
     assert 'original_event_context_missing' in issues
+
+
+def test_model_response_parser_skips_thinking_blocks():
+    from plain_engine.model_response import extract_model_text
+    response = SimpleNamespace(content=[
+        SimpleNamespace(type='thinking', thinking='private reasoning'),
+        SimpleNamespace(type='text', text='  {"ok": true}  '),
+    ])
+    assert extract_model_text(response) == '{"ok": true}'
+
+
+def test_assignment_pipeline_accepts_thinking_block_before_assignment_json():
+    class ThinkingMessages:
+        def __init__(self):
+            self.calls = 0
+            self.prompts = []
+        def create(self, **kwargs):
+            self.prompts.append(kwargs)
+            self.calls += 1
+            if self.calls == 1:
+                payload = json.dumps({'hero': {'source_index': 1, 'angle': 'national policy', 'urgency_score': 8}, 'cards': []})
+            else:
+                payload = json.dumps({'headline': 'Federal agency announces national policy action', 'body': _long_body()})
+            return SimpleNamespace(content=[
+                SimpleNamespace(type='thinking', thinking='internal'),
+                SimpleNamespace(type='text', text=payload),
+            ])
+    class ThinkingClient:
+        def __init__(self): self.messages = ThinkingMessages()
+        def with_options(self, **kwargs): return self
+    source_text = 'Federal officials announced a national policy action Friday in Washington. ' + words('detail', 220)
+    source = {
+        'title': 'Federal agency announces national policy action',
+        'summary': source_text[:700], 'article_text': source_text,
+        'link': 'https://example.com/policy', 'source_quality': 'full',
+        'published': 'Fri, 04 Sep 2026 16:00:00 GMT', 'publisher_name': 'Reuters',
+    }
+    result = run_live_assignment_category(ThinkingClient(), 'us', 'U.S.', [source], card_count=0)
+    assert result['hero']['source_index'] == 1
+    assert result['hero']['headline'] == 'Federal agency announces national policy action'
+
+
+def test_model_response_parser_raises_clear_error_when_no_text_block():
+    import pytest
+    from plain_engine.model_response import extract_model_text
+    response = SimpleNamespace(content=[SimpleNamespace(type='thinking', thinking='internal')])
+    with pytest.raises(ValueError, match='no text blocks'):
+        extract_model_text(response)

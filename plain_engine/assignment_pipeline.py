@@ -5,6 +5,7 @@ from datetime import datetime,timezone
 from email.utils import parsedate_to_datetime
 from .article_quality import publication_quality
 from .editorial_rules import SYSTEM_PROMPT,category_rule
+from .model_response import extract_model_text
 ASSIGNMENT_EDITOR_MODEL='claude-sonnet-5';WRITER_MODEL='claude-sonnet-4-5';DEFAULT_CARD_COUNT=8
 
 def _parse(text):
@@ -36,7 +37,7 @@ Plain is a nationwide U.S. general-news product. Category rule: {category_rule(c
 Reject routine local incidents without national significance, promotions/listicles, opinion-only items, thin/discovery-only sources, stale reprints and category misfits. Choose one hero only from hero_eligible=true and up to {card_count} distinct cards. A source with material_update_candidate=true has already passed a bounded semantic same-event/material-new-facts gate against an existing Plain canonical; treat it as a protected current development and strongly prefer selecting it unless it is unsafe or outside this category. Do not assign two reports of the same event.
 Return ONLY JSON: {{"hero":{{"source_index":1,"angle":"specific factual angle","urgency_score":8}},"cards":[{{"source_index":2,"angle":"...","urgency_score":6}}],"rejected":[{{"source_index":3,"reason":"..."}}]}}
 SOURCE PACKET:\n{build_assignment_editor_packet(category_key,category_label,sources)}'''
- r=client.with_options(timeout=max(1,float(timeout_seconds)),max_retries=0).messages.create(model=ASSIGNMENT_EDITOR_MODEL,max_tokens=1800,system=[{'type':'text','text':SYSTEM_PROMPT,'cache_control':{'type':'ephemeral'}}],messages=[{'role':'user','content':prompt}],extra_headers={'anthropic-beta':'prompt-caching-2024-07-31'});data=_parse(r.content[0].text);valid=set(range(1,len(sources)+1));hero=data.get('hero') if isinstance(data,dict) and isinstance(data.get('hero'),dict) else None
+ r=client.with_options(timeout=max(1,float(timeout_seconds)),max_retries=0).messages.create(model=ASSIGNMENT_EDITOR_MODEL,max_tokens=1800,system=[{'type':'text','text':SYSTEM_PROMPT,'cache_control':{'type':'ephemeral'}}],messages=[{'role':'user','content':prompt}],extra_headers={'anthropic-beta':'prompt-caching-2024-07-31'});data=_parse(extract_model_text(r));valid=set(range(1,len(sources)+1));hero=data.get('hero') if isinstance(data,dict) and isinstance(data.get('hero'),dict) else None
  try:hi=int(hero.get('source_index')) if hero else 0
  except Exception:hi=0
  if hi not in valid or not _record(hi,sources[hi-1])['hero_eligible']:hero=None
@@ -62,7 +63,7 @@ def run_assignment_writer(client,*,category_key,category_label,source,assignment
 Category: {category_label}. Rule: {category_rule(category_key)}. Assigned angle: {assignment.get('angle','')}. Target: {target}.
 ARTICLE CONTRACT: The lead must stand alone and establish who/what/where plus the principal new fact. Any money, percentage, named policy/program, jurisdiction, or major quantitative claim in the headline must also be in the lead. Use full names on first reference. For an update, establish both the original event and what is newly confirmed. Do not invent context, consequences, reactions, motives or what happens next. Do not pad missing information. Paraphrase the source. Return ONLY JSON: {schema}
 EXACT SOURCE TITLE: {source.get('title','')}\nSOURCE PUBLISHED: {source.get('published','')}\nSOURCE QUALITY: {source.get('source_quality','')}\nSOURCE TEXT:\n{text[:12000]}\nPRIOR CANONICAL CONTEXT:\n{_context(source)}'''
- r=client.with_options(timeout=max(1,float(timeout_seconds)),max_retries=0).messages.create(model=WRITER_MODEL,max_tokens=2600 if hero else 1200,system=[{'type':'text','text':SYSTEM_PROMPT,'cache_control':{'type':'ephemeral'}}],messages=[{'role':'user','content':prompt}],extra_headers={'anthropic-beta':'prompt-caching-2024-07-31'});d=_parse(r.content[0].text)
+ r=client.with_options(timeout=max(1,float(timeout_seconds)),max_retries=0).messages.create(model=WRITER_MODEL,max_tokens=2600 if hero else 1200,system=[{'type':'text','text':SYSTEM_PROMPT,'cache_control':{'type':'ephemeral'}}],messages=[{'role':'user','content':prompt}],extra_headers={'anthropic-beta':'prompt-caching-2024-07-31'});d=_parse(extract_model_text(r))
  item={'headline':str(d.get('headline') or '').strip(),'body':str(d.get('body') or '').strip(),'teaser':str(d.get('teaser') or '').strip(),'urgency_score':int(assignment.get('urgency_score') or 5),'source_index':int(assignment.get('source_index')),'published':str(source.get('published') or ''),'source_published_raw':str(source.get('published') or ''),'link':str(source.get('link') or source.get('source_url') or ''),'source_title':str(source.get('title') or ''),'source_summary':str(source.get('summary') or ''),'article_text':text,'source_quality':str(source.get('source_quality') or ''),'source_name':str(source.get('publisher_name') or ''),'image_url':str(source.get('image_url') or ''),'assignment_angle':str(assignment.get('angle') or '')}
  if source.get('canonical_context'):item['canonical_context']=source['canonical_context']
  if source.get('pre_generation_material_update'):

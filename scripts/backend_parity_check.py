@@ -40,7 +40,7 @@ REQUIRED_ENGINE_MODULES = {
 REQUIRED_PLAIN_MODULES = {
     "archive_identity", "article_quality", "assignment_pipeline",
     "category_classifier", "editorial_rules", "generation_cache",
-    "image_authority", "national_relevance", "source_recovery",
+    "image_authority", "model_response", "national_relevance", "source_recovery",
 }
 
 # These tokens must occur in the live generator. Their presence prevents a

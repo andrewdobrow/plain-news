@@ -39,6 +39,7 @@ from plain_engine.assignment_pipeline import run_live_assignment_category
 from plain_engine.category_classifier import classify_stories
 from plain_engine.article_quality import enforce_category_quality, write_quality_report
 from plain_engine.model_usage import ModelUsageTracker, instrument_anthropic_client
+from plain_engine.model_response import extract_model_text
 from plain_engine.semantic_publication_gate import retrieve_recent_candidates, adjudicate_candidates, ACTION_DUPLICATE, ACTION_UPDATE, ACTION_NEW, ACTION_HOLD
 from plain_engine.semantic_material_update import compose_material_update
 from scripts.editorial_runtime import apply_editorial_engine
@@ -788,7 +789,7 @@ Return ONLY valid JSON:
         extra_headers={"anthropic-beta": "prompt-caching-2024-07-31"},
     )
 
-    raw = response.content[0].text.strip()
+    raw = extract_model_text(response)
     if raw.startswith("```"):
         raw = raw.split("```")[1]
         if raw.startswith("json"):
@@ -1164,7 +1165,7 @@ def enhance_card(card, content_bank, headlines):
             max_tokens=300,
             messages=[{"role": "user", "content": prompt}]
         )
-        enhanced = resp.content[0].text.strip()
+        enhanced = extract_model_text(resp)
         explanation_signals = ["i cannot rewrite", "source material", "does not match", "cannot proceed"]
         if enhanced and not any(s in enhanced.lower()[:150] for s in explanation_signals):
             card["body"] = strip_markdown(enhanced, headline)
@@ -1196,7 +1197,7 @@ def enhance_hero_article(hero, full_text):
             max_tokens=1200,
             messages=[{"role": "user", "content": prompt}]
         )
-        enhanced = resp.content[0].text.strip()
+        enhanced = extract_model_text(resp)
         # Detect if Claude returned an explanation instead of an article
         explanation_signals = ["i cannot rewrite", "source material", "does not match", "i must return", "cannot proceed"]
         if enhanced and not any(s in enhanced.lower()[:200] for s in explanation_signals):
@@ -1454,7 +1455,7 @@ def select_front_page_hero(all_categories):
             max_tokens=500,
             messages=[{"role": "user", "content": prompt}]
         )
-        raw = resp.content[0].text.strip()
+        raw = extract_model_text(resp)
         import re as _re
         # Prefer the explicit PICK: line; fall back to last number in the text
         pick_match = _re.search(r"PICK:\s*(\d+)", raw, _re.IGNORECASE)
@@ -1505,7 +1506,7 @@ def promote_duplicate_heroes(top_cat, all_categories):
             max_tokens=200,
             messages=[{"role": "user", "content": prompt}]
         )
-        raw = resp.content[0].text.strip()
+        raw = extract_model_text(resp)
         if raw.startswith("```"):
             raw = raw.split("```")[1].lstrip("json").strip()
         dupes = set(int(x) for x in json.loads(raw))
@@ -1597,7 +1598,7 @@ def global_rank(all_cards, dedupe_against=None):
             max_tokens=600,
             messages=[{"role": "user", "content": prompt}]
         )
-        raw = resp.content[0].text.strip()
+        raw = extract_model_text(resp)
         if raw.startswith("```"):
             raw = raw.split("```")[1].lstrip("json").strip()
         indices = json.loads(raw)

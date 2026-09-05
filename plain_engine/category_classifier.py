@@ -2,6 +2,7 @@
 from __future__ import annotations
 import json,re
 from .generation_cache import CACHE_MISS,cache_hash
+from .model_response import extract_model_text
 MODEL='claude-sonnet-4-5';VALID={'world','us','politics','business','tech','sports','entertainment','none'}
 def _parse(t):
  raw=re.sub(r'^```(?:json)?\s*|\s*```$','',str(t or '').strip(),flags=re.I)
@@ -16,7 +17,7 @@ def classify_stories(client,rows,cache):
  packet=[{'index':i,'title':r.get('title',''),'summary':str(r.get('summary',''))[:900],'publisher':r.get('publisher_name','')} for i,r in enumerate(rows,1)]
  prompt=f'''Classify each source story for Plain, a nationwide U.S. general-news publication. Return ONLY a JSON object mapping source index strings to arrays of category keys. Allowed: world, us, politics, business, tech, sports, entertainment, none. Multiple categories only when genuinely central. Use none for routine local incidents without national significance, promotional/listing content, opinion-only items, evergreen service material, or non-news. world=consequential non-U.S. events/diplomacy/war; us=major U.S. national/state developments; politics=U.S. government/elections/policy; business=economy/markets/companies/labor/trade; tech=technology/science/space; sports=meaningful sports news; entertainment=film/TV/music/media/culture. SOURCES:{json.dumps(packet,ensure_ascii=False)}'''
  try:
-  d=_parse(client.messages.create(model=MODEL,max_tokens=1800,messages=[{'role':'user','content':prompt}]).content[0].text);m={}
+  response=client.messages.create(model=MODEL,max_tokens=1800,messages=[{'role':'user','content':prompt}]);d=_parse(extract_model_text(response));m={}
   for i in range(1,len(rows)+1):
    raw=d.get(str(i),[]) if isinstance(d,dict) else [];raw=[raw] if isinstance(raw,str) else raw;vals=[str(x).strip().lower() for x in raw if str(x).strip().lower() in VALID];m[i]=vals or ['none']
  except Exception:m={i:[] for i in range(1,len(rows)+1)}
