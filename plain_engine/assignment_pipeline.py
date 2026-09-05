@@ -7,6 +7,10 @@ from .article_quality import publication_quality
 from .editorial_rules import SYSTEM_PROMPT,category_rule
 from .model_response import extract_model_text
 ASSIGNMENT_EDITOR_MODEL='claude-sonnet-5';WRITER_MODEL='claude-sonnet-4-5';DEFAULT_CARD_COUNT=8
+# Sonnet 5 enables adaptive thinking by default. This bounded assignment task only
+# needs compact structured selection JSON, so disable thinking explicitly rather
+# than letting reasoning consume the 1,800-token response ceiling before JSON.
+ASSIGNMENT_EDITOR_THINKING={'type':'disabled'}
 
 def _parse(text):
  raw=str(text or '').strip();raw=re.sub(r'^```(?:json)?\s*|\s*```$','',raw,flags=re.I)
@@ -37,7 +41,7 @@ Plain is a nationwide U.S. general-news product. Category rule: {category_rule(c
 Reject routine local incidents without national significance, promotions/listicles, opinion-only items, thin/discovery-only sources, stale reprints and category misfits. Choose one hero only from hero_eligible=true and up to {card_count} distinct cards. A source with material_update_candidate=true has already passed a bounded semantic same-event/material-new-facts gate against an existing Plain canonical; treat it as a protected current development and strongly prefer selecting it unless it is unsafe or outside this category. Do not assign two reports of the same event.
 Return ONLY JSON: {{"hero":{{"source_index":1,"angle":"specific factual angle","urgency_score":8}},"cards":[{{"source_index":2,"angle":"...","urgency_score":6}}],"rejected":[{{"source_index":3,"reason":"..."}}]}}
 SOURCE PACKET:\n{build_assignment_editor_packet(category_key,category_label,sources)}'''
- r=client.with_options(timeout=max(1,float(timeout_seconds)),max_retries=0).messages.create(model=ASSIGNMENT_EDITOR_MODEL,max_tokens=1800,system=[{'type':'text','text':SYSTEM_PROMPT,'cache_control':{'type':'ephemeral'}}],messages=[{'role':'user','content':prompt}],extra_headers={'anthropic-beta':'prompt-caching-2024-07-31'});data=_parse(extract_model_text(r));valid=set(range(1,len(sources)+1));hero=data.get('hero') if isinstance(data,dict) and isinstance(data.get('hero'),dict) else None
+ r=client.with_options(timeout=max(1,float(timeout_seconds)),max_retries=0).messages.create(model=ASSIGNMENT_EDITOR_MODEL,max_tokens=1800,thinking=ASSIGNMENT_EDITOR_THINKING,system=[{'type':'text','text':SYSTEM_PROMPT,'cache_control':{'type':'ephemeral'}}],messages=[{'role':'user','content':prompt}],extra_headers={'anthropic-beta':'prompt-caching-2024-07-31'});data=_parse(extract_model_text(r));valid=set(range(1,len(sources)+1));hero=data.get('hero') if isinstance(data,dict) and isinstance(data.get('hero'),dict) else None
  try:hi=int(hero.get('source_index')) if hero else 0
  except Exception:hi=0
  if hi not in valid or not _record(hi,sources[hi-1])['hero_eligible']:hero=None

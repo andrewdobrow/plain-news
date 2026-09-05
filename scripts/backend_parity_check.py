@@ -18,6 +18,7 @@ ENGINE = ROOT / "plain_engine"
 GENERATOR = ROOT / "scripts" / "generate.py"
 RUNTIME = ROOT / "scripts" / "editorial_runtime.py"
 WORKFLOW = ROOT / ".github" / "workflows" / "update.yml"
+ASSIGNMENT_PIPELINE = ENGINE / "assignment_pipeline.py"
 
 # Reusable engine modules present in the TCT reference backend. TCT's
 # local_relevance and membership_paywall are intentionally replaced/omitted.
@@ -65,6 +66,11 @@ REQUIRED_LIVE_GENERATOR_HOOKS = {
     "write_model_usage_report": "model cost/token observability",
 }
 
+REQUIRED_ASSIGNMENT_PIPELINE_HOOKS = {
+    "ASSIGNMENT_EDITOR_THINKING={'type':'disabled'}": "Sonnet 5 adaptive-thinking disablement",
+    "thinking=ASSIGNMENT_EDITOR_THINKING": "assignment request applies non-thinking mode",
+}
+
 REQUIRED_RUNTIME_HOOKS = {
     "pre_generation_material_update": "validated-update placement priority",
     "story_id": "persistent identity propagation",
@@ -107,6 +113,7 @@ def main() -> int:
         failures.append("TCT membership_paywall.py should not be part of Plain newsroom parity")
 
     failures += [f"generator missing live hook: {x}" for x in _missing_tokens(GENERATOR, REQUIRED_LIVE_GENERATOR_HOOKS)]
+    failures += [f"assignment pipeline missing hardening: {x}" for x in _missing_tokens(ASSIGNMENT_PIPELINE, REQUIRED_ASSIGNMENT_PIPELINE_HOOKS)]
     failures += [f"runtime missing live hook: {x}" for x in _missing_tokens(RUNTIME, REQUIRED_RUNTIME_HOOKS)]
     failures += [f"workflow missing hardening: {x}" for x in _missing_tokens(WORKFLOW, REQUIRED_WORKFLOW_TOKENS)]
 

@@ -26,5 +26,22 @@ def extract_model_text(response, *, require_text: bool = True) -> str:
             chunks.append(str(value))
     text = "\n".join(chunks).strip()
     if require_text and not text:
-        raise ValueError("Anthropic response contained no text blocks")
+        block_types = []
+        for block in (getattr(response, "content", None) or []):
+            if isinstance(block, dict):
+                block_type = block.get("type") or "mapping"
+            else:
+                block_type = getattr(block, "type", None) or type(block).__name__
+            block_types.append(str(block_type))
+        stop_reason = getattr(response, "stop_reason", None)
+        usage = getattr(response, "usage", None)
+        if isinstance(usage, dict):
+            output_tokens = usage.get("output_tokens")
+        else:
+            output_tokens = getattr(usage, "output_tokens", None) if usage is not None else None
+        raise ValueError(
+            "Anthropic response contained no text blocks "
+            f"(stop_reason={stop_reason!r}, block_types={block_types!r}, "
+            f"output_tokens={output_tokens!r})"
+        )
     return text

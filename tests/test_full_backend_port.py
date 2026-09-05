@@ -197,14 +197,24 @@ def test_assignment_pipeline_accepts_thinking_block_before_assignment_json():
         'link': 'https://example.com/policy', 'source_quality': 'full',
         'published': 'Fri, 04 Sep 2026 16:00:00 GMT', 'publisher_name': 'Reuters',
     }
-    result = run_live_assignment_category(ThinkingClient(), 'us', 'U.S.', [source], card_count=0)
+    client = ThinkingClient()
+    result = run_live_assignment_category(client, 'us', 'U.S.', [source], card_count=0)
     assert result['hero']['source_index'] == 1
     assert result['hero']['headline'] == 'Federal agency announces national policy action'
+    # Sonnet 5 enables adaptive thinking by default. The assignment editor is a
+    # bounded JSON selection task, so production must disable thinking explicitly.
+    assert client.messages.prompts[0]['model'] == 'claude-sonnet-5'
+    assert client.messages.prompts[0]['thinking'] == {'type': 'disabled'}
+    assert client.messages.prompts[0]['max_tokens'] == 1800
 
 
 def test_model_response_parser_raises_clear_error_when_no_text_block():
     import pytest
     from plain_engine.model_response import extract_model_text
-    response = SimpleNamespace(content=[SimpleNamespace(type='thinking', thinking='internal')])
-    with pytest.raises(ValueError, match='no text blocks'):
+    response = SimpleNamespace(
+        content=[SimpleNamespace(type='thinking', thinking='internal')],
+        stop_reason='max_tokens',
+        usage=SimpleNamespace(output_tokens=1800),
+    )
+    with pytest.raises(ValueError, match=r"no text blocks .*stop_reason='max_tokens'.*thinking.*1800"):
         extract_model_text(response)
