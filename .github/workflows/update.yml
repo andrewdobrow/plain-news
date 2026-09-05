@@ -1,7 +1,7 @@
 name: Update News
 
 on:
-  workflow_dispatch:
+  workflow_dispatch: {}
 
 jobs:
   update:
