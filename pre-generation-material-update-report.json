@@ -1,206 +1,48 @@
 {
-  "generated_at": "2026-09-06T10:03:54Z",
-  "evaluated": 16,
-  "material_updates": 1,
-  "duplicates_suppressed": 13,
-  "holds_suppressed": 1,
+  "generated_at": "2026-09-06T16:02:07Z",
+  "evaluated": 4,
+  "material_updates": 0,
+  "duplicates_suppressed": 3,
+  "holds_suppressed": 0,
   "new_or_unmatched": 1,
   "items": [
     {
       "category": "world",
-      "title": "TV presenter among 12 sentenced to death in Egypt drugs case",
-      "source_url": "https://www.bbc.co.uk/news/articles/c5y7gk9knnlo?at_medium=RSS&at_campaign=rss",
+      "title": "Volcano eruption leaves 150,000 passengers stranded in Indonesia",
+      "source_url": "https://www.bbc.co.uk/news/articles/cvgy5k4n07ko?at_medium=RSS&at_campaign=rss",
       "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-09-06-egyptian-court-sentences-tv-presenter-and-11-others-to-death-in-drug-trafficking",
-      "confidence": 0.97,
-      "novel_facts": [
-        "Additional context on 20 witness statements and electronic evidence",
-        "Reference to 2025 Amnesty International report on death sentences in Egypt"
-      ],
-      "reason": "This is the same court case involving TV presenter Sarah Khalifa and 11 others sentenced to death for drug trafficking in Egypt, sourced from the same BBC article URL. The incoming article adds background details (Amnesty report statistics, witness count) but no material update like a new legal development, appeal outcome, or changed sentence.",
-      "cache_hit": false
-    },
-    {
-      "category": "world",
-      "title": "TV presenter among 11 sentenced to death in Egypt drugs case - bbc.com",
-      "source_url": "https://www.bbc.com/news/articles/c5y7gk9knnlo",
-      "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-09-06-egyptian-court-sentences-tv-presenter-and-11-others-to-death-in-drug-trafficking",
-      "confidence": 0.98,
-      "novel_facts": [
-        "2025 Amnesty International report statistics on death sentences (background context, not material update)"
-      ],
-      "reason": "Identical event (same defendant, same verdict, same source article) with no new material development beyond added background context from an Amnesty report; content substantially overlaps with existing canonical.",
-      "cache_hit": false
-    },
-    {
-      "category": "us",
-      "title": "TV presenter among 12 sentenced to death in Egypt drugs case",
-      "source_url": "https://www.bbc.co.uk/news/articles/c5y7gk9knnlo?at_medium=RSS&at_campaign=rss",
-      "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-09-06-egyptian-court-sentences-tv-presenter-and-11-others-to-death-in-drug-trafficking",
-      "confidence": 0.97,
-      "novel_facts": [
-        "Additional context on 20 witness statements and electronic evidence",
-        "Reference to 2025 Amnesty International report on death sentences in Egypt"
-      ],
-      "reason": "This is the same court case involving TV presenter Sarah Khalifa and 11 others sentenced to death for drug trafficking in Egypt, sourced from the same BBC article URL. The incoming article adds background details (Amnesty report statistics, witness count) but no material update like a new legal development, appeal outcome, or changed sentence.",
-      "cache_hit": true
-    },
-    {
-      "category": "us",
-      "title": "Ukraine war briefing: Zelenskyy links Russian strikes on Kyiv airports to US envoys' visit - The Guardian",
-      "source_url": "https://www.theguardian.com/world/2026/sep/06/ukraine-war-briefing-zelenskyy-links-russian-strikes-on-kyiv-airports-to-us-envoys-visit",
-      "action": "new_story",
-      "selected_candidate_slug": "",
-      "confidence": 0.95,
-      "novel_facts": [
-        "Strikes on Kyiv and Boryspil airports linked by Zelenskyy to US envoys Kushner/Witkoff visit",
-        "Kushner and Witkoff talks with Putin in Moscow and planned Kyiv meeting",
-        "Putin's order for 3-day pause on Kyiv strikes via Peskov",
-        "5 killed at industrial facility in Dnipropetrovsk on this date",
-        "Attacks in Belgorod region killing 2"
-      ],
-      "reason": "The candidate is a distinct, dated (July 2, 2026) mass-casualty Kyiv strike story (21 killed) with different casualty figures and context (Ukrainian deep strikes into Russia). The incoming article covers a separate news day (Sept 6, 2026) centered on Zelenskyy linking new airport strikes to the Kushner/Witkoff Moscow-Kyiv diplomatic visit, with different casualty counts and entirely different named diplomatic actors and locations. No shared specific incident, date, or casualty figures indicate this is the same event; it is a new daily war-briefing story.",
-      "cache_hit": false
-    },
-    {
-      "category": "tech",
-      "title": "Seattle Times and Newsday are the latest publications to sue OpenAI and Microsoft",
-      "source_url": "https://techcrunch.com/2026/09/05/seattle-times-and-newsday-are-the-latest-publications-to-sue-openai-and-microsoft/",
-      "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-09-06-seattle-times-and-newsday-sue-openai-and-microsoft-over-alleged-unauthorized-use",
+      "selected_candidate_slug": "2026-09-06-volcanic-eruption-strands-150000-passengers-as-indonesia-closes-six-airports",
       "confidence": 0.98,
       "novel_facts": [],
-      "reason": "Identical article content and same source URL describing the same lawsuit filing by the same plaintiffs against the same defendants, with no new facts beyond the existing canonical version.",
-      "cache_hit": true
-    },
-    {
-      "category": "tech",
-      "title": "Ganymede may hold more liquid water than all of Earth’s oceans combined, yet this immense reservoir is buried beneath roughly 150 kilometres of ice—and scientists still do not know whether any of it has ever reached the surface. - Space Daily",
-      "source_url": "https://spacedaily.com/t-ganymede-ocean-150km-ice-surface-exchange/",
-      "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-09-06-ganymede-may-hold-more-liquid-water-than-all-of-earths-oceans-buried-beneath-rou",
-      "confidence": 0.97,
-      "novel_facts": [],
-      "reason": "This is the same science explainer article about Ganymede's subsurface ocean, sourced from the identical Space Daily URL, covering the same evidence (magnetometry, Hubble aurora data, Juno findings) and same core claim. No new facts, findings, or events are introduced; it's a rehash/reformatting of the same content already canonicalized a day earlier.",
-      "cache_hit": true
-    },
-    {
-      "category": "tech",
-      "title": "OpenAI confirms ‘wiki incident,’ says it’s ‘working on a framework’ for more disclosure",
-      "source_url": "https://techcrunch.com/2026/09/05/openai-confirms-wiki-incident-says-its-working-on-a-framework-for-more-disclosure/",
-      "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-09-06-openai-confirms-ai-agents-took-over-german-wiki-forum-in-misalignment-incident-d",
-      "confidence": 0.97,
-      "novel_facts": [],
-      "reason": "Same source article (identical source_url and source_headline) covering OpenAI's statement on the wiki misalignment incident; content is near-identical paraphrase with no new facts beyond the existing canonical.",
-      "cache_hit": false
-    },
-    {
-      "category": "tech",
-      "title": "No, Sony isn't cutting PlayStation disc production by 90 percent, just 10 - Eurogamer.net",
-      "source_url": "https://www.eurogamer.net/sony-playstation-disc-production-10-percent-decline-not-90",
-      "action": "update_existing_canonical",
-      "selected_candidate_slug": "2026-07-03-sony-to-end-playstation-disc-production-as-industry-shifts-digital",
-      "confidence": 0.82,
-      "novel_facts": [
-        "Sony DADC spokesperson clarifies the actual figure is a 10 percent volume decline in 2028, not a drop to 10 percent of current output",
-        "Correction of widespread misreporting stemming from DADC chief Dietmar Tanzer's July comments",
-        "Analyst and former SIE exec commentary on implications of disc-free future",
-        "Mention of Conectiv Supply Chain Solutions as a possible alternative manufacturer"
-      ],
-      "reason": "This is a direct follow-up to the same Sony PlayStation disc-production story, correcting a key misreported statistic (90% vs 10% decline) tied to the same executive comments and policy timeline covered in the canonical article. It materially changes the scale of what was previously reported, but functions as a clarification/correction rather than a new accountability or investigative angle, so it belongs folded into the existing canonical rather than spawning a new URL.",
+      "reason": "Identical BBC article covering the same Anak Krakatau eruption event, same airport closures, same figures and quotes, published same day from the same source URL. No new facts beyond the existing canonical version.",
       "cache_hit": false
     },
     {
       "category": "sports",
-      "title": "US Open 2026 results: Coco Gauff wins but Amanda Anisimova and Madison Keys out - bbc.com",
-      "source_url": "https://www.bbc.com/sport/tennis/articles/cvgy7jxwzg6o",
-      "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-09-06-coco-gauff-advances-to-us-open-fourth-round-as-madison-keys-and-amanda-anisimova",
-      "confidence": 0.98,
-      "novel_facts": [],
-      "reason": "Same BBC article (identical source_url) reporting the same US Open third-round results with the same quotes from Gauff and Keys and the same match outcomes. No new facts beyond what's already in the canonical version; this is a duplicate ingestion of the identical story.",
-      "cache_hit": false
-    },
-    {
-      "category": "entertainment",
-      "title": "Mariska Hargitay Wins Two Emmys For ‘My Mom Jayne,’ Thanks Gloria Steinem From Stage - Deadline",
-      "source_url": "https://deadline.com/2026/09/mariska-hargitay-primetime-emmy-wins-my-mom-jayne-1237069307/",
-      "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-09-06-mariska-hargitay-wins-two-emmys-for-hbo-documentary-about-her-mother-jayne-mansf",
-      "confidence": 0.99,
-      "novel_facts": [],
-      "reason": "Same source article (identical source_url) reporting the identical event: Hargitay's two Emmy wins for My Mom Jayne with the same Steinem tribute and backstage quotes. No new facts beyond what the canonical already covers.",
-      "cache_hit": false
-    },
-    {
-      "category": "entertainment",
-      "title": "Bad Bunny Wins Emmy for Super Bowl Halftime Show",
-      "source_url": "https://variety.com/2026/artisans/awards/bad-bunny-emmy-super-bowl-halftime-show-1236849643/",
-      "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-09-06-bad-bunnys-super-bowl-halftime-show-and-the-traitors-lead-creative-arts-emmys-ni",
-      "confidence": 0.92,
-      "novel_facts": [
-        "Quote from creative director Harriet Cuddeford about the performance's meaning"
-      ],
-      "reason": "Both articles cover the identical event: Bad Bunny's Super Bowl halftime show winning Emmys at the Creative Arts Emmy Awards, with the same seven category wins listed. The incoming article is narrower in scope but adds only a supporting quote about creative intent, which is color/context rather than a material update like a new fact changing what readers need to know.",
-      "cache_hit": true
-    },
-    {
-      "category": "entertainment",
-      "title": "Bad Bunny Wins Emmy for Super Bowl Halftime Show - Variety",
-      "source_url": "https://variety.com/2026/artisans/awards/bad-bunny-emmy-super-bowl-halftime-show-1236849643/",
-      "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-09-06-bad-bunnys-super-bowl-halftime-show-and-the-traitors-lead-creative-arts-emmys-ni",
-      "confidence": 0.9,
-      "novel_facts": [
-        "Jay-Z described as executive producer winning third Emmy",
-        "quote from creative director Harriet Cuddeford about performance meaning"
-      ],
-      "reason": "Both articles report the same Creative Arts Emmy wins for Bad Bunny's Super Bowl LX halftime show at the same ceremony with matching award counts and categories; the incoming piece adds color/quotes but no new consequential fact, so it should update rather than duplicate as a new story.",
-      "cache_hit": false
-    },
-    {
-      "category": "entertainment",
-      "title": "'The Debut' Has 7 Songs Written by Jesse Eisenberg, Getting Oscar Push - The Hollywood Reporter",
-      "source_url": "https://www.hollywoodreporter.com/movies/movie-news/the-debut-jesse-eisenberg-original-songs-oscar-push-1236687820/",
-      "action": "hold",
-      "selected_candidate_slug": "2026-09-06-julianne-moore-and-paul-giamatti-generate-oscar-buzz-after-jesse-eisenbergs-the",
-      "confidence": 0.75,
-      "novel_facts": [
-        "Eisenberg wrote all 7 original songs for the film",
-        "A24 is pushing 'This City May Have Chewed Me Up (But It Hasn't Spit Me Out)' for Best Original Song",
-        "List of other songwriters in contention this awards season (Swift, Travis Scott, Byrne, etc.)"
-      ],
-      "reason": "Both articles cover the same real-world event: the Telluride premiere and Oscar campaign for Eisenberg's 'The Debut.' The incoming piece adds a distinct but related awards-campaign detail (original song Oscar push) not in the existing canonical, which is a material update to the film's Oscar narrative rather than a standalone accountability or consequence story, so it should update the existing canonical rather than mint a new URL.",
-      "cache_hit": false
-    },
-    {
-      "category": "entertainment",
-      "title": "The next James Bond: The (00)7 questions fans want answered",
-      "source_url": "https://www.bbc.co.uk/news/articles/cm2qnq0py5vo?at_medium=RSS&at_campaign=rss",
-      "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-09-06-casting-for-next-james-bond-may-conclude-by-years-end-producer-says",
-      "confidence": 0.97,
-      "novel_facts": [],
-      "reason": "This is the identical BBC article (same source_url and near-identical body/quotes) already captured by the existing canonical about James Bond casting speculation. No new facts are introduced beyond what's already covered.",
-      "cache_hit": true
-    },
-    {
-      "category": "entertainment",
-      "title": "TV presenter among 12 sentenced to death in Egypt drugs case",
-      "source_url": "https://www.bbc.co.uk/news/articles/c5y7gk9knnlo?at_medium=RSS&at_campaign=rss",
-      "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-09-06-egyptian-court-sentences-tv-presenter-and-11-others-to-death-in-drug-trafficking",
+      "title": "LIVE: F1 Italian Grand Prix updates - Kimi Antonelli leads George Russell in closing stages | Live text - Motorsport.com",
+      "source_url": "https://www.motorsport.com/f1/live-text/f1-italian-gp-live-commentary-and-updates-race-1127678/1127679/",
+      "action": "new_story",
+      "selected_candidate_slug": "",
       "confidence": 0.97,
       "novel_facts": [
-        "Additional context on 20 witness statements and electronic evidence",
-        "Reference to 2025 Amnesty International report on death sentences in Egypt"
+        "Italian Grand Prix at Monza",
+        "Antonelli wins from 19th on grid",
+        "Race date Sept 6 2026",
+        "Verstappen third, Norris passes Piastri for fourth"
       ],
-      "reason": "This is the same court case involving TV presenter Sarah Khalifa and 11 others sentenced to death for drug trafficking in Egypt, sourced from the same BBC article URL. The incoming article adds background details (Amnesty report statistics, witness count) but no material update like a new legal development, appeal outcome, or changed sentence.",
-      "cache_hit": true
+      "reason": "Candidate covers a different race (British GP sprint at Silverstone, July 2026) with a different winner/result context. Incoming article covers the Italian Grand Prix at Monza on a different date with a distinct race outcome (Antonelli from P19 to win). No shared event anchors beyond driver names and sport; this is a separate race entirely, warranting its own story.",
+      "cache_hit": false
+    },
+    {
+      "category": "entertainment",
+      "title": "Bad Bunny’s Super Bowl Halftime Show Wins 7 Emmy Awards",
+      "source_url": "https://www.rollingstone.com/music/music-news/bad-bunny-super-bowl-halftime-show-wins-7-emmy-awards-1235622294/",
+      "action": "duplicate_use_existing_canonical",
+      "selected_candidate_slug": "2026-09-06-bad-bunnys-super-bowl-halftime-show-and-the-traitors-lead-creative-arts-emmys-ni",
+      "confidence": 0.95,
+      "novel_facts": [],
+      "reason": "Both articles report the identical event: Bad Bunny's Super Bowl halftime show winning 7 Emmys at the Creative Arts Emmys, with Sabrina Carpenter also winning for The Muppet Show. The incoming article adds minor color (Jay-Z's third Emmy count, SNL makeup win, Colbert's wins) but no material update like a new development, ruling, or accountability angle beyond what's already covered in the canonical article, which already contains this information plus additional details (Hargitay, Kimmel, etc).",
+      "cache_hit": false
     },
     {
       "category": "politics",

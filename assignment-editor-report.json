@@ -1,43 +1,55 @@
 {
-  "generated_at": "2026-09-06T10:13:12.151970Z",
+  "generated_at": "2026-09-06T16:12:21.602886Z",
   "assignment_editor_model": "claude-sonnet-5",
   "writer_model": "claude-sonnet-4-5",
   "categories": [
     {
       "category_key": "world",
-      "hero_source_index": 4,
+      "hero_source_index": 1,
       "card_source_indexes": [
-        1,
-        3
+        7,
+        6,
+        5,
+        2
       ],
       "diagnostics": {
         "model": "claude-sonnet-5",
         "writer_model": "claude-sonnet-4-5",
         "rejected": [
           {
-            "source_index": 2,
-            "reason": "Aggregated live-blog roundup with stale, months-old ceasefire details already reported; not a distinct current development and lacks a clear single-event news angle."
+            "source_index": 3,
+            "reason": "Duplicate of source 2, same Delhi building collapse event."
           }
         ],
-        "writer_failures": [],
+        "writer_failures": [
+          {
+            "source_index": 4,
+            "reason": [
+              "headline_entity_missing_from_lead"
+            ]
+          }
+        ],
         "protected_material_update_repairs": [],
-        "editor_selected_card_count": 2,
+        "editor_selected_card_count": 5,
         "section_depth_target": 8,
-        "section_depth_accepted_cards": 2,
-        "section_depth_shortfall": 6,
+        "section_depth_accepted_cards": 4,
+        "section_depth_shortfall": 4,
         "depth_backfill_writer_attempts": 0,
-        "writer_card_attempts": 2,
-        "duration_seconds": 21.926
+        "writer_card_attempts": 5,
+        "duration_seconds": 35.933
       }
     },
     {
       "category_key": "us",
-      "hero_source_index": 1,
+      "hero_source_index": 3,
       "card_source_indexes": [
         2,
-        3,
-        4,
-        6
+        1,
+        5,
+        7,
+        8,
+        9,
+        11
       ],
       "diagnostics": {
         "model": "claude-sonnet-5",
@@ -45,50 +57,63 @@
         "rejected": [
           {
             "source_index": 1,
-            "reason": "Foreign disaster with no US angle; belongs in World, not U.S."
-          },
-          {
-            "source_index": 2,
-            "reason": "UK politics story, foreign political actor and institutions; belongs in World, not U.S."
-          },
-          {
-            "source_index": 3,
-            "reason": "Sports retirement feature, no national U.S. news relevance; belongs in Sports."
+            "reason": "Primarily a foreign policy and diplomacy story about Ukraine-Russia peace talks; belongs in World or Politics, not U.S. domestic law/courts/safety/society coverage."
           },
           {
             "source_index": 4,
-            "reason": "US diplomatic negotiators in foreign policy context primarily concerns war diplomacy; belongs in World/Politics, not U.S. category."
+            "reason": "Sports result (Formula 1 race), not a U.S. news category fit."
           },
           {
             "source_index": 5,
-            "reason": "Primarily a politics/opinion-driven story centered on a mayor's political conduct and partisan reactions; belongs in Politics, not U.S. category, and is heavily editorialized/quote-driven rather than neutral news."
+            "reason": "Foreign story about Jamaica and the UK monarchy; belongs in World, not U.S."
           },
           {
             "source_index": 6,
-            "reason": "Ukraine war briefing, foreign conflict story; belongs in World, not U.S."
+            "reason": "Sports player ratings piece, not U.S. news category fit."
           },
           {
             "source_index": 7,
-            "reason": "Federal election policy and litigation over voting rules is a Politics-primary story (government/policy/legal battle over elections); duplicates Politics frame rather than U.S. general-interest angle."
+            "reason": "Foreign disaster in Delhi, India; belongs in World, not U.S."
+          },
+          {
+            "source_index": 8,
+            "reason": "Sports governance story (FIFA presidency), not U.S. news category fit."
+          },
+          {
+            "source_index": 9,
+            "reason": "UK political story about the Green Party; belongs in World or Politics (UK), not U.S."
+          },
+          {
+            "source_index": 10,
+            "reason": "UK political podcast episode description about Labour Party leadership; not a U.S. story and too thin as a news item."
+          },
+          {
+            "source_index": 11,
+            "reason": "UK domestic protest story in Dover, England; no U.S. relevance, belongs in World."
           }
         ],
         "writer_failures": [
           {
-            "source_index": 5,
+            "source_index": 4,
             "reason": [
-              "generated_copy_drifted_from_source_focus",
-              "headline_entity_missing_from_lead"
+              "JSONDecodeError"
+            ]
+          },
+          {
+            "source_index": 6,
+            "reason": [
+              "JSONDecodeError"
             ]
           }
         ],
         "protected_material_update_repairs": [],
-        "editor_selected_card_count": 0,
+        "editor_selected_card_count": 1,
         "section_depth_target": 8,
-        "section_depth_accepted_cards": 4,
-        "section_depth_shortfall": 4,
-        "depth_backfill_writer_attempts": 5,
-        "writer_card_attempts": 5,
-        "duration_seconds": 65.766
+        "section_depth_accepted_cards": 7,
+        "section_depth_shortfall": 1,
+        "depth_backfill_writer_attempts": 8,
+        "writer_card_attempts": 9,
+        "duration_seconds": 64.134
       }
     },
     {
@@ -111,63 +136,219 @@
     },
     {
       "category_key": "tech",
-      "hero_source_index": null,
+      "hero_source_index": 5,
       "card_source_indexes": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
+        10,
+        8,
+        4,
+        7,
+        3,
+        12,
+        13
       ],
       "diagnostics": {
-        "status": "archive_recovery",
-        "reason": "Live source/generation path unavailable; reused recent published canonicals."
+        "model": "claude-sonnet-5",
+        "writer_model": "claude-sonnet-4-5",
+        "rejected": [
+          {
+            "source_index": 2,
+            "reason": "Duplicate of source 1, same Verge Fairphone 6 Plus review with identical text."
+          },
+          {
+            "source_index": 11,
+            "reason": "Gaming/entertainment story about Pokemon esports tournament rules, not a technology or science story; better suited to entertainment category."
+          },
+          {
+            "source_index": 12,
+            "reason": "Video game sales figures, an entertainment story with no technology or science angle."
+          },
+          {
+            "source_index": 13,
+            "reason": "Video game trailer and release date announcement, entertainment content misclassified as tech."
+          }
+        ],
+        "writer_failures": [
+          {
+            "source_index": 9,
+            "reason": [
+              "generated_copy_drifted_from_source_focus"
+            ]
+          },
+          {
+            "source_index": 1,
+            "reason": [
+              "person_first_reference_not_full_name"
+            ]
+          },
+          {
+            "source_index": 6,
+            "reason": [
+              "person_first_reference_not_full_name"
+            ]
+          },
+          {
+            "source_index": 11,
+            "reason": [
+              "generated_copy_drifted_from_source_focus"
+            ]
+          }
+        ],
+        "protected_material_update_repairs": [],
+        "editor_selected_card_count": 8,
+        "section_depth_target": 8,
+        "section_depth_accepted_cards": 7,
+        "section_depth_shortfall": 1,
+        "depth_backfill_writer_attempts": 3,
+        "writer_card_attempts": 11,
+        "duration_seconds": 84.628
       }
     },
     {
       "category_key": "sports",
-      "hero_source_index": null,
+      "hero_source_index": 1,
       "card_source_indexes": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
+        11,
+        6,
+        10,
+        7,
+        2,
+        13,
+        12,
+        8
       ],
       "diagnostics": {
-        "status": "archive_recovery",
-        "reason": "Live source/generation path unavailable; reused recent published canonicals."
+        "model": "claude-sonnet-5",
+        "writer_model": "claude-sonnet-4-5",
+        "rejected": [
+          {
+            "source_index": 3,
+            "reason": "Duplicate live-blog coverage of the same Antonelli Monza win already covered by the hero selection."
+          },
+          {
+            "source_index": 17,
+            "reason": "Duplicate/deep-dive analysis of the same Italian Grand Prix qualifying and race weekend already represented by the hero story."
+          },
+          {
+            "source_index": 4,
+            "reason": "Duplicate of source 5, same player-ratings piece for Everton vs Man Utd."
+          },
+          {
+            "source_index": 5,
+            "reason": "Player ratings listicle for a routine Premier League draw, not a meaningful result or achievement; also duplicate of source 4."
+          },
+          {
+            "source_index": 8,
+            "reason": "Routine post-game quote piece about a college quarterback's performance, not a notable result, record, or transaction."
+          },
+          {
+            "source_index": 9,
+            "reason": "Routine post-game coach comments after a lopsided non-marquee college football game, thin national relevance."
+          },
+          {
+            "source_index": 15,
+            "reason": "Routine club-level Scottish football roster note about a player leaving for the Asian Games, no material national significance."
+          },
+          {
+            "source_index": 16,
+            "reason": "Local Scottish football team performance analysis with fan reaction, not meaningful for a nationwide U.S. audience."
+          }
+        ],
+        "writer_failures": [
+          {
+            "source_index": 14,
+            "reason": [
+              "person_first_reference_not_full_name"
+            ]
+          }
+        ],
+        "protected_material_update_repairs": [],
+        "editor_selected_card_count": 8,
+        "section_depth_target": 8,
+        "section_depth_accepted_cards": 8,
+        "section_depth_shortfall": 0,
+        "depth_backfill_writer_attempts": 1,
+        "writer_card_attempts": 9,
+        "duration_seconds": 72.942
       }
     },
     {
       "category_key": "entertainment",
-      "hero_source_index": null,
+      "hero_source_index": 2,
       "card_source_indexes": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
+        5,
+        9,
+        11,
+        3,
+        10,
+        1,
+        6,
+        13
       ],
       "diagnostics": {
-        "status": "archive_recovery",
-        "reason": "Live source/generation path unavailable; reused recent published canonicals."
+        "model": "claude-sonnet-5",
+        "writer_model": "claude-sonnet-4-5",
+        "rejected": [
+          {
+            "source_index": 4,
+            "reason": "Duplicate coverage of the same Possible Love review already represented by source 3."
+          },
+          {
+            "source_index": 6,
+            "reason": "Routine reality TV relationship red-carpet item lacking national significance."
+          },
+          {
+            "source_index": 13,
+            "reason": "Thin capsule review with minimal substantive content."
+          },
+          {
+            "source_index": 1,
+            "reason": "Photo retrospective feature lacking a current news hook or timely development."
+          },
+          {
+            "source_index": 14,
+            "reason": "Primarily a sports history feature; classified and better suited to Sports, not Entertainment."
+          },
+          {
+            "source_index": 15,
+            "reason": "Drug culture and public health feature classified under U.S.; not an entertainment-industry story despite film references."
+          }
+        ],
+        "writer_failures": [
+          {
+            "source_index": 12,
+            "reason": [
+              "person_first_reference_not_full_name"
+            ]
+          },
+          {
+            "source_index": 8,
+            "reason": [
+              "person_first_reference_not_full_name"
+            ]
+          },
+          {
+            "source_index": 7,
+            "reason": [
+              "generated_copy_drifted_from_source_focus",
+              "person_first_reference_not_full_name"
+            ]
+          }
+        ],
+        "protected_material_update_repairs": [],
+        "editor_selected_card_count": 8,
+        "section_depth_target": 8,
+        "section_depth_accepted_cards": 8,
+        "section_depth_shortfall": 0,
+        "depth_backfill_writer_attempts": 3,
+        "writer_card_attempts": 11,
+        "duration_seconds": 79.574
       }
     },
     {
       "category_key": "politics",
-      "hero_source_index": 2,
+      "hero_source_index": 1,
       "card_source_indexes": [
-        1
+        2
       ],
       "diagnostics": {
         "model": "claude-sonnet-5",
@@ -181,7 +362,7 @@
         "section_depth_shortfall": 7,
         "depth_backfill_writer_attempts": 0,
         "writer_card_attempts": 1,
-        "duration_seconds": 17.9
+        "duration_seconds": 14.486
       }
     }
   ]
