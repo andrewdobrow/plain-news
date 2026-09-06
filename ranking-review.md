@@ -4,41 +4,41 @@
 
 ## Hero
 
-- Current: **U.S. diesel prices reach record high, raising transportation and food costs nationwide**
-- Recommended: **Trump super PAC spends $10 million on Texas Senate race in first general election outlay**
-- Recommendation: CHANGE (not enforced)
+- Current: **Federal judge extends injunction blocking USPS mail-in ballot rules in Washington and 25 other states**
+- Recommended: **Federal judge extends injunction blocking USPS mail-in ballot rules in Washington and 25 other states**
+- Recommendation: KEEP (not enforced)
 
 ## Top Stories deck
 
 | Rank | Current | Recommended | Score | Why |
 | ---: | --- | --- | ---: | --- |
-| 1 | Egyptian court sentences TV presenter and 11 others to death in drug trafficking case | Trump super PAC spends $10 million on Texas Senate race in first general election outlay | 87 | importance 100; freshness 77.94; urgency 7/10 |
-| 2 | Prince William to represent King Charles at funeral of Norway's King Harald V | Historical data shows divided Congress under Republican president tied to 7.33% average annual S&P 500 return | 80 | importance 100; freshness 98.47; urgency 3/10 |
-| 3 | Greek air force F-4 Phantom jet crashes at air show near Athens, killing both pilots | Trump, Vance to headline GOP midterm convention alongside vulnerable candidates | 80 | importance 77; freshness 90.44; urgency 6/10 |
-| 4 | Trump envoys to visit Moscow and Kyiv this weekend as U.S. pushes new peace proposal | Trump envoys to visit Moscow and Kyiv this weekend as U.S. pushes new peace proposal | 55 | position locked: identity_conflict |
-| 5 | US military strikes three Iranian oil tankers in retaliation for attacks on American warships | Katie Taylor retires after career-closing win at Croke Park | 70 | importance 40; freshness 91.21; urgency 7/10 |
-| 6 | US diesel prices reach all-time high as Iran conflict disrupts fuel supply | Bad Bunny's Super Bowl halftime show and The Traitors lead Creative Arts Emmys night one | 69 | importance 48; freshness 92.44; urgency 6/10 |
-| 7 | Russia Suspected in Series of Sabotage Incidents Across Europe | US military strikes three Iranian oil tankers in retaliation for attacks on American warships | 68 | importance 61; freshness 89.98; urgency 3/10 |
-| 8 | Flooding in Tibet Leaves Hundreds Missing as China Faces Criticism Over Response | Trump threatens trade embargoes on deficit countries unless Federal Reserve cuts rates | 68 | importance 95; freshness 57.72; urgency 3/10 |
-| 9 | Germany accuses Russia of attempted drone attack on Leipzig airport | Phaedra Parks confirms romance with CT Tamburello from 'The Traitors' | 67 | importance 40; freshness 88.41; urgency 7/10 |
-| 10 | Casting for next James Bond may conclude by year's end, producer says | Virgin Atlantic founder blames rising flight prices on 'foolish leaders' starting wars | 66 | importance 77; freshness 56.31; urgency 3/10 |
-| 11 | Katie Taylor retires after winning final bout in Dublin | Casting for next James Bond may conclude by year's end, producer says | 65 | importance 30; freshness 93.16; urgency 7/10 |
-| 12 | Federal judge reinforces order requiring 48-hour notice before work on Trump's proposed Arlington arch | The Blood of Dawnwalker sells 1 million copies in two days | 65 | importance 45; freshness 82.17; urgency 7/10 |
+| 1 | U.S. envoys travel to Kyiv for first talks with Zelensky after meeting Putin in Moscow | U.S. envoys travel to Kyiv for first talks with Zelensky after meeting Putin in Moscow | 85 | importance 77; freshness 90.36; urgency 8/10 |
+| 2 | Germans vote in Saxony-Anhalt as far-right AfD polls at 40 percent | Trump super PAC directs $10 million to Texas Senate race in first general election spend | 84 | importance 100; freshness 71.3; urgency 6/10 |
+| 3 | Anak Krakatau eruption suspends 209 flights at Jakarta airport, stranding 22,000 passengers | Historical data shows divided Congress under Republican president tied to 7.33% average annual S&P 500 return | 83 | importance 100; freshness 91.83; urgency 5/10 |
+| 4 | Fuel tanker explosion in western Iran kills at least 10 | Federal judge extends injunction blocking USPS mail-in ballot rules in Washington and 25 other states | 81 | importance 100; freshness 40.63; urgency 8/10 |
+| 5 | Greek air force F-4 Phantom jet crashes at air show near Athens, killing both pilots | Trump, Vance to headline GOP midterm convention in Dallas next week | 79 | importance 77; freshness 83.8; urgency 6/10 |
+| 6 | Egyptian court sentences TV presenter and 11 others to death in drug trafficking case | Zelenskyy Links Russian Airport Strikes to US Envoys' Planned Kyiv Visit | 77 | importance 63; freshness 89.1; urgency 7/10 |
+| 7 | Trump envoys to visit Moscow and Kyiv this weekend as U.S. pushes new peace proposal | Trump envoys to visit Moscow and Kyiv this weekend as U.S. pushes new peace proposal | 54 | position locked: identity_conflict |
+| 8 | US military strikes three Iranian oil tankers in retaliation for attacks on American warships | Germans vote in Saxony-Anhalt as far-right AfD polls at 40 percent | 75 | importance 65; freshness 93.43; urgency 7/10; -6 category saturation |
+| 9 | US diesel prices reach all-time high as Iran conflict disrupts fuel supply | Tupac trial testimony reveals Las Vegas police rejected early lead on shooter | 68 | importance 31; freshness 94.68; urgency 7/10 |
+| 10 | Federal judge extends injunction blocking USPS mail-in ballot rules in Washington and 25 other states | BYU opens season with 63-7 rout of Utah Tech | 67 | importance 40; freshness 92.66; urgency 7/10 |
+| 11 | Zelenskyy Links Russian Airport Strikes to US Envoys' Planned Kyiv Visit | Trump threatens trade embargoes on deficit countries unless Federal Reserve cuts rates | 67 | importance 95; freshness 51.08; urgency 3/10 |
+| 12 | Natalie Imbruglia recalls 'icky' Moulin Rouge audition | Mariska Hargitay wins two Emmys for HBO documentary about her mother Jayne Mansfield | 66 | importance 63; freshness 49.51; urgency 6/10 |
 
 ## Recommended moves
 
-- **Trump super PAC spends $10 million on Texas Senate race in first general election outlay**: 54 → 1 — importance 100; freshness 77.94; urgency 7/10
-- **Trump, Vance to headline GOP midterm convention alongside vulnerable candidates**: 55 → 3 — importance 77; freshness 90.44; urgency 6/10
-- **Phaedra Parks confirms romance with CT Tamburello from 'The Traitors'**: 53 → 9 — importance 40; freshness 88.41; urgency 7/10
-- **Katie Taylor retires after career-closing win at Croke Park**: 44 → 5 — importance 40; freshness 91.21; urgency 7/10
-- **Bad Bunny's Super Bowl halftime show and The Traitors lead Creative Arts Emmys night one**: 45 → 6 — importance 48; freshness 92.44; urgency 6/10
-- **The Blood of Dawnwalker sells 1 million copies in two days**: 34 → 12 — importance 45; freshness 82.17; urgency 7/10
-- **Historical data shows divided Congress under Republican president tied to 7.33% average annual S&P 500 return**: 20 → 2 — importance 100; freshness 98.47; urgency 3/10
-- **Trump threatens trade embargoes on deficit countries unless Federal Reserve cuts rates**: 21 → 8 — importance 95; freshness 57.72; urgency 3/10
-- **Greek air force F-4 Phantom jet crashes at air show near Athens, killing both pilots**: 3 → 15 — importance 56; freshness 98.47; urgency 3/10
-- **Egyptian court sentences TV presenter and 11 others to death in drug trafficking case**: 1 → 13 — importance 26; freshness 88.81; urgency 5/10
-- **Prince William to represent King Charles at funeral of Norway's King Harald V**: 2 → 14 — importance 11; freshness 87.99; urgency 4/10
-- **Flooding in Tibet Leaves Hundreds Missing as China Faces Criticism Over Response**: 8 → 18 — importance 60; freshness 12.99; urgency 3/10
+- **Trump super PAC directs $10 million to Texas Senate race in first general election spend**: 54 → 2 — importance 100; freshness 71.3; urgency 6/10
+- **Trump, Vance to headline GOP midterm convention in Dallas next week**: 55 → 5 — importance 77; freshness 83.8; urgency 6/10
+- **Tupac trial testimony reveals Las Vegas police rejected early lead on shooter**: 50 → 9 — importance 31; freshness 94.68; urgency 7/10
+- **BYU opens season with 63-7 rout of Utah Tech**: 43 → 10 — importance 40; freshness 92.66; urgency 7/10
+- **Mariska Hargitay wins two Emmys for HBO documentary about her mother Jayne Mansfield**: 45 → 12 — importance 63; freshness 49.51; urgency 6/10
+- **Historical data shows divided Congress under Republican president tied to 7.33% average annual S&P 500 return**: 18 → 3 — importance 100; freshness 91.83; urgency 5/10
+- **Fuel tanker explosion in western Iran kills at least 10**: 4 → 14 — importance 70; freshness 85.04; urgency 4/10
+- **Greek air force F-4 Phantom jet crashes at air show near Athens, killing both pilots**: 5 → 15 — importance 56; freshness 91.83; urgency 3/10
+- **Anak Krakatau eruption suspends 209 flights at Jakarta airport, stranding 22,000 passengers**: 3 → 13 — importance 16; freshness 98.21; urgency 6/10
+- **Egyptian court sentences TV presenter and 11 others to death in drug trafficking case**: 6 → 16 — importance 26; freshness 93.36; urgency 3/10
+- **US military strikes three Iranian oil tankers in retaliation for attacks on American warships**: 8 → 17 — importance 61; freshness 83.34; urgency 3/10
+- **Trump threatens trade embargoes on deficit countries unless Federal Reserve cuts rates**: 19 → 11 — importance 95; freshness 51.08; urgency 3/10
 
 ## Guardrails
 

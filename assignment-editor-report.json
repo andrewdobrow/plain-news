@@ -1,50 +1,46 @@
 {
-  "generated_at": "2026-09-06T04:12:03.677975Z",
+  "generated_at": "2026-09-06T08:11:03.433044Z",
   "assignment_editor_model": "claude-sonnet-5",
   "writer_model": "claude-sonnet-4-5",
   "categories": [
     {
       "category_key": "world",
-      "hero_source_index": 2,
+      "hero_source_index": 3,
       "card_source_indexes": [
-        4
+        2,
+        1,
+        5
       ],
       "diagnostics": {
         "model": "claude-sonnet-5",
         "writer_model": "claude-sonnet-4-5",
-        "rejected": [
-          {
-            "source_index": 3,
-            "reason": "Duplicate of source 2, same event and facts about the Egypt drug case sentencing"
-          },
-          {
-            "source_index": 5,
-            "reason": "Duplicate of source 4, same event regarding Prince William attending King Harald's funeral"
-          }
-        ],
+        "rejected": [],
         "writer_failures": [
           {
-            "source_index": 6,
+            "source_index": 4,
             "reason": [
+              "generated_copy_drifted_from_source_focus",
               "person_first_reference_not_full_name"
             ]
           }
         ],
         "protected_material_update_repairs": [],
-        "editor_selected_card_count": 3,
+        "editor_selected_card_count": 4,
         "section_depth_target": 8,
-        "section_depth_accepted_cards": 2,
-        "section_depth_shortfall": 6,
+        "section_depth_accepted_cards": 3,
+        "section_depth_shortfall": 5,
         "depth_backfill_writer_attempts": 0,
-        "writer_card_attempts": 3,
-        "duration_seconds": 38.75
+        "writer_card_attempts": 4,
+        "duration_seconds": 32.263
       }
     },
     {
       "category_key": "us",
-      "hero_source_index": 6,
+      "hero_source_index": 1,
       "card_source_indexes": [
-        8
+        4,
+        5,
+        6
       ],
       "diagnostics": {
         "model": "claude-sonnet-5",
@@ -52,50 +48,50 @@
         "rejected": [
           {
             "source_index": 3,
-            "reason": "UK domestic politics and entertainment roundup with no U.S. relevance; off-category for a U.S. nationwide section."
+            "reason": "Foreign disaster story with no U.S. angle; belongs in World."
           },
           {
             "source_index": 4,
-            "reason": "Entertainment profile piece on a musician; not a news event and lacks U.S. public-interest angle."
+            "reason": "U.S. diplomatic envoys and foreign war negotiations; primarily a world/politics story, not domestic U.S. news."
           },
           {
             "source_index": 5,
-            "reason": "Entertainment feature on a comedian's stage debut; no national U.S. news relevance."
+            "reason": "Ukraine war battlefield briefing; foreign conflict story belongs in World, not U.S."
           },
           {
             "source_index": 6,
-            "reason": "Entertainment speculation piece about James Bond casting; not a factual news event and not U.S.-relevant."
+            "reason": "Celebrity entertainment profile with no news significance for U.S. category."
           },
           {
             "source_index": 7,
-            "reason": "Ukraine domestic language policy story; belongs in World, not U.S. category."
+            "reason": "Entertainment profile piece on a UK comedian; not a U.S. news story."
           },
           {
             "source_index": 8,
-            "reason": "Sports retirement tribute story from Ireland; entertainment/sports content with no U.S. national relevance."
+            "reason": "Domestic Ukrainian policy debate over language use in Odesa; foreign local story belongs in World."
           }
         ],
         "writer_failures": [
           {
             "source_index": 2,
             "reason": [
-              "generated_copy_drifted_from_source_focus"
+              "headline_jurisdiction_missing_from_lead"
             ]
           },
           {
-            "source_index": 4,
-            "reason": [
-              "JSONDecodeError"
-            ]
-          },
-          {
-            "source_index": 5,
+            "source_index": 3,
             "reason": [
               "JSONDecodeError"
             ]
           },
           {
             "source_index": 7,
+            "reason": [
+              "JSONDecodeError"
+            ]
+          },
+          {
+            "source_index": 8,
             "reason": [
               "person_first_reference_not_full_name"
             ]
@@ -104,211 +100,41 @@
         "protected_material_update_repairs": [],
         "editor_selected_card_count": 1,
         "section_depth_target": 8,
-        "section_depth_accepted_cards": 2,
-        "section_depth_shortfall": 6,
-        "depth_backfill_writer_attempts": 5,
-        "writer_card_attempts": 6,
-        "duration_seconds": 52.755
+        "section_depth_accepted_cards": 3,
+        "section_depth_shortfall": 5,
+        "depth_backfill_writer_attempts": 6,
+        "writer_card_attempts": 7,
+        "duration_seconds": 51.096
       }
     },
     {
       "category_key": "business",
-      "hero_source_index": 3,
-      "card_source_indexes": [],
+      "hero_source_index": null,
+      "card_source_indexes": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
       "diagnostics": {
-        "model": "claude-sonnet-5",
-        "writer_model": "claude-sonnet-4-5",
-        "rejected": [],
-        "writer_failures": [
-          {
-            "source_index": 1,
-            "reason": [
-              "headline_percentage_claim_missing_from_lead"
-            ]
-          },
-          {
-            "source_index": 4,
-            "reason": [
-              "generated_copy_drifted_from_source_focus"
-            ]
-          }
-        ],
-        "protected_material_update_repairs": [],
-        "editor_selected_card_count": 3,
-        "section_depth_target": 8,
-        "section_depth_accepted_cards": 1,
-        "section_depth_shortfall": 7,
-        "depth_backfill_writer_attempts": 0,
-        "writer_card_attempts": 3,
-        "duration_seconds": 29.289
+        "status": "archive_recovery",
+        "reason": "Live source/generation path unavailable; reused recent published canonicals."
       }
     },
     {
       "category_key": "tech",
-      "hero_source_index": 4,
+      "hero_source_index": 7,
       "card_source_indexes": [
-        6,
-        10,
-        9,
-        2,
         1,
-        7,
-        14,
-        15
-      ],
-      "diagnostics": {
-        "model": "claude-sonnet-5",
-        "writer_model": "claude-sonnet-4-5",
-        "rejected": [
-          {
-            "source_index": 5,
-            "reason": "Niche gaming-mod community demo (DLSS 5 forced into a PS2-era emulator) with no broader consequence; thin, hobbyist-interest story."
-          },
-          {
-            "source_index": 11,
-            "reason": "Unverified gaming rumor/leak roundup about Nintendo titles; entertainment speculation, not consequential tech/science news."
-          },
-          {
-            "source_index": 12,
-            "reason": "Entertainment event promotion (how to watch Nintendo Direct streams); not a tech/science story of national consequence."
-          },
-          {
-            "source_index": 13,
-            "reason": "Aggregated listicle about fall video game releases; promotional roundup with no single reportable news event."
-          },
-          {
-            "source_index": 14,
-            "reason": "Video game sales milestone; entertainment/gaming commerce story without technology or science significance for a general national audience."
-          },
-          {
-            "source_index": 15,
-            "reason": "Music industry physical media sales trend; entertainment/commerce story misclassified into tech, not a technology or science subject."
-          }
-        ],
-        "writer_failures": [
-          {
-            "source_index": 3,
-            "reason": [
-              "person_first_reference_not_full_name"
-            ]
-          },
-          {
-            "source_index": 8,
-            "reason": [
-              "headline_entity_missing_from_lead"
-            ]
-          },
-          {
-            "source_index": 5,
-            "reason": [
-              "person_first_reference_not_full_name"
-            ]
-          },
-          {
-            "source_index": 11,
-            "reason": [
-              "person_first_reference_not_full_name"
-            ]
-          }
-        ],
-        "protected_material_update_repairs": [],
-        "editor_selected_card_count": 8,
-        "section_depth_target": 8,
-        "section_depth_accepted_cards": 8,
-        "section_depth_shortfall": 0,
-        "depth_backfill_writer_attempts": 4,
-        "writer_card_attempts": 12,
-        "duration_seconds": 95.018
-      }
-    },
-    {
-      "category_key": "sports",
-      "hero_source_index": 2,
-      "card_source_indexes": [
-        6,
-        1,
-        14,
-        3,
         8,
-        13,
-        15,
-        11
-      ],
-      "diagnostics": {
-        "model": "claude-sonnet-5",
-        "writer_model": "claude-sonnet-4-5",
-        "rejected": [
-          {
-            "source_index": 4,
-            "reason": "Aggregated live-blog roundup of multiple separate college football games; duplicates Michigan story already selected and other results not independently significant enough to add as distinct cards."
-          },
-          {
-            "source_index": 5,
-            "reason": "Routine weather-delay logistics story about LSU-Clemson kickoff timing, not a meaningful result or national sports development."
-          },
-          {
-            "source_index": 7,
-            "reason": "Duplicate of source 6 (same Katie Taylor tribute story, same event)."
-          },
-          {
-            "source_index": 9,
-            "reason": "Thin Premier League match analysis clip (147 words) about Fulham-Crystal Palace, a foreign league result with no national significance."
-          },
-          {
-            "source_index": 11,
-            "reason": "Photo retrospective feature on Katie Taylor's career; duplicative of the farewell story already selected as a card."
-          },
-          {
-            "source_index": 12,
-            "reason": "Routine MLS weather-delay logistics story, not a meaningful result or national sports story."
-          },
-          {
-            "source_index": 16,
-            "reason": "Duplicate of source 15 (same UFC Paris event and MVP fight)."
-          }
-        ],
-        "writer_failures": [
-          {
-            "source_index": 10,
-            "reason": [
-              "generated_copy_drifted_from_source_focus"
-            ]
-          },
-          {
-            "source_index": 5,
-            "reason": [
-              "headline_entity_missing_from_lead"
-            ]
-          },
-          {
-            "source_index": 9,
-            "reason": [
-              "body_under_90_words",
-              "person_first_reference_not_full_name"
-            ]
-          }
-        ],
-        "protected_material_update_repairs": [],
-        "editor_selected_card_count": 8,
-        "section_depth_target": 8,
-        "section_depth_accepted_cards": 8,
-        "section_depth_shortfall": 0,
-        "depth_backfill_writer_attempts": 3,
-        "writer_card_attempts": 11,
-        "duration_seconds": 92.1
-      }
-    },
-    {
-      "category_key": "entertainment",
-      "hero_source_index": 8,
-      "card_source_indexes": [
+        3,
         10,
-        1,
-        16,
+        2,
         13,
-        12,
-        9,
-        5,
         14
       ],
       "diagnostics": {
@@ -316,48 +142,48 @@
         "writer_model": "claude-sonnet-4-5",
         "rejected": [
           {
-            "source_index": 2,
-            "reason": "Duplicate of the same Bad Bunny Emmy win covered more comprehensively in source 8; thinner version of the same event."
-          },
-          {
-            "source_index": 7,
-            "reason": "Duplicate coverage of the same Creative Arts Emmys night as source 8, largely a raw awards listing without added narrative value."
-          },
-          {
             "source_index": 4,
-            "angle": "",
-            "reason": "Covers the same Creative Arts Emmys ceremony as source 8 from a different outlet; same-event duplicate."
-          },
-          {
-            "source_index": 5,
-            "reason": "Thin, discovery-style item about decades-old Star Trek production trivia with no current news value."
-          },
-          {
-            "source_index": 6,
-            "reason": "Promotional radio-interview recap about a Taylor Swift song release with no new newsworthy development."
+            "reason": "Duplicate of source 3, same iPhone Handoff report republished under a different byline."
           },
           {
             "source_index": 11,
-            "reason": "Duplicate of source 10, same Oasis Venice premiere event from a different publisher feed."
+            "reason": "Unverified rumor/leak about unannounced Nintendo games, entertainment-focused and speculative, not consequential tech/science news."
+          },
+          {
+            "source_index": 12,
+            "reason": "Speculative predictions listicle for an upcoming Nintendo Direct, entertainment gaming content not fitting tech/science consequence criteria."
+          },
+          {
+            "source_index": 13,
+            "reason": "Video game sales milestone; entertainment/gaming commerce story without technology or science consequence."
           },
           {
             "source_index": 14,
-            "reason": "Routine reality-TV celebrity relationship confirmation with no broader national significance."
+            "reason": "Music industry physical media sales report; entertainment/retail trend story, not a technology or science story."
           }
         ],
         "writer_failures": [
           {
-            "source_index": 15,
+            "source_index": 9,
             "reason": [
-              "body_under_90_words",
-              "insufficient_article_structure",
-              "lead_too_thin"
+              "headline_entity_missing_from_lead"
             ]
           },
           {
-            "source_index": 3,
+            "source_index": 5,
             "reason": [
-              "generated_copy_drifted_from_source_focus",
+              "person_first_reference_not_full_name"
+            ]
+          },
+          {
+            "source_index": 6,
+            "reason": [
+              "person_first_reference_not_full_name"
+            ]
+          },
+          {
+            "source_index": 11,
+            "reason": [
               "person_first_reference_not_full_name"
             ]
           }
@@ -365,11 +191,147 @@
         "protected_material_update_repairs": [],
         "editor_selected_card_count": 8,
         "section_depth_target": 8,
-        "section_depth_accepted_cards": 8,
-        "section_depth_shortfall": 0,
+        "section_depth_accepted_cards": 7,
+        "section_depth_shortfall": 1,
+        "depth_backfill_writer_attempts": 3,
+        "writer_card_attempts": 11,
+        "duration_seconds": 69.829
+      }
+    },
+    {
+      "category_key": "sports",
+      "hero_source_index": 1,
+      "card_source_indexes": [
+        3,
+        7,
+        9,
+        10,
+        13,
+        5,
+        6
+      ],
+      "diagnostics": {
+        "model": "claude-sonnet-5",
+        "writer_model": "claude-sonnet-4-5",
+        "rejected": [
+          {
+            "source_index": 5,
+            "reason": "Routine team injury-status notes on Shohei Ohtani and other Dodgers roster items; lacks a clear result or decision and is more beat-reporter notebook than a national sports story."
+          },
+          {
+            "source_index": 6,
+            "reason": "Local college football recap of a lopsided BYU win over an outmatched FCS opponent; limited national significance beyond routine game coverage, duplicative of broader Week 1 coverage already selected."
+          },
+          {
+            "source_index": 11,
+            "reason": "Duplicate of the same Katie Taylor farewell event covered by the selected hero and its own duplicate source 12; reaction piece adds quotes but not a distinct story."
+          },
+          {
+            "source_index": 12,
+            "reason": "Exact duplicate article text of source 11, covering the same Katie Taylor reaction story already accounted for by the hero selection."
+          }
+        ],
+        "writer_failures": [
+          {
+            "source_index": 2,
+            "reason": [
+              "generated_copy_drifted_from_source_focus"
+            ]
+          },
+          {
+            "source_index": 4,
+            "reason": [
+              "generated_copy_drifted_from_source_focus"
+            ]
+          },
+          {
+            "source_index": 8,
+            "reason": [
+              "generated_copy_drifted_from_source_focus"
+            ]
+          }
+        ],
+        "protected_material_update_repairs": [],
+        "editor_selected_card_count": 8,
+        "section_depth_target": 8,
+        "section_depth_accepted_cards": 7,
+        "section_depth_shortfall": 1,
         "depth_backfill_writer_attempts": 2,
         "writer_card_attempts": 10,
-        "duration_seconds": 89.661
+        "duration_seconds": 77.323
+      }
+    },
+    {
+      "category_key": "entertainment",
+      "hero_source_index": 11,
+      "card_source_indexes": [
+        6,
+        10,
+        8,
+        4,
+        5,
+        7,
+        9
+      ],
+      "diagnostics": {
+        "model": "claude-sonnet-5",
+        "writer_model": "claude-sonnet-4-5",
+        "rejected": [
+          {
+            "source_index": 5,
+            "reason": "Niche festival sales announcement for an unreleased Taiwanese debut feature with no national significance for a U.S. audience."
+          },
+          {
+            "source_index": 7,
+            "reason": "Primarily a true-crime/policing story about the Tupac murder trial and investigative failures; belongs in U.S. or crime coverage rather than entertainment."
+          },
+          {
+            "source_index": 9,
+            "reason": "Routine local incident involving an independent wrestler's medical emergency at a small venue; no national entertainment significance."
+          },
+          {
+            "source_index": 13,
+            "reason": "Stale reprint; article text ends with 'Published 7 July 2022,' indicating old syndicated content rather than current news."
+          },
+          {
+            "source_index": 14,
+            "reason": "Stale reprint; article text ends with old publish dates (19 May, 4 November 2022), indicating recycled content rather than current news."
+          }
+        ],
+        "writer_failures": [
+          {
+            "source_index": 2,
+            "reason": [
+              "person_first_reference_not_full_name"
+            ]
+          },
+          {
+            "source_index": 12,
+            "reason": [
+              "person_first_reference_not_full_name"
+            ]
+          },
+          {
+            "source_index": 1,
+            "reason": [
+              "person_first_reference_not_full_name"
+            ]
+          },
+          {
+            "source_index": 3,
+            "reason": [
+              "person_first_reference_not_full_name"
+            ]
+          }
+        ],
+        "protected_material_update_repairs": [],
+        "editor_selected_card_count": 8,
+        "section_depth_target": 8,
+        "section_depth_accepted_cards": 7,
+        "section_depth_shortfall": 1,
+        "depth_backfill_writer_attempts": 3,
+        "writer_card_attempts": 11,
+        "duration_seconds": 88.851
       }
     },
     {
@@ -390,7 +352,7 @@
         "section_depth_shortfall": 7,
         "depth_backfill_writer_attempts": 0,
         "writer_card_attempts": 1,
-        "duration_seconds": 16.468
+        "duration_seconds": 17.9
       }
     }
   ]

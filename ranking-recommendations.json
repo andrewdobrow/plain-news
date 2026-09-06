@@ -2,18 +2,18 @@
   "schema_version": 4,
   "version": "1.13.7.0-shadow",
   "mode": "recommend",
-  "generated_at": "2026-09-06T04:12:20Z",
+  "generated_at": "2026-09-06T08:11:24Z",
   "publication_behavior_changed": false,
   "hero": {
-    "current_headline": "U.S. diesel prices reach record high, raising transportation and food costs nationwide",
-    "recommended_headline": "Trump super PAC spends $10 million on Texas Senate race in first general election outlay",
-    "current_score": 67,
-    "recommended_score": 87,
-    "top_scoring_candidate_headline": "Trump super PAC spends $10 million on Texas Senate race in first general election outlay",
-    "top_scoring_candidate_score": 87,
-    "score_margin": 20,
+    "current_headline": "Federal judge extends injunction blocking USPS mail-in ballot rules in Washington and 25 other states",
+    "recommended_headline": "Federal judge extends injunction blocking USPS mail-in ballot rules in Washington and 25 other states",
+    "current_score": 81,
+    "recommended_score": 81,
+    "top_scoring_candidate_headline": "U.S. envoys travel to Kyiv for first talks with Zelensky after meeting Putin in Moscow",
+    "top_scoring_candidate_score": 85,
+    "score_margin": 4,
     "change_threshold": 8,
-    "change_recommended": true,
+    "change_recommended": false,
     "observe_only": true,
     "changed": false
   },
@@ -35,50 +35,48 @@
     "max_reported_recommendations": 12
   },
   "summary": {
-    "input_placements": 61,
+    "input_placements": 62,
     "legacy_identity_placements_excluded": 0,
     "unique_cards_observed": 61,
     "cards_observed": 61,
-    "duplicate_placements_excluded": 0,
-    "registry_matches": 48,
-    "high_confidence_registry_matches": 47,
-    "identity_warning_count": 3,
-    "fallback_scores": 13,
-    "registry_match_rate": 0.7869,
-    "high_confidence_match_rate": 0.7705,
-    "recommended_moves": 19,
-    "unchanged_positions": 7,
+    "duplicate_placements_excluded": 1,
+    "registry_matches": 50,
+    "high_confidence_registry_matches": 50,
+    "identity_warning_count": 2,
+    "fallback_scores": 11,
+    "registry_match_rate": 0.8197,
+    "high_confidence_match_rate": 0.8197,
+    "recommended_moves": 16,
+    "unchanged_positions": 8,
     "reported_moves": 12,
     "deck_limit": 12,
     "current_deck_count": 12,
     "recommended_deck_count": 12,
-    "stale_or_ineligible_candidates_excluded_from_deck": 17,
+    "stale_or_ineligible_candidates_excluded_from_deck": 13,
     "excluded_candidates": 0,
     "recent_high_urgency_exclusions": 0,
-    "hero_change_recommended": true,
+    "hero_change_recommended": false,
     "enforcement_readiness": "not_ready",
     "enforcement_readiness_reason": "Persistent story identity conflict or non-high-confidence story match detected"
   },
   "current_order": [
-    "Egyptian court sentences TV presenter and 11 others to death in drug trafficking case",
-    "Prince William to represent King Charles at funeral of Norway's King Harald V",
+    "U.S. envoys travel to Kyiv for first talks with Zelensky after meeting Putin in Moscow",
+    "Germans vote in Saxony-Anhalt as far-right AfD polls at 40 percent",
+    "Anak Krakatau eruption suspends 209 flights at Jakarta airport, stranding 22,000 passengers",
+    "Fuel tanker explosion in western Iran kills at least 10",
     "Greek air force F-4 Phantom jet crashes at air show near Athens, killing both pilots",
+    "Egyptian court sentences TV presenter and 11 others to death in drug trafficking case",
     "Trump envoys to visit Moscow and Kyiv this weekend as U.S. pushes new peace proposal",
     "US military strikes three Iranian oil tankers in retaliation for attacks on American warships",
     "US diesel prices reach all-time high as Iran conflict disrupts fuel supply",
-    "Russia Suspected in Series of Sabotage Incidents Across Europe",
-    "Flooding in Tibet Leaves Hundreds Missing as China Faces Criticism Over Response",
-    "Germany accuses Russia of attempted drone attack on Leipzig airport",
-    "Casting for next James Bond may conclude by year's end, producer says",
-    "Katie Taylor retires after winning final bout in Dublin",
+    "Federal judge extends injunction blocking USPS mail-in ballot rules in Washington and 25 other states",
+    "Zelenskyy Links Russian Airport Strikes to US Envoys' Planned Kyiv Visit",
+    "Natalie Imbruglia recalls 'icky' Moulin Rouge audition",
     "Federal judge reinforces order requiring 48-hour notice before work on Trump's proposed Arlington arch",
+    "Casting for next James Bond may conclude by year's end, producer says",
     "Virgin Atlantic founder blames rising flight prices on 'foolish leaders' starting wars",
     "Judge declares mistrial in Lindsay Clancy case after jury deadlock",
     "Katie Taylor retires as undisputed champion after final fight at Croke Park",
-    "Florida Panhandle battle over beach access prompts call for constitutional amendment",
-    "Federal judge extends block on Trump executive order limiting mail voting in midterms",
-    "ICE detainee dies hours after admission to detention facility",
-    "U.S. diesel prices reach record high, raising transportation and food costs nationwide",
     "Historical data shows divided Congress under Republican president tied to 7.33% average annual S&P 500 return",
     "Trump threatens trade embargoes on deficit countries unless Federal Reserve cuts rates",
     "August Jobs Report Shows Strong Hiring, Raising Pressure on Federal Reserve",
@@ -86,35 +84,37 @@
     "Government Borrowing Costs Hit Multi-Decade Highs Worldwide",
     "Trump announces deal for U.S. access to Venezuelan oil reserves",
     "Oil Prices Jump to $90 a Barrel After U.S. and Iran Exchange Attacks",
-    "Ganymede may hold more liquid water than all of Earth's oceans, buried beneath roughly 150 kilometers of ice",
-    "OpenAI confirms AI agent 'misalignment' during training, pledges disclosure framework",
-    "Oura files to go public as revenue nearly doubles to $1.21 billion",
-    "Microsoft to cap Xbox Cloud Gaming at 15 hours monthly starting November 2026",
-    "Apple's iOS 27 will let users share one phone number across two iPhones",
+    "US Strikes Deal for Control of Large Share of Venezuelan Oil Reserves",
+    "Oil companies and governments deplete storage reserves as Iran conflict disrupts supply",
+    "OpenAI confirms AI agents took over German wiki forum in 'misalignment' incident, developing disclosure framework",
+    "Acer unveils compact RTX Spark PC with 128GB unified memory to challenge Mac Studio",
+    "Xbox Cloud Gaming hourly cap set at Microsoft's break-even point amid AI server strain",
+    "Apple's iOS 27 to enable sharing one phone number between two iPhones",
+    "Sony says PlayStation disc production will fall by 10 percent in 2028, not 90 percent",
     "New browser tool lets users explore globe through environmental field recordings",
-    "New iPhone alarm app Clucky uses rooster sounds and push-up challenges to combat snoozing",
-    "The Blood of Dawnwalker sells 1 million copies in two days",
-    "CD sales surged 46 percent in first half of 2026",
-    "Michigan stuns Western Michigan 13-12 on Hail Mary after clock was reset to 1 second",
-    "Katie Taylor retires as undisputed light-welterweight champion after victory at Croke Park",
+    "The Blood of Dawnwalker Sells 1 Million Copies in Two Days",
+    "CD sales jumped 46 percent in first half of 2026",
+    "Seattle Times and Newsday sue OpenAI and Microsoft over alleged unauthorized use of journalism to train AI",
+    "Katie Taylor retires after defeating Flora Pili before 83,000 fans at Croke Park",
+    "Six top-10 seeds eliminated in first week of US Open men's draw",
+    "Coco Gauff advances to US Open fourth round as Keys, Anisimova exit",
+    "Oklahoma State loses 24-10 to Tulsa in Eric Morris coaching debut",
+    "Vikings re-sign safety Harrison Smith to one-year, $12.25 million deal",
+    "Nebraska defeats Ohio 49-21 in season opener",
+    "Dodgers' Shohei Ohtani misses third straight game, team to evaluate Sunday",
+    "BYU opens season with 63-7 rout of Utah Tech",
     "Coco Gauff advances to US Open fourth round as Madison Keys and Amanda Anisimova exit",
-    "Six top-10 seeds ousted from US Open men's draw in first week",
-    "Iowa routs Northern Illinois 40-0 in season opener behind Moulton's career-high 183 rushing yards",
-    "Oklahoma State loses 24-10 to Tulsa in Eric Morris' head coaching debut",
-    "Jak Jones upsets Judd Trump at British Open, will face Mark Selby in final",
-    "Michael 'Venom' Page wins final UFC contract fight by decision amid boos in Paris",
-    "Katie Taylor retires after career-closing win at Croke Park",
+    "Mariska Hargitay wins two Emmys for HBO documentary about her mother Jayne Mansfield",
+    "Lee Chang-dong returns to Venice competition with Possible Love",
+    "Julianne Moore Stars in Jesse Eisenberg's Community-Theater Comedy 'The Debut'",
+    "Wim Wenders premieres 3D documentary on architect Peter Zumthor at Venice",
+    "Watermelon Pictures acquires Dev Benegal documentary on artist Judith Blum Reddy",
+    "Tupac trial testimony reveals Las Vegas police rejected early lead on shooter",
+    "Wrestler Andy Williams collapses during Pennsylvania match, receives CPR",
+    "Julianne Moore and Paul Giamatti generate Oscar buzz after Jesse Eisenberg's 'The Debut' premieres at Telluride",
     "Bad Bunny's Super Bowl halftime show and The Traitors lead Creative Arts Emmys night one",
-    "Liam and Noel Gallagher receive eight-minute standing ovation at Venice Film Festival for Oasis documentary",
-    "Jesse Eisenberg's 'The Debut' Showcases Julianne Moore in Community-Theater Comedy",
-    "Mike Leigh's likely final film draws praise at Telluride, reviving question of his Oscar drought",
-    "Danny Boyle confirms limited use of generative AI in new film Ink",
-    "Penélope Cruz enters awards season with three films as Oscar contender",
-    "Natalie Portman welcomes third child, first with partner Tanguy Destable",
-    "Gene Roddenberry opposed making Worf central to Star Trek: The Next Generation's Season 4 finale",
-    "Phaedra Parks confirms romance with CT Tamburello from 'The Traitors'",
-    "Trump super PAC spends $10 million on Texas Senate race in first general election outlay",
-    "Trump, Vance to headline GOP midterm convention alongside vulnerable candidates",
+    "Trump super PAC directs $10 million to Texas Senate race in first general election spend",
+    "Trump, Vance to headline GOP midterm convention in Dallas next week",
     "Trump envoys meet with Putin in Moscow, plan Ukraine trip amid airstrike pause",
     "Trump plans to use Qatari plane for Ireland trip despite security concerns",
     "Supreme Court rules political parties entitled to lower TV ad rates",
@@ -123,61 +123,61 @@
     "Carlson calls for Trump removal over nuclear weapons consideration"
   ],
   "recommended_order": [
-    "Trump super PAC spends $10 million on Texas Senate race in first general election outlay",
+    "U.S. envoys travel to Kyiv for first talks with Zelensky after meeting Putin in Moscow",
+    "Trump super PAC directs $10 million to Texas Senate race in first general election spend",
     "Historical data shows divided Congress under Republican president tied to 7.33% average annual S&P 500 return",
-    "Trump, Vance to headline GOP midterm convention alongside vulnerable candidates",
+    "Federal judge extends injunction blocking USPS mail-in ballot rules in Washington and 25 other states",
+    "Trump, Vance to headline GOP midterm convention in Dallas next week",
+    "Zelenskyy Links Russian Airport Strikes to US Envoys' Planned Kyiv Visit",
     "Trump envoys to visit Moscow and Kyiv this weekend as U.S. pushes new peace proposal",
-    "Katie Taylor retires after career-closing win at Croke Park",
-    "Bad Bunny's Super Bowl halftime show and The Traitors lead Creative Arts Emmys night one",
-    "US military strikes three Iranian oil tankers in retaliation for attacks on American warships",
+    "Germans vote in Saxony-Anhalt as far-right AfD polls at 40 percent",
+    "Tupac trial testimony reveals Las Vegas police rejected early lead on shooter",
+    "BYU opens season with 63-7 rout of Utah Tech",
     "Trump threatens trade embargoes on deficit countries unless Federal Reserve cuts rates",
-    "Phaedra Parks confirms romance with CT Tamburello from 'The Traitors'",
-    "Virgin Atlantic founder blames rising flight prices on 'foolish leaders' starting wars",
-    "Casting for next James Bond may conclude by year's end, producer says",
-    "The Blood of Dawnwalker sells 1 million copies in two days",
-    "Egyptian court sentences TV presenter and 11 others to death in drug trafficking case",
-    "Prince William to represent King Charles at funeral of Norway's King Harald V",
+    "Mariska Hargitay wins two Emmys for HBO documentary about her mother Jayne Mansfield",
+    "Anak Krakatau eruption suspends 209 flights at Jakarta airport, stranding 22,000 passengers",
+    "Fuel tanker explosion in western Iran kills at least 10",
     "Greek air force F-4 Phantom jet crashes at air show near Athens, killing both pilots",
+    "Egyptian court sentences TV presenter and 11 others to death in drug trafficking case",
+    "US military strikes three Iranian oil tankers in retaliation for attacks on American warships",
     "US diesel prices reach all-time high as Iran conflict disrupts fuel supply",
-    "Russia Suspected in Series of Sabotage Incidents Across Europe",
-    "Flooding in Tibet Leaves Hundreds Missing as China Faces Criticism Over Response",
-    "Germany accuses Russia of attempted drone attack on Leipzig airport",
-    "Katie Taylor retires after winning final bout in Dublin",
+    "Natalie Imbruglia recalls 'icky' Moulin Rouge audition",
     "Federal judge reinforces order requiring 48-hour notice before work on Trump's proposed Arlington arch",
+    "Casting for next James Bond may conclude by year's end, producer says",
+    "Virgin Atlantic founder blames rising flight prices on 'foolish leaders' starting wars",
     "Judge declares mistrial in Lindsay Clancy case after jury deadlock",
     "Katie Taylor retires as undisputed champion after final fight at Croke Park",
-    "Florida Panhandle battle over beach access prompts call for constitutional amendment",
-    "Federal judge extends block on Trump executive order limiting mail voting in midterms",
-    "ICE detainee dies hours after admission to detention facility",
-    "U.S. diesel prices reach record high, raising transportation and food costs nationwide",
     "August Jobs Report Shows Strong Hiring, Raising Pressure on Federal Reserve",
     "Employer Health Costs Expected to Jump 11 Percent in 2027",
     "Government Borrowing Costs Hit Multi-Decade Highs Worldwide",
     "Trump announces deal for U.S. access to Venezuelan oil reserves",
     "Oil Prices Jump to $90 a Barrel After U.S. and Iran Exchange Attacks",
-    "Ganymede may hold more liquid water than all of Earth's oceans, buried beneath roughly 150 kilometers of ice",
-    "OpenAI confirms AI agent 'misalignment' during training, pledges disclosure framework",
-    "Oura files to go public as revenue nearly doubles to $1.21 billion",
-    "Microsoft to cap Xbox Cloud Gaming at 15 hours monthly starting November 2026",
-    "Apple's iOS 27 will let users share one phone number across two iPhones",
+    "US Strikes Deal for Control of Large Share of Venezuelan Oil Reserves",
+    "Oil companies and governments deplete storage reserves as Iran conflict disrupts supply",
+    "OpenAI confirms AI agents took over German wiki forum in 'misalignment' incident, developing disclosure framework",
+    "Acer unveils compact RTX Spark PC with 128GB unified memory to challenge Mac Studio",
+    "Xbox Cloud Gaming hourly cap set at Microsoft's break-even point amid AI server strain",
+    "Apple's iOS 27 to enable sharing one phone number between two iPhones",
+    "Sony says PlayStation disc production will fall by 10 percent in 2028, not 90 percent",
     "New browser tool lets users explore globe through environmental field recordings",
-    "New iPhone alarm app Clucky uses rooster sounds and push-up challenges to combat snoozing",
-    "CD sales surged 46 percent in first half of 2026",
-    "Michigan stuns Western Michigan 13-12 on Hail Mary after clock was reset to 1 second",
-    "Katie Taylor retires as undisputed light-welterweight champion after victory at Croke Park",
+    "The Blood of Dawnwalker Sells 1 Million Copies in Two Days",
+    "CD sales jumped 46 percent in first half of 2026",
+    "Seattle Times and Newsday sue OpenAI and Microsoft over alleged unauthorized use of journalism to train AI",
+    "Katie Taylor retires after defeating Flora Pili before 83,000 fans at Croke Park",
+    "Six top-10 seeds eliminated in first week of US Open men's draw",
+    "Coco Gauff advances to US Open fourth round as Keys, Anisimova exit",
+    "Oklahoma State loses 24-10 to Tulsa in Eric Morris coaching debut",
+    "Vikings re-sign safety Harrison Smith to one-year, $12.25 million deal",
+    "Nebraska defeats Ohio 49-21 in season opener",
+    "Dodgers' Shohei Ohtani misses third straight game, team to evaluate Sunday",
     "Coco Gauff advances to US Open fourth round as Madison Keys and Amanda Anisimova exit",
-    "Six top-10 seeds ousted from US Open men's draw in first week",
-    "Iowa routs Northern Illinois 40-0 in season opener behind Moulton's career-high 183 rushing yards",
-    "Oklahoma State loses 24-10 to Tulsa in Eric Morris' head coaching debut",
-    "Jak Jones upsets Judd Trump at British Open, will face Mark Selby in final",
-    "Michael 'Venom' Page wins final UFC contract fight by decision amid boos in Paris",
-    "Liam and Noel Gallagher receive eight-minute standing ovation at Venice Film Festival for Oasis documentary",
-    "Jesse Eisenberg's 'The Debut' Showcases Julianne Moore in Community-Theater Comedy",
-    "Mike Leigh's likely final film draws praise at Telluride, reviving question of his Oscar drought",
-    "Danny Boyle confirms limited use of generative AI in new film Ink",
-    "Penélope Cruz enters awards season with three films as Oscar contender",
-    "Natalie Portman welcomes third child, first with partner Tanguy Destable",
-    "Gene Roddenberry opposed making Worf central to Star Trek: The Next Generation's Season 4 finale",
+    "Lee Chang-dong returns to Venice competition with Possible Love",
+    "Julianne Moore Stars in Jesse Eisenberg's Community-Theater Comedy 'The Debut'",
+    "Wim Wenders premieres 3D documentary on architect Peter Zumthor at Venice",
+    "Watermelon Pictures acquires Dev Benegal documentary on artist Judith Blum Reddy",
+    "Wrestler Andy Williams collapses during Pennsylvania match, receives CPR",
+    "Julianne Moore and Paul Giamatti generate Oscar buzz after Jesse Eisenberg's 'The Debut' premieres at Telluride",
+    "Bad Bunny's Super Bowl halftime show and The Traitors lead Creative Arts Emmys night one",
     "Trump envoys meet with Putin in Moscow, plan Ukraine trip amid airstrike pause",
     "Trump plans to use Qatari plane for Ireland trip despite security concerns",
     "Supreme Court rules political parties entitled to lower TV ad rates",
@@ -186,104 +186,92 @@
     "Carlson calls for Trump removal over nuclear weapons consideration"
   ],
   "current_deck": [
-    "Egyptian court sentences TV presenter and 11 others to death in drug trafficking case",
-    "Prince William to represent King Charles at funeral of Norway's King Harald V",
+    "U.S. envoys travel to Kyiv for first talks with Zelensky after meeting Putin in Moscow",
+    "Germans vote in Saxony-Anhalt as far-right AfD polls at 40 percent",
+    "Anak Krakatau eruption suspends 209 flights at Jakarta airport, stranding 22,000 passengers",
+    "Fuel tanker explosion in western Iran kills at least 10",
     "Greek air force F-4 Phantom jet crashes at air show near Athens, killing both pilots",
+    "Egyptian court sentences TV presenter and 11 others to death in drug trafficking case",
     "Trump envoys to visit Moscow and Kyiv this weekend as U.S. pushes new peace proposal",
     "US military strikes three Iranian oil tankers in retaliation for attacks on American warships",
     "US diesel prices reach all-time high as Iran conflict disrupts fuel supply",
-    "Russia Suspected in Series of Sabotage Incidents Across Europe",
-    "Flooding in Tibet Leaves Hundreds Missing as China Faces Criticism Over Response",
-    "Germany accuses Russia of attempted drone attack on Leipzig airport",
-    "Casting for next James Bond may conclude by year's end, producer says",
-    "Katie Taylor retires after winning final bout in Dublin",
-    "Federal judge reinforces order requiring 48-hour notice before work on Trump's proposed Arlington arch"
+    "Federal judge extends injunction blocking USPS mail-in ballot rules in Washington and 25 other states",
+    "Zelenskyy Links Russian Airport Strikes to US Envoys' Planned Kyiv Visit",
+    "Natalie Imbruglia recalls 'icky' Moulin Rouge audition"
   ],
   "recommended_deck": [
-    "Trump super PAC spends $10 million on Texas Senate race in first general election outlay",
+    "U.S. envoys travel to Kyiv for first talks with Zelensky after meeting Putin in Moscow",
+    "Trump super PAC directs $10 million to Texas Senate race in first general election spend",
     "Historical data shows divided Congress under Republican president tied to 7.33% average annual S&P 500 return",
-    "Trump, Vance to headline GOP midterm convention alongside vulnerable candidates",
+    "Federal judge extends injunction blocking USPS mail-in ballot rules in Washington and 25 other states",
+    "Trump, Vance to headline GOP midterm convention in Dallas next week",
+    "Zelenskyy Links Russian Airport Strikes to US Envoys' Planned Kyiv Visit",
     "Trump envoys to visit Moscow and Kyiv this weekend as U.S. pushes new peace proposal",
-    "Katie Taylor retires after career-closing win at Croke Park",
-    "Bad Bunny's Super Bowl halftime show and The Traitors lead Creative Arts Emmys night one",
-    "US military strikes three Iranian oil tankers in retaliation for attacks on American warships",
+    "Germans vote in Saxony-Anhalt as far-right AfD polls at 40 percent",
+    "Tupac trial testimony reveals Las Vegas police rejected early lead on shooter",
+    "BYU opens season with 63-7 rout of Utah Tech",
     "Trump threatens trade embargoes on deficit countries unless Federal Reserve cuts rates",
-    "Phaedra Parks confirms romance with CT Tamburello from 'The Traitors'",
-    "Virgin Atlantic founder blames rising flight prices on 'foolish leaders' starting wars",
-    "Casting for next James Bond may conclude by year's end, producer says",
-    "The Blood of Dawnwalker sells 1 million copies in two days"
+    "Mariska Hargitay wins two Emmys for HBO documentary about her mother Jayne Mansfield"
   ],
   "recommendations": [
     {
       "action": "recommend_promote_to_top_deck",
-      "headline": "Trump super PAC spends $10 million on Texas Senate race in first general election outlay",
+      "headline": "Trump super PAC directs $10 million to Texas Senate race in first general election spend",
       "story_id": "story_000112",
       "identity": "story:story_000112",
       "from_position": 54,
-      "to_position": 1,
-      "score": 87,
-      "selection_score": 87.0,
-      "explanation": "importance 100; freshness 77.94; urgency 7/10",
+      "to_position": 2,
+      "score": 84,
+      "selection_score": 84.0,
+      "explanation": "importance 100; freshness 71.3; urgency 6/10",
       "enforced": false
     },
     {
       "action": "recommend_promote_to_top_deck",
-      "headline": "Trump, Vance to headline GOP midterm convention alongside vulnerable candidates",
+      "headline": "Trump, Vance to headline GOP midterm convention in Dallas next week",
       "story_id": "story_000141",
       "identity": "story:story_000141",
       "from_position": 55,
-      "to_position": 3,
-      "score": 80,
-      "selection_score": 80.0,
-      "explanation": "importance 77; freshness 90.44; urgency 6/10",
+      "to_position": 5,
+      "score": 79,
+      "selection_score": 79.0,
+      "explanation": "importance 77; freshness 83.8; urgency 6/10",
       "enforced": false
     },
     {
       "action": "recommend_promote_to_top_deck",
-      "headline": "Phaedra Parks confirms romance with CT Tamburello from 'The Traitors'",
-      "story_id": "story_000157",
-      "identity": "story:story_000157",
-      "from_position": 53,
+      "headline": "Tupac trial testimony reveals Las Vegas police rejected early lead on shooter",
+      "story_id": "story_000173",
+      "identity": "story:story_000173",
+      "from_position": 50,
       "to_position": 9,
+      "score": 68,
+      "selection_score": 68.0,
+      "explanation": "importance 31; freshness 94.68; urgency 7/10",
+      "enforced": false
+    },
+    {
+      "action": "recommend_promote_to_top_deck",
+      "headline": "BYU opens season with 63-7 rout of Utah Tech",
+      "story_id": "story_000169",
+      "identity": "story:story_000169",
+      "from_position": 43,
+      "to_position": 10,
       "score": 67,
       "selection_score": 67.0,
-      "explanation": "importance 40; freshness 88.41; urgency 7/10",
+      "explanation": "importance 40; freshness 92.66; urgency 7/10",
       "enforced": false
     },
     {
       "action": "recommend_promote_to_top_deck",
-      "headline": "Katie Taylor retires after career-closing win at Croke Park",
-      "story_id": "story_000151",
-      "identity": "story:story_000151",
-      "from_position": 44,
-      "to_position": 5,
-      "score": 70,
-      "selection_score": 70.0,
-      "explanation": "importance 40; freshness 91.21; urgency 7/10",
-      "enforced": false
-    },
-    {
-      "action": "recommend_promote_to_top_deck",
-      "headline": "Bad Bunny's Super Bowl halftime show and The Traitors lead Creative Arts Emmys night one",
-      "story_id": "story_000152",
-      "identity": "story:story_000152",
+      "headline": "Mariska Hargitay wins two Emmys for HBO documentary about her mother Jayne Mansfield",
+      "story_id": "story_000080",
+      "identity": "story:story_000080",
       "from_position": 45,
-      "to_position": 6,
-      "score": 69,
-      "selection_score": 69.0,
-      "explanation": "importance 48; freshness 92.44; urgency 6/10",
-      "enforced": false
-    },
-    {
-      "action": "recommend_promote_to_top_deck",
-      "headline": "The Blood of Dawnwalker sells 1 million copies in two days",
-      "story_id": "story_000123",
-      "identity": "story:story_000123",
-      "from_position": 34,
       "to_position": 12,
-      "score": 65,
-      "selection_score": 65.0,
-      "explanation": "importance 45; freshness 82.17; urgency 7/10",
+      "score": 66,
+      "selection_score": 66.0,
+      "explanation": "importance 63; freshness 49.51; urgency 6/10",
       "enforced": false
     },
     {
@@ -291,23 +279,23 @@
       "headline": "Historical data shows divided Congress under Republican president tied to 7.33% average annual S&P 500 return",
       "story_id": "story_000118",
       "identity": "story:story_000118",
-      "from_position": 20,
-      "to_position": 2,
-      "score": 80,
-      "selection_score": 80.0,
-      "explanation": "importance 100; freshness 98.47; urgency 3/10",
+      "from_position": 18,
+      "to_position": 3,
+      "score": 83,
+      "selection_score": 83.0,
+      "explanation": "importance 100; freshness 91.83; urgency 5/10",
       "enforced": false
     },
     {
-      "action": "recommend_promote_to_top_deck",
-      "headline": "Trump threatens trade embargoes on deficit countries unless Federal Reserve cuts rates",
-      "story_id": "story_000068",
-      "identity": "story:story_000068",
-      "from_position": 21,
-      "to_position": 8,
-      "score": 68,
-      "selection_score": 68.0,
-      "explanation": "importance 95; freshness 57.72; urgency 3/10",
+      "action": "recommend_demote_from_top_deck",
+      "headline": "Fuel tanker explosion in western Iran kills at least 10",
+      "story_id": "story_000114",
+      "identity": "story:story_000114",
+      "from_position": 4,
+      "to_position": 14,
+      "score": 66,
+      "selection_score": 66,
+      "explanation": "importance 70; freshness 85.04; urgency 4/10",
       "enforced": false
     },
     {
@@ -315,11 +303,23 @@
       "headline": "Greek air force F-4 Phantom jet crashes at air show near Athens, killing both pilots",
       "story_id": "story_000113",
       "identity": "story:story_000113",
-      "from_position": 3,
+      "from_position": 5,
       "to_position": 15,
-      "score": 65,
-      "selection_score": 65,
-      "explanation": "importance 56; freshness 98.47; urgency 3/10",
+      "score": 63,
+      "selection_score": 63,
+      "explanation": "importance 56; freshness 91.83; urgency 3/10",
+      "enforced": false
+    },
+    {
+      "action": "recommend_demote_from_top_deck",
+      "headline": "Anak Krakatau eruption suspends 209 flights at Jakarta airport, stranding 22,000 passengers",
+      "story_id": "story_000160",
+      "identity": "story:story_000160",
+      "from_position": 3,
+      "to_position": 13,
+      "score": 57,
+      "selection_score": 57,
+      "explanation": "importance 16; freshness 98.21; urgency 6/10",
       "enforced": false
     },
     {
@@ -327,50 +327,119 @@
       "headline": "Egyptian court sentences TV presenter and 11 others to death in drug trafficking case",
       "story_id": "story_000088",
       "identity": "story:story_000088",
-      "from_position": 1,
-      "to_position": 13,
-      "score": 56,
-      "selection_score": 56,
-      "explanation": "importance 26; freshness 88.81; urgency 5/10",
+      "from_position": 6,
+      "to_position": 16,
+      "score": 53,
+      "selection_score": 53,
+      "explanation": "importance 26; freshness 93.36; urgency 3/10",
       "enforced": false
     },
     {
       "action": "recommend_demote_from_top_deck",
-      "headline": "Prince William to represent King Charles at funeral of Norway's King Harald V",
-      "story_id": "story_000089",
-      "identity": "story:story_000089",
-      "from_position": 2,
-      "to_position": 14,
-      "score": 50,
-      "selection_score": 50,
-      "explanation": "importance 11; freshness 87.99; urgency 4/10",
-      "enforced": false
-    },
-    {
-      "action": "recommend_demote_from_top_deck",
-      "headline": "Flooding in Tibet Leaves Hundreds Missing as China Faces Criticism Over Response",
-      "story_id": "story_000001",
-      "identity": "story:story_000001",
+      "headline": "US military strikes three Iranian oil tankers in retaliation for attacks on American warships",
+      "story_id": "story_000085",
+      "identity": "story:story_000085",
       "from_position": 8,
-      "to_position": 18,
-      "score": 46,
-      "selection_score": 46,
-      "explanation": "importance 60; freshness 12.99; urgency 3/10",
+      "to_position": 17,
+      "score": 67,
+      "selection_score": 67,
+      "explanation": "importance 61; freshness 83.34; urgency 3/10",
+      "enforced": false
+    },
+    {
+      "action": "recommend_promote_to_top_deck",
+      "headline": "Trump threatens trade embargoes on deficit countries unless Federal Reserve cuts rates",
+      "story_id": "story_000068",
+      "identity": "story:story_000068",
+      "from_position": 19,
+      "to_position": 11,
+      "score": 67,
+      "selection_score": 67.0,
+      "explanation": "importance 95; freshness 51.08; urgency 3/10",
       "enforced": false
     }
   ],
   "items": [
     {
-      "current_position": 54,
+      "current_position": 1,
       "recommended_position": 1,
-      "first_placement_position": 54,
-      "headline": "Trump super PAC spends $10 million on Texas Senate race in first general election outlay",
+      "first_placement_position": 1,
+      "headline": "U.S. envoys travel to Kyiv for first talks with Zelensky after meeting Putin in Moscow",
+      "category_key": "world",
+      "slug": "",
+      "story_id": "story_000158",
+      "score": 85,
+      "score_breakdown": {
+        "score": 85,
+        "basis": "homepage_editorial_shadow_v2",
+        "importance": 77,
+        "importance_basis": "persistent_story_importance",
+        "importance_reasons": [
+          {
+            "code": "federal_action",
+            "label": "Federal/national government action",
+            "points": 32
+          },
+          {
+            "code": "war_diplomacy",
+            "label": "War, diplomacy or national-security consequence",
+            "points": 30
+          },
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "freshness": 90.36,
+        "urgency": 8,
+        "relevance": 100,
+        "regions": [],
+        "source_trust": 94,
+        "breaking_bonus": 0.0,
+        "material_update_bonus": 0.0,
+        "age_hours": 5.79,
+        "timestamp_basis": "registry:latest_timeline",
+        "deck_eligible": true,
+        "eligibility_reason": "fresh_window"
+      },
+      "deck_eligible": true,
+      "eligibility_reason": "fresh_window",
+      "match_basis": "persistent_story_id+source_url",
+      "identity_confidence": "high",
+      "identity_evidence": [
+        "source_url"
+      ],
+      "identity_warning": "",
+      "identity": "story:story_000158",
+      "identity_basis": "persistent_story_id",
+      "placement_count": 2,
+      "placement_categories": [
+        "world",
+        "us"
+      ],
+      "pinned": false,
+      "pin_position": null,
+      "custom": false,
+      "position_locked": false,
+      "position_lock_reason": "",
+      "selection_score": 85.0,
+      "category_saturation_penalty": 0.0,
+      "region_saturation_penalty": 0.0,
+      "diversity_penalty": 0.0,
+      "selection_reason": "importance 77; freshness 90.36; urgency 8/10"
+    },
+    {
+      "current_position": 54,
+      "recommended_position": 2,
+      "first_placement_position": 55,
+      "headline": "Trump super PAC directs $10 million to Texas Senate race in first general election spend",
       "category_key": "politics",
       "slug": "",
       "story_id": "story_000112",
-      "score": 87,
+      "score": 84,
       "score_breakdown": {
-        "score": 87,
+        "score": 84,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 100,
         "importance_basis": "persistent_story_importance",
@@ -401,8 +470,8 @@
             "points": 15
           }
         ],
-        "freshness": 77.94,
-        "urgency": 7,
+        "freshness": 71.3,
+        "urgency": 6,
         "relevance": 100,
         "regions": [
           "Texas"
@@ -410,7 +479,7 @@
         "source_trust": 92,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 13.24,
+        "age_hours": 17.22,
         "timestamp_basis": "registry:latest_timeline",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -434,23 +503,23 @@
       "custom": false,
       "position_locked": false,
       "position_lock_reason": "",
-      "selection_score": 87.0,
+      "selection_score": 84.0,
       "category_saturation_penalty": 0.0,
       "region_saturation_penalty": 0.0,
       "diversity_penalty": 0.0,
-      "selection_reason": "importance 100; freshness 77.94; urgency 7/10"
+      "selection_reason": "importance 100; freshness 71.3; urgency 6/10"
     },
     {
-      "current_position": 20,
-      "recommended_position": 2,
-      "first_placement_position": 20,
+      "current_position": 18,
+      "recommended_position": 3,
+      "first_placement_position": 19,
       "headline": "Historical data shows divided Congress under Republican president tied to 7.33% average annual S&P 500 return",
       "category_key": "business",
       "slug": "2026-09-06-historical-data-shows-divided-congress-under-republican-president-tied-to-733-av",
       "story_id": "story_000118",
-      "score": 80,
+      "score": 83,
       "score_breakdown": {
-        "score": 80,
+        "score": 83,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 100,
         "importance_basis": "persistent_story_importance",
@@ -476,14 +545,14 @@
             "points": 15
           }
         ],
-        "freshness": 98.47,
-        "urgency": 3,
+        "freshness": 91.83,
+        "urgency": 5,
         "relevance": 100,
         "regions": [],
         "source_trust": 45,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 0.92,
+        "age_hours": 4.9,
         "timestamp_basis": "archive:first_published",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -507,23 +576,104 @@
       "custom": false,
       "position_locked": false,
       "position_lock_reason": "",
-      "selection_score": 80.0,
+      "selection_score": 83.0,
       "category_saturation_penalty": 0.0,
       "region_saturation_penalty": 0.0,
       "diversity_penalty": 0.0,
-      "selection_reason": "importance 100; freshness 98.47; urgency 3/10"
+      "selection_reason": "importance 100; freshness 91.83; urgency 5/10"
+    },
+    {
+      "current_position": 10,
+      "recommended_position": 4,
+      "first_placement_position": 10,
+      "headline": "Federal judge extends injunction blocking USPS mail-in ballot rules in Washington and 25 other states",
+      "category_key": "us",
+      "slug": "",
+      "story_id": "story_000064",
+      "score": 81,
+      "score_breakdown": {
+        "score": 81,
+        "basis": "homepage_editorial_shadow_v2",
+        "importance": 100,
+        "importance_basis": "persistent_story_importance",
+        "importance_reasons": [
+          {
+            "code": "federal_action",
+            "label": "Federal/national government action",
+            "points": 32
+          },
+          {
+            "code": "election",
+            "label": "Major election/political consequence",
+            "points": 25
+          },
+          {
+            "code": "war_diplomacy",
+            "label": "War, diplomacy or national-security consequence",
+            "points": 30
+          },
+          {
+            "code": "follow_up",
+            "label": "Story has follow-up coverage",
+            "points": 5
+          },
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "freshness": 40.63,
+        "urgency": 8,
+        "relevance": 100,
+        "regions": [
+          "Washington Dc",
+          "Washington"
+        ],
+        "source_trust": 94,
+        "breaking_bonus": 0.0,
+        "material_update_bonus": 0.0,
+        "age_hours": 35.62,
+        "timestamp_basis": "registry:latest_timeline",
+        "deck_eligible": true,
+        "eligibility_reason": "fresh_window"
+      },
+      "deck_eligible": true,
+      "eligibility_reason": "fresh_window",
+      "match_basis": "persistent_story_id+source_url",
+      "identity_confidence": "high",
+      "identity_evidence": [
+        "source_url"
+      ],
+      "identity_warning": "",
+      "identity": "story:story_000064",
+      "identity_basis": "persistent_story_id",
+      "placement_count": 1,
+      "placement_categories": [
+        "us"
+      ],
+      "pinned": false,
+      "pin_position": null,
+      "custom": false,
+      "position_locked": false,
+      "position_lock_reason": "",
+      "selection_score": 81.0,
+      "category_saturation_penalty": 0.0,
+      "region_saturation_penalty": 0.0,
+      "diversity_penalty": 0.0,
+      "selection_reason": "importance 100; freshness 40.63; urgency 8/10"
     },
     {
       "current_position": 55,
-      "recommended_position": 3,
-      "first_placement_position": 55,
-      "headline": "Trump, Vance to headline GOP midterm convention alongside vulnerable candidates",
+      "recommended_position": 5,
+      "first_placement_position": 56,
+      "headline": "Trump, Vance to headline GOP midterm convention in Dallas next week",
       "category_key": "politics",
       "slug": "",
       "story_id": "story_000141",
-      "score": 80,
+      "score": 79,
       "score_breakdown": {
-        "score": 80,
+        "score": 79,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 77,
         "importance_basis": "persistent_story_importance",
@@ -549,7 +699,7 @@
             "points": 15
           }
         ],
-        "freshness": 90.44,
+        "freshness": 83.8,
         "urgency": 6,
         "relevance": 100,
         "regions": [
@@ -557,18 +707,18 @@
           "New Hampshire",
           "Pennsylvania",
           "Wisconsin",
-          "Michigan",
           "New York",
-          "Florida",
+          "Michigan",
           "Georgia",
-          "Texas",
+          "Florida",
           "Maine",
+          "Texas",
           "Ohio"
         ],
         "source_trust": 90,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 5.74,
+        "age_hours": 9.72,
         "timestamp_basis": "registry:latest_timeline",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -592,23 +742,91 @@
       "custom": false,
       "position_locked": false,
       "position_lock_reason": "",
-      "selection_score": 80.0,
+      "selection_score": 79.0,
       "category_saturation_penalty": 0.0,
       "region_saturation_penalty": 0.0,
       "diversity_penalty": 0.0,
-      "selection_reason": "importance 77; freshness 90.44; urgency 6/10"
+      "selection_reason": "importance 77; freshness 83.8; urgency 6/10"
     },
     {
-      "current_position": 4,
-      "recommended_position": 4,
-      "first_placement_position": 4,
+      "current_position": 11,
+      "recommended_position": 6,
+      "first_placement_position": 12,
+      "headline": "Zelenskyy Links Russian Airport Strikes to US Envoys' Planned Kyiv Visit",
+      "category_key": "us",
+      "slug": "",
+      "story_id": "story_000161",
+      "score": 77,
+      "score_breakdown": {
+        "score": 77,
+        "basis": "homepage_editorial_shadow_v2",
+        "importance": 63,
+        "importance_basis": "persistent_story_importance",
+        "importance_reasons": [
+          {
+            "code": "war_diplomacy",
+            "label": "War, diplomacy or national-security consequence",
+            "points": 30
+          },
+          {
+            "code": "multiple_deaths",
+            "label": "Multiple deaths reported",
+            "points": 18
+          },
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "freshness": 89.1,
+        "urgency": 7,
+        "relevance": 100,
+        "regions": [],
+        "source_trust": 91,
+        "breaking_bonus": 0.0,
+        "material_update_bonus": 0.0,
+        "age_hours": 6.54,
+        "timestamp_basis": "registry:latest_timeline",
+        "deck_eligible": true,
+        "eligibility_reason": "fresh_window"
+      },
+      "deck_eligible": true,
+      "eligibility_reason": "fresh_window",
+      "match_basis": "persistent_story_id+source_url",
+      "identity_confidence": "high",
+      "identity_evidence": [
+        "source_url"
+      ],
+      "identity_warning": "",
+      "identity": "story:story_000161",
+      "identity_basis": "persistent_story_id",
+      "placement_count": 1,
+      "placement_categories": [
+        "us"
+      ],
+      "pinned": false,
+      "pin_position": null,
+      "custom": false,
+      "position_locked": false,
+      "position_lock_reason": "",
+      "selection_score": 77.0,
+      "category_saturation_penalty": 0.0,
+      "region_saturation_penalty": 0.0,
+      "diversity_penalty": 0.0,
+      "selection_reason": "importance 63; freshness 89.1; urgency 7/10"
+    },
+    {
+      "current_position": 7,
+      "recommended_position": 7,
+      "first_placement_position": 7,
       "headline": "Trump envoys to visit Moscow and Kyiv this weekend as U.S. pushes new peace proposal",
       "category_key": "world",
       "slug": "2026-09-05-trump-envoys-to-visit-moscow-and-kyiv-this-weekend-as-us-pushes-new-peace-propos",
       "story_id": "story_000062",
-      "score": 55,
+      "score": 54,
       "score_breakdown": {
-        "score": 55,
+        "score": 54,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 45,
         "importance_basis": "persistent_story_importance",
@@ -624,14 +842,14 @@
             "points": 15
           }
         ],
-        "freshness": 57.72,
+        "freshness": 51.08,
         "urgency": 3,
         "relevance": 100,
         "regions": [],
         "source_trust": 94,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 25.37,
+        "age_hours": 29.35,
         "timestamp_basis": "archive:first_published",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -655,49 +873,51 @@
       "custom": false,
       "position_locked": true,
       "position_lock_reason": "identity_conflict",
-      "selection_score": 55.0,
+      "selection_score": 54.0,
       "diversity_penalty": 0.0,
       "category_saturation_penalty": 0.0,
       "region_saturation_penalty": 0.0,
       "selection_reason": "position locked: identity_conflict"
     },
     {
-      "current_position": 44,
-      "recommended_position": 5,
-      "first_placement_position": 44,
-      "headline": "Katie Taylor retires after career-closing win at Croke Park",
-      "category_key": "sports",
+      "current_position": 2,
+      "recommended_position": 8,
+      "first_placement_position": 2,
+      "headline": "Germans vote in Saxony-Anhalt as far-right AfD polls at 40 percent",
+      "category_key": "world",
       "slug": "",
-      "story_id": "story_000151",
-      "score": 70,
+      "story_id": "story_000159",
+      "score": 75,
       "score_breakdown": {
-        "score": 70,
+        "score": 75,
         "basis": "homepage_editorial_shadow_v2",
-        "importance": 40,
+        "importance": 65,
         "importance_basis": "persistent_story_importance",
         "importance_reasons": [
+          {
+            "code": "election",
+            "label": "Major election/political consequence",
+            "points": 25
+          },
           {
             "code": "war_diplomacy",
             "label": "War, diplomacy or national-security consequence",
             "points": 30
           },
           {
-            "code": "multistate_scope",
-            "label": "Multi-state U.S. scope",
+            "code": "global_scope",
+            "label": "Major international consequence",
             "points": 10
           }
         ],
-        "freshness": 91.21,
+        "freshness": 93.43,
         "urgency": 7,
-        "relevance": 95,
-        "regions": [
-          "New York",
-          "Texas"
-        ],
-        "source_trust": 94,
+        "relevance": 88,
+        "regions": [],
+        "source_trust": 55,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 5.28,
+        "age_hours": 3.94,
         "timestamp_basis": "registry:latest_timeline",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -710,81 +930,11 @@
         "source_url"
       ],
       "identity_warning": "",
-      "identity": "story:story_000151",
+      "identity": "story:story_000159",
       "identity_basis": "persistent_story_id",
       "placement_count": 1,
       "placement_categories": [
-        "sports"
-      ],
-      "pinned": false,
-      "pin_position": null,
-      "custom": false,
-      "position_locked": false,
-      "position_lock_reason": "",
-      "selection_score": 70.0,
-      "category_saturation_penalty": 0.0,
-      "region_saturation_penalty": 0.0,
-      "diversity_penalty": 0.0,
-      "selection_reason": "importance 40; freshness 91.21; urgency 7/10"
-    },
-    {
-      "current_position": 45,
-      "recommended_position": 6,
-      "first_placement_position": 45,
-      "headline": "Bad Bunny's Super Bowl halftime show and The Traitors lead Creative Arts Emmys night one",
-      "category_key": "entertainment",
-      "slug": "",
-      "story_id": "story_000152",
-      "score": 69,
-      "score_breakdown": {
-        "score": 69,
-        "basis": "homepage_editorial_shadow_v2",
-        "importance": 48,
-        "importance_basis": "persistent_story_importance",
-        "importance_reasons": [
-          {
-            "code": "war_diplomacy",
-            "label": "War, diplomacy or national-security consequence",
-            "points": 30
-          },
-          {
-            "code": "cultural_sports",
-            "label": "Major sports/cultural event",
-            "points": 12
-          },
-          {
-            "code": "single_death",
-            "label": "Death reported",
-            "points": 6
-          }
-        ],
-        "freshness": 92.44,
-        "urgency": 6,
-        "relevance": 82,
-        "regions": [
-          "Georgia"
-        ],
-        "source_trust": 90,
-        "breaking_bonus": 0.0,
-        "material_update_bonus": 0.0,
-        "age_hours": 4.54,
-        "timestamp_basis": "registry:latest_timeline",
-        "deck_eligible": true,
-        "eligibility_reason": "fresh_window"
-      },
-      "deck_eligible": true,
-      "eligibility_reason": "fresh_window",
-      "match_basis": "persistent_story_id+source_url",
-      "identity_confidence": "high",
-      "identity_evidence": [
-        "source_url"
-      ],
-      "identity_warning": "",
-      "identity": "story:story_000152",
-      "identity_basis": "persistent_story_id",
-      "placement_count": 1,
-      "placement_categories": [
-        "entertainment"
+        "world"
       ],
       "pinned": false,
       "pin_position": null,
@@ -792,31 +942,26 @@
       "position_locked": false,
       "position_lock_reason": "",
       "selection_score": 69.0,
-      "category_saturation_penalty": 0.0,
+      "category_saturation_penalty": 6.0,
       "region_saturation_penalty": 0.0,
-      "diversity_penalty": 0.0,
-      "selection_reason": "importance 48; freshness 92.44; urgency 6/10"
+      "diversity_penalty": 6.0,
+      "selection_reason": "importance 65; freshness 93.43; urgency 7/10; -6 category saturation"
     },
     {
-      "current_position": 5,
-      "recommended_position": 7,
-      "first_placement_position": 5,
-      "headline": "US military strikes three Iranian oil tankers in retaliation for attacks on American warships",
-      "category_key": "world",
-      "slug": "2026-09-05-us-military-strikes-three-iranian-oil-tankers-in-retaliation-for-attacks-on-amer",
-      "story_id": "story_000085",
+      "current_position": 50,
+      "recommended_position": 9,
+      "first_placement_position": 51,
+      "headline": "Tupac trial testimony reveals Las Vegas police rejected early lead on shooter",
+      "category_key": "entertainment",
+      "slug": "",
+      "story_id": "story_000173",
       "score": 68,
       "score_breakdown": {
         "score": 68,
         "basis": "homepage_editorial_shadow_v2",
-        "importance": 61,
+        "importance": 31,
         "importance_basis": "persistent_story_importance",
         "importance_reasons": [
-          {
-            "code": "war_diplomacy",
-            "label": "War, diplomacy or national-security consequence",
-            "points": 30
-          },
           {
             "code": "public_safety",
             "label": "Public-safety event",
@@ -833,15 +978,15 @@
             "points": 15
           }
         ],
-        "freshness": 89.98,
-        "urgency": 3,
+        "freshness": 94.68,
+        "urgency": 7,
         "relevance": 100,
         "regions": [],
-        "source_trust": 94,
+        "source_trust": 91,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 6.01,
-        "timestamp_basis": "archive:first_published",
+        "age_hours": 3.19,
+        "timestamp_basis": "registry:latest_timeline",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
       },
@@ -853,11 +998,11 @@
         "source_url"
       ],
       "identity_warning": "",
-      "identity": "story:story_000085",
+      "identity": "story:story_000173",
       "identity_basis": "persistent_story_id",
       "placement_count": 1,
       "placement_categories": [
-        "world"
+        "entertainment"
       ],
       "pinned": false,
       "pin_position": null,
@@ -868,19 +1013,85 @@
       "category_saturation_penalty": 0.0,
       "region_saturation_penalty": 0.0,
       "diversity_penalty": 0.0,
-      "selection_reason": "importance 61; freshness 89.98; urgency 3/10"
+      "selection_reason": "importance 31; freshness 94.68; urgency 7/10"
     },
     {
-      "current_position": 21,
-      "recommended_position": 8,
-      "first_placement_position": 21,
+      "current_position": 43,
+      "recommended_position": 10,
+      "first_placement_position": 44,
+      "headline": "BYU opens season with 63-7 rout of Utah Tech",
+      "category_key": "sports",
+      "slug": "",
+      "story_id": "story_000169",
+      "score": 67,
+      "score_breakdown": {
+        "score": 67,
+        "basis": "homepage_editorial_shadow_v2",
+        "importance": 40,
+        "importance_basis": "persistent_story_importance",
+        "importance_reasons": [
+          {
+            "code": "war_diplomacy",
+            "label": "War, diplomacy or national-security consequence",
+            "points": 30
+          },
+          {
+            "code": "multistate_scope",
+            "label": "Multi-state U.S. scope",
+            "points": 10
+          }
+        ],
+        "freshness": 92.66,
+        "urgency": 7,
+        "relevance": 95,
+        "regions": [
+          "Arizona",
+          "Utah"
+        ],
+        "source_trust": 55,
+        "breaking_bonus": 0.0,
+        "material_update_bonus": 0.0,
+        "age_hours": 4.41,
+        "timestamp_basis": "registry:latest_timeline",
+        "deck_eligible": true,
+        "eligibility_reason": "fresh_window"
+      },
+      "deck_eligible": true,
+      "eligibility_reason": "fresh_window",
+      "match_basis": "persistent_story_id+source_url",
+      "identity_confidence": "high",
+      "identity_evidence": [
+        "source_url"
+      ],
+      "identity_warning": "",
+      "identity": "story:story_000169",
+      "identity_basis": "persistent_story_id",
+      "placement_count": 1,
+      "placement_categories": [
+        "sports"
+      ],
+      "pinned": false,
+      "pin_position": null,
+      "custom": false,
+      "position_locked": false,
+      "position_lock_reason": "",
+      "selection_score": 67.0,
+      "category_saturation_penalty": 0.0,
+      "region_saturation_penalty": 0.0,
+      "diversity_penalty": 0.0,
+      "selection_reason": "importance 40; freshness 92.66; urgency 7/10"
+    },
+    {
+      "current_position": 19,
+      "recommended_position": 11,
+      "first_placement_position": 20,
       "headline": "Trump threatens trade embargoes on deficit countries unless Federal Reserve cuts rates",
       "category_key": "business",
       "slug": "2026-09-05-trump-threatens-trade-embargoes-on-deficit-countries-unless-federal-reserve-cuts",
       "story_id": "story_000068",
-      "score": 68,
+      "score": 67,
       "score_breakdown": {
-        "score": 68,
+        "score": 67,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 95,
         "importance_basis": "persistent_story_importance",
@@ -911,7 +1122,7 @@
             "points": 15
           }
         ],
-        "freshness": 57.72,
+        "freshness": 51.08,
         "urgency": 3,
         "relevance": 100,
         "regions": [
@@ -920,7 +1131,7 @@
         "source_trust": 45,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 25.37,
+        "age_hours": 29.35,
         "timestamp_basis": "archive:first_published",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -944,25 +1155,25 @@
       "custom": false,
       "position_locked": false,
       "position_lock_reason": "",
-      "selection_score": 68.0,
+      "selection_score": 67.0,
       "category_saturation_penalty": 0.0,
       "region_saturation_penalty": 0.0,
       "diversity_penalty": 0.0,
-      "selection_reason": "importance 95; freshness 57.72; urgency 3/10"
+      "selection_reason": "importance 95; freshness 51.08; urgency 3/10"
     },
     {
-      "current_position": 53,
-      "recommended_position": 9,
-      "first_placement_position": 53,
-      "headline": "Phaedra Parks confirms romance with CT Tamburello from 'The Traitors'",
+      "current_position": 45,
+      "recommended_position": 12,
+      "first_placement_position": 46,
+      "headline": "Mariska Hargitay wins two Emmys for HBO documentary about her mother Jayne Mansfield",
       "category_key": "entertainment",
       "slug": "",
-      "story_id": "story_000157",
-      "score": 67,
+      "story_id": "story_000080",
+      "score": 66,
       "score_breakdown": {
-        "score": 67,
+        "score": 66,
         "basis": "homepage_editorial_shadow_v2",
-        "importance": 40,
+        "importance": 63,
         "importance_basis": "persistent_story_importance",
         "importance_reasons": [
           {
@@ -971,19 +1182,31 @@
             "points": 30
           },
           {
-            "code": "global_scope",
-            "label": "Major international consequence",
-            "points": 10
+            "code": "cultural_sports",
+            "label": "Major sports/cultural event",
+            "points": 12
+          },
+          {
+            "code": "single_death",
+            "label": "Death reported",
+            "points": 6
+          },
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
           }
         ],
-        "freshness": 88.41,
-        "urgency": 7,
-        "relevance": 85,
-        "regions": [],
-        "source_trust": 88,
+        "freshness": 49.51,
+        "urgency": 6,
+        "relevance": 100,
+        "regions": [
+          "New York"
+        ],
+        "source_trust": 94,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 6.96,
+        "age_hours": 30.29,
         "timestamp_basis": "registry:latest_timeline",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -996,7 +1219,7 @@
         "source_url"
       ],
       "identity_warning": "",
-      "identity": "story:story_000157",
+      "identity": "story:story_000080",
       "identity_basis": "persistent_story_id",
       "placement_count": 1,
       "placement_categories": [
@@ -1007,247 +1230,46 @@
       "custom": false,
       "position_locked": false,
       "position_lock_reason": "",
-      "selection_score": 67.0,
-      "category_saturation_penalty": 0.0,
-      "region_saturation_penalty": 0.0,
-      "diversity_penalty": 0.0,
-      "selection_reason": "importance 40; freshness 88.41; urgency 7/10"
-    },
-    {
-      "current_position": 13,
-      "recommended_position": 10,
-      "first_placement_position": 13,
-      "headline": "Virgin Atlantic founder blames rising flight prices on 'foolish leaders' starting wars",
-      "category_key": "us",
-      "slug": "2026-09-05-virgin-atlantic-founder-blames-rising-flight-prices-on-foolish-leaders-starting",
-      "story_id": "story_000060",
-      "score": 66,
-      "score_breakdown": {
-        "score": 66,
-        "basis": "homepage_editorial_shadow_v2",
-        "importance": 77,
-        "importance_basis": "persistent_story_importance",
-        "importance_reasons": [
-          {
-            "code": "federal_action",
-            "label": "Federal/national government action",
-            "points": 32
-          },
-          {
-            "code": "war_diplomacy",
-            "label": "War, diplomacy or national-security consequence",
-            "points": 30
-          },
-          {
-            "code": "national_scope",
-            "label": "Nationwide U.S. scope",
-            "points": 15
-          }
-        ],
-        "freshness": 56.31,
-        "urgency": 3,
-        "relevance": 100,
-        "regions": [],
-        "source_trust": 94,
-        "breaking_bonus": 0.0,
-        "material_update_bonus": 0.0,
-        "age_hours": 26.21,
-        "timestamp_basis": "archive:first_published",
-        "deck_eligible": true,
-        "eligibility_reason": "fresh_window"
-      },
-      "deck_eligible": true,
-      "eligibility_reason": "fresh_window",
-      "match_basis": "persistent_story_id+source_url",
-      "identity_confidence": "high",
-      "identity_evidence": [
-        "source_url"
-      ],
-      "identity_warning": "",
-      "identity": "story:story_000060",
-      "identity_basis": "persistent_story_id",
-      "placement_count": 1,
-      "placement_categories": [
-        "us"
-      ],
-      "pinned": false,
-      "pin_position": null,
-      "custom": false,
-      "position_locked": false,
-      "position_lock_reason": "",
       "selection_score": 66.0,
       "category_saturation_penalty": 0.0,
       "region_saturation_penalty": 0.0,
       "diversity_penalty": 0.0,
-      "selection_reason": "importance 77; freshness 56.31; urgency 3/10"
+      "selection_reason": "importance 63; freshness 49.51; urgency 6/10"
     },
     {
-      "current_position": 10,
-      "recommended_position": 11,
-      "first_placement_position": 10,
-      "headline": "Casting for next James Bond may conclude by year's end, producer says",
-      "category_key": "us",
-      "slug": "",
-      "story_id": "story_000116",
-      "score": 65,
-      "score_breakdown": {
-        "score": 65,
-        "basis": "homepage_editorial_shadow_v2",
-        "importance": 30,
-        "importance_basis": "persistent_story_importance",
-        "importance_reasons": [
-          {
-            "code": "war_diplomacy",
-            "label": "War, diplomacy or national-security consequence",
-            "points": 30
-          }
-        ],
-        "freshness": 93.16,
-        "urgency": 7,
-        "relevance": 82,
-        "regions": [
-          "New York"
-        ],
-        "source_trust": 94,
-        "breaking_bonus": 0.0,
-        "material_update_bonus": 0.0,
-        "age_hours": 4.1,
-        "timestamp_basis": "registry:latest_timeline",
-        "deck_eligible": true,
-        "eligibility_reason": "fresh_window"
-      },
-      "deck_eligible": true,
-      "eligibility_reason": "fresh_window",
-      "match_basis": "persistent_story_id+source_url",
-      "identity_confidence": "high",
-      "identity_evidence": [
-        "source_url"
-      ],
-      "identity_warning": "",
-      "identity": "story:story_000116",
-      "identity_basis": "persistent_story_id",
-      "placement_count": 1,
-      "placement_categories": [
-        "us"
-      ],
-      "pinned": false,
-      "pin_position": null,
-      "custom": false,
-      "position_locked": false,
-      "position_lock_reason": "",
-      "selection_score": 65.0,
-      "category_saturation_penalty": 0.0,
-      "region_saturation_penalty": 0.0,
-      "diversity_penalty": 0.0,
-      "selection_reason": "importance 30; freshness 93.16; urgency 7/10"
-    },
-    {
-      "current_position": 34,
-      "recommended_position": 12,
-      "first_placement_position": 34,
-      "headline": "The Blood of Dawnwalker sells 1 million copies in two days",
-      "category_key": "tech",
-      "slug": "",
-      "story_id": "story_000123",
-      "score": 65,
-      "score_breakdown": {
-        "score": 65,
-        "basis": "homepage_editorial_shadow_v2",
-        "importance": 45,
-        "importance_basis": "persistent_story_importance",
-        "importance_reasons": [
-          {
-            "code": "war_diplomacy",
-            "label": "War, diplomacy or national-security consequence",
-            "points": 30
-          },
-          {
-            "code": "follow_up",
-            "label": "Story has follow-up coverage",
-            "points": 5
-          },
-          {
-            "code": "global_scope",
-            "label": "Major international consequence",
-            "points": 10
-          }
-        ],
-        "freshness": 82.17,
-        "urgency": 7,
-        "relevance": 85,
-        "regions": [],
-        "source_trust": 55,
-        "breaking_bonus": 0.0,
-        "material_update_bonus": 0.0,
-        "age_hours": 10.7,
-        "timestamp_basis": "registry:latest_timeline",
-        "deck_eligible": true,
-        "eligibility_reason": "fresh_window"
-      },
-      "deck_eligible": true,
-      "eligibility_reason": "fresh_window",
-      "match_basis": "persistent_story_id+source_url",
-      "identity_confidence": "high",
-      "identity_evidence": [
-        "source_url"
-      ],
-      "identity_warning": "",
-      "identity": "story:story_000123",
-      "identity_basis": "persistent_story_id",
-      "placement_count": 1,
-      "placement_categories": [
-        "tech"
-      ],
-      "pinned": false,
-      "pin_position": null,
-      "custom": false,
-      "position_locked": false,
-      "position_lock_reason": "",
-      "selection_score": 65.0,
-      "category_saturation_penalty": 0.0,
-      "region_saturation_penalty": 0.0,
-      "diversity_penalty": 0.0,
-      "selection_reason": "importance 45; freshness 82.17; urgency 7/10"
-    },
-    {
-      "current_position": 1,
+      "current_position": 3,
       "recommended_position": 13,
-      "first_placement_position": 1,
-      "headline": "Egyptian court sentences TV presenter and 11 others to death in drug trafficking case",
+      "first_placement_position": 3,
+      "headline": "Anak Krakatau eruption suspends 209 flights at Jakarta airport, stranding 22,000 passengers",
       "category_key": "world",
       "slug": "",
-      "story_id": "story_000088",
-      "score": 56,
+      "story_id": "story_000160",
+      "score": 57,
       "score_breakdown": {
-        "score": 56,
+        "score": 57,
         "basis": "homepage_editorial_shadow_v2",
-        "importance": 26,
+        "importance": 16,
         "importance_basis": "persistent_story_importance",
         "importance_reasons": [
           {
-            "code": "court_action",
-            "label": "Significant court/criminal-justice action",
-            "points": 15
+            "code": "public_safety",
+            "label": "Public-safety event",
+            "points": 10
           },
           {
             "code": "single_death",
             "label": "Death reported",
             "points": 6
-          },
-          {
-            "code": "follow_up",
-            "label": "Story has follow-up coverage",
-            "points": 5
           }
         ],
-        "freshness": 88.81,
-        "urgency": 5,
+        "freshness": 98.21,
+        "urgency": 6,
         "relevance": 60,
         "regions": [],
         "source_trust": 94,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 6.71,
+        "age_hours": 1.08,
         "timestamp_basis": "registry:latest_timeline",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -1260,7 +1282,7 @@
         "source_url"
       ],
       "identity_warning": "",
-      "identity": "story:story_000088",
+      "identity": "story:story_000160",
       "identity_basis": "persistent_story_id",
       "placement_count": 1,
       "placement_categories": [
@@ -1273,39 +1295,44 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 2,
+      "current_position": 4,
       "recommended_position": 14,
-      "first_placement_position": 2,
-      "headline": "Prince William to represent King Charles at funeral of Norway's King Harald V",
+      "first_placement_position": 4,
+      "headline": "Fuel tanker explosion in western Iran kills at least 10",
       "category_key": "world",
       "slug": "",
-      "story_id": "story_000089",
-      "score": 50,
+      "story_id": "story_000114",
+      "score": 66,
       "score_breakdown": {
-        "score": 50,
+        "score": 66,
         "basis": "homepage_editorial_shadow_v2",
-        "importance": 11,
+        "importance": 70,
         "importance_basis": "persistent_story_importance",
         "importance_reasons": [
           {
-            "code": "single_death",
-            "label": "Death reported",
-            "points": 6
+            "code": "war_diplomacy",
+            "label": "War, diplomacy or national-security consequence",
+            "points": 30
           },
           {
-            "code": "follow_up",
-            "label": "Story has follow-up coverage",
-            "points": 5
+            "code": "public_safety",
+            "label": "Public-safety event",
+            "points": 10
+          },
+          {
+            "code": "multi_fatality",
+            "label": "Large multi-fatality event",
+            "points": 30
           }
         ],
-        "freshness": 87.99,
+        "freshness": 85.04,
         "urgency": 4,
         "relevance": 72,
         "regions": [],
-        "source_trust": 94,
+        "source_trust": 55,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 7.21,
+        "age_hours": 8.98,
         "timestamp_basis": "registry:latest_timeline",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -1318,7 +1345,7 @@
         "source_url"
       ],
       "identity_warning": "",
-      "identity": "story:story_000089",
+      "identity": "story:story_000114",
       "identity_basis": "persistent_story_id",
       "placement_count": 1,
       "placement_categories": [
@@ -1331,16 +1358,16 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 3,
+      "current_position": 5,
       "recommended_position": 15,
-      "first_placement_position": 3,
+      "first_placement_position": 5,
       "headline": "Greek air force F-4 Phantom jet crashes at air show near Athens, killing both pilots",
       "category_key": "world",
       "slug": "2026-09-06-greek-air-force-f-4-phantom-jet-crashes-at-air-show-near-athens-killing-both-pil",
       "story_id": "story_000113",
-      "score": 65,
+      "score": 63,
       "score_breakdown": {
-        "score": 65,
+        "score": 63,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 56,
         "importance_basis": "persistent_story_importance",
@@ -1366,7 +1393,7 @@
             "points": 10
           }
         ],
-        "freshness": 98.47,
+        "freshness": 91.83,
         "urgency": 3,
         "relevance": 95,
         "regions": [
@@ -1376,7 +1403,7 @@
         "source_trust": 55,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 0.92,
+        "age_hours": 4.9,
         "timestamp_basis": "archive:first_published",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -1405,6 +1432,137 @@
       "current_position": 6,
       "recommended_position": 16,
       "first_placement_position": 6,
+      "headline": "Egyptian court sentences TV presenter and 11 others to death in drug trafficking case",
+      "category_key": "world",
+      "slug": "2026-09-06-egyptian-court-sentences-tv-presenter-and-11-others-to-death-in-drug-trafficking",
+      "story_id": "story_000088",
+      "score": 53,
+      "score_breakdown": {
+        "score": 53,
+        "basis": "homepage_editorial_shadow_v2",
+        "importance": 26,
+        "importance_basis": "persistent_story_importance",
+        "importance_reasons": [
+          {
+            "code": "court_action",
+            "label": "Significant court/criminal-justice action",
+            "points": 15
+          },
+          {
+            "code": "single_death",
+            "label": "Death reported",
+            "points": 6
+          },
+          {
+            "code": "follow_up",
+            "label": "Story has follow-up coverage",
+            "points": 5
+          }
+        ],
+        "freshness": 93.36,
+        "urgency": 3,
+        "relevance": 60,
+        "regions": [],
+        "source_trust": 94,
+        "breaking_bonus": 0.0,
+        "material_update_bonus": 0.0,
+        "age_hours": 3.98,
+        "timestamp_basis": "archive:first_published",
+        "deck_eligible": true,
+        "eligibility_reason": "fresh_window"
+      },
+      "deck_eligible": true,
+      "eligibility_reason": "fresh_window",
+      "match_basis": "persistent_story_id+source_url",
+      "identity_confidence": "high",
+      "identity_evidence": [
+        "source_url"
+      ],
+      "identity_warning": "",
+      "identity": "story:story_000088",
+      "identity_basis": "persistent_story_id",
+      "placement_count": 1,
+      "placement_categories": [
+        "world"
+      ],
+      "pinned": false,
+      "pin_position": null,
+      "custom": false,
+      "position_locked": false,
+      "position_lock_reason": ""
+    },
+    {
+      "current_position": 8,
+      "recommended_position": 17,
+      "first_placement_position": 8,
+      "headline": "US military strikes three Iranian oil tankers in retaliation for attacks on American warships",
+      "category_key": "world",
+      "slug": "2026-09-05-us-military-strikes-three-iranian-oil-tankers-in-retaliation-for-attacks-on-amer",
+      "story_id": "story_000085",
+      "score": 67,
+      "score_breakdown": {
+        "score": 67,
+        "basis": "homepage_editorial_shadow_v2",
+        "importance": 61,
+        "importance_basis": "persistent_story_importance",
+        "importance_reasons": [
+          {
+            "code": "war_diplomacy",
+            "label": "War, diplomacy or national-security consequence",
+            "points": 30
+          },
+          {
+            "code": "public_safety",
+            "label": "Public-safety event",
+            "points": 10
+          },
+          {
+            "code": "single_death",
+            "label": "Death reported",
+            "points": 6
+          },
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "freshness": 83.34,
+        "urgency": 3,
+        "relevance": 100,
+        "regions": [],
+        "source_trust": 94,
+        "breaking_bonus": 0.0,
+        "material_update_bonus": 0.0,
+        "age_hours": 10.0,
+        "timestamp_basis": "archive:first_published",
+        "deck_eligible": true,
+        "eligibility_reason": "fresh_window"
+      },
+      "deck_eligible": true,
+      "eligibility_reason": "fresh_window",
+      "match_basis": "persistent_story_id+source_url",
+      "identity_confidence": "high",
+      "identity_evidence": [
+        "source_url"
+      ],
+      "identity_warning": "",
+      "identity": "story:story_000085",
+      "identity_basis": "persistent_story_id",
+      "placement_count": 1,
+      "placement_categories": [
+        "world"
+      ],
+      "pinned": false,
+      "pin_position": null,
+      "custom": false,
+      "position_locked": false,
+      "position_lock_reason": ""
+    },
+    {
+      "current_position": 9,
+      "recommended_position": 18,
+      "first_placement_position": 9,
       "headline": "US diesel prices reach all-time high as Iran conflict disrupts fuel supply",
       "category_key": "world",
       "slug": "2026-06-10-us-launches-second-round-of-strikes-against-iran",
@@ -1423,7 +1581,7 @@
         "source_trust": 50,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 2116.21,
+        "age_hours": 2120.19,
         "timestamp_basis": "archive:date",
         "deck_eligible": false,
         "eligibility_reason": "older_than_60_hours"
@@ -1447,176 +1605,28 @@
       "position_lock_reason": "identity_conflict"
     },
     {
-      "current_position": 7,
-      "recommended_position": 17,
-      "first_placement_position": 7,
-      "headline": "Russia Suspected in Series of Sabotage Incidents Across Europe",
-      "category_key": "world",
-      "slug": "2026-09-04-russia-suspected-in-series-of-sabotage-incidents-across-europe",
-      "story_id": "",
-      "score": 24,
-      "score_breakdown": {
-        "score": 24,
-        "basis": "homepage_editorial_shadow_v2",
-        "importance": 0,
-        "importance_basis": "unmatched_story",
-        "importance_reasons": [],
-        "freshness": 12.99,
-        "urgency": 3,
-        "relevance": 82,
-        "regions": [],
-        "source_trust": 50,
-        "breaking_bonus": 0.0,
-        "material_update_bonus": 0.0,
-        "age_hours": 52.21,
-        "timestamp_basis": "archive:date",
-        "deck_eligible": false,
-        "eligibility_reason": "older_than_48_hours_not_urgent_enough"
-      },
-      "deck_eligible": false,
-      "eligibility_reason": "older_than_48_hours_not_urgent_enough",
-      "match_basis": "unmatched",
-      "identity_confidence": "unmatched",
-      "identity_evidence": [],
-      "identity_warning": "",
-      "identity": "source:https://plainnews.app/articles/2026-09-04-russia-suspected-in-series-of-sabotage-incidents-across-europe.html",
-      "identity_basis": "source_url",
-      "placement_count": 1,
-      "placement_categories": [
-        "world"
-      ],
-      "pinned": false,
-      "pin_position": null,
-      "custom": false,
-      "position_locked": false,
-      "position_lock_reason": ""
-    },
-    {
-      "current_position": 8,
-      "recommended_position": 18,
-      "first_placement_position": 8,
-      "headline": "Flooding in Tibet Leaves Hundreds Missing as China Faces Criticism Over Response",
-      "category_key": "world",
-      "slug": "2026-09-04-flooding-in-tibet-leaves-hundreds-missing-as-china-faces-criticism-over-response",
-      "story_id": "story_000001",
-      "score": 46,
-      "score_breakdown": {
-        "score": 46,
-        "basis": "homepage_editorial_shadow_v2",
-        "importance": 60,
-        "importance_basis": "persistent_story_importance",
-        "importance_reasons": [
-          {
-            "code": "mass_casualty",
-            "label": "Mass-casualty event",
-            "points": 45
-          },
-          {
-            "code": "national_scope",
-            "label": "Nationwide U.S. scope",
-            "points": 15
-          }
-        ],
-        "freshness": 12.99,
-        "urgency": 3,
-        "relevance": 100,
-        "regions": [],
-        "source_trust": 48,
-        "breaking_bonus": 0.0,
-        "material_update_bonus": 0.0,
-        "age_hours": 52.21,
-        "timestamp_basis": "archive:date",
-        "deck_eligible": false,
-        "eligibility_reason": "older_than_48_hours_not_urgent_enough"
-      },
-      "deck_eligible": false,
-      "eligibility_reason": "older_than_48_hours_not_urgent_enough",
-      "match_basis": "persistent_story_id+source_url",
-      "identity_confidence": "high",
-      "identity_evidence": [
-        "source_url"
-      ],
-      "identity_warning": "",
-      "identity": "story:story_000001",
-      "identity_basis": "persistent_story_id",
-      "placement_count": 1,
-      "placement_categories": [
-        "world"
-      ],
-      "pinned": false,
-      "pin_position": null,
-      "custom": false,
-      "position_locked": false,
-      "position_lock_reason": ""
-    },
-    {
-      "current_position": 9,
+      "current_position": 12,
       "recommended_position": 19,
-      "first_placement_position": 9,
-      "headline": "Germany accuses Russia of attempted drone attack on Leipzig airport",
-      "category_key": "world",
-      "slug": "2026-09-02-germany-accuses-russia-of-attempted-drone-attack-on-leipzig-airport",
-      "story_id": "",
-      "score": 20,
-      "score_breakdown": {
-        "score": 20,
-        "basis": "homepage_editorial_shadow_v2",
-        "importance": 0,
-        "importance_basis": "unmatched_story",
-        "importance_reasons": [],
-        "freshness": 0.0,
-        "urgency": 3,
-        "relevance": 82,
-        "regions": [],
-        "source_trust": 50,
-        "breaking_bonus": 0.0,
-        "material_update_bonus": 0.0,
-        "age_hours": 100.21,
-        "timestamp_basis": "archive:date",
-        "deck_eligible": false,
-        "eligibility_reason": "older_than_60_hours"
-      },
-      "deck_eligible": false,
-      "eligibility_reason": "older_than_60_hours",
-      "match_basis": "unmatched",
-      "identity_confidence": "unmatched",
-      "identity_evidence": [],
-      "identity_warning": "",
-      "identity": "source:https://plainnews.app/articles/2026-09-02-germany-accuses-russia-of-attempted-drone-attack-on-leipzig-airport.html",
-      "identity_basis": "source_url",
-      "placement_count": 1,
-      "placement_categories": [
-        "world"
-      ],
-      "pinned": false,
-      "pin_position": null,
-      "custom": false,
-      "position_locked": false,
-      "position_lock_reason": ""
-    },
-    {
-      "current_position": 11,
-      "recommended_position": 20,
-      "first_placement_position": 11,
-      "headline": "Katie Taylor retires after winning final bout in Dublin",
+      "first_placement_position": 13,
+      "headline": "Natalie Imbruglia recalls 'icky' Moulin Rouge audition",
       "category_key": "us",
       "slug": "",
-      "story_id": "story_000127",
-      "score": 50,
+      "story_id": "story_000162",
+      "score": 49,
       "score_breakdown": {
-        "score": 50,
+        "score": 49,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 0,
         "importance_basis": "persistent_score_breakdown",
         "importance_reasons": [],
-        "freshness": 92.68,
+        "freshness": 86.96,
         "urgency": 6,
         "relevance": 60,
         "regions": [],
         "source_trust": 94,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 4.39,
+        "age_hours": 7.82,
         "timestamp_basis": "registry:latest_timeline",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -1629,7 +1639,7 @@
         "source_url"
       ],
       "identity_warning": "",
-      "identity": "story:story_000127",
+      "identity": "story:story_000162",
       "identity_basis": "persistent_story_id",
       "placement_count": 1,
       "placement_categories": [
@@ -1642,28 +1652,28 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 12,
-      "recommended_position": 21,
-      "first_placement_position": 12,
+      "current_position": 13,
+      "recommended_position": 20,
+      "first_placement_position": 14,
       "headline": "Federal judge reinforces order requiring 48-hour notice before work on Trump's proposed Arlington arch",
       "category_key": "us",
       "slug": "2026-09-06-federal-judge-reinforces-order-requiring-48-hour-notice-before-work-on-trumps-pr",
       "story_id": "story_000115",
-      "score": 44,
+      "score": 43,
       "score_breakdown": {
-        "score": 44,
+        "score": 43,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 0,
         "importance_basis": "persistent_score_breakdown",
         "importance_reasons": [],
-        "freshness": 98.47,
+        "freshness": 91.83,
         "urgency": 3,
         "relevance": 60,
         "regions": [],
         "source_trust": 88,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 0.92,
+        "age_hours": 4.9,
         "timestamp_basis": "archive:first_published",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -1690,15 +1700,133 @@
     },
     {
       "current_position": 14,
+      "recommended_position": 21,
+      "first_placement_position": 15,
+      "headline": "Casting for next James Bond may conclude by year's end, producer says",
+      "category_key": "us",
+      "slug": "2026-09-06-casting-for-next-james-bond-may-conclude-by-years-end-producer-says",
+      "story_id": "story_000116",
+      "score": 57,
+      "score_breakdown": {
+        "score": 57,
+        "basis": "homepage_editorial_shadow_v2",
+        "importance": 30,
+        "importance_basis": "persistent_story_importance",
+        "importance_reasons": [
+          {
+            "code": "war_diplomacy",
+            "label": "War, diplomacy or national-security consequence",
+            "points": 30
+          }
+        ],
+        "freshness": 93.36,
+        "urgency": 3,
+        "relevance": 82,
+        "regions": [
+          "New York"
+        ],
+        "source_trust": 94,
+        "breaking_bonus": 0.0,
+        "material_update_bonus": 0.0,
+        "age_hours": 3.98,
+        "timestamp_basis": "archive:first_published",
+        "deck_eligible": true,
+        "eligibility_reason": "fresh_window"
+      },
+      "deck_eligible": true,
+      "eligibility_reason": "fresh_window",
+      "match_basis": "persistent_story_id+source_url",
+      "identity_confidence": "high",
+      "identity_evidence": [
+        "source_url"
+      ],
+      "identity_warning": "",
+      "identity": "story:story_000116",
+      "identity_basis": "persistent_story_id",
+      "placement_count": 1,
+      "placement_categories": [
+        "us"
+      ],
+      "pinned": false,
+      "pin_position": null,
+      "custom": false,
+      "position_locked": false,
+      "position_lock_reason": ""
+    },
+    {
+      "current_position": 15,
       "recommended_position": 22,
-      "first_placement_position": 14,
+      "first_placement_position": 16,
+      "headline": "Virgin Atlantic founder blames rising flight prices on 'foolish leaders' starting wars",
+      "category_key": "us",
+      "slug": "2026-09-05-virgin-atlantic-founder-blames-rising-flight-prices-on-foolish-leaders-starting",
+      "story_id": "story_000060",
+      "score": 64,
+      "score_breakdown": {
+        "score": 64,
+        "basis": "homepage_editorial_shadow_v2",
+        "importance": 77,
+        "importance_basis": "persistent_story_importance",
+        "importance_reasons": [
+          {
+            "code": "federal_action",
+            "label": "Federal/national government action",
+            "points": 32
+          },
+          {
+            "code": "war_diplomacy",
+            "label": "War, diplomacy or national-security consequence",
+            "points": 30
+          },
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "freshness": 49.67,
+        "urgency": 3,
+        "relevance": 100,
+        "regions": [],
+        "source_trust": 94,
+        "breaking_bonus": 0.0,
+        "material_update_bonus": 0.0,
+        "age_hours": 30.2,
+        "timestamp_basis": "archive:first_published",
+        "deck_eligible": true,
+        "eligibility_reason": "fresh_window"
+      },
+      "deck_eligible": true,
+      "eligibility_reason": "fresh_window",
+      "match_basis": "persistent_story_id+source_url",
+      "identity_confidence": "high",
+      "identity_evidence": [
+        "source_url"
+      ],
+      "identity_warning": "",
+      "identity": "story:story_000060",
+      "identity_basis": "persistent_story_id",
+      "placement_count": 1,
+      "placement_categories": [
+        "us"
+      ],
+      "pinned": false,
+      "pin_position": null,
+      "custom": false,
+      "position_locked": false,
+      "position_lock_reason": ""
+    },
+    {
+      "current_position": 16,
+      "recommended_position": 23,
+      "first_placement_position": 17,
       "headline": "Judge declares mistrial in Lindsay Clancy case after jury deadlock",
       "category_key": "us",
       "slug": "2026-09-05-judge-declares-mistrial-in-lindsay-clancy-case-after-jury-deadlock",
       "story_id": "story_000067",
-      "score": 45,
+      "score": 43,
       "score_breakdown": {
-        "score": 45,
+        "score": 43,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 15,
         "importance_basis": "persistent_story_importance",
@@ -1709,7 +1837,7 @@
             "points": 15
           }
         ],
-        "freshness": 57.72,
+        "freshness": 51.08,
         "urgency": 3,
         "relevance": 100,
         "regions": [
@@ -1718,7 +1846,7 @@
         "source_trust": 94,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 25.37,
+        "age_hours": 29.35,
         "timestamp_basis": "archive:first_published",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -1744,16 +1872,16 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 15,
-      "recommended_position": 23,
-      "first_placement_position": 15,
+      "current_position": 17,
+      "recommended_position": 24,
+      "first_placement_position": 18,
       "headline": "Katie Taylor retires as undisputed champion after final fight at Croke Park",
       "category_key": "us",
       "slug": "2026-09-05-katie-taylor-retires-as-undisputed-champion-after-final-fight-at-croke-park",
       "story_id": "story_000090",
-      "score": 57,
+      "score": 55,
       "score_breakdown": {
-        "score": 57,
+        "score": 55,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 40,
         "importance_basis": "persistent_story_importance",
@@ -1769,14 +1897,14 @@
             "points": 10
           }
         ],
-        "freshness": 89.98,
+        "freshness": 83.34,
         "urgency": 3,
         "relevance": 60,
         "regions": [],
         "source_trust": 94,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 6.01,
+        "age_hours": 10.0,
         "timestamp_basis": "archive:first_published",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -1802,239 +1930,16 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 16,
-      "recommended_position": 24,
-      "first_placement_position": 16,
-      "headline": "Florida Panhandle battle over beach access prompts call for constitutional amendment",
-      "category_key": "us",
-      "slug": "2026-09-04-florida-panhandle-battle-over-beach-access-prompts-call-for-constitutional-amend",
-      "story_id": "",
-      "score": 26,
-      "score_breakdown": {
-        "score": 26,
-        "basis": "homepage_editorial_shadow_v2",
-        "importance": 0,
-        "importance_basis": "unmatched_story",
-        "importance_reasons": [],
-        "freshness": 12.99,
-        "urgency": 3,
-        "relevance": 100,
-        "regions": [],
-        "source_trust": 50,
-        "breaking_bonus": 0.0,
-        "material_update_bonus": 0.0,
-        "age_hours": 52.21,
-        "timestamp_basis": "archive:date",
-        "deck_eligible": false,
-        "eligibility_reason": "older_than_48_hours_not_urgent_enough"
-      },
-      "deck_eligible": false,
-      "eligibility_reason": "older_than_48_hours_not_urgent_enough",
-      "match_basis": "unmatched",
-      "identity_confidence": "unmatched",
-      "identity_evidence": [],
-      "identity_warning": "",
-      "identity": "source:https://plainnews.app/articles/2026-09-04-florida-panhandle-battle-over-beach-access-prompts-call-for-constitutional-amend.html",
-      "identity_basis": "source_url",
-      "placement_count": 1,
-      "placement_categories": [
-        "us"
-      ],
-      "pinned": false,
-      "pin_position": null,
-      "custom": false,
-      "position_locked": false,
-      "position_lock_reason": ""
-    },
-    {
-      "current_position": 17,
+      "current_position": 20,
       "recommended_position": 25,
-      "first_placement_position": 17,
-      "headline": "Federal judge extends block on Trump executive order limiting mail voting in midterms",
-      "category_key": "us",
-      "slug": "2026-09-04-federal-judge-extends-block-on-trump-executive-order-limiting-mail-voting-in-mid",
-      "story_id": "story_000009",
-      "score": 60,
-      "score_breakdown": {
-        "score": 60,
-        "basis": "homepage_editorial_shadow_v2",
-        "importance": 100,
-        "importance_basis": "persistent_story_importance",
-        "importance_reasons": [
-          {
-            "code": "federal_action",
-            "label": "Federal/national government action",
-            "points": 32
-          },
-          {
-            "code": "election",
-            "label": "Major election/political consequence",
-            "points": 25
-          },
-          {
-            "code": "war_diplomacy",
-            "label": "War, diplomacy or national-security consequence",
-            "points": 30
-          },
-          {
-            "code": "court_action",
-            "label": "Significant court/criminal-justice action",
-            "points": 15
-          },
-          {
-            "code": "national_scope",
-            "label": "Nationwide U.S. scope",
-            "points": 15
-          }
-        ],
-        "freshness": 12.99,
-        "urgency": 3,
-        "relevance": 100,
-        "regions": [
-          "North Carolina"
-        ],
-        "source_trust": 48,
-        "breaking_bonus": 0.0,
-        "material_update_bonus": 0.0,
-        "age_hours": 52.21,
-        "timestamp_basis": "archive:date",
-        "deck_eligible": false,
-        "eligibility_reason": "older_than_48_hours_not_urgent_enough"
-      },
-      "deck_eligible": false,
-      "eligibility_reason": "older_than_48_hours_not_urgent_enough",
-      "match_basis": "persistent_story_id+source_url",
-      "identity_confidence": "high",
-      "identity_evidence": [
-        "source_url"
-      ],
-      "identity_warning": "",
-      "identity": "story:story_000009",
-      "identity_basis": "persistent_story_id",
-      "placement_count": 1,
-      "placement_categories": [
-        "us"
-      ],
-      "pinned": false,
-      "pin_position": null,
-      "custom": false,
-      "position_locked": false,
-      "position_lock_reason": ""
-    },
-    {
-      "current_position": 18,
-      "recommended_position": 26,
-      "first_placement_position": 18,
-      "headline": "ICE detainee dies hours after admission to detention facility",
-      "category_key": "us",
-      "slug": "2026-09-02-ice-detainee-dies-hours-after-admission-to-detention-facility",
-      "story_id": "",
-      "score": 23,
-      "score_breakdown": {
-        "score": 23,
-        "basis": "homepage_editorial_shadow_v2",
-        "importance": 0,
-        "importance_basis": "unmatched_story",
-        "importance_reasons": [],
-        "freshness": 0.0,
-        "urgency": 3,
-        "relevance": 100,
-        "regions": [],
-        "source_trust": 50,
-        "breaking_bonus": 0.0,
-        "material_update_bonus": 0.0,
-        "age_hours": 100.21,
-        "timestamp_basis": "archive:date",
-        "deck_eligible": false,
-        "eligibility_reason": "older_than_60_hours"
-      },
-      "deck_eligible": false,
-      "eligibility_reason": "older_than_60_hours",
-      "match_basis": "unmatched",
-      "identity_confidence": "unmatched",
-      "identity_evidence": [],
-      "identity_warning": "",
-      "identity": "source:https://plainnews.app/articles/2026-09-02-ice-detainee-dies-hours-after-admission-to-detention-facility.html",
-      "identity_basis": "source_url",
-      "placement_count": 1,
-      "placement_categories": [
-        "us"
-      ],
-      "pinned": false,
-      "pin_position": null,
-      "custom": false,
-      "position_locked": false,
-      "position_lock_reason": ""
-    },
-    {
-      "current_position": 19,
-      "recommended_position": 27,
-      "first_placement_position": 19,
-      "headline": "U.S. diesel prices reach record high, raising transportation and food costs nationwide",
-      "category_key": "business",
-      "slug": "",
-      "story_id": "story_000091",
-      "score": 67,
-      "score_breakdown": {
-        "score": 67,
-        "basis": "homepage_editorial_shadow_v2",
-        "importance": 55,
-        "importance_basis": "persistent_story_importance",
-        "importance_reasons": [
-          {
-            "code": "election",
-            "label": "Major election/political consequence",
-            "points": 25
-          },
-          {
-            "code": "war_diplomacy",
-            "label": "War, diplomacy or national-security consequence",
-            "points": 30
-          }
-        ],
-        "freshness": 80.98,
-        "urgency": 7,
-        "relevance": 72,
-        "regions": [],
-        "source_trust": 55,
-        "breaking_bonus": 0.0,
-        "material_update_bonus": 0.0,
-        "age_hours": 11.41,
-        "timestamp_basis": "registry:latest_timeline",
-        "deck_eligible": true,
-        "eligibility_reason": "fresh_window"
-      },
-      "deck_eligible": true,
-      "eligibility_reason": "fresh_window",
-      "match_basis": "persistent_story_id+source_url",
-      "identity_confidence": "high",
-      "identity_evidence": [
-        "source_url"
-      ],
-      "identity_warning": "",
-      "identity": "story:story_000091",
-      "identity_basis": "persistent_story_id",
-      "placement_count": 1,
-      "placement_categories": [
-        "business"
-      ],
-      "pinned": false,
-      "pin_position": null,
-      "custom": false,
-      "position_locked": false,
-      "position_lock_reason": ""
-    },
-    {
-      "current_position": 22,
-      "recommended_position": 28,
-      "first_placement_position": 22,
+      "first_placement_position": 21,
       "headline": "August Jobs Report Shows Strong Hiring, Raising Pressure on Federal Reserve",
       "category_key": "business",
       "slug": "2026-09-04-august-jobs-report-shows-strong-hiring-raising-pressure-on-federal-reserve",
       "story_id": "story_000018",
-      "score": 60,
+      "score": 58,
       "score_breakdown": {
-        "score": 60,
+        "score": 58,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 100,
         "importance_basis": "persistent_story_importance",
@@ -2065,14 +1970,14 @@
             "points": 15
           }
         ],
-        "freshness": 12.99,
+        "freshness": 6.35,
         "urgency": 3,
         "relevance": 100,
         "regions": [],
         "source_trust": 48,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 52.21,
+        "age_hours": 56.19,
         "timestamp_basis": "archive:date",
         "deck_eligible": false,
         "eligibility_reason": "older_than_48_hours_not_urgent_enough"
@@ -2098,9 +2003,9 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 23,
-      "recommended_position": 29,
-      "first_placement_position": 23,
+      "current_position": 21,
+      "recommended_position": 26,
+      "first_placement_position": 22,
       "headline": "Employer Health Costs Expected to Jump 11 Percent in 2027",
       "category_key": "business",
       "slug": "2026-09-02-employer-health-costs-expected-to-jump-11-percent-in-2027",
@@ -2119,7 +2024,7 @@
         "source_trust": 50,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 100.21,
+        "age_hours": 104.19,
         "timestamp_basis": "archive:date",
         "deck_eligible": false,
         "eligibility_reason": "older_than_60_hours"
@@ -2143,9 +2048,9 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 24,
-      "recommended_position": 30,
-      "first_placement_position": 24,
+      "current_position": 22,
+      "recommended_position": 27,
+      "first_placement_position": 23,
       "headline": "Government Borrowing Costs Hit Multi-Decade Highs Worldwide",
       "category_key": "business",
       "slug": "2026-09-01-government-borrowing-costs-hit-multi-decade-highs-worldwide",
@@ -2164,7 +2069,7 @@
         "source_trust": 50,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 124.21,
+        "age_hours": 128.19,
         "timestamp_basis": "archive:date",
         "deck_eligible": false,
         "eligibility_reason": "older_than_60_hours"
@@ -2188,9 +2093,9 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 25,
-      "recommended_position": 31,
-      "first_placement_position": 25,
+      "current_position": 23,
+      "recommended_position": 28,
+      "first_placement_position": 24,
       "headline": "Trump announces deal for U.S. access to Venezuelan oil reserves",
       "category_key": "business",
       "slug": "2026-08-30-trump-administration-announces-deal-for-us-control-of-venezuelan-oil-assets",
@@ -2209,7 +2114,7 @@
         "source_trust": 50,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 172.21,
+        "age_hours": 176.19,
         "timestamp_basis": "archive:date",
         "deck_eligible": false,
         "eligibility_reason": "older_than_60_hours"
@@ -2233,9 +2138,9 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 26,
-      "recommended_position": 32,
-      "first_placement_position": 26,
+      "current_position": 24,
+      "recommended_position": 29,
+      "first_placement_position": 25,
       "headline": "Oil Prices Jump to $90 a Barrel After U.S. and Iran Exchange Attacks",
       "category_key": "business",
       "slug": "2026-08-31-oil-prices-jump-to-90-a-barrel-after-us-and-iran-exchange-attacks",
@@ -2254,7 +2159,7 @@
         "source_trust": 50,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 148.21,
+        "age_hours": 152.19,
         "timestamp_basis": "archive:date",
         "deck_eligible": false,
         "eligibility_reason": "older_than_60_hours"
@@ -2278,75 +2183,118 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 27,
-      "recommended_position": 33,
-      "first_placement_position": 27,
-      "headline": "Ganymede may hold more liquid water than all of Earth's oceans, buried beneath roughly 150 kilometers of ice",
-      "category_key": "tech",
-      "slug": "",
-      "story_id": "story_000142",
-      "score": 45,
+      "current_position": 25,
+      "recommended_position": 30,
+      "first_placement_position": 26,
+      "headline": "US Strikes Deal for Control of Large Share of Venezuelan Oil Reserves",
+      "category_key": "business",
+      "slug": "2026-08-29-us-strikes-deal-for-control-of-large-share-of-venezuelan-oil-reserves",
+      "story_id": "",
+      "score": 22,
       "score_breakdown": {
-        "score": 45,
+        "score": 22,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 0,
-        "importance_basis": "persistent_score_breakdown",
+        "importance_basis": "unmatched_story",
         "importance_reasons": [],
-        "freshness": 83.82,
-        "urgency": 6,
-        "relevance": 60,
+        "freshness": 0.0,
+        "urgency": 3,
+        "relevance": 92,
         "regions": [],
-        "source_trust": 55,
+        "source_trust": 50,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 9.71,
-        "timestamp_basis": "registry:latest_timeline",
-        "deck_eligible": true,
-        "eligibility_reason": "fresh_window"
+        "age_hours": 200.19,
+        "timestamp_basis": "archive:date",
+        "deck_eligible": false,
+        "eligibility_reason": "older_than_60_hours"
       },
-      "deck_eligible": true,
-      "eligibility_reason": "fresh_window",
-      "match_basis": "persistent_story_id+strong_title_overlap",
-      "identity_confidence": "medium",
-      "identity_evidence": [
-        "strong_title_overlap"
-      ],
+      "deck_eligible": false,
+      "eligibility_reason": "older_than_60_hours",
+      "match_basis": "unmatched",
+      "identity_confidence": "unmatched",
+      "identity_evidence": [],
       "identity_warning": "",
-      "identity": "story:story_000142",
-      "identity_basis": "persistent_story_id",
+      "identity": "source:https://plainnews.app/articles/2026-08-29-us-strikes-deal-for-control-of-large-share-of-venezuelan-oil-reserves.html",
+      "identity_basis": "source_url",
       "placement_count": 1,
       "placement_categories": [
-        "tech"
+        "business"
       ],
       "pinned": false,
       "pin_position": null,
       "custom": false,
-      "position_locked": true,
-      "position_lock_reason": "medium_identity_confidence"
+      "position_locked": false,
+      "position_lock_reason": ""
     },
     {
-      "current_position": 28,
-      "recommended_position": 34,
+      "current_position": 26,
+      "recommended_position": 31,
+      "first_placement_position": 27,
+      "headline": "Oil companies and governments deplete storage reserves as Iran conflict disrupts supply",
+      "category_key": "business",
+      "slug": "2026-08-28-oil-companies-and-governments-deplete-storage-reserves-as-iran-conflict-disrupts",
+      "story_id": "",
+      "score": 22,
+      "score_breakdown": {
+        "score": 22,
+        "basis": "homepage_editorial_shadow_v2",
+        "importance": 0,
+        "importance_basis": "unmatched_story",
+        "importance_reasons": [],
+        "freshness": 0.0,
+        "urgency": 3,
+        "relevance": 92,
+        "regions": [],
+        "source_trust": 50,
+        "breaking_bonus": 0.0,
+        "material_update_bonus": 0.0,
+        "age_hours": 224.19,
+        "timestamp_basis": "archive:date",
+        "deck_eligible": false,
+        "eligibility_reason": "older_than_60_hours"
+      },
+      "deck_eligible": false,
+      "eligibility_reason": "older_than_60_hours",
+      "match_basis": "unmatched",
+      "identity_confidence": "unmatched",
+      "identity_evidence": [],
+      "identity_warning": "",
+      "identity": "source:https://plainnews.app/articles/2026-08-28-oil-companies-and-governments-deplete-storage-reserves-as-iran-conflict-disrupts.html",
+      "identity_basis": "source_url",
+      "placement_count": 1,
+      "placement_categories": [
+        "business"
+      ],
+      "pinned": false,
+      "pin_position": null,
+      "custom": false,
+      "position_locked": false,
+      "position_lock_reason": ""
+    },
+    {
+      "current_position": 27,
+      "recommended_position": 32,
       "first_placement_position": 28,
-      "headline": "OpenAI confirms AI agent 'misalignment' during training, pledges disclosure framework",
+      "headline": "OpenAI confirms AI agents took over German wiki forum in 'misalignment' incident, developing disclosure framework",
       "category_key": "tech",
       "slug": "",
       "story_id": "story_000120",
-      "score": 47,
+      "score": 46,
       "score_breakdown": {
-        "score": 47,
+        "score": 46,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 0,
         "importance_basis": "persistent_score_breakdown",
         "importance_reasons": [],
-        "freshness": 83.14,
+        "freshness": 76.5,
         "urgency": 6,
         "relevance": 60,
         "regions": [],
         "source_trust": 87,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 10.11,
+        "age_hours": 14.1,
         "timestamp_basis": "registry:latest_timeline",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -2372,34 +2320,28 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 29,
-      "recommended_position": 35,
+      "current_position": 28,
+      "recommended_position": 33,
       "first_placement_position": 29,
-      "headline": "Oura files to go public as revenue nearly doubles to $1.21 billion",
+      "headline": "Acer unveils compact RTX Spark PC with 128GB unified memory to challenge Mac Studio",
       "category_key": "tech",
       "slug": "",
-      "story_id": "story_000094",
-      "score": 54,
+      "story_id": "story_000163",
+      "score": 41,
       "score_breakdown": {
-        "score": 54,
+        "score": 41,
         "basis": "homepage_editorial_shadow_v2",
-        "importance": 15,
-        "importance_basis": "persistent_story_importance",
-        "importance_reasons": [
-          {
-            "code": "national_scope",
-            "label": "Nationwide U.S. scope",
-            "points": 15
-          }
-        ],
-        "freshness": 77.99,
-        "urgency": 5,
-        "relevance": 100,
+        "importance": 0,
+        "importance_basis": "persistent_score_breakdown",
+        "importance_reasons": [],
+        "freshness": 84.02,
+        "urgency": 4,
+        "relevance": 60,
         "regions": [],
-        "source_trust": 87,
+        "source_trust": 55,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 13.21,
+        "age_hours": 9.59,
         "timestamp_basis": "registry:latest_timeline",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -2412,7 +2354,54 @@
         "source_url"
       ],
       "identity_warning": "",
-      "identity": "story:story_000094",
+      "identity": "story:story_000163",
+      "identity_basis": "persistent_story_id",
+      "placement_count": 1,
+      "placement_categories": [
+        "tech"
+      ],
+      "pinned": false,
+      "pin_position": null,
+      "custom": false,
+      "position_locked": false,
+      "position_lock_reason": ""
+    },
+    {
+      "current_position": 29,
+      "recommended_position": 34,
+      "first_placement_position": 30,
+      "headline": "Xbox Cloud Gaming hourly cap set at Microsoft's break-even point amid AI server strain",
+      "category_key": "tech",
+      "slug": "",
+      "story_id": "story_000164",
+      "score": 38,
+      "score_breakdown": {
+        "score": 38,
+        "basis": "homepage_editorial_shadow_v2",
+        "importance": 0,
+        "importance_basis": "persistent_score_breakdown",
+        "importance_reasons": [],
+        "freshness": 73.33,
+        "urgency": 4,
+        "relevance": 60,
+        "regions": [],
+        "source_trust": 55,
+        "breaking_bonus": 0.0,
+        "material_update_bonus": 0.0,
+        "age_hours": 16.0,
+        "timestamp_basis": "registry:latest_timeline",
+        "deck_eligible": true,
+        "eligibility_reason": "fresh_window"
+      },
+      "deck_eligible": true,
+      "eligibility_reason": "fresh_window",
+      "match_basis": "persistent_story_id+source_url",
+      "identity_confidence": "high",
+      "identity_evidence": [
+        "source_url"
+      ],
+      "identity_warning": "",
+      "identity": "story:story_000164",
       "identity_basis": "persistent_story_id",
       "placement_count": 1,
       "placement_categories": [
@@ -2426,62 +2415,9 @@
     },
     {
       "current_position": 30,
-      "recommended_position": 36,
-      "first_placement_position": 30,
-      "headline": "Microsoft to cap Xbox Cloud Gaming at 15 hours monthly starting November 2026",
-      "category_key": "tech",
-      "slug": "",
-      "story_id": "story_000096",
-      "score": 50,
-      "score_breakdown": {
-        "score": 50,
-        "basis": "homepage_editorial_shadow_v2",
-        "importance": 25,
-        "importance_basis": "persistent_story_importance",
-        "importance_reasons": [
-          {
-            "code": "election",
-            "label": "Major election/political consequence",
-            "points": 25
-          }
-        ],
-        "freshness": 78.49,
-        "urgency": 5,
-        "relevance": 60,
-        "regions": [],
-        "source_trust": 55,
-        "breaking_bonus": 0.0,
-        "material_update_bonus": 0.0,
-        "age_hours": 12.91,
-        "timestamp_basis": "registry:latest_timeline",
-        "deck_eligible": true,
-        "eligibility_reason": "fresh_window"
-      },
-      "deck_eligible": true,
-      "eligibility_reason": "fresh_window",
-      "match_basis": "persistent_story_id+source_url",
-      "identity_confidence": "high",
-      "identity_evidence": [
-        "source_url"
-      ],
-      "identity_warning": "",
-      "identity": "story:story_000096",
-      "identity_basis": "persistent_story_id",
-      "placement_count": 1,
-      "placement_categories": [
-        "tech"
-      ],
-      "pinned": false,
-      "pin_position": null,
-      "custom": false,
-      "position_locked": false,
-      "position_lock_reason": ""
-    },
-    {
-      "current_position": 31,
-      "recommended_position": 37,
+      "recommended_position": 35,
       "first_placement_position": 31,
-      "headline": "Apple's iOS 27 will let users share one phone number across two iPhones",
+      "headline": "Apple's iOS 27 to enable sharing one phone number between two iPhones",
       "category_key": "tech",
       "slug": "",
       "story_id": "story_000097",
@@ -2489,23 +2425,28 @@
       "score_breakdown": {
         "score": 55,
         "basis": "homepage_editorial_shadow_v2",
-        "importance": 15,
+        "importance": 20,
         "importance_basis": "persistent_story_importance",
         "importance_reasons": [
+          {
+            "code": "follow_up",
+            "label": "Story has follow-up coverage",
+            "points": 5
+          },
           {
             "code": "national_scope",
             "label": "Nationwide U.S. scope",
             "points": 15
           }
         ],
-        "freshness": 89.97,
+        "freshness": 83.33,
         "urgency": 4,
         "relevance": 100,
         "regions": [],
         "source_trust": 89,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 6.02,
+        "age_hours": 10.0,
         "timestamp_basis": "registry:latest_timeline",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -2531,16 +2472,79 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 32,
-      "recommended_position": 38,
+      "current_position": 31,
+      "recommended_position": 36,
       "first_placement_position": 32,
+      "headline": "Sony says PlayStation disc production will fall by 10 percent in 2028, not 90 percent",
+      "category_key": "tech",
+      "slug": "",
+      "story_id": "story_000122",
+      "score": 58,
+      "score_breakdown": {
+        "score": 58,
+        "basis": "homepage_editorial_shadow_v2",
+        "importance": 50,
+        "importance_basis": "persistent_story_importance",
+        "importance_reasons": [
+          {
+            "code": "war_diplomacy",
+            "label": "War, diplomacy or national-security consequence",
+            "points": 30
+          },
+          {
+            "code": "public_safety",
+            "label": "Public-safety event",
+            "points": 10
+          },
+          {
+            "code": "global_scope",
+            "label": "Major international consequence",
+            "points": 10
+          }
+        ],
+        "freshness": 72.11,
+        "urgency": 4,
+        "relevance": 85,
+        "regions": [],
+        "source_trust": 55,
+        "breaking_bonus": 0.0,
+        "material_update_bonus": 0.0,
+        "age_hours": 16.73,
+        "timestamp_basis": "registry:latest_timeline",
+        "deck_eligible": true,
+        "eligibility_reason": "fresh_window"
+      },
+      "deck_eligible": true,
+      "eligibility_reason": "fresh_window",
+      "match_basis": "persistent_story_id+source_url",
+      "identity_confidence": "high",
+      "identity_evidence": [
+        "source_url"
+      ],
+      "identity_warning": "",
+      "identity": "story:story_000122",
+      "identity_basis": "persistent_story_id",
+      "placement_count": 1,
+      "placement_categories": [
+        "tech"
+      ],
+      "pinned": false,
+      "pin_position": null,
+      "custom": false,
+      "position_locked": false,
+      "position_lock_reason": ""
+    },
+    {
+      "current_position": 32,
+      "recommended_position": 37,
+      "first_placement_position": 33,
       "headline": "New browser tool lets users explore globe through environmental field recordings",
       "category_key": "tech",
       "slug": "",
       "story_id": "story_000143",
-      "score": 55,
+      "score": 51,
       "score_breakdown": {
-        "score": 55,
+        "score": 51,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 15,
         "importance_basis": "persistent_story_importance",
@@ -2551,14 +2555,14 @@
             "points": 15
           }
         ],
-        "freshness": 99.99,
-        "urgency": 3,
+        "freshness": 93.35,
+        "urgency": 2,
         "relevance": 100,
         "regions": [],
         "source_trust": 89,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 0.0,
+        "age_hours": 3.99,
         "timestamp_basis": "registry:latest_timeline",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -2585,27 +2589,43 @@
     },
     {
       "current_position": 33,
-      "recommended_position": 39,
-      "first_placement_position": 33,
-      "headline": "New iPhone alarm app Clucky uses rooster sounds and push-up challenges to combat snoozing",
+      "recommended_position": 38,
+      "first_placement_position": 34,
+      "headline": "The Blood of Dawnwalker Sells 1 Million Copies in Two Days",
       "category_key": "tech",
       "slug": "",
-      "story_id": "story_000144",
-      "score": 40,
+      "story_id": "story_000123",
+      "score": 63,
       "score_breakdown": {
-        "score": 40,
+        "score": 63,
         "basis": "homepage_editorial_shadow_v2",
-        "importance": 0,
-        "importance_basis": "persistent_score_breakdown",
-        "importance_reasons": [],
-        "freshness": 81.32,
-        "urgency": 3,
-        "relevance": 60,
+        "importance": 45,
+        "importance_basis": "persistent_story_importance",
+        "importance_reasons": [
+          {
+            "code": "war_diplomacy",
+            "label": "War, diplomacy or national-security consequence",
+            "points": 30
+          },
+          {
+            "code": "follow_up",
+            "label": "Story has follow-up coverage",
+            "points": 5
+          },
+          {
+            "code": "global_scope",
+            "label": "Major international consequence",
+            "points": 10
+          }
+        ],
+        "freshness": 75.53,
+        "urgency": 7,
+        "relevance": 85,
         "regions": [],
-        "source_trust": 87,
+        "source_trust": 55,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 11.21,
+        "age_hours": 14.68,
         "timestamp_basis": "registry:latest_timeline",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -2618,7 +2638,7 @@
         "source_url"
       ],
       "identity_warning": "",
-      "identity": "story:story_000144",
+      "identity": "story:story_000123",
       "identity_basis": "persistent_story_id",
       "placement_count": 1,
       "placement_categories": [
@@ -2631,10 +2651,10 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 35,
-      "recommended_position": 40,
+      "current_position": 34,
+      "recommended_position": 39,
       "first_placement_position": 35,
-      "headline": "CD sales surged 46 percent in first half of 2026",
+      "headline": "CD sales jumped 46 percent in first half of 2026",
       "category_key": "tech",
       "slug": "",
       "story_id": "story_000145",
@@ -2645,14 +2665,14 @@
         "importance": 0,
         "importance_basis": "persistent_score_breakdown",
         "importance_reasons": [],
-        "freshness": 99.99,
-        "urgency": 6,
+        "freshness": 93.35,
+        "urgency": 7,
         "relevance": 60,
         "regions": [],
         "source_trust": 89,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 0.0,
+        "age_hours": 3.99,
         "timestamp_basis": "registry:latest_timeline",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -2678,44 +2698,77 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 36,
-      "recommended_position": 41,
+      "current_position": 35,
+      "recommended_position": 40,
       "first_placement_position": 36,
-      "headline": "Michigan stuns Western Michigan 13-12 on Hail Mary after clock was reset to 1 second",
-      "category_key": "sports",
-      "slug": "",
-      "story_id": "story_000146",
-      "score": 56,
+      "headline": "Seattle Times and Newsday sue OpenAI and Microsoft over alleged unauthorized use of journalism to train AI",
+      "category_key": "tech",
+      "slug": "2026-09-06-seattle-times-and-newsday-sue-openai-and-microsoft-over-alleged-unauthorized-use",
+      "story_id": "story_000119",
+      "score": 45,
       "score_breakdown": {
-        "score": 56,
+        "score": 45,
         "basis": "homepage_editorial_shadow_v2",
-        "importance": 10,
-        "importance_basis": "persistent_story_importance",
-        "importance_reasons": [
-          {
-            "code": "multistate_scope",
-            "label": "Multi-state U.S. scope",
-            "points": 10
-          }
-        ],
-        "freshness": 97.91,
-        "urgency": 6,
-        "relevance": 95,
+        "importance": 0,
+        "importance_basis": "persistent_score_breakdown",
+        "importance_reasons": [],
+        "freshness": 91.83,
+        "urgency": 3,
+        "relevance": 82,
         "regions": [
-          "Washington",
-          "Minnesota",
-          "Oklahoma",
-          "Michigan",
-          "Indiana",
-          "Oregon",
-          "Ohio",
-          "Iowa",
-          "Utah"
+          "New York"
         ],
-        "source_trust": 55,
+        "source_trust": 87,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 1.26,
+        "age_hours": 4.9,
+        "timestamp_basis": "archive:first_published",
+        "deck_eligible": true,
+        "eligibility_reason": "fresh_window"
+      },
+      "deck_eligible": true,
+      "eligibility_reason": "fresh_window",
+      "match_basis": "persistent_story_id+source_url",
+      "identity_confidence": "high",
+      "identity_evidence": [
+        "source_url"
+      ],
+      "identity_warning": "",
+      "identity": "story:story_000119",
+      "identity_basis": "persistent_story_id",
+      "placement_count": 1,
+      "placement_categories": [
+        "tech"
+      ],
+      "pinned": false,
+      "pin_position": null,
+      "custom": false,
+      "position_locked": false,
+      "position_lock_reason": ""
+    },
+    {
+      "current_position": 36,
+      "recommended_position": 41,
+      "first_placement_position": 37,
+      "headline": "Katie Taylor retires after defeating Flora Pili before 83,000 fans at Croke Park",
+      "category_key": "sports",
+      "slug": "",
+      "story_id": "story_000165",
+      "score": 51,
+      "score_breakdown": {
+        "score": 51,
+        "basis": "homepage_editorial_shadow_v2",
+        "importance": 0,
+        "importance_basis": "persistent_score_breakdown",
+        "importance_reasons": [],
+        "freshness": 97.03,
+        "urgency": 6,
+        "relevance": 60,
+        "regions": [],
+        "source_trust": 94,
+        "breaking_bonus": 0.0,
+        "material_update_bonus": 0.0,
+        "age_hours": 1.78,
         "timestamp_basis": "registry:latest_timeline",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -2728,7 +2781,7 @@
         "source_url"
       ],
       "identity_warning": "",
-      "identity": "story:story_000146",
+      "identity": "story:story_000165",
       "identity_basis": "persistent_story_id",
       "placement_count": 1,
       "placement_categories": [
@@ -2743,26 +2796,39 @@
     {
       "current_position": 37,
       "recommended_position": 42,
-      "first_placement_position": 37,
-      "headline": "Katie Taylor retires as undisputed light-welterweight champion after victory at Croke Park",
+      "first_placement_position": 38,
+      "headline": "Six top-10 seeds eliminated in first week of US Open men's draw",
       "category_key": "sports",
       "slug": "",
-      "story_id": "story_000147",
-      "score": 50,
+      "story_id": "story_000125",
+      "score": 62,
       "score_breakdown": {
-        "score": 50,
+        "score": 62,
         "basis": "homepage_editorial_shadow_v2",
-        "importance": 0,
-        "importance_basis": "persistent_score_breakdown",
-        "importance_reasons": [],
-        "freshness": 92.68,
+        "importance": 20,
+        "importance_basis": "persistent_story_importance",
+        "importance_reasons": [
+          {
+            "code": "follow_up",
+            "label": "Story has follow-up coverage",
+            "points": 5
+          },
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "freshness": 95.14,
         "urgency": 6,
-        "relevance": 60,
-        "regions": [],
+        "relevance": 100,
+        "regions": [
+          "New York"
+        ],
         "source_trust": 94,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 4.39,
+        "age_hours": 2.91,
         "timestamp_basis": "registry:latest_timeline",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -2775,7 +2841,7 @@
         "source_url"
       ],
       "identity_warning": "",
-      "identity": "story:story_000147",
+      "identity": "story:story_000125",
       "identity_basis": "persistent_story_id",
       "placement_count": 1,
       "placement_categories": [
@@ -2790,14 +2856,14 @@
     {
       "current_position": 38,
       "recommended_position": 43,
-      "first_placement_position": 38,
-      "headline": "Coco Gauff advances to US Open fourth round as Madison Keys and Amanda Anisimova exit",
+      "first_placement_position": 39,
+      "headline": "Coco Gauff advances to US Open fourth round as Keys, Anisimova exit",
       "category_key": "sports",
-      "slug": "2026-09-06-coco-gauff-advances-to-us-open-fourth-round-as-madison-keys-and-amanda-anisimova",
+      "slug": "",
       "story_id": "story_000148",
-      "score": 59,
+      "score": 58,
       "score_breakdown": {
-        "score": 59,
+        "score": 58,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 15,
         "importance_basis": "persistent_story_importance",
@@ -2808,7 +2874,7 @@
             "points": 15
           }
         ],
-        "freshness": 98.47,
+        "freshness": 91.39,
         "urgency": 5,
         "relevance": 100,
         "regions": [
@@ -2817,8 +2883,8 @@
         "source_trust": 94,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 0.92,
-        "timestamp_basis": "archive:first_published",
+        "age_hours": 5.16,
+        "timestamp_basis": "registry:latest_timeline",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
       },
@@ -2845,127 +2911,14 @@
     {
       "current_position": 39,
       "recommended_position": 44,
-      "first_placement_position": 39,
-      "headline": "Six top-10 seeds ousted from US Open men's draw in first week",
-      "category_key": "sports",
-      "slug": "",
-      "story_id": "story_000125",
-      "score": 57,
-      "score_breakdown": {
-        "score": 57,
-        "basis": "homepage_editorial_shadow_v2",
-        "importance": 15,
-        "importance_basis": "persistent_story_importance",
-        "importance_reasons": [
-          {
-            "code": "national_scope",
-            "label": "Nationwide U.S. scope",
-            "points": 15
-          }
-        ],
-        "freshness": 90.93,
-        "urgency": 5,
-        "relevance": 100,
-        "regions": [],
-        "source_trust": 94,
-        "breaking_bonus": 0.0,
-        "material_update_bonus": 0.0,
-        "age_hours": 5.44,
-        "timestamp_basis": "registry:latest_timeline",
-        "deck_eligible": true,
-        "eligibility_reason": "fresh_window"
-      },
-      "deck_eligible": true,
-      "eligibility_reason": "fresh_window",
-      "match_basis": "persistent_story_id+source_url",
-      "identity_confidence": "high",
-      "identity_evidence": [
-        "source_url"
-      ],
-      "identity_warning": "",
-      "identity": "story:story_000125",
-      "identity_basis": "persistent_story_id",
-      "placement_count": 1,
-      "placement_categories": [
-        "sports"
-      ],
-      "pinned": false,
-      "pin_position": null,
-      "custom": false,
-      "position_locked": false,
-      "position_lock_reason": ""
-    },
-    {
-      "current_position": 40,
-      "recommended_position": 45,
       "first_placement_position": 40,
-      "headline": "Iowa routs Northern Illinois 40-0 in season opener behind Moulton's career-high 183 rushing yards",
-      "category_key": "sports",
-      "slug": "",
-      "story_id": "story_000149",
-      "score": 51,
-      "score_breakdown": {
-        "score": 51,
-        "basis": "homepage_editorial_shadow_v2",
-        "importance": 10,
-        "importance_basis": "persistent_story_importance",
-        "importance_reasons": [
-          {
-            "code": "multistate_scope",
-            "label": "Multi-state U.S. scope",
-            "points": 10
-          }
-        ],
-        "freshness": 97.16,
-        "urgency": 4,
-        "relevance": 95,
-        "regions": [
-          "South Dakota",
-          "Michigan",
-          "Illinois",
-          "Georgia",
-          "Texas",
-          "Iowa"
-        ],
-        "source_trust": 55,
-        "breaking_bonus": 0.0,
-        "material_update_bonus": 0.0,
-        "age_hours": 1.71,
-        "timestamp_basis": "registry:latest_timeline",
-        "deck_eligible": true,
-        "eligibility_reason": "fresh_window"
-      },
-      "deck_eligible": true,
-      "eligibility_reason": "fresh_window",
-      "match_basis": "persistent_story_id+source_url",
-      "identity_confidence": "high",
-      "identity_evidence": [
-        "source_url"
-      ],
-      "identity_warning": "",
-      "identity": "story:story_000149",
-      "identity_basis": "persistent_story_id",
-      "placement_count": 1,
-      "placement_categories": [
-        "sports"
-      ],
-      "pinned": false,
-      "pin_position": null,
-      "custom": false,
-      "position_locked": false,
-      "position_lock_reason": ""
-    },
-    {
-      "current_position": 41,
-      "recommended_position": 46,
-      "first_placement_position": 41,
-      "headline": "Oklahoma State loses 24-10 to Tulsa in Eric Morris' head coaching debut",
+      "headline": "Oklahoma State loses 24-10 to Tulsa in Eric Morris coaching debut",
       "category_key": "sports",
       "slug": "",
       "story_id": "story_000150",
-      "score": 60,
+      "score": 61,
       "score_breakdown": {
-        "score": 60,
+        "score": 61,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 40,
         "importance_basis": "persistent_story_importance",
@@ -2981,15 +2934,15 @@
             "points": 10
           }
         ],
-        "freshness": 92.49,
-        "urgency": 4,
+        "freshness": 85.85,
+        "urgency": 5,
         "relevance": 95,
         "regions": [
           "West Virginia",
-          "Virginia",
-          "Arkansas",
           "Colorado",
+          "Arkansas",
           "Oklahoma",
+          "Virginia",
           "Arizona",
           "Oregon",
           "Kansas",
@@ -2999,7 +2952,7 @@
         "source_trust": 55,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 4.51,
+        "age_hours": 8.49,
         "timestamp_basis": "registry:latest_timeline",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -3025,34 +2978,36 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 42,
-      "recommended_position": 47,
-      "first_placement_position": 42,
-      "headline": "Jak Jones upsets Judd Trump at British Open, will face Mark Selby in final",
+      "current_position": 40,
+      "recommended_position": 45,
+      "first_placement_position": 41,
+      "headline": "Vikings re-sign safety Harrison Smith to one-year, $12.25 million deal",
       "category_key": "sports",
       "slug": "",
-      "story_id": "story_000131",
-      "score": 47,
+      "story_id": "story_000166",
+      "score": 53,
       "score_breakdown": {
-        "score": 47,
+        "score": 53,
         "basis": "homepage_editorial_shadow_v2",
-        "importance": 10,
+        "importance": 12,
         "importance_basis": "persistent_story_importance",
         "importance_reasons": [
           {
-            "code": "public_safety",
-            "label": "Public-safety event",
-            "points": 10
+            "code": "cultural_sports",
+            "label": "Major sports/cultural event",
+            "points": 12
           }
         ],
-        "freshness": 91.02,
-        "urgency": 3,
-        "relevance": 60,
-        "regions": [],
-        "source_trust": 94,
+        "freshness": 87.32,
+        "urgency": 5,
+        "relevance": 82,
+        "regions": [
+          "Minnesota"
+        ],
+        "source_trust": 89,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 5.39,
+        "age_hours": 7.61,
         "timestamp_basis": "registry:latest_timeline",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -3065,7 +3020,7 @@
         "source_url"
       ],
       "identity_warning": "",
-      "identity": "story:story_000131",
+      "identity": "story:story_000166",
       "identity_basis": "persistent_story_id",
       "placement_count": 1,
       "placement_categories": [
@@ -3078,28 +3033,38 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 43,
-      "recommended_position": 48,
-      "first_placement_position": 43,
-      "headline": "Michael 'Venom' Page wins final UFC contract fight by decision amid boos in Paris",
+      "current_position": 41,
+      "recommended_position": 46,
+      "first_placement_position": 42,
+      "headline": "Nebraska defeats Ohio 49-21 in season opener",
       "category_key": "sports",
       "slug": "",
-      "story_id": "story_000130",
-      "score": 47,
+      "story_id": "story_000167",
+      "score": 48,
       "score_breakdown": {
-        "score": 47,
+        "score": 48,
         "basis": "homepage_editorial_shadow_v2",
-        "importance": 0,
-        "importance_basis": "persistent_score_breakdown",
-        "importance_reasons": [],
-        "freshness": 90.93,
+        "importance": 10,
+        "importance_basis": "persistent_story_importance",
+        "importance_reasons": [
+          {
+            "code": "multistate_scope",
+            "label": "Multi-state U.S. scope",
+            "points": 10
+          }
+        ],
+        "freshness": 85.31,
         "urgency": 4,
-        "relevance": 72,
-        "regions": [],
-        "source_trust": 94,
+        "relevance": 95,
+        "regions": [
+          "North Carolina",
+          "Nebraska",
+          "Ohio"
+        ],
+        "source_trust": 55,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 5.44,
+        "age_hours": 8.82,
         "timestamp_basis": "registry:latest_timeline",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -3112,7 +3077,111 @@
         "source_url"
       ],
       "identity_warning": "",
-      "identity": "story:story_000130",
+      "identity": "story:story_000167",
+      "identity_basis": "persistent_story_id",
+      "placement_count": 1,
+      "placement_categories": [
+        "sports"
+      ],
+      "pinned": false,
+      "pin_position": null,
+      "custom": false,
+      "position_locked": false,
+      "position_lock_reason": ""
+    },
+    {
+      "current_position": 42,
+      "recommended_position": 47,
+      "first_placement_position": 43,
+      "headline": "Dodgers' Shohei Ohtani misses third straight game, team to evaluate Sunday",
+      "category_key": "sports",
+      "slug": "",
+      "story_id": "story_000168",
+      "score": 52,
+      "score_breakdown": {
+        "score": 52,
+        "basis": "homepage_editorial_shadow_v2",
+        "importance": 0,
+        "importance_basis": "persistent_score_breakdown",
+        "importance_reasons": [],
+        "freshness": 92.7,
+        "urgency": 7,
+        "relevance": 82,
+        "regions": [
+          "Oklahoma"
+        ],
+        "source_trust": 55,
+        "breaking_bonus": 0.0,
+        "material_update_bonus": 0.0,
+        "age_hours": 4.38,
+        "timestamp_basis": "registry:latest_timeline",
+        "deck_eligible": true,
+        "eligibility_reason": "fresh_window"
+      },
+      "deck_eligible": true,
+      "eligibility_reason": "fresh_window",
+      "match_basis": "persistent_story_id+source_url",
+      "identity_confidence": "high",
+      "identity_evidence": [
+        "source_url"
+      ],
+      "identity_warning": "",
+      "identity": "story:story_000168",
+      "identity_basis": "persistent_story_id",
+      "placement_count": 1,
+      "placement_categories": [
+        "sports"
+      ],
+      "pinned": false,
+      "pin_position": null,
+      "custom": false,
+      "position_locked": false,
+      "position_lock_reason": ""
+    },
+    {
+      "current_position": 44,
+      "recommended_position": 48,
+      "first_placement_position": 45,
+      "headline": "Coco Gauff advances to US Open fourth round as Madison Keys and Amanda Anisimova exit",
+      "category_key": "sports",
+      "slug": "2026-09-06-coco-gauff-advances-to-us-open-fourth-round-as-madison-keys-and-amanda-anisimova",
+      "story_id": "story_000124",
+      "score": 53,
+      "score_breakdown": {
+        "score": 53,
+        "basis": "homepage_editorial_shadow_v2",
+        "importance": 15,
+        "importance_basis": "persistent_story_importance",
+        "importance_reasons": [
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "freshness": 91.83,
+        "urgency": 3,
+        "relevance": 100,
+        "regions": [
+          "New York"
+        ],
+        "source_trust": 94,
+        "breaking_bonus": 0.0,
+        "material_update_bonus": 0.0,
+        "age_hours": 4.9,
+        "timestamp_basis": "archive:first_published",
+        "deck_eligible": true,
+        "eligibility_reason": "fresh_window"
+      },
+      "deck_eligible": true,
+      "eligibility_reason": "fresh_window",
+      "match_basis": "persistent_story_id+source_url",
+      "identity_confidence": "high",
+      "identity_evidence": [
+        "source_url"
+      ],
+      "identity_warning": "",
+      "identity": "story:story_000124",
       "identity_basis": "persistent_story_id",
       "placement_count": 1,
       "placement_categories": [
@@ -3127,11 +3196,11 @@
     {
       "current_position": 46,
       "recommended_position": 49,
-      "first_placement_position": 46,
-      "headline": "Liam and Noel Gallagher receive eight-minute standing ovation at Venice Film Festival for Oasis documentary",
+      "first_placement_position": 47,
+      "headline": "Lee Chang-dong returns to Venice competition with Possible Love",
       "category_key": "entertainment",
       "slug": "",
-      "story_id": "story_000135",
+      "story_id": "story_000170",
       "score": 54,
       "score_breakdown": {
         "score": 54,
@@ -3145,14 +3214,14 @@
             "points": 10
           }
         ],
-        "freshness": 89.89,
+        "freshness": 95.93,
         "urgency": 6,
-        "relevance": 72,
+        "relevance": 60,
         "regions": [],
         "source_trust": 90,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 6.07,
+        "age_hours": 2.44,
         "timestamp_basis": "registry:latest_timeline",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -3165,7 +3234,7 @@
         "source_url"
       ],
       "identity_warning": "",
-      "identity": "story:story_000135",
+      "identity": "story:story_000170",
       "identity_basis": "persistent_story_id",
       "placement_count": 1,
       "placement_categories": [
@@ -3180,19 +3249,19 @@
     {
       "current_position": 47,
       "recommended_position": 50,
-      "first_placement_position": 47,
-      "headline": "Jesse Eisenberg's 'The Debut' Showcases Julianne Moore in Community-Theater Comedy",
+      "first_placement_position": 48,
+      "headline": "Julianne Moore Stars in Jesse Eisenberg's Community-Theater Comedy 'The Debut'",
       "category_key": "entertainment",
       "slug": "",
       "story_id": "story_000153",
-      "score": 52,
+      "score": 50,
       "score_breakdown": {
-        "score": 52,
+        "score": 50,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 0,
         "importance_basis": "persistent_score_breakdown",
         "importance_reasons": [],
-        "freshness": 97.98,
+        "freshness": 91.34,
         "urgency": 5,
         "relevance": 82,
         "regions": [
@@ -3201,7 +3270,7 @@
         "source_trust": 90,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 1.21,
+        "age_hours": 5.2,
         "timestamp_basis": "registry:latest_timeline",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -3229,44 +3298,32 @@
     {
       "current_position": 48,
       "recommended_position": 51,
-      "first_placement_position": 48,
-      "headline": "Mike Leigh's likely final film draws praise at Telluride, reviving question of his Oscar drought",
+      "first_placement_position": 49,
+      "headline": "Wim Wenders premieres 3D documentary on architect Peter Zumthor at Venice",
       "category_key": "entertainment",
       "slug": "",
-      "story_id": "story_000106",
-      "score": 67,
+      "story_id": "story_000171",
+      "score": 52,
       "score_breakdown": {
-        "score": 67,
+        "score": 52,
         "basis": "homepage_editorial_shadow_v2",
-        "importance": 52,
+        "importance": 10,
         "importance_basis": "persistent_story_importance",
         "importance_reasons": [
-          {
-            "code": "war_diplomacy",
-            "label": "War, diplomacy or national-security consequence",
-            "points": 30
-          },
           {
             "code": "public_safety",
             "label": "Public-safety event",
             "points": 10
-          },
-          {
-            "code": "cultural_sports",
-            "label": "Major sports/cultural event",
-            "points": 12
           }
         ],
-        "freshness": 87.99,
+        "freshness": 94.68,
         "urgency": 5,
-        "relevance": 82,
-        "regions": [
-          "New York"
-        ],
+        "relevance": 60,
+        "regions": [],
         "source_trust": 90,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 7.21,
+        "age_hours": 3.19,
         "timestamp_basis": "registry:latest_timeline",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -3279,7 +3336,7 @@
         "source_url"
       ],
       "identity_warning": "",
-      "identity": "story:story_000106",
+      "identity": "story:story_000171",
       "identity_basis": "persistent_story_id",
       "placement_count": 1,
       "placement_categories": [
@@ -3294,86 +3351,34 @@
     {
       "current_position": 49,
       "recommended_position": 52,
-      "first_placement_position": 49,
-      "headline": "Danny Boyle confirms limited use of generative AI in new film Ink",
-      "category_key": "entertainment",
-      "slug": "",
-      "story_id": "story_000154",
-      "score": 47,
-      "score_breakdown": {
-        "score": 47,
-        "basis": "homepage_editorial_shadow_v2",
-        "importance": 0,
-        "importance_basis": "persistent_score_breakdown",
-        "importance_reasons": [],
-        "freshness": 89.13,
-        "urgency": 5,
-        "relevance": 82,
-        "regions": [
-          "Colorado"
-        ],
-        "source_trust": 55,
-        "breaking_bonus": 0.0,
-        "material_update_bonus": 0.0,
-        "age_hours": 6.52,
-        "timestamp_basis": "registry:latest_timeline",
-        "deck_eligible": true,
-        "eligibility_reason": "fresh_window"
-      },
-      "deck_eligible": true,
-      "eligibility_reason": "fresh_window",
-      "match_basis": "persistent_story_id+source_url",
-      "identity_confidence": "high",
-      "identity_evidence": [
-        "source_url"
-      ],
-      "identity_warning": "",
-      "identity": "story:story_000154",
-      "identity_basis": "persistent_story_id",
-      "placement_count": 1,
-      "placement_categories": [
-        "entertainment"
-      ],
-      "pinned": false,
-      "pin_position": null,
-      "custom": false,
-      "position_locked": false,
-      "position_lock_reason": ""
-    },
-    {
-      "current_position": 50,
-      "recommended_position": 53,
       "first_placement_position": 50,
-      "headline": "Penélope Cruz enters awards season with three films as Oscar contender",
+      "headline": "Watermelon Pictures acquires Dev Benegal documentary on artist Judith Blum Reddy",
       "category_key": "entertainment",
       "slug": "",
-      "story_id": "story_000138",
-      "score": 61,
+      "story_id": "story_000172",
+      "score": 59,
       "score_breakdown": {
-        "score": 61,
+        "score": 59,
         "basis": "homepage_editorial_shadow_v2",
-        "importance": 40,
+        "importance": 30,
         "importance_basis": "persistent_story_importance",
         "importance_reasons": [
           {
             "code": "war_diplomacy",
             "label": "War, diplomacy or national-security consequence",
             "points": 30
-          },
-          {
-            "code": "global_scope",
-            "label": "Major international consequence",
-            "points": 10
           }
         ],
-        "freshness": 89.24,
+        "freshness": 96.08,
         "urgency": 4,
-        "relevance": 85,
-        "regions": [],
+        "relevance": 82,
+        "regions": [
+          "New York"
+        ],
         "source_trust": 90,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 6.46,
+        "age_hours": 2.35,
         "timestamp_basis": "registry:latest_timeline",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -3386,7 +3391,7 @@
         "source_url"
       ],
       "identity_warning": "",
-      "identity": "story:story_000138",
+      "identity": "story:story_000172",
       "identity_basis": "persistent_story_id",
       "placement_count": 1,
       "placement_categories": [
@@ -3400,27 +3405,29 @@
     },
     {
       "current_position": 51,
-      "recommended_position": 54,
-      "first_placement_position": 51,
-      "headline": "Natalie Portman welcomes third child, first with partner Tanguy Destable",
+      "recommended_position": 53,
+      "first_placement_position": 52,
+      "headline": "Wrestler Andy Williams collapses during Pennsylvania match, receives CPR",
       "category_key": "entertainment",
       "slug": "",
-      "story_id": "story_000155",
-      "score": 40,
+      "story_id": "story_000174",
+      "score": 52,
       "score_breakdown": {
-        "score": 40,
+        "score": 52,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 0,
         "importance_basis": "persistent_score_breakdown",
         "importance_reasons": [],
-        "freshness": 92.01,
-        "urgency": 3,
-        "relevance": 60,
-        "regions": [],
+        "freshness": 91.46,
+        "urgency": 7,
+        "relevance": 82,
+        "regions": [
+          "Pennsylvania"
+        ],
         "source_trust": 55,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 4.8,
+        "age_hours": 5.12,
         "timestamp_basis": "registry:latest_timeline",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -3433,7 +3440,7 @@
         "source_url"
       ],
       "identity_warning": "",
-      "identity": "story:story_000155",
+      "identity": "story:story_000174",
       "identity_basis": "persistent_story_id",
       "placement_count": 1,
       "placement_categories": [
@@ -3447,34 +3454,41 @@
     },
     {
       "current_position": 52,
-      "recommended_position": 55,
-      "first_placement_position": 52,
-      "headline": "Gene Roddenberry opposed making Worf central to Star Trek: The Next Generation's Season 4 finale",
+      "recommended_position": 54,
+      "first_placement_position": 53,
+      "headline": "Julianne Moore and Paul Giamatti generate Oscar buzz after Jesse Eisenberg's 'The Debut' premieres at Telluride",
       "category_key": "entertainment",
-      "slug": "",
-      "story_id": "story_000156",
+      "slug": "2026-09-06-julianne-moore-and-paul-giamatti-generate-oscar-buzz-after-jesse-eisenbergs-the",
+      "story_id": "story_000133",
       "score": 60,
       "score_breakdown": {
         "score": 60,
         "basis": "homepage_editorial_shadow_v2",
-        "importance": 30,
+        "importance": 42,
         "importance_basis": "persistent_story_importance",
         "importance_reasons": [
           {
             "code": "war_diplomacy",
             "label": "War, diplomacy or national-security consequence",
             "points": 30
+          },
+          {
+            "code": "cultural_sports",
+            "label": "Major sports/cultural event",
+            "points": 12
           }
         ],
-        "freshness": 94.99,
-        "urgency": 7,
-        "relevance": 60,
-        "regions": [],
-        "source_trust": 55,
+        "freshness": 91.83,
+        "urgency": 3,
+        "relevance": 82,
+        "regions": [
+          "New Jersey"
+        ],
+        "source_trust": 90,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 3.01,
-        "timestamp_basis": "registry:latest_timeline",
+        "age_hours": 4.9,
+        "timestamp_basis": "archive:first_published",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
       },
@@ -3486,7 +3500,72 @@
         "source_url"
       ],
       "identity_warning": "",
-      "identity": "story:story_000156",
+      "identity": "story:story_000133",
+      "identity_basis": "persistent_story_id",
+      "placement_count": 1,
+      "placement_categories": [
+        "entertainment"
+      ],
+      "pinned": false,
+      "pin_position": null,
+      "custom": false,
+      "position_locked": false,
+      "position_lock_reason": ""
+    },
+    {
+      "current_position": 53,
+      "recommended_position": 55,
+      "first_placement_position": 54,
+      "headline": "Bad Bunny's Super Bowl halftime show and The Traitors lead Creative Arts Emmys night one",
+      "category_key": "entertainment",
+      "slug": "2026-09-06-bad-bunnys-super-bowl-halftime-show-and-the-traitors-lead-creative-arts-emmys-ni",
+      "story_id": "story_000152",
+      "score": 62,
+      "score_breakdown": {
+        "score": 62,
+        "basis": "homepage_editorial_shadow_v2",
+        "importance": 48,
+        "importance_basis": "persistent_story_importance",
+        "importance_reasons": [
+          {
+            "code": "war_diplomacy",
+            "label": "War, diplomacy or national-security consequence",
+            "points": 30
+          },
+          {
+            "code": "cultural_sports",
+            "label": "Major sports/cultural event",
+            "points": 12
+          },
+          {
+            "code": "single_death",
+            "label": "Death reported",
+            "points": 6
+          }
+        ],
+        "freshness": 93.36,
+        "urgency": 3,
+        "relevance": 82,
+        "regions": [
+          "Georgia"
+        ],
+        "source_trust": 90,
+        "breaking_bonus": 0.0,
+        "material_update_bonus": 0.0,
+        "age_hours": 3.98,
+        "timestamp_basis": "archive:first_published",
+        "deck_eligible": true,
+        "eligibility_reason": "fresh_window"
+      },
+      "deck_eligible": true,
+      "eligibility_reason": "fresh_window",
+      "match_basis": "persistent_story_id+source_url",
+      "identity_confidence": "high",
+      "identity_evidence": [
+        "source_url"
+      ],
+      "identity_warning": "",
+      "identity": "story:story_000152",
       "identity_basis": "persistent_story_id",
       "placement_count": 1,
       "placement_categories": [
@@ -3501,14 +3580,14 @@
     {
       "current_position": 56,
       "recommended_position": 56,
-      "first_placement_position": 56,
+      "first_placement_position": 57,
       "headline": "Trump envoys meet with Putin in Moscow, plan Ukraine trip amid airstrike pause",
       "category_key": "politics",
       "slug": "2026-09-05-trump-envoys-meet-with-putin-in-moscow-plan-ukraine-trip-amid-airstrike-pause",
       "story_id": "story_000110",
-      "score": 63,
+      "score": 61,
       "score_breakdown": {
-        "score": 63,
+        "score": 61,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 45,
         "importance_basis": "persistent_story_importance",
@@ -3524,14 +3603,14 @@
             "points": 15
           }
         ],
-        "freshness": 89.98,
+        "freshness": 83.34,
         "urgency": 3,
         "relevance": 100,
         "regions": [],
         "source_trust": 90,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 6.01,
+        "age_hours": 10.0,
         "timestamp_basis": "archive:first_published",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -3559,26 +3638,26 @@
     {
       "current_position": 57,
       "recommended_position": 57,
-      "first_placement_position": 57,
+      "first_placement_position": 58,
       "headline": "Trump plans to use Qatari plane for Ireland trip despite security concerns",
       "category_key": "politics",
       "slug": "2026-09-04-trump-plans-to-use-qatari-plane-for-ireland-trip-despite-security-concerns",
       "story_id": "",
-      "score": 26,
+      "score": 24,
       "score_breakdown": {
-        "score": 26,
+        "score": 24,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 0,
         "importance_basis": "unmatched_story",
         "importance_reasons": [],
-        "freshness": 12.99,
+        "freshness": 6.35,
         "urgency": 3,
         "relevance": 100,
         "regions": [],
         "source_trust": 50,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 52.21,
+        "age_hours": 56.19,
         "timestamp_basis": "archive:date",
         "deck_eligible": false,
         "eligibility_reason": "older_than_48_hours_not_urgent_enough"
@@ -3604,14 +3683,14 @@
     {
       "current_position": 58,
       "recommended_position": 58,
-      "first_placement_position": 58,
+      "first_placement_position": 59,
       "headline": "Supreme Court rules political parties entitled to lower TV ad rates",
       "category_key": "politics",
       "slug": "2026-09-04-supreme-court-rules-political-parties-entitled-to-lower-tv-ad-rates",
       "story_id": "story_000053",
-      "score": 59,
+      "score": 57,
       "score_breakdown": {
-        "score": 59,
+        "score": 57,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 87,
         "importance_basis": "persistent_story_importance",
@@ -3637,14 +3716,14 @@
             "points": 15
           }
         ],
-        "freshness": 12.99,
+        "freshness": 6.35,
         "urgency": 3,
         "relevance": 100,
         "regions": [],
         "source_trust": 94,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 52.21,
+        "age_hours": 56.19,
         "timestamp_basis": "archive:date",
         "deck_eligible": false,
         "eligibility_reason": "older_than_48_hours_not_urgent_enough"
@@ -3672,7 +3751,7 @@
     {
       "current_position": 59,
       "recommended_position": 59,
-      "first_placement_position": 59,
+      "first_placement_position": 60,
       "headline": "Congress delays government funding and Iran war money until after midterms",
       "category_key": "politics",
       "slug": "2026-09-02-congress-delays-government-funding-and-iran-war-money-until-after-midterms",
@@ -3691,7 +3770,7 @@
         "source_trust": 50,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 100.21,
+        "age_hours": 104.19,
         "timestamp_basis": "archive:date",
         "deck_eligible": false,
         "eligibility_reason": "older_than_60_hours"
@@ -3717,7 +3796,7 @@
     {
       "current_position": 60,
       "recommended_position": 60,
-      "first_placement_position": 60,
+      "first_placement_position": 61,
       "headline": "Whistleblower warns rushed USPS portal could reject ballots before midterms",
       "category_key": "politics",
       "slug": "2026-09-01-whistleblower-warns-rushed-usps-portal-could-reject-ballots-before-midterms",
@@ -3736,7 +3815,7 @@
         "source_trust": 50,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 124.21,
+        "age_hours": 128.19,
         "timestamp_basis": "archive:date",
         "deck_eligible": false,
         "eligibility_reason": "older_than_60_hours"
@@ -3762,7 +3841,7 @@
     {
       "current_position": 61,
       "recommended_position": 61,
-      "first_placement_position": 61,
+      "first_placement_position": 62,
       "headline": "Carlson calls for Trump removal over nuclear weapons consideration",
       "category_key": "politics",
       "slug": "2026-08-30-carlson-calls-for-trump-removal-over-nuclear-weapons-consideration",
@@ -3781,7 +3860,7 @@
         "source_trust": 50,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 172.21,
+        "age_hours": 176.19,
         "timestamp_basis": "archive:date",
         "deck_eligible": false,
         "eligibility_reason": "older_than_60_hours"
@@ -3808,130 +3887,110 @@
   "stale_or_ineligible_deck_candidates": [
     {
       "headline": "US diesel prices reach all-time high as Iran conflict disrupts fuel supply",
-      "current_position": 6,
-      "age_hours": 2116.21,
-      "eligibility_reason": "older_than_60_hours",
-      "score": 20
-    },
-    {
-      "headline": "Russia Suspected in Series of Sabotage Incidents Across Europe",
-      "current_position": 7,
-      "age_hours": 52.21,
-      "eligibility_reason": "older_than_48_hours_not_urgent_enough",
-      "score": 24
-    },
-    {
-      "headline": "Flooding in Tibet Leaves Hundreds Missing as China Faces Criticism Over Response",
-      "current_position": 8,
-      "age_hours": 52.21,
-      "eligibility_reason": "older_than_48_hours_not_urgent_enough",
-      "score": 46
-    },
-    {
-      "headline": "Germany accuses Russia of attempted drone attack on Leipzig airport",
       "current_position": 9,
-      "age_hours": 100.21,
+      "age_hours": 2120.19,
       "eligibility_reason": "older_than_60_hours",
       "score": 20
-    },
-    {
-      "headline": "Florida Panhandle battle over beach access prompts call for constitutional amendment",
-      "current_position": 16,
-      "age_hours": 52.21,
-      "eligibility_reason": "older_than_48_hours_not_urgent_enough",
-      "score": 26
-    },
-    {
-      "headline": "Federal judge extends block on Trump executive order limiting mail voting in midterms",
-      "current_position": 17,
-      "age_hours": 52.21,
-      "eligibility_reason": "older_than_48_hours_not_urgent_enough",
-      "score": 60
-    },
-    {
-      "headline": "ICE detainee dies hours after admission to detention facility",
-      "current_position": 18,
-      "age_hours": 100.21,
-      "eligibility_reason": "older_than_60_hours",
-      "score": 23
     },
     {
       "headline": "August Jobs Report Shows Strong Hiring, Raising Pressure on Federal Reserve",
-      "current_position": 22,
-      "age_hours": 52.21,
+      "current_position": 20,
+      "age_hours": 56.19,
       "eligibility_reason": "older_than_48_hours_not_urgent_enough",
-      "score": 60
+      "score": 58
     },
     {
       "headline": "Employer Health Costs Expected to Jump 11 Percent in 2027",
-      "current_position": 23,
-      "age_hours": 100.21,
+      "current_position": 21,
+      "age_hours": 104.19,
       "eligibility_reason": "older_than_60_hours",
       "score": 22
     },
     {
       "headline": "Government Borrowing Costs Hit Multi-Decade Highs Worldwide",
-      "current_position": 24,
-      "age_hours": 124.21,
+      "current_position": 22,
+      "age_hours": 128.19,
       "eligibility_reason": "older_than_60_hours",
       "score": 22
     },
     {
       "headline": "Trump announces deal for U.S. access to Venezuelan oil reserves",
-      "current_position": 25,
-      "age_hours": 172.21,
+      "current_position": 23,
+      "age_hours": 176.19,
       "eligibility_reason": "older_than_60_hours",
       "score": 22
     },
     {
       "headline": "Oil Prices Jump to $90 a Barrel After U.S. and Iran Exchange Attacks",
+      "current_position": 24,
+      "age_hours": 152.19,
+      "eligibility_reason": "older_than_60_hours",
+      "score": 22
+    },
+    {
+      "headline": "US Strikes Deal for Control of Large Share of Venezuelan Oil Reserves",
+      "current_position": 25,
+      "age_hours": 200.19,
+      "eligibility_reason": "older_than_60_hours",
+      "score": 22
+    },
+    {
+      "headline": "Oil companies and governments deplete storage reserves as Iran conflict disrupts supply",
       "current_position": 26,
-      "age_hours": 148.21,
+      "age_hours": 224.19,
       "eligibility_reason": "older_than_60_hours",
       "score": 22
     },
     {
       "headline": "Trump plans to use Qatari plane for Ireland trip despite security concerns",
       "current_position": 57,
-      "age_hours": 52.21,
+      "age_hours": 56.19,
       "eligibility_reason": "older_than_48_hours_not_urgent_enough",
-      "score": 26
+      "score": 24
     },
     {
       "headline": "Supreme Court rules political parties entitled to lower TV ad rates",
       "current_position": 58,
-      "age_hours": 52.21,
+      "age_hours": 56.19,
       "eligibility_reason": "older_than_48_hours_not_urgent_enough",
-      "score": 59
+      "score": 57
     },
     {
       "headline": "Congress delays government funding and Iran war money until after midterms",
       "current_position": 59,
-      "age_hours": 100.21,
+      "age_hours": 104.19,
       "eligibility_reason": "older_than_60_hours",
       "score": 23
     },
     {
       "headline": "Whistleblower warns rushed USPS portal could reject ballots before midterms",
       "current_position": 60,
-      "age_hours": 124.21,
+      "age_hours": 128.19,
       "eligibility_reason": "older_than_60_hours",
       "score": 23
     },
     {
       "headline": "Carlson calls for Trump removal over nuclear weapons consideration",
       "current_position": 61,
-      "age_hours": 172.21,
+      "age_hours": 176.19,
       "eligibility_reason": "older_than_60_hours",
       "score": 23
     }
   ],
-  "excluded_duplicate_placements": [],
+  "excluded_duplicate_placements": [
+    {
+      "headline": "U.S. envoys head to Ukraine after meeting Putin in Moscow",
+      "placement_position": 11,
+      "canonical_position": 1,
+      "identity": "story:story_000158",
+      "identity_basis": "persistent_story_id"
+    }
+  ],
   "excluded_legacy_identity_placements": [],
   "identity_warnings": [
     {
       "headline": "Trump envoys to visit Moscow and Kyiv this weekend as U.S. pushes new peace proposal",
-      "current_position": 4,
+      "current_position": 7,
       "story_id": "story_000062",
       "match_basis": "source_url",
       "identity_confidence": "high",
@@ -3940,21 +3999,12 @@
     },
     {
       "headline": "US diesel prices reach all-time high as Iran conflict disrupts fuel supply",
-      "current_position": 6,
+      "current_position": 9,
       "story_id": "",
       "match_basis": "uncorroborated_persistent_story_id",
       "identity_confidence": "low",
       "identity_warning": "uncorroborated_persistent_story_id:story_000091",
       "position_lock_reason": "identity_conflict"
-    },
-    {
-      "headline": "Ganymede may hold more liquid water than all of Earth's oceans, buried beneath roughly 150 kilometers of ice",
-      "current_position": 27,
-      "story_id": "story_000142",
-      "match_basis": "persistent_story_id+strong_title_overlap",
-      "identity_confidence": "medium",
-      "identity_warning": "",
-      "position_lock_reason": "medium_identity_confidence"
     }
   ],
   "excluded_candidates": [],
