@@ -7,73 +7,48 @@
     "resolver_version": "3.0",
     "relationship_engine_version": "1.5"
   },
-  "generated_at": "2026-09-06T03:17:18Z",
+  "generated_at": "2026-09-06T04:12:10Z",
   "mode": "enforce",
   "publication_behavior_changed": false,
   "activation": {},
   "registry_path": "/home/runner/work/plain-news/plain-news/story-registry.json",
   "audit": {
-    "candidates_processed": 38,
+    "candidates_processed": 34,
     "routes": {
-      "generate_new": 31,
-      "skip": 7
+      "generate_new": 16,
+      "skip": 18
     },
     "eligibility": {
-      "low_value": 1,
-      "publishable": 37
+      "publishable": 34
     },
     "source_classes": {
-      "aggregator": 1,
-      "entertainment_news": 8,
-      "international_news": 12,
-      "national_news": 3,
+      "entertainment_news": 5,
+      "international_news": 10,
+      "national_news": 2,
       "politics_news": 1,
-      "technology_news": 4,
-      "unknown": 9
+      "technology_news": 6,
+      "unknown": 10
     },
     "rejected_count": 0,
     "rejected_examples": []
   },
   "relationships": {
     "counts": {
-      "new_story": 29,
-      "same_event": 9
+      "new_story": 16,
+      "same_event": 18
     },
     "examples": [
       {
-        "story_id": "story_000113",
-        "title": "Greek air force F-4 Phantom jet crashes at air show near Athens, killing both pilots",
-        "event_key": "traffic-crash-idaho-86484ae534",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
-        "story_id": "story_000114",
-        "title": "Fuel tanker explosion on western Iran highway kills at least 10 after brake failure triggers road crash and fire",
-        "event_key": "war-or-military-action-049d2b29e3",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
         "story_id": "story_000088",
-        "title": "Egyptian court sentences TV presenter Sarah Khalifa and 11 others to death in drug trafficking case",
+        "title": "Egyptian court sentences TV presenter and 11 others to death in drug trafficking case",
         "event_key": "named-person-death:sarah-khalifa",
         "relationship": "same_event",
         "confidence": 1.0,
-        "reason": "Exact normalized title already belongs to this story",
+        "reason": "Exact event key already belongs to this story",
         "decision_trace": [
           "Relationship: same_event",
-          "Exact normalized title match: true",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
           "Confidence: 1.00"
         ]
       },
@@ -83,64 +58,45 @@
         "event_key": "death-b005fd8f7f",
         "relationship": "same_event",
         "confidence": 1.0,
-        "reason": "Exact normalized title already belongs to this story",
+        "reason": "Exact event key already belongs to this story",
         "decision_trace": [
           "Relationship: same_event",
-          "Exact normalized title match: true",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
           "Confidence: 1.00"
         ]
       },
       {
-        "story_id": "story_000115",
-        "title": "Federal judge reinforces order requiring 48-hour notice before work on Trump's proposed Arlington arch",
-        "event_key": "court-ruling-b749724271",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
         "story_id": "story_000116",
-        "title": "Amazon MGM nears decision on next James Bond actor after months of auditions",
+        "title": "Casting for next James Bond may conclude by year's end, producer says",
         "event_key": "unknown-event-f56e047d66",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "reason": "Exact event key already belongs to this story",
         "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
         ]
       },
       {
-        "story_id": "story_000117",
-        "title": "Climate change may force more flight diversions as storms intensify, aviation expert warns",
-        "event_key": "unknown-event-51b14ea433",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "story_id": "story_000127",
+        "title": "Katie Taylor retires after winning final bout in Dublin",
+        "event_key": "unknown-event-17c3fdf5b3",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "reason": "Exact event key already belongs to this story",
         "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
-        "story_id": "story_000118",
-        "title": "Historical data shows divided Congress under Republican president tied to 7.33% average annual S&P 500 return",
-        "event_key": "election-daa1ff98a9",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
         ]
       },
       {
         "story_id": "story_000091",
-        "title": "Diesel prices reach record high, raising costs for food and transportation",
+        "title": "U.S. diesel prices reach record high, raising transportation and food costs nationwide",
         "event_key": "election-d02bd5b20a",
         "relationship": "same_event",
         "confidence": 1.0,
@@ -153,9 +109,9 @@
         ]
       },
       {
-        "story_id": "story_000119",
-        "title": "Seattle Times and Newsday sue OpenAI and Microsoft over alleged unauthorized use of journalism to train AI",
-        "event_key": "unknown-event-c9772cf457",
+        "story_id": "story_000142",
+        "title": "Ganymede may hold more liquid water than all of Earth's oceans, buried beneath roughly 150 kilometers of ice",
+        "event_key": "arrest-1f89c8f9cf",
         "relationship": "new_story",
         "confidence": 0.0,
         "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
@@ -166,31 +122,21 @@
       },
       {
         "story_id": "story_000120",
-        "title": "OpenAI confirms 'wiki incident' and plans framework for disclosing AI misalignment",
+        "title": "OpenAI confirms AI agent 'misalignment' during training, pledges disclosure framework",
         "event_key": "unknown-event-26a46841bb",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "reason": "Exact event key already belongs to this story",
         "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
-        "story_id": "story_000121",
-        "title": "Scientists infer vast subsurface ocean on Ganymede but cannot confirm it reaches the surface",
-        "event_key": "arrest-787b797eb7",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
         ]
       },
       {
         "story_id": "story_000094",
-        "title": "Oura files to go public as revenue nearly doubles to $1.21 billion amid growing smart ring competition",
+        "title": "Oura files to go public as revenue nearly doubles to $1.21 billion",
         "event_key": "unknown-event-3096c923f0",
         "relationship": "same_event",
         "confidence": 1.0,
@@ -204,7 +150,7 @@
       },
       {
         "story_id": "story_000096",
-        "title": "Microsoft to cap Xbox Cloud Gaming at 15 hours monthly starting November, citing AI compute demands",
+        "title": "Microsoft to cap Xbox Cloud Gaming at 15 hours monthly starting November 2026",
         "event_key": "election-052d7c7644",
         "relationship": "same_event",
         "confidence": 1.0,
@@ -218,7 +164,7 @@
       },
       {
         "story_id": "story_000097",
-        "title": "Apple iOS 27 to include iPhone Handoff feature for sharing one number across two devices",
+        "title": "Apple's iOS 27 will let users share one phone number across two iPhones",
         "event_key": "unknown-event-26a04f3fde",
         "relationship": "same_event",
         "confidence": 1.0,
@@ -231,9 +177,9 @@
         ]
       },
       {
-        "story_id": "story_000122",
-        "title": "Sony clarifies PlayStation disc production will fall by 10 percent in 2028, not 90 percent",
-        "event_key": "business-transaction-14b8c3c6e2",
+        "story_id": "story_000143",
+        "title": "New browser tool lets users explore globe through environmental field recordings",
+        "event_key": "unknown-event-9be687a6d3",
         "relationship": "new_story",
         "confidence": 0.0,
         "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
@@ -243,9 +189,82 @@
         ]
       },
       {
-        "story_id": "story_000117",
-        "title": "Aviation expert warns climate disruption could force simultaneous airport diversions",
-        "event_key": "unknown-event-51b14ea433",
+        "story_id": "story_000144",
+        "title": "New iPhone alarm app Clucky uses rooster sounds and push-up challenges to combat snoozing",
+        "event_key": "unknown-event-14a9453adf",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000123",
+        "title": "The Blood of Dawnwalker sells 1 million copies in two days",
+        "event_key": "unknown-event-cfcb0e8fab",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "reason": "Exact source article URL already belongs to this story",
+        "decision_trace": [
+          "Exact source article identity: true",
+          "Normalized source URL: https://www.ign.com/articles/the-blood-of-dawnwalker-passes-1-million-copies-sold-in-just-2-days",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000145",
+        "title": "CD sales surged 46 percent in first half of 2026",
+        "event_key": "unknown-event-d13df0e02e",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000146",
+        "title": "Michigan stuns Western Michigan 13-12 on Hail Mary after clock was reset to 1 second",
+        "event_key": "unknown-event-46a283900d",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000147",
+        "title": "Katie Taylor retires as undisputed light-welterweight champion after victory at Croke Park",
+        "event_key": "unknown-event-ea65f0218c",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000148",
+        "title": "Coco Gauff advances to US Open fourth round as Madison Keys and Amanda Anisimova exit",
+        "event_key": "unknown-event-e161611266",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000125",
+        "title": "Six top-10 seeds ousted from US Open men's draw in first week",
+        "event_key": "unknown-event-95d9b84a11",
         "relationship": "same_event",
         "confidence": 1.0,
         "reason": "Exact event key already belongs to this story",
@@ -257,9 +276,9 @@
         ]
       },
       {
-        "story_id": "story_000123",
-        "title": "The Blood of Dawnwalker Sells 1 Million Copies in Two Days",
-        "event_key": "unknown-event-cfcb0e8fab",
+        "story_id": "story_000149",
+        "title": "Iowa routs Northern Illinois 40-0 in season opener behind Moulton's career-high 183 rushing yards",
+        "event_key": "unknown-event-fb12d74480",
         "relationship": "new_story",
         "confidence": 0.0,
         "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
@@ -269,68 +288,31 @@
         ]
       },
       {
-        "story_id": "story_000124",
-        "title": "Coco Gauff advances to US Open fourth round as Madison Keys and Amanda Anisimova exit",
-        "event_key": "unknown-event-0ebbf291e3",
+        "story_id": "story_000150",
+        "title": "Oklahoma State loses 24-10 to Tulsa in Eric Morris' head coaching debut",
+        "event_key": "natural-disaster-arizona",
         "relationship": "new_story",
         "confidence": 0.0,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "reason": "Created new story: conservative merge requirements were not met",
         "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
-        "story_id": "story_000125",
-        "title": "Six top-10 men's seeds eliminated at US Open as Fritz, Cobolli upset in first week",
-        "event_key": "unknown-event-95d9b84a11",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
+          "No sufficiently supported match",
+          "Threshold: 0.78"
         ]
       }
     ],
     "decision_trace_examples": [
       {
-        "story_id": "story_000113",
-        "title": "Greek air force F-4 Phantom jet crashes at air show near Athens, killing both pilots",
-        "event_key": "traffic-crash-idaho-86484ae534",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "matched_existing": false,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
-        "story_id": "story_000114",
-        "title": "Fuel tanker explosion on western Iran highway kills at least 10 after brake failure triggers road crash and fire",
-        "event_key": "war-or-military-action-049d2b29e3",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "matched_existing": false,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
         "story_id": "story_000088",
-        "title": "Egyptian court sentences TV presenter Sarah Khalifa and 11 others to death in drug trafficking case",
+        "title": "Egyptian court sentences TV presenter and 11 others to death in drug trafficking case",
         "event_key": "named-person-death:sarah-khalifa",
         "relationship": "same_event",
         "confidence": 1.0,
         "matched_existing": true,
-        "reason": "Exact normalized title already belongs to this story",
+        "reason": "Exact event key already belongs to this story",
         "decision_trace": [
           "Relationship: same_event",
-          "Exact normalized title match: true",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
           "Confidence: 1.00"
         ]
       },
@@ -341,68 +323,47 @@
         "relationship": "same_event",
         "confidence": 1.0,
         "matched_existing": true,
-        "reason": "Exact normalized title already belongs to this story",
+        "reason": "Exact event key already belongs to this story",
         "decision_trace": [
           "Relationship: same_event",
-          "Exact normalized title match: true",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
           "Confidence: 1.00"
         ]
       },
       {
-        "story_id": "story_000115",
-        "title": "Federal judge reinforces order requiring 48-hour notice before work on Trump's proposed Arlington arch",
-        "event_key": "court-ruling-b749724271",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "matched_existing": false,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
         "story_id": "story_000116",
-        "title": "Amazon MGM nears decision on next James Bond actor after months of auditions",
+        "title": "Casting for next James Bond may conclude by year's end, producer says",
         "event_key": "unknown-event-f56e047d66",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "matched_existing": false,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "matched_existing": true,
+        "reason": "Exact event key already belongs to this story",
         "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
         ]
       },
       {
-        "story_id": "story_000117",
-        "title": "Climate change may force more flight diversions as storms intensify, aviation expert warns",
-        "event_key": "unknown-event-51b14ea433",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "matched_existing": false,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "story_id": "story_000127",
+        "title": "Katie Taylor retires after winning final bout in Dublin",
+        "event_key": "unknown-event-17c3fdf5b3",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "matched_existing": true,
+        "reason": "Exact event key already belongs to this story",
         "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
-        "story_id": "story_000118",
-        "title": "Historical data shows divided Congress under Republican president tied to 7.33% average annual S&P 500 return",
-        "event_key": "election-daa1ff98a9",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "matched_existing": false,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
         ]
       },
       {
         "story_id": "story_000091",
-        "title": "Diesel prices reach record high, raising costs for food and transportation",
+        "title": "U.S. diesel prices reach record high, raising transportation and food costs nationwide",
         "event_key": "election-d02bd5b20a",
         "relationship": "same_event",
         "confidence": 1.0,
@@ -416,9 +377,9 @@
         ]
       },
       {
-        "story_id": "story_000119",
-        "title": "Seattle Times and Newsday sue OpenAI and Microsoft over alleged unauthorized use of journalism to train AI",
-        "event_key": "unknown-event-c9772cf457",
+        "story_id": "story_000142",
+        "title": "Ganymede may hold more liquid water than all of Earth's oceans, buried beneath roughly 150 kilometers of ice",
+        "event_key": "arrest-1f89c8f9cf",
         "relationship": "new_story",
         "confidence": 0.0,
         "matched_existing": false,
@@ -430,33 +391,22 @@
       },
       {
         "story_id": "story_000120",
-        "title": "OpenAI confirms 'wiki incident' and plans framework for disclosing AI misalignment",
+        "title": "OpenAI confirms AI agent 'misalignment' during training, pledges disclosure framework",
         "event_key": "unknown-event-26a46841bb",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "matched_existing": false,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "matched_existing": true,
+        "reason": "Exact event key already belongs to this story",
         "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
-        "story_id": "story_000121",
-        "title": "Scientists infer vast subsurface ocean on Ganymede but cannot confirm it reaches the surface",
-        "event_key": "arrest-787b797eb7",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "matched_existing": false,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
         ]
       },
       {
         "story_id": "story_000094",
-        "title": "Oura files to go public as revenue nearly doubles to $1.21 billion amid growing smart ring competition",
+        "title": "Oura files to go public as revenue nearly doubles to $1.21 billion",
         "event_key": "unknown-event-3096c923f0",
         "relationship": "same_event",
         "confidence": 1.0,
@@ -471,7 +421,7 @@
       },
       {
         "story_id": "story_000096",
-        "title": "Microsoft to cap Xbox Cloud Gaming at 15 hours monthly starting November, citing AI compute demands",
+        "title": "Microsoft to cap Xbox Cloud Gaming at 15 hours monthly starting November 2026",
         "event_key": "election-052d7c7644",
         "relationship": "same_event",
         "confidence": 1.0,
@@ -486,7 +436,7 @@
       },
       {
         "story_id": "story_000097",
-        "title": "Apple iOS 27 to include iPhone Handoff feature for sharing one number across two devices",
+        "title": "Apple's iOS 27 will let users share one phone number across two iPhones",
         "event_key": "unknown-event-26a04f3fde",
         "relationship": "same_event",
         "confidence": 1.0,
@@ -500,9 +450,9 @@
         ]
       },
       {
-        "story_id": "story_000122",
-        "title": "Sony clarifies PlayStation disc production will fall by 10 percent in 2028, not 90 percent",
-        "event_key": "business-transaction-14b8c3c6e2",
+        "story_id": "story_000143",
+        "title": "New browser tool lets users explore globe through environmental field recordings",
+        "event_key": "unknown-event-9be687a6d3",
         "relationship": "new_story",
         "confidence": 0.0,
         "matched_existing": false,
@@ -513,9 +463,88 @@
         ]
       },
       {
-        "story_id": "story_000117",
-        "title": "Aviation expert warns climate disruption could force simultaneous airport diversions",
-        "event_key": "unknown-event-51b14ea433",
+        "story_id": "story_000144",
+        "title": "New iPhone alarm app Clucky uses rooster sounds and push-up challenges to combat snoozing",
+        "event_key": "unknown-event-14a9453adf",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "matched_existing": false,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000123",
+        "title": "The Blood of Dawnwalker sells 1 million copies in two days",
+        "event_key": "unknown-event-cfcb0e8fab",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "matched_existing": true,
+        "reason": "Exact source article URL already belongs to this story",
+        "decision_trace": [
+          "Exact source article identity: true",
+          "Normalized source URL: https://www.ign.com/articles/the-blood-of-dawnwalker-passes-1-million-copies-sold-in-just-2-days",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000145",
+        "title": "CD sales surged 46 percent in first half of 2026",
+        "event_key": "unknown-event-d13df0e02e",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "matched_existing": false,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000146",
+        "title": "Michigan stuns Western Michigan 13-12 on Hail Mary after clock was reset to 1 second",
+        "event_key": "unknown-event-46a283900d",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "matched_existing": false,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000147",
+        "title": "Katie Taylor retires as undisputed light-welterweight champion after victory at Croke Park",
+        "event_key": "unknown-event-ea65f0218c",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "matched_existing": false,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000148",
+        "title": "Coco Gauff advances to US Open fourth round as Madison Keys and Amanda Anisimova exit",
+        "event_key": "unknown-event-e161611266",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "matched_existing": false,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000125",
+        "title": "Six top-10 seeds ousted from US Open men's draw in first week",
+        "event_key": "unknown-event-95d9b84a11",
         "relationship": "same_event",
         "confidence": 1.0,
         "matched_existing": true,
@@ -528,9 +557,9 @@
         ]
       },
       {
-        "story_id": "story_000123",
-        "title": "The Blood of Dawnwalker Sells 1 Million Copies in Two Days",
-        "event_key": "unknown-event-cfcb0e8fab",
+        "story_id": "story_000149",
+        "title": "Iowa routs Northern Illinois 40-0 in season opener behind Moulton's career-high 183 rushing yards",
+        "event_key": "unknown-event-fb12d74480",
         "relationship": "new_story",
         "confidence": 0.0,
         "matched_existing": false,
@@ -541,29 +570,16 @@
         ]
       },
       {
-        "story_id": "story_000124",
-        "title": "Coco Gauff advances to US Open fourth round as Madison Keys and Amanda Anisimova exit",
-        "event_key": "unknown-event-0ebbf291e3",
+        "story_id": "story_000150",
+        "title": "Oklahoma State loses 24-10 to Tulsa in Eric Morris' head coaching debut",
+        "event_key": "natural-disaster-arizona",
         "relationship": "new_story",
         "confidence": 0.0,
         "matched_existing": false,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "reason": "Created new story: conservative merge requirements were not met",
         "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
-        "story_id": "story_000125",
-        "title": "Six top-10 men's seeds eliminated at US Open as Fritz, Cobolli upset in first week",
-        "event_key": "unknown-event-95d9b84a11",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "matched_existing": false,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
+          "No sufficiently supported match",
+          "Threshold: 0.78"
         ]
       }
     ]
@@ -571,58 +587,26 @@
   "follow_up_detection": {
     "mode": "observe_only",
     "publication_behavior_changed": false,
-    "candidate_count": 2,
+    "candidate_count": 1,
     "high_confidence_candidate_count": 0,
     "unanchored_candidate_suppressed_count": 0,
     "current_relationships": {
-      "new_story": 2
+      "new_story": 1
     },
     "milestones": {
-      "opening": 2
+      "opening": 1
     },
     "reason_codes": {
-      "entity_match": 2,
-      "identity_anchor_qualified": 2,
-      "location_match": 2,
-      "novel_milestone": 2
+      "entity_match": 1,
+      "identity_anchor_qualified": 1,
+      "location_match": 1,
+      "novel_milestone": 1
     },
     "examples": [
       {
         "headline": "Coco Gauff advances to US Open fourth round as Madison Keys and Amanda Anisimova exit",
-        "event_key": "unknown-event-0ebbf291e3",
-        "current_story_id": "story_000124",
-        "current_relationship": "new_story",
-        "candidate_story_id": "story_000037",
-        "candidate_confidence": 0.6,
-        "candidate_milestones": [
-          "opening"
-        ],
-        "candidate_reason_codes": [
-          "novel_milestone",
-          "location_match",
-          "entity_match",
-          "identity_anchor_qualified"
-        ],
-        "candidate_trace": [
-          "Follow-up candidate mode: observe_only",
-          "Candidate story: story_000037",
-          "Novel milestones: opening",
-          "Exact event-key anchor: False",
-          "Facts overlap: 0.00",
-          "Title overlap: 0.00",
-          "Location match: True",
-          "Agency match: False",
-          "Event type match: False",
-          "Entity match: True",
-          "Agency conflict: False",
-          "Event type conflict: False",
-          "Candidate confidence: 0.60"
-        ]
-      },
-      {
-        "headline": "Zheng Qinwen rallies from 5-0 and match point down to beat Madison Keys at US Open",
-        "event_key": "unknown-event-570b9be192",
-        "current_story_id": "story_000126",
+        "event_key": "unknown-event-e161611266",
+        "current_story_id": "story_000148",
         "current_relationship": "new_story",
         "candidate_story_id": "story_000037",
         "candidate_confidence": 0.6,
@@ -658,9 +642,9 @@
     "retrospective": {
       "mode": "retrospective_observe_only",
       "publication_behavior_changed": false,
-      "stories_with_timelines": 3,
-      "timeline_entries_examined": 6,
-      "transitions_examined": 3,
+      "stories_with_timelines": 4,
+      "timeline_entries_examined": 8,
+      "transitions_examined": 4,
       "candidate_scope": "distinct_article_transitions",
       "candidate_count": 0,
       "high_confidence_candidate_count": 0,
@@ -686,39 +670,39 @@
   },
   "audience_relevance": {
     "scopes": {
-      "global_major": 8,
+      "global_major": 9,
       "international": 10,
-      "unknown": 57,
-      "us_multistate": 8,
-      "us_national": 46,
-      "us_state_regional": 11
+      "unknown": 63,
+      "us_multistate": 12,
+      "us_national": 48,
+      "us_state_regional": 14
     },
-    "average_score": 79.18
+    "average_score": 79.21
   },
   "editorial_proximity": {
     "scopes": {
-      "global_major": 8,
+      "global_major": 9,
       "international": 10,
-      "unknown": 57,
-      "us_multistate": 8,
-      "us_national": 46,
-      "us_state_regional": 11
+      "unknown": 63,
+      "us_multistate": 12,
+      "us_national": 48,
+      "us_state_regional": 14
     },
-    "average_priority": 21.98
+    "average_priority": 21.19
   },
   "story_lifecycle": {
     "counts": {
-      "active": 133,
+      "active": 148,
       "breaking": 1,
-      "developing": 6
+      "developing": 7
     }
   },
   "registry_health": {
     "repair_version": 16,
     "changed": false,
     "status": "clean",
-    "active_stories_before": 111,
-    "active_stories_after": 111,
+    "active_stories_before": 140,
+    "active_stories_after": 140,
     "quarantined_story_count": 0,
     "quarantined_story_ids": [],
     "quarantine_reasons": {},
@@ -743,24 +727,24 @@
     "timeline_coherence_new_story_ids": [],
     "remaining_timeline_coherence_violations": 0,
     "timeline_coherence_violation_story_ids": [],
-    "incident_anchor_to_story_count": 7,
+    "incident_anchor_to_story_count": 8,
     "unified_incident_groups_resolved": 0,
     "unified_incident_story_records_removed": 0,
     "remaining_unified_incident_groups": 0,
-    "generated_at": "2026-09-06T03:17:10Z",
+    "generated_at": "2026-09-06T04:12:04Z",
     "quarantined_story_records_retained": 0,
-    "active_story_count": 140
+    "active_story_count": 156
   },
   "stories": {
-    "total": 140,
+    "total": 156,
     "importance_levels": {
       "breaking": 10,
       "high": 13,
-      "normal": 29,
-      "low": 88,
+      "normal": 34,
+      "low": 99,
       "archived": 0
     },
-    "average_importance": 24.48,
+    "average_importance": 23.59,
     "top": [
       {
         "story_id": "story_000112",
@@ -775,7 +759,7 @@
           "freshness_multiplier": 0.95,
           "source_multiplier": 1.126,
           "source_trust": 92,
-          "age_hours": 12.32
+          "age_hours": 13.23
         },
         "level": "breaking",
         "importance_reasons": [
@@ -828,7 +812,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-09-05T14:58:05+00:00",
-          "hours_since_update": 12.32,
+          "hours_since_update": 13.23,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -846,7 +830,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 1.132,
           "source_trust": 94,
-          "age_hours": 30.72
+          "age_hours": 31.63
         },
         "level": "breaking",
         "importance_reasons": [
@@ -901,7 +885,7 @@
           "state": "developing",
           "reason": "Multiple events or follow-up decisions show the story is evolving",
           "last_updated": "2026-09-04T20:34:06+00:00",
-          "hours_since_update": 30.72,
+          "hours_since_update": 31.63,
           "event_count": 2,
           "timeline_entries": 2
         }
@@ -919,7 +903,7 @@
           "freshness_multiplier": 0.95,
           "source_multiplier": 0.985,
           "source_trust": 45,
-          "age_hours": 13.85
+          "age_hours": 14.77
         },
         "level": "breaking",
         "importance_reasons": [
@@ -963,7 +947,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-09-05T13:26:01+00:00",
-          "hours_since_update": 13.85,
+          "hours_since_update": 14.77,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -981,7 +965,7 @@
           "freshness_multiplier": 0.95,
           "source_multiplier": 1.12,
           "source_trust": 90,
-          "age_hours": 6.95
+          "age_hours": 7.87
         },
         "level": "breaking",
         "importance_reasons": [
@@ -1030,7 +1014,7 @@
           "state": "breaking",
           "reason": "Breaking importance with a current or undated update",
           "last_updated": "2026-09-05T20:20:00+00:00",
-          "hours_since_update": 6.95,
+          "hours_since_update": 7.87,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1048,7 +1032,7 @@
           "freshness_multiplier": 1.0,
           "source_multiplier": 1.12,
           "source_trust": 90,
-          "age_hours": 4.82
+          "age_hours": 5.73
         },
         "level": "high",
         "importance_reasons": [
@@ -1085,8 +1069,8 @@
             "New York",
             "Florida",
             "Georgia",
-            "Maine",
             "Texas",
+            "Maine",
             "Ohio"
           ],
           "places": [
@@ -1098,8 +1082,8 @@
             "New York",
             "Florida",
             "Georgia",
-            "Maine",
             "Texas",
+            "Maine",
             "Ohio"
           ]
         },
@@ -1116,7 +1100,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-09-05T22:28:12+00:00",
-          "hours_since_update": 4.82,
+          "hours_since_update": 5.73,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1134,7 +1118,7 @@
           "freshness_multiplier": 0.95,
           "source_multiplier": 1.12,
           "source_trust": 90,
-          "age_hours": 12.88
+          "age_hours": 13.79
         },
         "level": "breaking",
         "importance_reasons": [
@@ -1178,7 +1162,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-09-05T14:24:38+00:00",
-          "hours_since_update": 12.88,
+          "hours_since_update": 13.79,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1196,7 +1180,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 0.994,
           "source_trust": 48,
-          "age_hours": 29.14
+          "age_hours": 30.05
         },
         "level": "breaking",
         "importance_reasons": [
@@ -1249,7 +1233,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-09-04T22:09:00+00:00",
-          "hours_since_update": 29.14,
+          "hours_since_update": 30.05,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1267,7 +1251,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 0.994,
           "source_trust": 48,
-          "age_hours": 30.87
+          "age_hours": 31.79
         },
         "level": "breaking",
         "importance_reasons": [
@@ -1316,7 +1300,7 @@
           "state": "developing",
           "reason": "Multiple events or follow-up decisions show the story is evolving",
           "last_updated": "2026-09-04T20:24:45+00:00",
-          "hours_since_update": 30.87,
+          "hours_since_update": 31.79,
           "event_count": 2,
           "timeline_entries": 1
         }
@@ -1334,7 +1318,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 1.132,
           "source_trust": 94,
-          "age_hours": 28.79
+          "age_hours": 29.7
         },
         "level": "breaking",
         "importance_reasons": [
@@ -1378,7 +1362,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-09-04T22:29:59+00:00",
-          "hours_since_update": 28.79,
+          "hours_since_update": 29.7,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1396,7 +1380,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 0.985,
           "source_trust": 45,
-          "age_hours": 31.63
+          "age_hours": 32.55
         },
         "level": "breaking",
         "importance_reasons": [
@@ -1449,7 +1433,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-09-04T19:39:21+00:00",
-          "hours_since_update": 31.63,
+          "hours_since_update": 32.55,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1467,7 +1451,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 1.135,
           "source_trust": 95,
-          "age_hours": 31.53
+          "age_hours": 32.45
         },
         "level": "breaking",
         "importance_reasons": [
@@ -1511,7 +1495,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-09-04T19:45:22+00:00",
-          "hours_since_update": 31.53,
+          "hours_since_update": 32.45,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1529,7 +1513,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 1.132,
           "source_trust": 94,
-          "age_hours": 26.23
+          "age_hours": 27.14
         },
         "level": "high",
         "importance_reasons": [
@@ -1568,7 +1552,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-09-05T01:03:35+00:00",
-          "hours_since_update": 26.23,
+          "hours_since_update": 27.14,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1586,7 +1570,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 1.12,
           "source_trust": 90,
-          "age_hours": 30.89
+          "age_hours": 31.81
         },
         "level": "high",
         "importance_reasons": [
@@ -1625,7 +1609,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-09-04T20:23:34+00:00",
-          "hours_since_update": 30.89,
+          "hours_since_update": 31.81,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1643,7 +1627,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 1.123,
           "source_trust": 91,
-          "age_hours": 30.72
+          "age_hours": 31.63
         },
         "level": "high",
         "importance_reasons": [
@@ -1682,7 +1666,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-09-04T20:34:00+00:00",
-          "hours_since_update": 30.72,
+          "hours_since_update": 31.63,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1700,7 +1684,7 @@
           "freshness_multiplier": 0.95,
           "source_multiplier": 1.132,
           "source_trust": 94,
-          "age_hours": 6.59
+          "age_hours": 7.5
         },
         "level": "high",
         "importance_reasons": [
@@ -1744,7 +1728,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-09-05T20:41:59+00:00",
-          "hours_since_update": 6.59,
+          "hours_since_update": 7.5,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1762,7 +1746,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 1.132,
           "source_trust": 94,
-          "age_hours": 25.39
+          "age_hours": 26.31
         },
         "level": "high",
         "importance_reasons": [
@@ -1810,7 +1794,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-09-05T01:53:45+00:00",
-          "hours_since_update": 25.39,
+          "hours_since_update": 26.31,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1828,7 +1812,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 1.117,
           "source_trust": 89,
-          "age_hours": 30.45
+          "age_hours": 31.37
         },
         "level": "high",
         "importance_reasons": [
@@ -1871,7 +1855,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-09-04T20:50:01+00:00",
-          "hours_since_update": 30.45,
+          "hours_since_update": 31.37,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1889,7 +1873,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 1.132,
           "source_trust": 94,
-          "age_hours": 29.24
+          "age_hours": 30.15
         },
         "level": "high",
         "importance_reasons": [
@@ -1923,7 +1907,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-09-04T22:02:52+00:00",
-          "hours_since_update": 29.24,
+          "hours_since_update": 30.15,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1932,16 +1916,16 @@
         "story_id": "story_000086",
         "title": "US envoys meet Putin in Moscow for Ukraine talks",
         "score": 51,
-        "editorial_priority": 58,
-        "editorial_score": 58,
+        "editorial_priority": 55,
+        "editorial_score": 55,
         "score_breakdown": {
-          "score": 58,
+          "score": 55,
           "importance": 51,
           "proximity_multiplier": 1.0,
-          "freshness_multiplier": 1.0,
+          "freshness_multiplier": 0.95,
           "source_multiplier": 1.132,
           "source_trust": 94,
-          "age_hours": 5.64
+          "age_hours": 6.55
         },
         "level": "normal",
         "importance_reasons": [
@@ -1984,7 +1968,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-09-05T21:39:02+00:00",
-          "hours_since_update": 5.64,
+          "hours_since_update": 6.55,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -2002,7 +1986,7 @@
           "freshness_multiplier": 1.0,
           "source_multiplier": 1.015,
           "source_trust": 55,
-          "age_hours": 4.07
+          "age_hours": 4.99
         },
         "level": "high",
         "importance_reasons": [
@@ -2041,7 +2025,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-09-05T23:12:45+00:00",
-          "hours_since_update": 4.07,
+          "hours_since_update": 4.99,
           "event_count": 1,
           "timeline_entries": 1
         }

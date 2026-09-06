@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-06T03:06:19.709376Z",
+  "generated_at": "2026-09-06T04:01:22.486700Z",
   "categories": {
     "world": {
       "incoming": 18,
@@ -7,8 +7,8 @@
       "rejected": 9,
       "rejected_by_quality": {
         "brief": 2,
-        "discovery_only": 6,
-        "thin": 1
+        "discovery_only": 5,
+        "thin": 2
       }
     },
     "us": {
@@ -16,14 +16,13 @@
       "publishable": 13,
       "rejected": 5,
       "rejected_by_quality": {
-        "brief": 3,
-        "discovery_only": 1,
+        "brief": 4,
         "thin": 1
       }
     },
     "business": {
-      "incoming": 18,
-      "publishable": 7,
+      "incoming": 17,
+      "publishable": 6,
       "rejected": 11,
       "rejected_by_quality": {
         "brief": 5,
@@ -31,20 +30,12 @@
       }
     },
     "tech": {
-      "incoming": 14,
-      "publishable": 14,
+      "incoming": 18,
+      "publishable": 18,
       "rejected": 0,
       "rejected_by_quality": {}
     },
     "sports": {
-      "incoming": 15,
-      "publishable": 13,
-      "rejected": 2,
-      "rejected_by_quality": {
-        "brief": 2
-      }
-    },
-    "entertainment": {
       "incoming": 18,
       "publishable": 17,
       "rejected": 1,
@@ -52,13 +43,18 @@
         "brief": 1
       }
     },
+    "entertainment": {
+      "incoming": 18,
+      "publishable": 18,
+      "rejected": 0,
+      "rejected_by_quality": {}
+    },
     "politics": {
       "incoming": 18,
       "publishable": 3,
       "rejected": 15,
       "rejected_by_quality": {
-        "brief": 14,
-        "thin": 1
+        "brief": 15
       }
     }
   }

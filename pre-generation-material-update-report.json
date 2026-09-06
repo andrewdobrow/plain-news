@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-09-06T03:06:19Z",
-  "evaluated": 9,
+  "generated_at": "2026-09-06T04:01:22Z",
+  "evaluated": 17,
   "material_updates": 0,
-  "duplicates_suppressed": 8,
-  "holds_suppressed": 0,
-  "new_or_unmatched": 1,
+  "duplicates_suppressed": 16,
+  "holds_suppressed": 1,
+  "new_or_unmatched": 0,
   "items": [
     {
       "category": "world",
@@ -15,7 +15,7 @@
       "confidence": 0.9,
       "novel_facts": [],
       "reason": "Both articles describe the same Witkoff-Kushner meeting with Putin in Moscow on Saturday and the planned onward trip to Kyiv, with the same details about the three-hour talks and strike pause. No new material development (arrest, death, ruling, etc.) is present beyond restating the same event and quotes already covered in the canonical.",
-      "cache_hit": false
+      "cache_hit": true
     },
     {
       "category": "world",
@@ -26,6 +26,53 @@
       "confidence": 0.97,
       "novel_facts": [],
       "reason": "This is the same BBC article (identical source_url) reporting the same Saturday US-Iran tanker strikes, Centcom statements, Kharg Island details, and Iran's retaliatory claims already covered in the canonical story. No new material facts such as casualties, official findings, or policy changes are added beyond what's in the existing canonical.",
+      "cache_hit": true
+    },
+    {
+      "category": "world",
+      "title": "Fighter jet crashes at air show, killing 2 pilots with thousands of spectators watching - Fox News",
+      "source_url": "https://www.foxnews.com/world/fighter-jet-crashes-air-show-killing-2-pilots-thousands-spectators-watching",
+      "action": "duplicate_use_existing_canonical",
+      "selected_candidate_slug": "2026-09-06-greek-air-force-f-4-phantom-jet-crashes-at-air-show-near-athens-killing-both-pil",
+      "confidence": 0.98,
+      "novel_facts": [],
+      "reason": "Identical incident with same source article, same details (location, aircraft, casualties, quotes) as existing canonical; no new facts introduced beyond what is already covered.",
+      "cache_hit": false
+    },
+    {
+      "category": "us",
+      "title": "Judge reinforces order halting immediate work on Trump’s 250-foot arch - USA Today",
+      "source_url": "https://www.usatoday.com/story/news/politics/2026/09/05/judge-reinforces-order-halting-immediate-work-on-trumps-arch/91629157007/",
+      "action": "duplicate_use_existing_canonical",
+      "selected_candidate_slug": "2026-09-06-federal-judge-reinforces-order-requiring-48-hour-notice-before-work-on-trumps-pr",
+      "confidence": 0.98,
+      "novel_facts": [],
+      "reason": "This is the same USA Today article (identical source_url) reporting the same judicial order reinforcement with no new facts beyond the existing canonical.",
+      "cache_hit": false
+    },
+    {
+      "category": "us",
+      "title": "US and Iran trade retaliatory attacks on ships as conflict flares",
+      "source_url": "https://www.bbc.co.uk/news/articles/cj64rrne643o?at_medium=RSS&at_campaign=rss",
+      "action": "duplicate_use_existing_canonical",
+      "selected_candidate_slug": "2026-09-05-us-military-strikes-three-iranian-oil-tankers-in-retaliation-for-attacks-on-amer",
+      "confidence": 0.97,
+      "novel_facts": [],
+      "reason": "This is the same BBC article (identical source_url) reporting the same Saturday US-Iran tanker strikes, Centcom statements, Kharg Island details, and Iran's retaliatory claims already covered in the canonical story. No new material facts such as casualties, official findings, or policy changes are added beyond what's in the existing canonical.",
+      "cache_hit": true
+    },
+    {
+      "category": "us",
+      "title": "Russia’s Putin and US envoys discuss Trump proposal to end Ukraine war - Al Jazeera",
+      "source_url": "https://www.aljazeera.com/news/2026/9/5/russias-putin-meets-us-envoys-to-discuss-trump-proposal-to-end-ukraine-war",
+      "action": "duplicate_use_existing_canonical",
+      "selected_candidate_slug": "2026-09-05-trump-envoys-meet-with-putin-in-moscow-plan-ukraine-trip-amid-airstrike-pause",
+      "confidence": 0.9,
+      "novel_facts": [
+        "Additional quotes from Ushakov and Dmitriev",
+        "Casualty figures from Saturday strikes"
+      ],
+      "reason": "Both articles report the same Kremlin meeting between Putin and US envoys Witkoff/Kushner on the same Saturday, discussing the same Trump peace proposal, with the same planned Kyiv trip and airstrike pause. The incoming article adds quotes and casualty details but no material new development like an arrest, death, or ruling that changes the story's substance.",
       "cache_hit": false
     },
     {
@@ -41,14 +88,14 @@
     },
     {
       "category": "us",
-      "title": "US and Iran trade retaliatory attacks on ships as conflict flares",
-      "source_url": "https://www.bbc.co.uk/news/articles/cj64rrne643o?at_medium=RSS&at_campaign=rss",
+      "title": "Katie Taylor crowns career in stylish Croke Park triumph",
+      "source_url": "https://www.bbc.co.uk/sport/boxing/articles/clyeg4n8l98o?at_medium=RSS&at_campaign=rss",
       "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-09-05-us-military-strikes-three-iranian-oil-tankers-in-retaliation-for-attacks-on-amer",
-      "confidence": 0.97,
+      "selected_candidate_slug": "2026-09-05-katie-taylor-retires-as-undisputed-champion-after-final-fight-at-croke-park",
+      "confidence": 0.98,
       "novel_facts": [],
-      "reason": "This is the same BBC article (identical source_url) reporting the same Saturday US-Iran tanker strikes, Centcom statements, Kharg Island details, and Iran's retaliatory claims already covered in the canonical story. No new material facts such as casualties, official findings, or policy changes are added beyond what's in the existing canonical.",
-      "cache_hit": true
+      "reason": "Same fight, same night, same venue and outcome as the existing canonical article; only stylistic/reporting differences (e.g., slightly different scorecards, added color about ringside celebrities) with no new material development like injury, death, or ruling.",
+      "cache_hit": false
     },
     {
       "category": "business",
@@ -59,22 +106,44 @@
       "confidence": 0.98,
       "novel_facts": [],
       "reason": "Identical article from same Ars Technica source URL, covering the same Cybercab launch and NHTSA investigation with no new facts beyond the existing canonical.",
+      "cache_hit": true
+    },
+    {
+      "category": "business",
+      "title": "Are Stocks Going to Plunge if Congress Is Split Under President Donald Trump? Here's What History Says About Stock Market Returns in This Scenario. - Yahoo Finance",
+      "source_url": "https://finance.yahoo.com/markets/stocks/articles/stocks-going-plunge-congress-split-132601710.html",
+      "action": "duplicate_use_existing_canonical",
+      "selected_candidate_slug": "2026-09-06-historical-data-shows-divided-congress-under-republican-president-tied-to-733-av",
+      "confidence": 0.97,
+      "novel_facts": [],
+      "reason": "This is the same syndicated Yahoo Finance analysis piece already covered by the canonical article, sharing identical source URL, headline, and core statistic (7.33% average return over 34 years of divided government under a Republican president). No new facts or updates are present; it's a generic evergreen market-history explainer, not tied to a specific news event.",
       "cache_hit": false
     },
     {
       "category": "tech",
-      "title": "No, Sony isn't cutting PlayStation disc production by 90 percent, just 10 - eurogamer.net",
+      "title": "Seattle Times and Newsday are the latest publications to sue OpenAI and Microsoft",
+      "source_url": "https://techcrunch.com/2026/09/05/seattle-times-and-newsday-are-the-latest-publications-to-sue-openai-and-microsoft/",
+      "action": "duplicate_use_existing_canonical",
+      "selected_candidate_slug": "2026-09-06-seattle-times-and-newsday-sue-openai-and-microsoft-over-alleged-unauthorized-use",
+      "confidence": 0.98,
+      "novel_facts": [],
+      "reason": "Identical article content and same source URL describing the same lawsuit filing by the same plaintiffs against the same defendants, with no new facts beyond the existing canonical version.",
+      "cache_hit": false
+    },
+    {
+      "category": "tech",
+      "title": "No, Sony isn't cutting PlayStation disc production by 90 percent, just 10 - Eurogamer.net",
       "source_url": "https://www.eurogamer.net/sony-playstation-disc-production-10-percent-decline-not-90",
-      "action": "new_story",
-      "selected_candidate_slug": "",
-      "confidence": 0.72,
+      "action": "hold",
+      "selected_candidate_slug": "2026-07-03-sony-to-end-playstation-disc-production-as-industry-shifts-digital",
+      "confidence": 0.62,
       "novel_facts": [
-        "Sony DADC clarifies 2028 disc volume will decline by 10 percent, not down to 10 percent",
-        "Correction of misreported '90 percent cut' claim from Dietmar Tanzer's Austrian broadcast comments",
-        "Comments from Shawn Layden and Niko Partners analyst on disc-free future implications",
-        "Mention of iam8bit and Conectiv Supply Chain Solutions as potential alternative disc manufacturers"
+        "Sony DADC clarifies 2028 disc volume will decline 10%, not to 10% (i.e., not a 90% cut)",
+        "Statement attributed to DADC chief Dietmar Tanzer, originally made to Austrian broadcaster",
+        "Reorders will continue after Jan 2028 cutoff for new titles",
+        "Possible alternative manufacturer (Conectiv Supply Chain Solutions) mentioned"
       ],
-      "reason": "The candidate covers Sony's July 2026 confirmation of ending disc production amid consumer backlash, while the incoming article is a distinct September 2026 correction of a separate misreported statistic (90% vs 10% decline) from a different source (Sony DADC executive Dietmar Tanzer), with new quotes and analysis not present in the candidate. This is a new, more specific dispute/clarification story rather than the same announcement event, so it merits its own entry rather than folding into the July canonical.",
+      "reason": "This is a direct follow-up correcting/clarifying the scope of Sony's previously announced PlayStation disc production wind-down (same overall event/topic as the canonical July 2026 story). It corrects widespread misreporting of a 90% cut to the actual 10% figure for 2028, which is a material clarification affecting reader understanding of the original announcement's scope, but does not introduce a distinct accountability or policy question warranting a new URL.",
       "cache_hit": false
     },
     {
@@ -86,17 +155,42 @@
       "confidence": 0.98,
       "novel_facts": [],
       "reason": "This is the same source article (identical source_url and near-identical text) already covered by the existing canonical, with no new facts beyond what was previously reported.",
-      "cache_hit": false
+      "cache_hit": true
     },
     {
       "category": "sports",
-      "title": "Taylor crowns career in stylish Croke Park triumph",
-      "source_url": "https://www.bbc.co.uk/sport/boxing/articles/clyeg4n8l98o?at_medium=RSS&at_campaign=rss",
+      "title": "US Open 2026 results: Coco Gauff wins but Amanda Anisimova and Madison Keys out - BBC",
+      "source_url": "https://www.bbc.com/sport/tennis/articles/cvgy7jxwzg6o",
       "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-09-05-katie-taylor-retires-as-undisputed-champion-after-final-fight-at-croke-park",
+      "selected_candidate_slug": "2026-09-06-coco-gauff-advances-to-us-open-fourth-round-as-madison-keys-and-amanda-anisimova",
+      "confidence": 0.97,
+      "novel_facts": [
+        "Additional detail on Iva Jovic's win over Alexandra Eala (7-5 3-6 7-5)",
+        "Mention of Naomi Osaka fighting back against Elise (Mertens implied)"
+      ],
+      "reason": "This is the same BBC article covering the identical US Open fourth-round results already captured in the canonical story, with no new material facts beyond added color/detail already implied in the canonical summary.",
+      "cache_hit": false
+    },
+    {
+      "category": "entertainment",
+      "title": "‘The Debut’ Explodes at Telluride With Julianne Moore’s Gonzo, Career-Best Turn, Thanks to a Toolbelt, Unlit Cigarettes and a Faux Musical",
+      "source_url": "https://variety.com/2026/film/awards/the-debut-julianne-moore-telluride-oscars-paul-giamatti-1236852947/",
+      "action": "duplicate_use_existing_canonical",
+      "selected_candidate_slug": "2026-09-06-julianne-moore-and-paul-giamatti-generate-oscar-buzz-after-jesse-eisenbergs-the",
       "confidence": 0.98,
       "novel_facts": [],
-      "reason": "This is the same BBC article covering Katie Taylor's retirement fight at Croke Park against Flora Pili, sharing identical source URL, fighters, venue, result, and event details as the existing canonical. No new material facts are introduced; it's a duplicate ingestion with minor stylistic rewording.",
+      "reason": "Both articles cover the same Telluride premiere of 'The Debut' with identical source article, same cast, plot details, awards speculation, and quotes. The incoming article is essentially the same Variety piece with no new facts, arrests, deaths, or rulings—just a different rewrite/framing of the same event.",
+      "cache_hit": false
+    },
+    {
+      "category": "entertainment",
+      "title": "‘The Debut’ Explodes at Telluride With Julianne Moore’s Gonzo, Career-Best Turn, Thanks to a Toolbelt, Unlit Cigarettes and a Faux Musical - Variety",
+      "source_url": "https://variety.com/2026/film/awards/the-debut-julianne-moore-telluride-oscars-paul-giamatti-1236852947/",
+      "action": "duplicate_use_existing_canonical",
+      "selected_candidate_slug": "2026-09-06-julianne-moore-and-paul-giamatti-generate-oscar-buzz-after-jesse-eisenbergs-the",
+      "confidence": 0.97,
+      "novel_facts": [],
+      "reason": "Same source article (identical source_url) covering the Telluride premiere of 'The Debut' with identical cast, plot, and awards-buzz details already captured in the canonical version; no new facts or developments are present.",
       "cache_hit": false
     },
     {
@@ -113,7 +207,7 @@
         "Bessent-Russian counterpart meeting at G20 in Asheville"
       ],
       "reason": "This is the same Kremlin meeting reported in the canonical article (identical source URL, same participants, same three-hour meeting, same airstrike pause and Kyiv trip plans). The incoming version adds contextual detail (Lange's role, quotes from Ushakov and a White House official, Bessent's prior meeting) but none constitute a material update category like an arrest, death, ruling, or casualty revision�just additional background on the same ongoing diplomatic event.",
-      "cache_hit": false
+      "cache_hit": true
     }
   ]
 }
