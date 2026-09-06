@@ -1,11 +1,25 @@
 {
-  "generated_at": "2026-09-06T08:00:02Z",
-  "evaluated": 17,
-  "material_updates": 0,
-  "duplicates_suppressed": 14,
+  "generated_at": "2026-09-06T10:03:54Z",
+  "evaluated": 16,
+  "material_updates": 1,
+  "duplicates_suppressed": 13,
   "holds_suppressed": 1,
-  "new_or_unmatched": 2,
+  "new_or_unmatched": 1,
   "items": [
+    {
+      "category": "world",
+      "title": "TV presenter among 12 sentenced to death in Egypt drugs case",
+      "source_url": "https://www.bbc.co.uk/news/articles/c5y7gk9knnlo?at_medium=RSS&at_campaign=rss",
+      "action": "duplicate_use_existing_canonical",
+      "selected_candidate_slug": "2026-09-06-egyptian-court-sentences-tv-presenter-and-11-others-to-death-in-drug-trafficking",
+      "confidence": 0.97,
+      "novel_facts": [
+        "Additional context on 20 witness statements and electronic evidence",
+        "Reference to 2025 Amnesty International report on death sentences in Egypt"
+      ],
+      "reason": "This is the same court case involving TV presenter Sarah Khalifa and 11 others sentenced to death for drug trafficking in Egypt, sourced from the same BBC article URL. The incoming article adds background details (Amnesty report statistics, witness count) but no material update like a new legal development, appeal outcome, or changed sentence.",
+      "cache_hit": false
+    },
     {
       "category": "world",
       "title": "TV presenter among 11 sentenced to death in Egypt drugs case - bbc.com",
@@ -13,94 +27,41 @@
       "action": "duplicate_use_existing_canonical",
       "selected_candidate_slug": "2026-09-06-egyptian-court-sentences-tv-presenter-and-11-others-to-death-in-drug-trafficking",
       "confidence": 0.98,
-      "novel_facts": [],
-      "reason": "Identical source article (same BBC URL) reporting the same sentencing of TV presenter Sarah Khalifa and 11 others in Egypt's drug trafficking case, with no new facts beyond what the canonical already contains.",
+      "novel_facts": [
+        "2025 Amnesty International report statistics on death sentences (background context, not material update)"
+      ],
+      "reason": "Identical event (same defendant, same verdict, same source article) with no new material development beyond added background context from an Amnesty report; content substantially overlaps with existing canonical.",
       "cache_hit": false
     },
     {
-      "category": "world",
-      "title": "TV presenter among 11 sentenced to death in Egypt drugs case",
+      "category": "us",
+      "title": "TV presenter among 12 sentenced to death in Egypt drugs case",
       "source_url": "https://www.bbc.co.uk/news/articles/c5y7gk9knnlo?at_medium=RSS&at_campaign=rss",
       "action": "duplicate_use_existing_canonical",
       "selected_candidate_slug": "2026-09-06-egyptian-court-sentences-tv-presenter-and-11-others-to-death-in-drug-trafficking",
       "confidence": 0.97,
       "novel_facts": [
-        "Amnesty International 2025 statistics on Egypt death sentences (background context, not a new development)"
+        "Additional context on 20 witness statements and electronic evidence",
+        "Reference to 2025 Amnesty International report on death sentences in Egypt"
       ],
-      "reason": "Both articles report the identical verdict against the same named defendant Sarah Khalifa and 11 co-defendants, same case facts (750kg seized, mufti opinion, TV show), published same day from the same BBC source. The incoming article adds only background Amnesty statistics, not a material new development.",
-      "cache_hit": false
-    },
-    {
-      "category": "world",
-      "title": "US and Iran trade retaliatory attacks on ships as conflict flares",
-      "source_url": "https://www.bbc.co.uk/news/articles/cj64rrne643o?at_medium=RSS&at_campaign=rss",
-      "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-09-05-us-military-strikes-three-iranian-oil-tankers-in-retaliation-for-attacks-on-amer",
-      "confidence": 0.97,
-      "novel_facts": [],
-      "reason": "This is the same BBC article (identical source_url) reporting the same Saturday US-Iran tanker strikes, Centcom statements, Kharg Island details, and Iran's retaliatory claims already covered in the canonical story. No new material facts such as casualties, official findings, or policy changes are added beyond what's in the existing canonical.",
+      "reason": "This is the same court case involving TV presenter Sarah Khalifa and 11 others sentenced to death for drug trafficking in Egypt, sourced from the same BBC article URL. The incoming article adds background details (Amnesty report statistics, witness count) but no material update like a new legal development, appeal outcome, or changed sentence.",
       "cache_hit": true
     },
     {
       "category": "us",
-      "title": "TV presenter among 11 sentenced to death in Egypt drugs case",
-      "source_url": "https://www.bbc.co.uk/news/articles/c5y7gk9knnlo?at_medium=RSS&at_campaign=rss",
-      "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-09-06-egyptian-court-sentences-tv-presenter-and-11-others-to-death-in-drug-trafficking",
-      "confidence": 0.97,
-      "novel_facts": [
-        "Amnesty International 2025 statistics on Egypt death sentences (background context, not a new development)"
-      ],
-      "reason": "Both articles report the identical verdict against the same named defendant Sarah Khalifa and 11 co-defendants, same case facts (750kg seized, mufti opinion, TV show), published same day from the same BBC source. The incoming article adds only background Amnesty statistics, not a material new development.",
-      "cache_hit": true
-    },
-    {
-      "category": "us",
-      "title": "Ukraine war briefing: Zelenskyy links Russian strikes on Kyiv airports to US envoys’ visit - The Guardian",
+      "title": "Ukraine war briefing: Zelenskyy links Russian strikes on Kyiv airports to US envoys' visit - The Guardian",
       "source_url": "https://www.theguardian.com/world/2026/sep/06/ukraine-war-briefing-zelenskyy-links-russian-strikes-on-kyiv-airports-to-us-envoys-visit",
       "action": "new_story",
       "selected_candidate_slug": "",
-      "confidence": 0.93,
+      "confidence": 0.95,
       "novel_facts": [
-        "Russian strikes on Kyiv/Zhuliany/Boryspil airports linked by Zelenskyy to US envoys Kushner and Witkoff's Moscow visit",
-        "Putin ordered 3-day pause on Kyiv strikes per Peskov",
-        "Ushakov readout of Moscow talks",
-        "Sep 6 2026 casualty figures across Dnipropetrovsk, Chuhuiv, Bucha, Mykolaiv, Belgorod"
+        "Strikes on Kyiv and Boryspil airports linked by Zelenskyy to US envoys Kushner/Witkoff visit",
+        "Kushner and Witkoff talks with Putin in Moscow and planned Kyiv meeting",
+        "Putin's order for 3-day pause on Kyiv strikes via Peskov",
+        "5 killed at industrial facility in Dnipropetrovsk on this date",
+        "Attacks in Belgorod region killing 2"
       ],
-      "reason": "This is a distinct dated briefing (Sep 6, 2026) covering a different set of strikes, diplomatic developments (Kushner/Witkoff Moscow visit, Putin's 3-day pause order), and casualty events than the July 2026 candidate about a 21-death Kyiv strike and cross-border attacks. No shared specific incident, date, or death toll; this is a new day's war roundup, not an update to the earlier one.",
-      "cache_hit": false
-    },
-    {
-      "category": "us",
-      "title": "The next James Bond: The (00)7 questions fans want answered",
-      "source_url": "https://www.bbc.co.uk/news/articles/cm2qnq0py5vo?at_medium=RSS&at_campaign=rss",
-      "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-09-06-casting-for-next-james-bond-may-conclude-by-years-end-producer-says",
-      "confidence": 0.97,
-      "novel_facts": [],
-      "reason": "This is the identical BBC article (same source_url and near-identical body/quotes) already captured by the existing canonical about James Bond casting speculation. No new facts are introduced beyond what's already covered.",
-      "cache_hit": false
-    },
-    {
-      "category": "us",
-      "title": "Judge reinforces order halting immediate work on Trump’s 250-foot arch - USA Today",
-      "source_url": "https://www.usatoday.com/story/news/politics/2026/09/05/judge-reinforces-order-halting-immediate-work-on-trumps-arch/91629157007/",
-      "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-09-06-federal-judge-reinforces-order-requiring-48-hour-notice-before-work-on-trumps-pr",
-      "confidence": 0.98,
-      "novel_facts": [],
-      "reason": "Identical source URL and near-identical text describing the same court order reinforcing the 48-hour notice requirement before work on the Trump arch; no new facts beyond what's already in the canonical article.",
-      "cache_hit": false
-    },
-    {
-      "category": "business",
-      "title": "Tesla’s Cybercab has been deployed, and it’s already under investigation - Ars Technica",
-      "source_url": "https://arstechnica.com/cars/2026/09/teslas-cybercab-has-been-deployed-and-its-already-under-investigation/",
-      "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-09-05-teslas-driverless-cybercab-begins-public-rides-in-texas-and-florida-as-federal-s",
-      "confidence": 0.98,
-      "novel_facts": [],
-      "reason": "Identical source article (same source_url and near-identical text) covering Tesla's Cybercab public launch and simultaneous NHTSA safety investigation; no new facts beyond the existing canonical.",
+      "reason": "The candidate is a distinct, dated (July 2, 2026) mass-casualty Kyiv strike story (21 killed) with different casualty figures and context (Ukrainian deep strikes into Russia). The incoming article covers a separate news day (Sept 6, 2026) centered on Zelenskyy linking new airport strikes to the Kushner/Witkoff Moscow-Kyiv diplomatic visit, with different casualty counts and entirely different named diplomatic actors and locations. No shared specific incident, date, or casualty figures indicate this is the same event; it is a new daily war-briefing story.",
       "cache_hit": false
     },
     {
@@ -123,24 +84,33 @@
       "confidence": 0.97,
       "novel_facts": [],
       "reason": "This is the same science explainer article about Ganymede's subsurface ocean, sourced from the identical Space Daily URL, covering the same evidence (magnetometry, Hubble aurora data, Juno findings) and same core claim. No new facts, findings, or events are introduced; it's a rehash/reformatting of the same content already canonicalized a day earlier.",
+      "cache_hit": true
+    },
+    {
+      "category": "tech",
+      "title": "OpenAI confirms ‘wiki incident,’ says it’s ‘working on a framework’ for more disclosure",
+      "source_url": "https://techcrunch.com/2026/09/05/openai-confirms-wiki-incident-says-its-working-on-a-framework-for-more-disclosure/",
+      "action": "duplicate_use_existing_canonical",
+      "selected_candidate_slug": "2026-09-06-openai-confirms-ai-agents-took-over-german-wiki-forum-in-misalignment-incident-d",
+      "confidence": 0.97,
+      "novel_facts": [],
+      "reason": "Same source article (identical source_url and source_headline) covering OpenAI's statement on the wiki misalignment incident; content is near-identical paraphrase with no new facts beyond the existing canonical.",
       "cache_hit": false
     },
     {
       "category": "tech",
       "title": "No, Sony isn't cutting PlayStation disc production by 90 percent, just 10 - Eurogamer.net",
       "source_url": "https://www.eurogamer.net/sony-playstation-disc-production-10-percent-decline-not-90",
-      "action": "new_story",
+      "action": "update_existing_canonical",
       "selected_candidate_slug": "2026-07-03-sony-to-end-playstation-disc-production-as-industry-shifts-digital",
-      "confidence": 0.72,
+      "confidence": 0.82,
       "novel_facts": [
-        "Sony DADC spokesperson clarifies 10% volume decline, not 90% cut, correcting viral misreporting",
-        "Dietmar Tanzer's original July comments to Austrian broadcaster that sparked confusion",
-        "Comparison to Microsoft's Authorised Replicator model vs Sony's in-house DADC",
-        "Shawn Layden interview on collector culture and brand impact",
-        "iam8bit statement on wanting to continue physical releases",
-        "Conectiv Supply Chain Solutions as possible alternative manufacturer"
+        "Sony DADC spokesperson clarifies the actual figure is a 10 percent volume decline in 2028, not a drop to 10 percent of current output",
+        "Correction of widespread misreporting stemming from DADC chief Dietmar Tanzer's July comments",
+        "Analyst and former SIE exec commentary on implications of disc-free future",
+        "Mention of Conectiv Supply Chain Solutions as a possible alternative manufacturer"
       ],
-      "reason": "The candidate covers Sony's July confirmation that it will end disc production amid consumer backlash. The incoming article is a distinct fact-check/correction story clarifying a specific misreported statistic (90% vs 10% decline) from a different Sony executive's separate comments, introducing new sourcing, quotes, and context not covered in the candidate. This is a related but separately newsworthy development, not simply an update to the same event.",
+      "reason": "This is a direct follow-up to the same Sony PlayStation disc-production story, correcting a key misreported statistic (90% vs 10% decline) tied to the same executive comments and policy timeline covered in the canonical article. It materially changes the scale of what was previously reported, but functions as a clarification/correction rather than a new accountability or investigative angle, so it belongs folded into the existing canonical rather than spawning a new URL.",
       "cache_hit": false
     },
     {
@@ -151,7 +121,18 @@
       "selected_candidate_slug": "2026-09-06-coco-gauff-advances-to-us-open-fourth-round-as-madison-keys-and-amanda-anisimova",
       "confidence": 0.98,
       "novel_facts": [],
-      "reason": "Same BBC article/source_url and identical incident (US Open Sept 6 2026 round of 16 results: Gauff wins, Keys and Anisimova out) with no new facts beyond what canonical already reports; wording is nearly identical, just reformatted.",
+      "reason": "Same BBC article (identical source_url) reporting the same US Open third-round results with the same quotes from Gauff and Keys and the same match outcomes. No new facts beyond what's already in the canonical version; this is a duplicate ingestion of the identical story.",
+      "cache_hit": false
+    },
+    {
+      "category": "entertainment",
+      "title": "Mariska Hargitay Wins Two Emmys For ‘My Mom Jayne,’ Thanks Gloria Steinem From Stage - Deadline",
+      "source_url": "https://deadline.com/2026/09/mariska-hargitay-primetime-emmy-wins-my-mom-jayne-1237069307/",
+      "action": "duplicate_use_existing_canonical",
+      "selected_candidate_slug": "2026-09-06-mariska-hargitay-wins-two-emmys-for-hbo-documentary-about-her-mother-jayne-mansf",
+      "confidence": 0.99,
+      "novel_facts": [],
+      "reason": "Same source article (identical source_url) reporting the identical event: Hargitay's two Emmy wins for My Mom Jayne with the same Steinem tribute and backstage quotes. No new facts beyond what the canonical already covers.",
       "cache_hit": false
     },
     {
@@ -165,17 +146,20 @@
         "Quote from creative director Harriet Cuddeford about the performance's meaning"
       ],
       "reason": "Both articles cover the identical event: Bad Bunny's Super Bowl halftime show winning Emmys at the Creative Arts Emmy Awards, with the same seven category wins listed. The incoming article is narrower in scope but adds only a supporting quote about creative intent, which is color/context rather than a material update like a new fact changing what readers need to know.",
-      "cache_hit": false
+      "cache_hit": true
     },
     {
       "category": "entertainment",
-      "title": "2026 Creative Arts Emmys: Bad Bunny’s Super Bowl halftime show wins 7, ‘The Traitors’ follows with 6 - Gold Derby",
-      "source_url": "https://www.goldderby.com/tv/2026/creative-arts-emmys-2026-winners-list/",
+      "title": "Bad Bunny Wins Emmy for Super Bowl Halftime Show - Variety",
+      "source_url": "https://variety.com/2026/artisans/awards/bad-bunny-emmy-super-bowl-halftime-show-1236849643/",
       "action": "duplicate_use_existing_canonical",
       "selected_candidate_slug": "2026-09-06-bad-bunnys-super-bowl-halftime-show-and-the-traitors-lead-creative-arts-emmys-ni",
-      "confidence": 0.95,
-      "novel_facts": [],
-      "reason": "Both articles report the identical first Creative Arts Emmys ceremony held Saturday at the Peacock Theater, with the same winner counts and categories (Bad Bunny halftime show 7 wins, The Traitors 6, Hargitay's My Mom Jayne, Antiques Roadshow's first Emmy, etc.). This is simply another outlet's recap of the same award results with a full category list, not a material update or independently newsworthy follow-up.",
+      "confidence": 0.9,
+      "novel_facts": [
+        "Jay-Z described as executive producer winning third Emmy",
+        "quote from creative director Harriet Cuddeford about performance meaning"
+      ],
+      "reason": "Both articles report the same Creative Arts Emmy wins for Bad Bunny's Super Bowl LX halftime show at the same ceremony with matching award counts and categories; the incoming piece adds color/quotes but no new consequential fact, so it should update rather than duplicate as a new story.",
       "cache_hit": false
     },
     {
@@ -186,11 +170,11 @@
       "selected_candidate_slug": "2026-09-06-julianne-moore-and-paul-giamatti-generate-oscar-buzz-after-jesse-eisenbergs-the",
       "confidence": 0.75,
       "novel_facts": [
-        "Eisenberg wrote all seven original songs in the film",
+        "Eisenberg wrote all 7 original songs for the film",
         "A24 is pushing 'This City May Have Chewed Me Up (But It Hasn't Spit Me Out)' for Best Original Song",
-        "Comparison to other original song contenders this awards season (Swift, Travis Scott, etc.)"
+        "List of other songwriters in contention this awards season (Swift, Travis Scott, Byrne, etc.)"
       ],
-      "reason": "Both articles cover the same Telluride premiere and Oscar buzz for 'The Debut.' The incoming piece adds a specific, exclusive detail about Eisenberg's songwriting and an original song Oscar campaign, which is a material addition to the awards narrative but not a distinct accountability or policy story warranting a new URL.",
+      "reason": "Both articles cover the same real-world event: the Telluride premiere and Oscar campaign for Eisenberg's 'The Debut.' The incoming piece adds a distinct but related awards-campaign detail (original song Oscar push) not in the existing canonical, which is a material update to the film's Oscar narrative rather than a standalone accountability or consequence story, so it should update the existing canonical rather than mint a new URL.",
       "cache_hit": false
     },
     {
@@ -202,6 +186,20 @@
       "confidence": 0.97,
       "novel_facts": [],
       "reason": "This is the identical BBC article (same source_url and near-identical body/quotes) already captured by the existing canonical about James Bond casting speculation. No new facts are introduced beyond what's already covered.",
+      "cache_hit": true
+    },
+    {
+      "category": "entertainment",
+      "title": "TV presenter among 12 sentenced to death in Egypt drugs case",
+      "source_url": "https://www.bbc.co.uk/news/articles/c5y7gk9knnlo?at_medium=RSS&at_campaign=rss",
+      "action": "duplicate_use_existing_canonical",
+      "selected_candidate_slug": "2026-09-06-egyptian-court-sentences-tv-presenter-and-11-others-to-death-in-drug-trafficking",
+      "confidence": 0.97,
+      "novel_facts": [
+        "Additional context on 20 witness statements and electronic evidence",
+        "Reference to 2025 Amnesty International report on death sentences in Egypt"
+      ],
+      "reason": "This is the same court case involving TV presenter Sarah Khalifa and 11 others sentenced to death for drug trafficking in Egypt, sourced from the same BBC article URL. The incoming article adds background details (Amnesty report statistics, witness count) but no material update like a new legal development, appeal outcome, or changed sentence.",
       "cache_hit": true
     },
     {

@@ -1,45 +1,42 @@
 {
-  "generated_at": "2026-09-06T08:11:03.433044Z",
+  "generated_at": "2026-09-06T10:13:12.151970Z",
   "assignment_editor_model": "claude-sonnet-5",
   "writer_model": "claude-sonnet-4-5",
   "categories": [
     {
       "category_key": "world",
-      "hero_source_index": 3,
+      "hero_source_index": 4,
       "card_source_indexes": [
-        2,
         1,
-        5
+        3
       ],
       "diagnostics": {
         "model": "claude-sonnet-5",
         "writer_model": "claude-sonnet-4-5",
-        "rejected": [],
-        "writer_failures": [
+        "rejected": [
           {
-            "source_index": 4,
-            "reason": [
-              "generated_copy_drifted_from_source_focus",
-              "person_first_reference_not_full_name"
-            ]
+            "source_index": 2,
+            "reason": "Aggregated live-blog roundup with stale, months-old ceasefire details already reported; not a distinct current development and lacks a clear single-event news angle."
           }
         ],
+        "writer_failures": [],
         "protected_material_update_repairs": [],
-        "editor_selected_card_count": 4,
+        "editor_selected_card_count": 2,
         "section_depth_target": 8,
-        "section_depth_accepted_cards": 3,
-        "section_depth_shortfall": 5,
+        "section_depth_accepted_cards": 2,
+        "section_depth_shortfall": 6,
         "depth_backfill_writer_attempts": 0,
-        "writer_card_attempts": 4,
-        "duration_seconds": 32.263
+        "writer_card_attempts": 2,
+        "duration_seconds": 21.926
       }
     },
     {
       "category_key": "us",
       "hero_source_index": 1,
       "card_source_indexes": [
+        2,
+        3,
         4,
-        5,
         6
       ],
       "diagnostics": {
@@ -47,64 +44,51 @@
         "writer_model": "claude-sonnet-4-5",
         "rejected": [
           {
+            "source_index": 1,
+            "reason": "Foreign disaster with no US angle; belongs in World, not U.S."
+          },
+          {
+            "source_index": 2,
+            "reason": "UK politics story, foreign political actor and institutions; belongs in World, not U.S."
+          },
+          {
             "source_index": 3,
-            "reason": "Foreign disaster story with no U.S. angle; belongs in World."
+            "reason": "Sports retirement feature, no national U.S. news relevance; belongs in Sports."
           },
           {
             "source_index": 4,
-            "reason": "U.S. diplomatic envoys and foreign war negotiations; primarily a world/politics story, not domestic U.S. news."
+            "reason": "US diplomatic negotiators in foreign policy context primarily concerns war diplomacy; belongs in World/Politics, not U.S. category."
           },
           {
             "source_index": 5,
-            "reason": "Ukraine war battlefield briefing; foreign conflict story belongs in World, not U.S."
+            "reason": "Primarily a politics/opinion-driven story centered on a mayor's political conduct and partisan reactions; belongs in Politics, not U.S. category, and is heavily editorialized/quote-driven rather than neutral news."
           },
           {
             "source_index": 6,
-            "reason": "Celebrity entertainment profile with no news significance for U.S. category."
+            "reason": "Ukraine war briefing, foreign conflict story; belongs in World, not U.S."
           },
           {
             "source_index": 7,
-            "reason": "Entertainment profile piece on a UK comedian; not a U.S. news story."
-          },
-          {
-            "source_index": 8,
-            "reason": "Domestic Ukrainian policy debate over language use in Odesa; foreign local story belongs in World."
+            "reason": "Federal election policy and litigation over voting rules is a Politics-primary story (government/policy/legal battle over elections); duplicates Politics frame rather than U.S. general-interest angle."
           }
         ],
         "writer_failures": [
           {
-            "source_index": 2,
+            "source_index": 5,
             "reason": [
-              "headline_jurisdiction_missing_from_lead"
-            ]
-          },
-          {
-            "source_index": 3,
-            "reason": [
-              "JSONDecodeError"
-            ]
-          },
-          {
-            "source_index": 7,
-            "reason": [
-              "JSONDecodeError"
-            ]
-          },
-          {
-            "source_index": 8,
-            "reason": [
-              "person_first_reference_not_full_name"
+              "generated_copy_drifted_from_source_focus",
+              "headline_entity_missing_from_lead"
             ]
           }
         ],
         "protected_material_update_repairs": [],
-        "editor_selected_card_count": 1,
+        "editor_selected_card_count": 0,
         "section_depth_target": 8,
-        "section_depth_accepted_cards": 3,
-        "section_depth_shortfall": 5,
-        "depth_backfill_writer_attempts": 6,
-        "writer_card_attempts": 7,
-        "duration_seconds": 51.096
+        "section_depth_accepted_cards": 4,
+        "section_depth_shortfall": 4,
+        "depth_backfill_writer_attempts": 5,
+        "writer_card_attempts": 5,
+        "duration_seconds": 65.766
       }
     },
     {
@@ -127,211 +111,56 @@
     },
     {
       "category_key": "tech",
-      "hero_source_index": 7,
+      "hero_source_index": null,
       "card_source_indexes": [
-        1,
-        8,
-        3,
-        10,
-        2,
-        13,
-        14
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
       ],
       "diagnostics": {
-        "model": "claude-sonnet-5",
-        "writer_model": "claude-sonnet-4-5",
-        "rejected": [
-          {
-            "source_index": 4,
-            "reason": "Duplicate of source 3, same iPhone Handoff report republished under a different byline."
-          },
-          {
-            "source_index": 11,
-            "reason": "Unverified rumor/leak about unannounced Nintendo games, entertainment-focused and speculative, not consequential tech/science news."
-          },
-          {
-            "source_index": 12,
-            "reason": "Speculative predictions listicle for an upcoming Nintendo Direct, entertainment gaming content not fitting tech/science consequence criteria."
-          },
-          {
-            "source_index": 13,
-            "reason": "Video game sales milestone; entertainment/gaming commerce story without technology or science consequence."
-          },
-          {
-            "source_index": 14,
-            "reason": "Music industry physical media sales report; entertainment/retail trend story, not a technology or science story."
-          }
-        ],
-        "writer_failures": [
-          {
-            "source_index": 9,
-            "reason": [
-              "headline_entity_missing_from_lead"
-            ]
-          },
-          {
-            "source_index": 5,
-            "reason": [
-              "person_first_reference_not_full_name"
-            ]
-          },
-          {
-            "source_index": 6,
-            "reason": [
-              "person_first_reference_not_full_name"
-            ]
-          },
-          {
-            "source_index": 11,
-            "reason": [
-              "person_first_reference_not_full_name"
-            ]
-          }
-        ],
-        "protected_material_update_repairs": [],
-        "editor_selected_card_count": 8,
-        "section_depth_target": 8,
-        "section_depth_accepted_cards": 7,
-        "section_depth_shortfall": 1,
-        "depth_backfill_writer_attempts": 3,
-        "writer_card_attempts": 11,
-        "duration_seconds": 69.829
+        "status": "archive_recovery",
+        "reason": "Live source/generation path unavailable; reused recent published canonicals."
       }
     },
     {
       "category_key": "sports",
-      "hero_source_index": 1,
+      "hero_source_index": null,
       "card_source_indexes": [
-        3,
-        7,
-        9,
-        10,
-        13,
-        5,
-        6
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
       ],
       "diagnostics": {
-        "model": "claude-sonnet-5",
-        "writer_model": "claude-sonnet-4-5",
-        "rejected": [
-          {
-            "source_index": 5,
-            "reason": "Routine team injury-status notes on Shohei Ohtani and other Dodgers roster items; lacks a clear result or decision and is more beat-reporter notebook than a national sports story."
-          },
-          {
-            "source_index": 6,
-            "reason": "Local college football recap of a lopsided BYU win over an outmatched FCS opponent; limited national significance beyond routine game coverage, duplicative of broader Week 1 coverage already selected."
-          },
-          {
-            "source_index": 11,
-            "reason": "Duplicate of the same Katie Taylor farewell event covered by the selected hero and its own duplicate source 12; reaction piece adds quotes but not a distinct story."
-          },
-          {
-            "source_index": 12,
-            "reason": "Exact duplicate article text of source 11, covering the same Katie Taylor reaction story already accounted for by the hero selection."
-          }
-        ],
-        "writer_failures": [
-          {
-            "source_index": 2,
-            "reason": [
-              "generated_copy_drifted_from_source_focus"
-            ]
-          },
-          {
-            "source_index": 4,
-            "reason": [
-              "generated_copy_drifted_from_source_focus"
-            ]
-          },
-          {
-            "source_index": 8,
-            "reason": [
-              "generated_copy_drifted_from_source_focus"
-            ]
-          }
-        ],
-        "protected_material_update_repairs": [],
-        "editor_selected_card_count": 8,
-        "section_depth_target": 8,
-        "section_depth_accepted_cards": 7,
-        "section_depth_shortfall": 1,
-        "depth_backfill_writer_attempts": 2,
-        "writer_card_attempts": 10,
-        "duration_seconds": 77.323
+        "status": "archive_recovery",
+        "reason": "Live source/generation path unavailable; reused recent published canonicals."
       }
     },
     {
       "category_key": "entertainment",
-      "hero_source_index": 11,
+      "hero_source_index": null,
       "card_source_indexes": [
-        6,
-        10,
-        8,
-        4,
-        5,
-        7,
-        9
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
       ],
       "diagnostics": {
-        "model": "claude-sonnet-5",
-        "writer_model": "claude-sonnet-4-5",
-        "rejected": [
-          {
-            "source_index": 5,
-            "reason": "Niche festival sales announcement for an unreleased Taiwanese debut feature with no national significance for a U.S. audience."
-          },
-          {
-            "source_index": 7,
-            "reason": "Primarily a true-crime/policing story about the Tupac murder trial and investigative failures; belongs in U.S. or crime coverage rather than entertainment."
-          },
-          {
-            "source_index": 9,
-            "reason": "Routine local incident involving an independent wrestler's medical emergency at a small venue; no national entertainment significance."
-          },
-          {
-            "source_index": 13,
-            "reason": "Stale reprint; article text ends with 'Published 7 July 2022,' indicating old syndicated content rather than current news."
-          },
-          {
-            "source_index": 14,
-            "reason": "Stale reprint; article text ends with old publish dates (19 May, 4 November 2022), indicating recycled content rather than current news."
-          }
-        ],
-        "writer_failures": [
-          {
-            "source_index": 2,
-            "reason": [
-              "person_first_reference_not_full_name"
-            ]
-          },
-          {
-            "source_index": 12,
-            "reason": [
-              "person_first_reference_not_full_name"
-            ]
-          },
-          {
-            "source_index": 1,
-            "reason": [
-              "person_first_reference_not_full_name"
-            ]
-          },
-          {
-            "source_index": 3,
-            "reason": [
-              "person_first_reference_not_full_name"
-            ]
-          }
-        ],
-        "protected_material_update_repairs": [],
-        "editor_selected_card_count": 8,
-        "section_depth_target": 8,
-        "section_depth_accepted_cards": 7,
-        "section_depth_shortfall": 1,
-        "depth_backfill_writer_attempts": 3,
-        "writer_card_attempts": 11,
-        "duration_seconds": 88.851
+        "status": "archive_recovery",
+        "reason": "Live source/generation path unavailable; reused recent published canonicals."
       }
     },
     {

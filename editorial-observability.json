@@ -7,91 +7,40 @@
     "resolver_version": "3.0",
     "relationship_engine_version": "1.5"
   },
-  "generated_at": "2026-09-06T08:11:13Z",
+  "generated_at": "2026-09-06T10:13:17Z",
   "mode": "enforce",
   "publication_behavior_changed": false,
   "activation": {},
   "registry_path": "/home/runner/work/plain-news/plain-news/story-registry.json",
   "audit": {
-    "candidates_processed": 43,
+    "candidates_processed": 46,
     "routes": {
-      "archive_recovery": 9,
-      "generate_new": 17,
-      "skip": 16,
-      "update_existing": 1
+      "archive_recovery": 36,
+      "generate_new": 3,
+      "skip": 7
     },
     "eligibility": {
-      "listing": 1,
-      "publishable": 42
+      "publishable": 46
     },
     "source_classes": {
-      "entertainment_news": 5,
-      "international_news": 9,
+      "international_news": 7,
       "national_news": 1,
       "politics_news": 1,
-      "sports_news": 1,
-      "technology_news": 4,
-      "unknown": 22
+      "unknown": 37
     },
-    "rejected_count": 1,
-    "rejected_examples": [
-      {
-        "headline": "Taiwanese Drama 'Will You Still Be My Friend' Boards Sales Company Ahead of Film Festival Debuts",
-        "source_url": "",
-        "status": "listing",
-        "reasons": [
-          "Headline matches listing pattern 'for sale'"
-        ],
-        "source_class": "entertainment_news"
-      }
-    ]
+    "rejected_count": 0,
+    "rejected_examples": []
   },
   "relationships": {
     "counts": {
-      "new_story": 18,
-      "same_event": 16
+      "new_story": 1,
+      "same_event": 9
     },
     "examples": [
       {
         "story_id": "story_000158",
-        "title": "U.S. envoys travel to Kyiv for first talks with Zelensky after meeting Putin in Moscow",
+        "title": "US envoys head to Kyiv after three-hour meeting with Putin in Moscow",
         "event_key": "war-or-military-action-c4f36591c6",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
-        "story_id": "story_000159",
-        "title": "Germans vote in Saxony-Anhalt as far-right AfD polls at 40 percent",
-        "event_key": "election-99643190c5",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
-        "story_id": "story_000160",
-        "title": "Anak Krakatau eruption suspends 209 flights at Jakarta airport, stranding 22,000 passengers",
-        "event_key": "fire-d1b00e2a3c-d1b00e2a3c",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
-        "story_id": "story_000114",
-        "title": "Fuel tanker explosion in western Iran kills at least 10",
-        "event_key": "war-or-military-action-049d2b29e3",
         "relationship": "same_event",
         "confidence": 1.0,
         "reason": "Exact event key already belongs to this story",
@@ -103,9 +52,22 @@
         ]
       },
       {
-        "story_id": "story_000064",
-        "title": "Federal judge extends injunction blocking USPS mail-in ballot rules in Washington and 25 other states",
-        "event_key": "election-washington",
+        "story_id": "story_000160",
+        "title": "Anak Krakatau eruption closes six Indonesian airports, strands 150,000 passengers",
+        "event_key": "fire-d1b00e2a3c-d1b00e2a3c",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "reason": "Exact source article URL already belongs to this story",
+        "decision_trace": [
+          "Exact source article identity: true",
+          "Normalized source URL: https://www.bbc.co.uk/news/articles/cvgy5k4n07ko?at_campaign=rss&at_medium=RSS",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000159",
+        "title": "Germans vote in Saxony-Anhalt as far-right AfD seeks historic state win",
+        "event_key": "election-99643190c5",
         "relationship": "same_event",
         "confidence": 1.0,
         "reason": "Exact event key already belongs to this story",
@@ -113,12 +75,51 @@
           "Relationship: same_event",
           "Exact event-key mapping: true",
           "No novel follow-up milestone: true",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000160",
+        "title": "Volcanic eruption strands 150,000 passengers as Indonesia closes six airports",
+        "event_key": "fire-5d6616c19c-5d6616c19c",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "reason": "Exact event key already belongs to this story",
+        "decision_trace": [
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000175",
+        "title": "Nigel Farage says he 'wasn't listening' during talks on funneling foreign money to Reform UK",
+        "event_key": "election-de035866e2",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000165",
+        "title": "Katie Taylor retires from boxing after storied career",
+        "event_key": "unknown-event-9350738835",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "reason": "Exact source article URL already belongs to this story",
+        "decision_trace": [
+          "Exact source article identity: true",
+          "Normalized source URL: https://www.bbc.co.uk/sport/boxing/articles/c5yjr8pp0jwo?at_campaign=rss&at_medium=RSS",
           "Confidence: 1.00"
         ]
       },
       {
         "story_id": "story_000158",
-        "title": "U.S. envoys head to Ukraine after meeting Putin in Moscow",
+        "title": "US envoys head to Ukraine after Putin talks in Moscow",
         "event_key": "war-or-military-action-c4f36591c6",
         "relationship": "same_event",
         "confidence": 1.0,
@@ -132,20 +133,49 @@
       },
       {
         "story_id": "story_000161",
-        "title": "Zelenskyy Links Russian Airport Strikes to US Envoys' Planned Kyiv Visit",
-        "event_key": "war-or-military-action-2bd2d645dc",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "title": "Zelenskyy Links Russian Airport Strikes to US Envoys' Moscow Visit",
+        "event_key": "war-or-military-action-da2090e5a0",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "reason": "Exact normalized title already belongs to this story",
         "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
+          "Relationship: same_event",
+          "Exact normalized title match: true",
+          "Confidence: 1.00"
         ]
       },
       {
-        "story_id": "story_000162",
-        "title": "Natalie Imbruglia recalls 'icky' Moulin Rouge audition",
-        "event_key": "named-person-death:natalie-imbruglia",
+        "story_id": "story_000112",
+        "title": "Trump super PAC directs $10 million to Texas Senate race in first general election spend",
+        "event_key": "election-texas",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "reason": "Exact event key already belongs to this story",
+        "decision_trace": [
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000141",
+        "title": "Trump, Vance to headline GOP midterm convention in Dallas next week",
+        "event_key": "election-florida",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "reason": "Exact event key already belongs to this story",
+        "decision_trace": [
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000112",
+        "title": "\"We're stuck:\" GOP accepts Trump's all-about-me midterms",
+        "event_key": "election-texas",
         "relationship": "new_story",
         "confidence": 0.0,
         "reason": "Created new story: conservative merge requirements were not met",
@@ -155,23 +185,21 @@
         ]
       },
       {
-        "story_id": "story_000120",
-        "title": "OpenAI confirms AI agents took over German wiki forum in 'misalignment' incident, developing disclosure framework",
-        "event_key": "unknown-event-26a46841bb",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "reason": "Exact event key already belongs to this story",
+        "story_id": "story_000064",
+        "title": "Trump's response is key as Argentina's Falklands demands get louder - bbc.com",
+        "event_key": "election-washington",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "reason": "Created new story: conservative merge requirements were not met",
         "decision_trace": [
-          "Relationship: same_event",
-          "Exact event-key mapping: true",
-          "No novel follow-up milestone: true",
-          "Confidence: 1.00"
+          "No sufficiently supported match",
+          "Threshold: 0.78"
         ]
       },
       {
-        "story_id": "story_000163",
-        "title": "Acer unveils compact RTX Spark PC with 128GB unified memory to challenge Mac Studio",
-        "event_key": "unknown-event-51ead7925f",
+        "story_id": "story_000064",
+        "title": "Trump's response is key as Argentina's Falklands demands get louder - bbc.com",
+        "event_key": "unknown-event-2a3522fa4c",
         "relationship": "new_story",
         "confidence": 0.0,
         "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
@@ -181,9 +209,9 @@
         ]
       },
       {
-        "story_id": "story_000164",
-        "title": "Xbox Cloud Gaming hourly cap set at Microsoft's break-even point amid AI server strain",
-        "event_key": "unknown-event-7c3e6aa321",
+        "story_id": "story_000118",
+        "title": "Are Stocks Going to Plunge if Congress Is Split Under President Donald Trump? Here's What History Says About Stock Market Returns in This Scenario. - Yahoo Finance",
+        "event_key": "election-daa1ff98a9",
         "relationship": "new_story",
         "confidence": 0.0,
         "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
@@ -193,78 +221,9 @@
         ]
       },
       {
-        "story_id": "story_000097",
-        "title": "Apple's iOS 27 to enable sharing one phone number between two iPhones",
-        "event_key": "unknown-event-26a04f3fde",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "reason": "Exact source article URL already belongs to this story",
-        "decision_trace": [
-          "Exact source article identity: true",
-          "Normalized source URL: https://www.theverge.com/tech/990868/iphone-handoff-ios-27",
-          "Confidence: 1.00"
-        ]
-      },
-      {
-        "story_id": "story_000122",
-        "title": "Sony says PlayStation disc production will fall by 10 percent in 2028, not 90 percent",
-        "event_key": "business-transaction-14b8c3c6e2",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "reason": "Exact event key already belongs to this story",
-        "decision_trace": [
-          "Relationship: same_event",
-          "Exact event-key mapping: true",
-          "No novel follow-up milestone: true",
-          "Confidence: 1.00"
-        ]
-      },
-      {
-        "story_id": "story_000143",
-        "title": "New browser tool lets users explore globe through environmental field recordings",
-        "event_key": "unknown-event-9be687a6d3",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "reason": "Exact event key already belongs to this story",
-        "decision_trace": [
-          "Relationship: same_event",
-          "Exact event-key mapping: true",
-          "No novel follow-up milestone: true",
-          "Confidence: 1.00"
-        ]
-      },
-      {
-        "story_id": "story_000123",
-        "title": "The Blood of Dawnwalker Sells 1 Million Copies in Two Days",
-        "event_key": "unknown-event-28f7ff1557",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "reason": "Exact event key already belongs to this story",
-        "decision_trace": [
-          "Relationship: same_event",
-          "Exact event-key mapping: true",
-          "No novel follow-up milestone: true",
-          "Confidence: 1.00"
-        ]
-      },
-      {
-        "story_id": "story_000145",
-        "title": "CD sales jumped 46 percent in first half of 2026",
-        "event_key": "unknown-event-d13df0e02e",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "reason": "Exact event key already belongs to this story",
-        "decision_trace": [
-          "Relationship: same_event",
-          "Exact event-key mapping: true",
-          "No novel follow-up milestone: true",
-          "Confidence: 1.00"
-        ]
-      },
-      {
-        "story_id": "story_000165",
-        "title": "Katie Taylor retires after defeating Flora Pili before 83,000 fans at Croke Park",
-        "event_key": "unknown-event-9350738835",
+        "story_id": "story_000105",
+        "title": "Andrew Scott Has Waited His Whole Career for a Role Like ‘Elsinore.’ Can Focus and the Bard Anoint Him With an Oscar?",
+        "event_key": "election-bffe9ad3ed",
         "relationship": "new_story",
         "confidence": 0.0,
         "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
@@ -274,91 +233,71 @@
         ]
       },
       {
-        "story_id": "story_000125",
-        "title": "Six top-10 seeds eliminated in first week of US Open men's draw",
-        "event_key": "unknown-event-95d9b84a11",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "reason": "Exact source article URL already belongs to this story",
+        "story_id": "story_000111",
+        "title": "U.S. attacks 3 Iranian tankers in tit-for-tat response",
+        "event_key": "election-db55b43cf7",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
         "decision_trace": [
-          "Exact source article identity: true",
-          "Normalized source URL: https://www.bbc.co.uk/sport/tennis/articles/cdr7531m7xjo?at_campaign=rss&at_medium=RSS",
-          "Confidence: 1.00"
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
         ]
       },
       {
-        "story_id": "story_000148",
-        "title": "Coco Gauff advances to US Open fourth round as Keys, Anisimova exit",
-        "event_key": "unknown-event-e161611266",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "reason": "Exact event key already belongs to this story",
+        "story_id": "story_000009",
+        "title": "Federal judge extends block on Trump executive order seeking to limit mail voting in the midterms - AP News",
+        "event_key": "election-north-carolina",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "reason": "Created new story: conservative merge requirements were not met",
         "decision_trace": [
-          "Relationship: same_event",
-          "Exact event-key mapping: true",
-          "No novel follow-up milestone: true",
-          "Confidence: 1.00"
+          "No sufficiently supported match",
+          "Threshold: 0.78"
         ]
       },
       {
-        "story_id": "story_000150",
-        "title": "Oklahoma State loses 24-10 to Tulsa in Eric Morris coaching debut",
-        "event_key": "natural-disaster-arizona",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "reason": "Exact event key already belongs to this story",
+        "story_id": "story_000018",
+        "title": "Wall Street ends lower as solid jobs data fuels hawkish Fed bets - Reuters",
+        "event_key": "fire-37c370190a-37c370190a",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
         "decision_trace": [
-          "Relationship: same_event",
-          "Exact event-key mapping: true",
-          "No novel follow-up milestone: true",
-          "Confidence: 1.00"
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000053",
+        "title": "In boost to GOP, Supreme Court says parties should get lower TV ad rates",
+        "event_key": "election-c055f94d7c",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000158",
+        "title": "US envoys set for Ukraine talks after meeting Putin in Russia",
+        "event_key": "war-or-military-action-c4f36591c6",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
         ]
       }
     ],
     "decision_trace_examples": [
       {
         "story_id": "story_000158",
-        "title": "U.S. envoys travel to Kyiv for first talks with Zelensky after meeting Putin in Moscow",
+        "title": "US envoys head to Kyiv after three-hour meeting with Putin in Moscow",
         "event_key": "war-or-military-action-c4f36591c6",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "matched_existing": false,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
-        "story_id": "story_000159",
-        "title": "Germans vote in Saxony-Anhalt as far-right AfD polls at 40 percent",
-        "event_key": "election-99643190c5",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "matched_existing": false,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
-        "story_id": "story_000160",
-        "title": "Anak Krakatau eruption suspends 209 flights at Jakarta airport, stranding 22,000 passengers",
-        "event_key": "fire-d1b00e2a3c-d1b00e2a3c",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "matched_existing": false,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
-        "story_id": "story_000114",
-        "title": "Fuel tanker explosion in western Iran kills at least 10",
-        "event_key": "war-or-military-action-049d2b29e3",
         "relationship": "same_event",
         "confidence": 1.0,
         "matched_existing": true,
@@ -371,9 +310,23 @@
         ]
       },
       {
-        "story_id": "story_000064",
-        "title": "Federal judge extends injunction blocking USPS mail-in ballot rules in Washington and 25 other states",
-        "event_key": "election-washington",
+        "story_id": "story_000160",
+        "title": "Anak Krakatau eruption closes six Indonesian airports, strands 150,000 passengers",
+        "event_key": "fire-d1b00e2a3c-d1b00e2a3c",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "matched_existing": true,
+        "reason": "Exact source article URL already belongs to this story",
+        "decision_trace": [
+          "Exact source article identity: true",
+          "Normalized source URL: https://www.bbc.co.uk/news/articles/cvgy5k4n07ko?at_campaign=rss&at_medium=RSS",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000159",
+        "title": "Germans vote in Saxony-Anhalt as far-right AfD seeks historic state win",
+        "event_key": "election-99643190c5",
         "relationship": "same_event",
         "confidence": 1.0,
         "matched_existing": true,
@@ -382,12 +335,54 @@
           "Relationship: same_event",
           "Exact event-key mapping: true",
           "No novel follow-up milestone: true",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000160",
+        "title": "Volcanic eruption strands 150,000 passengers as Indonesia closes six airports",
+        "event_key": "fire-5d6616c19c-5d6616c19c",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "matched_existing": true,
+        "reason": "Exact event key already belongs to this story",
+        "decision_trace": [
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000175",
+        "title": "Nigel Farage says he 'wasn't listening' during talks on funneling foreign money to Reform UK",
+        "event_key": "election-de035866e2",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "matched_existing": false,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000165",
+        "title": "Katie Taylor retires from boxing after storied career",
+        "event_key": "unknown-event-9350738835",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "matched_existing": true,
+        "reason": "Exact source article URL already belongs to this story",
+        "decision_trace": [
+          "Exact source article identity: true",
+          "Normalized source URL: https://www.bbc.co.uk/sport/boxing/articles/c5yjr8pp0jwo?at_campaign=rss&at_medium=RSS",
           "Confidence: 1.00"
         ]
       },
       {
         "story_id": "story_000158",
-        "title": "U.S. envoys head to Ukraine after meeting Putin in Moscow",
+        "title": "US envoys head to Ukraine after Putin talks in Moscow",
         "event_key": "war-or-military-action-c4f36591c6",
         "relationship": "same_event",
         "confidence": 1.0,
@@ -402,21 +397,52 @@
       },
       {
         "story_id": "story_000161",
-        "title": "Zelenskyy Links Russian Airport Strikes to US Envoys' Planned Kyiv Visit",
-        "event_key": "war-or-military-action-2bd2d645dc",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "matched_existing": false,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "title": "Zelenskyy Links Russian Airport Strikes to US Envoys' Moscow Visit",
+        "event_key": "war-or-military-action-da2090e5a0",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "matched_existing": true,
+        "reason": "Exact normalized title already belongs to this story",
         "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
+          "Relationship: same_event",
+          "Exact normalized title match: true",
+          "Confidence: 1.00"
         ]
       },
       {
-        "story_id": "story_000162",
-        "title": "Natalie Imbruglia recalls 'icky' Moulin Rouge audition",
-        "event_key": "named-person-death:natalie-imbruglia",
+        "story_id": "story_000112",
+        "title": "Trump super PAC directs $10 million to Texas Senate race in first general election spend",
+        "event_key": "election-texas",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "matched_existing": true,
+        "reason": "Exact event key already belongs to this story",
+        "decision_trace": [
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000141",
+        "title": "Trump, Vance to headline GOP midterm convention in Dallas next week",
+        "event_key": "election-florida",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "matched_existing": true,
+        "reason": "Exact event key already belongs to this story",
+        "decision_trace": [
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000112",
+        "title": "\"We're stuck:\" GOP accepts Trump's all-about-me midterms",
+        "event_key": "election-texas",
         "relationship": "new_story",
         "confidence": 0.0,
         "matched_existing": false,
@@ -427,9 +453,9 @@
         ]
       },
       {
-        "story_id": "story_000120",
-        "title": "OpenAI confirms AI agents took over German wiki forum in 'misalignment' incident, developing disclosure framework",
-        "event_key": "unknown-event-26a46841bb",
+        "story_id": "story_000112",
+        "title": "\"We're stuck:\" GOP accepts Trump's all-about-me midterms",
+        "event_key": "election-texas",
         "relationship": "same_event",
         "confidence": 1.0,
         "matched_existing": true,
@@ -442,9 +468,37 @@
         ]
       },
       {
-        "story_id": "story_000163",
-        "title": "Acer unveils compact RTX Spark PC with 128GB unified memory to challenge Mac Studio",
-        "event_key": "unknown-event-51ead7925f",
+        "story_id": "story_000064",
+        "title": "Trump's response is key as Argentina's Falklands demands get louder - bbc.com",
+        "event_key": "election-washington",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "matched_existing": false,
+        "reason": "Created new story: conservative merge requirements were not met",
+        "decision_trace": [
+          "No sufficiently supported match",
+          "Threshold: 0.78"
+        ]
+      },
+      {
+        "story_id": "story_000064",
+        "title": "Trump's response is key as Argentina's Falklands demands get louder - bbc.com",
+        "event_key": "election-washington",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "matched_existing": true,
+        "reason": "Exact event key already belongs to this story",
+        "decision_trace": [
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000064",
+        "title": "Trump's response is key as Argentina's Falklands demands get louder - bbc.com",
+        "event_key": "unknown-event-2a3522fa4c",
         "relationship": "new_story",
         "confidence": 0.0,
         "matched_existing": false,
@@ -455,9 +509,24 @@
         ]
       },
       {
-        "story_id": "story_000164",
-        "title": "Xbox Cloud Gaming hourly cap set at Microsoft's break-even point amid AI server strain",
-        "event_key": "unknown-event-7c3e6aa321",
+        "story_id": "story_000064",
+        "title": "Trump's response is key as Argentina's Falklands demands get louder - bbc.com",
+        "event_key": "unknown-event-2a3522fa4c",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "matched_existing": true,
+        "reason": "Exact event key already belongs to this story",
+        "decision_trace": [
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000118",
+        "title": "Are Stocks Going to Plunge if Congress Is Split Under President Donald Trump? Here's What History Says About Stock Market Returns in This Scenario. - Yahoo Finance",
+        "event_key": "election-daa1ff98a9",
         "relationship": "new_story",
         "confidence": 0.0,
         "matched_existing": false,
@@ -468,23 +537,9 @@
         ]
       },
       {
-        "story_id": "story_000097",
-        "title": "Apple's iOS 27 to enable sharing one phone number between two iPhones",
-        "event_key": "unknown-event-26a04f3fde",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "matched_existing": true,
-        "reason": "Exact source article URL already belongs to this story",
-        "decision_trace": [
-          "Exact source article identity: true",
-          "Normalized source URL: https://www.theverge.com/tech/990868/iphone-handoff-ios-27",
-          "Confidence: 1.00"
-        ]
-      },
-      {
-        "story_id": "story_000122",
-        "title": "Sony says PlayStation disc production will fall by 10 percent in 2028, not 90 percent",
-        "event_key": "business-transaction-14b8c3c6e2",
+        "story_id": "story_000118",
+        "title": "Are Stocks Going to Plunge if Congress Is Split Under President Donald Trump? Here's What History Says About Stock Market Returns in This Scenario. - Yahoo Finance",
+        "event_key": "election-daa1ff98a9",
         "relationship": "same_event",
         "confidence": 1.0,
         "matched_existing": true,
@@ -497,54 +552,9 @@
         ]
       },
       {
-        "story_id": "story_000143",
-        "title": "New browser tool lets users explore globe through environmental field recordings",
-        "event_key": "unknown-event-9be687a6d3",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "matched_existing": true,
-        "reason": "Exact event key already belongs to this story",
-        "decision_trace": [
-          "Relationship: same_event",
-          "Exact event-key mapping: true",
-          "No novel follow-up milestone: true",
-          "Confidence: 1.00"
-        ]
-      },
-      {
-        "story_id": "story_000123",
-        "title": "The Blood of Dawnwalker Sells 1 Million Copies in Two Days",
-        "event_key": "unknown-event-28f7ff1557",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "matched_existing": true,
-        "reason": "Exact event key already belongs to this story",
-        "decision_trace": [
-          "Relationship: same_event",
-          "Exact event-key mapping: true",
-          "No novel follow-up milestone: true",
-          "Confidence: 1.00"
-        ]
-      },
-      {
-        "story_id": "story_000145",
-        "title": "CD sales jumped 46 percent in first half of 2026",
-        "event_key": "unknown-event-d13df0e02e",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "matched_existing": true,
-        "reason": "Exact event key already belongs to this story",
-        "decision_trace": [
-          "Relationship: same_event",
-          "Exact event-key mapping: true",
-          "No novel follow-up milestone: true",
-          "Confidence: 1.00"
-        ]
-      },
-      {
-        "story_id": "story_000165",
-        "title": "Katie Taylor retires after defeating Flora Pili before 83,000 fans at Croke Park",
-        "event_key": "unknown-event-9350738835",
+        "story_id": "story_000105",
+        "title": "Andrew Scott Has Waited His Whole Career for a Role Like ‘Elsinore.’ Can Focus and the Bard Anoint Him With an Oscar?",
+        "event_key": "election-bffe9ad3ed",
         "relationship": "new_story",
         "confidence": 0.0,
         "matched_existing": false,
@@ -555,38 +565,9 @@
         ]
       },
       {
-        "story_id": "story_000125",
-        "title": "Six top-10 seeds eliminated in first week of US Open men's draw",
-        "event_key": "unknown-event-95d9b84a11",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "matched_existing": true,
-        "reason": "Exact source article URL already belongs to this story",
-        "decision_trace": [
-          "Exact source article identity: true",
-          "Normalized source URL: https://www.bbc.co.uk/sport/tennis/articles/cdr7531m7xjo?at_campaign=rss&at_medium=RSS",
-          "Confidence: 1.00"
-        ]
-      },
-      {
-        "story_id": "story_000148",
-        "title": "Coco Gauff advances to US Open fourth round as Keys, Anisimova exit",
-        "event_key": "unknown-event-e161611266",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "matched_existing": true,
-        "reason": "Exact event key already belongs to this story",
-        "decision_trace": [
-          "Relationship: same_event",
-          "Exact event-key mapping: true",
-          "No novel follow-up milestone: true",
-          "Confidence: 1.00"
-        ]
-      },
-      {
-        "story_id": "story_000150",
-        "title": "Oklahoma State loses 24-10 to Tulsa in Eric Morris coaching debut",
-        "event_key": "natural-disaster-arizona",
+        "story_id": "story_000105",
+        "title": "Andrew Scott Has Waited His Whole Career for a Role Like ‘Elsinore.’ Can Focus and the Bard Anoint Him With an Oscar?",
+        "event_key": "election-bffe9ad3ed",
         "relationship": "same_event",
         "confidence": 1.0,
         "matched_existing": true,
@@ -616,9 +597,9 @@
     "retrospective": {
       "mode": "retrospective_observe_only",
       "publication_behavior_changed": false,
-      "stories_with_timelines": 6,
-      "timeline_entries_examined": 12,
-      "transitions_examined": 6,
+      "stories_with_timelines": 9,
+      "timeline_entries_examined": 18,
+      "transitions_examined": 8,
       "candidate_scope": "distinct_article_transitions",
       "candidate_count": 0,
       "high_confidence_candidate_count": 0,
@@ -632,8 +613,10 @@
       "incoherent_stories": [],
       "milestones": {},
       "blocking_conflicts": {},
-      "excluded_entry_count": 0,
-      "exclusion_reasons": {},
+      "excluded_entry_count": 1,
+      "exclusion_reasons": {
+        "insufficient_title_detail": 1
+      },
       "examples": [],
       "review_ready": false,
       "enforcement_ready": false,
@@ -646,37 +629,36 @@
     "scopes": {
       "global_major": 10,
       "international": 10,
-      "unknown": 70,
+      "unknown": 71,
       "us_multistate": 14,
       "us_national": 51,
       "us_state_regional": 18
     },
-    "average_score": 79.09
+    "average_score": 78.98
   },
   "editorial_proximity": {
     "scopes": {
       "global_major": 10,
       "international": 10,
-      "unknown": 70,
+      "unknown": 71,
       "us_multistate": 14,
       "us_national": 51,
       "us_state_regional": 18
     },
-    "average_priority": 21.12
+    "average_priority": 21.11
   },
   "story_lifecycle": {
     "counts": {
-      "active": 163,
-      "breaking": 1,
-      "developing": 9
+      "active": 162,
+      "developing": 12
     }
   },
   "registry_health": {
     "repair_version": 16,
     "changed": false,
     "status": "clean",
-    "active_stories_before": 156,
-    "active_stories_after": 156,
+    "active_stories_before": 173,
+    "active_stories_after": 173,
     "quarantined_story_count": 0,
     "quarantined_story_ids": [],
     "quarantine_reasons": {},
@@ -701,24 +683,24 @@
     "timeline_coherence_new_story_ids": [],
     "remaining_timeline_coherence_violations": 0,
     "timeline_coherence_violation_story_ids": [],
-    "incident_anchor_to_story_count": 8,
+    "incident_anchor_to_story_count": 9,
     "unified_incident_groups_resolved": 0,
     "unified_incident_story_records_removed": 0,
     "remaining_unified_incident_groups": 0,
-    "generated_at": "2026-09-06T08:11:04Z",
+    "generated_at": "2026-09-06T10:13:12Z",
     "quarantined_story_records_retained": 0,
-    "active_story_count": 173
+    "active_story_count": 174
   },
   "stories": {
-    "total": 173,
+    "total": 174,
     "importance_levels": {
       "breaking": 10,
       "high": 16,
-      "normal": 37,
+      "normal": 38,
       "low": 110,
       "archived": 0
     },
-    "average_importance": 23.43,
+    "average_importance": 23.53,
     "top": [
       {
         "story_id": "story_000112",
@@ -733,7 +715,7 @@
           "freshness_multiplier": 0.95,
           "source_multiplier": 1.126,
           "source_trust": 92,
-          "age_hours": 17.22
+          "age_hours": 19.25
         },
         "level": "breaking",
         "importance_reasons": [
@@ -786,7 +768,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-09-05T14:58:05+00:00",
-          "hours_since_update": 17.22,
+          "hours_since_update": 19.25,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -804,7 +786,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 1.132,
           "source_trust": 94,
-          "age_hours": 35.62
+          "age_hours": 37.65
         },
         "level": "breaking",
         "importance_reasons": [
@@ -859,7 +841,7 @@
           "state": "developing",
           "reason": "Multiple events or follow-up decisions show the story is evolving",
           "last_updated": "2026-09-04T20:34:06+00:00",
-          "hours_since_update": 35.62,
+          "hours_since_update": 37.65,
           "event_count": 2,
           "timeline_entries": 2
         }
@@ -877,7 +859,7 @@
           "freshness_multiplier": 0.95,
           "source_multiplier": 0.985,
           "source_trust": 45,
-          "age_hours": 18.75
+          "age_hours": 20.79
         },
         "level": "breaking",
         "importance_reasons": [
@@ -921,7 +903,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-09-05T13:26:01+00:00",
-          "hours_since_update": 18.75,
+          "hours_since_update": 20.79,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -939,7 +921,7 @@
           "freshness_multiplier": 0.95,
           "source_multiplier": 1.12,
           "source_trust": 90,
-          "age_hours": 11.85
+          "age_hours": 13.89
         },
         "level": "breaking",
         "importance_reasons": [
@@ -985,67 +967,10 @@
         "relationship_decisions": 1,
         "canonical_source_candidates": 1,
         "lifecycle": {
-          "state": "breaking",
-          "reason": "Breaking importance with a current or undated update",
-          "last_updated": "2026-09-05T20:20:00+00:00",
-          "hours_since_update": 11.85,
-          "event_count": 1,
-          "timeline_entries": 1
-        }
-      },
-      {
-        "story_id": "story_000158",
-        "title": "US envoys set for Ukraine talks after meeting Putin in Russia",
-        "score": 77,
-        "editorial_priority": 87,
-        "editorial_score": 87,
-        "score_breakdown": {
-          "score": 87,
-          "importance": 77,
-          "proximity_multiplier": 1.0,
-          "freshness_multiplier": 1.0,
-          "source_multiplier": 1.132,
-          "source_trust": 94,
-          "age_hours": 5.78
-        },
-        "level": "high",
-        "importance_reasons": [
-          {
-            "code": "federal_action",
-            "label": "Federal/national government action",
-            "points": 32
-          },
-          {
-            "code": "war_diplomacy",
-            "label": "War, diplomacy or national-security consequence",
-            "points": 30
-          },
-          {
-            "code": "national_scope",
-            "label": "Nationwide U.S. scope",
-            "points": 15
-          }
-        ],
-        "audience_relevance": {
-          "scope": "us_national",
-          "score": 100,
-          "regions": [],
-          "places": []
-        },
-        "editorial_proximity": {
-          "score": 100,
-          "scope": "us_national",
-          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
-        },
-        "event_count": 1,
-        "timeline_entries": 1,
-        "relationship_decisions": 1,
-        "canonical_source_candidates": 1,
-        "lifecycle": {
           "state": "active",
           "reason": "Single-event story is current",
-          "last_updated": "2026-09-06T02:24:16+00:00",
-          "hours_since_update": 5.78,
+          "last_updated": "2026-09-05T20:20:00+00:00",
+          "hours_since_update": 13.89,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1063,7 +988,7 @@
           "freshness_multiplier": 0.95,
           "source_multiplier": 1.12,
           "source_trust": 90,
-          "age_hours": 17.77
+          "age_hours": 19.81
         },
         "level": "breaking",
         "importance_reasons": [
@@ -1107,7 +1032,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-09-05T14:24:38+00:00",
-          "hours_since_update": 17.77,
+          "hours_since_update": 19.81,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1125,7 +1050,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 0.994,
           "source_trust": 48,
-          "age_hours": 34.03
+          "age_hours": 36.07
         },
         "level": "breaking",
         "importance_reasons": [
@@ -1178,7 +1103,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-09-04T22:09:00+00:00",
-          "hours_since_update": 34.03,
+          "hours_since_update": 36.07,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1196,7 +1121,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 0.994,
           "source_trust": 48,
-          "age_hours": 35.77
+          "age_hours": 37.81
         },
         "level": "breaking",
         "importance_reasons": [
@@ -1245,7 +1170,7 @@
           "state": "developing",
           "reason": "Multiple events or follow-up decisions show the story is evolving",
           "last_updated": "2026-09-04T20:24:45+00:00",
-          "hours_since_update": 35.77,
+          "hours_since_update": 37.81,
           "event_count": 2,
           "timeline_entries": 1
         }
@@ -1263,7 +1188,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 1.132,
           "source_trust": 94,
-          "age_hours": 33.68
+          "age_hours": 35.72
         },
         "level": "breaking",
         "importance_reasons": [
@@ -1307,7 +1232,64 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-09-04T22:29:59+00:00",
-          "hours_since_update": 33.68,
+          "hours_since_update": 35.72,
+          "event_count": 1,
+          "timeline_entries": 1
+        }
+      },
+      {
+        "story_id": "story_000158",
+        "title": "US envoys set for Ukraine talks after meeting Putin in Russia",
+        "score": 77,
+        "editorial_priority": 83,
+        "editorial_score": 83,
+        "score_breakdown": {
+          "score": 83,
+          "importance": 77,
+          "proximity_multiplier": 1.0,
+          "freshness_multiplier": 0.95,
+          "source_multiplier": 1.132,
+          "source_trust": 94,
+          "age_hours": 7.82
+        },
+        "level": "high",
+        "importance_reasons": [
+          {
+            "code": "federal_action",
+            "label": "Federal/national government action",
+            "points": 32
+          },
+          {
+            "code": "war_diplomacy",
+            "label": "War, diplomacy or national-security consequence",
+            "points": 30
+          },
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "audience_relevance": {
+          "scope": "us_national",
+          "score": 100,
+          "regions": [],
+          "places": []
+        },
+        "editorial_proximity": {
+          "score": 100,
+          "scope": "us_national",
+          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
+        },
+        "event_count": 1,
+        "timeline_entries": 1,
+        "relationship_decisions": 1,
+        "canonical_source_candidates": 1,
+        "lifecycle": {
+          "state": "active",
+          "reason": "Single-event story is current",
+          "last_updated": "2026-09-06T02:24:16+00:00",
+          "hours_since_update": 7.82,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1325,7 +1307,7 @@
           "freshness_multiplier": 0.95,
           "source_multiplier": 1.12,
           "source_trust": 90,
-          "age_hours": 9.72
+          "age_hours": 11.75
         },
         "level": "high",
         "importance_reasons": [
@@ -1358,8 +1340,8 @@
             "New Hampshire",
             "Pennsylvania",
             "Wisconsin",
-            "New York",
             "Michigan",
+            "New York",
             "Georgia",
             "Florida",
             "Maine",
@@ -1371,8 +1353,8 @@
             "New Hampshire",
             "Pennsylvania",
             "Wisconsin",
-            "New York",
             "Michigan",
+            "New York",
             "Georgia",
             "Florida",
             "Maine",
@@ -1393,7 +1375,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-09-05T22:28:12+00:00",
-          "hours_since_update": 9.72,
+          "hours_since_update": 11.75,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1411,7 +1393,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 0.985,
           "source_trust": 45,
-          "age_hours": 36.53
+          "age_hours": 38.56
         },
         "level": "breaking",
         "importance_reasons": [
@@ -1464,7 +1446,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-09-04T19:39:21+00:00",
-          "hours_since_update": 36.53,
+          "hours_since_update": 38.56,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1482,7 +1464,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 1.135,
           "source_trust": 95,
-          "age_hours": 36.43
+          "age_hours": 38.46
         },
         "level": "breaking",
         "importance_reasons": [
@@ -1526,7 +1508,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-09-04T19:45:22+00:00",
-          "hours_since_update": 36.43,
+          "hours_since_update": 38.46,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1544,7 +1526,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 1.132,
           "source_trust": 94,
-          "age_hours": 31.12
+          "age_hours": 33.16
         },
         "level": "high",
         "importance_reasons": [
@@ -1583,7 +1565,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-09-05T01:03:35+00:00",
-          "hours_since_update": 31.12,
+          "hours_since_update": 33.16,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1601,7 +1583,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 1.12,
           "source_trust": 90,
-          "age_hours": 35.79
+          "age_hours": 37.83
         },
         "level": "high",
         "importance_reasons": [
@@ -1640,9 +1622,71 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-09-04T20:23:34+00:00",
-          "hours_since_update": 35.79,
+          "hours_since_update": 37.83,
           "event_count": 1,
           "timeline_entries": 1
+        }
+      },
+      {
+        "story_id": "story_000161",
+        "title": "Ukraine war briefing: Zelenskyy links Russian strikes on Kyiv airports to US envoys’ visit - The Guardian",
+        "score": 68,
+        "editorial_priority": 73,
+        "editorial_score": 73,
+        "score_breakdown": {
+          "score": 73,
+          "importance": 68,
+          "proximity_multiplier": 1.0,
+          "freshness_multiplier": 0.95,
+          "source_multiplier": 1.123,
+          "source_trust": 91,
+          "age_hours": 8.57
+        },
+        "level": "high",
+        "importance_reasons": [
+          {
+            "code": "war_diplomacy",
+            "label": "War, diplomacy or national-security consequence",
+            "points": 30
+          },
+          {
+            "code": "multiple_deaths",
+            "label": "Multiple deaths reported",
+            "points": 18
+          },
+          {
+            "code": "follow_up",
+            "label": "Story has follow-up coverage",
+            "points": 5
+          },
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "audience_relevance": {
+          "scope": "us_national",
+          "score": 100,
+          "regions": [],
+          "places": []
+        },
+        "editorial_proximity": {
+          "score": 100,
+          "scope": "us_national",
+          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
+        },
+        "event_count": 2,
+        "timeline_entries": 2,
+        "relationship_decisions": 1,
+        "canonical_source_candidates": 2,
+        "lifecycle": {
+          "state": "developing",
+          "reason": "Multiple events or follow-up decisions show the story is evolving",
+          "last_updated": "2026-09-06T01:39:00+00:00",
+          "hours_since_update": 8.57,
+          "event_count": 2,
+          "timeline_entries": 2
         }
       },
       {
@@ -1658,7 +1702,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 1.123,
           "source_trust": 91,
-          "age_hours": 35.62
+          "age_hours": 37.65
         },
         "level": "high",
         "importance_reasons": [
@@ -1697,64 +1741,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-09-04T20:34:00+00:00",
-          "hours_since_update": 35.62,
-          "event_count": 1,
-          "timeline_entries": 1
-        }
-      },
-      {
-        "story_id": "story_000161",
-        "title": "Ukraine war briefing: Zelenskyy links Russian strikes on Kyiv airports to US envoys’ visit - The Guardian",
-        "score": 63,
-        "editorial_priority": 67,
-        "editorial_score": 67,
-        "score_breakdown": {
-          "score": 67,
-          "importance": 63,
-          "proximity_multiplier": 1.0,
-          "freshness_multiplier": 0.95,
-          "source_multiplier": 1.123,
-          "source_trust": 91,
-          "age_hours": 6.54
-        },
-        "level": "high",
-        "importance_reasons": [
-          {
-            "code": "war_diplomacy",
-            "label": "War, diplomacy or national-security consequence",
-            "points": 30
-          },
-          {
-            "code": "multiple_deaths",
-            "label": "Multiple deaths reported",
-            "points": 18
-          },
-          {
-            "code": "national_scope",
-            "label": "Nationwide U.S. scope",
-            "points": 15
-          }
-        ],
-        "audience_relevance": {
-          "scope": "us_national",
-          "score": 100,
-          "regions": [],
-          "places": []
-        },
-        "editorial_proximity": {
-          "score": 100,
-          "scope": "us_national",
-          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
-        },
-        "event_count": 1,
-        "timeline_entries": 1,
-        "relationship_decisions": 1,
-        "canonical_source_candidates": 1,
-        "lifecycle": {
-          "state": "active",
-          "reason": "Single-event story is current",
-          "last_updated": "2026-09-06T01:39:00+00:00",
-          "hours_since_update": 6.54,
+          "hours_since_update": 37.65,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1772,7 +1759,7 @@
           "freshness_multiplier": 0.95,
           "source_multiplier": 1.132,
           "source_trust": 94,
-          "age_hours": 11.48
+          "age_hours": 13.52
         },
         "level": "high",
         "importance_reasons": [
@@ -1816,7 +1803,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-09-05T20:41:59+00:00",
-          "hours_since_update": 11.48,
+          "hours_since_update": 13.52,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1834,7 +1821,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 1.132,
           "source_trust": 94,
-          "age_hours": 30.29
+          "age_hours": 32.33
         },
         "level": "high",
         "importance_reasons": [
@@ -1882,7 +1869,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-09-05T01:53:45+00:00",
-          "hours_since_update": 30.29,
+          "hours_since_update": 32.33,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1900,7 +1887,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 1.117,
           "source_trust": 89,
-          "age_hours": 35.35
+          "age_hours": 37.39
         },
         "level": "high",
         "importance_reasons": [
@@ -1943,7 +1930,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-09-04T20:50:01+00:00",
-          "hours_since_update": 35.35,
+          "hours_since_update": 37.39,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1961,7 +1948,7 @@
           "freshness_multiplier": 1.0,
           "source_multiplier": 1.015,
           "source_trust": 55,
-          "age_hours": 3.94
+          "age_hours": 5.97
         },
         "level": "high",
         "importance_reasons": [
@@ -2000,7 +1987,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-09-06T04:14:51+00:00",
-          "hours_since_update": 3.94,
+          "hours_since_update": 5.97,
           "event_count": 1,
           "timeline_entries": 1
         }
