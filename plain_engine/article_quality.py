@@ -3,7 +3,7 @@ from __future__ import annotations
 import json,re
 from datetime import datetime,timezone
 from pathlib import Path
-MIN_HERO_BODY_WORDS=120;MIN_CARD_BODY_WORDS=90;MIN_SOURCE_WORDS=80
+MIN_HERO_BODY_WORDS=120;MIN_CARD_BODY_WORDS=60;MAX_CARD_BODY_WORDS=140;MIN_SOURCE_WORDS=80
 def word_count(t):return len(re.findall(r"\b[\w’'-]+\b",str(t or '')))
 def paragraph_count(t):return len([p for p in re.split(r'\n\s*\n',str(t or '')) if word_count(p)>=8])
 def sentence_count(t):return len([s for s in re.split(r'(?<=[.!?])\s+',str(t or '').strip()) if word_count(s)>=5])
@@ -98,6 +98,8 @@ _MATERIAL_UPDATE_REPAIRABLE_REASONS = {
     "original_event_context_missing",
     "new_development_missing",
     "insufficient_article_structure",
+    "card_requires_two_paragraph_summary",
+    "card_body_over_140_words",
 }
 
 def _repairable_material_update_reason(reason):
@@ -150,9 +152,16 @@ def protected_material_update_pending_recomposition(item):
 
 def publication_quality(item,*,hero=False):
  reasons=[];body=str(item.get('body') or '');source=str(item.get('article_text') or item.get('source_summary') or '');minimum=MIN_HERO_BODY_WORDS if hero else MIN_CARD_BODY_WORDS
- if word_count(body)<minimum:reasons.append(f'body_under_{minimum}_words')
+ body_words=word_count(body)
+ if body_words<minimum:reasons.append(f'body_under_{minimum}_words')
+ if not hero and body_words>MAX_CARD_BODY_WORDS:reasons.append(f'card_body_over_{MAX_CARD_BODY_WORDS}_words')
  if word_count(source)<MIN_SOURCE_WORDS:reasons.append(f'source_under_{MIN_SOURCE_WORDS}_words')
- if paragraph_count(body)<2 and sentence_count(body)<5:reasons.append('insufficient_article_structure')
+ # Plain cards are intentionally concise two-paragraph summaries. Do not impose
+ # a full-article sentence-count contract on them. Heroes remain article-shaped.
+ if hero:
+  if paragraph_count(body)<2 and sentence_count(body)<5:reasons.append('insufficient_article_structure')
+ else:
+  if paragraph_count(body)<2:reasons.append('card_requires_two_paragraph_summary')
  reasons+=lead_headline_integrity(item);reasons+=source_focus_diagnostics(item).get('missing',[]);return not reasons,sorted(set(reasons))
 def enforce_category_quality(category):
  hero=category.get('hero');good=[]
@@ -166,10 +175,8 @@ def enforce_category_quality(category):
    # canonical recomposition. write_archives() repairs this exact hero before the
    # public index/data surfaces are rendered.
    hero['publication_quality_deferred_for_material_update']=True
-  elif not ok:
-   for i,c in enumerate(good):
-    hok,hr=publication_quality(c,hero=True)
-    if hok:c['publication_quality_ok']=True;c['publication_quality_reasons']=hr;c['promoted_for_quality']=True;category['hero']=c;good.pop(i);break
+  # Plain product contract: a summary card never becomes a full-length hero merely
+  # because the hero failed quality. main() will use bounded hero/archive recovery.
  category['cards']=good;return category
 def write_quality_report(categories,path):
  rows=[]

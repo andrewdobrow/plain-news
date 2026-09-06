@@ -69,6 +69,7 @@ REQUIRED_LIVE_GENERATOR_HOOKS = {
     "parse_first_json_value": "robust ranking/dedupe JSON parsing",
     "_filter_publication_ready_sources": "TCT-style pre-writer source-depth gate",
     "_archive_depth_backfill": "recent canonical backfill for thin live sections",
+    "_enforce_card_summary_product": "Plain card-vs-hero product boundary",
 }
 
 REQUIRED_ASSIGNMENT_PIPELINE_HOOKS = {
@@ -77,6 +78,7 @@ REQUIRED_ASSIGNMENT_PIPELINE_HOOKS = {
     "defer_protected_material_update_quality_failure": "repairable material-update quality deferral",
     "section_depth_target": "Plain eight-card section-depth contract",
     "_backfill_assignments": "safe replacement of omitted/failed supporting cards",
+    "90-120 words in exactly 2 concise paragraphs": "Plain concise supporting-card writer contract",
 }
 
 REQUIRED_RUNTIME_HOOKS = {

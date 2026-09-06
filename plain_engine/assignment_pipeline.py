@@ -142,7 +142,7 @@ def _context(s):
 def run_assignment_writer(client,*,category_key,category_label,source,assignment,hero,timeout_seconds=90):
  text=str(source.get('article_text') or source.get('summary') or '').strip()
  if len(text.split())<40:raise ValueError('assigned source too thin')
- target='330-430 words in 4-5 paragraphs' if hero else '120-170 words in exactly 2 short paragraphs (at least 100 words total)';schema='{"headline":"...","body":"..."}' if hero else '{"headline":"...","teaser":"...","body":"..."}'
+ target='330-430 words in 4-5 paragraphs' if hero else '90-120 words in exactly 2 concise paragraphs. Summarize only the most important confirmed elements; this is a card summary, NOT a full article. Do not exceed 130 words.';schema='{"headline":"...","body":"..."}' if hero else '{"headline":"...","teaser":"...","body":"..."}'
  prompt=f'''Write the assigned Plain story. You are a WRITER, not an assignment editor. Use ONLY the exact source below plus prior canonical context. Never blend another story or source.
 Category: {category_label}. Rule: {category_rule(category_key)}. Assigned angle: {assignment.get('angle','')}. Target: {target}.
 ARTICLE CONTRACT: The lead must stand alone and establish who/what/where plus the principal new fact. Any money, percentage, named policy/program, jurisdiction, or major quantitative claim in the headline must also be in the lead. Use full names on first reference. For an update, establish both the original event and what is newly confirmed. Do not invent context, consequences, reactions, motives or what happens next. Do not pad missing information. Paraphrase the source. Return ONLY JSON: {schema}

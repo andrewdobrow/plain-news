@@ -472,3 +472,72 @@ def test_archive_depth_backfill_preserves_live_copy_and_fills_supporting_slots(m
     assert category['cards'][0] is live_card
     assert len(category['cards'])==8
     assert all(c.get('_archive_depth_backfill') for c in category['cards'][1:])
+
+
+def test_plain_card_quality_contract_is_summary_shaped_not_article_shaped():
+    from plain_engine.article_quality import publication_quality, word_count
+    p1 = 'Federal officials announced the change Friday, saying the new rule applies nationwide and takes effect next month for agencies covered by the program. The department said the change is intended to standardize how offices report the same information across the country.'
+    p2 = 'The revision changes reporting requirements and gives participating offices updated deadlines for submitting required records and notices. Officials said agencies will receive implementation guidance before the rule takes effect, including instructions for the first reporting cycle.'
+    item = {
+        'headline':'Federal agency changes nationwide reporting rule',
+        'body':p1+'\n\n'+p2,
+        'article_text':('Federal agency changes nationwide reporting rule. '+('Confirmed source detail about the reporting rule and implementation. '*30)),
+        'source_title':'Federal agency changes nationwide reporting rule',
+    }
+    assert 60 <= word_count(item['body']) <= 140
+    ok,reasons = publication_quality(item,hero=False)
+    assert ok, reasons
+
+
+def test_plain_card_quality_rejects_full_length_article_body():
+    from plain_engine.article_quality import publication_quality
+    body = ('Federal officials announced the change Friday and described the new reporting rule in detail. '*12) + '\n\n' + ('The department also outlined implementation requirements for participating offices nationwide. '*12)
+    item = {
+        'headline':'Federal agency changes nationwide reporting rule',
+        'body':body,
+        'article_text':body,
+        'source_title':'Federal agency changes nationwide reporting rule',
+    }
+    ok,reasons = publication_quality(item,hero=False)
+    assert not ok
+    assert 'card_body_over_140_words' in reasons
+
+
+def test_archive_depth_backfill_never_exposes_full_canonical_article_as_card(monkeypatch,tmp_path):
+    import scripts.generate as gen
+    from plain_engine.article_quality import word_count, paragraph_count
+    monkeypatch.setattr(gen,'OUTPUT_DIR',tmp_path)
+    (tmp_path/'articles').mkdir()
+    live_hero={'headline':'Fresh hero','body':gen._compact_card_summary(('Fresh hero detail. '*100), 'Fresh hero teaser') + '\n\n' + ('hero full article detail '*100), 'story_id':'fresh-hero'}
+    category={'category_key':'business','category_label':'Business','hero':live_hero,'cards':[]}
+    full_body = (
+        'A major company announced a nationwide expansion Friday after reporting stronger demand across several markets. Executives said the expansion will begin this fall and include new operations in multiple states. '
+        'The company said the plan follows a year of investment in logistics and staffing. It expects the first locations to open before the end of the year.\n\n'
+        + ('Additional full-length canonical article detail about financing, staffing, facilities and the company history. '*45)
+    )
+    archive=[{
+        'slug':'2026-09-05-archive-business','headline':'Company announces nationwide expansion',
+        'body':full_body,'teaser':'The company plans a nationwide expansion beginning this fall after reporting stronger demand.',
+        'category_key':'business','category_label':'Business','date':'2026-09-05','lastmod':'2026-09-05',
+        'story_id':'archive-business','event_key':'event-business'
+    }]
+    (tmp_path/'articles'/'2026-09-05-archive-business.html').write_text('<div class="article-body"><p>'+full_body.replace('\n\n','</p><p>')+'</p></div>',encoding='utf-8')
+    added=gen._archive_depth_backfill([category],archive,target_cards=1,max_age_days=7)
+    assert added==1
+    card=category['cards'][0]
+    assert card['body'] != full_body
+    assert word_count(card['body']) <= gen.CARD_SUMMARY_MAX_WORDS
+    assert paragraph_count(card['body']) == 2
+    assert card.get('_plain_card_summary') is True
+
+
+def test_final_plain_card_surface_contract_compacts_any_accidental_full_body():
+    import scripts.generate as gen
+    from plain_engine.article_quality import word_count, paragraph_count
+    full = ('The lead contains the most important confirmed facts about the story and establishes what happened. '*6) + '\n\n' + ('The rest of this text is a full article that should never be exposed through a supporting card. '*30)
+    category={'category_key':'world','category_label':'World','hero':{'headline':'Hero','body':full},'cards':[{'headline':'Supporting story','teaser':'Officials confirmed the central development Friday in a statement describing the immediate change.','body':full}]}
+    changed=gen._enforce_card_summary_product([category])
+    assert changed==1
+    assert word_count(category['cards'][0]['body']) <= gen.CARD_SUMMARY_MAX_WORDS
+    assert paragraph_count(category['cards'][0]['body']) == 2
+    assert category['hero']['body'] == full

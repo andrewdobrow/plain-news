@@ -2682,7 +2682,7 @@ def _category_cache_key(cat_key, sources):
     # changes as the archive/registry advances; reusing pre-decision generated copy
     # in that case would silently lose the update transaction.
     return cache_hash({
-        "v": "plain-live-assignment-v6-source-depth-archive-fill",
+        "v": "plain-live-assignment-v7-card-summary-contract",
         "category": cat_key,
         "editor": "claude-sonnet-5",
         "writer": "claude-sonnet-4-5",
@@ -2726,6 +2726,92 @@ def _archive_sort_value(row):
         return 0.0
 
 
+CARD_SUMMARY_MAX_WORDS = 130
+
+def _sentence_list(text):
+    normalized = re.sub(r"\s+", " ", str(text or "")).strip()
+    if not normalized:
+        return []
+    return [x.strip() for x in re.split(r"(?<=[.!?])\s+", normalized) if word_count(x) >= 4]
+
+def _compact_card_summary(body, teaser="", *, max_words=CARD_SUMMARY_MAX_WORDS):
+    """Return Plain's card product: two concise paragraphs, never a full article.
+
+    Fresh cards are already written as summaries and normally pass through unchanged.
+    Archive backfill can originate from a full canonical hero article, so this helper
+    converts that article into a lead-first summary instead of leaking the whole body
+    into the expandable card surface.
+    """
+    body = str(body or "").strip()
+    teaser = re.sub(r"\s+", " ", str(teaser or "")).strip()
+    paragraphs = [p.strip() for p in re.split(r"\n\s*\n", body) if p.strip()]
+    if len(paragraphs) == 2 and word_count(body) <= max_words:
+        return body
+
+    sentences = _sentence_list(body)
+    if not sentences:
+        return body
+
+    # The stored teaser is already the one-sentence top-line summary. Use it as
+    # paragraph one when it is reasonably concise; otherwise use the article lead.
+    if 6 <= word_count(teaser) <= 42:
+        first = teaser
+    else:
+        first = sentences[0]
+
+    first_tokens = set(re.findall(r"[a-z0-9]+", first.casefold()))
+    details = []
+    used_words = word_count(first)
+    for sentence in sentences:
+        tokens = set(re.findall(r"[a-z0-9]+", sentence.casefold()))
+        overlap = len(tokens & first_tokens) / max(1, min(len(tokens), len(first_tokens)))
+        if sentence == first or overlap > 0.72:
+            continue
+        sw = word_count(sentence)
+        if details and used_words + sw > max_words:
+            break
+        if not details and used_words + sw > max_words:
+            # Prefer a complete shorter sentence later rather than cutting prose.
+            continue
+        details.append(sentence)
+        used_words += sw
+        if len(details) >= 2 or used_words >= max_words - 15:
+            break
+
+    if not details:
+        # Fall back to the next available sentence. This still produces the expected
+        # two-paragraph card shape without exposing the canonical article in full.
+        for sentence in sentences[1:]:
+            if sentence != first:
+                details = [sentence]
+                break
+
+    second = " ".join(details).strip()
+    if not second:
+        # Extremely defensive fallback for malformed one-sentence archive bodies.
+        words = body.split()[:max_words]
+        midpoint = max(1, len(words) // 2)
+        return " ".join(words[:midpoint]).strip() + "\n\n" + " ".join(words[midpoint:]).strip()
+
+    return first.strip() + "\n\n" + second.strip()
+
+def _enforce_card_summary_product(categories):
+    """Final Plain-specific surface invariant: every supporting card is a summary."""
+    compacted = 0
+    for category in categories:
+        for card in [c for c in category.get("cards", []) if isinstance(c, dict)]:
+            before = str(card.get("body") or "")
+            after = _compact_card_summary(before, card.get("teaser", ""))
+            if after and after != before:
+                compacted += 1
+                card["body"] = after
+            if not card.get("teaser"):
+                sentences = _sentence_list(card.get("body", ""))
+                card["teaser"] = sentences[0][:220] if sentences else ""
+            card["_plain_card_summary"] = True
+    return compacted
+
+
 def recover_category_from_archive(cat_key, cat_label, archive, *, card_count=CARDS_PER_CATEGORY, max_age_days=14):
     """Fail closed to already-published canonicals when live generation is unavailable.
 
@@ -2763,7 +2849,7 @@ def recover_category_from_archive(cat_key, cat_label, archive, *, card_count=CAR
         item={
             "headline":str(row.get("headline") or ""),
             "teaser":teaser,
-            "body":body,
+            "body":body if hero else _compact_card_summary(body, teaser),
             "article_text":body,
             "source_summary":teaser,
             "source_title":str(row.get("source_headline") or row.get("headline") or ""),
@@ -2871,6 +2957,8 @@ def _archive_depth_backfill(all_categories, archive, *, target_cards=CARDS_PER_C
             filler = dict(item)
             filler["_archive_depth_backfill"] = True
             filler["urgency_score"] = min(int(filler.get("urgency_score") or 3), 3)
+            filler["body"] = _compact_card_summary(filler.get("body", ""), filler.get("teaser", ""))
+            filler["_plain_card_summary"] = True
             cards.append(filler)
             if sid: seen_story_ids.add(sid)
             if event_key: seen_event_keys.add(event_key)
@@ -3063,6 +3151,9 @@ def main():
             return min(score,4) if not CATEGORIES.get(cat.get("category_key"),{}).get("front_page_hero",True) else min(score,cap)
         top_cat=max(all_categories,key=_score)
     promote_duplicate_heroes(top_cat,all_categories)
+    _card_compactions = _enforce_card_summary_product(all_categories)
+    if _card_compactions:
+        print(f"  Card product contract compacted {_card_compactions} supporting card body/bodies to concise two-paragraph summaries")
     for cat in all_categories:ensure_item_image(cat["hero"],category_key=cat.get("category_key","top_news"),image_bank=image_bank,archive=archive,rotator=rotator,used_images=used)
     rotator.save()
 

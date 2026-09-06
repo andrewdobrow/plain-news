@@ -1,13 +1,17 @@
-PLAIN SOURCE DEPTH + ARCHIVE BACKFILL HOTFIX v7
+PLAIN CARD-SUMMARY PRODUCT HOTFIX v8
 
-Payload files:
-723e28cc19a09d4a2cc640e9e458374e8b1ebbabc5d8e059599e42f33a1c2c39  SOURCE-DEPTH-ARCHIVE-BACKFILL-HOTFIX.md
-4abc3ae5eaf638b3fc9f23e61571e9ca71c65a8efda921791edcea07dbfc369c  scripts/backend_parity_check.py
-2ecdaeb4e9b4726c2e9abd3a389bb4f3879d0dacad7cbf53cb78c58ed909ea68  scripts/generate.py
-a7c4b923d14086fc4f1b8cffbdac512197488bc96741bf9c55bf5d2a13af9b17  tests/test_full_backend_port.py
+Payload files: 6
 
-Safety:
-- 0 files under articles/
-- 0 HTML files
-- 0 deletions
-- Apply on top of v6/current Plain backend state.
+Files:
+CARD-SUMMARY-PRODUCT-HOTFIX.md  sha256=76de8a87fa8f4c07c9c7d0602a5ab2d8bac8f150b06f5257274e110b4bc9ce19
+plain_engine/article_quality.py  sha256=d4ad8f71452d243b7ade2d15c33b1f419cbc7e81100092c5a537d866e1f6a6f4
+plain_engine/assignment_pipeline.py  sha256=d0c29620307e358b889eefa4df535bd7ac29010deeaac0942fc310c89e76c325
+scripts/backend_parity_check.py  sha256=1349a2c3823acafe56170de35ff8733fdd81da00a423c141a5a7b1ff5e0db422
+scripts/generate.py  sha256=e9ac3bd87d05bee2aff299bfff90cab7852aff05fe1c26afc96e7c6e83dedfb3
+tests/test_full_backend_port.py  sha256=633873bcff66f24b73024800a71562b855d7f290ed6dea5387ca11300e32c359
+
+Safety checks:
+- articles/ files: 0
+- HTML files: 0
+- workflow files: 0
+- deletions: 0
