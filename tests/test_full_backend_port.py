@@ -110,8 +110,8 @@ def test_pre_generation_materiality_suppresses_no_change_and_stamps_update(monke
     ])
     monkeypatch.setattr(gen, '_pre_generation_semantic_decision', lambda *a, **k: next(decisions))
     source_sets={'us':[
-        {'title':'Same old story','link':'https://x/a','summary':words('same',100)},
-        {'title':'Story advances with ruling','link':'https://x/b','summary':words('new',100)},
+        {'title':'Same old story','link':'https://x/a','summary':words('same',100),'source_quality':'summary'},
+        {'title':'Story advances with ruling','link':'https://x/b','summary':words('new',100),'source_quality':'summary'},
     ]}
     archive=[
         {'slug':'old-a','headline':'Same old story','body':words('old',160)},
@@ -424,3 +424,51 @@ def test_assignment_pipeline_replaces_failed_card_with_next_safe_source(monkeypa
     assert 2 not in [c['source_index'] for c in result['cards']]
     assert len(result['assignment_editor']['writer_failures'])==1
     assert result['assignment_editor']['section_depth_shortfall']==0
+
+
+def test_source_depth_gate_rejects_thin_before_materiality_and_writer():
+    import scripts.generate as gen
+    ready = {'title':'Full source','source_quality':'full','article_text':words('fact',100)}
+    summary = {'title':'Summary source','source_quality':'summary','summary':words('fact',85)}
+    brief = {'title':'Brief source','source_quality':'brief','summary':words('fact',70)}
+    deceptive = {'title':'Short full source','source_quality':'full','article_text':words('fact',50)}
+    sets={'business':[ready,summary,brief,deceptive]}
+    report=gen._filter_publication_ready_sources(sets)
+    assert sets['business']==[ready,summary]
+    assert report['business']['publishable']==2
+    assert report['business']['rejected']==2
+
+
+def test_pre_generation_materiality_never_grants_update_authority_to_thin_source(monkeypatch,tmp_path):
+    import scripts.generate as gen
+    monkeypatch.setattr(gen,'OUTPUT_DIR',tmp_path)
+    calls=[]
+    monkeypatch.setattr(gen,'_pre_generation_semantic_decision',lambda *a,**k: calls.append(True) or {'action':gen.ACTION_UPDATE,'selected_candidate_slug':'old','same_real_world_event':True,'material_new_update':True})
+    source={'title':'Thin update','link':'https://example.com/thin','source_quality':'brief','summary':words('tiny',60)}
+    source_sets={'politics':[source]}
+    archive=[{'slug':'old','headline':'Old story','body':words('old',160)}]
+    report=gen.apply_pre_generation_materiality(source_sets,archive,object(),object())
+    assert calls==[]
+    assert not source.get('pre_generation_material_update')
+    assert report.get('weak_source_skipped')==1
+
+
+def test_archive_depth_backfill_preserves_live_copy_and_fills_supporting_slots(monkeypatch,tmp_path):
+    import scripts.generate as gen
+    monkeypatch.setattr(gen,'OUTPUT_DIR',tmp_path)
+    (tmp_path/'articles').mkdir()
+    live_hero={'headline':'Fresh hero','body':words('fresh',150),'story_id':'fresh-hero'}
+    live_card={'headline':'Fresh card','body':words('fresh',110),'story_id':'fresh-card'}
+    category={'category_key':'business','category_label':'Business','hero':live_hero,'cards':[live_card]}
+    archive=[]
+    for i in range(12):
+        slug=f'2026-09-0{max(1,5-(i//5))}-archive-{i}'
+        body=words(f'archive{i}_',120)
+        archive.append({'slug':slug,'headline':f'Archive business story {i}','body':body,'teaser':'Archived reporting','category_key':'business','category_label':'Business','date':'2026-09-05','lastmod':'2026-09-05','story_id':f'archive-{i}','event_key':f'event-{i}'})
+        (tmp_path/'articles'/f'{slug}.html').write_text('<div class="article-body"><p>'+body+'</p></div>',encoding='utf-8')
+    added=gen._archive_depth_backfill([category],archive,target_cards=8,max_age_days=7)
+    assert added==7
+    assert category['hero'] is live_hero
+    assert category['cards'][0] is live_card
+    assert len(category['cards'])==8
+    assert all(c.get('_archive_depth_backfill') for c in category['cards'][1:])

@@ -1,2 +1,13 @@
-339f0cb6c2a2d0dcc6f5a0c6508b9de2d3adf32ac6b81db322bef9f06ccddb36  .github/workflows/update.yml
-85fc03243e89134738b5524ea9d7d70a7302c91d4c5e24ea886692a6e48b4cab  WORKFLOW-YAML-HOTFIX.md
+PLAIN SOURCE DEPTH + ARCHIVE BACKFILL HOTFIX v7
+
+Payload files:
+723e28cc19a09d4a2cc640e9e458374e8b1ebbabc5d8e059599e42f33a1c2c39  SOURCE-DEPTH-ARCHIVE-BACKFILL-HOTFIX.md
+4abc3ae5eaf638b3fc9f23e61571e9ca71c65a8efda921791edcea07dbfc369c  scripts/backend_parity_check.py
+2ecdaeb4e9b4726c2e9abd3a389bb4f3879d0dacad7cbf53cb78c58ed909ea68  scripts/generate.py
+a7c4b923d14086fc4f1b8cffbdac512197488bc96741bf9c55bf5d2a13af9b17  tests/test_full_backend_port.py
+
+Safety:
+- 0 files under articles/
+- 0 HTML files
+- 0 deletions
+- Apply on top of v6/current Plain backend state.

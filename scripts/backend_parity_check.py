@@ -67,6 +67,8 @@ REQUIRED_LIVE_GENERATOR_HOOKS = {
     "protected_material_update_pending_recomposition": "protected update canonical recomposition barrier",
     "_apply_category_classification": "classifier preserves non-none section depth",
     "parse_first_json_value": "robust ranking/dedupe JSON parsing",
+    "_filter_publication_ready_sources": "TCT-style pre-writer source-depth gate",
+    "_archive_depth_backfill": "recent canonical backfill for thin live sections",
 }
 
 REQUIRED_ASSIGNMENT_PIPELINE_HOOKS = {

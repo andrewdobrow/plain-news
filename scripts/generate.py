@@ -19,7 +19,7 @@ except Exception:
     anthropic = None
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
-from collections import defaultdict
+from collections import defaultdict, Counter
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
 if str(ROOT_DIR) not in sys.path:
@@ -37,7 +37,7 @@ from plain_engine.source_recovery import prefetch_feed_documents, fetch_headline
 from plain_engine.image_authority import extract_image as authoritative_extract_image, build_image_bank as build_authoritative_image_bank, ensure_item_image, FallbackRotator, write_image_quality_report
 from plain_engine.assignment_pipeline import run_live_assignment_category
 from plain_engine.category_classifier import classify_stories
-from plain_engine.article_quality import enforce_category_quality, write_quality_report, publication_quality, protected_material_update_pending_recomposition
+from plain_engine.article_quality import enforce_category_quality, write_quality_report, publication_quality, protected_material_update_pending_recomposition, word_count, MIN_SOURCE_WORDS
 from plain_engine.model_usage import ModelUsageTracker, instrument_anthropic_client
 from plain_engine.model_response import extract_model_text, parse_first_json_value
 from plain_engine.semantic_publication_gate import retrieve_recent_candidates, adjudicate_candidates, ACTION_DUPLICATE, ACTION_UPDATE, ACTION_NEW, ACTION_HOLD
@@ -2389,6 +2389,14 @@ def apply_pre_generation_materiality(source_sets, archive, client, cache):
     for cat_key, rows in list(source_sets.items()):
         kept = []
         for source in rows:
+            if not _source_candidate_publishable_for_generation(source):
+                # Defense in depth: publication authority must never be minted from
+                # evidence that cannot satisfy the source-depth contract. Main normally
+                # removes these before this function, but keep the invariant local too.
+                kept.append(source)
+                report.setdefault("weak_source_skipped", 0)
+                report["weak_source_skipped"] += 1
+                continue
             decision = _pre_generation_semantic_decision(source, archive, canonicals, client, cache)
             if not decision:
                 kept.append(source)
@@ -2674,7 +2682,7 @@ def _category_cache_key(cat_key, sources):
     # changes as the archive/registry advances; reusing pre-decision generated copy
     # in that case would silently lose the update transaction.
     return cache_hash({
-        "v": "plain-live-assignment-v5-section-depth",
+        "v": "plain-live-assignment-v6-source-depth-archive-fill",
         "category": cat_key,
         "editor": "claude-sonnet-5",
         "writer": "claude-sonnet-4-5",
@@ -2789,6 +2797,94 @@ def recover_category_from_archive(cat_key, cat_label, archive, *, card_count=CAR
     }
 
 
+def _source_candidate_publishable_for_generation(source):
+    """Mirror TCT's source-depth gate before any writer/materiality call.
+
+    A semantic duplicate/update decision is publication authority, so it must never be
+    granted from a brief that the writer is forbidden to publish.  Only recovered full
+    or summary sources with the same 80-word evidence floor used by the final quality
+    contract are allowed into the live writing/materiality path.
+    """
+    if not isinstance(source, dict) or not str(source.get("title") or "").strip():
+        return False
+    quality = str(source.get("source_quality") or "").casefold()
+    text = str(source.get("article_text") or source.get("summary") or "")
+    return quality in {"full", "summary"} and word_count(text) >= MIN_SOURCE_WORDS
+
+
+def _filter_publication_ready_sources(source_sets):
+    report = {}
+    for cat_key, rows in list(source_sets.items()):
+        rows = list(rows or [])
+        ready = [row for row in rows if _source_candidate_publishable_for_generation(row)]
+        rejected = [row for row in rows if not _source_candidate_publishable_for_generation(row)]
+        source_sets[cat_key] = ready
+        reasons = Counter(str(row.get("source_quality") or "unknown") for row in rejected)
+        report[cat_key] = {
+            "incoming": len(rows),
+            "publishable": len(ready),
+            "rejected": len(rejected),
+            "rejected_by_quality": dict(sorted(reasons.items())),
+        }
+    return report
+
+
+def _archive_depth_backfill(all_categories, archive, *, target_cards=CARDS_PER_CATEGORY, max_age_days=7):
+    """Fill thin live sections with recent Plain canonicals, never weak generated copy.
+
+    This mirrors TCT's permanent-archive section recovery: surviving current reporting
+    keeps its rank, and older real Plain stories fill only the remaining supporting slots.
+    The live hero is never replaced here.
+    """
+    total_added = 0
+    for category in all_categories:
+        if not isinstance(category, dict) or not isinstance(category.get("hero"), dict):
+            continue
+        cards = [c for c in list(category.get("cards") or []) if isinstance(c, dict)]
+        category["cards"] = cards
+        if len(cards) >= target_cards:
+            continue
+        cat_key = str(category.get("category_key") or "")
+        label = str(category.get("category_label") or CATEGORIES.get(cat_key, {}).get("label") or cat_key)
+        recovered = recover_category_from_archive(cat_key, label, archive, card_count=max(target_cards * 3, 24), max_age_days=max_age_days)
+        if not recovered:
+            print(f"  {label}: archive depth backfill unavailable; keeping {len(cards)}/{target_cards} current cards")
+            continue
+        current_items = [category.get("hero"), *cards]
+        seen_story_ids = {str(x.get("story_id") or "") for x in current_items if isinstance(x, dict) and x.get("story_id")}
+        seen_event_keys = {str(x.get("event_key") or "") for x in current_items if isinstance(x, dict) and x.get("event_key")}
+        seen_headlines = {re.sub(r"[^a-z0-9]+", " ", str(x.get("headline") or "").casefold()).strip() for x in current_items if isinstance(x, dict)}
+        seen_slugs = {str(x.get("_archived_slug") or x.get("pre_generation_material_update_canonical_slug") or "") for x in current_items if isinstance(x, dict)}
+        candidates = [recovered.get("hero"), *list(recovered.get("cards") or [])]
+        added = 0
+        for item in candidates:
+            if len(cards) >= target_cards:
+                break
+            if not isinstance(item, dict) or not item.get("headline"):
+                continue
+            sid = str(item.get("story_id") or "")
+            event_key = str(item.get("event_key") or "")
+            headline_key = re.sub(r"[^a-z0-9]+", " ", str(item.get("headline") or "").casefold()).strip()
+            slug = str(item.get("_archived_slug") or "")
+            if (sid and sid in seen_story_ids) or (event_key and event_key in seen_event_keys) or headline_key in seen_headlines or (slug and slug in seen_slugs):
+                continue
+            filler = dict(item)
+            filler["_archive_depth_backfill"] = True
+            filler["urgency_score"] = min(int(filler.get("urgency_score") or 3), 3)
+            cards.append(filler)
+            if sid: seen_story_ids.add(sid)
+            if event_key: seen_event_keys.add(event_key)
+            if slug: seen_slugs.add(slug)
+            seen_headlines.add(headline_key)
+            added += 1
+        if added:
+            total_added += added
+            print(f"  {label}: archive depth backfill added {added} recent canonical card(s); section now {len(cards)}/{target_cards}")
+        elif len(cards) < target_cards:
+            print(f"  {label}: archive depth backfill found no nonduplicate recent canonicals; keeping {len(cards)}/{target_cards}")
+    return total_added
+
+
 def _apply_category_classification(rows, cat_key, classifications, *, limit=18):
     """Preserve section depth while treating the classifier as a safety signal."""
     positive, secondary = [], []
@@ -2855,6 +2951,18 @@ def main():
                     if m and m.get("link") and all(m.get("link")!=x.get("link") for x in rows+additions):additions.append(m)
             if additions:_bind_canonical_context(additions,archive);rows.extend(additions);print(f"  {cat_key}: {len(additions)} Guardian full-text alternate source(s) recovered")
 
+    print("Applying pre-writer source-depth gate...")
+    source_depth_report = _filter_publication_ready_sources(source_sets)
+    for cat_key, stats in source_depth_report.items():
+        label = CATEGORIES[cat_key]["label"]
+        detail = stats.get("rejected_by_quality") or {}
+        suffix = f"; rejected by quality={detail}" if detail else ""
+        print(f"  {label}: {stats['publishable']}/{stats['incoming']} publication-ready source(s){suffix}")
+    (OUTPUT_DIR / "source-depth-report.json").write_text(
+        json.dumps({"generated_at": datetime.utcnow().isoformat()+"Z", "categories": source_depth_report}, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+
     print("Running pre-generation duplicate/material-update authority...")
     materiality_report = apply_pre_generation_materiality(source_sets, archive, client, cache)
     print(
@@ -2892,7 +3000,14 @@ def main():
                 f"writer failures {len(_diag.get('writer_failures') or [])})"
             )
             if len(data.get("cards",[]))<CARDS_PER_CATEGORY:
-                print(f"  {cfg['label']}: section-depth shortfall {len(data.get('cards',[]))}/{CARDS_PER_CATEGORY}; no additional safe current source passed quality")
+                print(f"  {cfg['label']}: live section-depth shortfall {len(data.get('cards',[]))}/{CARDS_PER_CATEGORY}; recent canonical cards will backfill after editorial dedupe")
+            _writer_failures = list(_diag.get("writer_failures") or [])
+            if _writer_failures:
+                _reason_counts = Counter()
+                for _failure in _writer_failures:
+                    for _reason in (_failure.get("reason") or ["unknown"]):
+                        _reason_counts[str(_reason)] += 1
+                print(f"  {cfg['label']}: writer failure reasons {dict(_reason_counts.most_common())}")
             repairs=((data.get("assignment_editor") or {}).get("protected_material_update_repairs") or [])
             if repairs:
                 for repair in repairs:
@@ -2931,6 +3046,9 @@ def main():
 
     print("Applying persistent Plain editorial engine...")
     audit=apply_editorial_engine(all_categories,output_dir=OUTPUT_DIR,mode=os.environ.get("PLAIN_ENGINE_MODE","enforce"));counts=audit.get("counts",{});print(f"  Editorial engine: {counts.get('processed',0)} processed, {counts.get('rejected',0)} rejected, {counts.get('same_category_duplicates',0)} same-category duplicates")
+
+    print("Backfilling thin sections from recent Plain canonicals...")
+    _archive_depth_backfill(all_categories, archive, target_cards=CARDS_PER_CATEGORY, max_age_days=7)
 
     rotator=FallbackRotator(OUTPUT_DIR,SITE_URL);used=set()
     for cat in all_categories:
