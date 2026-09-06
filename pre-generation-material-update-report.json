@@ -1,50 +1,118 @@
 {
-  "generated_at": "2026-09-05T22:01:59Z",
-  "evaluated": 3,
-  "material_updates": 1,
-  "duplicates_suppressed": 1,
+  "generated_at": "2026-09-06T03:06:19Z",
+  "evaluated": 9,
+  "material_updates": 0,
+  "duplicates_suppressed": 8,
   "holds_suppressed": 0,
   "new_or_unmatched": 1,
   "items": [
     {
-      "category": "business",
-      "title": "Trump says 'Stupidity causes inflation' and threatens to stop trade with foreign countries - fortune.com",
-      "source_url": "https://fortune.com/2026/09/05/trump-stupidity-inflation-trade-foreign-countries-retaliation-interest-rates/",
+      "category": "world",
+      "title": "US envoys set for Ukraine talks after meeting Putin in Moscow",
+      "source_url": "https://www.bbc.co.uk/news/articles/c6248nvqy8po?at_medium=RSS&at_campaign=rss",
       "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-09-05-trump-threatens-trade-embargoes-on-deficit-countries-unless-federal-reserve-cuts",
+      "selected_candidate_slug": "2026-09-05-trump-envoys-meet-with-putin-in-moscow-plan-ukraine-trip-amid-airstrike-pause",
       "confidence": 0.9,
       "novel_facts": [],
-      "reason": "Both articles cover the same Friday Oval Office/Truth Social event where Trump reacted to the August jobs report by threatening to halt trade unless the Fed cuts rates. The incoming article adds quotes ('Stupidity causes inflation') and political framing/economic commentary but no new facts about outcomes, decisions, or consequences beyond what's already in the canonical article.",
+      "reason": "Both articles describe the same Witkoff-Kushner meeting with Putin in Moscow on Saturday and the planned onward trip to Kyiv, with the same details about the three-hour talks and strike pause. No new material development (arrest, death, ruling, etc.) is present beyond restating the same event and quotes already covered in the canonical.",
       "cache_hit": false
     },
     {
+      "category": "world",
+      "title": "US and Iran trade retaliatory attacks on ships as conflict flares",
+      "source_url": "https://www.bbc.co.uk/news/articles/cj64rrne643o?at_medium=RSS&at_campaign=rss",
+      "action": "duplicate_use_existing_canonical",
+      "selected_candidate_slug": "2026-09-05-us-military-strikes-three-iranian-oil-tankers-in-retaliation-for-attacks-on-amer",
+      "confidence": 0.97,
+      "novel_facts": [],
+      "reason": "This is the same BBC article (identical source_url) reporting the same Saturday US-Iran tanker strikes, Centcom statements, Kharg Island details, and Iran's retaliatory claims already covered in the canonical story. No new material facts such as casualties, official findings, or policy changes are added beyond what's in the existing canonical.",
+      "cache_hit": false
+    },
+    {
+      "category": "us",
+      "title": "US envoys set for Ukraine talks after meeting Putin in Moscow",
+      "source_url": "https://www.bbc.co.uk/news/articles/c6248nvqy8po?at_medium=RSS&at_campaign=rss",
+      "action": "duplicate_use_existing_canonical",
+      "selected_candidate_slug": "2026-09-05-trump-envoys-meet-with-putin-in-moscow-plan-ukraine-trip-amid-airstrike-pause",
+      "confidence": 0.9,
+      "novel_facts": [],
+      "reason": "Both articles describe the same Witkoff-Kushner meeting with Putin in Moscow on Saturday and the planned onward trip to Kyiv, with the same details about the three-hour talks and strike pause. No new material development (arrest, death, ruling, etc.) is present beyond restating the same event and quotes already covered in the canonical.",
+      "cache_hit": true
+    },
+    {
+      "category": "us",
+      "title": "US and Iran trade retaliatory attacks on ships as conflict flares",
+      "source_url": "https://www.bbc.co.uk/news/articles/cj64rrne643o?at_medium=RSS&at_campaign=rss",
+      "action": "duplicate_use_existing_canonical",
+      "selected_candidate_slug": "2026-09-05-us-military-strikes-three-iranian-oil-tankers-in-retaliation-for-attacks-on-amer",
+      "confidence": 0.97,
+      "novel_facts": [],
+      "reason": "This is the same BBC article (identical source_url) reporting the same Saturday US-Iran tanker strikes, Centcom statements, Kharg Island details, and Iran's retaliatory claims already covered in the canonical story. No new material facts such as casualties, official findings, or policy changes are added beyond what's in the existing canonical.",
+      "cache_hit": true
+    },
+    {
       "category": "business",
-      "title": "U.S. labor market booms, with 162,000 jobs added in August - Axios",
-      "source_url": "https://www.axios.com/2026/09/04/august-jobs-federal-reserve-trump",
+      "title": "Tesla’s Cybercab has been deployed, and it’s already under investigation - Ars Technica",
+      "source_url": "https://arstechnica.com/cars/2026/09/teslas-cybercab-has-been-deployed-and-its-already-under-investigation/",
+      "action": "duplicate_use_existing_canonical",
+      "selected_candidate_slug": "2026-09-05-teslas-driverless-cybercab-begins-public-rides-in-texas-and-florida-as-federal-s",
+      "confidence": 0.98,
+      "novel_facts": [],
+      "reason": "Identical article from same Ars Technica source URL, covering the same Cybercab launch and NHTSA investigation with no new facts beyond the existing canonical.",
+      "cache_hit": false
+    },
+    {
+      "category": "tech",
+      "title": "No, Sony isn't cutting PlayStation disc production by 90 percent, just 10 - eurogamer.net",
+      "source_url": "https://www.eurogamer.net/sony-playstation-disc-production-10-percent-decline-not-90",
       "action": "new_story",
       "selected_candidate_slug": "",
-      "confidence": 0.9,
+      "confidence": 0.72,
       "novel_facts": [
-        "August 2026 jobs report: 162,000 jobs added",
-        "Unemployment rate steady at 4.1%",
-        "Stocks fall after report",
-        "Women accounted for almost all job gains"
+        "Sony DADC clarifies 2028 disc volume will decline by 10 percent, not down to 10 percent",
+        "Correction of misreported '90 percent cut' claim from Dietmar Tanzer's Austrian broadcast comments",
+        "Comments from Shawn Layden and Niko Partners analyst on disc-free future implications",
+        "Mention of iam8bit and Conectiv Supply Chain Solutions as potential alternative disc manufacturers"
       ],
-      "reason": "This is a separate monthly jobs report (August 2026, 162,000 jobs, 4.1% unemployment) distinct from the candidate's May 2026 report (172,000 jobs, 4.3% unemployment). Different reference month and different figures mean this is a new recurring economic data release, not the same real-world event.",
+      "reason": "The candidate covers Sony's July 2026 confirmation of ending disc production amid consumer backlash, while the incoming article is a distinct September 2026 correction of a separate misreported statistic (90% vs 10% decline) from a different source (Sony DADC executive Dietmar Tanzer), with new quotes and analysis not present in the candidate. This is a new, more specific dispute/clarification story rather than the same announcement event, so it merits its own entry rather than folding into the July canonical.",
+      "cache_hit": false
+    },
+    {
+      "category": "tech",
+      "title": "Tesla’s Cybercab has been deployed, and it’s already under investigation",
+      "source_url": "https://arstechnica.com/cars/2026/09/teslas-cybercab-has-been-deployed-and-its-already-under-investigation/",
+      "action": "duplicate_use_existing_canonical",
+      "selected_candidate_slug": "2026-09-05-teslas-driverless-cybercab-begins-public-rides-in-texas-and-florida-as-federal-s",
+      "confidence": 0.98,
+      "novel_facts": [],
+      "reason": "This is the same source article (identical source_url and near-identical text) already covered by the existing canonical, with no new facts beyond what was previously reported.",
+      "cache_hit": false
+    },
+    {
+      "category": "sports",
+      "title": "Taylor crowns career in stylish Croke Park triumph",
+      "source_url": "https://www.bbc.co.uk/sport/boxing/articles/clyeg4n8l98o?at_medium=RSS&at_campaign=rss",
+      "action": "duplicate_use_existing_canonical",
+      "selected_candidate_slug": "2026-09-05-katie-taylor-retires-as-undisputed-champion-after-final-fight-at-croke-park",
+      "confidence": 0.98,
+      "novel_facts": [],
+      "reason": "This is the same BBC article covering Katie Taylor's retirement fight at Croke Park against Flora Pili, sharing identical source URL, fighters, venue, result, and event details as the existing canonical. No new material facts are introduced; it's a duplicate ingestion with minor stylistic rewording.",
       "cache_hit": false
     },
     {
       "category": "politics",
-      "title": "U.S. envoys arrive in Moscow to revive peace talks with Ukraine",
-      "source_url": "https://thehill.com/homenews/administration/6073112-envoys-kushner-witkoff-moscow-kyiv-arrival/",
-      "action": "update_existing_canonical",
-      "selected_candidate_slug": "2026-09-05-trump-envoys-to-visit-moscow-and-kyiv-this-weekend-as-us-pushes-new-peace-propos",
-      "confidence": 0.85,
+      "title": "Witkoff and Kushner meet with Putin about ending Ukraine war",
+      "source_url": "https://www.axios.com/2026/09/05/putin-witkoff-kushner-trump-ukraine-war",
+      "action": "duplicate_use_existing_canonical",
+      "selected_candidate_slug": "2026-09-05-trump-envoys-meet-with-putin-in-moscow-plan-ukraine-trip-amid-airstrike-pause",
+      "confidence": 0.95,
       "novel_facts": [
-        "Envoys have now actually arrived in Moscow (confirmed, not just planned)",
-        "Putin authorized a 72-hour pause on strikes against Kyiv to facilitate the visit"
+        "Gene Lange's preparatory meeting with Kirill Dmitriev",
+        "Ushakov's quote about 'serious preparations'",
+        "White House official statement on NSC/State/Treasury involvement",
+        "Bessent-Russian counterpart meeting at G20 in Asheville"
       ],
-      "reason": "Same real-world event (Witkoff/Kushner Moscow trip for peace talks) as the candidate, which previously reported the planned weekend visit. The incoming article confirms the arrival occurred and adds a new concrete fact (72-hour strike pause on Kyiv), which is a material update but not a distinct accountability or consequence story warranting a new URL.",
+      "reason": "This is the same Kremlin meeting reported in the canonical article (identical source URL, same participants, same three-hour meeting, same airstrike pause and Kyiv trip plans). The incoming version adds contextual detail (Lange's role, quotes from Ushakov and a White House official, Bessent's prior meeting) but none constitute a material update category like an arrest, death, ruling, or casualty revision�just additional background on the same ongoing diplomatic event.",
       "cache_hit": false
     }
   ]

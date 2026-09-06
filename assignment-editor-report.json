@@ -1,206 +1,264 @@
 {
-  "generated_at": "2026-09-05T22:11:12.304680Z",
+  "generated_at": "2026-09-06T03:17:09.849124Z",
   "assignment_editor_model": "claude-sonnet-5",
   "writer_model": "claude-sonnet-4-5",
   "categories": [
     {
       "category_key": "world",
-      "hero_source_index": 8,
+      "hero_source_index": 7,
       "card_source_indexes": [
-        1,
-        15,
         2,
-        7
+        3,
+        5
       ],
       "diagnostics": {
         "model": "claude-sonnet-5",
         "writer_model": "claude-sonnet-4-5",
         "rejected": [
           {
-            "source_index": 3,
-            "reason": "discovery_only stub with no article text; thin sourcing"
-          },
-          {
             "source_index": 4,
-            "reason": "discovery_only stub duplicating the fuller Iran tanker strike story selected as hero"
-          },
-          {
-            "source_index": 5,
-            "reason": "discovery_only stub duplicating the Putin-Witkoff-Kushner meeting selected as hero-adjacent card"
+            "reason": "Duplicate of source 3, same Egypt death sentence story."
           },
           {
             "source_index": 6,
-            "reason": "discovery_only stub with no article text; election forecast piece lacking developed reporting"
-          },
-          {
-            "source_index": 9,
-            "reason": "brief aggregator duplicate of the Iran tanker strikes covered fully in source 8"
-          },
-          {
-            "source_index": 10,
-            "reason": "summary/aggregator duplicate of Nepal rescue story, thin sourcing"
-          },
-          {
-            "source_index": 11,
-            "reason": "thin local air show crash without national or international policy consequence"
-          },
-          {
-            "source_index": 12,
-            "reason": "discovery_only stub duplicating Nepal flood rescue coverage"
-          },
-          {
-            "source_index": 13,
-            "reason": "discovery_only stub with minimal content, lacks developed sourcing"
-          },
-          {
-            "source_index": 14,
-            "reason": "brief aggregator forecast piece, thin sourcing and speculative timeline"
-          },
-          {
-            "source_index": 16,
-            "reason": "duplicate of source 15 covering the same Bolivia barracks explosion"
-          },
-          {
-            "source_index": 17,
-            "reason": "discovery_only stub, thin sourcing on Nepal flood aftermath"
-          },
-          {
-            "source_index": 18,
-            "reason": "brief aggregator duplicate of Nepal flood cremation story"
-          }
-        ],
-        "writer_failures": [],
-        "protected_material_update_repairs": [],
-        "duration_seconds": 39.906
-      }
-    },
-    {
-      "category_key": "us",
-      "hero_source_index": 3,
-      "card_source_indexes": [],
-      "diagnostics": {
-        "model": "claude-sonnet-5",
-        "writer_model": "claude-sonnet-4-5",
-        "rejected": [
-          {
-            "source_index": 1,
-            "reason": "Military feature on crew morale after deployment; not a domestic law, policy, or public safety story with national consequence."
-          },
-          {
-            "source_index": 3,
-            "reason": "Sports/entertainment story about an Irish boxer's retirement bout; not a U.S. news story."
-          },
-          {
-            "source_index": 4,
-            "reason": "Foreign diplomacy story centered on US-Russia-Ukraine talks; belongs in World, not U.S. domestic category."
-          },
-          {
-            "source_index": 5,
-            "reason": "UK local protest story with no U.S. relevance; belongs in World if anywhere."
-          }
-        ],
-        "writer_failures": [],
-        "protected_material_update_repairs": [],
-        "duration_seconds": 12.205
-      }
-    },
-    {
-      "category_key": "business",
-      "hero_source_index": 4,
-      "card_source_indexes": [],
-      "diagnostics": {
-        "model": "claude-sonnet-5",
-        "writer_model": "claude-sonnet-4-5",
-        "rejected": [
-          {
-            "source_index": 1,
-            "reason": "Discovery-only stub about a drug trial failure; a health/science story not suited to Business, and too thin to support coverage."
-          },
-          {
-            "source_index": 2,
-            "reason": "Discovery-only stub on a California housing/manufacturing legislative setback; local land-use story without clear national economic consequence."
-          },
-          {
-            "source_index": 3,
-            "reason": "Brief aggregation of headlines about data center insurance; too thin and discovery-adjacent to construct a factual story from."
-          },
-          {
-            "source_index": 5,
-            "reason": "Discovery-only stub on a Venezuela oil deal; thin sourcing, better suited to World if developed further."
-          },
-          {
-            "source_index": 6,
-            "reason": "Oura IPO filing is a legitimate business story, but overlaps heavily with hero/card selections already covering finance and tech; deprioritized in favor of broader-impact stories."
-          },
-          {
-            "source_index": 7,
-            "reason": "Duplicate framing of the same gas price story as the hero diesel piece; would violate distinct-story requirement."
-          },
-          {
-            "source_index": 8,
-            "reason": "Tesla Cybercab story centers on a physical safety/regulatory issue, not a core business/economic development, and overlaps with consumer tech coverage better suited elsewhere."
+            "reason": "Duplicate of source 5, same Prince William/King Harald funeral story."
           }
         ],
         "writer_failures": [
           {
-            "source_index": 14,
+            "source_index": 1,
             "reason": [
-              "body_under_90_words",
-              "source_under_80_words"
+              "person_first_reference_not_full_name"
+            ]
+          }
+        ],
+        "protected_material_update_repairs": [],
+        "editor_selected_card_count": 4,
+        "section_depth_target": 8,
+        "section_depth_accepted_cards": 3,
+        "section_depth_shortfall": 5,
+        "depth_backfill_writer_attempts": 0,
+        "writer_card_attempts": 4,
+        "duration_seconds": 32.48
+      }
+    },
+    {
+      "category_key": "us",
+      "hero_source_index": 2,
+      "card_source_indexes": [
+        6,
+        9
+      ],
+      "diagnostics": {
+        "model": "claude-sonnet-5",
+        "writer_model": "claude-sonnet-4-5",
+        "rejected": [
+          {
+            "source_index": 3,
+            "reason": "Primarily a politics/local NYC mayoral controversy story centered on partisan reaction; better suited to Politics category and duplicates that section's likely framing."
+          },
+          {
+            "source_index": 4,
+            "reason": "Entertainment profile piece, not a U.S. news story."
+          },
+          {
+            "source_index": 5,
+            "reason": "Entertainment profile piece, UK-focused, not relevant to U.S. news category."
+          },
+          {
+            "source_index": 6,
+            "reason": "Entertainment speculation piece about James Bond casting, not U.S. news."
+          },
+          {
+            "source_index": 7,
+            "reason": "Foreign (Ukraine) local policy story, belongs in World category, not U.S."
+          },
+          {
+            "source_index": 8,
+            "reason": "Sports retirement tribute story, not a U.S. news item."
+          },
+          {
+            "source_index": 9,
+            "reason": "UK aviation/climate commentary piece, not U.S.-focused and thin on hard facts."
+          },
+          {
+            "source_index": 10,
+            "reason": "UK newspaper roundup covering British politics and entertainment, not relevant to U.S. news category."
+          },
+          {
+            "source_index": 11,
+            "reason": "U.S.-Russia diplomacy over Ukraine war belongs in World or Politics, not domestic U.S. category; also thin summary-only source."
+          }
+        ],
+        "writer_failures": [
+          {
+            "source_index": 4,
+            "reason": [
+              "JSONDecodeError"
             ]
           },
           {
-            "source_index": 13,
+            "source_index": 5,
             "reason": [
-              "body_under_90_words",
-              "source_under_80_words"
+              "JSONDecodeError"
+            ]
+          },
+          {
+            "source_index": 7,
+            "reason": [
+              "person_first_reference_not_full_name"
+            ]
+          },
+          {
+            "source_index": 8,
+            "reason": [
+              "JSONDecodeError"
             ]
           },
           {
             "source_index": 10,
             "reason": [
-              "generated_copy_drifted_from_source_focus"
-            ]
-          },
-          {
-            "source_index": 9,
-            "reason": [
-              "generated_copy_drifted_from_source_focus"
-            ]
-          },
-          {
-            "source_index": 15,
-            "reason": [
-              "body_under_90_words",
-              "source_under_80_words"
+              "JSONDecodeError"
             ]
           },
           {
             "source_index": 11,
             "reason": [
-              "ValueError"
-            ]
-          },
-          {
-            "source_index": 12,
-            "reason": [
-              "ValueError"
+              "body_under_90_words"
             ]
           }
         ],
         "protected_material_update_repairs": [],
-        "duration_seconds": 43.444
+        "editor_selected_card_count": 1,
+        "section_depth_target": 8,
+        "section_depth_accepted_cards": 3,
+        "section_depth_shortfall": 5,
+        "depth_backfill_writer_attempts": 8,
+        "writer_card_attempts": 9,
+        "duration_seconds": 71.722
+      }
+    },
+    {
+      "category_key": "business",
+      "hero_source_index": 5,
+      "card_source_indexes": [
+        3
+      ],
+      "diagnostics": {
+        "model": "claude-sonnet-5",
+        "writer_model": "claude-sonnet-4-5",
+        "rejected": [
+          {
+            "source_index": 6,
+            "reason": "Public health recall story belongs in U.S./health coverage, not business; no corporate or economic consequence is the focus of the reporting."
+          }
+        ],
+        "writer_failures": [
+          {
+            "source_index": 4,
+            "reason": [
+              "generated_copy_drifted_from_source_focus"
+            ]
+          },
+          {
+            "source_index": 1,
+            "reason": [
+              "generated_copy_drifted_from_source_focus"
+            ]
+          },
+          {
+            "source_index": 6,
+            "reason": [
+              "headline_entity_missing_from_lead"
+            ]
+          }
+        ],
+        "protected_material_update_repairs": [],
+        "editor_selected_card_count": 4,
+        "section_depth_target": 8,
+        "section_depth_accepted_cards": 2,
+        "section_depth_shortfall": 6,
+        "depth_backfill_writer_attempts": 1,
+        "writer_card_attempts": 5,
+        "duration_seconds": 42.841
       }
     },
     {
       "category_key": "tech",
-      "hero_source_index": 7,
+      "hero_source_index": 1,
       "card_source_indexes": [
-        11,
-        8,
-        13,
         6,
-        2
+        4,
+        10,
+        9,
+        2,
+        8,
+        11,
+        12
+      ],
+      "diagnostics": {
+        "model": "claude-sonnet-5",
+        "writer_model": "claude-sonnet-4-5",
+        "rejected": [
+          {
+            "source_index": 5,
+            "reason": "Thin, niche modding/hobbyist story about running DLSS 5 in an emulator; not a consequential tech development for a general nationwide audience."
+          },
+          {
+            "source_index": 11,
+            "reason": "Aviation/climate disruption story is UK-centric with no clear U.S. national policy or consequence angle; better suited to business/world if anywhere."
+          },
+          {
+            "source_index": 12,
+            "reason": "Video game sales milestone is entertainment/gaming news, not a technology or science story of national consequence."
+          },
+          {
+            "source_index": 13,
+            "reason": "CD sales resurgence is a music industry/entertainment story, not technology or science under this category's rule."
+          }
+        ],
+        "writer_failures": [
+          {
+            "source_index": 7,
+            "reason": [
+              "headline_entity_missing_from_lead"
+            ]
+          },
+          {
+            "source_index": 3,
+            "reason": [
+              "person_first_reference_not_full_name"
+            ]
+          },
+          {
+            "source_index": 5,
+            "reason": [
+              "person_first_reference_not_full_name"
+            ]
+          }
+        ],
+        "protected_material_update_repairs": [],
+        "editor_selected_card_count": 8,
+        "section_depth_target": 8,
+        "section_depth_accepted_cards": 8,
+        "section_depth_shortfall": 0,
+        "depth_backfill_writer_attempts": 3,
+        "writer_card_attempts": 11,
+        "duration_seconds": 83.912
+      }
+    },
+    {
+      "category_key": "sports",
+      "hero_source_index": 5,
+      "card_source_indexes": [
+        8,
+        12,
+        4,
+        2,
+        3,
+        9,
+        7,
+        11
       ],
       "diagnostics": {
         "model": "claude-sonnet-5",
@@ -208,31 +266,72 @@
         "rejected": [
           {
             "source_index": 1,
-            "reason": "Discovery-only lifestyle app roundup with no national news consequence"
+            "reason": "Duplicate of source 5, same US Open event and reporting."
           },
           {
-            "source_index": 4,
-            "reason": "Same underlying OpenAI wiki incident story as source 11; duplicate event coverage"
-          },
-          {
-            "source_index": 5,
-            "reason": "Consumer alarm app launch, promotional in nature with no broader consequence"
-          },
-          {
-            "source_index": 9,
-            "reason": "Live-blog style roundup of consumer gadget announcements at a European trade show, promotional and not centered on a single consequential development"
+            "source_index": 6,
+            "reason": "Photo retrospective on Katie Taylor's career, duplicative of the farewell win covered in source 4."
           },
           {
             "source_index": 10,
-            "reason": "Thin source with no article text"
+            "reason": "Duplicate of source 9, identical UFC Paris report."
+          }
+        ],
+        "writer_failures": [],
+        "protected_material_update_repairs": [],
+        "editor_selected_card_count": 8,
+        "section_depth_target": 8,
+        "section_depth_accepted_cards": 8,
+        "section_depth_shortfall": 0,
+        "depth_backfill_writer_attempts": 0,
+        "writer_card_attempts": 8,
+        "duration_seconds": 75.261
+      }
+    },
+    {
+      "category_key": "entertainment",
+      "hero_source_index": 5,
+      "card_source_indexes": [
+        2,
+        10,
+        13,
+        16,
+        11,
+        14,
+        8,
+        15
+      ],
+      "diagnostics": {
+        "model": "claude-sonnet-5",
+        "writer_model": "claude-sonnet-4-5",
+        "rejected": [
+          {
+            "source_index": 1,
+            "reason": "Duplicate coverage of the same 'The Debut' Telluride premiere and Julianne Moore performance already represented by the hero and source 6; a review angle would overlap the selected card/hero."
+          },
+          {
+            "source_index": 6,
+            "reason": "Duplicate of source 5, identical article text about 'The Debut' at Telluride."
+          },
+          {
+            "source_index": 4,
+            "reason": "Thin, stale trivia piece about decades-old Star Trek: TNG production history with no current news value."
+          },
+          {
+            "source_index": 7,
+            "reason": "Duplicate of source 9's Creative Arts Emmys night one winners coverage; overlapping event already selected."
           },
           {
             "source_index": 12,
-            "reason": "Feature on an independent short film/Kickstarter project, entertainment human-interest piece not a consequential tech/science development"
+            "reason": "Primarily a tech/AI-use story tied to Danny Boyle's film; thinner entertainment angle largely duplicated by other Telluride/Venice coverage and better fits a tech category."
           },
           {
-            "source_index": 14,
-            "reason": "Discovery-only source with no article text"
+            "source_index": 15,
+            "reason": "Documentary review of a Pete Townshend film premiere; lower national significance compared to selected cards and would overcrowd festival-review coverage already represented."
+          },
+          {
+            "source_index": 17,
+            "reason": "Local true-crime fundraiser story classified as U.S. news, not an entertainment or cultural story; off-category for Entertainment."
           }
         ],
         "writer_failures": [
@@ -244,211 +343,34 @@
           }
         ],
         "protected_material_update_repairs": [],
-        "duration_seconds": 51.419
-      }
-    },
-    {
-      "category_key": "sports",
-      "hero_source_index": 1,
-      "card_source_indexes": [
-        2,
-        13,
-        6,
-        8,
-        3
-      ],
-      "diagnostics": {
-        "model": "claude-sonnet-5",
-        "writer_model": "claude-sonnet-4-5",
-        "rejected": [
-          {
-            "source_index": 4,
-            "reason": "Transfer gossip roundup with unconfirmed rumors, not a confirmed move or signing"
-          },
-          {
-            "source_index": 5,
-            "reason": "Pundit commentary and analysis on lower-tier English football results, routine domestic coverage"
-          },
-          {
-            "source_index": 7,
-            "reason": "Thin service piece about TV/streaming info, no factual news content"
-          },
-          {
-            "source_index": 10,
-            "reason": "Extremely thin summary of a routine Premier League draw with no material detail"
-          },
-          {
-            "source_index": 11,
-            "reason": "Routine Super League match result without broader national significance"
-          },
-          {
-            "source_index": 12,
-            "reason": "Routine Premier League match result, one of several similar weekend results"
-          },
-          {
-            "source_index": 14,
-            "reason": "Routine Premier League scoreless draw, no national significance"
-          },
-          {
-            "source_index": 15,
-            "reason": "Aggregator schedule/listicle piece, not a distinct news story"
-          },
-          {
-            "source_index": 16,
-            "reason": "Routine Premier League match result, one of several similar weekend results"
-          },
-          {
-            "source_index": 17,
-            "reason": "Routine Premier League match result, one of several similar weekend results"
-          },
-          {
-            "source_index": 18,
-            "reason": "Routine Premier League scoreless draw, no national significance"
-          }
-        ],
-        "writer_failures": [
-          {
-            "source_index": 9,
-            "reason": [
-              "generated_copy_drifted_from_source_focus"
-            ]
-          }
-        ],
-        "protected_material_update_repairs": [],
-        "duration_seconds": 56.379
-      }
-    },
-    {
-      "category_key": "entertainment",
-      "hero_source_index": 15,
-      "card_source_indexes": [
-        14,
-        5,
-        3,
-        13,
-        9,
-        18,
-        6
-      ],
-      "diagnostics": {
-        "model": "claude-sonnet-5",
-        "writer_model": "claude-sonnet-4-5",
-        "rejected": [
-          {
-            "source_index": 1,
-            "reason": "Speculative awards-season trend piece on Penélope Cruz with no concrete news development; thin factual basis for hero or card placement."
-          },
-          {
-            "source_index": 2,
-            "reason": "Same Telluride/Venice festival documentary review cycle as other selected review pieces; review-only content with no material news event, and category already well represented by stronger stories."
-          },
-          {
-            "source_index": 4,
-            "reason": "Documentary review with no news event; category coverage already includes multiple festival-season entertainment pieces of similar weight."
-          },
-          {
-            "source_index": 7,
-            "reason": "Thin source (56 words), no article text, essentially a promotional interview snippet lacking substantive news value."
-          },
-          {
-            "source_index": 8,
-            "reason": "Duplicate of source 14 covering the same Bruce Campbell cancer prognosis interview; source 14 is fuller and selected instead."
-          },
-          {
-            "source_index": 10,
-            "reason": "Celebrity feud reconciliation and defense of past antisemitic remarks; lacks broader national consequence beyond music-world gossip."
-          },
-          {
-            "source_index": 11,
-            "reason": "Music trivia/history feature on a sample's cultural lineage; interesting but lacks timely news consequence for a nationwide general-news audience."
-          },
-          {
-            "source_index": 12,
-            "reason": "Media-industry personnel and viewer-reaction story that is more media-trade interest than national entertainment news; thin news development beyond a host's social media replies."
-          },
-          {
-            "source_index": 16,
-            "reason": "Celebrity birth announcement wrapped in an extensive listicle of other celebrity births; falls under promotional/listicle rule and lacks national consequence."
-          },
-          {
-            "source_index": 17,
-            "reason": "Routine awards-show hosting announcement with limited national consequence beyond country music fans; lower news urgency than selected cards."
-          }
-        ],
-        "writer_failures": [],
-        "protected_material_update_repairs": [],
-        "duration_seconds": 63.983
+        "editor_selected_card_count": 8,
+        "section_depth_target": 8,
+        "section_depth_accepted_cards": 8,
+        "section_depth_shortfall": 0,
+        "depth_backfill_writer_attempts": 2,
+        "writer_card_attempts": 9,
+        "duration_seconds": 80.161
       }
     },
     {
       "category_key": "politics",
-      "hero_source_index": 3,
+      "hero_source_index": 2,
       "card_source_indexes": [
-        13,
-        7,
-        14
+        1
       ],
       "diagnostics": {
         "model": "claude-sonnet-5",
         "writer_model": "claude-sonnet-4-5",
-        "rejected": [
-          {
-            "source_index": 1,
-            "reason": "Same event as source 7, which offers fuller reporting; duplicate coverage of the MAGA Inc. Paxton donation."
-          },
-          {
-            "source_index": 3,
-            "reason": "Same Witkoff/Kushner-Putin meeting event as hero source 9, which is the protected material-update canonical; avoid duplicating."
-          },
-          {
-            "source_index": 4,
-            "reason": "Thin brief on Sunday show previews, largely overlapping with source 5 and lacking independent news weight."
-          },
-          {
-            "source_index": 5,
-            "reason": "Minor scheduling update about convention speaking order; low consequence, thin brief."
-          },
-          {
-            "source_index": 6,
-            "reason": "Foreign policy statement about Israeli settler violence in the West Bank; primary actor and consequence is foreign, belongs in World if covered at all."
-          },
-          {
-            "source_index": 12,
-            "reason": "Duplicate of source 13's more detailed report on the same US-Iran tanker strikes."
-          }
-        ],
-        "writer_failures": [
-          {
-            "source_index": 11,
-            "reason": [
-              "body_under_90_words",
-              "source_under_80_words"
-            ]
-          },
-          {
-            "source_index": 2,
-            "reason": [
-              "source_under_80_words"
-            ]
-          },
-          {
-            "source_index": 10,
-            "reason": [
-              "body_under_90_words",
-              "source_under_80_words"
-            ]
-          },
-          {
-            "source_index": 8,
-            "reason": [
-              "body_under_90_words",
-              "person_first_reference_not_full_name",
-              "source_under_80_words"
-            ]
-          }
-        ],
+        "rejected": [],
+        "writer_failures": [],
         "protected_material_update_repairs": [],
-        "duration_seconds": 52.062
+        "editor_selected_card_count": 1,
+        "section_depth_target": 8,
+        "section_depth_accepted_cards": 1,
+        "section_depth_shortfall": 7,
+        "depth_backfill_writer_attempts": 0,
+        "writer_card_attempts": 1,
+        "duration_seconds": 16.468
       }
     }
   ]
