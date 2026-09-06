@@ -1,64 +1,52 @@
 {
-  "generated_at": "2026-09-06T16:02:07Z",
-  "evaluated": 4,
-  "material_updates": 0,
-  "duplicates_suppressed": 3,
+  "generated_at": "2026-09-06T22:01:51Z",
+  "evaluated": 3,
+  "material_updates": 1,
+  "duplicates_suppressed": 2,
   "holds_suppressed": 0,
-  "new_or_unmatched": 1,
+  "new_or_unmatched": 0,
   "items": [
     {
       "category": "world",
-      "title": "Volcano eruption leaves 150,000 passengers stranded in Indonesia",
+      "title": "Volcano eruption leaves 170,000 passengers stranded in Indonesia",
       "source_url": "https://www.bbc.co.uk/news/articles/cvgy5k4n07ko?at_medium=RSS&at_campaign=rss",
-      "action": "duplicate_use_existing_canonical",
+      "action": "update_existing_canonical",
       "selected_candidate_slug": "2026-09-06-volcanic-eruption-strands-150000-passengers-as-indonesia-closes-six-airports",
-      "confidence": 0.98,
-      "novel_facts": [],
-      "reason": "Identical BBC article covering the same Anak Krakatau eruption event, same airport closures, same figures and quotes, published same day from the same source URL. No new facts beyond the existing canonical version.",
+      "confidence": 0.95,
+      "novel_facts": [
+        "Stranded passenger count updated from 150,000 to 170,000",
+        "Airport closures updated from six to eight",
+        "Flight delays updated from 467 to 1,558",
+        "Airports to remain closed until 09:00 local time Monday",
+        "New resident quote from Aldi Candra Prayogi describing eye irritation"
+      ],
+      "reason": "This is the same volcanic eruption event (Anak Krakatau) affecting the same airports, reported by the same source, with updated and higher casualty/impact figures (170,000 vs 150,000 stranded passengers, eight vs six airports, 1,558 vs 467 flights delayed) plus a specific reopening timeline. These are material updates that revise the scale of disruption but do not introduce a distinct accountability or policy angle warranting a separate story.",
       "cache_hit": false
     },
     {
-      "category": "sports",
-      "title": "LIVE: F1 Italian Grand Prix updates - Kimi Antonelli leads George Russell in closing stages | Live text - Motorsport.com",
-      "source_url": "https://www.motorsport.com/f1/live-text/f1-italian-gp-live-commentary-and-updates-race-1127678/1127679/",
-      "action": "new_story",
-      "selected_candidate_slug": "",
+      "category": "world",
+      "title": "Egyptian TV presenter Sarah Khalifa sentenced to death in drug case - France 24",
+      "source_url": "https://www.france24.com/en/africa/20260906-egyptian-tv-presenter-sarah-khalifa-sentenced-to-death-in-drug-case",
+      "action": "duplicate_use_existing_canonical",
+      "selected_candidate_slug": "2026-09-06-egyptian-court-sentences-tv-presenter-and-11-others-to-death-in-drug-trafficking",
       "confidence": 0.97,
       "novel_facts": [
-        "Italian Grand Prix at Monza",
-        "Antonelli wins from 19th on grid",
-        "Race date Sept 6 2026",
-        "Verstappen third, Norris passes Piastri for fourth"
+        "Additional detail on 5-year sentence for separate kidnapping/assault case",
+        "Reference to 541 death sentences in Egypt in 2025"
       ],
-      "reason": "Candidate covers a different race (British GP sprint at Silverstone, July 2026) with a different winner/result context. Incoming article covers the Italian Grand Prix at Monza on a different date with a distinct race outcome (Antonelli from P19 to win). No shared event anchors beyond driver names and sport; this is a separate race entirely, warranting its own story.",
+      "reason": "Both articles report the identical verdict against Sarah Khalifa and 11 co-defendants in the same Cairo drug trafficking case, citing the same seizure figures and background. No new material development (arrest, appeal ruling, death, etc.) is introduced; the incoming piece adds only supplementary detail already covered by the existing canonical.",
       "cache_hit": false
     },
     {
-      "category": "entertainment",
-      "title": "Bad Bunny’s Super Bowl Halftime Show Wins 7 Emmy Awards",
-      "source_url": "https://www.rollingstone.com/music/music-news/bad-bunny-super-bowl-halftime-show-wins-7-emmy-awards-1235622294/",
+      "category": "tech",
+      "title": "Europe has its first commercial orbital rocket",
+      "source_url": "https://www.theverge.com/science/990906/isar-aerospace-europe-orbital-rocket-launch",
       "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-09-06-bad-bunnys-super-bowl-halftime-show-and-the-traitors-lead-creative-arts-emmys-ni",
+      "selected_candidate_slug": "2026-09-06-german-startup-isar-aerospace-becomes-first-private-company-to-launch-commercial",
       "confidence": 0.95,
       "novel_facts": [],
-      "reason": "Both articles report the identical event: Bad Bunny's Super Bowl halftime show winning 7 Emmys at the Creative Arts Emmys, with Sabrina Carpenter also winning for The Muppet Show. The incoming article adds minor color (Jay-Z's third Emmy count, SNL makeup win, Colbert's wins) but no material update like a new development, ruling, or accountability angle beyond what's already covered in the canonical article, which already contains this information plus additional details (Hargitay, Kimmel, etc).",
+      "reason": "Both articles report the identical event: Isar Aerospace's Spectrum rocket successfully reaching orbit from a Norwegian spaceport, Europe's first fully commercial orbital launch, referencing the same CEO quote and prior March failure. The incoming article contains no new facts beyond what the canonical already covers; it is a shorter, less detailed version of the same story.",
       "cache_hit": false
-    },
-    {
-      "category": "politics",
-      "title": "Witkoff and Kushner meet with Putin about ending Ukraine war",
-      "source_url": "https://www.axios.com/2026/09/05/putin-witkoff-kushner-trump-ukraine-war",
-      "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-09-05-trump-envoys-meet-with-putin-in-moscow-plan-ukraine-trip-amid-airstrike-pause",
-      "confidence": 0.95,
-      "novel_facts": [
-        "Gene Lange's preparatory meeting with Kirill Dmitriev",
-        "Ushakov's quote about 'serious preparations'",
-        "White House official statement on NSC/State/Treasury involvement",
-        "Bessent-Russian counterpart meeting at G20 in Asheville"
-      ],
-      "reason": "This is the same Kremlin meeting reported in the canonical article (identical source URL, same participants, same three-hour meeting, same airstrike pause and Kyiv trip plans). The incoming version adds contextual detail (Lange's role, quotes from Ushakov and a White House official, Bessent's prior meeting) but none constitute a material update category like an arrest, death, ruling, or casualty revision�just additional background on the same ongoing diplomatic event.",
-      "cache_hit": true
     }
   ]
 }

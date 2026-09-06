@@ -4,41 +4,41 @@
 
 ## Hero
 
-- Current: **Kimi Antonelli wins Italian Grand Prix from 19th on grid, extending championship lead to 66 points**
-- Recommended: **German startup Isar Aerospace becomes first private company to launch commercial rocket into orbit from Europe**
+- Current: **Seattle Times and Newsday sue OpenAI and Microsoft over alleged unauthorized use of journalism to train AI**
+- Recommended: **Zelensky expects war with Russia to continue into winter after talks with Trump envoys**
 - Recommendation: CHANGE (not enforced)
 
 ## Top Stories deck
 
 | Rank | Current | Recommended | Score | Why |
 | ---: | --- | --- | ---: | --- |
-| 1 | Trump envoys meet with Zelensky in Kyiv after Moscow talks with Putin | Trump envoys meet with Zelensky in Kyiv after Moscow talks with Putin | 91 | importance 82; freshness 98.88; urgency 9/10 |
-| 2 | Anak Krakatau volcano eruption closes six Indonesian airports, cancels hundreds of flights | German startup Isar Aerospace becomes first private company to launch commercial rocket into orbit from Europe | 91 | importance 100; freshness 92.85; urgency 7/10 |
-| 3 | Bus crash on Cape Verde's Fogo Island kills at least 25, mostly students | Trump envoys Witkoff and Kushner visit Ukraine for first time after Moscow talks with Putin | 87 | importance 77; freshness 99.2; urgency 8/10 |
-| 4 | Lavrov calls Western accusations over Leipzig drone incident 'start of real war' | Historical data shows divided Congress under Republican president tied to 7.33% average annual S&P 500 return | 79 | importance 100; freshness 78.46; urgency 5/10 |
-| 5 | Residential student hostel collapses in Delhi with dozens feared trapped | Plug-in solar systems gain legal ground in over a dozen US states | 78 | importance 70; freshness 99.99; urgency 5/10 |
-| 6 | Greek air force F-4 Phantom jet crashes at air show near Athens, killing both pilots | Trump, Vance to headline GOP midterm convention in Dallas next week | 75 | importance 77; freshness 70.43; urgency 6/10 |
-| 7 | Egyptian court sentences TV presenter and 11 others to death in drug trafficking case | Jamaica to present slavery reparations petition to King Charles | 72 | importance 40; freshness 98.57; urgency 7/10 |
-| 8 | US military strikes three Iranian oil tankers in retaliation for attacks on American warships | Photographer Bob Minkin recalls documenting New York music scene in the 1970s and 1980s | 68 | importance 58; freshness 67.98; urgency 7/10 |
-| 9 | US diesel prices reach all-time high as Iran conflict disrupts fuel supply | Susan Sarandon says agencies still discourage her hiring over pro-Palestinian advocacy | 66 | importance 45; freshness 93.7; urgency 4/10 |
-| 10 | Massachusetts judge declares mistrial in Lindsay Clancy case after jury deadlocks 11-1 | Lavrov calls Western accusations over Leipzig drone incident 'start of real war' | 66 | importance 40; freshness 92.17; urgency 7/10 |
-| 11 | Fetterman calls former staffers 'disgruntled' after report alleges indifference to Senate duties | Kimi Antonelli wins Italian Grand Prix from 19th on grid, extending championship lead to 66 points | 65 | importance 25; freshness 99.02; urgency 6/10 |
-| 12 | Jamaica to present slavery reparations petition to King Charles | Trump threatens trade embargoes on deficit countries unless Federal Reserve cuts rates | 64 | importance 95; freshness 37.71; urgency 3/10 |
+| 1 | Iran warns of escalating retaliation against US as fighting continues in the Gulf | Zelensky expects war with Russia to continue into winter after talks with Trump envoys | 88 | importance 82; freshness 97.46; urgency 8/10 |
+| 2 | Zelensky expects war with Russia to continue into winter after talks with Trump envoys | Germany's far-right AfD projected to win record 44% in eastern state election, falling just short of majority | 87 | importance 76; freshness 99.0; urgency 8/10 |
+| 3 | Germany's far-right AfD projected to win record 44% in eastern state election, falling just short of majority | Trump envoys Witkoff and Kushner visit Kyiv for peace talks after meeting Putin in Moscow | 84 | importance 77; freshness 89.18; urgency 8/10 |
+| 4 | Indonesia volcano eruption strands 170,000 airline passengers as authorities close eight airports until Monday | Trump proposes renaming New Mexico as 'New America' in latest geography relabeling push | 82 | importance 100; freshness 96.22; urgency 4/10 |
+| 5 | Delhi building collapse leaves dozens of students feared trapped, at least three dead | German startup Isar Aerospace becomes first private company to launch commercial rocket into orbit from Europe | 81 | importance 100; freshness 89.99; urgency 3/10 |
+| 6 | Record 140 migrants rescued from single dinghy in English Channel | Historical data shows divided Congress under Republican president tied to 7.33% average annual S&P 500 return | 77 | importance 100; freshness 68.45; urgency 5/10 |
+| 7 | Germany's far-right AfD celebrates projected Saxony-Anhalt election win | 'Woman Unknown' Review: May el-Toukhy Drama Explores Post-War Sexual Shame | 73 | importance 50; freshness 96.72; urgency 7/10 |
+| 8 | Greek air force F-4 Phantom jet crashes at air show near Athens, killing both pilots | 'Spider-Man: Brand New Day' holds No. 1 for sixth straight weekend, nears domestic box office record | 73 | importance 55; freshness 92.19; urgency 6/10 |
+| 9 | Egyptian court sentences TV presenter and 11 others to death in drug trafficking case | Great Britain and Ireland complete historic Walker Cup comeback to beat United States | 72 | importance 55; freshness 96.66; urgency 5/10 |
+| 10 | Amazon cargo plane overruns Miami runway, killing five and injuring five after striking vehicles | Democratic governors weighing 2028 bids face timing dilemma after DeSantis setbacks | 71 | importance 77; freshness 60.42; urgency 5/10 |
+| 11 | Hawaii declares state of emergency as Hurricane Lowell approaches | Trump-linked PAC invests $10 million in Texas Senate race supporting Paxton | 69 | importance 47; freshness 95.19; urgency 5/10 |
+| 12 | Trump proposes renaming New Mexico as 'New America' in latest geography relabeling push | Iran warns of escalating retaliation against US as fighting continues in the Gulf | 71 | importance 51; freshness 59.05; urgency 9/10; -6 category saturation |
 
 ## Recommended moves
 
-- **Trump envoys Witkoff and Kushner visit Ukraine for first time after Moscow talks with Putin**: 52 → 3 — importance 77; freshness 99.2; urgency 8/10
-- **Trump, Vance to headline GOP midterm convention in Dallas next week**: 53 → 6 — importance 77; freshness 70.43; urgency 6/10
-- **Photographer Bob Minkin recalls documenting New York music scene in the 1970s and 1980s**: 49 → 8 — importance 58; freshness 67.98; urgency 7/10
-- **Susan Sarandon says agencies still discourage her hiring over pro-Palestinian advocacy**: 45 → 9 — importance 45; freshness 93.7; urgency 4/10
-- **German startup Isar Aerospace becomes first private company to launch commercial rocket into orbit from Europe**: 26 → 2 — importance 100; freshness 92.85; urgency 7/10
-- **Plug-in solar systems gain legal ground in over a dozen US states**: 29 → 5 — importance 70; freshness 99.99; urgency 5/10
-- **Kimi Antonelli wins Italian Grand Prix from 19th on grid, extending championship lead to 66 points**: 35 → 11 — importance 25; freshness 99.02; urgency 6/10
-- **Historical data shows divided Congress under Republican president tied to 7.33% average annual S&P 500 return**: 17 → 4 — importance 100; freshness 78.46; urgency 5/10
-- **Bus crash on Cape Verde's Fogo Island kills at least 25, mostly students**: 3 → 14 — importance 40; freshness 90.59; urgency 7/10
-- **Anak Krakatau volcano eruption closes six Indonesian airports, cancels hundreds of flights**: 2 → 13 — importance 16; freshness 88.98; urgency 7/10
-- **US military strikes three Iranian oil tankers in retaliation for attacks on American warships**: 8 → 18 — importance 61; freshness 69.96; urgency 3/10
-- **Fetterman calls former staffers 'disgruntled' after report alleges indifference to Senate duties**: 11 → 21 — importance 63; freshness 36.14; urgency 5/10
+- **Trump envoys Witkoff and Kushner visit Kyiv for peace talks after meeting Putin in Moscow**: 53 → 3 — importance 77; freshness 89.18; urgency 8/10
+- **'Woman Unknown' Review: May el-Toukhy Drama Explores Post-War Sexual Shame**: 51 → 7 — importance 50; freshness 96.72; urgency 7/10
+- **Democratic governors weighing 2028 bids face timing dilemma after DeSantis setbacks**: 54 → 10 — importance 77; freshness 60.42; urgency 5/10
+- **'Spider-Man: Brand New Day' holds No. 1 for sixth straight weekend, nears domestic box office record**: 50 → 8 — importance 55; freshness 92.19; urgency 6/10
+- **Great Britain and Ireland complete historic Walker Cup comeback to beat United States**: 38 → 9 — importance 55; freshness 96.66; urgency 5/10
+- **German startup Isar Aerospace becomes first private company to launch commercial rocket into orbit from Europe**: 29 → 5 — importance 100; freshness 89.99; urgency 3/10
+- **Historical data shows divided Congress under Republican president tied to 7.33% average annual S&P 500 return**: 17 → 6 — importance 100; freshness 68.45; urgency 5/10
+- **Iran warns of escalating retaliation against US as fighting continues in the Gulf**: 1 → 12 — importance 51; freshness 59.05; urgency 9/10; -6 category saturation
+- **Hawaii declares state of emergency as Hurricane Lowell approaches**: 11 → 20 — importance 30; freshness 95.02; urgency 6/10
+- **Record 140 migrants rescued from single dinghy in English Channel**: 6 → 15 — importance 30; freshness 98.23; urgency 5/10
+- **Amazon cargo plane overruns Miami runway, killing five and injuring five after striking vehicles**: 10 → 19 — importance 16; freshness 97.25; urgency 8/10
+- **Delhi building collapse leaves dozens of students feared trapped, at least three dead**: 5 → 14 — importance 33; freshness 91.15; urgency 5/10
 
 ## Guardrails
 
