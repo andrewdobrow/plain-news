@@ -7,169 +7,66 @@
     "resolver_version": "3.0",
     "relationship_engine_version": "1.5"
   },
-  "generated_at": "2026-09-06T22:13:07Z",
+  "generated_at": "2026-09-07T04:12:55Z",
   "mode": "enforce",
   "publication_behavior_changed": false,
   "activation": {},
   "registry_path": "/home/runner/work/plain-news/plain-news/story-registry.json",
   "audit": {
-    "candidates_processed": 53,
+    "candidates_processed": 55,
     "routes": {
-      "archive_recovery": 18,
-      "generate_new": 28,
-      "skip": 6,
-      "update_existing": 1
+      "archive_recovery": 36,
+      "generate_new": 5,
+      "skip": 12,
+      "update_existing": 2
     },
     "eligibility": {
-      "low_value": 1,
-      "publishable": 52
+      "publishable": 55
     },
     "source_classes": {
-      "aggregator": 1,
-      "entertainment_news": 8,
-      "international_news": 19,
-      "national_news": 4,
-      "politics_news": 1,
-      "unknown": 20
+      "international_news": 16,
+      "national_news": 3,
+      "unknown": 36
     },
     "rejected_count": 0,
     "rejected_examples": []
   },
   "relationships": {
     "counts": {
-      "new_story": 26,
-      "same_event": 9
+      "follow_up": 1,
+      "new_story": 5,
+      "same_event": 13
     },
     "examples": [
       {
-        "story_id": "story_000086",
-        "title": "Iran warns of escalating retaliation against US as fighting continues in the Gulf",
-        "event_key": "war-or-military-action-washington",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "reason": "Exact event key already belongs to this story",
-        "decision_trace": [
-          "Relationship: same_event",
-          "Exact event-key mapping: true",
-          "No novel follow-up milestone: true",
-          "Confidence: 1.00"
-        ]
-      },
-      {
-        "story_id": "story_000158",
-        "title": "Zelensky expects war with Russia to continue into winter after talks with Trump envoys",
-        "event_key": "war-or-military-action-c4f36591c6",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "reason": "Exact source article URL already belongs to this story",
-        "decision_trace": [
-          "Exact source article identity: true",
-          "Normalized source URL: https://www.bbc.co.uk/news/articles/c6248nvqy8po?at_campaign=rss&at_medium=RSS",
-          "Confidence: 1.00"
-        ]
-      },
-      {
-        "story_id": "story_000212",
-        "title": "Germany's far-right AfD projected to win record 44% in eastern state election, falling just short of majority",
-        "event_key": "election-60c141bc40",
+        "story_id": "story_000239",
+        "title": "Australia proposes law requiring social media platforms to offer algorithm opt-out",
+        "event_key": "unknown-event-9d802da661",
         "relationship": "new_story",
         "confidence": 0.0,
         "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
         "decision_trace": [
           "Sparse event-key resolver guard: true",
           "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
-        "story_id": "story_000160",
-        "title": "Indonesia volcano eruption strands 170,000 airline passengers as authorities close eight airports until Monday",
-        "event_key": "fire-d1b00e2a3c-d1b00e2a3c",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "reason": "Exact source article URL already belongs to this story",
-        "decision_trace": [
-          "Exact source article identity: true",
-          "Normalized source URL: https://www.bbc.co.uk/news/articles/cvgy5k4n07ko?at_campaign=rss&at_medium=RSS",
-          "Confidence: 1.00"
-        ]
-      },
-      {
-        "story_id": "story_000180",
-        "title": "Delhi building collapse leaves dozens of students feared trapped, at least three dead",
-        "event_key": "fire-51c4babf4a-51c4babf4a",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "reason": "Exact normalized title already belongs to this story",
-        "decision_trace": [
-          "Relationship: same_event",
-          "Exact normalized title match: true",
-          "Confidence: 1.00"
         ]
       },
       {
         "story_id": "story_000213",
-        "title": "Record 140 migrants rescued from single dinghy in English Channel",
+        "title": "Protesters block Portsmouth roads after 140 migrants rescued from English Channel",
         "event_key": "election-c5fead060a",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "reason": "Exact source article URL already belongs to this story",
         "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
+          "Exact source article identity: true",
+          "Normalized source URL: https://www.bbc.co.uk/news/articles/clyegwl9vzqo?at_campaign=rss&at_medium=RSS",
+          "Confidence: 1.00"
         ]
       },
       {
-        "story_id": "story_000214",
-        "title": "Germany's far-right AfD celebrates projected Saxony-Anhalt election win",
-        "event_key": "election-0702f3b1f8",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
-        "story_id": "story_000215",
-        "title": "Amazon cargo plane overruns Miami runway, killing five and injuring five after striking vehicles",
-        "event_key": "traffic-crash-908e3f613e-908e3f613e",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
-        "story_id": "story_000216",
-        "title": "Hawaii declares state of emergency as Hurricane Lowell approaches",
-        "event_key": "natural-disaster-hawaii",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "reason": "Created new story: conservative merge requirements were not met",
-        "decision_trace": [
-          "No sufficiently supported match",
-          "Threshold: 0.78"
-        ]
-      },
-      {
-        "story_id": "story_000217",
-        "title": "Trump proposes renaming New Mexico as 'New America' in latest geography relabeling push",
-        "event_key": "election-alaska",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "reason": "Created new story: conservative merge requirements were not met",
-        "decision_trace": [
-          "No sufficiently supported match",
-          "Threshold: 0.78"
-        ]
-      },
-      {
-        "story_id": "story_000218",
-        "title": "MapQuest app usage surges roughly 50-fold after company refuses to rename Lake Ontario",
-        "event_key": "unknown-event-47aaeb1788",
+        "story_id": "story_000240",
+        "title": "Austria enforces headscarf ban for girls under 14 in schools",
+        "event_key": "election-46c4424193",
         "relationship": "new_story",
         "confidence": 0.0,
         "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
@@ -193,22 +90,9 @@
         ]
       },
       {
-        "story_id": "story_000213",
-        "title": "140 migrants rescued from single dinghy in English Channel",
-        "event_key": "election-5b940edb87",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "reason": "Exact normalized title already belongs to this story",
-        "decision_trace": [
-          "Relationship: same_event",
-          "Exact normalized title match: true",
-          "Confidence: 1.00"
-        ]
-      },
-      {
-        "story_id": "story_000219",
-        "title": "Trump-linked PAC invests $10 million in Texas Senate race supporting Paxton",
-        "event_key": "unknown-event-22d739fc86",
+        "story_id": "story_000241",
+        "title": "Trump envoys meet with Ukrainian and Russian leaders, but peace remains elusive",
+        "event_key": "war-or-military-action-d73b7348c6",
         "relationship": "new_story",
         "confidence": 0.0,
         "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
@@ -218,21 +102,9 @@
         ]
       },
       {
-        "story_id": "story_000220",
-        "title": "Kimi Antonelli wins Italian Grand Prix from 19th on grid, extends Mercedes championship lead over George Russell to 66 points",
-        "event_key": "shooting-cecfda2d52",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
-        "story_id": "story_000106",
-        "title": "Alcaraz reaches US Open quarterfinals, extends major win streak to 18 matches",
-        "event_key": "shooting-new-york",
+        "story_id": "story_000158",
+        "title": "Zelensky expects Ukraine war to continue into winter after talks with Trump envoys",
+        "event_key": "war-or-military-action-8a3a18a01c",
         "relationship": "same_event",
         "confidence": 1.0,
         "reason": "Exact event key already belongs to this story",
@@ -244,21 +116,87 @@
         ]
       },
       {
-        "story_id": "story_000221",
-        "title": "Sabalenka reaches sixth straight US Open quarterfinal, matching Serena Williams feat",
-        "event_key": "unknown-event-e87fc18a58",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "story_id": "story_000182",
+        "title": "Jamaica to present slavery reparations petition to King Charles",
+        "event_key": "unknown-event-4fc412d9dd",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "reason": "Exact event key already belongs to this story",
         "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000106",
+        "title": "Alcaraz reaches US Open quarterfinals in fourth match back from wrist injury",
+        "event_key": "shooting-new-york",
+        "relationship": "follow_up",
+        "confidence": 1.0,
+        "reason": "Attached distinct event as a follow-up to an existing developing story",
+        "decision_trace": [
+          "Relationship: follow_up",
+          "Distinctive facts overlap: 1.00",
+          "Identity anchor qualified: True",
+          "Location match: True",
+          "Agency match: False",
+          "Event type match: True",
+          "Entity match: True",
+          "Lifecycle signal: False",
+          "Novel milestones: none",
+          "Novel fact ratio: 0.50",
+          "Confidence: 1.00",
+          "Threshold: 0.68"
+        ]
+      },
+      {
+        "story_id": "story_000221",
+        "title": "Sabalenka reaches sixth straight US Open quarterfinal, matching Serena Williams mark",
+        "event_key": "unknown-event-e87fc18a58",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "reason": "Exact event key already belongs to this story",
+        "decision_trace": [
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000220",
+        "title": "Kimi Antonelli wins Italian Grand Prix from 19th on grid, extends championship lead to 66 points",
+        "event_key": "shooting-cecfda2d52",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "reason": "Exact event key already belongs to this story",
+        "decision_trace": [
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
         ]
       },
       {
         "story_id": "story_000222",
-        "title": "Great Britain and Ireland complete historic Walker Cup comeback to beat United States",
+        "title": "Great Britain and Ireland complete record Walker Cup comeback to defeat United States",
         "event_key": "shooting-4d300b74a3",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "reason": "Exact event key already belongs to this story",
+        "decision_trace": [
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000242",
+        "title": "Jak Jones upsets Mark Selby 10-6 to win British Open snooker title",
+        "event_key": "unknown-event-c1a5545905",
         "relationship": "new_story",
         "confidence": 0.0,
         "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
@@ -269,20 +207,104 @@
       },
       {
         "story_id": "story_000223",
-        "title": "Luke Littler defeats Luke Humphries to win Czech Open darts title",
+        "title": "Luke Littler beats Luke Humphries to win Czech Open darts title",
         "event_key": "unknown-event-5e12e29ac2",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "reason": "Exact event key already belongs to this story",
         "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000225",
+        "title": "WSL investigates Crystal Palace for using four substitution windows in win over Everton",
+        "event_key": "unknown-event-a158182d12",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "reason": "Exact event key already belongs to this story",
+        "decision_trace": [
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000226",
+        "title": "British driver rescued from burning car by rival at China GT race",
+        "event_key": "traffic-crash-3b96864aff-3b96864aff",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "reason": "Exact event key already belongs to this story",
+        "decision_trace": [
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
         ]
       },
       {
         "story_id": "story_000224",
-        "title": "Britain's Gemma Stevens wins Burghley Horse Trials for first time in 25-year career",
+        "title": "Britain's Stevens wins Burghley Horse Trials for first time",
         "event_key": "unknown-event-0965f57904",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "reason": "Exact event key already belongs to this story",
+        "decision_trace": [
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000210",
+        "title": "Trump envoys Witkoff and Kushner visit Kyiv for peace talks after Moscow meetings",
+        "event_key": "war-or-military-action-808c35df76",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "reason": "Exact event key already belongs to this story",
+        "decision_trace": [
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000243",
+        "title": "Latino leaders pressure Beshear to invest $10 million in Texas governor's race",
+        "event_key": "election-arizona",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "reason": "Created new story: conservative merge requirements were not met",
+        "decision_trace": [
+          "No sufficiently supported match",
+          "Threshold: 0.78"
+        ]
+      },
+      {
+        "story_id": "story_000141",
+        "title": "Former DeSantis aides warn Democratic governors not to delay 2028 presidential bids",
+        "event_key": "election-florida",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "reason": "Exact event key already belongs to this story",
+        "decision_trace": [
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000186",
+        "title": "German company becomes first in Europe to launch fully commercial orbital rocket",
+        "event_key": "election-99b64047a1",
         "relationship": "new_story",
         "confidence": 0.0,
         "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
@@ -294,38 +316,9 @@
     ],
     "decision_trace_examples": [
       {
-        "story_id": "story_000086",
-        "title": "Iran warns of escalating retaliation against US as fighting continues in the Gulf",
-        "event_key": "war-or-military-action-washington",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "matched_existing": true,
-        "reason": "Exact event key already belongs to this story",
-        "decision_trace": [
-          "Relationship: same_event",
-          "Exact event-key mapping: true",
-          "No novel follow-up milestone: true",
-          "Confidence: 1.00"
-        ]
-      },
-      {
-        "story_id": "story_000158",
-        "title": "Zelensky expects war with Russia to continue into winter after talks with Trump envoys",
-        "event_key": "war-or-military-action-c4f36591c6",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "matched_existing": true,
-        "reason": "Exact source article URL already belongs to this story",
-        "decision_trace": [
-          "Exact source article identity: true",
-          "Normalized source URL: https://www.bbc.co.uk/news/articles/c6248nvqy8po?at_campaign=rss&at_medium=RSS",
-          "Confidence: 1.00"
-        ]
-      },
-      {
-        "story_id": "story_000212",
-        "title": "Germany's far-right AfD projected to win record 44% in eastern state election, falling just short of majority",
-        "event_key": "election-60c141bc40",
+        "story_id": "story_000239",
+        "title": "Australia proposes law requiring social media platforms to offer algorithm opt-out",
+        "event_key": "unknown-event-9d802da661",
         "relationship": "new_story",
         "confidence": 0.0,
         "matched_existing": false,
@@ -333,105 +326,26 @@
         "decision_trace": [
           "Sparse event-key resolver guard: true",
           "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
-        "story_id": "story_000160",
-        "title": "Indonesia volcano eruption strands 170,000 airline passengers as authorities close eight airports until Monday",
-        "event_key": "fire-d1b00e2a3c-d1b00e2a3c",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "matched_existing": true,
-        "reason": "Exact source article URL already belongs to this story",
-        "decision_trace": [
-          "Exact source article identity: true",
-          "Normalized source URL: https://www.bbc.co.uk/news/articles/cvgy5k4n07ko?at_campaign=rss&at_medium=RSS",
-          "Confidence: 1.00"
-        ]
-      },
-      {
-        "story_id": "story_000180",
-        "title": "Delhi building collapse leaves dozens of students feared trapped, at least three dead",
-        "event_key": "fire-51c4babf4a-51c4babf4a",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "matched_existing": true,
-        "reason": "Exact normalized title already belongs to this story",
-        "decision_trace": [
-          "Relationship: same_event",
-          "Exact normalized title match: true",
-          "Confidence: 1.00"
         ]
       },
       {
         "story_id": "story_000213",
-        "title": "Record 140 migrants rescued from single dinghy in English Channel",
+        "title": "Protesters block Portsmouth roads after 140 migrants rescued from English Channel",
         "event_key": "election-c5fead060a",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "matched_existing": false,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "matched_existing": true,
+        "reason": "Exact source article URL already belongs to this story",
         "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
+          "Exact source article identity: true",
+          "Normalized source URL: https://www.bbc.co.uk/news/articles/clyegwl9vzqo?at_campaign=rss&at_medium=RSS",
+          "Confidence: 1.00"
         ]
       },
       {
-        "story_id": "story_000214",
-        "title": "Germany's far-right AfD celebrates projected Saxony-Anhalt election win",
-        "event_key": "election-0702f3b1f8",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "matched_existing": false,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
-        "story_id": "story_000215",
-        "title": "Amazon cargo plane overruns Miami runway, killing five and injuring five after striking vehicles",
-        "event_key": "traffic-crash-908e3f613e-908e3f613e",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "matched_existing": false,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
-        "story_id": "story_000216",
-        "title": "Hawaii declares state of emergency as Hurricane Lowell approaches",
-        "event_key": "natural-disaster-hawaii",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "matched_existing": false,
-        "reason": "Created new story: conservative merge requirements were not met",
-        "decision_trace": [
-          "No sufficiently supported match",
-          "Threshold: 0.78"
-        ]
-      },
-      {
-        "story_id": "story_000217",
-        "title": "Trump proposes renaming New Mexico as 'New America' in latest geography relabeling push",
-        "event_key": "election-alaska",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "matched_existing": false,
-        "reason": "Created new story: conservative merge requirements were not met",
-        "decision_trace": [
-          "No sufficiently supported match",
-          "Threshold: 0.78"
-        ]
-      },
-      {
-        "story_id": "story_000218",
-        "title": "MapQuest app usage surges roughly 50-fold after company refuses to rename Lake Ontario",
-        "event_key": "unknown-event-47aaeb1788",
+        "story_id": "story_000240",
+        "title": "Austria enforces headscarf ban for girls under 14 in schools",
+        "event_key": "election-46c4424193",
         "relationship": "new_story",
         "confidence": 0.0,
         "matched_existing": false,
@@ -457,23 +371,9 @@
         ]
       },
       {
-        "story_id": "story_000213",
-        "title": "140 migrants rescued from single dinghy in English Channel",
-        "event_key": "election-5b940edb87",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "matched_existing": true,
-        "reason": "Exact normalized title already belongs to this story",
-        "decision_trace": [
-          "Relationship: same_event",
-          "Exact normalized title match: true",
-          "Confidence: 1.00"
-        ]
-      },
-      {
-        "story_id": "story_000219",
-        "title": "Trump-linked PAC invests $10 million in Texas Senate race supporting Paxton",
-        "event_key": "unknown-event-22d739fc86",
+        "story_id": "story_000241",
+        "title": "Trump envoys meet with Ukrainian and Russian leaders, but peace remains elusive",
+        "event_key": "war-or-military-action-d73b7348c6",
         "relationship": "new_story",
         "confidence": 0.0,
         "matched_existing": false,
@@ -484,22 +384,9 @@
         ]
       },
       {
-        "story_id": "story_000220",
-        "title": "Kimi Antonelli wins Italian Grand Prix from 19th on grid, extends Mercedes championship lead over George Russell to 66 points",
-        "event_key": "shooting-cecfda2d52",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "matched_existing": false,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
-        "story_id": "story_000106",
-        "title": "Alcaraz reaches US Open quarterfinals, extends major win streak to 18 matches",
-        "event_key": "shooting-new-york",
+        "story_id": "story_000158",
+        "title": "Zelensky expects Ukraine war to continue into winter after talks with Trump envoys",
+        "event_key": "war-or-military-action-8a3a18a01c",
         "relationship": "same_event",
         "confidence": 1.0,
         "matched_existing": true,
@@ -512,22 +399,92 @@
         ]
       },
       {
-        "story_id": "story_000221",
-        "title": "Sabalenka reaches sixth straight US Open quarterfinal, matching Serena Williams feat",
-        "event_key": "unknown-event-e87fc18a58",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "matched_existing": false,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "story_id": "story_000182",
+        "title": "Jamaica to present slavery reparations petition to King Charles",
+        "event_key": "unknown-event-4fc412d9dd",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "matched_existing": true,
+        "reason": "Exact event key already belongs to this story",
         "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000106",
+        "title": "Alcaraz reaches US Open quarterfinals in fourth match back from wrist injury",
+        "event_key": "shooting-new-york",
+        "relationship": "follow_up",
+        "confidence": 1.0,
+        "matched_existing": true,
+        "reason": "Attached distinct event as a follow-up to an existing developing story",
+        "decision_trace": [
+          "Relationship: follow_up",
+          "Distinctive facts overlap: 1.00",
+          "Identity anchor qualified: True",
+          "Location match: True",
+          "Agency match: False",
+          "Event type match: True",
+          "Entity match: True",
+          "Lifecycle signal: False",
+          "Novel milestones: none",
+          "Novel fact ratio: 0.50",
+          "Confidence: 1.00",
+          "Threshold: 0.68"
+        ]
+      },
+      {
+        "story_id": "story_000221",
+        "title": "Sabalenka reaches sixth straight US Open quarterfinal, matching Serena Williams mark",
+        "event_key": "unknown-event-e87fc18a58",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "matched_existing": true,
+        "reason": "Exact event key already belongs to this story",
+        "decision_trace": [
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000220",
+        "title": "Kimi Antonelli wins Italian Grand Prix from 19th on grid, extends championship lead to 66 points",
+        "event_key": "shooting-cecfda2d52",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "matched_existing": true,
+        "reason": "Exact event key already belongs to this story",
+        "decision_trace": [
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
         ]
       },
       {
         "story_id": "story_000222",
-        "title": "Great Britain and Ireland complete historic Walker Cup comeback to beat United States",
+        "title": "Great Britain and Ireland complete record Walker Cup comeback to defeat United States",
         "event_key": "shooting-4d300b74a3",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "matched_existing": true,
+        "reason": "Exact event key already belongs to this story",
+        "decision_trace": [
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000242",
+        "title": "Jak Jones upsets Mark Selby 10-6 to win British Open snooker title",
+        "event_key": "unknown-event-c1a5545905",
         "relationship": "new_story",
         "confidence": 0.0,
         "matched_existing": false,
@@ -539,21 +496,111 @@
       },
       {
         "story_id": "story_000223",
-        "title": "Luke Littler defeats Luke Humphries to win Czech Open darts title",
+        "title": "Luke Littler beats Luke Humphries to win Czech Open darts title",
         "event_key": "unknown-event-5e12e29ac2",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "matched_existing": false,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "matched_existing": true,
+        "reason": "Exact event key already belongs to this story",
         "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000225",
+        "title": "WSL investigates Crystal Palace for using four substitution windows in win over Everton",
+        "event_key": "unknown-event-a158182d12",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "matched_existing": true,
+        "reason": "Exact event key already belongs to this story",
+        "decision_trace": [
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000226",
+        "title": "British driver rescued from burning car by rival at China GT race",
+        "event_key": "traffic-crash-3b96864aff-3b96864aff",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "matched_existing": true,
+        "reason": "Exact event key already belongs to this story",
+        "decision_trace": [
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
         ]
       },
       {
         "story_id": "story_000224",
-        "title": "Britain's Gemma Stevens wins Burghley Horse Trials for first time in 25-year career",
+        "title": "Britain's Stevens wins Burghley Horse Trials for first time",
         "event_key": "unknown-event-0965f57904",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "matched_existing": true,
+        "reason": "Exact event key already belongs to this story",
+        "decision_trace": [
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000210",
+        "title": "Trump envoys Witkoff and Kushner visit Kyiv for peace talks after Moscow meetings",
+        "event_key": "war-or-military-action-808c35df76",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "matched_existing": true,
+        "reason": "Exact event key already belongs to this story",
+        "decision_trace": [
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000243",
+        "title": "Latino leaders pressure Beshear to invest $10 million in Texas governor's race",
+        "event_key": "election-arizona",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "matched_existing": false,
+        "reason": "Created new story: conservative merge requirements were not met",
+        "decision_trace": [
+          "No sufficiently supported match",
+          "Threshold: 0.78"
+        ]
+      },
+      {
+        "story_id": "story_000141",
+        "title": "Former DeSantis aides warn Democratic governors not to delay 2028 presidential bids",
+        "event_key": "election-florida",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "matched_existing": true,
+        "reason": "Exact event key already belongs to this story",
+        "decision_trace": [
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000186",
+        "title": "German company becomes first in Europe to launch fully commercial orbital rocket",
+        "event_key": "election-99b64047a1",
         "relationship": "new_story",
         "confidence": 0.0,
         "matched_existing": false,
@@ -568,89 +615,57 @@
   "follow_up_detection": {
     "mode": "observe_only",
     "publication_behavior_changed": false,
-    "candidate_count": 2,
+    "candidate_count": 1,
     "high_confidence_candidate_count": 1,
     "unanchored_candidate_suppressed_count": 0,
     "current_relationships": {
-      "new_story": 1,
-      "same_event": 1
+      "follow_up": 1
     },
-    "milestones": {
-      "death": 1,
-      "opening": 1
-    },
+    "milestones": {},
     "reason_codes": {
+      "enforced_follow_up": 1,
       "entity_match": 1,
       "event_type_match": 1,
       "exact_event_key": 1,
-      "identity_anchor_qualified": 2,
-      "location_match": 2,
-      "novel_milestone": 2
+      "fact_continuity": 1,
+      "identity_anchor_qualified": 1,
+      "location_match": 1,
+      "structured_incident_continuity": 1,
+      "title_continuity": 1
     },
     "examples": [
       {
-        "headline": "Alcaraz reaches US Open quarterfinals, extends major win streak to 18 matches",
+        "headline": "Alcaraz reaches US Open quarterfinals in fourth match back from wrist injury",
         "event_key": "shooting-new-york",
         "current_story_id": "story_000106",
-        "current_relationship": "same_event",
+        "current_relationship": "follow_up",
         "candidate_story_id": "story_000106",
-        "candidate_confidence": 0.84,
-        "candidate_milestones": [
-          "opening"
-        ],
+        "candidate_confidence": 1.0,
+        "candidate_milestones": [],
         "candidate_reason_codes": [
-          "novel_milestone",
+          "enforced_follow_up",
           "exact_event_key",
           "location_match",
           "event_type_match",
+          "entity_match",
+          "title_continuity",
+          "fact_continuity",
+          "structured_incident_continuity",
           "identity_anchor_qualified"
         ],
         "candidate_trace": [
-          "Follow-up candidate mode: observe_only",
-          "Candidate story: story_000106",
-          "Novel milestones: opening",
-          "Exact event-key anchor: True",
-          "Facts overlap: 0.00",
-          "Title overlap: 0.00",
+          "Relationship: follow_up",
+          "Distinctive facts overlap: 1.00",
+          "Identity anchor qualified: True",
           "Location match: True",
           "Agency match: False",
           "Event type match: True",
-          "Entity match: False",
-          "Agency conflict: False",
-          "Event type conflict: False",
-          "Candidate confidence: 0.84"
-        ]
-      },
-      {
-        "headline": "Andy Williams, Every Time I Die guitarist and wrestler 'The Butcher,' dies at 48 after collapsing during match",
-        "event_key": "named-person-death:every-time",
-        "current_story_id": "story_000228",
-        "current_relationship": "new_story",
-        "candidate_story_id": "story_000174",
-        "candidate_confidence": 0.622222,
-        "candidate_milestones": [
-          "death"
-        ],
-        "candidate_reason_codes": [
-          "novel_milestone",
-          "location_match",
-          "entity_match",
-          "identity_anchor_qualified"
-        ],
-        "candidate_trace": [
-          "Follow-up candidate mode: observe_only",
-          "Candidate story: story_000174",
-          "Novel milestones: death",
-          "Exact event-key anchor: False",
-          "Facts overlap: 0.00",
-          "Title overlap: 0.22",
-          "Location match: True",
-          "Agency match: False",
-          "Event type match: False",
           "Entity match: True",
-          "Agency conflict: False",
-          "Event type conflict: False",
-          "Candidate confidence: 0.62"
+          "Lifecycle signal: False",
+          "Novel milestones: none",
+          "Novel fact ratio: 0.50",
+          "Confidence: 1.00",
+          "Threshold: 0.68"
         ]
       }
     ],
@@ -660,9 +675,9 @@
     "retrospective": {
       "mode": "retrospective_observe_only",
       "publication_behavior_changed": false,
-      "stories_with_timelines": 12,
-      "timeline_entries_examined": 27,
-      "transitions_examined": 14,
+      "stories_with_timelines": 13,
+      "timeline_entries_examined": 30,
+      "transitions_examined": 16,
       "candidate_scope": "distinct_article_transitions",
       "candidate_count": 0,
       "high_confidence_candidate_count": 0,
@@ -691,39 +706,39 @@
   "audience_relevance": {
     "scopes": {
       "global_major": 14,
-      "international": 17,
-      "unknown": 93,
+      "international": 19,
+      "unknown": 94,
       "us_multistate": 15,
-      "us_national": 69,
-      "us_state_regional": 26
+      "us_national": 71,
+      "us_state_regional": 25
     },
-    "average_score": 78.89
+    "average_score": 78.92
   },
   "editorial_proximity": {
     "scopes": {
       "global_major": 14,
-      "international": 17,
-      "unknown": 93,
+      "international": 19,
+      "unknown": 94,
       "us_multistate": 15,
-      "us_national": 69,
-      "us_state_regional": 26
+      "us_national": 71,
+      "us_state_regional": 25
     },
-    "average_priority": 20.97
+    "average_priority": 21.0
   },
   "story_lifecycle": {
     "counts": {
-      "active": 156,
+      "active": 141,
       "breaking": 3,
-      "developing": 14,
-      "ongoing": 61
+      "developing": 15,
+      "ongoing": 79
     }
   },
   "registry_health": {
     "repair_version": 16,
     "changed": false,
     "status": "clean",
-    "active_stories_before": 207,
-    "active_stories_after": 207,
+    "active_stories_before": 232,
+    "active_stories_after": 232,
     "quarantined_story_count": 0,
     "quarantined_story_ids": [],
     "quarantine_reasons": {},
@@ -752,20 +767,20 @@
     "unified_incident_groups_resolved": 0,
     "unified_incident_story_records_removed": 0,
     "remaining_unified_incident_groups": 0,
-    "generated_at": "2026-09-06T22:12:52Z",
-    "quarantined_story_records_retained": 2,
-    "active_story_count": 234
+    "generated_at": "2026-09-07T04:12:47Z",
+    "quarantined_story_records_retained": 3,
+    "active_story_count": 238
   },
   "stories": {
-    "total": 234,
+    "total": 238,
     "importance_levels": {
-      "breaking": 13,
-      "high": 21,
-      "normal": 54,
-      "low": 146,
+      "breaking": 14,
+      "high": 22,
+      "normal": 55,
+      "low": 147,
       "archived": 0
     },
-    "average_importance": 23.48,
+    "average_importance": 23.86,
     "top": [
       {
         "story_id": "story_000186",
@@ -780,7 +795,7 @@
           "freshness_multiplier": 0.95,
           "source_multiplier": 1.123,
           "source_trust": 91,
-          "age_hours": 10.29
+          "age_hours": 16.29
         },
         "level": "breaking",
         "importance_reasons": [
@@ -831,80 +846,10 @@
         "relationship_decisions": 1,
         "canonical_source_candidates": 1,
         "lifecycle": {
-          "state": "breaking",
-          "reason": "Breaking importance with a current or undated update",
+          "state": "active",
+          "reason": "Single-event story is current",
           "last_updated": "2026-09-06T11:55:26+00:00",
-          "hours_since_update": 10.29,
-          "event_count": 1,
-          "timeline_entries": 1
-        }
-      },
-      {
-        "story_id": "story_000217",
-        "title": "Trump can’t stop changing the name of things and now has US state as his target - The Independent",
-        "score": 100,
-        "editorial_priority": 100,
-        "editorial_score": 100,
-        "score_breakdown": {
-          "score": 100,
-          "importance": 100,
-          "proximity_multiplier": 1.0,
-          "freshness_multiplier": 1.0,
-          "source_multiplier": 1.015,
-          "source_trust": 55,
-          "age_hours": 2.27
-        },
-        "level": "breaking",
-        "importance_reasons": [
-          {
-            "code": "federal_action",
-            "label": "Federal/national government action",
-            "points": 32
-          },
-          {
-            "code": "election",
-            "label": "Major election/political consequence",
-            "points": 25
-          },
-          {
-            "code": "war_diplomacy",
-            "label": "War, diplomacy or national-security consequence",
-            "points": 30
-          },
-          {
-            "code": "national_scope",
-            "label": "Nationwide U.S. scope",
-            "points": 15
-          }
-        ],
-        "audience_relevance": {
-          "scope": "us_national",
-          "score": 100,
-          "regions": [
-            "New Mexico",
-            "Washington",
-            "Alaska"
-          ],
-          "places": [
-            "New Mexico",
-            "Washington",
-            "Alaska"
-          ]
-        },
-        "editorial_proximity": {
-          "score": 100,
-          "scope": "us_national",
-          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
-        },
-        "event_count": 1,
-        "timeline_entries": 1,
-        "relationship_decisions": 1,
-        "canonical_source_candidates": 1,
-        "lifecycle": {
-          "state": "breaking",
-          "reason": "Breaking importance with a current or undated update",
-          "last_updated": "2026-09-06T19:57:00+00:00",
-          "hours_since_update": 2.27,
+          "hours_since_update": 16.29,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -922,7 +867,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 1.132,
           "source_trust": 94,
-          "age_hours": 49.65
+          "age_hours": 55.65
         },
         "level": "breaking",
         "importance_reasons": [
@@ -977,7 +922,7 @@
           "state": "developing",
           "reason": "Multiple events or follow-up decisions show the story is evolving",
           "last_updated": "2026-09-04T20:34:06+00:00",
-          "hours_since_update": 49.65,
+          "hours_since_update": 55.65,
           "event_count": 2,
           "timeline_entries": 2
         }
@@ -995,7 +940,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 1.126,
           "source_trust": 92,
-          "age_hours": 31.25
+          "age_hours": 37.25
         },
         "level": "breaking",
         "importance_reasons": [
@@ -1048,7 +993,139 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-09-05T14:58:05+00:00",
-          "hours_since_update": 31.25,
+          "hours_since_update": 37.25,
+          "event_count": 1,
+          "timeline_entries": 1
+        }
+      },
+      {
+        "story_id": "story_000217",
+        "title": "Trump can’t stop changing the name of things and now has US state as his target - The Independent",
+        "score": 100,
+        "editorial_priority": 96,
+        "editorial_score": 96,
+        "score_breakdown": {
+          "score": 96,
+          "importance": 100,
+          "proximity_multiplier": 1.0,
+          "freshness_multiplier": 0.95,
+          "source_multiplier": 1.015,
+          "source_trust": 55,
+          "age_hours": 8.26
+        },
+        "level": "breaking",
+        "importance_reasons": [
+          {
+            "code": "federal_action",
+            "label": "Federal/national government action",
+            "points": 32
+          },
+          {
+            "code": "election",
+            "label": "Major election/political consequence",
+            "points": 25
+          },
+          {
+            "code": "war_diplomacy",
+            "label": "War, diplomacy or national-security consequence",
+            "points": 30
+          },
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "audience_relevance": {
+          "scope": "us_national",
+          "score": 100,
+          "regions": [
+            "New Mexico",
+            "Washington",
+            "Alaska"
+          ],
+          "places": [
+            "New Mexico",
+            "Washington",
+            "Alaska"
+          ]
+        },
+        "editorial_proximity": {
+          "score": 100,
+          "scope": "us_national",
+          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
+        },
+        "event_count": 1,
+        "timeline_entries": 1,
+        "relationship_decisions": 1,
+        "canonical_source_candidates": 1,
+        "lifecycle": {
+          "state": "breaking",
+          "reason": "Breaking importance with a current or undated update",
+          "last_updated": "2026-09-06T19:57:00+00:00",
+          "hours_since_update": 8.26,
+          "event_count": 1,
+          "timeline_entries": 1
+        }
+      },
+      {
+        "story_id": "story_000241",
+        "title": "Peace talks rich in symbolism but fundamental differences between Russia and Ukraine remain",
+        "score": 83,
+        "editorial_priority": 89,
+        "editorial_score": 89,
+        "score_breakdown": {
+          "score": 89,
+          "importance": 83,
+          "proximity_multiplier": 1.0,
+          "freshness_multiplier": 0.95,
+          "source_multiplier": 1.132,
+          "source_trust": 94,
+          "age_hours": 7.34
+        },
+        "level": "breaking",
+        "importance_reasons": [
+          {
+            "code": "federal_action",
+            "label": "Federal/national government action",
+            "points": 32
+          },
+          {
+            "code": "war_diplomacy",
+            "label": "War, diplomacy or national-security consequence",
+            "points": 30
+          },
+          {
+            "code": "single_death",
+            "label": "Death reported",
+            "points": 6
+          },
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "audience_relevance": {
+          "scope": "us_national",
+          "score": 100,
+          "regions": [],
+          "places": []
+        },
+        "editorial_proximity": {
+          "score": 100,
+          "scope": "us_national",
+          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
+        },
+        "event_count": 1,
+        "timeline_entries": 1,
+        "relationship_decisions": 1,
+        "canonical_source_candidates": 1,
+        "lifecycle": {
+          "state": "breaking",
+          "reason": "Breaking importance with a current or undated update",
+          "last_updated": "2026-09-06T20:52:12+00:00",
+          "hours_since_update": 7.34,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1057,16 +1134,16 @@
         "story_id": "story_000158",
         "title": "Zelensky says he expects war to continue into winter after talks with US envoys",
         "score": 82,
-        "editorial_priority": 93,
-        "editorial_score": 93,
+        "editorial_priority": 88,
+        "editorial_score": 88,
         "score_breakdown": {
-          "score": 93,
+          "score": 88,
           "importance": 82,
           "proximity_multiplier": 1.0,
-          "freshness_multiplier": 1.0,
+          "freshness_multiplier": 0.95,
           "source_multiplier": 1.132,
           "source_trust": 94,
-          "age_hours": 1.52
+          "age_hours": 7.52
         },
         "level": "breaking",
         "importance_reasons": [
@@ -1110,71 +1187,9 @@
           "state": "breaking",
           "reason": "Breaking importance with a current or undated update",
           "last_updated": "2026-09-06T20:41:58+00:00",
-          "hours_since_update": 1.52,
+          "hours_since_update": 7.52,
           "event_count": 3,
           "timeline_entries": 3
-        }
-      },
-      {
-        "story_id": "story_000212",
-        "title": "Germany's far-right AfD set for big win in eastern state, just short of majority",
-        "score": 76,
-        "editorial_priority": 86,
-        "editorial_score": 86,
-        "score_breakdown": {
-          "score": 86,
-          "importance": 76,
-          "proximity_multiplier": 1.0,
-          "freshness_multiplier": 1.0,
-          "source_multiplier": 1.132,
-          "source_trust": 94,
-          "age_hours": 0.6
-        },
-        "level": "high",
-        "importance_reasons": [
-          {
-            "code": "election",
-            "label": "Major election/political consequence",
-            "points": 25
-          },
-          {
-            "code": "war_diplomacy",
-            "label": "War, diplomacy or national-security consequence",
-            "points": 30
-          },
-          {
-            "code": "single_death",
-            "label": "Death reported",
-            "points": 6
-          },
-          {
-            "code": "national_scope",
-            "label": "Nationwide U.S. scope",
-            "points": 15
-          }
-        ],
-        "audience_relevance": {
-          "scope": "us_national",
-          "score": 100,
-          "regions": [],
-          "places": []
-        },
-        "editorial_proximity": {
-          "score": 100,
-          "scope": "us_national",
-          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
-        },
-        "event_count": 1,
-        "timeline_entries": 1,
-        "relationship_decisions": 1,
-        "canonical_source_candidates": 1,
-        "lifecycle": {
-          "state": "active",
-          "reason": "Single-event story is current",
-          "last_updated": "2026-09-06T21:37:05+00:00",
-          "hours_since_update": 0.6,
-          "event_count": 1,
-          "timeline_entries": 1
         }
       },
       {
@@ -1190,7 +1205,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 0.994,
           "source_trust": 48,
-          "age_hours": 48.06
+          "age_hours": 54.06
         },
         "level": "breaking",
         "importance_reasons": [
@@ -1243,7 +1258,7 @@
           "state": "ongoing",
           "reason": "Story is older than 48 hours but remains within the active news window",
           "last_updated": "2026-09-04T22:09:00+00:00",
-          "hours_since_update": 48.06,
+          "hours_since_update": 54.06,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1261,7 +1276,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 0.994,
           "source_trust": 48,
-          "age_hours": 49.8
+          "age_hours": 55.8
         },
         "level": "breaking",
         "importance_reasons": [
@@ -1310,7 +1325,7 @@
           "state": "developing",
           "reason": "Multiple events or follow-up decisions show the story is evolving",
           "last_updated": "2026-09-04T20:24:45+00:00",
-          "hours_since_update": 49.8,
+          "hours_since_update": 55.8,
           "event_count": 2,
           "timeline_entries": 1
         }
@@ -1328,7 +1343,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 0.985,
           "source_trust": 45,
-          "age_hours": 32.78
+          "age_hours": 38.78
         },
         "level": "breaking",
         "importance_reasons": [
@@ -1372,7 +1387,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-09-05T13:26:01+00:00",
-          "hours_since_update": 32.78,
+          "hours_since_update": 38.78,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1390,7 +1405,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 1.132,
           "source_trust": 94,
-          "age_hours": 47.72
+          "age_hours": 53.71
         },
         "level": "breaking",
         "importance_reasons": [
@@ -1431,10 +1446,10 @@
         "relationship_decisions": 1,
         "canonical_source_candidates": 1,
         "lifecycle": {
-          "state": "active",
-          "reason": "Single-event story is current",
+          "state": "ongoing",
+          "reason": "Story is older than 48 hours but remains within the active news window",
           "last_updated": "2026-09-04T22:29:59+00:00",
-          "hours_since_update": 47.72,
+          "hours_since_update": 53.71,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1452,7 +1467,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 1.12,
           "source_trust": 90,
-          "age_hours": 25.88
+          "age_hours": 31.88
         },
         "level": "breaking",
         "importance_reasons": [
@@ -1501,99 +1516,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-09-05T20:20:00+00:00",
-          "hours_since_update": 25.88,
-          "event_count": 1,
-          "timeline_entries": 1
-        }
-      },
-      {
-        "story_id": "story_000141",
-        "title": "Dem governors weighing White House face the DeSantis dilemma",
-        "score": 77,
-        "editorial_priority": 82,
-        "editorial_score": 82,
-        "score_breakdown": {
-          "score": 82,
-          "importance": 77,
-          "proximity_multiplier": 1.0,
-          "freshness_multiplier": 0.95,
-          "source_multiplier": 1.12,
-          "source_trust": 90,
-          "age_hours": 23.75
-        },
-        "level": "high",
-        "importance_reasons": [
-          {
-            "code": "federal_action",
-            "label": "Federal/national government action",
-            "points": 32
-          },
-          {
-            "code": "election",
-            "label": "Major election/political consequence",
-            "points": 25
-          },
-          {
-            "code": "multi_agency",
-            "label": "Multiple agencies involved",
-            "points": 5
-          },
-          {
-            "code": "national_scope",
-            "label": "Nationwide U.S. scope",
-            "points": 15
-          }
-        ],
-        "audience_relevance": {
-          "scope": "us_national",
-          "score": 100,
-          "regions": [
-            "North Carolina",
-            "New Hampshire",
-            "Pennsylvania",
-            "Wisconsin",
-            "Kentucky",
-            "Illinois",
-            "Maryland",
-            "New York",
-            "Michigan",
-            "Georgia",
-            "Florida",
-            "Maine",
-            "Texas",
-            "Ohio"
-          ],
-          "places": [
-            "North Carolina",
-            "New Hampshire",
-            "Pennsylvania",
-            "Wisconsin",
-            "Kentucky",
-            "Illinois",
-            "Maryland",
-            "New York",
-            "Michigan",
-            "Georgia",
-            "Florida",
-            "Maine",
-            "Texas",
-            "Ohio"
-          ]
-        },
-        "editorial_proximity": {
-          "score": 100,
-          "scope": "us_national",
-          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
-        },
-        "event_count": 1,
-        "timeline_entries": 1,
-        "relationship_decisions": 1,
-        "canonical_source_candidates": 2,
-        "lifecycle": {
-          "state": "active",
-          "reason": "Single-event story is current",
-          "last_updated": "2026-09-05T22:28:12+00:00",
-          "hours_since_update": 23.75,
+          "hours_since_update": 31.88,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1611,7 +1534,7 @@
           "freshness_multiplier": 0.95,
           "source_multiplier": 1.12,
           "source_trust": 90,
-          "age_hours": 6.49
+          "age_hours": 12.48
         },
         "level": "high",
         "importance_reasons": [
@@ -1650,7 +1573,151 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-09-06T15:43:51+00:00",
-          "hours_since_update": 6.49,
+          "hours_since_update": 12.48,
+          "event_count": 1,
+          "timeline_entries": 1
+        }
+      },
+      {
+        "story_id": "story_000243",
+        "title": "Exclusive: Latino leaders push Beshear on Texas' race for governor",
+        "score": 77,
+        "editorial_priority": 82,
+        "editorial_score": 82,
+        "score_breakdown": {
+          "score": 82,
+          "importance": 77,
+          "proximity_multiplier": 1.0,
+          "freshness_multiplier": 0.95,
+          "source_multiplier": 1.12,
+          "source_trust": 90,
+          "age_hours": 6.38
+        },
+        "level": "high",
+        "importance_reasons": [
+          {
+            "code": "federal_action",
+            "label": "Federal/national government action",
+            "points": 32
+          },
+          {
+            "code": "election",
+            "label": "Major election/political consequence",
+            "points": 25
+          },
+          {
+            "code": "multi_agency",
+            "label": "Multiple agencies involved",
+            "points": 5
+          },
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "audience_relevance": {
+          "scope": "us_national",
+          "score": 100,
+          "regions": [
+            "New Mexico",
+            "Washington",
+            "Wisconsin",
+            "Michigan",
+            "Kentucky",
+            "Arizona",
+            "Georgia",
+            "Nevada",
+            "Texas"
+          ],
+          "places": [
+            "New Mexico",
+            "Washington",
+            "Wisconsin",
+            "Michigan",
+            "Kentucky",
+            "Arizona",
+            "Georgia",
+            "Nevada",
+            "Texas"
+          ]
+        },
+        "editorial_proximity": {
+          "score": 100,
+          "scope": "us_national",
+          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
+        },
+        "event_count": 1,
+        "timeline_entries": 1,
+        "relationship_decisions": 1,
+        "canonical_source_candidates": 1,
+        "lifecycle": {
+          "state": "active",
+          "reason": "Single-event story is current",
+          "last_updated": "2026-09-06T21:50:12+00:00",
+          "hours_since_update": 6.38,
+          "event_count": 1,
+          "timeline_entries": 1
+        }
+      },
+      {
+        "story_id": "story_000212",
+        "title": "Germany's far-right AfD set for big win in eastern state, just short of majority",
+        "score": 76,
+        "editorial_priority": 82,
+        "editorial_score": 82,
+        "score_breakdown": {
+          "score": 82,
+          "importance": 76,
+          "proximity_multiplier": 1.0,
+          "freshness_multiplier": 0.95,
+          "source_multiplier": 1.132,
+          "source_trust": 94,
+          "age_hours": 6.6
+        },
+        "level": "high",
+        "importance_reasons": [
+          {
+            "code": "election",
+            "label": "Major election/political consequence",
+            "points": 25
+          },
+          {
+            "code": "war_diplomacy",
+            "label": "War, diplomacy or national-security consequence",
+            "points": 30
+          },
+          {
+            "code": "single_death",
+            "label": "Death reported",
+            "points": 6
+          },
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "audience_relevance": {
+          "scope": "us_national",
+          "score": 100,
+          "regions": [],
+          "places": []
+        },
+        "editorial_proximity": {
+          "score": 100,
+          "scope": "us_national",
+          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
+        },
+        "event_count": 1,
+        "timeline_entries": 1,
+        "relationship_decisions": 1,
+        "canonical_source_candidates": 1,
+        "lifecycle": {
+          "state": "active",
+          "reason": "Single-event story is current",
+          "last_updated": "2026-09-06T21:37:05+00:00",
+          "hours_since_update": 6.6,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1668,7 +1735,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 0.985,
           "source_trust": 45,
-          "age_hours": 50.56
+          "age_hours": 56.56
         },
         "level": "breaking",
         "importance_reasons": [
@@ -1721,7 +1788,7 @@
           "state": "ongoing",
           "reason": "Story is older than 48 hours but remains within the active news window",
           "last_updated": "2026-09-04T19:39:21+00:00",
-          "hours_since_update": 50.56,
+          "hours_since_update": 56.56,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1739,7 +1806,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 1.135,
           "source_trust": 95,
-          "age_hours": 50.46
+          "age_hours": 56.46
         },
         "level": "breaking",
         "importance_reasons": [
@@ -1783,7 +1850,7 @@
           "state": "ongoing",
           "reason": "Story is older than 48 hours but remains within the active news window",
           "last_updated": "2026-09-04T19:45:22+00:00",
-          "hours_since_update": 50.46,
+          "hours_since_update": 56.46,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1801,7 +1868,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 1.12,
           "source_trust": 90,
-          "age_hours": 31.8
+          "age_hours": 37.8
         },
         "level": "breaking",
         "importance_reasons": [
@@ -1845,7 +1912,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-09-05T14:24:38+00:00",
-          "hours_since_update": 31.8,
+          "hours_since_update": 37.8,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1863,7 +1930,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 1.132,
           "source_trust": 94,
-          "age_hours": 45.16
+          "age_hours": 51.15
         },
         "level": "high",
         "importance_reasons": [
@@ -1899,10 +1966,10 @@
         "relationship_decisions": 1,
         "canonical_source_candidates": 1,
         "lifecycle": {
-          "state": "active",
-          "reason": "Single-event story is current",
+          "state": "ongoing",
+          "reason": "Story is older than 48 hours but remains within the active news window",
           "last_updated": "2026-09-05T01:03:35+00:00",
-          "hours_since_update": 45.16,
+          "hours_since_update": 51.15,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1920,7 +1987,7 @@
           "freshness_multiplier": 0.95,
           "source_multiplier": 1.117,
           "source_trust": 89,
-          "age_hours": 6.01
+          "age_hours": 12.01
         },
         "level": "high",
         "importance_reasons": [
@@ -1946,12 +2013,12 @@
           "regions": [
             "New Hampshire",
             "Connecticut",
-            "California",
             "New Jersey",
-            "Colorado",
-            "Maryland",
+            "California",
             "New York",
+            "Maryland",
             "Virginia",
+            "Colorado",
             "Vermont",
             "Maine",
             "Utah"
@@ -1959,12 +2026,12 @@
           "places": [
             "New Hampshire",
             "Connecticut",
-            "California",
             "New Jersey",
-            "Colorado",
-            "Maryland",
+            "California",
             "New York",
+            "Maryland",
             "Virginia",
+            "Colorado",
             "Vermont",
             "Maine",
             "Utah"
@@ -1983,7 +2050,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-09-06T16:12:21.603879+00:00",
-          "hours_since_update": 6.01,
+          "hours_since_update": 12.01,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -2001,7 +2068,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 1.12,
           "source_trust": 90,
-          "age_hours": 49.82
+          "age_hours": 55.82
         },
         "level": "high",
         "importance_reasons": [
@@ -2040,71 +2107,9 @@
           "state": "ongoing",
           "reason": "Story is older than 48 hours but remains within the active news window",
           "last_updated": "2026-09-04T20:23:34+00:00",
-          "hours_since_update": 49.82,
+          "hours_since_update": 55.82,
           "event_count": 1,
           "timeline_entries": 1
-        }
-      },
-      {
-        "story_id": "story_000161",
-        "title": "Ukraine war briefing: Zelenskyy links Russian strikes on Kyiv airports to US envoys’ visit - The Guardian",
-        "score": 68,
-        "editorial_priority": 73,
-        "editorial_score": 73,
-        "score_breakdown": {
-          "score": 73,
-          "importance": 68,
-          "proximity_multiplier": 1.0,
-          "freshness_multiplier": 0.95,
-          "source_multiplier": 1.123,
-          "source_trust": 91,
-          "age_hours": 20.57
-        },
-        "level": "high",
-        "importance_reasons": [
-          {
-            "code": "war_diplomacy",
-            "label": "War, diplomacy or national-security consequence",
-            "points": 30
-          },
-          {
-            "code": "multiple_deaths",
-            "label": "Multiple deaths reported",
-            "points": 18
-          },
-          {
-            "code": "follow_up",
-            "label": "Story has follow-up coverage",
-            "points": 5
-          },
-          {
-            "code": "national_scope",
-            "label": "Nationwide U.S. scope",
-            "points": 15
-          }
-        ],
-        "audience_relevance": {
-          "scope": "us_national",
-          "score": 100,
-          "regions": [],
-          "places": []
-        },
-        "editorial_proximity": {
-          "score": 100,
-          "scope": "us_national",
-          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
-        },
-        "event_count": 2,
-        "timeline_entries": 2,
-        "relationship_decisions": 1,
-        "canonical_source_candidates": 2,
-        "lifecycle": {
-          "state": "developing",
-          "reason": "Multiple events or follow-up decisions show the story is evolving",
-          "last_updated": "2026-09-06T01:39:00+00:00",
-          "hours_since_update": 20.57,
-          "event_count": 2,
-          "timeline_entries": 2
         }
       }
     ]
