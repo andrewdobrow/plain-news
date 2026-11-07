@@ -1,0 +1,44 @@
+name: Editorial regression tests
+
+on:
+  pull_request:
+    paths:
+      - 'plain_engine/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - 'requirements*.txt'
+      - '.github/workflows/editorial-regression.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'plain_engine/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - 'requirements*.txt'
+      - '.github/workflows/editorial-regression.yml'
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  editorial:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install test dependencies
+        run: python -m pip install -r requirements-dev.txt
+      - name: Validate editorial package
+        run: python scripts/validate_package.py
+      - name: Verify backend parity
+        run: python scripts/backend_parity_check.py
+      - name: Compile production modules
+        run: python -m compileall -q plain_engine scripts
+      - name: Run regression suite
+        run: python -m pytest tests -q

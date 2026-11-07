@@ -1,5 +1,7 @@
 import json
 from types import SimpleNamespace
+from datetime import datetime, timedelta, timezone
+from email.utils import format_datetime
 from plain_engine.article_quality import publication_quality
 from plain_engine.assignment_pipeline import run_live_assignment_category
 from plain_engine.generation_cache import PersistentGenerationCache, CACHE_MISS
@@ -13,6 +15,22 @@ class FakeClient:
     def __init__(self,responses):self.messages=FakeMessages(responses)
     def with_options(self,**kwargs):return self
 def words(prefix,n):return ' '.join(f'{prefix}{i}' for i in range(n))
+def recent_published(hours_ago=1):
+    """RFC 2822 timestamp relative to test execution, never a fixed calendar day."""
+    return format_datetime(datetime.now(timezone.utc) - timedelta(hours=hours_ago), usegmt=True)
+
+def recent_archive_date(days_ago=1):
+    """Archive fixture date that stays inside the production age window."""
+    return (datetime.now(timezone.utc) - timedelta(days=days_ago)).date().isoformat()
+
+
+def test_assignment_source_freshness_rejects_stale_news():
+    """Live production freshness rules must remain enforced as fixtures age."""
+    from plain_engine.assignment_pipeline import _record
+    common = {'title': 'Nationwide policy update', 'source_quality': 'full', 'article_text': words('fact', 110)}
+    assert _record(1, {**common, 'published': recent_published(2)})['hero_eligible']
+    assert not _record(1, {**common, 'published': recent_published(96)})['hero_eligible']
+
 def test_image_authority_rejects_brand_assets():
     assert image_rejection_reason('https://example.com/assets/site-logo.png')
     assert not image_rejection_reason('https://example.com/photos/capitol-hearing-1200x675.jpg')
@@ -25,7 +43,7 @@ def test_source_focus_repair_discards_unrelated_prefix():
     focused=focus_extracted_source_text(text,{'title':'SpaceX Starship launches from Texas after regulators approve flight'});assert len(focused.split())<len(text.split());assert 'SpaceX' in focused
 def test_assignment_editor_writer_preserves_exact_source_binding():
     source_text='The Federal Reserve announced a policy decision in Washington on Friday affecting interest rates. '+words('fact',210)
-    sources=[{'title':'Wrong story','summary':words('wrong',160),'article_text':words('wrong',160),'link':'https://a.example/1','source_quality':'full','published':'Fri, 04 Sep 2026 12:00:00 GMT'},{'title':'Federal Reserve announces rate decision','summary':source_text[:500],'article_text':source_text,'link':'https://b.example/2','source_quality':'full','published':'Fri, 04 Sep 2026 16:00:00 GMT','publisher_name':'Reuters'}]
+    sources=[{'title':'Wrong story','summary':words('wrong',160),'article_text':words('wrong',160),'link':'https://a.example/1','source_quality':'full','published':recent_published(2)},{'title':'Federal Reserve announces rate decision','summary':source_text[:500],'article_text':source_text,'link':'https://b.example/2','source_quality':'full','published':recent_published(1),'publisher_name':'Reuters'}]
     body=('The Federal Reserve announced a policy decision in Washington on Friday, changing its benchmark interest-rate stance and setting the immediate direction for monetary policy. Officials described the action and its effective timing in the decision released Friday.\n\n'+"The central bank's decision followed its scheduled policy meeting and applies to its benchmark rate framework. "*8+'\n\n'+'Markets and borrowers watch the benchmark because it influences financing conditions across the economy. '*7)
     client=FakeClient([json.dumps({'hero':{'source_index':2,'angle':'rate decision','urgency_score':8},'cards':[]}),json.dumps({'headline':'Federal Reserve announces benchmark rate decision','body':body})]);result=run_live_assignment_category(client,'business','Business',sources,card_count=0);hero=result['hero'];assert hero['source_index']==2;assert hero['link']=='https://b.example/2';assert 'https://a.example/1' not in client.messages.prompts[1]['messages'][0]['content']
 def test_quality_requires_grounded_source():
@@ -52,7 +70,7 @@ def test_assignment_writer_carries_validated_material_update_authority():
         'article_text': source_text,
         'link': 'https://example.com/update',
         'source_quality': 'full',
-        'published': 'Fri, 04 Sep 2026 16:00:00 GMT',
+        'published': recent_published(1),
         'publisher_name': 'Reuters',
         'pre_generation_material_update': True,
         'pre_generation_material_update_canonical_slug': '2026-09-03-existing-story',
@@ -128,8 +146,8 @@ def test_pre_generation_materiality_suppresses_no_change_and_stamps_update(monke
 def test_repairable_material_update_card_is_hidden_and_retained_for_canonical_recomposition():
     from plain_engine.assignment_pipeline import run_live_assignment_category
     from scripts.generate import selected_material_update_commit_entries
-    hero_source={'title':'National policy announcement','summary':words('hero',180),'article_text':words('hero',180),'link':'https://x/hero','source_quality':'full','published':'Fri, 04 Sep 2026 16:00:00 GMT'}
-    update_source={'title':'Existing story materially advances','summary':words('update',180),'article_text':words('update',180),'link':'https://x/update','source_quality':'full','published':'Fri, 04 Sep 2026 16:05:00 GMT','pre_generation_material_update':True,'pre_generation_material_update_canonical_slug':'old','semantic_material_update_decision':{'action':'update_existing_canonical','same_real_world_event':True,'material_new_update':True,'selected_candidate_slug':'old'}}
+    hero_source={'title':'National policy announcement','summary':words('hero',180),'article_text':words('hero',180),'link':'https://x/hero','source_quality':'full','published':recent_published(1)}
+    update_source={'title':'Existing story materially advances','summary':words('update',180),'article_text':words('update',180),'link':'https://x/update','source_quality':'full','published':recent_published(0.9),'pre_generation_material_update':True,'pre_generation_material_update_canonical_slug':'old','semantic_material_update_decision':{'action':'update_existing_canonical','same_real_world_event':True,'material_new_update':True,'selected_candidate_slug':'old'}}
     client=FakeClient([
         json.dumps({'hero':{'source_index':1,'angle':'policy','urgency_score':8},'cards':[{'source_index':2,'angle':'new development','urgency_score':7}]}),
         json.dumps({'headline':'Federal agency announces national policy action','body':_long_body()}),
@@ -155,7 +173,7 @@ def test_dangerous_material_update_source_drift_still_fails_closed():
     update_source={
         'title':'Entertainment company confirms major acquisition agreement Friday',
         'summary':source_text[:800],'article_text':source_text,'link':'https://x/update','source_quality':'full',
-        'published':'Fri, 04 Sep 2026 16:05:00 GMT','pre_generation_material_update':True,
+        'published':recent_published(0.9),'pre_generation_material_update':True,
         'pre_generation_material_update_canonical_slug':'old',
         'semantic_material_update_decision':{'action':'update_existing_canonical','same_real_world_event':True,'material_new_update':True,'selected_candidate_slug':'old'},
     }
@@ -174,7 +192,7 @@ def test_repairable_material_update_hero_survives_quality_gate_for_write_barrier
     source_text='Federal officials confirmed Friday a new development in an existing national investigation. '+words('update',200)
     source={
         'title':'Federal officials confirm new development in existing investigation','summary':source_text[:800],
-        'article_text':source_text,'link':'https://x/update','source_quality':'full','published':'Fri, 04 Sep 2026 16:05:00 GMT',
+        'article_text':source_text,'link':'https://x/update','source_quality':'full','published':recent_published(0.9),
         'pre_generation_material_update':True,'pre_generation_material_update_canonical_slug':'old',
         'semantic_material_update_decision':{'action':'update_existing_canonical','same_real_world_event':True,'material_new_update':True,'selected_candidate_slug':'old','novel_facts':['new development confirmed']},
         'material_update_novel_facts':['new development confirmed'],
@@ -252,7 +270,7 @@ def test_assignment_pipeline_accepts_thinking_block_before_assignment_json():
         'title': 'Federal agency announces national policy action',
         'summary': source_text[:700], 'article_text': source_text,
         'link': 'https://example.com/policy', 'source_quality': 'full',
-        'published': 'Fri, 04 Sep 2026 16:00:00 GMT', 'publisher_name': 'Reuters',
+        'published': recent_published(1), 'publisher_name': 'Reuters',
     }
     client = ThinkingClient()
     result = run_live_assignment_category(client, 'us', 'U.S.', [source], card_count=0)
@@ -311,7 +329,7 @@ def test_write_barrier_recomposes_repairable_material_update_before_public_rende
         'headline':'Federal agency confirms new enforcement action','body':'Too short.','teaser':'New action.',
         'article_text':'Federal officials confirmed Friday a new enforcement action in the national investigation opened earlier this year. '+('The agency described the enforcement action and the investigation. '*50),
         'source_title':'Federal agency confirms new enforcement action','link':'https://new.example/u',
-        'source_published_raw':'Fri, 04 Sep 2026 16:00:00 GMT','pre_generation_material_update':True,
+        'source_published_raw':recent_published(1),'pre_generation_material_update':True,
         'pre_generation_material_update_canonical_slug':'2026-09-03-existing',
         'semantic_material_update_decision':{'action':'update_existing_canonical','same_real_world_event':True,'material_new_update':True,'selected_candidate_slug':'2026-09-03-existing','novel_facts':['new enforcement action']},
         'publication_quality_ok':False,'publication_quality_reasons':['body_under_120_words'],
@@ -353,7 +371,7 @@ def test_plain_category_classification_keeps_non_none_pool_depth():
 
 def test_assignment_pipeline_backfills_to_section_depth_without_weakening_quality(monkeypatch):
     import plain_engine.assignment_pipeline as ap
-    now='Sat, 05 Sep 2026 18:00:00 GMT'
+    now=recent_published(1)
     sources=[]
     for i in range(12):
         sources.append({
@@ -394,7 +412,7 @@ def test_assignment_pipeline_backfills_to_section_depth_without_weakening_qualit
 
 def test_assignment_pipeline_replaces_failed_card_with_next_safe_source(monkeypatch):
     import plain_engine.assignment_pipeline as ap
-    now='Sat, 05 Sep 2026 18:00:00 GMT'
+    now=recent_published(1)
     sources=[]
     for i in range(7):
         sources.append({
@@ -462,9 +480,9 @@ def test_archive_depth_backfill_preserves_live_copy_and_fills_supporting_slots(m
     category={'category_key':'business','category_label':'Business','hero':live_hero,'cards':[live_card]}
     archive=[]
     for i in range(12):
-        slug=f'2026-09-0{max(1,5-(i//5))}-archive-{i}'
+        slug=f'{recent_archive_date(1 + (i // 5))}-archive-{i}'
         body=words(f'archive{i}_',120)
-        archive.append({'slug':slug,'headline':f'Archive business story {i}','body':body,'teaser':'Archived reporting','category_key':'business','category_label':'Business','date':'2026-09-05','lastmod':'2026-09-05','story_id':f'archive-{i}','event_key':f'event-{i}'})
+        archive.append({'slug':slug,'headline':f'Archive business story {i}','body':body,'teaser':'Archived reporting','category_key':'business','category_label':'Business','date':recent_archive_date(1),'lastmod':recent_archive_date(1),'story_id':f'archive-{i}','event_key':f'event-{i}'})
         (tmp_path/'articles'/f'{slug}.html').write_text('<div class="article-body"><p>'+body+'</p></div>',encoding='utf-8')
     added=gen._archive_depth_backfill([category],archive,target_cards=8,max_age_days=7)
     assert added==7
@@ -516,12 +534,12 @@ def test_archive_depth_backfill_never_exposes_full_canonical_article_as_card(mon
         + ('Additional full-length canonical article detail about financing, staffing, facilities and the company history. '*45)
     )
     archive=[{
-        'slug':'2026-09-05-archive-business','headline':'Company announces nationwide expansion',
+        'slug':f'{recent_archive_date(1)}-archive-business','headline':'Company announces nationwide expansion',
         'body':full_body,'teaser':'The company plans a nationwide expansion beginning this fall after reporting stronger demand.',
-        'category_key':'business','category_label':'Business','date':'2026-09-05','lastmod':'2026-09-05',
+        'category_key':'business','category_label':'Business','date':recent_archive_date(1),'lastmod':recent_archive_date(1),
         'story_id':'archive-business','event_key':'event-business'
     }]
-    (tmp_path/'articles'/'2026-09-05-archive-business.html').write_text('<div class="article-body"><p>'+full_body.replace('\n\n','</p><p>')+'</p></div>',encoding='utf-8')
+    (tmp_path/'articles'/f'{recent_archive_date(1)}-archive-business.html').write_text('<div class="article-body"><p>'+full_body.replace('\n\n','</p><p>')+'</p></div>',encoding='utf-8')
     added=gen._archive_depth_backfill([category],archive,target_cards=1,max_age_days=7)
     assert added==1
     card=category['cards'][0]
