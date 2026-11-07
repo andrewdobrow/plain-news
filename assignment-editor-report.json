@@ -1,24 +1,65 @@
 {
-  "generated_at": "2026-09-07T04:12:46.458634Z",
+  "generated_at": "2026-11-07T05:12:52.601046Z",
   "assignment_editor_model": "claude-sonnet-5",
   "writer_model": "claude-sonnet-4-5",
   "categories": [
     {
       "category_key": "world",
-      "hero_source_index": null,
+      "hero_source_index": 2,
       "card_source_indexes": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
+        4,
+        1,
+        9
       ],
       "diagnostics": {
-        "status": "archive_recovery",
-        "reason": "Live source/generation path unavailable; reused recent published canonicals."
+        "model": "claude-sonnet-5",
+        "writer_model": "claude-sonnet-4-5",
+        "rejected": [
+          {
+            "source_index": 3,
+            "reason": "Duplicate of source 2, same event (Peña impeachment and arrest) with identical content and encoding errors."
+          },
+          {
+            "source_index": 8,
+            "reason": "Primarily a U.S. domestic politics story about a White House staffing decision; belongs in Politics, not World."
+          }
+        ],
+        "writer_failures": [
+          {
+            "source_index": 7,
+            "reason": [
+              "person_first_reference_not_full_name"
+            ]
+          },
+          {
+            "source_index": 6,
+            "reason": [
+              "generated_copy_drifted_from_source_focus"
+            ]
+          },
+          {
+            "source_index": 5,
+            "reason": [
+              "generated_copy_drifted_from_source_focus"
+            ]
+          },
+          {
+            "source_index": 8,
+            "reason": [
+              "person_first_reference_not_full_name"
+            ]
+          }
+        ],
+        "protected_material_update_repairs": [],
+        "hero_recovery_attempts": [],
+        "hero_recovered": false,
+        "editor_selected_card_count": 6,
+        "section_depth_target": 8,
+        "section_depth_accepted_cards": 3,
+        "section_depth_shortfall": 5,
+        "depth_backfill_writer_attempts": 1,
+        "writer_card_attempts": 7,
+        "duration_seconds": 53.197
       }
     },
     {
@@ -26,11 +67,156 @@
       "hero_source_index": 1,
       "card_source_indexes": [
         2,
+        3,
         4,
         7,
         8,
+        9
+      ],
+      "diagnostics": {
+        "model": "claude-sonnet-5",
+        "writer_model": "claude-sonnet-4-5",
+        "rejected": [
+          {
+            "source_index": 3,
+            "reason": "Foreign political event (Paraguay) with no U.S. domestic angle; belongs in World, not U.S."
+          },
+          {
+            "source_index": 4,
+            "reason": "UK-focused meteor shower/weather feature with no U.S. relevance; tech/science interest piece, not U.S. news."
+          },
+          {
+            "source_index": 5,
+            "reason": "UK musician profile/entertainment feature, not a U.S. news story."
+          },
+          {
+            "source_index": 6,
+            "reason": "UK-focused economic feature on Bank of England rate rise; not applicable to U.S. audience."
+          },
+          {
+            "source_index": 7,
+            "reason": "Primarily a politics/elections story centered on DOJ litigation over California ballots; better fits Politics category and risks duplicating a political hero."
+          },
+          {
+            "source_index": 8,
+            "reason": "UK entertainment lawsuit over a film set injury; no U.S. national relevance."
+          },
+          {
+            "source_index": 9,
+            "reason": "Religion/medical ethics feature centered on Jehovah's Witnesses doctrine change, framed as World/feature content rather than a U.S. public safety or policy development, and not tied to a specific breaking U.S. event beyond one family's account."
+          },
+          {
+            "source_index": 10,
+            "reason": "Rugby sports recap (Ireland vs Argentina), not a U.S. news story."
+          },
+          {
+            "source_index": 11,
+            "reason": "English Premier League soccer recap, not a U.S. news story."
+          },
+          {
+            "source_index": 12,
+            "reason": "Election vote-counting procedural story is primarily a politics/elections piece best suited for Politics category, and risks duplicating the political hero focus rather than a U.S. society/public safety angle."
+          }
+        ],
+        "writer_failures": [
+          {
+            "source_index": 5,
+            "reason": [
+              "JSONDecodeError"
+            ]
+          },
+          {
+            "source_index": 6,
+            "reason": [
+              "card_body_over_140_words"
+            ]
+          },
+          {
+            "source_index": 10,
+            "reason": [
+              "JSONDecodeError"
+            ]
+          },
+          {
+            "source_index": 11,
+            "reason": [
+              "JSONDecodeError"
+            ]
+          },
+          {
+            "source_index": 12,
+            "reason": [
+              "headline_entity_missing_from_lead"
+            ]
+          }
+        ],
+        "protected_material_update_repairs": [],
+        "hero_recovery_attempts": [],
+        "hero_recovered": false,
+        "editor_selected_card_count": 1,
+        "section_depth_target": 8,
+        "section_depth_accepted_cards": 6,
+        "section_depth_shortfall": 2,
+        "depth_backfill_writer_attempts": 10,
+        "writer_card_attempts": 11,
+        "duration_seconds": 71.934
+      }
+    },
+    {
+      "category_key": "business",
+      "hero_source_index": 3,
+      "card_source_indexes": [
+        2,
+        4
+      ],
+      "diagnostics": {
+        "model": "claude-sonnet-5",
+        "writer_model": "claude-sonnet-4-5",
+        "rejected": [
+          {
+            "source_index": 5,
+            "reason": "Duplicate of source 4, same BBC report on the AI stock sell-off and rebound with no material differences."
+          }
+        ],
+        "writer_failures": [
+          {
+            "source_index": 1,
+            "reason": [
+              "card_body_over_140_words"
+            ]
+          }
+        ],
+        "protected_material_update_repairs": [],
+        "hero_recovery_attempts": [
+          {
+            "source_index": 4,
+            "reason": [
+              "headline_money_claim_missing_from_lead"
+            ]
+          }
+        ],
+        "hero_recovered": true,
+        "editor_selected_card_count": 3,
+        "section_depth_target": 8,
+        "section_depth_accepted_cards": 2,
+        "section_depth_shortfall": 6,
+        "depth_backfill_writer_attempts": 1,
+        "writer_card_attempts": 3,
+        "duration_seconds": 37.992
+      }
+    },
+    {
+      "category_key": "tech",
+      "hero_source_index": 14,
+      "card_source_indexes": [
+        6,
+        4,
+        3,
         9,
-        14
+        8,
+        15,
+        5,
+        1
       ],
       "diagnostics": {
         "model": "claude-sonnet-5",
@@ -38,157 +224,111 @@
         "rejected": [
           {
             "source_index": 1,
-            "reason": "Australian domestic policy story with no U.S. relevance; belongs in World/Tech, not U.S."
+            "reason": "Primarily a political/lobbying story about Big Tech's relationship with Democrats after the midterms, better suited to Politics than Tech & Science."
           },
           {
             "source_index": 2,
-            "reason": "UK immigration protest and Channel migrant crossing; a UK domestic story with no U.S. angle."
-          },
-          {
-            "source_index": 3,
-            "reason": "Entertainment feature on an actor promoting a film; opinion/promotional in nature, not U.S. news."
-          },
-          {
-            "source_index": 4,
-            "reason": "Austrian domestic law on headscarves in schools; foreign policy story with no U.S. government action, belongs in World."
-          },
-          {
-            "source_index": 5,
-            "reason": "UK Chancellor's economic speech ahead of UK Budget; purely UK fiscal policy, not a U.S. story."
-          },
-          {
-            "source_index": 6,
-            "reason": "Indonesia wildfire and peatland crisis; a World environmental/humanitarian story, not U.S."
+            "reason": "UK-specific weather and viewing guide for the Leonid meteor shower with no national U.S. news angle; service piece, not a news development."
           },
           {
             "source_index": 7,
-            "reason": "German state election result for AfD; foreign politics story belonging in World, not U.S."
-          },
-          {
-            "source_index": 8,
-            "reason": "Analysis of Russia-Ukraine peace talks; foreign diplomacy story for World, not U.S. domestic news."
-          },
-          {
-            "source_index": 9,
-            "reason": "Same Russia-Ukraine peace talks event as source 8; foreign diplomacy, belongs in World."
+            "reason": "Duplicate of the same OpenAI funding/valuation event covered in source 4; same-event rewrite with largely overlapping facts."
           },
           {
             "source_index": 10,
-            "reason": "Premier League football match report; sports story with no U.S. relevance."
+            "reason": "Duplicate of source 11, same EA game re-release story; entertainment/gaming listicle without consequential national news value."
           },
           {
             "source_index": 11,
-            "reason": "Formula 1 Italian Grand Prix race report; sports story, not U.S. news."
-          },
-          {
-            "source_index": 12,
-            "reason": "Chelsea FC squad/tactics analysis; sports story with no U.S. relevance."
+            "reason": "Duplicate of source 10, same EA classic game re-release announcement; low consequence entertainment news."
           },
           {
             "source_index": 13,
-            "reason": "Brief Premier League match report; thin sports item with no U.S. relevance."
+            "reason": "First-person product review/opinion piece about a beta Apple Watch feature, not a factual news development."
           },
           {
-            "source_index": 14,
-            "reason": "Jamaica's slavery reparations petition to the British monarch; a UK/Caribbean colonial-history story with no U.S. government or domestic angle, belongs in World."
+            "source_index": 16,
+            "reason": "Duplicate of source 15 covering the same Great Unconformity mantle study."
           }
         ],
         "writer_failures": [
           {
-            "source_index": 5,
-            "reason": [
-              "JSONDecodeError"
-            ]
-          },
-          {
-            "source_index": 6,
-            "reason": [
-              "generated_copy_drifted_from_source_focus"
-            ]
-          },
-          {
-            "source_index": 10,
-            "reason": [
-              "JSONDecodeError"
-            ]
-          },
-          {
-            "source_index": 11,
-            "reason": [
-              "generated_copy_drifted_from_source_focus"
-            ]
-          },
-          {
             "source_index": 12,
             "reason": [
-              "JSONDecodeError"
-            ]
-          },
-          {
-            "source_index": 13,
-            "reason": [
-              "JSONDecodeError"
+              "person_first_reference_not_full_name"
             ]
           }
         ],
         "protected_material_update_repairs": [],
-        "editor_selected_card_count": 0,
+        "hero_recovery_attempts": [],
+        "hero_recovered": false,
+        "editor_selected_card_count": 8,
         "section_depth_target": 8,
-        "section_depth_accepted_cards": 6,
-        "section_depth_shortfall": 2,
-        "depth_backfill_writer_attempts": 12,
-        "writer_card_attempts": 12,
-        "duration_seconds": 83.022
-      }
-    },
-    {
-      "category_key": "business",
-      "hero_source_index": null,
-      "card_source_indexes": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "diagnostics": {
-        "status": "archive_recovery",
-        "reason": "Live source/generation path unavailable; reused recent published canonicals."
-      }
-    },
-    {
-      "category_key": "tech",
-      "hero_source_index": null,
-      "card_source_indexes": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "diagnostics": {
-        "status": "archive_recovery",
-        "reason": "Live source/generation path unavailable; reused recent published canonicals."
+        "section_depth_accepted_cards": 8,
+        "section_depth_shortfall": 0,
+        "depth_backfill_writer_attempts": 1,
+        "writer_card_attempts": 9,
+        "duration_seconds": 60.639
       }
     },
     {
       "category_key": "sports",
-      "hero_source_index": 1,
+      "hero_source_index": 9,
       "card_source_indexes": [
         2,
-        12,
+        11,
+        8,
         10,
+        3,
         4,
         5,
-        6,
-        11,
-        8
+        1
+      ],
+      "diagnostics": {
+        "model": "claude-sonnet-5",
+        "writer_model": "claude-sonnet-4-5",
+        "rejected": [
+          {
+            "source_index": 1,
+            "reason": "Routine local college basketball recap of an early-season blowout win with no national significance beyond campus interest."
+          },
+          {
+            "source_index": 6,
+            "reason": "Duplicate event coverage of the same Everton-Coventry match already selected via source 5; this is a referee-decision reaction piece on the identical game, not a distinct story."
+          }
+        ],
+        "writer_failures": [
+          {
+            "source_index": 7,
+            "reason": [
+              "person_first_reference_not_full_name"
+            ]
+          }
+        ],
+        "protected_material_update_repairs": [],
+        "hero_recovery_attempts": [],
+        "hero_recovered": false,
+        "editor_selected_card_count": 8,
+        "section_depth_target": 8,
+        "section_depth_accepted_cards": 8,
+        "section_depth_shortfall": 0,
+        "depth_backfill_writer_attempts": 1,
+        "writer_card_attempts": 9,
+        "duration_seconds": 64.701
+      }
+    },
+    {
+      "category_key": "entertainment",
+      "hero_source_index": 14,
+      "card_source_indexes": [
+        12,
+        5,
+        2,
+        13,
+        1,
+        8,
+        9,
+        3
       ],
       "diagnostics": {
         "model": "claude-sonnet-5",
@@ -196,67 +336,52 @@
         "rejected": [
           {
             "source_index": 3,
-            "reason": "Thin, discovery-only fragment about a single refereeing incident with no substantive article text; not a meaningful sports development."
+            "reason": "Local Taiwanese telecom investment announcement with no national US relevance or audience interest."
+          },
+          {
+            "source_index": 4,
+            "reason": "Opinion/commentary piece on a late-night host's political jokes; not a factual entertainment-industry development."
+          },
+          {
+            "source_index": 6,
+            "reason": "Duplicate of source 5, same Bond casting story aggregated from multiple outlets."
           },
           {
             "source_index": 7,
-            "reason": "Duplicate/overlapping transfer topic already covered contextually in the Chelsea midfield analysis card; standalone player-quote piece on a single signing lacks broader national relevance for a US audience."
+            "reason": "Local Taiwanese industry showcase event with no national US relevance."
           },
           {
-            "source_index": 8,
-            "reason": "Local British equestrian competition result with no US or broader national significance."
-          },
-          {
-            "source_index": 13,
-            "reason": "Same-event follow-up analysis of the Arsenal-Chelsea match already covered by source 9; would duplicate the same real-world event."
-          },
-          {
-            "source_index": 14,
-            "reason": "Thin, discovery-only fragment about a Premier League draw with no substantive details; routine result without national significance."
+            "source_index": 10,
+            "reason": "Thin celebrity gossip item about a reality star's personal support network after a breakup; lacks national significance."
           }
         ],
         "writer_failures": [
           {
-            "source_index": 9,
+            "source_index": 11,
             "reason": [
-              "generated_copy_drifted_from_source_focus"
+              "person_first_reference_not_full_name"
             ]
           }
         ],
         "protected_material_update_repairs": [],
+        "hero_recovery_attempts": [],
+        "hero_recovered": false,
         "editor_selected_card_count": 8,
         "section_depth_target": 8,
         "section_depth_accepted_cards": 8,
         "section_depth_shortfall": 0,
         "depth_backfill_writer_attempts": 1,
         "writer_card_attempts": 9,
-        "duration_seconds": 65.892
-      }
-    },
-    {
-      "category_key": "entertainment",
-      "hero_source_index": null,
-      "card_source_indexes": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "diagnostics": {
-        "status": "archive_recovery",
-        "reason": "Live source/generation path unavailable; reused recent published canonicals."
+        "duration_seconds": 68.104
       }
     },
     {
       "category_key": "politics",
       "hero_source_index": 3,
       "card_source_indexes": [
+        2,
         1,
-        2
+        4
       ],
       "diagnostics": {
         "model": "claude-sonnet-5",
@@ -264,13 +389,15 @@
         "rejected": [],
         "writer_failures": [],
         "protected_material_update_repairs": [],
-        "editor_selected_card_count": 2,
+        "hero_recovery_attempts": [],
+        "hero_recovered": false,
+        "editor_selected_card_count": 3,
         "section_depth_target": 8,
-        "section_depth_accepted_cards": 2,
-        "section_depth_shortfall": 6,
+        "section_depth_accepted_cards": 3,
+        "section_depth_shortfall": 5,
         "depth_backfill_writer_attempts": 0,
-        "writer_card_attempts": 2,
-        "duration_seconds": 31.429
+        "writer_card_attempts": 3,
+        "duration_seconds": 27.092
       }
     }
   ]

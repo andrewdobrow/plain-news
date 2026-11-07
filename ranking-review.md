@@ -4,41 +4,41 @@
 
 ## Hero
 
-- Current: **Seattle Times and Newsday sue OpenAI and Microsoft over alleged unauthorized use of journalism to train AI**
-- Recommended: **Trump envoys meet with Ukrainian and Russian leaders, but peace remains elusive**
+- Current: **No. 9 BYU meets Utah in first top-10 Holy War matchup, drawing national ABC broadcast**
+- Recommended: **Iran submits nuclear proposal to U.S. as Trump weighs strikes amid divided advisers**
 - Recommendation: CHANGE (not enforced)
 
 ## Top Stories deck
 
 | Rank | Current | Recommended | Score | Why |
 | ---: | --- | --- | ---: | --- |
-| 1 | Greek air force F-4 Phantom jet crashes at air show near Athens, killing both pilots | Trump envoys meet with Ukrainian and Russian leaders, but peace remains elusive | 82 | importance 83; freshness 87.75; urgency 6/10 |
-| 2 | Egyptian court sentences TV presenter and 11 others to death in drug trafficking case | Germany's far-right AfD wins 44% in eastern state election, falls short of majority | 80 | importance 76; freshness 89.0; urgency 6/10 |
-| 3 | Indonesia expands airport closures to eight as Anak Krakatau eruption strands 170,000 passengers | Trump envoys Witkoff and Kushner visit Kyiv for peace talks after Moscow meetings | 80 | importance 77; freshness 79.19; urgency 7/10 |
-| 4 | Iran warns of escalating retaliation against US as fighting continues in the Gulf | German startup Isar Aerospace becomes first private company to launch commercial rocket into orbit from Europe | 79 | importance 100; freshness 79.99; urgency 3/10 |
-| 5 | Trump envoys to visit Moscow and Kyiv this weekend as U.S. pushes new peace proposal | Latino leaders pressure Beshear to invest $10 million in Texas governor's race | 78 | importance 77; freshness 89.37; urgency 5/10 |
-| 6 | US military strikes three Iranian oil tankers in retaliation for attacks on American warships | Historical data shows divided Congress under Republican president tied to 7.33% average annual S&P 500 return | 75 | importance 100; freshness 58.46; urgency 5/10 |
-| 7 | US diesel prices reach all-time high as Iran conflict disrupts fuel supply | Zelensky expects Ukraine war to continue into winter after talks with Trump envoys | 79 | importance 82; freshness 87.47; urgency 5/10; -6 category saturation |
-| 8 | Russia Suspected in Series of Sabotage Incidents Across Europe | Great Britain and Ireland complete record Walker Cup comeback to defeat United States | 70 | importance 55; freshness 86.66; urgency 5/10 |
-| 9 | Flooding in Tibet Leaves Hundreds Missing as China Faces Criticism Over Response | Iran warns of escalating retaliation against US as fighting continues in the Gulf | 65 | importance 51; freshness 90.01; urgency 3/10 |
-| 10 | Australia proposes law requiring social media platforms to offer algorithm opt-out | Mariska Hargitay wins two Emmys for HBO documentary about her mother Jayne Mansfield | 64 | importance 63; freshness 66.62; urgency 3/10 |
-| 11 | Protesters block Portsmouth roads after 140 migrants rescued from English Channel | Former DeSantis aides warn Democratic governors not to delay 2028 presidential bids | 66 | importance 77; freshness 50.42; urgency 4/10; -6 category saturation |
-| 12 | Austria enforces headscarf ban for girls under 14 in schools | Greek air force F-4 Phantom jet crashes at air show near Athens, killing both pilots | 60 | importance 56; freshness 58.46; urgency 5/10 |
+| 1 | Paraguay's president impeached, arrested after bank collapse left millions unable to access savings | Iran submits nuclear proposal to U.S. as Trump weighs strikes amid divided advisers | 91 | importance 100; freshness 95.88; urgency 8/10 |
+| 2 | Iran submits nuclear proposal to U.S. as Trump weighs strikes amid divided advisers | Vance leads behind-the-scenes push for new Iran deal | 91 | importance 100; freshness 93.24; urgency 7/10 |
+| 3 | Pope Leo XIV begins South American tour in Uruguay weeks after lung surgery | Melania Trump's Amazon docuseries faces potential House oversight scrutiny | 84 | importance 100; freshness 93.52; urgency 5/10 |
+| 4 | Archaeologists find evidence of cannabis use for psychoactive purposes 2,800 years ago in Siberian tomb | Tesla to end Cybertruck production as automakers shift to smaller electric vehicles | 80 | importance 83; freshness 88.82; urgency 5/10 |
+| 5 | Secret Service arrests man near White House with guns who said voices told him to kill Trump | AI stocks recover slightly after multitrillion-dollar market sell-off | 79 | importance 68; freshness 86.47; urgency 7/10 |
+| 6 | Wisconsin state trooper detained by ICE at airport set for release after 24 hours | Sen. Ron Johnson forces GOP meeting to debate midterm losses, pushes to delay leadership vote | 76 | importance 72; freshness 79.74; urgency 6/10 |
+| 7 | Paraguay's president impeached and arrested after bank collapse | Secret Service arrests man near White House with guns who said voices told him to kill Trump | 75 | importance 47; freshness 92.15; urgency 8/10 |
+| 8 | Leonid meteor shower to peak mid-November across U.S. | Taiwan's Chunghwa Telecom Announces 10 Content Investments Spanning Film, TV and Music | 73 | importance 45; freshness 97.29; urgency 7/10 |
+| 9 | Justice Department moves to drop lawsuit over California ballots it claimed went to noncitizens | Iran-linked tankers loiter over subsea internet cables in Strait of Hormuz | 71 | importance 45; freshness 89.12; urgency 7/10 |
+| 10 | Gladiator II stuntman sues over injuries from on-set explosion | Gladiator II stuntman sues over injuries from on-set explosion | 69 | importance 46; freshness 94.04; urgency 6/10 |
+| 11 | Jehovah's Witness died refusing blood transfusion weeks before church reversed 81-year ban | Chainalysis says breach exposed credentials and security tokens for all customers | 63 | importance 15; freshness 86.2; urgency 8/10 |
+| 12 | Tesla to wind down Cybertruck production in Texas next year, Musk says | Format Executives Detail How 'Suits,' 'Ninja Warrior' Are Adapted for International Markets | 68 | importance 55; freshness 95.89; urgency 3/10; -6 category saturation |
 
 ## Recommended moves
 
-- **Trump envoys Witkoff and Kushner visit Kyiv for peace talks after Moscow meetings**: 55 → 3 — importance 77; freshness 79.19; urgency 7/10
-- **Latino leaders pressure Beshear to invest $10 million in Texas governor's race**: 56 → 5 — importance 77; freshness 89.37; urgency 5/10
-- **Former DeSantis aides warn Democratic governors not to delay 2028 presidential bids**: 57 → 11 — importance 77; freshness 50.42; urgency 4/10; -6 category saturation
-- **Mariska Hargitay wins two Emmys for HBO documentary about her mother Jayne Mansfield**: 48 → 10 — importance 63; freshness 66.62; urgency 3/10
-- **Great Britain and Ireland complete record Walker Cup comeback to defeat United States**: 40 → 8 — importance 55; freshness 86.66; urgency 5/10
-- **German startup Isar Aerospace becomes first private company to launch commercial rocket into orbit from Europe**: 31 → 4 — importance 100; freshness 79.99; urgency 3/10
-- **Trump envoys meet with Ukrainian and Russian leaders, but peace remains elusive**: 14 → 1 — importance 83; freshness 87.75; urgency 6/10
-- **Historical data shows divided Congress under Republican president tied to 7.33% average annual S&P 500 return**: 19 → 6 — importance 100; freshness 58.46; urgency 5/10
-- **Germany's far-right AfD wins 44% in eastern state election, falls short of majority**: 13 → 2 — importance 76; freshness 89.0; urgency 6/10
-- **Greek air force F-4 Phantom jet crashes at air show near Athens, killing both pilots**: 1 → 12 — importance 56; freshness 58.46; urgency 5/10
-- **Egyptian court sentences TV presenter and 11 others to death in drug trafficking case**: 2 → 13 — importance 26; freshness 59.98; urgency 3/10
-- **Indonesia expands airport closures to eight as Anak Krakatau eruption strands 170,000 passengers**: 3 → 14 — importance 21; freshness 70.01; urgency 3/10
+- **Vance leads behind-the-scenes push for new Iran deal**: 44 → 2 — importance 100; freshness 93.24; urgency 7/10
+- **Sen. Ron Johnson forces GOP meeting to debate midterm losses, pushes to delay leadership vote**: 45 → 6 — importance 72; freshness 79.74; urgency 6/10
+- **Melania Trump's Amazon docuseries faces potential House oversight scrutiny**: 37 → 3 — importance 100; freshness 93.52; urgency 5/10
+- **Taiwan's Chunghwa Telecom Announces 10 Content Investments Spanning Film, TV and Music**: 41 → 8 — importance 45; freshness 97.29; urgency 7/10
+- **Format Executives Detail How 'Suits,' 'Ninja Warrior' Are Adapted for International Markets**: 39 → 12 — importance 55; freshness 95.89; urgency 3/10; -6 category saturation
+- **Paraguay's president impeached, arrested after bank collapse left millions unable to access savings**: 1 → 13 — importance 0; freshness 96.99; urgency 8/10
+- **Pope Leo XIV begins South American tour in Uruguay weeks after lung surgery**: 3 → 14 — importance 0; freshness 98.33; urgency 5/10
+- **Archaeologists find evidence of cannabis use for psychoactive purposes 2,800 years ago in Siberian tomb**: 4 → 15 — importance 6; freshness 88.52; urgency 3/10
+- **Iran-linked tankers loiter over subsea internet cables in Strait of Hormuz**: 19 → 9 — importance 45; freshness 89.12; urgency 7/10
+- **Wisconsin state trooper detained by ICE at airport set for release after 24 hours**: 6 → 16 — importance 15; freshness 90.68; urgency 6/10
+- **Paraguay's president impeached and arrested after bank collapse**: 7 → 17 — importance 0; freshness 96.99; urgency 7/10
+- **Leonid meteor shower to peak mid-November across U.S.**: 8 → 18 — importance 0; freshness 94.72; urgency 7/10
 
 ## Guardrails
 
