@@ -369,6 +369,48 @@ def test_plain_category_classification_keeps_non_none_pool_depth():
     assert not any(r['title']=='Business source 11' for r in kept)
 
 
+
+def test_unpublishable_live_hero_recovers_from_safe_alternate(monkeypatch):
+    import plain_engine.assignment_pipeline as ap
+    source_rows = [
+        {'title': f'Nationwide reporting item {i}', 'summary': words(f'fact{i}_', 120),
+         'article_text': words(f'fact{i}_', 180), 'link': f'https://example.com/national/{i}',
+         'published': recent_published(1), 'source_quality': 'full'}
+        for i in range(3)
+    ]
+    def fake_editor(client, category_key, category_label, sources, *, card_count, timeout_seconds):
+        return {'hero': {'source_index': 1, 'angle': 'lead'},
+                'cards': [{'source_index': 2, 'angle': 'alternate'}], 'rejected': []}
+    calls = []
+    def fake_writer(client, *, category_key, category_label, source, assignment, hero, timeout_seconds):
+        idx = int(assignment['source_index'])
+        calls.append((idx, hero))
+        return {'source_index': idx, 'headline': source['title'], 'body': _long_body(),
+                'publication_quality_ok': not (hero and idx == 1),
+                'publication_quality_reasons': ['insufficient_article_structure'] if hero and idx == 1 else []}
+    monkeypatch.setattr(ap, 'run_assignment_editor', fake_editor)
+    monkeypatch.setattr(ap, 'run_assignment_writer', fake_writer)
+    result = ap.run_live_assignment_category(object(), 'us', 'U.S.', source_rows, card_count=1)
+    assert result['hero']['source_index'] == 2
+    assert result['assignment_editor']['hero_recovered'] is True
+    assert result['assignment_editor']['hero_recovery_attempts'][0]['source_index'] == 1
+    assert (1, True) in calls and (2, True) in calls
+
+
+def test_live_hero_recovery_never_bypasses_protected_material_update(monkeypatch):
+    import plain_engine.assignment_pipeline as ap
+    source = {'title': 'Validated new national development',
+              'article_text': words('source', 180), 'source_quality': 'full',
+              'published': recent_published(1), 'pre_generation_material_update': True}
+    monkeypatch.setattr(ap, 'run_assignment_editor', lambda *args, **kwargs:
+                        {'hero': {'source_index': 1, 'angle': 'update'}, 'cards': [], 'rejected': []})
+    def failing_writer(*args, **kwargs):
+        raise ValueError('unusable update response')
+    monkeypatch.setattr(ap, 'run_assignment_writer', failing_writer)
+    import pytest
+    with pytest.raises(RuntimeError, match='validated material update'):
+        ap.run_live_assignment_category(object(), 'us', 'U.S.', [source], card_count=0)
+
 def test_assignment_pipeline_backfills_to_section_depth_without_weakening_quality(monkeypatch):
     import plain_engine.assignment_pipeline as ap
     now=recent_published(1)

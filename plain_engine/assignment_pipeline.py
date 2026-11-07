@@ -165,8 +165,42 @@ def run_live_assignment_category(client,category_key,category_label,sources,*,ca
   return min(default,left)
  plan=run_assignment_editor(client,category_key,category_label,sources,card_count=card_count,timeout_seconds=remaining(60))
  ha=plan['hero'];hero_index=int(ha['source_index']);hero_source=sources[hero_index-1]
- hero=run_assignment_writer(client,category_key=category_key,category_label=category_label,source=hero_source,assignment=ha,hero=True,timeout_seconds=remaining(90))
+ hero_recovery_attempts=[];original_hero_index=hero_index
+ try:
+  hero=run_assignment_writer(client,category_key=category_key,category_label=category_label,source=hero_source,assignment=ha,hero=True,timeout_seconds=remaining(90))
+ except Exception as exc:
+  if hero_source.get('pre_generation_material_update'):
+   raise RuntimeError(f'selected validated material update failed hero writer: {type(exc).__name__}: {exc}') from exc
+  hero_recovery_attempts.append({'source_index':hero_index,'reason':[type(exc).__name__]});hero=None
  protected_repairs=[]
+ if hero is not None and not hero.get('publication_quality_ok') and not hero_source.get('pre_generation_material_update'):
+  hero_recovery_attempts.append({'source_index':hero_index,'reason':list(hero.get('publication_quality_reasons') or ['publication_quality_failed'])});hero=None
+ if hero is None:
+  # Retry eligible, non-rejected exact sources instead of losing the entire section.
+  # Protected material updates must always fail closed on an unsafe writer result.
+  hard_rejected=_hard_rejected_indexes(plan);candidate_indexes=[]
+  for choice in plan.get('cards',[]):
+   try:i=int(choice.get('source_index'))
+   except (TypeError,ValueError,AttributeError):continue
+   if i not in candidate_indexes:candidate_indexes.append(i)
+  candidate_indexes.extend(i for i in range(1,len(sources)+1) if i not in candidate_indexes)
+  for i in candidate_indexes:
+   if i==original_hero_index or i in hard_rejected or not 1<=i<=len(sources):continue
+   if not _record(i,sources[i-1])['hero_eligible']:continue
+   if len(hero_recovery_attempts)>=4:break
+   candidate=sources[i-1];assignment={'source_index':i,'angle':str(candidate.get('title') or ''),'urgency_score':6,'hero_recovery':True}
+   try:
+    proposed=run_assignment_writer(client,category_key=category_key,category_label=category_label,source=candidate,assignment=assignment,hero=True,timeout_seconds=remaining(90))
+    if proposed.get('publication_quality_ok'):
+     hero=proposed;hero_index=i;hero_source=candidate;ha=assignment;break
+    if candidate.get('pre_generation_material_update'):
+     raise RuntimeError('validated material update failed hero publication-quality contract: '+','.join(proposed.get('publication_quality_reasons') or ['unknown']))
+    hero_recovery_attempts.append({'source_index':i,'reason':list(proposed.get('publication_quality_reasons') or ['publication_quality_failed'])})
+   except Exception as exc:
+    if candidate.get('pre_generation_material_update'):raise
+    hero_recovery_attempts.append({'source_index':i,'reason':[type(exc).__name__]})
+  if hero is None:
+   raise RuntimeError('no publication-quality live hero after bounded exact-source recovery: '+str(hero_recovery_attempts))
  if hero_source.get('pre_generation_material_update') and not hero.get('publication_quality_ok'):
   if defer_protected_material_update_quality_failure(hero,hero.get('publication_quality_reasons',[]),guard='assignment_writer_hero'):
    protected_repairs.append({'surface':'hero','source_index':ha.get('source_index'),'reasons':list(hero.get('publication_quality_reasons') or []),'canonical_slug':hero.get('pre_generation_material_update_canonical_slug','')})
@@ -232,6 +266,7 @@ def run_live_assignment_category(client,category_key,category_label,sources,*,ca
   'assignment_editor':{
    'model':ASSIGNMENT_EDITOR_MODEL,'writer_model':WRITER_MODEL,'rejected':plan.get('rejected',[]),
    'writer_failures':fail,'protected_material_update_repairs':protected_repairs,
+   'hero_recovery_attempts':hero_recovery_attempts,'hero_recovered':hero_index!=original_hero_index,
    'editor_selected_card_count':editor_selected_count,'section_depth_target':card_count,
    'section_depth_accepted_cards':len(cards),'section_depth_shortfall':max(0,card_count-len(cards)),
    'depth_backfill_writer_attempts':backfill_attempts,'writer_card_attempts':attempts,
