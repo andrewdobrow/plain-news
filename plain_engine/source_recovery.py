@@ -1,6 +1,6 @@
 """National source discovery and recovery, adapted from TCT's production pipeline."""
 from __future__ import annotations
-import html as html_lib, json, re, socket, threading
+import html as html_lib, json, re, threading
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import timezone
 from email.utils import parsedate_to_datetime
@@ -14,6 +14,7 @@ import requests
 from .generation_cache import CACHE_MISS, PersistentGenerationCache, cache_hash, normalize_cache_url, source_content_hint
 
 FEED_TIMEOUT_SECONDS=9; SOURCE_FETCH_TIMEOUT_SECONDS=9; MIN_SOURCE_WORDS=80; FULL_SOURCE_WORDS=140
+MAX_FEED_BYTES=4_000_000
 USER_AGENT='Mozilla/5.0 (compatible; PlainNewsBot/2.0; +https://plainnews.app)'
 DISCOVERY_DOMAINS={'nytimes.com','washingtonpost.com','wsj.com','bloomberg.com','businessinsider.com','theinformation.com','ft.com'}
 TRUSTED_PUBLISHER_DOMAINS={
@@ -64,22 +65,50 @@ def _empty_feed_document():
         from types import SimpleNamespace
         return SimpleNamespace(feed={},entries=[])
     return feedparser.FeedParserDict(feed=feedparser.FeedParserDict(),entries=[])
-def fetch_feed_document(url):
-    if feedparser is None:return _empty_feed_document()
+def _download_feed_bytes(url):
+    """Fetch in a worker thread, but NEVER parse XML there.
+
+    Feed parsing uses a native XML parser; isolating it from concurrent network
+    workers avoids concurrent native-parser churn and yields deterministic feeds.
+    """
     try:
-        r=requests.get(url,timeout=FEED_TIMEOUT_SECONDS,headers={'User-Agent':USER_AGENT,'Accept':'application/rss+xml, application/xml, text/xml, */*'})
-        return feedparser.parse(r.content) if r.status_code<400 else _empty_feed_document()
+        r=requests.get(url,timeout=FEED_TIMEOUT_SECONDS,headers={
+            'User-Agent':USER_AGENT,
+            'Accept':'application/rss+xml, application/xml, text/xml, */*',
+        })
+        if r.status_code>=400:return b''
+        return r.content[:MAX_FEED_BYTES]
     except Exception:
-        try:
-            old=socket.getdefaulttimeout(); socket.setdefaulttimeout(FEED_TIMEOUT_SECONDS); parsed=feedparser.parse(url); socket.setdefaulttimeout(old); return parsed
-        except Exception:return _empty_feed_document()
+        return b''
+
+
+def _parse_feed_bytes(payload):
+    if feedparser is None or not payload:return _empty_feed_document()
+    try:return feedparser.parse(payload)
+    except Exception:return _empty_feed_document()
+
+
+def fetch_feed_document(url):
+    """Direct fallback: same bounded request, parsed on the caller's thread."""
+    return _parse_feed_bytes(_download_feed_bytes(url))
+
+
 def prefetch_feed_documents(urls):
-    ordered=sorted({str(u).strip() for u in urls if str(u).strip()}); docs={u:_empty_feed_document() for u in ordered}
-    with ThreadPoolExecutor(max_workers=min(12,max(1,len(ordered)))) as ex:
-        futs={ex.submit(fetch_feed_document,u):u for u in ordered}
+    """Download feeds concurrently; parse every document sequentially.
+
+    Native XML processing must never share the worker pool. All callers still
+    receive the same {feed_url: parsed_feed} interface, including failed feeds.
+    """
+    ordered=sorted({str(u).strip() for u in urls if str(u).strip()})
+    downloaded={}
+    with ThreadPoolExecutor(max_workers=min(8,max(1,len(ordered)))) as ex:
+        futs={ex.submit(_download_feed_bytes,u):u for u in ordered}
         for f in as_completed(futs):
-            try:docs[futs[f]]=f.result()
-            except Exception:pass
+            try:downloaded[futs[f]]=f.result()
+            except Exception:downloaded[futs[f]]=b''
+    docs={}
+    for url in ordered:
+        docs[url]=_parse_feed_bytes(downloaded.pop(url,b''))
     return docs
 def _lock(key):
     with _LOCK_GUARD:return _LOCKS.setdefault(key,threading.Lock())
