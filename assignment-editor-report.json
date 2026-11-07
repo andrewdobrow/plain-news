@@ -1,221 +1,14 @@
 {
-  "generated_at": "2026-11-07T05:12:52.601046Z",
+  "generated_at": "2026-11-07T17:51:22.841130Z",
   "assignment_editor_model": "claude-sonnet-5",
   "writer_model": "claude-sonnet-4-5",
   "categories": [
     {
       "category_key": "world",
-      "hero_source_index": 2,
-      "card_source_indexes": [
-        4,
-        1,
-        9
-      ],
-      "diagnostics": {
-        "model": "claude-sonnet-5",
-        "writer_model": "claude-sonnet-4-5",
-        "rejected": [
-          {
-            "source_index": 3,
-            "reason": "Duplicate of source 2, same event (Peña impeachment and arrest) with identical content and encoding errors."
-          },
-          {
-            "source_index": 8,
-            "reason": "Primarily a U.S. domestic politics story about a White House staffing decision; belongs in Politics, not World."
-          }
-        ],
-        "writer_failures": [
-          {
-            "source_index": 7,
-            "reason": [
-              "person_first_reference_not_full_name"
-            ]
-          },
-          {
-            "source_index": 6,
-            "reason": [
-              "generated_copy_drifted_from_source_focus"
-            ]
-          },
-          {
-            "source_index": 5,
-            "reason": [
-              "generated_copy_drifted_from_source_focus"
-            ]
-          },
-          {
-            "source_index": 8,
-            "reason": [
-              "person_first_reference_not_full_name"
-            ]
-          }
-        ],
-        "protected_material_update_repairs": [],
-        "hero_recovery_attempts": [],
-        "hero_recovered": false,
-        "editor_selected_card_count": 6,
-        "section_depth_target": 8,
-        "section_depth_accepted_cards": 3,
-        "section_depth_shortfall": 5,
-        "depth_backfill_writer_attempts": 1,
-        "writer_card_attempts": 7,
-        "duration_seconds": 53.197
-      }
-    },
-    {
-      "category_key": "us",
-      "hero_source_index": 1,
+      "hero_source_index": 5,
       "card_source_indexes": [
         2,
         3,
-        4,
-        7,
-        8,
-        9
-      ],
-      "diagnostics": {
-        "model": "claude-sonnet-5",
-        "writer_model": "claude-sonnet-4-5",
-        "rejected": [
-          {
-            "source_index": 3,
-            "reason": "Foreign political event (Paraguay) with no U.S. domestic angle; belongs in World, not U.S."
-          },
-          {
-            "source_index": 4,
-            "reason": "UK-focused meteor shower/weather feature with no U.S. relevance; tech/science interest piece, not U.S. news."
-          },
-          {
-            "source_index": 5,
-            "reason": "UK musician profile/entertainment feature, not a U.S. news story."
-          },
-          {
-            "source_index": 6,
-            "reason": "UK-focused economic feature on Bank of England rate rise; not applicable to U.S. audience."
-          },
-          {
-            "source_index": 7,
-            "reason": "Primarily a politics/elections story centered on DOJ litigation over California ballots; better fits Politics category and risks duplicating a political hero."
-          },
-          {
-            "source_index": 8,
-            "reason": "UK entertainment lawsuit over a film set injury; no U.S. national relevance."
-          },
-          {
-            "source_index": 9,
-            "reason": "Religion/medical ethics feature centered on Jehovah's Witnesses doctrine change, framed as World/feature content rather than a U.S. public safety or policy development, and not tied to a specific breaking U.S. event beyond one family's account."
-          },
-          {
-            "source_index": 10,
-            "reason": "Rugby sports recap (Ireland vs Argentina), not a U.S. news story."
-          },
-          {
-            "source_index": 11,
-            "reason": "English Premier League soccer recap, not a U.S. news story."
-          },
-          {
-            "source_index": 12,
-            "reason": "Election vote-counting procedural story is primarily a politics/elections piece best suited for Politics category, and risks duplicating the political hero focus rather than a U.S. society/public safety angle."
-          }
-        ],
-        "writer_failures": [
-          {
-            "source_index": 5,
-            "reason": [
-              "JSONDecodeError"
-            ]
-          },
-          {
-            "source_index": 6,
-            "reason": [
-              "card_body_over_140_words"
-            ]
-          },
-          {
-            "source_index": 10,
-            "reason": [
-              "JSONDecodeError"
-            ]
-          },
-          {
-            "source_index": 11,
-            "reason": [
-              "JSONDecodeError"
-            ]
-          },
-          {
-            "source_index": 12,
-            "reason": [
-              "headline_entity_missing_from_lead"
-            ]
-          }
-        ],
-        "protected_material_update_repairs": [],
-        "hero_recovery_attempts": [],
-        "hero_recovered": false,
-        "editor_selected_card_count": 1,
-        "section_depth_target": 8,
-        "section_depth_accepted_cards": 6,
-        "section_depth_shortfall": 2,
-        "depth_backfill_writer_attempts": 10,
-        "writer_card_attempts": 11,
-        "duration_seconds": 71.934
-      }
-    },
-    {
-      "category_key": "business",
-      "hero_source_index": 3,
-      "card_source_indexes": [
-        2,
-        4
-      ],
-      "diagnostics": {
-        "model": "claude-sonnet-5",
-        "writer_model": "claude-sonnet-4-5",
-        "rejected": [
-          {
-            "source_index": 5,
-            "reason": "Duplicate of source 4, same BBC report on the AI stock sell-off and rebound with no material differences."
-          }
-        ],
-        "writer_failures": [
-          {
-            "source_index": 1,
-            "reason": [
-              "card_body_over_140_words"
-            ]
-          }
-        ],
-        "protected_material_update_repairs": [],
-        "hero_recovery_attempts": [
-          {
-            "source_index": 4,
-            "reason": [
-              "headline_money_claim_missing_from_lead"
-            ]
-          }
-        ],
-        "hero_recovered": true,
-        "editor_selected_card_count": 3,
-        "section_depth_target": 8,
-        "section_depth_accepted_cards": 2,
-        "section_depth_shortfall": 6,
-        "depth_backfill_writer_attempts": 1,
-        "writer_card_attempts": 3,
-        "duration_seconds": 37.992
-      }
-    },
-    {
-      "category_key": "tech",
-      "hero_source_index": 14,
-      "card_source_indexes": [
-        6,
-        4,
-        3,
-        9,
-        8,
-        15,
-        5,
         1
       ],
       "diagnostics": {
@@ -223,170 +16,14 @@
         "writer_model": "claude-sonnet-4-5",
         "rejected": [
           {
-            "source_index": 1,
-            "reason": "Primarily a political/lobbying story about Big Tech's relationship with Democrats after the midterms, better suited to Politics than Tech & Science."
-          },
-          {
-            "source_index": 2,
-            "reason": "UK-specific weather and viewing guide for the Leonid meteor shower with no national U.S. news angle; service piece, not a news development."
-          },
-          {
-            "source_index": 7,
-            "reason": "Duplicate of the same OpenAI funding/valuation event covered in source 4; same-event rewrite with largely overlapping facts."
-          },
-          {
-            "source_index": 10,
-            "reason": "Duplicate of source 11, same EA game re-release story; entertainment/gaming listicle without consequential national news value."
-          },
-          {
-            "source_index": 11,
-            "reason": "Duplicate of source 10, same EA classic game re-release announcement; low consequence entertainment news."
-          },
-          {
-            "source_index": 13,
-            "reason": "First-person product review/opinion piece about a beta Apple Watch feature, not a factual news development."
-          },
-          {
-            "source_index": 16,
-            "reason": "Duplicate of source 15 covering the same Great Unconformity mantle study."
-          }
-        ],
-        "writer_failures": [
-          {
-            "source_index": 12,
-            "reason": [
-              "person_first_reference_not_full_name"
-            ]
-          }
-        ],
-        "protected_material_update_repairs": [],
-        "hero_recovery_attempts": [],
-        "hero_recovered": false,
-        "editor_selected_card_count": 8,
-        "section_depth_target": 8,
-        "section_depth_accepted_cards": 8,
-        "section_depth_shortfall": 0,
-        "depth_backfill_writer_attempts": 1,
-        "writer_card_attempts": 9,
-        "duration_seconds": 60.639
-      }
-    },
-    {
-      "category_key": "sports",
-      "hero_source_index": 9,
-      "card_source_indexes": [
-        2,
-        11,
-        8,
-        10,
-        3,
-        4,
-        5,
-        1
-      ],
-      "diagnostics": {
-        "model": "claude-sonnet-5",
-        "writer_model": "claude-sonnet-4-5",
-        "rejected": [
-          {
-            "source_index": 1,
-            "reason": "Routine local college basketball recap of an early-season blowout win with no national significance beyond campus interest."
-          },
-          {
-            "source_index": 6,
-            "reason": "Duplicate event coverage of the same Everton-Coventry match already selected via source 5; this is a referee-decision reaction piece on the identical game, not a distinct story."
-          }
-        ],
-        "writer_failures": [
-          {
-            "source_index": 7,
-            "reason": [
-              "person_first_reference_not_full_name"
-            ]
-          }
-        ],
-        "protected_material_update_repairs": [],
-        "hero_recovery_attempts": [],
-        "hero_recovered": false,
-        "editor_selected_card_count": 8,
-        "section_depth_target": 8,
-        "section_depth_accepted_cards": 8,
-        "section_depth_shortfall": 0,
-        "depth_backfill_writer_attempts": 1,
-        "writer_card_attempts": 9,
-        "duration_seconds": 64.701
-      }
-    },
-    {
-      "category_key": "entertainment",
-      "hero_source_index": 14,
-      "card_source_indexes": [
-        12,
-        5,
-        2,
-        13,
-        1,
-        8,
-        9,
-        3
-      ],
-      "diagnostics": {
-        "model": "claude-sonnet-5",
-        "writer_model": "claude-sonnet-4-5",
-        "rejected": [
-          {
-            "source_index": 3,
-            "reason": "Local Taiwanese telecom investment announcement with no national US relevance or audience interest."
-          },
-          {
             "source_index": 4,
-            "reason": "Opinion/commentary piece on a late-night host's political jokes; not a factual entertainment-industry development."
+            "reason": "Duplicate of source 2, same New Zealand election event with essentially identical reporting"
           },
           {
             "source_index": 6,
-            "reason": "Duplicate of source 5, same Bond casting story aggregated from multiple outlets."
-          },
-          {
-            "source_index": 7,
-            "reason": "Local Taiwanese industry showcase event with no national US relevance."
-          },
-          {
-            "source_index": 10,
-            "reason": "Thin celebrity gossip item about a reality star's personal support network after a breakup; lacks national significance."
+            "reason": "Duplicate of source 5, same Russian strikes on Ukraine's energy grid ahead of Abu Dhabi talks"
           }
         ],
-        "writer_failures": [
-          {
-            "source_index": 11,
-            "reason": [
-              "person_first_reference_not_full_name"
-            ]
-          }
-        ],
-        "protected_material_update_repairs": [],
-        "hero_recovery_attempts": [],
-        "hero_recovered": false,
-        "editor_selected_card_count": 8,
-        "section_depth_target": 8,
-        "section_depth_accepted_cards": 8,
-        "section_depth_shortfall": 0,
-        "depth_backfill_writer_attempts": 1,
-        "writer_card_attempts": 9,
-        "duration_seconds": 68.104
-      }
-    },
-    {
-      "category_key": "politics",
-      "hero_source_index": 3,
-      "card_source_indexes": [
-        2,
-        1,
-        4
-      ],
-      "diagnostics": {
-        "model": "claude-sonnet-5",
-        "writer_model": "claude-sonnet-4-5",
-        "rejected": [],
         "writer_failures": [],
         "protected_material_update_repairs": [],
         "hero_recovery_attempts": [],
@@ -397,7 +34,401 @@
         "section_depth_shortfall": 5,
         "depth_backfill_writer_attempts": 0,
         "writer_card_attempts": 3,
-        "duration_seconds": 27.092
+        "duration_seconds": 26.98
+      }
+    },
+    {
+      "category_key": "us",
+      "hero_source_index": 2,
+      "card_source_indexes": [
+        6,
+        7
+      ],
+      "diagnostics": {
+        "model": "claude-sonnet-5",
+        "writer_model": "claude-sonnet-4-5",
+        "rejected": [
+          {
+            "source_index": 1,
+            "reason": "UK/EU politics, foreign government affairs with no US angle; belongs in World, not U.S."
+          },
+          {
+            "source_index": 2,
+            "reason": "Sports result (F1 grid penalties), not a U.S. news matter and purely routine sports content."
+          },
+          {
+            "source_index": 3,
+            "reason": "Foreign affairs story about Italian minister and cyberattack; belongs in World, not U.S."
+          },
+          {
+            "source_index": 4,
+            "reason": "English Premier League match analysis, routine sports content with no U.S. relevance."
+          },
+          {
+            "source_index": 5,
+            "reason": "Entertainment/celebrity legal dispute, not a matter of law, policy, or public safety with national consequence; belongs in Entertainment."
+          },
+          {
+            "source_index": 6,
+            "reason": "Gaza humanitarian crisis, a World story with no U.S. domestic policy/law/safety frame."
+          },
+          {
+            "source_index": 7,
+            "reason": "Rugby match report, routine sports content with no national U.S. significance."
+          },
+          {
+            "source_index": 8,
+            "reason": "New Zealand general election results, foreign politics belonging in World category."
+          },
+          {
+            "source_index": 9,
+            "reason": "UK-EU Brexit relationship discussion, foreign politics/diplomacy belonging in World, not U.S. domestic category."
+          },
+          {
+            "source_index": 10,
+            "reason": "U.S. politics/election analysis piece about 2028 presidential prospects; this is a Politics category story, not U.S. law/courts/public safety/society, and would duplicate the Politics hero frame."
+          }
+        ],
+        "writer_failures": [
+          {
+            "source_index": 1,
+            "reason": [
+              "JSONDecodeError"
+            ]
+          },
+          {
+            "source_index": 3,
+            "reason": [
+              "JSONDecodeError"
+            ]
+          },
+          {
+            "source_index": 4,
+            "reason": [
+              "JSONDecodeError"
+            ]
+          },
+          {
+            "source_index": 5,
+            "reason": [
+              "headline_entity_missing_from_lead"
+            ]
+          },
+          {
+            "source_index": 8,
+            "reason": [
+              "JSONDecodeError"
+            ]
+          },
+          {
+            "source_index": 9,
+            "reason": [
+              "body_under_60_words",
+              "card_requires_two_paragraph_summary",
+              "headline_entity_missing_from_lead",
+              "lead_too_thin"
+            ]
+          }
+        ],
+        "protected_material_update_repairs": [],
+        "hero_recovery_attempts": [
+          {
+            "source_index": 1,
+            "reason": [
+              "JSONDecodeError"
+            ]
+          }
+        ],
+        "hero_recovered": true,
+        "editor_selected_card_count": 0,
+        "section_depth_target": 8,
+        "section_depth_accepted_cards": 2,
+        "section_depth_shortfall": 6,
+        "depth_backfill_writer_attempts": 8,
+        "writer_card_attempts": 8,
+        "duration_seconds": 58.829
+      }
+    },
+    {
+      "category_key": "business",
+      "hero_source_index": 3,
+      "card_source_indexes": [
+        5
+      ],
+      "diagnostics": {
+        "model": "claude-sonnet-5",
+        "writer_model": "claude-sonnet-4-5",
+        "rejected": [
+          {
+            "source_index": 3,
+            "reason": "European cyberattacks and bomb threats story is a world security and infrastructure item, not a business/markets story; no corporate or economic consequence is the central news."
+          },
+          {
+            "source_index": 4,
+            "reason": "Social Security reform story is a federal policy and political story centered on senators' legislative positions, not a markets, macroeconomic, or corporate development; better suited to politics."
+          }
+        ],
+        "writer_failures": [
+          {
+            "source_index": 2,
+            "reason": [
+              "headline_entity_missing_from_lead"
+            ]
+          },
+          {
+            "source_index": 1,
+            "reason": [
+              "generated_copy_drifted_from_source_focus",
+              "headline_money_claim_missing_from_lead"
+            ]
+          },
+          {
+            "source_index": 4,
+            "reason": [
+              "generated_copy_drifted_from_source_focus"
+            ]
+          }
+        ],
+        "protected_material_update_repairs": [],
+        "hero_recovery_attempts": [
+          {
+            "source_index": 1,
+            "reason": [
+              "generated_copy_drifted_from_source_focus",
+              "headline_money_claim_missing_from_lead"
+            ]
+          },
+          {
+            "source_index": 2,
+            "reason": [
+              "headline_entity_missing_from_lead"
+            ]
+          },
+          {
+            "source_index": 5,
+            "reason": [
+              "generated_copy_drifted_from_source_focus",
+              "person_first_reference_not_full_name"
+            ]
+          }
+        ],
+        "hero_recovered": true,
+        "editor_selected_card_count": 2,
+        "section_depth_target": 8,
+        "section_depth_accepted_cards": 1,
+        "section_depth_shortfall": 7,
+        "depth_backfill_writer_attempts": 2,
+        "writer_card_attempts": 4,
+        "duration_seconds": 49.143
+      }
+    },
+    {
+      "category_key": "tech",
+      "hero_source_index": 2,
+      "card_source_indexes": [
+        4,
+        6,
+        8,
+        9,
+        7,
+        10
+      ],
+      "diagnostics": {
+        "model": "claude-sonnet-5",
+        "writer_model": "claude-sonnet-4-5",
+        "rejected": [
+          {
+            "source_index": 10,
+            "reason": "Concerns a British soldier's court-martial and operational security breach in Estonia; this is a foreign military/legal story without a central U.S. technology angle, better suited to World if anywhere."
+          }
+        ],
+        "writer_failures": [
+          {
+            "source_index": 1,
+            "reason": [
+              "headline_entity_missing_from_lead",
+              "headline_money_claim_missing_from_lead"
+            ]
+          },
+          {
+            "source_index": 5,
+            "reason": [
+              "headline_entity_missing_from_lead"
+            ]
+          },
+          {
+            "source_index": 3,
+            "reason": [
+              "card_body_over_140_words",
+              "headline_entity_missing_from_lead"
+            ]
+          }
+        ],
+        "protected_material_update_repairs": [],
+        "hero_recovery_attempts": [
+          {
+            "source_index": 3,
+            "reason": [
+              "headline_entity_missing_from_lead"
+            ]
+          },
+          {
+            "source_index": 1,
+            "reason": [
+              "headline_entity_missing_from_lead",
+              "headline_money_claim_missing_from_lead"
+            ]
+          }
+        ],
+        "hero_recovered": true,
+        "editor_selected_card_count": 8,
+        "section_depth_target": 8,
+        "section_depth_accepted_cards": 6,
+        "section_depth_shortfall": 2,
+        "depth_backfill_writer_attempts": 2,
+        "writer_card_attempts": 9,
+        "duration_seconds": 88.546
+      }
+    },
+    {
+      "category_key": "sports",
+      "hero_source_index": 11,
+      "card_source_indexes": [
+        1,
+        3,
+        9,
+        6,
+        8,
+        5,
+        10,
+        7
+      ],
+      "diagnostics": {
+        "model": "claude-sonnet-5",
+        "writer_model": "claude-sonnet-4-5",
+        "rejected": [
+          {
+            "source_index": 4,
+            "reason": "Duplicate of source 3, same New Zealand-Scotland match report."
+          },
+          {
+            "source_index": 7,
+            "reason": "Player ratings sidebar duplicating the Leeds-Tottenham match already covered via source 2."
+          }
+        ],
+        "writer_failures": [
+          {
+            "source_index": 2,
+            "reason": [
+              "generated_copy_drifted_from_source_focus"
+            ]
+          }
+        ],
+        "protected_material_update_repairs": [],
+        "hero_recovery_attempts": [],
+        "hero_recovered": false,
+        "editor_selected_card_count": 8,
+        "section_depth_target": 8,
+        "section_depth_accepted_cards": 8,
+        "section_depth_shortfall": 0,
+        "depth_backfill_writer_attempts": 1,
+        "writer_card_attempts": 9,
+        "duration_seconds": 74.764
+      }
+    },
+    {
+      "category_key": "entertainment",
+      "hero_source_index": 5,
+      "card_source_indexes": [
+        1,
+        4,
+        6,
+        7,
+        9,
+        15,
+        2,
+        14
+      ],
+      "diagnostics": {
+        "model": "claude-sonnet-5",
+        "writer_model": "claude-sonnet-4-5",
+        "rejected": [
+          {
+            "source_index": 2,
+            "reason": "Niche awards-prediction column, thin and speculative, limited national reader relevance."
+          },
+          {
+            "source_index": 8,
+            "reason": "Low-profile artist feature with minimal national significance."
+          },
+          {
+            "source_index": 10,
+            "reason": "Duplicate of source 11; sports/celebrity gossip item of limited national consequence."
+          },
+          {
+            "source_index": 11,
+            "reason": "Duplicate of source 10, same event."
+          },
+          {
+            "source_index": 12,
+            "reason": "Promotional how-to-watch listicle for a WWE event, not news."
+          },
+          {
+            "source_index": 14,
+            "reason": "UK-based television show cancellation story with no national U.S. relevance."
+          }
+        ],
+        "writer_failures": [
+          {
+            "source_index": 3,
+            "reason": [
+              "headline_entity_missing_from_lead"
+            ]
+          },
+          {
+            "source_index": 13,
+            "reason": [
+              "person_first_reference_not_full_name"
+            ]
+          },
+          {
+            "source_index": 8,
+            "reason": [
+              "headline_entity_missing_from_lead"
+            ]
+          }
+        ],
+        "protected_material_update_repairs": [],
+        "hero_recovery_attempts": [],
+        "hero_recovered": false,
+        "editor_selected_card_count": 8,
+        "section_depth_target": 8,
+        "section_depth_accepted_cards": 8,
+        "section_depth_shortfall": 0,
+        "depth_backfill_writer_attempts": 3,
+        "writer_card_attempts": 11,
+        "duration_seconds": 75.836
+      }
+    },
+    {
+      "category_key": "politics",
+      "hero_source_index": 1,
+      "card_source_indexes": [],
+      "diagnostics": {
+        "model": "claude-sonnet-5",
+        "writer_model": "claude-sonnet-4-5",
+        "rejected": [],
+        "writer_failures": [],
+        "protected_material_update_repairs": [],
+        "hero_recovery_attempts": [],
+        "hero_recovered": false,
+        "editor_selected_card_count": 0,
+        "section_depth_target": 8,
+        "section_depth_accepted_cards": 0,
+        "section_depth_shortfall": 8,
+        "depth_backfill_writer_attempts": 0,
+        "writer_card_attempts": 0,
+        "duration_seconds": 10.6
       }
     }
   ]

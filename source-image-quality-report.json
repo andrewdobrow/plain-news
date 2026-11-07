@@ -1,370 +1,329 @@
 {
-  "generated_at": "2026-11-07T05:13:24.687169+00:00",
+  "generated_at": "2026-11-07T17:51:45.294884+00:00",
   "counts": {
-    "source_social_image": 22,
-    "rss_related_source": 1,
-    "rss_source": 21,
-    "editorial_fallback": 1
+    "source_social_image": 20,
+    "rss_source": 19,
+    "rss_related_source": 1
   },
   "items": [
     {
       "category": "world",
       "slot": "hero",
+      "headline": "Russia launches major attack on Kyiv energy grid with 172 drones and 36 missiles days before peace talks",
+      "image_url": "https://i.guim.co.uk/img/media/e51e3a880a5661d978f95a21cc47d7489b533135/0_355_4556_3645/master/4556.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=a9c8241f6629ed26650fd7f16cb8c2e3",
+      "origin": "source_social_image",
+      "rejection": ""
+    },
+    {
+      "category": "world",
+      "slot": "card",
+      "headline": "New Zealand election produces no clear winner, coalition talks ahead",
+      "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/3578/live/a76cb0d0-dab5-11f1-a701-fddedf244c16.jpg",
+      "origin": "rss_source",
+      "rejection": ""
+    },
+    {
+      "category": "world",
+      "slot": "card",
+      "headline": "UK cannot selectively adopt EU single market rules, Barnier says",
+      "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/44f1/live/699ff730-daab-11f1-93e1-3b657b665bcf.jpg",
+      "origin": "rss_source",
+      "rejection": ""
+    },
+    {
+      "category": "world",
+      "slot": "card",
+      "headline": "Italian foreign minister says pro-Russian hackers leaked his personal data in retaliation for Ukraine support",
+      "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/34a9/live/e340cb90-dabb-11f1-93e1-3b657b665bcf.jpg",
+      "origin": "rss_source",
+      "rejection": ""
+    },
+    {
+      "category": "world",
+      "slot": "card",
       "headline": "Paraguay's president impeached, arrested after bank collapse left millions unable to access savings",
       "image_url": "https://ichef.bbci.co.uk/news/1024/branded_news/a65d/live/3fe15d20-da57-11f1-af22-a97b84c9ca63.jpg",
       "origin": "source_social_image",
       "rejection": ""
     },
     {
-      "category": "world",
-      "slot": "card",
-      "headline": "Iran submits nuclear proposal to U.S. as Trump weighs strikes amid divided advisers",
-      "image_url": "https://assets.foxnews.com/liveblog/fn/prod/images/2026/11/5fb6ea7ddc0debd480d909e7f9d15835.jpg",
-      "origin": "source_social_image",
-      "rejection": ""
-    },
-    {
-      "category": "world",
-      "slot": "card",
-      "headline": "Pope Leo XIV begins South American tour in Uruguay weeks after lung surgery",
-      "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/d5f5/live/a7b86be0-d96d-11f1-9fd0-cdf612d1539f.jpg",
-      "origin": "rss_related_source",
-      "rejection": ""
-    },
-    {
-      "category": "world",
-      "slot": "card",
-      "headline": "Archaeologists find evidence of cannabis use for psychoactive purposes 2,800 years ago in Siberian tomb",
-      "image_url": "https://d3i6fh83elv35t.cloudfront.net/static/2026/11/2026-11-05T190003Z_334665143_RC2VENA9ICTC_RTRMADP_3_SCIENCE-CANNABIS-1024x668.jpg",
-      "origin": "source_social_image",
+      "category": "us",
+      "slot": "hero",
+      "headline": "Hamilton and Verstappen to start from back of grid at São Paulo Grand Prix",
+      "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/dd57/live/b4238c30-dacf-11f1-bda8-29fb69dbc026.jpg",
+      "origin": "rss_source",
       "rejection": ""
     },
     {
       "category": "us",
-      "slot": "hero",
+      "slot": "card",
+      "headline": "Heavy rains flood tens of thousands of tents housing displaced Gazans",
+      "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/3f37/live/d00ac9e0-dac0-11f1-8c3b-f3c0d6bd7c4f.jpg",
+      "origin": "rss_source",
+      "rejection": ""
+    },
+    {
+      "category": "us",
+      "slot": "card",
+      "headline": "New Zealand defeats Scotland 43-21 in rugby Nations Championship",
+      "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/c759/live/32801a10-dac3-11f1-8c3b-f3c0d6bd7c4f.jpg",
+      "origin": "rss_source",
+      "rejection": ""
+    },
+    {
+      "category": "us",
+      "slot": "card",
       "headline": "Secret Service arrests man near White House with guns who said voices told him to kill Trump",
       "image_url": "https://i.guim.co.uk/img/media/30a42bd193109c7cf7e2854cf733ff3179bf6e89/436_0_4356_3485/master/4356.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=3cd69865cb1bc2a51b14544e4254a06b",
       "origin": "source_social_image",
       "rejection": ""
     },
     {
-      "category": "us",
-      "slot": "card",
-      "headline": "Wisconsin state trooper detained by ICE at airport set for release after 24 hours",
-      "image_url": "https://kubrick.htvapps.com/htv-prod/images/dff04574-083a-449a-9cfa-5a26e757ea1c.jpg?crop=1.00xw%3A0.246xh%3B0%2C0.0548xh&resize=1200%3A*",
-      "origin": "source_social_image",
-      "rejection": ""
-    },
-    {
-      "category": "us",
-      "slot": "card",
-      "headline": "Paraguay's president impeached and arrested after bank collapse",
-      "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/a65d/live/3fe15d20-da57-11f1-af22-a97b84c9ca63.jpg",
-      "origin": "rss_source",
-      "rejection": ""
-    },
-    {
-      "category": "us",
-      "slot": "card",
-      "headline": "Leonid meteor shower to peak mid-November across U.S.",
-      "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/797d/live/89b36240-d903-11f1-9c68-d767468fa269.jpg",
-      "origin": "rss_source",
-      "rejection": ""
-    },
-    {
-      "category": "us",
-      "slot": "card",
-      "headline": "Justice Department moves to drop lawsuit over California ballots it claimed went to noncitizens",
-      "image_url": "https://assets1.cbsnewsstatic.com/hub/i/r/2026/11/07/48dac04b-e3c3-46c7-a264-b0166d396043/thumbnail/1200x630/834f31f380b995bcb00a8c0c6eab09fd/gettyimages-2303720039.jpg",
-      "origin": "source_social_image",
-      "rejection": ""
-    },
-    {
-      "category": "us",
-      "slot": "card",
-      "headline": "Gladiator II stuntman sues over injuries from on-set explosion",
-      "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/93a3/live/d2421090-d9e1-11f1-bbe5-797ee05bee69.jpg",
-      "origin": "rss_source",
-      "rejection": ""
-    },
-    {
-      "category": "us",
-      "slot": "card",
-      "headline": "Jehovah's Witness died refusing blood transfusion weeks before church reversed 81-year ban",
-      "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/92dd/live/b21e0c00-d9ce-11f1-a701-fddedf244c16.jpg",
-      "origin": "rss_source",
+      "category": "business",
+      "slot": "hero",
+      "headline": "Wave of bomb threats and cyberattacks across Europe raises questions about coordination",
+      "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/c047/live/33f77d10-d9ed-11f1-a701-fddedf244c16.jpg",
+      "origin": "rss_related_source",
       "rejection": ""
     },
     {
       "category": "business",
-      "slot": "hero",
+      "slot": "card",
+      "headline": "Data center opposition drives Democratic midterm gains",
+      "image_url": "https://media.cnn.com/api/v1/images/stellar/prod/01-gettyimages-2292235029.jpg?c=16x9&q=w_800,c_fill",
+      "origin": "source_social_image",
+      "rejection": ""
+    },
+    {
+      "category": "business",
+      "slot": "card",
       "headline": "Tesla to wind down Cybertruck production in Texas next year, Musk says",
       "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/d7ce/live/3fc37350-d9f3-11f1-a701-fddedf244c16.jpg",
       "origin": "rss_source",
       "rejection": ""
     },
     {
-      "category": "business",
-      "slot": "card",
-      "headline": "Tesla to end Cybertruck production as automakers shift to smaller electric vehicles",
-      "image_url": "https://media.wired.com/photos/6aee2f4e65a8d4362bf27531/191:100/w_1280,c_limit/GettyImages-2150577028.jpg",
-      "origin": "source_social_image",
-      "rejection": ""
-    },
-    {
-      "category": "business",
-      "slot": "card",
-      "headline": "AI stocks recover slightly after multitrillion-dollar market sell-off",
-      "image_url": "https://ichef.bbci.co.uk/news/1024/branded_news/fdde/live/9036f7e0-da01-11f1-93e1-3b657b665bcf.jpg",
+      "category": "tech",
+      "slot": "hero",
+      "headline": "US approved Nvidia chip sales to Chinese firm with empty office and ties to blacklisted entity",
+      "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/06/STK083_NVIDIA_2.jpg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
       "origin": "source_social_image",
       "rejection": ""
     },
     {
       "category": "tech",
-      "slot": "hero",
+      "slot": "card",
+      "headline": "Alternative cosmology model proposing 26.7 billion-year-old universe passes major observational tests",
+      "image_url": "https://scx2.b-cdn.net/gfx/news/hires/2026/theory-predicting-an-o-2.jpg",
+      "origin": "source_social_image",
+      "rejection": ""
+    },
+    {
+      "category": "tech",
+      "slot": "card",
+      "headline": "Small asteroid temporarily captured as Earth's mini-moon will break free by early 2027",
+      "image_url": "https://static.toiimg.com/thumb/msid-135632958,width-1280,height-720,resizemode-6,overlay-toi_sw,pt-32,y_pad-600/photo.jpg",
+      "origin": "source_social_image",
+      "rejection": ""
+    },
+    {
+      "category": "tech",
+      "slot": "card",
+      "headline": "Researchers convert wind turbine blades into graphene and silicon carbide using flash heating",
+      "image_url": "https://images.euronews.com/articles/stories/09/98/14/25/1200x675_cmsv2_1bcd6838-4ba6-55dd-9c2c-3cc277c6c94c-9981425.jpg",
+      "origin": "source_social_image",
+      "rejection": ""
+    },
+    {
+      "category": "tech",
+      "slot": "card",
+      "headline": "Sequoia Capital shuts down pioneering scout investment program",
+      "image_url": "https://techcrunch.com/wp-content/uploads/2023/06/GettyImages-1283080307.jpg?resize=1200,800",
+      "origin": "source_social_image",
+      "rejection": ""
+    },
+    {
+      "category": "tech",
+      "slot": "card",
+      "headline": "World of Warcraft: Forever sets franchise launch record",
+      "image_url": "https://cdn.mos.cms.futurecdn.net/qSjugCWqy45jwEfZ3P9DRQ-2325-80.jpg",
+      "origin": "source_social_image",
+      "rejection": ""
+    },
+    {
+      "category": "tech",
+      "slot": "card",
+      "headline": "British soldier court-martialed after ignoring order to remove SIM card led to phone hack and blackmail",
+      "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2026/11/GettyImages-2290156853-1024x648.jpg",
+      "origin": "rss_source",
+      "rejection": ""
+    },
+    {
+      "category": "tech",
+      "slot": "card",
       "headline": "Chainalysis says breach exposed credentials and security tokens for all customers",
       "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2022/08/getty-blockchain-1152x648.jpg",
       "origin": "rss_source",
       "rejection": ""
     },
     {
-      "category": "tech",
-      "slot": "card",
-      "headline": "China's intelligence agency recruited AI executive to spy on Nvidia CEO, report says",
-      "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/07/STKP210_JENSEN_HUANG_A.jpg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
-      "origin": "source_social_image",
-      "rejection": ""
-    },
-    {
-      "category": "tech",
-      "slot": "card",
-      "headline": "OpenAI valued at $1.25 trillion in new funding round",
-      "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/09/STK155_OPEN_AI_CVirginia_2_A.jpg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
-      "origin": "source_social_image",
-      "rejection": ""
-    },
-    {
-      "category": "tech",
-      "slot": "card",
-      "headline": "Google takes over unfinished Wyoming data center from Crusoe after cost and timeline concerns",
-      "image_url": "https://techcrunch.com/wp-content/uploads/2026/09/crusoe-ceo-getty.jpg?resize=1200,800",
-      "origin": "source_social_image",
-      "rejection": ""
-    },
-    {
-      "category": "tech",
-      "slot": "card",
-      "headline": "Iran-linked tankers loiter over subsea internet cables in Strait of Hormuz",
-      "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2026/11/Iranian-oil-tanker-and-flag-1152x648.jpg",
-      "origin": "rss_source",
-      "rejection": ""
-    },
-    {
-      "category": "tech",
-      "slot": "card",
-      "headline": "SpaceX strikes deal with Qualcomm to build 5G network for Starlink Mobile carrier ambitions",
-      "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/05/STKB355_SPACEX_C.jpg?quality=90&strip=all&crop=0%2C9.9676601489831%2C100%2C80.064679702034&w=1200",
-      "origin": "source_social_image",
-      "rejection": ""
-    },
-    {
-      "category": "tech",
-      "slot": "card",
-      "headline": "Deep mantle currents may have shaped Great Unconformity, new Nature study finds",
-      "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2026/11/GettyImages-1498933988-1152x648.jpg",
-      "origin": "source_social_image",
-      "rejection": ""
-    },
-    {
-      "category": "tech",
-      "slot": "card",
-      "headline": "Apple may merge Action button into Camera Control starting in 2027, rumor claims",
-      "image_url": "https://fdn.gsmarena.com/imgroot/news/26/11/iphone-action-button-gone-rumor/-952x498w6/gsmarena_000.jpg",
-      "origin": "source_social_image",
-      "rejection": ""
-    },
-    {
-      "category": "tech",
-      "slot": "card",
-      "headline": "Tech companies adjust strategies after Democratic midterm gains",
-      "image_url": "https://techcrunch.com/wp-content/uploads/2026/11/SHAWN-THEW-Contributor-Getty.jpg?w=1024",
-      "origin": "source_social_image",
-      "rejection": ""
-    },
-    {
       "category": "sports",
       "slot": "hero",
-      "headline": "No. 9 BYU meets Utah in first top-10 Holy War matchup, drawing national ABC broadcast",
-      "image_url": "https://www.deseret.com/resizer/v2/DKEY7YDACVAFDCHVZISCUX7DCQ.JPG?focal=0%2C0&auth=1afa4d03b684c116fff609a69e05a83753e26b698fd7d109a3d03dbffd417c62&width=630&height=331",
+      "headline": "UConn beats Michigan 85-77 in rare opening-week rematch of last season's NCAA title game",
+      "image_url": "https://sportshub.cbsistatic.com/i/r/2026/11/07/5651eefb-ec02-4806-bd85-8ebe5095442a/thumbnail/1200x675/ea68d002e71fde1a743314ac654e2b99/dan-hurley-uconn.png",
       "origin": "source_social_image",
       "rejection": ""
     },
     {
       "category": "sports",
       "slot": "card",
-      "headline": "Jets' Breece Hall to play Sunday against Chiefs after quad injury",
-      "image_url": "https://nbcsports.brightspotcdn.com/dims4/default/536c702/2147483647/strip/true/crop/800x450+0+315/resize/1440x810!/quality/90/?url=https%3A%2F%2Fnbc-sports-production-nbc-sports.s3.us-east-1.amazonaws.com%2Fbrightspot%2Fbf%2F35%2Fc0addf5e467ab37812d097be5f01%2Fhall-breece-800-1080-d6865a0709cb0e13.jpg",
+      "headline": "Verstappen, Hamilton, Leclerc and Russell handed grid penalties for Sao Paulo Grand Prix",
+      "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/dd57/live/b4238c30-dacf-11f1-bda8-29fb69dbc026.jpg",
+      "origin": "rss_source",
+      "rejection": ""
+    },
+    {
+      "category": "sports",
+      "slot": "card",
+      "headline": "New Zealand defeats Scotland 43-21 at Murrayfield in Nations Championship",
+      "image_url": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/c759/live/32801a10-dac3-11f1-8c3b-f3c0d6bd7c4f.jpg",
       "origin": "source_social_image",
       "rejection": ""
     },
     {
       "category": "sports",
       "slot": "card",
-      "headline": "Seahawks rule out seven players including Leonard Williams for Sunday's game against Cardinals",
-      "image_url": "https://sports.mynorthwest.com/wp-content/uploads/2026/11/Seattle-Seahawks-Leonard-Williams-looks-on-Washington-Commanders-2026-Getty-900.jpg",
+      "headline": "Ponga returns from broken arm to power New Zealand into Rugby League World Cup final",
+      "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/e1c0/live/4f335c80-dac3-11f1-8c3b-f3c0d6bd7c4f.jpg",
+      "origin": "rss_source",
+      "rejection": ""
+    },
+    {
+      "category": "sports",
+      "slot": "card",
+      "headline": "Rahm takes one-shot lead into final round in Abu Dhabi",
+      "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/3c64/live/2e20d1e0-dab3-11f1-8c3b-f3c0d6bd7c4f.jpg",
+      "origin": "rss_source",
+      "rejection": ""
+    },
+    {
+      "category": "sports",
+      "slot": "card",
+      "headline": "MLB awards Platinum Gloves to Crow-Armstrong, Bellinger as Cubs, Blue Jays win team honors",
+      "image_url": "https://cdn.mlbtraderumors.com/files/2026/10/2026-09-16T013702Z_720600043_MT1USATODAY29828943_RTRMADP_3_MLB-ATLANTA-BRAVES-AT-CHICAGO-CUBS-1024x683.jpg",
       "origin": "source_social_image",
       "rejection": ""
     },
     {
       "category": "sports",
       "slot": "card",
-      "headline": "Alcaraz saves two match points to beat Fritz, clinching Jodar's ATP Finals debut",
-      "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/a0b1/live/b1030f60-da2c-11f1-ab60-69d917fc430c.jpg",
+      "headline": "England bowler Josh Tongue ruled out of Australia tour with toe injury",
+      "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/2df5/live/93643300-dab1-11f1-9da2-b11e4d68c08e.jpg",
       "origin": "rss_source",
       "rejection": ""
     },
     {
       "category": "sports",
       "slot": "card",
-      "headline": "WTA chair apologizes to Pegula after private remarks about Andreeva were live-streamed",
-      "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/c9fc/live/18726650-da2d-11f1-ab60-69d917fc430c.jpg",
-      "origin": "rss_source",
-      "rejection": ""
-    },
-    {
-      "category": "sports",
-      "slot": "card",
-      "headline": "Brandon Aiyuk's reinstatement talks with 49ers unresolved after meeting",
-      "image_url": "https://nbcsports.brightspotcdn.com/dims4/default/6beb4a7/2147483647/strip/true/crop/8077x4543+0+0/resize/1440x810!/quality/90/?url=https%3A%2F%2Fnbc-sports-production-nbc-sports.s3.us-east-1.amazonaws.com%2Fbrightspot%2Fca%2F30%2Fe096f97445fbb4d8e474db8515d0%2F2178120455.jpg",
+      "headline": "Kimi Antonelli tops practice sessions and long runs in Sao Paulo as Ferrari struggles",
+      "image_url": "https://cdn-2.motorsport.com/images/amp/2y7QRyy6/s6/andrea-kimi-antonelli-mercedes.jpg",
       "origin": "source_social_image",
       "rejection": ""
     },
     {
       "category": "sports",
       "slot": "card",
-      "headline": "Ireland routs Argentina 42-12 with six tries in Nations Championship win",
-      "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/238a/live/a0d1cbc0-da3d-11f1-a9ed-ff1feb533701.jpg",
-      "origin": "rss_source",
-      "rejection": ""
-    },
-    {
-      "category": "sports",
-      "slot": "card",
-      "headline": "Dewsbury-Hall scores in Everton's 3-1 comeback win hours after England squad snub",
-      "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/8417/live/c55f7ff0-da38-11f1-bde4-c13870167801.jpg",
-      "origin": "rss_source",
-      "rejection": ""
-    },
-    {
-      "category": "sports",
-      "slot": "card",
-      "headline": "North Carolina defeats Wofford 109-70 behind 58 bench points",
-      "image_url": "https://images.sidearmdev.com/resize?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Func.sidearmsports.com%2Fimages%2F2026%2F11%2F6%2FBrizzi_Angelo.wof.523.jpg&width=1600&type=jpeg",
+      "headline": "Leeds United defeat Tottenham Hotspur on late Noah Okafor goal at Elland Road",
+      "image_url": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/dc27/live/09850300-daaf-11f1-9da2-b11e4d68c08e.jpg",
       "origin": "source_social_image",
       "rejection": ""
     },
     {
       "category": "entertainment",
       "slot": "hero",
-      "headline": "Godzilla Minus Zero Opens to Record $30 Million-Plus for Live-Action Foreign-Language Film",
-      "image_url": "https://deadline.com/wp-content/uploads/2026/11/『ゴジラ-0.0』パブカット㉒-e1793929665158.jpg?w=1024",
+      "headline": "Richard Lloyd, Television guitarist whose interplay with Tom Verlaine shaped Marquee Moon, dies at 75",
+      "image_url": "https://www.rollingstone.com/wp-content/uploads/2026/08/richard-television-lead.jpg?crop=0px%2C0px%2C1800px%2C1014px&#038;resize=1600%2C900",
       "origin": "source_social_image",
       "rejection": ""
     },
     {
       "category": "entertainment",
       "slot": "card",
-      "headline": "'The Remarried Empress' Sets Disney+ and Hulu Premiere Record",
-      "image_url": "https://variety.com/wp-content/uploads/2026/11/The-Remarried-Empress1.jpg",
+      "headline": "Director Takashi Yamazaki Fulfills Childhood Dream With King Ghidorah in 'Godzilla Minus Zero'",
+      "image_url": "https://variety.com/wp-content/uploads/2026/11/GMZ_Stills-Copyright_still-03.jpg",
       "origin": "rss_source",
       "rejection": ""
     },
     {
       "category": "entertainment",
       "slot": "card",
-      "headline": "Robert Pattinson and Nicholas Hoult screen-test for next James Bond under Denis Villeneuve",
-      "image_url": "https://variety.com/wp-content/uploads/2026/11/robert-pattinson-nicholas-hoult.jpg",
-      "origin": "rss_source",
-      "rejection": ""
-    },
-    {
-      "category": "entertainment",
-      "slot": "card",
-      "headline": "Adam Driver will not return for HBO's Girls revival",
-      "image_url": "https://variety.com/wp-content/uploads/2026/11/2299565309.jpg",
-      "origin": "rss_source",
-      "rejection": ""
-    },
-    {
-      "category": "entertainment",
-      "slot": "card",
-      "headline": "Melania Trump's Amazon docuseries faces potential House oversight scrutiny",
-      "image_url": "https://media.thedailybeast.com/resizer/v2/FPBHGMWGVJFKBB7DLEEYQSZB7Q.jpg?auth=d74273a0bad465e69dc1d758989e6211c30610435724be1e33e0ef4b4ac5b2da&width=1200&height=630&focal=960%2C540",
+      "headline": "Dolly Parton's estate manager drops lawsuit against her nephew",
+      "image_url": "https://ichef.bbci.co.uk/news/1024/branded_news/b553/live/bb65b790-dab4-11f1-b441-2b33b063138f.jpg",
       "origin": "source_social_image",
       "rejection": ""
     },
     {
       "category": "entertainment",
       "slot": "card",
-      "headline": "Stephen Chow urged Japan to build action films on its own martial arts, says K2 Pictures founder",
-      "image_url": "https://variety.com/wp-content/uploads/2026/11/K2P-Film-Fund-TCCF.jpg",
+      "headline": "Deep Purple singer Ian Gillan undergoes successful surgery after medical emergency",
+      "image_url": "https://www.rollingstone.com/wp-content/uploads/2026/11/GettyImages-2300713600.jpg?w=1600&#038;h=900&#038;crop=1",
+      "origin": "source_social_image",
+      "rejection": ""
+    },
+    {
+      "category": "entertainment",
+      "slot": "card",
+      "headline": "Alanis Morissette comes out as pansexual on podcast",
+      "image_url": "https://pagesix.com/wp-content/uploads/sites/3/2026/11/147867493.jpg?quality=75&#038;strip=all&#038;w=1200",
+      "origin": "source_social_image",
+      "rejection": ""
+    },
+    {
+      "category": "entertainment",
+      "slot": "card",
+      "headline": "Robert Pattinson and Nicholas Hoult screen-test for James Bond role",
+      "image_url": "https://www.rollingstone.com/wp-content/uploads/2026/11/GettyImages-2299702331.jpg?w=1600&#038;h=900&#038;crop=1",
+      "origin": "source_social_image",
+      "rejection": ""
+    },
+    {
+      "category": "entertainment",
+      "slot": "card",
+      "headline": "Monty Don presents final Gardeners' World episode after two decades",
+      "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/f8e7/live/d1af1d60-d9f7-11f1-84c1-dbcae60402d7.jpg",
       "origin": "rss_source",
       "rejection": ""
     },
     {
       "category": "entertainment",
       "slot": "card",
-      "headline": "Format Executives Detail How 'Suits,' 'Ninja Warrior' Are Adapted for International Markets",
-      "image_url": "https://variety.com/wp-content/uploads/2026/11/TCCF-formats-panel.jpg",
+      "headline": "Horror film 'Backrooms' emerges as dark horse in Oscar production design race",
+      "image_url": "https://variety.com/wp-content/uploads/2026/07/Backrooms.jpg",
       "origin": "rss_source",
       "rejection": ""
     },
     {
       "category": "entertainment",
       "slot": "card",
-      "headline": "Jogja-Netpac Asian Film Festival Announces 21st Edition Lineup with 254 Films",
-      "image_url": "https://variety.com/wp-content/uploads/2026/11/Silenced-Nights.jpg",
-      "origin": "rss_source",
-      "rejection": ""
-    },
-    {
-      "category": "entertainment",
-      "slot": "card",
-      "headline": "Taiwan's Chunghwa Telecom Announces 10 Content Investments Spanning Film, TV and Music",
-      "image_url": "https://variety.com/wp-content/uploads/2026/11/Chunghwa-TCCF-2026.jpg",
+      "headline": "Former Married at First Sight UK participants react to show's cancellation",
+      "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/8a50/live/ef30ec60-502c-11f1-89a3-d1f559421220.jpg",
       "origin": "rss_source",
       "rejection": ""
     },
     {
       "category": "politics",
       "slot": "hero",
+      "headline": "Stephen Miller named White House chief of staff, signaling aggressive approach to presidential power",
+      "image_url": "https://images.axios.com/kzGx1WwT7VIwZBSJk4n0rcuroc8=/0x0:1920x1080/1366x768/2026/11/06/1794002055440.jpeg",
+      "origin": "rss_source",
+      "rejection": ""
+    },
+    {
+      "category": "politics",
+      "slot": "card",
       "headline": "Trump replaces chief of staff Susie Wiles with Stephen Miller after GOP midterm losses",
       "image_url": "https://images.axios.com/bavy5R99dqbyWOxwGHOFoE9K1E8=/0x281:6000x3656/1366x768/2026/11/05/1793909504110.jpeg",
       "origin": "rss_source",
-      "rejection": ""
-    },
-    {
-      "category": "politics",
-      "slot": "card",
-      "headline": "Immigration hardliners celebrate Stephen Miller's promotion to chief of staff",
-      "image_url": "https://static.politico.com/6e/33/220bdfea4dddb427064139c319d3/trump-19842.jpg",
-      "origin": "rss_source",
-      "rejection": ""
-    },
-    {
-      "category": "politics",
-      "slot": "card",
-      "headline": "Vance leads behind-the-scenes push for new Iran deal",
-      "image_url": "https://images.axios.com/ZvGPw46JkgdIVAud5lhg6OV4mko=/0x0:6425x3614/1366x768/2026/11/06/1794003344962.jpeg",
-      "origin": "rss_source",
-      "rejection": ""
-    },
-    {
-      "category": "politics",
-      "slot": "card",
-      "headline": "Sen. Ron Johnson forces GOP meeting to debate midterm losses, pushes to delay leadership vote",
-      "image_url": "https://plainnews.app/images/fallback/politics-2.jpg",
-      "origin": "editorial_fallback",
       "rejection": ""
     }
   ]
