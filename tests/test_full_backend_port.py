@@ -31,6 +31,44 @@ def test_assignment_source_freshness_rejects_stale_news():
     assert _record(1, {**common, 'published': recent_published(2)})['hero_eligible']
     assert not _record(1, {**common, 'published': recent_published(96)})['hero_eligible']
 
+
+def test_shared_feed_prefetch_parses_only_on_main_thread(monkeypatch):
+    import threading
+    from types import SimpleNamespace
+    import plain_engine.source_recovery as sr
+    seen = []
+    main_thread = threading.get_ident()
+    def fake_download(url):
+        seen.append(('fetch',url,threading.get_ident()))
+        return f'<rss><channel><title>{url}</title></channel></rss>'.encode()
+    def fake_parse(payload):
+        seen.append(('parse',payload,threading.get_ident()))
+        return SimpleNamespace(feed={'title': 'ok'},entries=[])
+    monkeypatch.setattr(sr,'_download_feed_bytes',fake_download)
+    monkeypatch.setattr(sr,'_parse_feed_bytes',fake_parse)
+    docs=sr.prefetch_feed_documents(['b','a','b'])
+    assert list(docs)==['a','b']
+    assert len([s for s in seen if s[0]=='fetch'])==2
+    assert all(s[2]==main_thread for s in seen if s[0]=='parse')
+    assert len([s for s in seen if s[0]=='parse'])==2
+
+
+def test_feed_prefetch_survives_individual_download_errors(monkeypatch):
+    import plain_engine.source_recovery as sr
+    monkeypatch.setattr(sr,'_download_feed_bytes',lambda url: (_ for _ in ()).throw(OSError('network down')) if url=='bad' else b'<rss><channel><title>Valid</title></channel></rss>')
+    docs=sr.prefetch_feed_documents(['good','bad'])
+    assert set(docs)=={'good','bad'}
+    assert len(docs['bad'].entries)==0
+    assert docs['good'].feed.get('title')=='Valid'
+
+
+def test_feed_fetch_caps_response_size_without_url_parser_retry(monkeypatch):
+    from types import SimpleNamespace
+    import plain_engine.source_recovery as sr
+    monkeypatch.setattr(sr.requests,'get',lambda *args,**kwargs: SimpleNamespace(status_code=200,content=b'x'*(sr.MAX_FEED_BYTES+10)))
+    result=sr._download_feed_bytes('https://example.com/rss')
+    assert len(result)==sr.MAX_FEED_BYTES
+
 def test_image_authority_rejects_brand_assets():
     assert image_rejection_reason('https://example.com/assets/site-logo.png')
     assert not image_rejection_reason('https://example.com/photos/capitol-hearing-1200x675.jpg')
