@@ -45,7 +45,9 @@ _WAR_ACTION = re.compile(
     r"peace agreement|signs? treaty|sanctions?|attacks? (?:nato|us|u\.s\.|"
     r"military|ukraine|russia|iran|israel)|nuclear deal|"
     r"nuclear strike|war begins|war ends|military offensive|"
-    r"drone strikes?|drones? (?:hit|strike|attack))\b", re.I,
+    r"drone strikes?|drones? (?:hit|strike|attack)|"
+    r"launches? \d+ drones?|drone attacks?|"
+    r"major offensive|bombards?|shells? (?:capital|city))\b", re.I,
 )
 _ECON_ACTION = re.compile(
     r"\b(?:federal reserve|fed|interest rates?|inflation|jobs report|"
@@ -64,6 +66,25 @@ _ANALYSIS = re.compile(
     r"enabling|what to know|how (?:to|the)|"
     r"future of|raises questions|explainer)\b", re.I,
 )
+_SPORTS_EVENT = re.compile(
+    r"\b(?:grand prix|formula 1|formula one|premier league|"
+    r"nba|nfl|mlb|nhl|ncaa|football game|basketball game|"
+    r"tennis match|world cup qualifier|playoff game|"
+    r"golf tournament|world series game|championship bout|"
+    r"boxing match|soccer match|motorsport race)\b", re.I,
+)
+_ENTERTAINMENT_EVENT = re.compile(
+    r"\b(?:box office|opening weekend|film festival|"
+    r"movie premiere|album release|grammy awards|"
+    r"reality television|celebrity wedding)\b", re.I,
+)
+_FOREIGN_GOVERNMENT_CRISIS = re.compile(
+    r"\b(?:president|prime minister|parliament|government|"
+    r"military junta|opposition leader)\b.{0,80}\b"
+    r"(?:impeached|ousted|overthrown|arrested|collapses?|"
+    r"resigns?|coup|dissolved)\b", re.I,
+)
+
 _SENATE_ELECTION = re.compile(
     r"\b(?:senate race|presidential election|electoral votes?|"
     r"congressional election|national election|"
@@ -132,17 +153,31 @@ def _major_event_tier(category_key, headline):
     title = str(headline or "")
     if category_key in BLOCKED_CATEGORIES:
         return 0, "category_never_auto_hero"
+    # Classification is an advisory signal upstream: a mislabeled F1 race in
+    # the U.S. section is still sports and must not become the general hero.
+    if _SPORTS_EVENT.search(title) or _ENTERTAINMENT_EVENT.search(title):
+        return 0, "sports_entertainment_content_outside_its_category"
 
     government = bool(_GOV_ACTION.search(title) or _GOV_REVERSE.search(title))
     conflict = bool(_WAR_ACTION.search(title))
     economy = bool(_ECON_ACTION.search(title))
     security = bool(_SECURITY_ACTION.search(title))
     election = bool(_SENATE_ELECTION.search(title))
+    foreign_crisis = bool(_FOREIGN_GOVERNMENT_CRISIS.search(title))
     analysis = bool(_ANALYSIS.search(title))
     title_lower = title.casefold()
 
     if government and not analysis:
+        # A one-company permission or export license is not equivalent to a
+        # nationwide court ruling or executive action affecting millions.
+        if category_key in {"tech", "business"} and re.search(
+            r"\b(?:chip sales?|nvidia|tesla|apple|google|microsoft|"
+            r"company|startup|export license|single firm)\b", title, re.I
+        ) and not re.search(r"\b(?:industrywide|nationwide|all exports|new federal law)\b", title, re.I):
+            return 3, "company_specific_federal_action"
         return 5, "concrete_federal_action"
+    if foreign_crisis and not analysis:
+        return 4, "major_foreign_government_crisis"
     if conflict and not analysis:
         return 5 if re.search(r"\b(?:nato|u\.s\.|us military|united states|american forces)\b", title, re.I) else 4, "major_international_development"
     if economy and not analysis:
@@ -196,6 +231,8 @@ def evaluate_front_page_candidates(all_categories, archive=None, *, now=None, he
             reason = ""
             if key in BLOCKED_CATEGORIES:
                 reason = "sports_entertainment_not_eligible"
+            elif _SPORTS_EVENT.search(str(item.get("headline") or "")) or _ENTERTAINMENT_EVENT.search(str(item.get("headline") or "")):
+                reason = "misclassified_sports_entertainment_content"
             elif item.get("editorial_eligible") is False or item.get("ranking_eligible") is False:
                 reason = "editorial_or_ranking_ineligible"
             elif item.get("publication_quality_ok") is False:
