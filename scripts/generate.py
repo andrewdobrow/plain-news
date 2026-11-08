@@ -2505,6 +2505,63 @@ def _write_publication_integrity_report(archive, *, selected_update_entries=(), 
     return report
 
 
+def _recover_safe_identity_collision_hero(cat_key, cat_label, archive, all_categories, top_cat, original_hero, *, rejected_slug=""):
+    """Recover only a recent, publication-valid SAME-SECTION canonical.
+
+    Never clear a corrupt story ID and publish the same uncorroborated live
+    claims as new. A poisoned persistent identity should instead restore
+    verified previously published copy or fail closed.
+    """
+    from datetime import timezone
+    from plain_engine.front_page_hero import canonical_timestamp
+    from plain_engine.publication_surface import surface_errors
+    from plain_engine.publication_surface import canonical_reuse_is_corroborated
+
+    occupied_ids = set()
+    occupied_titles = set()
+    for category in list(all_categories) + ([top_cat] if top_cat.get("_standalone_front_page_hero") else []):
+        other = category.get("hero") or {}
+        if other is original_hero:
+            continue
+        if other.get("story_id"):
+            occupied_ids.add(str(other["story_id"]))
+        if other.get("headline"):
+            occupied_titles.add(re.sub(r"[^a-z0-9]+", " ", str(other["headline"]).casefold()).strip())
+
+    excluded = {str(rejected_slug)} if rejected_slug else set()
+    now = datetime.now(timezone.utc)
+    for _ in range(10):
+        recovered = recover_category_from_archive(
+            cat_key, cat_label, archive, card_count=0,
+            max_age_days=3, excluded_slugs=excluded,
+        )
+        if not recovered:
+            return None
+        candidate = recovered["hero"]
+        slug = str(candidate.get("_archived_slug") or "")
+        excluded.add(slug)
+        row = next((x for x in archive if str(x.get("slug") or "") == slug), None)
+        if not row or not canonical_reuse_is_corroborated(candidate, row):
+            continue
+        candidate["source_title"] = str(candidate.get("headline") or "")
+        candidate["article_text"] = str(candidate.get("body") or "")
+        candidate["source_summary"] = str(candidate.get("body") or "")
+        candidate["publication_quality_ok"] = True
+        candidate["publication_quality_reasons"] = []
+        stamp, _ = canonical_timestamp(candidate, row)
+        age = (now - stamp).total_seconds() / 3600 if stamp else None
+        if age is None or age < -1 or age > 72:
+            continue
+        sid = str(candidate.get("story_id") or "")
+        title_key = re.sub(r"[^a-z0-9]+", " ", str(candidate.get("headline") or "").casefold()).strip()
+        if (sid and sid in occupied_ids) or title_key in occupied_titles:
+            continue
+        if surface_errors(candidate, cat_key, hero=True):
+            continue
+        return candidate
+    return None
+
+
 def write_archives(all_categories, top_cat, *, client=None, cache=None, material_update_entries=None):
     """Canonical publication barrier: duplicate/update/new is decided before URLs write."""
     articles_dir = OUTPUT_DIR / "articles"; archive_path = OUTPUT_DIR / "archive.json"; articles_dir.mkdir(exist_ok=True)
@@ -2513,6 +2570,7 @@ def write_archives(all_categories, top_cat, *, client=None, cache=None, material
     staged=[]; new_count=updated_count=unchanged_count=0
     committed_update_slugs=set()
     material_update_entries=list(material_update_entries or selected_material_update_commit_entries(all_categories))
+    identity_recoveries = []
     heroes=[(top_cat["category_key"],top_cat["category_label"],top_cat["hero"])] + [(c["category_key"],c["category_label"],c["hero"]) for c in all_categories if top_cat.get("_standalone_front_page_hero") or c["category_key"]!=top_cat["category_key"]]
     publication_entries = heroes + material_update_entries
     for cat_key,cat_label,hero in publication_entries:
@@ -2536,11 +2594,35 @@ def write_archives(all_categories, top_cat, *, client=None, cache=None, material
             # old canonical copy (or vice versa). Protected updates have their
             # independent, target-bound semantic authorization.
             if not target_slug and not canonical_reuse_is_corroborated(hero, existing):
-                raise RuntimeError(
-                    f"Terminal archive identity mismatch in {cat_key}: "
-                    f"live={headline!r}; canonical={existing.get('headline')!r}; "
-                    "refusing unrelated canonical substitution"
+                unsafe_title = headline
+                unsafe_target = str(existing.get("headline") or "")
+                fallback = _recover_safe_identity_collision_hero(
+                    cat_key, cat_label, working, all_categories, top_cat, hero,
+                    rejected_slug=str(existing.get("slug") or ""),
                 )
+                if not fallback:
+                    raise RuntimeError(
+                        f"Terminal archive identity mismatch in {cat_key}: "
+                        f"live={unsafe_title!r}; canonical={unsafe_target!r}; "
+                        "no safe recent same-section canonical recovery; refusing unrelated substitution"
+                    )
+                # Keep the original in-place object reference so both the
+                # section and top-page renderer see the verified replacement.
+                hero.clear()
+                hero.update(fallback)
+                headline = str(hero["headline"])
+                source_url = str(hero.get("link") or "")
+                existing = find_matching_entry(headline, working, source_url, hero.get("story_id", ""))
+                if not existing or not canonical_reuse_is_corroborated(hero, existing):
+                    raise RuntimeError("Recovered canonical identity failed independent corroboration")
+                identity_recoveries.append({
+                    "category": cat_key, "discarded_live_headline": unsafe_title,
+                    "mismatched_canonical": unsafe_target,
+                    "recovered_headline": headline, "recovered_slug": existing.get("slug"),
+                    "reason": "uncorroborated_persistent_story_id_or_archive_match",
+                })
+                print(f"  {cat_label}: discarded unrelated canonical match; "
+                      f"recovered verified recent article: {headline[:90]}")
             slug=existing["slug"];hero["_archived_slug"]=slug
             editorial_action=str(hero.get("editorial_action") or "").casefold(); should_update=bool(target_slug) or editorial_action in {"update_existing","replace_canonical"} or (sem or {}).get("action")==ACTION_UPDATE
             if not should_update:
@@ -2573,6 +2655,10 @@ def write_archives(all_categories, top_cat, *, client=None, cache=None, material
             while slug in existing_slugs:slug=f"{base}-{i}";i+=1
             hero["_archived_slug"]=slug;staged.append((articles_dir/f"{slug}.html",render_article_page(hero,cat_label,cat_key,today,slug)))
             row={"slug":slug,"headline":headline,"teaser":hero.get("teaser","") or hero.get("body","")[:180],"body":hero.get("body",""),"category_key":cat_key,"category_label":cat_label,"date":today,"first_published":now_iso,"lastmod":today,"last_seen":now_iso,"image_url":hero.get("image_url",""),"source_image_url":hero.get("image_url","") if not hero.get("is_fallback_image") else "","image_credit":hero.get("image_credit",""),"image_origin":hero.get("image_origin",""),"source_url":source_url,"source_headline":hero.get("source_title",""),"source_published_raw":hero.get("source_published_raw",""),"story_id":hero.get("story_id",""),"event_key":hero.get("event_key",""),"editorial_action":hero.get("editorial_action","publish_new")};working.append(row);new_count+=1
+    (OUTPUT_DIR / "archive-identity-recovery-report.json").write_text(
+        json.dumps({"generated_at": now_iso, "recoveries": identity_recoveries}, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
     # No public files are mutated until every hero and every protected update has
     # passed the terminal barrier and has a concrete commit receipt. This preserves
     # TCT's fail-closed transaction ordering rather than discovering a lost update
@@ -2644,7 +2730,7 @@ def _category_cache_key(cat_key, sources):
     # changes as the archive/registry advances; reusing pre-decision generated copy
     # in that case would silently lose the update transaction.
     return cache_hash({
-        "v": "plain-live-assignment-v7-card-summary-contract",
+        "v": "plain-live-assignment-v8-terminal-identity-guard",
         "category": cat_key,
         "editor": "claude-sonnet-5",
         "writer": "claude-sonnet-4-5",
@@ -2774,7 +2860,7 @@ def _enforce_card_summary_product(categories):
     return compacted
 
 
-def recover_category_from_archive(cat_key, cat_label, archive, *, card_count=CARDS_PER_CATEGORY, max_age_days=14):
+def recover_category_from_archive(cat_key, cat_label, archive, *, card_count=CARDS_PER_CATEGORY, max_age_days=14, excluded_slugs=()):
     """Fail closed to already-published canonicals when live generation is unavailable.
 
     This mirrors TCT's category-level failure containment: one feed/model outage must
@@ -2782,12 +2868,13 @@ def recover_category_from_archive(cat_key, cat_label, archive, *, card_count=CAR
     existing permanent archive. No new facts, URLs, or model copy are invented.
     """
     now = datetime.utcnow()
+    excluded_slugs = {str(x) for x in excluded_slugs}
     candidates=[]
     for row in archive:
         if str(row.get("category_key") or "") != cat_key:
             continue
         slug=str(row.get("slug") or "").strip(); headline=str(row.get("headline") or "").strip()
-        if not slug or not headline:
+        if not slug or not headline or slug in excluded_slugs:
             continue
         if row.get("withdrawn") or row.get("ranking_eligible") is False:
             continue
