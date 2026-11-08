@@ -258,3 +258,39 @@ def test_standalone_front_page_card_does_not_drop_original_section_hero_from_arc
     assert {row["story_id"] for row in written}=={"story_original","story_promoted"}
     assert all(row["category_key"]=="us" for row in written)
     assert len(list((tmp_path/"articles").glob("*.html")))==2
+
+
+def test_promoted_card_is_excluded_from_top_news_before_model_ranking(monkeypatch):
+    import scripts.generate as generate
+    now = datetime(2026, 11, 7, 20, tzinfo=timezone.utc)
+    main = story("Regional officials release routine state report",now,category="us")
+    main["story_id"] = "story_original"
+    card = story("Supreme Court rules on national federal policy",now,category="us")
+    card["story_id"] = "story_featured"
+    cat = section("us",main,cards=[card])
+    selected = {"category_key":"us","category_label":"U.S.","hero":dict(card),
+                "cards":[],"_standalone_front_page_hero":True}
+    model_inputs = []
+    monkeypatch.setattr(generate,"load_archive",lambda *a: [])
+    def fake_rank(cards, dedupe_against=None):
+        model_inputs.append([c["headline"] for c in cards])
+        return cards
+    monkeypatch.setattr(generate,"global_rank",fake_rank)
+    html = generate.render_index([cat],top_cat=selected)
+    assert model_inputs
+    assert card["headline"] not in model_inputs[0]
+    assert main["headline"] in model_inputs[0]
+    assert card["headline"] in html  # still available as the top feature
+
+
+def test_eastern_display_time_observes_november_standard_time(monkeypatch):
+    import scripts.generate as generate
+    fixed = datetime(2026, 11, 7, 18, tzinfo=timezone.utc)
+    class FrozenDatetime(datetime):
+        @classmethod
+        def now(cls, tz=None):
+            return fixed.astimezone(tz) if tz else fixed.replace(tzinfo=None)
+    monkeypatch.setattr(generate,"datetime",FrozenDatetime)
+    assert generate.now_et()=="1:00 PM ET"
+    published=format_datetime(fixed-timedelta(hours=2),usegmt=True)
+    assert generate.format_age(published)=="11:00 AM ET"
