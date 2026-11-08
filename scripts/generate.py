@@ -35,7 +35,8 @@ from plain_engine import write_homepage_ranking_recommendations
 from plain_engine.generation_cache import PersistentGenerationCache, CACHE_MISS, cache_hash
 from plain_engine.source_recovery import prefetch_feed_documents, fetch_headlines as recover_headlines, build_content_bank as build_recovered_content_bank, fetch_guardian_match
 from plain_engine.image_authority import extract_image as authoritative_extract_image, build_image_bank as build_authoritative_image_bank, ensure_item_image, FallbackRotator, write_image_quality_report
-from plain_engine.assignment_pipeline import run_live_assignment_category
+from plain_engine.assignment_pipeline import run_live_assignment_category, run_assignment_writer
+from plain_engine.front_page_hero import evaluate_front_page_candidates, candidate_audit_row, canonical_timestamp
 from plain_engine.category_classifier import classify_stories
 from plain_engine.article_quality import enforce_category_quality, write_quality_report, publication_quality, protected_material_update_pending_recomposition, word_count, MIN_SOURCE_WORDS
 from plain_engine.model_usage import ModelUsageTracker, instrument_anthropic_client
@@ -1241,241 +1242,127 @@ def format_age(published_str):
         return ""
 
 
-def select_front_page_hero(all_categories):
-    """Use Claude to pick the most front-page-worthy hero across all categories.
-    Considers systemic impact and US relevance — not just raw urgency or casualty count.
-    Localized tragedies (regional accidents) lose to geopolitical events with broad reach,
-    even when casualty counts are similar."""
-    if not all_categories:
-        return None
+def _expand_verified_homepage_card(client, candidate):
+    """Create a complete article from a selected exact-source card, never a summary hero.
 
-    def _is_eligible(cat):
-        if not CATEGORIES.get(cat["category_key"], {}).get("front_page_hero", True):
-            us_words = ["us strikes", "us military", "american forces", "u.s. strikes",
-                        "u.s. military", "united states strikes", "trump orders", "pentagon"]
-            return any(w in cat["hero"].get("headline", "").lower() for w in us_words)
-        return True
-
-    def _fp_score(cat):
-        score = int(cat["hero"].get("urgency_score", 0) or 0)
-        cap   = CATEGORIES.get(cat["category_key"], {}).get("front_page_cap", 10)
-        return min(score, cap)
-
-    eligible   = [c for c in all_categories if _is_eligible(c)]
-    candidates = eligible if eligible else all_categories
-    if len(candidates) == 1:
-        return candidates[0]
-
-    # Compute age for each candidate so Claude can weight freshness
-    from email.utils import parsedate_to_datetime
-    from datetime import timezone as _tz, timedelta
-    _now = datetime.now(_tz.utc)
-
-    # HARD pre-filter: exclude candidates that are clearly stale events.
-    # This runs before Claude sees anything, so Claude cannot pick a known-stale story.
-    # A candidate is filtered out if:
-    #   (1) its timestamp is more than 18 hours old AND content has no fresh-development language, OR
-    #   (2) its content explicitly mentions a past day-name when today is a different day
-    _today_name      = _now.strftime("%A").lower()
-    _yesterday_name  = (_now - timedelta(days=1)).strftime("%A").lower()
-    _two_days_name   = (_now - timedelta(days=2)).strftime("%A").lower()
-    _three_days_name = (_now - timedelta(days=3)).strftime("%A").lower()
-    _stale_day_names = {_yesterday_name, _two_days_name, _three_days_name}
-
-    _stale_event_phrases = [
-        "yesterday", "two days ago", "three days ago", "earlier this week",
-        "last week", "days ago", "happened on", "occurred on",
-    ]
-    _fresh_dev_phrases = [
-        "today", "this morning", "this afternoon", "this evening",
-        "hours ago", "minutes ago", "just announced", "just released",
-        "breaking", "moments ago", "earlier today",
-    ]
-
-    def _is_stale(cat):
-        hero = cat["hero"]
-        content = (hero.get("teaser", "") + " " + hero.get("body", "")[:800]).lower()
-        # Fresh-development language wins regardless of timestamp
-        if any(p in content for p in _fresh_dev_phrases):
-            return False
-        # Check for past day-name references (e.g. "Thursday" when today is Saturday)
-        for day in _stale_day_names:
-            # Check the day appears as a standalone word
-            if f" {day} " in content or content.startswith(f"{day} ") or f" {day}." in content or f" {day}," in content:
-                return True
-        # Check for stale-event phrases
-        if any(p in content for p in _stale_event_phrases):
-            return True
-        # Check timestamp — 18+ hours old with no fresh-development language is stale
-        pub = hero.get("published", "")
-        if pub:
-            try:
-                dt  = parsedate_to_datetime(pub).astimezone(_tz.utc)
-                hrs = (_now - dt).total_seconds() / 3600
-                if hrs >= 18:
-                    return True
-            except Exception:
-                pass
-        return False
-
-    fresh_candidates = [c for c in candidates if not _is_stale(c)]
-    if fresh_candidates:
-        filtered_out = [c["hero"].get("headline", "")[:60] for c in candidates if c not in fresh_candidates]
-        if filtered_out:
-            print(f"  Hero pre-filter excluded {len(filtered_out)} stale candidate(s): {filtered_out}")
-        candidates = fresh_candidates
+    This is a separate Top News editorial placement: category heroes remain intact
+    and publication/canonical barriers still run on both stories.
+    """
+    card = candidate["item"]
+    evidence = str(card.get("article_text") or card.get("source_summary") or "")
+    if word_count(evidence) < MIN_SOURCE_WORDS:
+        raise ValueError("candidate card has insufficient exact-source evidence")
+    expanded = dict(card)
+    # Already-published recovery is the one case where article_text is the
+    # existing Plain canonical copy, not external publisher source prose.
+    if card.get("_archive_recovery") or card.get("source_quality") == "canonical_archive":
+        expanded["body"] = evidence
     else:
-        print(f"  Hero pre-filter: no fresh candidates, keeping all for Claude to decide")
-
-    if len(candidates) == 1:
-        print(f"  Front page hero: [{candidates[0]['category_label']}] {candidates[0]['hero'].get('headline','')[:60]} (only fresh candidate)")
-        return candidates[0]
-
-    def _age_label(cat):
-        pub = cat["hero"].get("published", "")
-        if not pub:
-            return "unknown age"
-        try:
-            dt  = parsedate_to_datetime(pub).astimezone(_tz.utc)
-            hrs = (_now - dt).total_seconds() / 3600
-            if hrs < 1:
-                mins = max(1, int((_now - dt).total_seconds() / 60))
-                return f"{mins} minutes ago"
-            if hrs < 24:
-                return f"{int(hrs)} hours ago"
-            days = int(hrs / 24)
-            return f"{days} day{'s' if days != 1 else ''} ago"
-        except Exception:
-            return "unknown age"
-
-    listing = "\n\n".join(
-        f"{i+1}. [{c['category_label']}] (timestamp: {_age_label(c)}) {c['hero'].get('headline','')}\n"
-        f"   Content: {(c['hero'].get('teaser','') + ' ' + c['hero'].get('body','')[:500]).strip()}"
-        for i, c in enumerate(candidates)
-    )
-    _today_label = _now.strftime("%A, %B %d, %Y")
-    _yesterday   = (_now - timedelta(days=1)).strftime("%A")
-    _two_days    = (_now - timedelta(days=2)).strftime("%A")
-    _three_days  = (_now - timedelta(days=3)).strftime("%A")
-    prompt = (
-        f"TODAY IS: {_today_label}\n"
-        f"Yesterday was {_yesterday}. Two days ago was {_two_days}. Three days ago was {_three_days}.\n"
-        "Use this date context to evaluate when events actually happened.\n\n"
-        "You are selecting the SINGLE most front-page-worthy story for a US news app from these section heroes.\n\n"
-        f"{listing}\n\n"
-        "AUDIENCE: This app is for US readers. Skew toward stories that matter MOST to a US reader.\n"
-        "But \"matters to US readers\" is about national/systemic relevance, NOT just whether it happened on US soil. "
-        "A regional US tragedy is local to that region; a foreign event involving US allies or US interests can have "
-        "broader national implications.\n"
-        "\n"
-        "FRESHNESS IS CRITICAL: This app updates throughout the day. The front page hero must be CURRENT news — what is "
-        "happening NOW, not what already happened. Each candidate has a timestamp label, but BE SKEPTICAL OF TIMESTAMPS — "
-        "publishers often re-publish or update old articles with minor changes, which refreshes the timestamp even though "
-        "the event itself is old.\n"
-        "\n"
-        "CRITICAL DISTINCTION: differentiate between (A) an OLD EVENT being republished with a refreshed timestamp, vs "
-        "(B) a NEW DEVELOPMENT in an ongoing story. The former is stale; the latter is fresh and can absolutely be hero-worthy.\n"
-        "- (A) STALE: The article describes an event that already happened, with no new action today. Example: \"Blue Origin "
-        "rocket exploded yesterday at Cape Canaveral\" — this is yesterday's explosion being recapped. Avoid as hero.\n"
-        "- (B) FRESH: The article describes a NEW action, decision, arrest, ruling, statement, or development today, even if "
-        "it's connected to an older story. Example: \"Suspect in Trump assassination attempt arrested\" — even though the "
-        "attempt was days ago, the arrest is happening NOW and is breaking news. This IS hero-worthy.\n"
-        "\n"
-        "Look at the teaser to determine which case applies:\n"
-        "- Phrases like \"announced today\", \"arrested today\", \"ruled today\", \"said this morning\", \"hours ago\", "
-        "\"just\", \"breaking\" — these signal a NEW development happening now, even in an old story. TREAT AS FRESH.\n"
-        "- Phrases that recap an old event with no new action today — \"yesterday's\", \"earlier this week\", \"last "
-        "Monday's\", and the article is just summarizing what already happened — TREAT AS STALE.\n"
-        "- When in doubt, ask: \"Is something new happening today in this story, or is this just a recap of an old event?\"\n"
-        "\n"
-        "Freshness tiers (combining timestamp AND content signals):\n"
-        "- New event or new development from the past few hours: strong hero candidate\n"
-        "- New development today in an older ongoing story: also strong (arrests, rulings, statements, decisions)\n"
-        "- From 6-12 hours ago and still actively unfolding: still acceptable\n"
-        "- Pure recap of an event from yesterday or earlier with no new development: AVOID as hero — it belongs as a card if at all\n"
-        "\n"
-        "When comparing, ask: \"Is something NEW happening in this story right now, or did it already happen and move on?\" "
-        "If something new is happening, it's fresh regardless of when the original event occurred. If it has moved on with "
-        "no new development, pick a fresher story.\n"
-        "\n"
-        "Pick the story with the GREATEST systemic impact for the US audience among CURRENT stories — not the biggest story regardless of when it happened.\n"
-        "\n"
-        "STRONG front-page heroes (in rough priority order, all assuming the story is fresh):\n"
-        "1. Breaking court rulings or legal decisions involving the President, Congress, or major US institutions — these are the kind of stories that make every major outlet's front page\n"
-        "2. Major US national policy/political developments affecting millions (Supreme Court rulings, major legislation passed/signed, executive actions with broad immediate impact)\n"
-        "3. US national security crises, attacks on US soil, US military action\n"
-        "4. Major economic events affecting US consumers/markets (Fed decisions, market crashes, major industry collapses, jobs reports)\n"
-        "5. Major geopolitical events involving US allies or US interests (attacks on NATO countries, peace deals, sanctions, treaties) — these affect US foreign policy even when they happen abroad\n"
-        "6. Major US infrastructure/space/scientific events with national consequence (NASA missions, major tech failures with national impact)\n"
-        "\n"
-        "MEDIUM heroes — okay if nothing stronger is fresh, but typically belong as cards if a strong-tier story exists:\n"
-        "- Routine regulatory proposals (SEC rule changes, FCC proposals, agency-level rulemaking) — these matter to specific industries and policy wonks but rarely lead general-audience newspapers\n"
-        "- Single-state political news without broader implications\n"
-        "- Minor policy clarifications or technical legal rulings\n"
-        "\n"
-        "Quick gut check: if a story would NOT be on the front page of CNN, NYT, WaPo, or AP right now, it probably shouldn't be your hero either. Court rulings about Trump, breaking legal decisions, major political fights, and significant policy shifts make general-audience front pages. Niche regulatory proposals usually don't.\n"
-        "\n"
-        "WEAK front-page heroes (these belong as cards, NOT as the lead):\n"
-        "- Smaller-scale localized US tragedies — single bus/car crashes, single-building fires, industrial accidents, factory explosions, mine collapses, single-aircraft small plane crashes, local crime. These affect their region/industry, not the nation broadly.\n"
-        "- Foreign tragedies without US connection (foreign domestic crime, regional conflicts not involving US allies/interests)\n"
-        "- Single-company news (funding rounds, IPOs, executive shakeups, single-quarter earnings)\n"
-        "- Executive opinions or statements about competitors \u2014 'CEO says X is too expensive', 'executive calls Y overrated' are cards, not heroes\n"
-        "- Industry commentary, analyst takes, or opinion pieces without a concrete policy or market-moving event\n"
-        "- Sports/entertainment — these are ALWAYS cards, never heroes, regardless of historic significance. A Grand Slam final, championship game, or record-breaking performance belongs in the Sports section as a card.\n"
-        "- Celebrity deaths unless of major historical/cultural figures\n"
-        "- Routine policy proposals without immediate broad impact\n"
-        "\n"
-        "Casualty/disaster events that DO warrant hero status are large in scale or national in reach:\n"
-        "- Major commercial airline crashes (large passenger jets, dozens+ killed)\n"
-        "- Mass shootings or terrorism at historic scale\n"
-        "- Multi-state natural disasters (major hurricanes, large wildfires across regions, earthquakes affecting populated areas)\n"
-        "- Bridge collapses or major infrastructure failures with national implications\n"
-        "- Attacks on US military or significant US security events\n"
-        "- Industrial disasters with broad consequences (e.g. nuclear incidents, chemical releases affecting large populations)\n"
-        "\n"
-        "Rule of thumb: if a tragedy is contained to one workplace, one road, one building, or one small town, it is a card, not a hero — even with multiple casualties. If it affects multiple states, a major industry, or hundreds of lives, it can be hero-worthy.\n"
-        "\n"
-        "Examples:\n"
-        "- 'Trump delays Iran ceasefire' BEATS 'Nine dead in Oregon paper mill disaster' — the ceasefire decision is active US foreign policy reshaping a major conflict; the mill disaster, however tragic, is a regional industrial accident with no national policy consequence.\n"
-        "- 'Russian drone strikes NATO ally Romania' BEATS 'Bus crash kills 5 in Virginia' — the drone strike has NATO/Article 5 implications affecting US foreign policy; the bus crash, however tragic, is regional.\n"
-        "- 'Supreme Court rules on major case' BEATS 'Tech company raises $10B' — court rulings reshape US law for millions.\n"
-        "- 'US bus crash kills 5' BEATS 'European train delay' — between two local stories, US readers care more about US events.\n"
-        "\n"
-        "IMPORTANT ON CASUALTY COUNT: A high death toll does NOT by itself make a story front-page-worthy. The question is REACH — how many people BEYOND those directly involved are affected, and whether anything changes nationally. A chemical spill that kills 11 workers INSIDE one mill is a contained workplace accident — its reach is that facility and that town, NOT the nation. That is a card. The 'chemical release affecting large populations' exception means events like a city-wide toxic cloud forcing mass evacuation — NOT a fatal accident confined to one workplace. Do not let the word 'chemical' or a double-digit death count override the reach test.\n"
-        "\n"
-        "THINK FIRST, THEN ANSWER. For each candidate, briefly assess in one short line: (a) how recent the actual event is, and (b) its national reach — does it change US policy/markets/security, or affect Americans beyond those directly involved? Then state your pick.\n"
-        "\n"
-        "Format your response EXACTLY like this:\n"
-        "Reasoning: <one line per candidate, very brief>\n"
-        "PICK: <number>\n"
-    )
-    try:
-        resp = get_client().messages.create(
-            model="claude-haiku-4-5-20251001",
-            max_tokens=500,
-            messages=[{"role": "user", "content": prompt}]
+        if client is None:
+            raise ValueError("writer unavailable for safe full-article promotion")
+        source = {
+            "title": str(card.get("source_title") or card.get("headline") or ""),
+            "summary": str(card.get("source_summary") or ""),
+            "article_text": evidence,
+            "published": str(card.get("source_published_raw") or ""),
+            "link": str(card.get("link") or ""),
+            "image_url": str(card.get("image_url") or ""),
+            "source_quality": str(card.get("source_quality") or ""),
+            "publisher_name": str(card.get("source_name") or ""),
+        }
+        for field in ("canonical_context", "pre_generation_material_update", "pre_generation_material_update_canonical_slug",
+                      "semantic_material_update_decision", "material_update_novel_facts", "material_update_confidence"):
+            if field in card:
+                source[field] = card[field]
+        assignment = {"source_index": int(card.get("source_index") or 1),
+                      "angle": str(card.get("assignment_angle") or card.get("headline") or ""),
+                      "urgency_score": int(card.get("urgency_score") or 5)}
+        written = run_assignment_writer(
+            client, category_key=candidate["category_key"], category_label=candidate["category_label"],
+            source=source, assignment=assignment, hero=True, timeout_seconds=80,
         )
-        raw = extract_model_text(resp)
-        import re as _re
-        # Prefer the explicit PICK: line; fall back to last number in the text
-        pick_match = _re.search(r"PICK:\s*(\d+)", raw, _re.IGNORECASE)
-        if pick_match:
-            idx = int(pick_match.group(1)) - 1
-        else:
-            nums = _re.findall(r"\d+", raw)
-            idx = int(nums[-1]) - 1 if nums else -1
-        if 0 <= idx < len(candidates):
-            chosen = candidates[idx]
-            print(f"  Front page hero: [{chosen['category_label']}] {chosen['hero'].get('headline','')[:60]}")
-            return chosen
-    except Exception as e:
-        print(f"  Front page hero selection failed ({e}), falling back to score-based")
+        expanded.update(written)
+    # Preserve identity/authority bound by Plain's persistent editorial engine.
+    for field in ("story_id", "event_key", "editorial_action", "editorial_eligible",
+                  "ranking_eligible", "_archived_slug", "canonical_context",
+                  "pre_generation_material_update", "pre_generation_material_update_canonical_slug",
+                  "semantic_material_update_decision", "material_update_novel_facts",
+                  "material_update_confidence", "source_published_raw",
+                  "source_title", "source_summary", "article_text", "link",
+                  "image_url", "image_credit", "image_origin", "source_name"):
+        if field in card:
+            expanded[field] = card[field]
+    expanded.pop("_plain_card_summary", None)
+    expanded.pop("_archive_depth_backfill", None)
+    valid, reasons = publication_quality(expanded, hero=True)
+    if not valid:
+        raise ValueError("promoted article failed full-article contract: " + ", ".join(reasons))
+    expanded["publication_quality_ok"] = True
+    expanded["publication_quality_reasons"] = []
+    return expanded
 
-    # Fallback: score-based selection
-    top_cat = max(candidates, key=_fp_score)
-    if _fp_score(top_cat) < 5:
-        top_cat = max(all_categories, key=_fp_score)
-    return top_cat
+
+def select_front_page_hero(all_categories, *, client=None, archive=None, now=None,
+                           heroes_only=False, audit_path=None):
+    """Select verified national significance, not arbitrary category/model preference.
+
+    TCT-style hard gates and real canonical publication timestamps govern this
+    final decision. Supporting cards may lead ONLY after full article validation;
+    the category's own hero is retained and continues to be published.
+    """
+    import json as _json
+    candidates, rejected = evaluate_front_page_candidates(
+        all_categories, archive=archive, now=now, heroes_only=heroes_only
+    )
+    attempts = []
+    chosen = None
+    for candidate in candidates:
+        if candidate["role"] == "hero":
+            chosen = candidate["category"]
+            break
+        # Limit incremental long-form writes on a poor source day. The exact
+        # same conservative eligibility policy applies to the next candidate.
+        if len(attempts) >= 3:
+            continue
+        try:
+            full = _expand_verified_homepage_card(client, candidate)
+            chosen = {
+                "category_key": candidate["category_key"],
+                "category_label": candidate["category_label"],
+                "hero": full, "cards": [],
+                "_standalone_front_page_hero": True,
+            }
+            break
+        except Exception as exc:
+            attempts.append({
+                "headline": candidate["headline"], "category_key": candidate["category_key"],
+                "error": type(exc).__name__ + ": " + str(exc),
+            })
+    if audit_path is not None:
+        path = Path(audit_path)
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(_json.dumps({
+            "version": 1,
+            "generated_at": (now or datetime.now(timezone.utc)).isoformat(),
+            "policy": "national_impact_canonical_freshness_verified_full_article",
+            "selected": {
+                "headline": chosen["hero"].get("headline"),
+                "category_key": chosen["category_key"],
+                "standalone_card_promoted": bool(chosen.get("_standalone_front_page_hero")),
+            } if chosen else None,
+            "candidates": [candidate_audit_row(c) for c in candidates],
+            "excluded": rejected,
+            "card_preparation_failures": attempts,
+        }, ensure_ascii=False, indent=2), encoding="utf-8")
+    if chosen:
+        print(
+            f"  National front page hero: [{chosen['category_label']}] "
+            f"{chosen['hero'].get('headline','')[:90]} "
+            f"({'verified card -> full article' if chosen.get('_standalone_front_page_hero') else 'section hero'})"
+        )
+    else:
+        print("  National front page hero: no recent, safe, publication-ready candidate")
+    return chosen
 
 
 def promote_duplicate_heroes(top_cat, all_categories):
@@ -1768,7 +1655,7 @@ def render_index(all_categories, market_data=None, market_live=False, top_cat=No
 
     # Add category heroes to pool — skip top_cat (already shown as the All hero above)
     for cat in all_categories:
-        if cat["category_key"] == top_cat_key:
+        if cat["category_key"] == top_cat_key and cat["hero"] is top_cat["hero"]:
             continue
         hero = cat["hero"]
         all_cards.append({
@@ -2571,7 +2458,7 @@ def write_archives(all_categories, top_cat, *, client=None, cache=None, material
     staged=[]; new_count=updated_count=unchanged_count=0
     committed_update_slugs=set()
     material_update_entries=list(material_update_entries or selected_material_update_commit_entries(all_categories))
-    heroes=[(top_cat["category_key"],top_cat["category_label"],top_cat["hero"])] + [(c["category_key"],c["category_label"],c["hero"]) for c in all_categories if c["category_key"]!=top_cat["category_key"]]
+    heroes=[(top_cat["category_key"],top_cat["category_label"],top_cat["hero"])] + [(c["category_key"],c["category_label"],c["hero"]) for c in all_categories if top_cat.get("_standalone_front_page_hero") or c["category_key"]!=top_cat["category_key"]]
     publication_entries = heroes + material_update_entries
     for cat_key,cat_label,hero in publication_entries:
         headline=str(hero.get("headline") or "").strip()
@@ -3144,12 +3031,13 @@ def main():
             if isinstance(item,dict):ensure_item_image(item,category_key=cat.get("category_key","top_news"),image_bank=image_bank,archive=archive,rotator=rotator,used_images=used)
     rotator.save();write_image_quality_report(all_categories,OUTPUT_DIR/"source-image-quality-report.json");write_quality_report(all_categories,OUTPUT_DIR/"article-quality-report.json")
 
-    print("Fetching market data...");market_data,market_live=fetch_market_data();top_cat=select_front_page_hero(all_categories)
+    print("Fetching market data...");market_data,market_live=fetch_market_data()
+    top_cat=select_front_page_hero(
+        all_categories, client=client, archive=archive,
+        audit_path=OUTPUT_DIR/"front-page-hero-selection.json",
+    )
     if top_cat is None:
-        def _score(cat):
-            score=int(cat.get("hero",{}).get("urgency_score",0) or 0);cap=CATEGORIES.get(cat.get("category_key"),{}).get("front_page_cap",10)
-            return min(score,4) if not CATEGORIES.get(cat.get("category_key"),{}).get("front_page_hero",True) else min(score,cap)
-        top_cat=max(all_categories,key=_score)
+        raise RuntimeError("No safe fresh national homepage hero; refusing to publish a stale or unvalidated lead")
     promote_duplicate_heroes(top_cat,all_categories)
     _card_compactions = _enforce_card_summary_product(all_categories)
     if _card_compactions:
@@ -3173,7 +3061,20 @@ def main():
     material_update_entries = selected_material_update_commit_entries(all_categories)
     if material_update_entries:
         print(f"  Protected material-update commit queue: {len(material_update_entries)} canonical target(s)")
-    write_archives(all_categories,top_cat,client=client,cache=cache,material_update_entries=material_update_entries)
+    final_archive=write_archives(all_categories,top_cat,client=client,cache=cache,material_update_entries=material_update_entries)
+    # Semantic canonical binding may reveal an older original publication date.
+    # Run a final TCT-style freshness barrier against the actual stored canonicals,
+    # not writer-generated display times or routine lastmod updates.
+    final_candidates,_=evaluate_front_page_candidates([top_cat],archive=final_archive,heroes_only=True)
+    if not final_candidates:
+        fallback=select_front_page_hero(
+            all_categories, archive=final_archive, heroes_only=True,
+            audit_path=OUTPUT_DIR/"front-page-hero-selection-final.json",
+        )
+        if fallback is None:
+            raise RuntimeError("Final canonical hero freshness contract: no safely published fresh national lead")
+        print("  Final canonical hero guard replaced a stale/suppressed selection with a verified section hero")
+        top_cat=fallback
     # Canonical recomposition can repair a protected hero after the earlier writer-stage
     # report was emitted. Rewrite the quality report from the final publishable state.
     write_quality_report(all_categories,OUTPUT_DIR/"article-quality-report.json")
