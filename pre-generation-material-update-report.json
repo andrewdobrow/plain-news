@@ -1,9 +1,56 @@
 {
-  "generated_at": "2026-11-07T17:42:17Z",
-  "evaluated": 0,
-  "material_updates": 0,
-  "duplicates_suppressed": 0,
-  "holds_suppressed": 0,
+  "generated_at": "2026-11-08T01:11:18Z",
+  "evaluated": 4,
+  "material_updates": 1,
+  "duplicates_suppressed": 2,
+  "holds_suppressed": 1,
   "new_or_unmatched": 0,
-  "items": []
+  "items": [
+    {
+      "category": "world",
+      "title": "Paraguay's former president charged after bank collapse",
+      "source_url": "https://www.bbc.co.uk/news/articles/c68jzzvjgdy9o?at_medium=RSS&at_campaign=rss",
+      "action": "update_existing_canonical",
+      "selected_candidate_slug": "2026-11-07-paraguays-president-impeached-arrested-after-bank-collapse-left-millions-unable",
+      "confidence": 0.9,
+      "novel_facts": [
+        "Prosecutors have formally charged Peña with breach of trust and administration for personal gain (previously only 'due to be questioned')"
+      ],
+      "reason": "Same event as canonical (Peña impeachment/arrest over Ueno Bank collapse), but incoming confirms formal charges were filed, advancing the story beyond the canonical's 'due to be questioned' status—a material legal development that should update the existing canonical.",
+      "cache_hit": false
+    },
+    {
+      "category": "us",
+      "title": "3 things to know about Stephen Miller, new White House chief of staff - The Washington Post",
+      "source_url": "https://www.washingtonpost.com/politics/2026/11/07/what-know-about-stephen-miller-new-white-house-chief-staff/",
+      "action": "hold",
+      "selected_candidate_slug": "2026-11-07-trump-replaces-chief-of-staff-susie-wiles-with-stephen-miller-after-gop-midterm",
+      "confidence": 0.8,
+      "novel_facts": [],
+      "reason": "The incoming article is an aggregated headline roundup about Stephen Miller's promotion to chief of staff, the same event already covered in the canonical article. It contains no new verified facts, only a list of other outlets' headlines, and does not meet the bar for a material update or independent follow-up.",
+      "cache_hit": false
+    },
+    {
+      "category": "tech",
+      "title": "The US let Nvidia sell chips to an empty office in China",
+      "source_url": "https://www.theverge.com/ai-artificial-intelligence/1029483/nvidia-ai-chips-china-blacklist-government",
+      "action": "duplicate_use_existing_canonical",
+      "selected_candidate_slug": "2026-11-07-us-approved-nvidia-chip-sales-to-chinese-firm-with-empty-office-and-ties-to-blac",
+      "confidence": 0.98,
+      "novel_facts": [],
+      "reason": "Both articles are the same NYT-sourced Verge piece about Nvidia's H200 chip sale approval to the shell company New Matrix, with identical facts, quotes, and framing. No new information is added in the incoming version.",
+      "cache_hit": false
+    },
+    {
+      "category": "entertainment",
+      "title": "Richard Lloyd, founding member and guitarist of punk band Television, dies aged 75 - The Guardian",
+      "source_url": "https://www.theguardian.com/music/2026/nov/07/richard-lloyd-punk-band-television-dies-aged-75",
+      "action": "duplicate_use_existing_canonical",
+      "selected_candidate_slug": "2026-11-07-richard-lloyd-television-guitarist-whose-interplay-with-tom-verlaine-shaped-marq",
+      "confidence": 0.97,
+      "novel_facts": [],
+      "reason": "Both articles report the same death of Richard Lloyd, Television guitarist, with identical cause, location, date, and family statement details. The incoming article adds background on CBGB and a 2005 Guardian review but introduces no material new facts about the death itself; it is a rehash/obituary overlap of the same event already covered by the canonical.",
+      "cache_hit": false
+    }
+  ]
 }
