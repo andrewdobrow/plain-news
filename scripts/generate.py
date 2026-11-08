@@ -1707,6 +1707,8 @@ def render_index(all_categories, market_data=None, market_live=False, top_cat=No
             "cat_key":       cat["category_key"],
             "cat_label":     cat["category_label"],
             "is_hero":       True,
+            "story_id":      hero.get("story_id", ""),
+            "event_key":     hero.get("event_key", ""),
         })
 
     # Add regular cards
@@ -1721,8 +1723,23 @@ def render_index(all_categories, market_data=None, market_live=False, top_cat=No
 
     all_cards.sort(key=lambda c: int(c.get("urgency_score", 0) or 0), reverse=True)  # Pre-sort
 
-    # Deduped set for the Top News front page (semantic dedup via Claude)
-    topnews_cards = global_rank(all_cards, dedupe_against=top_cat["hero"]["headline"])
+    # A promoted full-length card is also still available in its category.
+    # Eliminate same-canonical Top News duplicates BEFORE model ranking, so an
+    # unavailable/invalid model response cannot repeat the feature below itself.
+    selected_story_id = str(top_cat["hero"].get("story_id") or "")
+    selected_event_key = str(top_cat["hero"].get("event_key") or "")
+    selected_headline_key = re.sub(r"[^a-z0-9]+", " ", str(top_cat["hero"].get("headline") or "").casefold()).strip()
+    def same_as_front_page_hero(card):
+        sid = str(card.get("story_id") or "")
+        event = str(card.get("event_key") or "")
+        title = re.sub(r"[^a-z0-9]+", " ", str(card.get("headline") or "").casefold()).strip()
+        return bool(
+            (selected_story_id and sid == selected_story_id)
+            or (selected_event_key and event == selected_event_key)
+            or (selected_headline_key and title == selected_headline_key)
+        )
+    topnews_pool = [card for card in all_cards if not same_as_front_page_hero(card)]
+    topnews_cards = global_rank(topnews_pool, dedupe_against=top_cat["hero"]["headline"])
 
     # Mark which cards are in the Top News set (by identity) so the JS filter can
     # show the deduped set for "Top News" but the full set for category views
