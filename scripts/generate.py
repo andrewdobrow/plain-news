@@ -1003,8 +1003,9 @@ Return ONLY valid JSON:
 # -- HTML GENERATION --
 
 def now_et():
-    et_hour = (datetime.utcnow().hour - 4) % 24
-    suffix  = "AM" if et_hour < 12 else "PM"
+    from zoneinfo import ZoneInfo
+    et_hour = datetime.now(ZoneInfo("America/New_York")).hour
+    suffix = "AM" if et_hour < 12 else "PM"
     display = et_hour % 12 or 12
     return f"{display}:00 {suffix} ET"
 
@@ -1217,8 +1218,9 @@ def format_age(published_str):
         return ""
     try:
         from email.utils import parsedate_to_datetime
-        from datetime import timezone, timedelta
-        et      = timezone(timedelta(hours=-4))  # EDT approximation
+        from datetime import timezone
+        from zoneinfo import ZoneInfo
+        et      = ZoneInfo("America/New_York")
         try:
             dt_utc = parsedate_to_datetime(published_str).astimezone(timezone.utc)
         except Exception:
@@ -1363,6 +1365,44 @@ def select_front_page_hero(all_categories, *, client=None, archive=None, now=Non
     else:
         print("  National front page hero: no recent, safe, publication-ready candidate")
     return chosen
+
+
+
+def enforce_final_front_page_hero(top_cat, all_categories, archive, *, now=None, audit_path=None):
+    """Final canonical freshness barrier, after semantic publication binding.
+
+    This checks the *actual* archived first-publication date and validated
+    material-update timestamp, not just the live feed's advertised timestamp.
+    Only already-written, fully verified category leads are eligible for
+    fallback; no extra AI call or unreviewed story is introduced.
+    """
+    import json as _json
+    current, rejected = evaluate_front_page_candidates(
+        [top_cat], archive=archive, now=now, heroes_only=True,
+    )
+    action = "retained_validated_hero" if current else "recovered_fresh_canonical_category_hero"
+    if current:
+        selected = top_cat
+    else:
+        selected = select_front_page_hero(
+            all_categories, archive=archive, now=now, heroes_only=True,
+        )
+    if audit_path is not None:
+        report_path = Path(audit_path)
+        report_path.parent.mkdir(parents=True, exist_ok=True)
+        report_path.write_text(_json.dumps({
+            "version": 1,
+            "passed": selected is not None,
+            "action": action if selected else "no_safe_canonical_hero",
+            "original_headline": top_cat.get("hero", {}).get("headline"),
+            "selected_headline": selected.get("hero", {}).get("headline") if selected else None,
+            "original_candidate_rejection": rejected,
+        }, ensure_ascii=False, indent=2), encoding="utf-8")
+    if selected is None:
+        raise RuntimeError("Final canonical hero freshness contract: no safely published fresh national lead")
+    if not current:
+        print("  Final canonical hero guard replaced a stale/suppressed selection with a fresh published category hero")
+    return selected
 
 
 def promote_duplicate_heroes(top_cat, all_categories):
@@ -3045,16 +3085,6 @@ def main():
     for cat in all_categories:ensure_item_image(cat["hero"],category_key=cat.get("category_key","top_news"),image_bank=image_bank,archive=archive,rotator=rotator,used_images=used)
     rotator.save()
 
-    try:
-        ranking_cards=[]
-        for cat in all_categories:
-            for item in [cat.get("hero",{}),*cat.get("cards",[])]:
-                if not isinstance(item,dict) or not item.get("headline"):continue
-                row=dict(item);row["cat_key"]=row["category_key"]=cat.get("category_key","");row["cat_label"]=cat.get("category_label","");row["published_raw"]=item.get("source_published_raw","");row["source_url"]=item.get("link","");ranking_cards.append(row)
-        rh=dict(top_cat.get("hero",{}));rh["cat_key"]=rh["category_key"]=top_cat.get("category_key","");rh["source_url"]=rh.get("link","")
-        write_homepage_ranking_recommendations(ranking_cards,rh,registry_path=OUTPUT_DIR/"story-registry.json",archive=archive,output_path=OUTPUT_DIR/"ranking-recommendations.json",review_path=OUTPUT_DIR/"ranking-review.md")
-    except Exception as exc:print(f"  Ranking observability warning: {exc}")
-
     # Crucially publish/bind canonical URLs before rendering live share links.
     # Hidden commit receipts ensure a validated update selected as a snippet/card
     # still refreshes its established canonical without changing Plain's UI model.
@@ -3062,22 +3092,26 @@ def main():
     if material_update_entries:
         print(f"  Protected material-update commit queue: {len(material_update_entries)} canonical target(s)")
     final_archive=write_archives(all_categories,top_cat,client=client,cache=cache,material_update_entries=material_update_entries)
-    # Semantic canonical binding may reveal an older original publication date.
-    # Run a final TCT-style freshness barrier against the actual stored canonicals,
-    # not writer-generated display times or routine lastmod updates.
-    final_candidates,_=evaluate_front_page_candidates([top_cat],archive=final_archive,heroes_only=True)
-    if not final_candidates:
-        fallback=select_front_page_hero(
-            all_categories, archive=final_archive, heroes_only=True,
-            audit_path=OUTPUT_DIR/"front-page-hero-selection-final.json",
-        )
-        if fallback is None:
-            raise RuntimeError("Final canonical hero freshness contract: no safely published fresh national lead")
-        print("  Final canonical hero guard replaced a stale/suppressed selection with a verified section hero")
-        top_cat=fallback
+    top_cat=enforce_final_front_page_hero(
+        top_cat,all_categories,final_archive,
+        audit_path=OUTPUT_DIR/"front-page-hero-selection-final.json",
+    )
     # Canonical recomposition can repair a protected hero after the earlier writer-stage
     # report was emitted. Rewrite the quality report from the final publishable state.
     write_quality_report(all_categories,OUTPUT_DIR/"article-quality-report.json")
+    # Shadow recommendations observe the FINAL canonical headline, never an
+    # earlier candidate that the publication barrier subsequently replaced.
+    try:
+        ranking_cards=[]
+        for cat in all_categories:
+            for item in [cat.get("hero",{}),*cat.get("cards",[])]:
+                if not isinstance(item,dict) or not item.get("headline"):continue
+                row=dict(item);row["cat_key"]=row["category_key"]=cat.get("category_key","");row["cat_label"]=cat.get("category_label","");row["published_raw"]=item.get("source_published_raw","");row["source_url"]=item.get("link","");ranking_cards.append(row)
+        rh=dict(top_cat.get("hero",{}));rh["cat_key"]=rh["category_key"]=top_cat.get("category_key","");rh["source_url"]=rh.get("link","")
+        write_homepage_ranking_recommendations(ranking_cards,rh,registry_path=OUTPUT_DIR/"story-registry.json",archive=final_archive,output_path=OUTPUT_DIR/"ranking-recommendations.json",review_path=OUTPUT_DIR/"ranking-review.md")
+    except Exception as exc:print(f"  Ranking observability warning: {exc}")
+
+
     (OUTPUT_DIR/"news.html").write_text(render_index(all_categories,market_data,market_live,top_cat=top_cat),encoding="utf-8")
 
     all_cards=[]
