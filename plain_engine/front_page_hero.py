@@ -85,6 +85,20 @@ _FOREIGN_GOVERNMENT_CRISIS = re.compile(
     r"resigns?|coup|dissolved)\b", re.I,
 )
 
+# A federal enforcement action against one named firm/platform matters, but
+# is not automatically equal to an economy-wide rule or nationwide court order.
+_TARGETED_ENTITY_ENFORCEMENT = re.compile(
+    r"\b(?:crypto(?:currency)? exchange|single (?:bank|company|firm|platform)|"
+    r"individual (?:bank|company|firm|platform)|"
+    r"specific (?:bank|firm|company|exchange|platform)|"
+    r"one (?:bank|company|firm|exchange|platform))\b", re.I,
+)
+_BROAD_REGULATORY_SCOPE = re.compile(
+    r"\b(?:nationwide|industrywide|across the (?:industry|sector)|"
+    r"all (?:banks|exchanges|platforms|companies|financial institutions)|"
+    r"new federal law|economy.wide)\b", re.I,
+)
+
 _SENATE_ELECTION = re.compile(
     r"\b(?:senate race|presidential election|electoral votes?|"
     r"congressional election|national election|"
@@ -170,11 +184,13 @@ def _major_event_tier(category_key, headline):
     if government and not analysis:
         # A one-company permission or export license is not equivalent to a
         # nationwide court ruling or executive action affecting millions.
-        if category_key in {"tech", "business"} and re.search(
-            r"\b(?:chip sales?|nvidia|tesla|apple|google|microsoft|"
-            r"company|startup|export license|single firm)\b", title, re.I
-        ) and not re.search(r"\b(?:industrywide|nationwide|all exports|new federal law)\b", title, re.I):
-            return 3, "company_specific_federal_action"
+        if category_key in {"tech", "business"} and (
+            re.search(
+                r"\b(?:chip sales?|nvidia|tesla|apple|google|microsoft|"
+                r"company|startup|export license|single firm)\b", title, re.I
+            ) or _TARGETED_ENTITY_ENFORCEMENT.search(title)
+        ) and not _BROAD_REGULATORY_SCOPE.search(title):
+            return 3, "targeted_federal_entity_action"
         return 5, "concrete_federal_action"
     if foreign_crisis and not analysis:
         return 4, "major_foreign_government_crisis"
@@ -273,16 +289,32 @@ def evaluate_front_page_candidates(all_categories, archive=None, *, now=None, he
                 "titles": [headline],
                 "audience_relevance": {"scope": relevance.scope},
             })
-            freshness = max(0.0, 20.0 - max(0.0, age) * 0.42)
-            # Tier dominates, then modeled urgency, factual scope, verified
-            # importance, and real freshness; card/hero roles get no rank bonus.
-            score = round(tier * 100 + urgency * 2 + relevance.score * 0.12
-                          + importance.score * 0.1 + freshness, 2)
+            # National significance still matters, but no single keyword
+            # group gets an insurmountable 100-point tier advantage. The front
+            # page is a time-sensitive news product, not an archive index.
+            # An aging story loses prominence on a continuous slope; we still
+            # permit a truly major older event when the new pool is weak.
+            tier_points = 36.0 * tier
+            urgency_points = 4.0 * urgency
+            relevance_points = 0.15 * relevance.score
+            importance_points = 0.15 * importance.score
+            freshness_points = max(-45.0, 44.0 - max(0.0, age) * 2.5)
+            score = round(
+                tier_points + urgency_points + relevance_points
+                + importance_points + freshness_points, 2
+            )
             candidates.append({
                 "category": cat, "category_key": key, "category_label": label,
                 "item": item, "role": role,
                 "headline": headline, "tier": tier, "tier_reason": tier_reason,
                 "score": score, "urgency_score": urgency, "importance_score": importance.score,
+                "score_breakdown": {
+                    "significance": round(tier_points, 2),
+                    "urgency": round(urgency_points, 2),
+                    "national_relevance": round(relevance_points, 2),
+                    "independent_importance": round(importance_points, 2),
+                    "freshness": round(freshness_points, 2),
+                },
                 "national_relevance": relevance.scope,
                 "age_hours": round(age, 2), "timestamp_basis": date_basis,
                 "source_timestamp": stamp.isoformat() if stamp else "",
@@ -295,5 +327,5 @@ def candidate_audit_row(candidate):
     """Keep reports serializable; never put copied full source documents in the audit."""
     fields = ("headline", "category_key", "category_label", "role", "score", "tier",
               "tier_reason", "urgency_score", "importance_score", "national_relevance",
-              "age_hours", "timestamp_basis", "source_timestamp")
+              "age_hours", "timestamp_basis", "source_timestamp", "score_breakdown")
     return {field: candidate.get(field) for field in fields}
