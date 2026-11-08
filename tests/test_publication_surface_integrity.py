@@ -263,3 +263,117 @@ def test_recovery_never_uses_a_historically_old_article_with_new_lastmod(monkeyp
     monkeypatch.setattr(g,"OUTPUT_DIR",tmp_path)
     with pytest.raises(RuntimeError,match="no safe recent same-section canonical recovery"):
         g.write_archives([original],original,client=object(),cache=object(),material_update_entries=[])
+
+
+def _setup_archive_render_stubs(monkeypatch, generate, tmp_path):
+    monkeypatch.setattr(generate, "OUTPUT_DIR", tmp_path)
+    monkeypatch.setattr(generate, "render_archive_page", lambda *a, **k: "<html>archive</html>")
+    monkeypatch.setattr(generate, "update_sitemap", lambda *a, **k: "<xml/>")
+    monkeypatch.setattr(generate, "update_news_sitemap", lambda *a, **k: "<xml/>")
+    monkeypatch.setattr(generate, "_write_publication_integrity_report", lambda *a, **k: None)
+
+
+def _fresh_canonical_article(headline, category, slug, story_id, hours=2):
+    from datetime import datetime, timedelta, timezone
+    when = datetime.now(timezone.utc)
+    source = article(headline, story_id=story_id)
+    return {
+        "slug": slug, "headline": headline, "category_key": category,
+        "category_label": category.title(), "story_id": story_id,
+        "first_published": (when - timedelta(hours=hours)).isoformat(),
+        "date": when.date().isoformat(), "lastmod": when.date().isoformat(),
+        "body": source["body"], "teaser": source["body"][:170],
+        "source_url": "https://example.org/canonicals/" + slug,
+    }
+
+
+def test_stale_source_focus_after_canonical_replacement_recovers_other_verified_story(monkeypatch, tmp_path):
+    """Exact November 8 entertainment failure: old Godzilla body / newer source focus."""
+    import scripts.generate as g
+    mismatch = article(
+        "Godzilla Minus Zero Opens to Record $30 Million-Plus for Live-Action Foreign-Language Film",
+        story_id="story_000275",
+    )
+    mismatch["source_title"] = "Celebrity profile discusses the filmmaker personal career and early films"
+    mismatch["article_text"] = (
+        "The filmmaker described early directing challenges, artistic technique, "
+        "colleagues and career milestones unrelated to the current box office. " * 15
+    )
+    cat = section("entertainment", mismatch)
+    bad_archive = _fresh_canonical_article(
+        mismatch["headline"], "entertainment", "old-godzilla", "story_000275", hours=28
+    )
+    safe_archive = _fresh_canonical_article(
+        "Film industry union announces new nationwide safety agreement",
+        "entertainment", "safe-entertainment", "story_008888", hours=3
+    )
+    # Ensure the older canonical body matches its headline and the newer
+    # source evidence does NOT. Previous code silently re-used this mix.
+    assert "generated_copy_drifted_from_source_focus" in surface_errors(
+        {**mismatch, "body": bad_archive["body"]}, "entertainment"
+    )
+    original_archive = [bad_archive, safe_archive]
+    _setup_archive_render_stubs(monkeypatch,g,tmp_path)
+    (tmp_path/"archive.json").write_text(json.dumps(original_archive))
+    rows=g.write_archives([cat],cat,client=object(),cache=object(),
+                          material_update_entries=[])
+    assert len(rows)==2
+    assert cat["hero"]["headline"]==safe_archive["headline"]
+    assert cat["hero"]["_archived_slug"]==safe_archive["slug"]
+    assert cat["hero"]["publication_quality_ok"] is True
+    assert all(row["headline"] != mismatch["source_title"] for row in rows)
+    report=json.loads((tmp_path/"archive-identity-recovery-report.json").read_text())
+    assert report["recoveries"][0]["reason"]=="canonical_substitution_quality_failure"
+    assert "generated_copy_drifted_from_source_focus" in report["recoveries"][0]["validation_errors"]
+
+
+def test_unpublishable_canonical_substitution_without_safe_recovery_stays_blocked(monkeypatch, tmp_path):
+    import scripts.generate as g
+    bad = article("Godzilla Minus Zero Opens to Record $30 Million-Plus for Foreign-Language Film",
+                  story_id="story_000275")
+    bad["source_title"] = "Celebrity profile discusses the filmmaker personal career and early films"
+    bad["article_text"] = "The filmmaker discussed early personal experiences and creative career milestones. " * 20
+    cat = section("entertainment",bad)
+    existing = _fresh_canonical_article(bad["headline"],"entertainment","godzilla-only","story_000275")
+    _setup_archive_render_stubs(monkeypatch,g,tmp_path)
+    (tmp_path/"archive.json").write_text(json.dumps([existing]))
+    with pytest.raises(RuntimeError,match="Unsafe canonical substitution"):
+        g.write_archives([cat],cat,client=object(),cache=object(),material_update_entries=[])
+    assert json.loads((tmp_path/"archive.json").read_text())==[existing]
+
+
+def test_terminal_semantic_hold_recovers_verified_same_section_archive(monkeypatch, tmp_path):
+    import scripts.generate as g
+    live = article("Broncos beat Panthers 26-21 for fifth straight win behind Nix touchdowns",
+                   story_id="story_new")
+    cat=section("sports", live)
+    old = _fresh_canonical_article(
+        "Lions extend winning streak with victory over Miami Dolphins",
+        "sports", "recent-lions", "story_lions", hours=4
+    )
+    _setup_archive_render_stubs(monkeypatch,g,tmp_path)
+    (tmp_path/"archive.json").write_text(json.dumps([old]))
+    monkeypatch.setattr(
+        g,"_semantic_publication_decision",
+        lambda *a,**kw: {"action": g.ACTION_HOLD, "selected_candidate_slug":"",
+                         "reason":"ambiguous duplicate; not independently verified"},
+    )
+    rows=g.write_archives([cat],cat,client=object(),cache=object(),material_update_entries=[])
+    assert len(rows)==1
+    assert cat["hero"]["headline"]==old["headline"]
+    report=json.loads((tmp_path/"archive-identity-recovery-report.json").read_text())
+    assert report["recoveries"][0]["reason"]=="semantic_hold_fallback_to_verified_canonical"
+
+
+def test_terminal_semantic_hold_without_safe_archive_still_fails_closed(monkeypatch,tmp_path):
+    import scripts.generate as g
+    live=article("Broncos beat Panthers 26-21 for fifth straight win behind Nix touchdowns",
+                 story_id="story_new")
+    cat=section("sports",live)
+    _setup_archive_render_stubs(monkeypatch,g,tmp_path)
+    (tmp_path/"archive.json").write_text("[]")
+    monkeypatch.setattr(g,"_semantic_publication_decision",
+                        lambda *a,**k:{"action":g.ACTION_HOLD,"selected_candidate_slug":""})
+    with pytest.raises(RuntimeError,match="no safe recent sports recovery"):
+        g.write_archives([cat],cat,client=object(),cache=object(),material_update_entries=[])
+    assert json.loads((tmp_path/"archive.json").read_text())==[]
