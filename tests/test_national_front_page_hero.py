@@ -177,3 +177,84 @@ def test_no_fresh_verified_article_fails_closed_instead_of_downgrading_to_sports
     candidates,_ = evaluate_front_page_candidates(
         [section("sports",sports),section("politics",politics)],now=now)
     assert not candidates
+
+
+def test_cross_tagged_motor_racing_in_us_section_cannot_become_top_news():
+    now = datetime(2026, 11, 7, 20, tzinfo=timezone.utc)
+    misfiled = story("Hamilton and Verstappen to start from back of grid at Sao Paulo Grand Prix",
+                     now, urgency=10, category="us")
+    policy = story("Supreme Court rules on national federal policy", now, urgency=5)
+    ranked, blocked = evaluate_front_page_candidates(
+        [section("us",misfiled),section("politics",policy)], now=now)
+    assert ranked[0]["headline"] == policy["headline"]
+    assert "misclassified_sports_entertainment_content" in [r["reason"] for r in blocked]
+
+
+def test_foreign_leader_impeachment_is_major_world_news_not_routine_crime():
+    now = datetime(2026, 11, 7, 20, tzinfo=timezone.utc)
+    world = story("Paraguay president impeached and arrested after bank collapse", now,
+                  urgency=8, category="world")
+    tech = story("AI analyst predicts new software trends", now, urgency=9, category="tech")
+    ranked,_ = evaluate_front_page_candidates(
+        [section("world",world),section("tech",tech)], now=now)
+    assert ranked[0]["headline"] == world["headline"]
+    assert ranked[0]["tier"] >= 4
+
+
+def test_single_company_federal_approval_does_not_automatically_outrank_nationwide_policy():
+    now = datetime(2026, 11, 7, 20, tzinfo=timezone.utc)
+    niche = story("US approves Nvidia chip sales to Chinese firm", now,
+                  urgency=10, category="tech")
+    national = story("Supreme Court rules on national federal policy", now,
+                     urgency=6, category="politics")
+    ranked,_ = evaluate_front_page_candidates([
+        section("tech",niche),section("politics",national),
+    ],now=now)
+    assert ranked[0]["headline"] == national["headline"]
+
+
+def test_final_canonical_guard_replaces_old_bound_story_with_fresh_lead(tmp_path):
+    import scripts.generate as generate
+    now = datetime(2026, 11, 7, 20, tzinfo=timezone.utc)
+    stale = story("Supreme Court rules on national federal policy", now, hours=1)
+    stale["story_id"] = "story_old"
+    top = section("politics",stale)
+    fresh = story("Ukraine launches drone strikes on Moscow in major offensive", now, hours=1, category="world")
+    alternate = section("world",fresh)
+    canonical = [{
+        "story_id":"story_old","first_published":(now-timedelta(days=8)).isoformat(),
+        "lastmod":now.date().isoformat(), "slug":"story-old",
+    }]
+    report = tmp_path/"final-hero-selection.json"
+    chosen = generate.enforce_final_front_page_hero(top,[top,alternate],canonical,now=now,audit_path=report)
+    assert chosen is alternate
+    payload = json.loads(report.read_text())
+    assert payload["passed"] is True
+    assert payload["action"] == "recovered_fresh_canonical_category_hero"
+    assert payload["selected_headline"] == fresh["headline"]
+
+
+def test_standalone_front_page_card_does_not_drop_original_section_hero_from_archive(monkeypatch,tmp_path):
+    import scripts.generate as generate
+    now = datetime(2026, 11, 7, 20, tzinfo=timezone.utc)
+    original = story("Federal authority releases a routine agency report",now,category="us")
+    promoted = story("Supreme Court rules on national federal policy",now,category="us")
+    original["story_id"] = "story_original"
+    promoted["story_id"] = "story_promoted"
+    category = section("us",original)
+    top = {"category_key":"us","category_label":"U.S.","hero":promoted,
+           "cards":[],"_standalone_front_page_hero":True}
+    monkeypatch.setattr(generate,"OUTPUT_DIR",tmp_path)
+    monkeypatch.setattr(generate,"_semantic_publication_decision",
+                        lambda *a, **kw: {"action":generate.ACTION_NEW})
+    monkeypatch.setattr(generate,"render_article_page",lambda *a,**kw:"<article>Safe article</article>")
+    monkeypatch.setattr(generate,"render_archive_page",lambda *a,**kw:"<html>Archive</html>")
+    monkeypatch.setattr(generate,"update_sitemap",lambda *a,**kw:"<xml>Sitemap</xml>")
+    monkeypatch.setattr(generate,"update_news_sitemap",lambda *a,**kw:"<xml>News sitemap</xml>")
+    monkeypatch.setattr(generate,"_write_publication_integrity_report",lambda *a,**kw:None)
+    written=generate.write_archives([category],top,client=object(),cache=object(),
+                                    material_update_entries=[])
+    assert len(written)==2
+    assert {row["story_id"] for row in written}=={"story_original","story_promoted"}
+    assert all(row["category_key"]=="us" for row in written)
+    assert len(list((tmp_path/"articles").glob("*.html")))==2
