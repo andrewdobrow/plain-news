@@ -7,104 +7,83 @@
     "resolver_version": "3.0",
     "relationship_engine_version": "1.5"
   },
-  "generated_at": "2026-11-08T02:10:12Z",
+  "generated_at": "2026-11-08T03:08:17Z",
   "mode": "enforce",
   "publication_behavior_changed": false,
   "activation": {},
   "registry_path": "/home/runner/work/plain-news/plain-news/story-registry.json",
   "audit": {
-    "candidates_processed": 29,
+    "candidates_processed": 28,
     "routes": {
-      "generate_new": 10,
-      "skip": 19
+      "archive_recovery": 6,
+      "generate_new": 9,
+      "skip": 13
     },
     "eligibility": {
       "low_value": 2,
-      "publishable": 27
+      "publishable": 26
     },
     "source_classes": {
       "aggregator": 2,
+      "business_news": 1,
       "entertainment_news": 5,
-      "international_news": 5,
+      "international_news": 4,
       "national_news": 1,
-      "sports_news": 2,
-      "technology_news": 3,
-      "unknown": 11
+      "sports_news": 1,
+      "technology_news": 2,
+      "unknown": 10,
+      "wire_service": 2
     },
     "rejected_count": 0,
     "rejected_examples": []
   },
   "relationships": {
     "counts": {
-      "new_story": 10,
-      "same_event": 19
+      "new_story": 9,
+      "same_event": 13
     },
     "examples": [
       {
-        "story_id": "story_000354",
-        "title": "Gunman kills at least 6 and wounds 11 in drive-by shooting in Krakow, Poland",
-        "event_key": "named-person-death:at-least",
+        "story_id": "story_000329",
+        "title": "Israeli President Herzog tasks opposition leader Eisenkot with forming government after inconclusive election",
+        "event_key": "election-173d6eac61",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "reason": "Exact event key already belongs to this story",
+        "decision_trace": [
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000365",
+        "title": "Russian strikes wound nine, cut power and water in Kyiv ahead of Abu Dhabi talks",
+        "event_key": "shooting-d2a4dff3e2",
         "relationship": "new_story",
-        "confidence": 0.330767,
-        "reason": "Created new story: conservative merge requirements were not met",
+        "confidence": 0.0,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
         "decision_trace": [
-          "Category: crime_public_safety",
-          "Facts overlap: 0.00",
-          "Locations overlap: 1.00",
-          "Agencies overlap: 0.00",
-          "Event types overlap: 1.00",
-          "Entities overlap: 0.00",
-          "Title support: 0.17",
-          "Event-key support: 0.75",
-          "Identity anchors: 2",
-          "Threshold: 0.78"
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
         ]
       },
       {
-        "story_id": "story_000323",
-        "title": "Israeli president tasks Eisenkot with forming government after inconclusive election",
-        "event_key": "election-8fc45d3cd6",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "reason": "Exact event key already belongs to this story",
+        "story_id": "story_000366",
+        "title": "Pope Leo XIV urges Uruguayans to build bridges, champions universal healthcare during South America tour",
+        "event_key": "unknown-event-1c5c3607ba",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
         "decision_trace": [
-          "Relationship: same_event",
-          "Exact event-key mapping: true",
-          "No novel follow-up milestone: true",
-          "Confidence: 1.00"
-        ]
-      },
-      {
-        "story_id": "story_000325",
-        "title": "Six killed in shooting in Krakow, Poland; British citizen among dead",
-        "event_key": "named-person-death:krakow-six",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "reason": "Exact event key already belongs to this story",
-        "decision_trace": [
-          "Relationship: same_event",
-          "Exact event-key mapping: true",
-          "No novel follow-up milestone: true",
-          "Confidence: 1.00"
-        ]
-      },
-      {
-        "story_id": "story_000327",
-        "title": "Norris takes pole in wet Brazilian qualifying, hopes for rain in Sunday's race",
-        "event_key": "unknown-event-db7e4201a7",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "reason": "Exact event key already belongs to this story",
-        "decision_trace": [
-          "Relationship: same_event",
-          "Exact event-key mapping: true",
-          "No novel follow-up milestone: true",
-          "Confidence: 1.00"
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
         ]
       },
       {
         "story_id": "story_000112",
-        "title": "Wall Street reverses sharply after midterm sweep, tech sell-off sends Nasdaq into correction",
+        "title": "Stocks plunge into correction after brief post-midterm rally as AI regulation fears hit tech",
         "event_key": "election-texas",
         "relationship": "same_event",
         "confidence": 1.0,
@@ -117,9 +96,9 @@
         ]
       },
       {
-        "story_id": "story_000355",
-        "title": "Tech stocks fall below S&P 500 valuation for first time since 2017",
-        "event_key": "labor-action-347a0c18d0",
+        "story_id": "story_000367",
+        "title": "Anthropic IPO faces headwinds as AI data center backlash grows",
+        "event_key": "unknown-event-53ffb17e7d",
         "relationship": "new_story",
         "confidence": 0.0,
         "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
@@ -130,7 +109,7 @@
       },
       {
         "story_id": "story_000006",
-        "title": "Musk says SpaceX could buy legacy telecom carrier, move telecom stocks",
+        "title": "Musk says SpaceX could acquire legacy telecom carrier to use spectrum more efficiently",
         "event_key": "election-new-york",
         "relationship": "same_event",
         "confidence": 1.0,
@@ -143,36 +122,8 @@
         ]
       },
       {
-        "story_id": "story_000330",
-        "title": "Treasury moves to cut off crypto exchange MEXC over alleged $16 billion in illicit transactions",
-        "event_key": "unknown-event-3c2e024cfc",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "reason": "Exact event key already belongs to this story",
-        "decision_trace": [
-          "Relationship: same_event",
-          "Exact event-key mapping: true",
-          "No novel follow-up milestone: true",
-          "Confidence: 1.00"
-        ]
-      },
-      {
-        "story_id": "story_000112",
-        "title": "OpenAI releases new data center policy and rebrands facilities as voters reject AI infrastructure",
-        "event_key": "election-texas",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "reason": "Exact event key already belongs to this story",
-        "decision_trace": [
-          "Relationship: same_event",
-          "Exact event-key mapping: true",
-          "No novel follow-up milestone: true",
-          "Confidence: 1.00"
-        ]
-      },
-      {
         "story_id": "story_000331",
-        "title": "US intelligence memo alleges Chinese state security recruited tech executive to spy on Nvidia CEO",
+        "title": "U.S. intelligence memo claimed Chinese officials recruited tech executive to spy on Nvidia CEO",
         "event_key": "unknown-event-acd0df1754",
         "relationship": "same_event",
         "confidence": 1.0,
@@ -185,9 +136,9 @@
         ]
       },
       {
-        "story_id": "story_000335",
-        "title": "Scientists find two massive tears in Arabian tectonic plate beneath Iran",
-        "event_key": "traffic-crash-ae25a9c4ba-ae25a9c4ba",
+        "story_id": "story_000112",
+        "title": "OpenAI revises data center policies after Democratic midterm gains",
+        "event_key": "election-texas",
         "relationship": "same_event",
         "confidence": 1.0,
         "reason": "Exact event key already belongs to this story",
@@ -199,75 +150,9 @@
         ]
       },
       {
-        "story_id": "story_000336",
-        "title": "Phone makers expand lineup of child-focused devices with monitoring and restricted access",
-        "event_key": "unknown-event-bda53a06f8",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "reason": "Exact event key already belongs to this story",
-        "decision_trace": [
-          "Relationship: same_event",
-          "Exact event-key mapping: true",
-          "No novel follow-up milestone: true",
-          "Confidence: 1.00"
-        ]
-      },
-      {
-        "story_id": "story_000337",
-        "title": "NASA opens public sign-up to send names to Titan aboard Dragonfly rotorcraft",
-        "event_key": "unknown-event-af6842a73c",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "reason": "Exact event key already belongs to this story",
-        "decision_trace": [
-          "Relationship: same_event",
-          "Exact event-key mapping: true",
-          "No novel follow-up milestone: true",
-          "Confidence: 1.00"
-        ]
-      },
-      {
-        "story_id": "story_000356",
-        "title": "PC RAM capacities decline for first time as 16 GB gains on 32 GB and 64 GB configurations",
-        "event_key": "unknown-event-4095a3d004",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
-        "story_id": "story_000338",
-        "title": "Zelda: Ocarina of Time Remake Runs on Jailbroken PS5 and iPhone After Switch 2 Launch",
-        "event_key": "unknown-event-405d1fcb5e",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "reason": "Exact event key already belongs to this story",
-        "decision_trace": [
-          "Relationship: same_event",
-          "Exact event-key mapping: true",
-          "No novel follow-up milestone: true",
-          "Confidence: 1.00"
-        ]
-      },
-      {
-        "story_id": "story_000357",
-        "title": "Oregon routs Ohio State 41-28, likely ending Buckeyes' playoff hopes with fake punt sparking turnaround",
-        "event_key": "unknown-event-082a464cb8",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
-        "story_id": "story_000358",
-        "title": "No. 1 Miami faces No. 11 Notre Dame in top-15 college football showdown",
-        "event_key": "unknown-event-2d52306549",
+        "story_id": "story_000368",
+        "title": "Notre Dame defeats Miami 24-17 in matchup of top-ranked teams",
+        "event_key": "election-a43483db4d",
         "relationship": "new_story",
         "confidence": 0.0,
         "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
@@ -278,8 +163,22 @@
       },
       {
         "story_id": "story_000359",
-        "title": "NFL handbook language grants Commissioner broad discretion over Brandon Aiyuk reinstatement as 49ers seek bonus repayment",
+        "title": "NFL's Player Personnel Handbook gives league wide discretion over Brandon Aiyuk's reinstatement",
         "event_key": "labor-action-387edfa564",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "reason": "Exact event key already belongs to this story",
+        "decision_trace": [
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000369",
+        "title": "Chev Clarke scores seventh-round stoppage upset over former cruiserweight champion Chris Billam-Smith",
+        "event_key": "unknown-event-5ffa303429",
         "relationship": "new_story",
         "confidence": 0.0,
         "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
@@ -289,9 +188,9 @@
         ]
       },
       {
-        "story_id": "story_000340",
-        "title": "Lando Norris takes pole for Sao Paulo Grand Prix in rain-disrupted qualifying",
-        "event_key": "unknown-event-df1076b894",
+        "story_id": "story_000327",
+        "title": "Norris takes pole for third straight year in Brazil as rain shuffles grid",
+        "event_key": "unknown-event-db7e4201a7",
         "relationship": "same_event",
         "confidence": 1.0,
         "reason": "Exact event key already belongs to this story",
@@ -303,9 +202,9 @@
         ]
       },
       {
-        "story_id": "story_000339",
-        "title": "Chev Clarke stops Chris Billam-Smith in seventh round for first career stoppage loss",
-        "event_key": "unknown-event-43ee1b601c",
+        "story_id": "story_000342",
+        "title": "Thick fog obscured live FA Cup broadcast as commentators struggled to see play",
+        "event_key": "unknown-event-ce979b7d99",
         "relationship": "same_event",
         "confidence": 1.0,
         "reason": "Exact event key already belongs to this story",
@@ -314,79 +213,153 @@
           "Exact event-key mapping: true",
           "No novel follow-up milestone: true",
           "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000370",
+        "title": "LSU loses to Alabama 31-13 as Lane Kiffin falls to 0-3 against ranked opponents",
+        "event_key": "unknown-event-27c2ae3848",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000371",
+        "title": "Stephen Colbert and Yo-Yo Ma's Harvard event cut short by fire alarm amid graduate student union strike",
+        "event_key": "labor-action-new-york",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "reason": "Created new story: conservative merge requirements were not met",
+        "decision_trace": [
+          "No sufficiently supported match",
+          "Threshold: 0.78"
+        ]
+      },
+      {
+        "story_id": "story_000362",
+        "title": "Hockey romance series Heated Rivalry films two seasons and holiday movie back-to-back",
+        "event_key": "unknown-event-e309b5ca30",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "reason": "Exact source article URL already belongs to this story",
+        "decision_trace": [
+          "Exact source article identity: true",
+          "Normalized source URL: https://deadline.com/2026/11/heated-rivalry-season-2-season-3-movie-scott-kip-1237216072",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000361",
+        "title": "Bill Skarsgård says he was not considered for new James Bond role but would play a villain",
+        "event_key": "unknown-event-d7800708fb",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "reason": "Exact event key already belongs to this story",
+        "decision_trace": [
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000347",
+        "title": "Pokemon anime studio unveils AI coloring tool trained on three hand-painted frames",
+        "event_key": "unknown-event-92aac81cf5",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "reason": "Exact event key already belongs to this story",
+        "decision_trace": [
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000346",
+        "title": "AI Could Make Filmmaking Costlier Than 35mm Era, Korean Production Pioneers Warn",
+        "event_key": "war-or-military-action-11539134c9",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "reason": "Exact event key already belongs to this story",
+        "decision_trace": [
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000372",
+        "title": "Kirby Howell-Baptiste discusses scene-stealing role in Jordan Firstman's 'Club Kid'",
+        "event_key": "natural-disaster-new-york",
+        "relationship": "new_story",
+        "confidence": 0.22,
+        "reason": "Created new story: conservative merge requirements were not met",
+        "decision_trace": [
+          "Category: weather",
+          "Facts overlap: 0.00",
+          "Locations overlap: 1.00",
+          "Agencies overlap: 0.00",
+          "Event types overlap: 0.50",
+          "Entities overlap: 0.00",
+          "Title support: 0.00",
+          "Event-key support: 0.00",
+          "Identity anchors: 2",
+          "Threshold: 0.78"
         ]
       }
     ],
     "decision_trace_examples": [
       {
-        "story_id": "story_000354",
-        "title": "Gunman kills at least 6 and wounds 11 in drive-by shooting in Krakow, Poland",
-        "event_key": "named-person-death:at-least",
+        "story_id": "story_000329",
+        "title": "Israeli President Herzog tasks opposition leader Eisenkot with forming government after inconclusive election",
+        "event_key": "election-173d6eac61",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "matched_existing": true,
+        "reason": "Exact event key already belongs to this story",
+        "decision_trace": [
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000365",
+        "title": "Russian strikes wound nine, cut power and water in Kyiv ahead of Abu Dhabi talks",
+        "event_key": "shooting-d2a4dff3e2",
         "relationship": "new_story",
-        "confidence": 0.330767,
+        "confidence": 0.0,
         "matched_existing": false,
-        "reason": "Created new story: conservative merge requirements were not met",
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
         "decision_trace": [
-          "Category: crime_public_safety",
-          "Facts overlap: 0.00",
-          "Locations overlap: 1.00",
-          "Agencies overlap: 0.00",
-          "Event types overlap: 1.00",
-          "Entities overlap: 0.00",
-          "Title support: 0.17",
-          "Event-key support: 0.75",
-          "Identity anchors: 2",
-          "Threshold: 0.78"
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
         ]
       },
       {
-        "story_id": "story_000323",
-        "title": "Israeli president tasks Eisenkot with forming government after inconclusive election",
-        "event_key": "election-8fc45d3cd6",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "matched_existing": true,
-        "reason": "Exact event key already belongs to this story",
+        "story_id": "story_000366",
+        "title": "Pope Leo XIV urges Uruguayans to build bridges, champions universal healthcare during South America tour",
+        "event_key": "unknown-event-1c5c3607ba",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "matched_existing": false,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
         "decision_trace": [
-          "Relationship: same_event",
-          "Exact event-key mapping: true",
-          "No novel follow-up milestone: true",
-          "Confidence: 1.00"
-        ]
-      },
-      {
-        "story_id": "story_000325",
-        "title": "Six killed in shooting in Krakow, Poland; British citizen among dead",
-        "event_key": "named-person-death:krakow-six",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "matched_existing": true,
-        "reason": "Exact event key already belongs to this story",
-        "decision_trace": [
-          "Relationship: same_event",
-          "Exact event-key mapping: true",
-          "No novel follow-up milestone: true",
-          "Confidence: 1.00"
-        ]
-      },
-      {
-        "story_id": "story_000327",
-        "title": "Norris takes pole in wet Brazilian qualifying, hopes for rain in Sunday's race",
-        "event_key": "unknown-event-db7e4201a7",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "matched_existing": true,
-        "reason": "Exact event key already belongs to this story",
-        "decision_trace": [
-          "Relationship: same_event",
-          "Exact event-key mapping: true",
-          "No novel follow-up milestone: true",
-          "Confidence: 1.00"
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
         ]
       },
       {
         "story_id": "story_000112",
-        "title": "Wall Street reverses sharply after midterm sweep, tech sell-off sends Nasdaq into correction",
+        "title": "Stocks plunge into correction after brief post-midterm rally as AI regulation fears hit tech",
         "event_key": "election-texas",
         "relationship": "same_event",
         "confidence": 1.0,
@@ -400,9 +373,9 @@
         ]
       },
       {
-        "story_id": "story_000355",
-        "title": "Tech stocks fall below S&P 500 valuation for first time since 2017",
-        "event_key": "labor-action-347a0c18d0",
+        "story_id": "story_000367",
+        "title": "Anthropic IPO faces headwinds as AI data center backlash grows",
+        "event_key": "unknown-event-53ffb17e7d",
         "relationship": "new_story",
         "confidence": 0.0,
         "matched_existing": false,
@@ -414,7 +387,7 @@
       },
       {
         "story_id": "story_000006",
-        "title": "Musk says SpaceX could buy legacy telecom carrier, move telecom stocks",
+        "title": "Musk says SpaceX could acquire legacy telecom carrier to use spectrum more efficiently",
         "event_key": "election-new-york",
         "relationship": "same_event",
         "confidence": 1.0,
@@ -428,38 +401,8 @@
         ]
       },
       {
-        "story_id": "story_000330",
-        "title": "Treasury moves to cut off crypto exchange MEXC over alleged $16 billion in illicit transactions",
-        "event_key": "unknown-event-3c2e024cfc",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "matched_existing": true,
-        "reason": "Exact event key already belongs to this story",
-        "decision_trace": [
-          "Relationship: same_event",
-          "Exact event-key mapping: true",
-          "No novel follow-up milestone: true",
-          "Confidence: 1.00"
-        ]
-      },
-      {
-        "story_id": "story_000112",
-        "title": "OpenAI releases new data center policy and rebrands facilities as voters reject AI infrastructure",
-        "event_key": "election-texas",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "matched_existing": true,
-        "reason": "Exact event key already belongs to this story",
-        "decision_trace": [
-          "Relationship: same_event",
-          "Exact event-key mapping: true",
-          "No novel follow-up milestone: true",
-          "Confidence: 1.00"
-        ]
-      },
-      {
         "story_id": "story_000331",
-        "title": "US intelligence memo alleges Chinese state security recruited tech executive to spy on Nvidia CEO",
+        "title": "U.S. intelligence memo claimed Chinese officials recruited tech executive to spy on Nvidia CEO",
         "event_key": "unknown-event-acd0df1754",
         "relationship": "same_event",
         "confidence": 1.0,
@@ -473,9 +416,9 @@
         ]
       },
       {
-        "story_id": "story_000335",
-        "title": "Scientists find two massive tears in Arabian tectonic plate beneath Iran",
-        "event_key": "traffic-crash-ae25a9c4ba-ae25a9c4ba",
+        "story_id": "story_000112",
+        "title": "OpenAI revises data center policies after Democratic midterm gains",
+        "event_key": "election-texas",
         "relationship": "same_event",
         "confidence": 1.0,
         "matched_existing": true,
@@ -488,80 +431,9 @@
         ]
       },
       {
-        "story_id": "story_000336",
-        "title": "Phone makers expand lineup of child-focused devices with monitoring and restricted access",
-        "event_key": "unknown-event-bda53a06f8",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "matched_existing": true,
-        "reason": "Exact event key already belongs to this story",
-        "decision_trace": [
-          "Relationship: same_event",
-          "Exact event-key mapping: true",
-          "No novel follow-up milestone: true",
-          "Confidence: 1.00"
-        ]
-      },
-      {
-        "story_id": "story_000337",
-        "title": "NASA opens public sign-up to send names to Titan aboard Dragonfly rotorcraft",
-        "event_key": "unknown-event-af6842a73c",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "matched_existing": true,
-        "reason": "Exact event key already belongs to this story",
-        "decision_trace": [
-          "Relationship: same_event",
-          "Exact event-key mapping: true",
-          "No novel follow-up milestone: true",
-          "Confidence: 1.00"
-        ]
-      },
-      {
-        "story_id": "story_000356",
-        "title": "PC RAM capacities decline for first time as 16 GB gains on 32 GB and 64 GB configurations",
-        "event_key": "unknown-event-4095a3d004",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "matched_existing": false,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
-        "story_id": "story_000338",
-        "title": "Zelda: Ocarina of Time Remake Runs on Jailbroken PS5 and iPhone After Switch 2 Launch",
-        "event_key": "unknown-event-405d1fcb5e",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "matched_existing": true,
-        "reason": "Exact event key already belongs to this story",
-        "decision_trace": [
-          "Relationship: same_event",
-          "Exact event-key mapping: true",
-          "No novel follow-up milestone: true",
-          "Confidence: 1.00"
-        ]
-      },
-      {
-        "story_id": "story_000357",
-        "title": "Oregon routs Ohio State 41-28, likely ending Buckeyes' playoff hopes with fake punt sparking turnaround",
-        "event_key": "unknown-event-082a464cb8",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "matched_existing": false,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
-        "story_id": "story_000358",
-        "title": "No. 1 Miami faces No. 11 Notre Dame in top-15 college football showdown",
-        "event_key": "unknown-event-2d52306549",
+        "story_id": "story_000368",
+        "title": "Notre Dame defeats Miami 24-17 in matchup of top-ranked teams",
+        "event_key": "election-a43483db4d",
         "relationship": "new_story",
         "confidence": 0.0,
         "matched_existing": false,
@@ -573,8 +445,23 @@
       },
       {
         "story_id": "story_000359",
-        "title": "NFL handbook language grants Commissioner broad discretion over Brandon Aiyuk reinstatement as 49ers seek bonus repayment",
+        "title": "NFL's Player Personnel Handbook gives league wide discretion over Brandon Aiyuk's reinstatement",
         "event_key": "labor-action-387edfa564",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "matched_existing": true,
+        "reason": "Exact event key already belongs to this story",
+        "decision_trace": [
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000369",
+        "title": "Chev Clarke scores seventh-round stoppage upset over former cruiserweight champion Chris Billam-Smith",
+        "event_key": "unknown-event-5ffa303429",
         "relationship": "new_story",
         "confidence": 0.0,
         "matched_existing": false,
@@ -585,9 +472,9 @@
         ]
       },
       {
-        "story_id": "story_000340",
-        "title": "Lando Norris takes pole for Sao Paulo Grand Prix in rain-disrupted qualifying",
-        "event_key": "unknown-event-df1076b894",
+        "story_id": "story_000327",
+        "title": "Norris takes pole for third straight year in Brazil as rain shuffles grid",
+        "event_key": "unknown-event-db7e4201a7",
         "relationship": "same_event",
         "confidence": 1.0,
         "matched_existing": true,
@@ -600,9 +487,9 @@
         ]
       },
       {
-        "story_id": "story_000339",
-        "title": "Chev Clarke stops Chris Billam-Smith in seventh round for first career stoppage loss",
-        "event_key": "unknown-event-43ee1b601c",
+        "story_id": "story_000342",
+        "title": "Thick fog obscured live FA Cup broadcast as commentators struggled to see play",
+        "event_key": "unknown-event-ce979b7d99",
         "relationship": "same_event",
         "confidence": 1.0,
         "matched_existing": true,
@@ -612,6 +499,112 @@
           "Exact event-key mapping: true",
           "No novel follow-up milestone: true",
           "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000370",
+        "title": "LSU loses to Alabama 31-13 as Lane Kiffin falls to 0-3 against ranked opponents",
+        "event_key": "unknown-event-27c2ae3848",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "matched_existing": false,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000371",
+        "title": "Stephen Colbert and Yo-Yo Ma's Harvard event cut short by fire alarm amid graduate student union strike",
+        "event_key": "labor-action-new-york",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "matched_existing": false,
+        "reason": "Created new story: conservative merge requirements were not met",
+        "decision_trace": [
+          "No sufficiently supported match",
+          "Threshold: 0.78"
+        ]
+      },
+      {
+        "story_id": "story_000362",
+        "title": "Hockey romance series Heated Rivalry films two seasons and holiday movie back-to-back",
+        "event_key": "unknown-event-e309b5ca30",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "matched_existing": true,
+        "reason": "Exact source article URL already belongs to this story",
+        "decision_trace": [
+          "Exact source article identity: true",
+          "Normalized source URL: https://deadline.com/2026/11/heated-rivalry-season-2-season-3-movie-scott-kip-1237216072",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000361",
+        "title": "Bill Skarsgård says he was not considered for new James Bond role but would play a villain",
+        "event_key": "unknown-event-d7800708fb",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "matched_existing": true,
+        "reason": "Exact event key already belongs to this story",
+        "decision_trace": [
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000347",
+        "title": "Pokemon anime studio unveils AI coloring tool trained on three hand-painted frames",
+        "event_key": "unknown-event-92aac81cf5",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "matched_existing": true,
+        "reason": "Exact event key already belongs to this story",
+        "decision_trace": [
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000346",
+        "title": "AI Could Make Filmmaking Costlier Than 35mm Era, Korean Production Pioneers Warn",
+        "event_key": "war-or-military-action-11539134c9",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "matched_existing": true,
+        "reason": "Exact event key already belongs to this story",
+        "decision_trace": [
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000372",
+        "title": "Kirby Howell-Baptiste discusses scene-stealing role in Jordan Firstman's 'Club Kid'",
+        "event_key": "natural-disaster-new-york",
+        "relationship": "new_story",
+        "confidence": 0.22,
+        "matched_existing": false,
+        "reason": "Created new story: conservative merge requirements were not met",
+        "decision_trace": [
+          "Category: weather",
+          "Facts overlap: 0.00",
+          "Locations overlap: 1.00",
+          "Agencies overlap: 0.00",
+          "Event types overlap: 0.50",
+          "Entities overlap: 0.00",
+          "Title support: 0.00",
+          "Event-key support: 0.00",
+          "Identity anchors: 2",
+          "Threshold: 0.78"
         ]
       }
     ]
@@ -632,9 +625,9 @@
     "retrospective": {
       "mode": "retrospective_observe_only",
       "publication_behavior_changed": false,
-      "stories_with_timelines": 2,
-      "timeline_entries_examined": 4,
-      "transitions_examined": 2,
+      "stories_with_timelines": 3,
+      "timeline_entries_examined": 6,
+      "transitions_examined": 3,
       "candidate_scope": "distinct_article_transitions",
       "candidate_count": 0,
       "high_confidence_candidate_count": 0,
@@ -662,36 +655,36 @@
     "scopes": {
       "global_major": 14,
       "international": 16,
-      "unknown": 32,
-      "us_multistate": 8,
-      "us_national": 32,
-      "us_state_regional": 14
+      "unknown": 36,
+      "us_multistate": 9,
+      "us_national": 34,
+      "us_state_regional": 16
     },
-    "average_score": 80.91
+    "average_score": 80.67
   },
   "editorial_proximity": {
     "scopes": {
       "global_major": 14,
       "international": 16,
-      "unknown": 32,
-      "us_multistate": 8,
-      "us_national": 32,
-      "us_state_regional": 14
+      "unknown": 36,
+      "us_multistate": 9,
+      "us_national": 34,
+      "us_state_regional": 16
     },
-    "average_priority": 24.1
+    "average_priority": 23.45
   },
   "story_lifecycle": {
     "counts": {
-      "active": 114,
-      "developing": 2
+      "active": 122,
+      "developing": 3
     }
   },
   "registry_health": {
     "repair_version": 16,
     "changed": false,
     "status": "clean",
-    "active_stories_before": 343,
-    "active_stories_after": 343,
+    "active_stories_before": 353,
+    "active_stories_after": 353,
     "quarantined_story_count": 0,
     "quarantined_story_ids": [],
     "quarantine_reasons": {},
@@ -716,39 +709,163 @@
     "timeline_coherence_new_story_ids": [],
     "remaining_timeline_coherence_violations": 0,
     "timeline_coherence_violation_story_ids": [],
-    "incident_anchor_to_story_count": 14,
+    "incident_anchor_to_story_count": 15,
     "unified_incident_groups_resolved": 0,
     "unified_incident_story_records_removed": 0,
     "remaining_unified_incident_groups": 0,
-    "generated_at": "2026-11-08T02:09:59Z",
-    "quarantined_story_records_retained": 7,
-    "active_story_count": 354
+    "generated_at": "2026-11-08T03:08:06Z",
+    "quarantined_story_records_retained": 8,
+    "active_story_count": 363
   },
   "stories": {
-    "total": 116,
+    "total": 125,
     "importance_levels": {
       "breaking": 5,
-      "high": 12,
-      "normal": 36,
-      "low": 63,
+      "high": 13,
+      "normal": 38,
+      "low": 69,
       "archived": 0
     },
-    "average_importance": 25.89,
+    "average_importance": 25.35,
     "top": [
+      {
+        "story_id": "story_000284",
+        "title": "Vance leads behind-the-scenes push for new Iran deal",
+        "score": 100,
+        "editorial_priority": 95,
+        "editorial_score": 95,
+        "score_breakdown": {
+          "score": 95,
+          "importance": 100,
+          "proximity_multiplier": 1.0,
+          "freshness_multiplier": 0.85,
+          "source_multiplier": 1.12,
+          "source_trust": 90,
+          "age_hours": 25.97
+        },
+        "level": "breaking",
+        "importance_reasons": [
+          {
+            "code": "federal_action",
+            "label": "Federal/national government action",
+            "points": 32
+          },
+          {
+            "code": "election",
+            "label": "Major election/political consequence",
+            "points": 25
+          },
+          {
+            "code": "war_diplomacy",
+            "label": "War, diplomacy or national-security consequence",
+            "points": 30
+          },
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "audience_relevance": {
+          "scope": "us_national",
+          "score": 100,
+          "regions": [],
+          "places": []
+        },
+        "editorial_proximity": {
+          "score": 100,
+          "scope": "us_national",
+          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
+        },
+        "event_count": 1,
+        "timeline_entries": 1,
+        "relationship_decisions": 1,
+        "canonical_source_candidates": 1,
+        "lifecycle": {
+          "state": "active",
+          "reason": "Single-event story is current",
+          "last_updated": "2026-11-07T01:10:14+00:00",
+          "hours_since_update": 25.97,
+          "event_count": 1,
+          "timeline_entries": 1
+        }
+      },
+      {
+        "story_id": "story_000287",
+        "title": "Blackouts and water shortages in Kyiv after Russia strikes Ukraine’s energy grid - The Guardian",
+        "score": 83,
+        "editorial_priority": 89,
+        "editorial_score": 89,
+        "score_breakdown": {
+          "score": 89,
+          "importance": 83,
+          "proximity_multiplier": 1.0,
+          "freshness_multiplier": 0.95,
+          "source_multiplier": 1.123,
+          "source_trust": 91,
+          "age_hours": 13.82
+        },
+        "level": "breaking",
+        "importance_reasons": [
+          {
+            "code": "federal_action",
+            "label": "Federal/national government action",
+            "points": 32
+          },
+          {
+            "code": "war_diplomacy",
+            "label": "War, diplomacy or national-security consequence",
+            "points": 30
+          },
+          {
+            "code": "single_death",
+            "label": "Death reported",
+            "points": 6
+          },
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "audience_relevance": {
+          "scope": "us_national",
+          "score": 100,
+          "regions": [],
+          "places": []
+        },
+        "editorial_proximity": {
+          "score": 100,
+          "scope": "us_national",
+          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
+        },
+        "event_count": 1,
+        "timeline_entries": 1,
+        "relationship_decisions": 1,
+        "canonical_source_candidates": 1,
+        "lifecycle": {
+          "state": "active",
+          "reason": "Single-event story is current",
+          "last_updated": "2026-11-07T13:19:00+00:00",
+          "hours_since_update": 13.82,
+          "event_count": 1,
+          "timeline_entries": 1
+        }
+      },
       {
         "story_id": "story_000246",
         "title": "Hegseth calls US-Iran war a 'courageous and historic effort' - Fox News",
         "score": 100,
-        "editorial_priority": 96,
-        "editorial_score": 96,
+        "editorial_priority": 86,
+        "editorial_score": 86,
         "score_breakdown": {
-          "score": 96,
+          "score": 86,
           "importance": 100,
           "proximity_multiplier": 1.0,
-          "freshness_multiplier": 0.95,
+          "freshness_multiplier": 0.85,
           "source_multiplier": 1.015,
           "source_trust": 55,
-          "age_hours": 23.42
+          "age_hours": 24.39
         },
         "level": "breaking",
         "importance_reasons": [
@@ -805,131 +922,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-11-07T02:45:00+00:00",
-          "hours_since_update": 23.42,
-          "event_count": 1,
-          "timeline_entries": 1
-        }
-      },
-      {
-        "story_id": "story_000284",
-        "title": "Vance leads behind-the-scenes push for new Iran deal",
-        "score": 100,
-        "editorial_priority": 95,
-        "editorial_score": 95,
-        "score_breakdown": {
-          "score": 95,
-          "importance": 100,
-          "proximity_multiplier": 1.0,
-          "freshness_multiplier": 0.85,
-          "source_multiplier": 1.12,
-          "source_trust": 90,
-          "age_hours": 25.0
-        },
-        "level": "breaking",
-        "importance_reasons": [
-          {
-            "code": "federal_action",
-            "label": "Federal/national government action",
-            "points": 32
-          },
-          {
-            "code": "election",
-            "label": "Major election/political consequence",
-            "points": 25
-          },
-          {
-            "code": "war_diplomacy",
-            "label": "War, diplomacy or national-security consequence",
-            "points": 30
-          },
-          {
-            "code": "national_scope",
-            "label": "Nationwide U.S. scope",
-            "points": 15
-          }
-        ],
-        "audience_relevance": {
-          "scope": "us_national",
-          "score": 100,
-          "regions": [],
-          "places": []
-        },
-        "editorial_proximity": {
-          "score": 100,
-          "scope": "us_national",
-          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
-        },
-        "event_count": 1,
-        "timeline_entries": 1,
-        "relationship_decisions": 1,
-        "canonical_source_candidates": 1,
-        "lifecycle": {
-          "state": "active",
-          "reason": "Single-event story is current",
-          "last_updated": "2026-11-07T01:10:14+00:00",
-          "hours_since_update": 25.0,
-          "event_count": 1,
-          "timeline_entries": 1
-        }
-      },
-      {
-        "story_id": "story_000287",
-        "title": "Blackouts and water shortages in Kyiv after Russia strikes Ukraine’s energy grid - The Guardian",
-        "score": 83,
-        "editorial_priority": 89,
-        "editorial_score": 89,
-        "score_breakdown": {
-          "score": 89,
-          "importance": 83,
-          "proximity_multiplier": 1.0,
-          "freshness_multiplier": 0.95,
-          "source_multiplier": 1.123,
-          "source_trust": 91,
-          "age_hours": 12.85
-        },
-        "level": "breaking",
-        "importance_reasons": [
-          {
-            "code": "federal_action",
-            "label": "Federal/national government action",
-            "points": 32
-          },
-          {
-            "code": "war_diplomacy",
-            "label": "War, diplomacy or national-security consequence",
-            "points": 30
-          },
-          {
-            "code": "single_death",
-            "label": "Death reported",
-            "points": 6
-          },
-          {
-            "code": "national_scope",
-            "label": "Nationwide U.S. scope",
-            "points": 15
-          }
-        ],
-        "audience_relevance": {
-          "scope": "us_national",
-          "score": 100,
-          "regions": [],
-          "places": []
-        },
-        "editorial_proximity": {
-          "score": 100,
-          "scope": "us_national",
-          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
-        },
-        "event_count": 1,
-        "timeline_entries": 1,
-        "relationship_decisions": 1,
-        "canonical_source_candidates": 1,
-        "lifecycle": {
-          "state": "active",
-          "reason": "Single-event story is current",
-          "last_updated": "2026-11-07T13:19:00+00:00",
-          "hours_since_update": 12.85,
+          "hours_since_update": 24.39,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -947,7 +940,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 1.015,
           "source_trust": 55,
-          "age_hours": 24.83
+          "age_hours": 25.8
         },
         "level": "breaking",
         "importance_reasons": [
@@ -991,7 +984,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-11-07T01:20:00+00:00",
-          "hours_since_update": 24.83,
+          "hours_since_update": 25.8,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1009,7 +1002,7 @@
           "freshness_multiplier": 0.95,
           "source_multiplier": 1.12,
           "source_trust": 90,
-          "age_hours": 12.44
+          "age_hours": 13.41
         },
         "level": "high",
         "importance_reasons": [
@@ -1048,7 +1041,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-11-07T13:43:44+00:00",
-          "hours_since_update": 12.44,
+          "hours_since_update": 13.41,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1066,7 +1059,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 1.12,
           "source_trust": 90,
-          "age_hours": 27.65
+          "age_hours": 28.62
         },
         "level": "breaking",
         "importance_reasons": [
@@ -1114,7 +1107,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-11-06T22:31:00+00:00",
-          "hours_since_update": 27.65,
+          "hours_since_update": 28.62,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1132,7 +1125,7 @@
           "freshness_multiplier": 0.95,
           "source_multiplier": 1.12,
           "source_trust": 90,
-          "age_hours": 9.17
+          "age_hours": 10.14
         },
         "level": "high",
         "importance_reasons": [
@@ -1176,7 +1169,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-11-07T17:00:00+00:00",
-          "hours_since_update": 9.17,
+          "hours_since_update": 10.14,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1194,7 +1187,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 1.126,
           "source_trust": 92,
-          "age_hours": 33.1
+          "age_hours": 34.07
         },
         "level": "high",
         "importance_reasons": [
@@ -1233,7 +1226,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-11-06T17:04:07+00:00",
-          "hours_since_update": 33.1,
+          "hours_since_update": 34.07,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1251,7 +1244,7 @@
           "freshness_multiplier": 1.0,
           "source_multiplier": 1.132,
           "source_trust": 94,
-          "age_hours": 1.25
+          "age_hours": 2.21
         },
         "level": "high",
         "importance_reasons": [
@@ -1295,7 +1288,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-11-08T00:55:17+00:00",
-          "hours_since_update": 1.25,
+          "hours_since_update": 2.21,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1313,7 +1306,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 1.132,
           "source_trust": 94,
-          "age_hours": 29.06
+          "age_hours": 30.03
         },
         "level": "high",
         "importance_reasons": [
@@ -1352,7 +1345,64 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-11-06T21:06:25+00:00",
-          "hours_since_update": 29.06,
+          "hours_since_update": 30.03,
+          "event_count": 1,
+          "timeline_entries": 1
+        }
+      },
+      {
+        "story_id": "story_000365",
+        "title": "Drone and missile attacks wound 9 in Ukraine as country prepares for talks with Russia and US - AP News",
+        "score": 55,
+        "editorial_priority": 63,
+        "editorial_score": 63,
+        "score_breakdown": {
+          "score": 63,
+          "importance": 55,
+          "proximity_multiplier": 1.0,
+          "freshness_multiplier": 1.0,
+          "source_multiplier": 1.144,
+          "source_trust": 98,
+          "age_hours": 2.52
+        },
+        "level": "high",
+        "importance_reasons": [
+          {
+            "code": "war_diplomacy",
+            "label": "War, diplomacy or national-security consequence",
+            "points": 30
+          },
+          {
+            "code": "public_safety",
+            "label": "Public-safety event",
+            "points": 10
+          },
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "audience_relevance": {
+          "scope": "us_national",
+          "score": 100,
+          "regions": [],
+          "places": []
+        },
+        "editorial_proximity": {
+          "score": 100,
+          "scope": "us_national",
+          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
+        },
+        "event_count": 1,
+        "timeline_entries": 1,
+        "relationship_decisions": 1,
+        "canonical_source_candidates": 1,
+        "lifecycle": {
+          "state": "active",
+          "reason": "Single-event story is current",
+          "last_updated": "2026-11-08T00:37:00+00:00",
+          "hours_since_update": 2.52,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1370,7 +1420,7 @@
           "freshness_multiplier": 1.0,
           "source_multiplier": 1.12,
           "source_trust": 90,
-          "age_hours": 2.19
+          "age_hours": 3.16
         },
         "level": "high",
         "importance_reasons": [
@@ -1414,7 +1464,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-11-07T23:58:45+00:00",
-          "hours_since_update": 2.19,
+          "hours_since_update": 3.16,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1432,7 +1482,7 @@
           "freshness_multiplier": 1.0,
           "source_multiplier": 1.12,
           "source_trust": 90,
-          "age_hours": 1.58
+          "age_hours": 2.55
         },
         "level": "high",
         "importance_reasons": [
@@ -1475,7 +1525,116 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-11-08T00:35:17+00:00",
-          "hours_since_update": 1.58,
+          "hours_since_update": 2.55,
+          "event_count": 1,
+          "timeline_entries": 1
+        }
+      },
+      {
+        "story_id": "story_000292",
+        "title": "Tens of thousands of tents flooded after heavy rains in Gaza",
+        "score": 75,
+        "editorial_priority": 58,
+        "editorial_score": 58,
+        "score_breakdown": {
+          "score": 58,
+          "importance": 75,
+          "proximity_multiplier": 0.72,
+          "freshness_multiplier": 0.95,
+          "source_multiplier": 1.132,
+          "source_trust": 94,
+          "age_hours": 10.7
+        },
+        "level": "high",
+        "importance_reasons": [
+          {
+            "code": "war_diplomacy",
+            "label": "War, diplomacy or national-security consequence",
+            "points": 30
+          },
+          {
+            "code": "mass_casualty",
+            "label": "Mass-casualty event",
+            "points": 45
+          }
+        ],
+        "audience_relevance": {
+          "scope": "international",
+          "score": 72,
+          "regions": [],
+          "places": []
+        },
+        "editorial_proximity": {
+          "score": 72,
+          "scope": "international",
+          "reason": "International story is eligible with lower U.S.-audience proximity"
+        },
+        "event_count": 1,
+        "timeline_entries": 1,
+        "relationship_decisions": 1,
+        "canonical_source_candidates": 1,
+        "lifecycle": {
+          "state": "active",
+          "reason": "Single-event story is current",
+          "last_updated": "2026-11-07T16:25:55+00:00",
+          "hours_since_update": 10.7,
+          "event_count": 1,
+          "timeline_entries": 1
+        }
+      },
+      {
+        "story_id": "story_000332",
+        "title": "AI broke the cybersecurity world. What’s next?",
+        "score": 50,
+        "editorial_priority": 56,
+        "editorial_score": 56,
+        "score_breakdown": {
+          "score": 56,
+          "importance": 50,
+          "proximity_multiplier": 1.0,
+          "freshness_multiplier": 1.0,
+          "source_multiplier": 1.117,
+          "source_trust": 89,
+          "age_hours": 1.78
+        },
+        "level": "normal",
+        "importance_reasons": [
+          {
+            "code": "election",
+            "label": "Major election/political consequence",
+            "points": 25
+          },
+          {
+            "code": "public_safety",
+            "label": "Public-safety event",
+            "points": 10
+          },
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "audience_relevance": {
+          "scope": "us_national",
+          "score": 100,
+          "regions": [],
+          "places": []
+        },
+        "editorial_proximity": {
+          "score": 100,
+          "scope": "us_national",
+          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
+        },
+        "event_count": 1,
+        "timeline_entries": 1,
+        "relationship_decisions": 1,
+        "canonical_source_candidates": 1,
+        "lifecycle": {
+          "state": "active",
+          "reason": "Single-event story is current",
+          "last_updated": "2026-11-08T01:21:30.816210+00:00",
+          "hours_since_update": 1.78,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1484,16 +1643,16 @@
         "story_id": "story_000281",
         "title": "Why ‘Suits’ Japan Swapped Drugs for Cash: NBCUniversal, TBS Format Chiefs on Localizing Hits at Taiwan Creative Content Fest",
         "score": 55,
-        "editorial_priority": 59,
-        "editorial_score": 59,
+        "editorial_priority": 52,
+        "editorial_score": 52,
         "score_breakdown": {
-          "score": 59,
+          "score": 52,
           "importance": 55,
           "proximity_multiplier": 1.0,
-          "freshness_multiplier": 0.95,
+          "freshness_multiplier": 0.85,
           "source_multiplier": 1.12,
           "source_trust": 90,
-          "age_hours": 23.41
+          "age_hours": 24.38
         },
         "level": "high",
         "importance_reasons": [
@@ -1532,7 +1691,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-11-07T02:45:33+00:00",
-          "hours_since_update": 23.41,
+          "hours_since_update": 24.38,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1541,16 +1700,16 @@
         "story_id": "story_000282",
         "title": "‘Silenced Nights’ and ‘You Are the Film’ to Bookend Jogja-Netpac Asian Film Festival",
         "score": 55,
-        "editorial_priority": 59,
-        "editorial_score": 59,
+        "editorial_priority": 52,
+        "editorial_score": 52,
         "score_breakdown": {
-          "score": 59,
+          "score": 52,
           "importance": 55,
           "proximity_multiplier": 1.0,
-          "freshness_multiplier": 0.95,
+          "freshness_multiplier": 0.85,
           "source_multiplier": 1.12,
           "source_trust": 90,
-          "age_hours": 23.79
+          "age_hours": 24.75
         },
         "level": "high",
         "importance_reasons": [
@@ -1593,172 +1752,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-11-07T02:22:55+00:00",
-          "hours_since_update": 23.79,
-          "event_count": 1,
-          "timeline_entries": 1
-        }
-      },
-      {
-        "story_id": "story_000292",
-        "title": "Tens of thousands of tents flooded after heavy rains in Gaza",
-        "score": 75,
-        "editorial_priority": 58,
-        "editorial_score": 58,
-        "score_breakdown": {
-          "score": 58,
-          "importance": 75,
-          "proximity_multiplier": 0.72,
-          "freshness_multiplier": 0.95,
-          "source_multiplier": 1.132,
-          "source_trust": 94,
-          "age_hours": 9.74
-        },
-        "level": "high",
-        "importance_reasons": [
-          {
-            "code": "war_diplomacy",
-            "label": "War, diplomacy or national-security consequence",
-            "points": 30
-          },
-          {
-            "code": "mass_casualty",
-            "label": "Mass-casualty event",
-            "points": 45
-          }
-        ],
-        "audience_relevance": {
-          "scope": "international",
-          "score": 72,
-          "regions": [],
-          "places": []
-        },
-        "editorial_proximity": {
-          "score": 72,
-          "scope": "international",
-          "reason": "International story is eligible with lower U.S.-audience proximity"
-        },
-        "event_count": 1,
-        "timeline_entries": 1,
-        "relationship_decisions": 1,
-        "canonical_source_candidates": 1,
-        "lifecycle": {
-          "state": "active",
-          "reason": "Single-event story is current",
-          "last_updated": "2026-11-07T16:25:55+00:00",
-          "hours_since_update": 9.74,
-          "event_count": 1,
-          "timeline_entries": 1
-        }
-      },
-      {
-        "story_id": "story_000332",
-        "title": "AI broke the cybersecurity world. What’s next?",
-        "score": 50,
-        "editorial_priority": 56,
-        "editorial_score": 56,
-        "score_breakdown": {
-          "score": 56,
-          "importance": 50,
-          "proximity_multiplier": 1.0,
-          "freshness_multiplier": 1.0,
-          "source_multiplier": 1.117,
-          "source_trust": 89,
-          "age_hours": 0.81
-        },
-        "level": "normal",
-        "importance_reasons": [
-          {
-            "code": "election",
-            "label": "Major election/political consequence",
-            "points": 25
-          },
-          {
-            "code": "public_safety",
-            "label": "Public-safety event",
-            "points": 10
-          },
-          {
-            "code": "national_scope",
-            "label": "Nationwide U.S. scope",
-            "points": 15
-          }
-        ],
-        "audience_relevance": {
-          "scope": "us_national",
-          "score": 100,
-          "regions": [],
-          "places": []
-        },
-        "editorial_proximity": {
-          "score": 100,
-          "scope": "us_national",
-          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
-        },
-        "event_count": 1,
-        "timeline_entries": 1,
-        "relationship_decisions": 1,
-        "canonical_source_candidates": 1,
-        "lifecycle": {
-          "state": "active",
-          "reason": "Single-event story is current",
-          "last_updated": "2026-11-08T01:21:30.816210+00:00",
-          "hours_since_update": 0.81,
-          "event_count": 1,
-          "timeline_entries": 1
-        }
-      },
-      {
-        "story_id": "story_000352",
-        "title": "\"Congress will investigate\": Nvidia CEO Jensen Huang faces probe over alleged Chinese spy ties",
-        "score": 47,
-        "editorial_priority": 53,
-        "editorial_score": 53,
-        "score_breakdown": {
-          "score": 53,
-          "importance": 47,
-          "proximity_multiplier": 1.0,
-          "freshness_multiplier": 1.0,
-          "source_multiplier": 1.12,
-          "source_trust": 90,
-          "age_hours": 5.06
-        },
-        "level": "normal",
-        "importance_reasons": [
-          {
-            "code": "federal_action",
-            "label": "Federal/national government action",
-            "points": 32
-          },
-          {
-            "code": "national_scope",
-            "label": "Nationwide U.S. scope",
-            "points": 15
-          }
-        ],
-        "audience_relevance": {
-          "scope": "us_national",
-          "score": 100,
-          "regions": [
-            "New York"
-          ],
-          "places": [
-            "New York"
-          ]
-        },
-        "editorial_proximity": {
-          "score": 100,
-          "scope": "us_national",
-          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
-        },
-        "event_count": 1,
-        "timeline_entries": 1,
-        "relationship_decisions": 1,
-        "canonical_source_candidates": 1,
-        "lifecycle": {
-          "state": "active",
-          "reason": "Single-event story is current",
-          "last_updated": "2026-11-07T21:06:38+00:00",
-          "hours_since_update": 5.06,
+          "hours_since_update": 24.75,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1776,7 +1770,7 @@
           "freshness_multiplier": 0.95,
           "source_multiplier": 1.015,
           "source_trust": 55,
-          "age_hours": 11.17
+          "age_hours": 12.14
         },
         "level": "normal",
         "importance_reasons": [
@@ -1815,7 +1809,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-11-07T15:00:00+00:00",
-          "hours_since_update": 11.17,
+          "hours_since_update": 12.14,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1833,7 +1827,7 @@
           "freshness_multiplier": 0.95,
           "source_multiplier": 1.117,
           "source_trust": 89,
-          "age_hours": 13.59
+          "age_hours": 14.55
         },
         "level": "normal",
         "importance_reasons": [
@@ -1860,16 +1854,16 @@
             "Connecticut",
             "Illinois",
             "Michigan",
-            "Florida",
             "Arizona",
+            "Florida",
             "Ohio"
           ],
           "places": [
             "Connecticut",
             "Illinois",
             "Michigan",
-            "Florida",
             "Arizona",
+            "Florida",
             "Ohio"
           ]
         },
@@ -1886,54 +1880,53 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-11-07T12:34:54+00:00",
-          "hours_since_update": 13.59,
+          "hours_since_update": 14.55,
           "event_count": 1,
           "timeline_entries": 1
         }
       },
       {
-        "story_id": "story_000346",
-        "title": "AI Could Make Filmmaking Costlier Than the 35mm Era, Korean Pioneers Warn at Taiwan Creative Content Fest",
-        "score": 50,
-        "editorial_priority": 49,
-        "editorial_score": 49,
+        "story_id": "story_000352",
+        "title": "\"Congress will investigate\": Nvidia CEO Jensen Huang faces probe over alleged Chinese spy ties",
+        "score": 47,
+        "editorial_priority": 50,
+        "editorial_score": 50,
         "score_breakdown": {
-          "score": 49,
-          "importance": 50,
-          "proximity_multiplier": 0.88,
-          "freshness_multiplier": 1.0,
+          "score": 50,
+          "importance": 47,
+          "proximity_multiplier": 1.0,
+          "freshness_multiplier": 0.95,
           "source_multiplier": 1.12,
           "source_trust": 90,
-          "age_hours": 1.7
+          "age_hours": 6.03
         },
         "level": "normal",
         "importance_reasons": [
           {
-            "code": "war_diplomacy",
-            "label": "War, diplomacy or national-security consequence",
-            "points": 30
+            "code": "federal_action",
+            "label": "Federal/national government action",
+            "points": 32
           },
           {
-            "code": "public_safety",
-            "label": "Public-safety event",
-            "points": 10
-          },
-          {
-            "code": "global_scope",
-            "label": "Major international consequence",
-            "points": 10
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
           }
         ],
         "audience_relevance": {
-          "scope": "global_major",
-          "score": 88,
-          "regions": [],
-          "places": []
+          "scope": "us_national",
+          "score": 100,
+          "regions": [
+            "New York"
+          ],
+          "places": [
+            "New York"
+          ]
         },
         "editorial_proximity": {
-          "score": 88,
-          "scope": "global_major",
-          "reason": "Major world development has broad consequence for a U.S. general-news audience"
+          "score": 100,
+          "scope": "us_national",
+          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
         },
         "event_count": 1,
         "timeline_entries": 1,
@@ -1942,8 +1935,8 @@
         "lifecycle": {
           "state": "active",
           "reason": "Single-event story is current",
-          "last_updated": "2026-11-08T00:27:50+00:00",
-          "hours_since_update": 1.7,
+          "last_updated": "2026-11-07T21:06:38+00:00",
+          "hours_since_update": 6.03,
           "event_count": 1,
           "timeline_entries": 1
         }

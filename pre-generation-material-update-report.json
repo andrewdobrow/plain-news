@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-08T02:00:47Z",
-  "evaluated": 9,
+  "generated_at": "2026-11-08T03:01:43Z",
+  "evaluated": 7,
   "material_updates": 0,
-  "duplicates_suppressed": 9,
+  "duplicates_suppressed": 7,
   "holds_suppressed": 0,
   "new_or_unmatched": 0,
   "items": [
@@ -18,7 +18,7 @@
         "Minor witness quote detail expansion"
       ],
       "reason": "This is the same BBC source article (identical source_url and source_headline) describing the same Krakow shooting with identical casualty figures, suspect details, and motive. No new material facts like an arrest change, death toll revision, or official finding beyond what's already in the canonical version; it's essentially the same 'what we know so far' explainer.",
-      "cache_hit": false
+      "cache_hit": true
     },
     {
       "category": "world",
@@ -29,28 +29,17 @@
       "confidence": 0.97,
       "novel_facts": [],
       "reason": "Same BBC source article (identical source_url and source_headline) covering Peña's impeachment, arrest, and formal charges over the Ueno Bank collapse. All facts—charges, vote count, successor, protests—match the existing canonical with no new developments.",
-      "cache_hit": false
+      "cache_hit": true
     },
     {
-      "category": "us",
-      "title": "Wisconsin state trooper detained by ICE to be released from custody - CBS News",
-      "source_url": "https://www.cbsnews.com/minnesota/news/wisconsin-state-trooper-detained-by-ice-released-from-custody/",
+      "category": "business",
+      "title": "U.S. Treasury moves to cut off crypto exchange MEXC over $16 billion in alleged illicit flows - CoinDesk",
+      "source_url": "https://www.coindesk.com/business/2026/11/07/u-s-treasury-moves-to-cut-off-crypto-exchange-mexc-over-usd16-billion-in-alleged-illicit-flows",
       "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-11-08-wisconsin-state-trooper-detained-by-ice-released-under-supervision-after-interve",
-      "confidence": 0.98,
+      "selected_candidate_slug": "2026-11-08-treasury-moves-to-cut-off-crypto-exchange-mexc-from-us-financial-system-over-all",
+      "confidence": 0.97,
       "novel_facts": [],
-      "reason": "Same named trooper, same detention and release facts, same attorney quotes and DHS statement; incoming article is a near-identical rewrite of the existing canonical with no new developments beyond what's already reported.",
-      "cache_hit": false
-    },
-    {
-      "category": "us",
-      "title": "Hutchinson beats Buatsi to win WBC light-heavyweight title",
-      "source_url": "https://www.bbc.co.uk/sport/boxing/articles/cqx2vw8demexo?at_medium=RSS&at_campaign=rss",
-      "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-11-08-willy-hutchinson-upsets-joshua-buatsi-to-win-wbc-light-heavyweight-title-in-manc",
-      "confidence": 0.98,
-      "novel_facts": [],
-      "reason": "This is the same BBC article about Hutchinson's WBC title win over Buatsi, same fight, scorecards, quotes, and context as the existing canonical published one day earlier. No new facts such as a ranking change, injury update, or further consequence are present.",
+      "reason": "Both articles report the identical Treasury action against MEXC over $16 billion in alleged sanctions-related flows, citing the same figures, countries, and NatGold delisting response with no new developments in the incoming piece.",
       "cache_hit": false
     },
     {
@@ -65,25 +54,14 @@
       "cache_hit": true
     },
     {
-      "category": "sports",
-      "title": "Hutchinson beats Buatsi to win WBC light-heavyweight title",
-      "source_url": "https://www.bbc.co.uk/sport/boxing/articles/cqx2vw8demexo?at_medium=RSS&at_campaign=rss",
+      "category": "entertainment",
+      "title": "Sylvester Stallone Says His 20-Year Rivalry With Arnold Schwarzenegger Only Ended When He Ran for Governor and Wasn’t ‘Doing Movies Anymore’",
+      "source_url": "https://variety.com/2026/film/news/sylvester-stallone-rivalry-arnold-schwarzenegger-1236942209/",
       "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-11-08-willy-hutchinson-upsets-joshua-buatsi-to-win-wbc-light-heavyweight-title-in-manc",
+      "selected_candidate_slug": "2026-11-08-sylvester-stallone-says-his-20-year-rivalry-with-arnold-schwarzenegger-ended-whe",
       "confidence": 0.98,
       "novel_facts": [],
-      "reason": "This is the same BBC article about Hutchinson's WBC title win over Buatsi, same fight, scorecards, quotes, and context as the existing canonical published one day earlier. No new facts such as a ranking change, injury update, or further consequence are present.",
-      "cache_hit": true
-    },
-    {
-      "category": "sports",
-      "title": "Hutchinson beats Buatsi to win WBC light-heavyweight title - BBC",
-      "source_url": "https://www.bbc.com/sport/boxing/articles/cqx2vw8demexo",
-      "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-11-08-willy-hutchinson-upsets-joshua-buatsi-to-win-wbc-light-heavyweight-title-in-manc",
-      "confidence": 0.98,
-      "novel_facts": [],
-      "reason": "This is the same BBC article (same source_url) covering Hutchinson's win over Buatsi for the WBC light-heavyweight title in Manchester, with identical fight details, score, quotes, and context already present in the canonical article. No new facts are introduced.",
+      "reason": "Identical source article (same Variety URL, same date) rephrasing the same Stallone podcast quotes about his rivalry with Schwarzenegger ending when Schwarzenegger ran for governor. No new facts beyond the existing canonical summary.",
       "cache_hit": false
     },
     {
@@ -106,7 +84,7 @@
       "confidence": 0.97,
       "novel_facts": [],
       "reason": "This is the same Axios source article (same URL) covering the identical facts: Jensen Huang's alleged relationship with suspected Chinese spy Alice Huang, Coons' investigation pledge, and the House GOP briefing request with Nov. 11 deadline. No new facts beyond the existing canonical.",
-      "cache_hit": false
+      "cache_hit": true
     }
   ]
 }
