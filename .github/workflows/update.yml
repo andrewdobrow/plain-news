@@ -2,10 +2,6 @@ name: Update News
 
 on:
   workflow_dispatch: {}
-  schedule:
-    # Avoid the top-of-hour scheduler congestion that can drop scheduled runs.
-    - cron: '7 8,18 * * *'
-      timezone: 'America/New_York'
 
 jobs:
   update:
