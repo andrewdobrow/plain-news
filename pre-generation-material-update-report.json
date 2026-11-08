@@ -1,76 +1,36 @@
 {
-  "generated_at": "2026-11-08T13:02:13Z",
-  "evaluated": 5,
+  "generated_at": "2026-11-08T23:02:03Z",
+  "evaluated": 2,
   "material_updates": 1,
-  "duplicates_suppressed": 3,
+  "duplicates_suppressed": 1,
   "holds_suppressed": 0,
-  "new_or_unmatched": 1,
+  "new_or_unmatched": 0,
   "items": [
     {
-      "category": "world",
-      "title": "What we know so far after Krakow gun attack",
-      "source_url": "https://www.bbc.co.uk/news/articles/cmd7q15drwgeo?at_medium=RSS&at_campaign=rss",
-      "action": "update_existing_canonical",
-      "selected_candidate_slug": "2026-11-08-gunman-kills-six-in-attack-on-krakows-main-square-three-more-bodies-found-at-his",
-      "confidence": 0.95,
-      "novel_facts": [
-        "The three bodies found at the gunman's home identified as his father (53), mother (52), and sister (21)",
-        "Injured police officers named as Senior Constable Jakub Kulik and Senior Constable Artur Morański",
-        "Update that two hospitalized women have been released and remaining patients, including the two officers, are in stable condition",
-        "Local governor states the suspect remains in critical condition in hospital"
-      ],
-      "reason": "This is the same Krakow Main Square shooting event as the canonical article, sharing the same gunman, victim count, far-right motive, and family-home deaths. The incoming article adds material updates: identification of the three family victims, naming of the injured police officers, and updated hospital status for victims and officers, which should be folded into the existing canonical rather than spawning a new story.",
-      "cache_hit": false
-    },
-    {
       "category": "business",
-      "title": "How midterm elections sent Wall Street from celebration to mayhem in just 24 hours / this week - Yahoo Finance",
-      "source_url": "https://finance.yahoo.com/markets/article/stocks-soared-on-the-democratic-sweep-less-than-24-hours-later-the-ai-trade-cracked-183312401.html",
+      "title": "U.S. Cleared Nvidia Chips to Chinese Firms With Empty Offices and Troubling Ties - The New York Times",
+      "source_url": "https://www.nytimes.com/2026/11/07/business/economy/nvidia-chips-chinese-firms.html",
       "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-11-08-stocks-plunge-into-correction-after-brief-post-midterm-rally-as-ai-regulation-fe",
-      "confidence": 0.97,
-      "novel_facts": [
-        "Elon Musk 'data centers in space' tweet included in incoming but not candidate body (minor color, not material)"
-      ],
-      "reason": "This is the exact same Yahoo Finance article (identical source_url) covering the same market reversal event, with nearly identical content and no new material facts like updated figures, casualties, or official findings.",
+      "selected_candidate_slug": "2026-11-07-us-approved-nvidia-chip-sales-to-chinese-firm-with-empty-office-and-ties-to-blac",
+      "confidence": 0.9,
+      "novel_facts": [],
+      "reason": "Incoming article is an aggregation of the same NYT investigation already covered in the canonical Verge-sourced article about Nvidia chips approved for sale to a Chinese firm with an empty office and blacklist ties. No new facts beyond re-aggregated headlines are present.",
       "cache_hit": false
     },
     {
       "category": "tech",
-      "title": "Megaspeed exec was recruited to spy on Nvidia CEO, according to US intelligence memo",
-      "source_url": "https://techcrunch.com/2026/11/07/chinese-exec-was-recruited-to-spy-on-nvidia-ceo-according-to-us-intelligence-memo/",
-      "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-11-08-us-intelligence-memo-claimed-chinese-officials-recruited-tech-executive-to-spy-o",
-      "confidence": 0.98,
-      "novel_facts": [],
-      "reason": "This is the same TechCrunch article (identical source_url) reporting on the same intelligence memo alleging Alice Huang was recruited to spy on Jensen Huang, with identical details about Megaspeed, New Matrix, and Nvidia's response. No new facts are introduced beyond the existing canonical.",
-      "cache_hit": false
-    },
-    {
-      "category": "sports",
-      "title": "Marcus Freeman, Notre Dame silence doubters by knocking off top-ranked Miami, solidifying their CFP ranking - Fox News",
-      "source_url": "https://www.foxnews.com/outkick-sports/marcus-freeman-notre-dame-silence-doubters-knocking-top-ranked-miami-solidifying-cfp-ranking",
-      "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-11-08-notre-dame-defeats-miami-24-17-in-matchup-of-top-ranked-teams",
-      "confidence": 0.95,
-      "novel_facts": [],
-      "reason": "Both articles cover the same Notre Dame-Miami game with identical final score (24-17) and playoff implications. The incoming article is commentary/analysis on the same game already captured in the canonical, with no new facts like injuries, rule changes, or follow-up consequences.",
-      "cache_hit": false
-    },
-    {
-      "category": "entertainment",
-      "title": "‘SNL’ Weekend Update Drags Trump Over Midterm Drubbing, Stephen Miller Promotion",
-      "source_url": "https://www.rollingstone.com/tv-movies/tv-movie-news/snl-weekend-update-drags-trump-midterm-drubbing-stephen-miller-promotion-1235654378/",
-      "action": "new_story",
-      "selected_candidate_slug": "",
-      "confidence": 0.9,
+      "title": "Nvidia will investigate CEO Jensen Huang’s relationship with possible Chinese spy",
+      "source_url": "https://techcrunch.com/2026/11/08/nvidia-says-its-investigating-ceo-jensen-huangs-relationship-with-possible-chinese-spy/",
+      "action": "update_existing_canonical",
+      "selected_candidate_slug": "2026-11-08-congress-demands-answers-on-nvidia-ceos-reported-ties-to-alleged-chinese-spy",
+      "confidence": 0.85,
       "novel_facts": [
-        "SNL Weekend Update sketch content",
-        "Colin Jost and Michael Che jokes",
-        "Elon Musk parody segment by Jeremy Culhane",
-        "Comedic commentary on Trump's reaction to midterms"
+        "Nvidia board launches its own independent investigation",
+        "Huang admits in company memo to having an affair with Alice Huang",
+        "Board states no reason to believe national security or trade secrets were compromised",
+        "Investigation to be led by independent directors with outside legal counsel"
       ],
-      "reason": "This is an entertainment/TV recap article about an SNL comedy sketch that references the real-world chief-of-staff swap and midterm losses, but the actual event being reported is the SNL broadcast itself, not the underlying political news. It's a distinct real-world event (a TV show airing) from the candidate's hard-news story about the personnel change, warranting its own entry rather than being folded into the news article.",
+      "reason": "This is the same unfolding Jensen Huang/Alice Huang Chinese spy story as the canonical Congress-scrutiny article, now advanced with material developments: Huang's personal admission of an affair and Nvidia's board launching a formal independent investigation. These are significant updates to the same continuing event rather than a separate newsworthy accountability thread, so they belong in the existing canonical.",
       "cache_hit": false
     }
   ]

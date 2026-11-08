@@ -5,40 +5,40 @@
 ## Hero
 
 - Current: **Treasury moves to cut off crypto exchange MEXC from U.S. financial system over alleged $16 billion in illicit transactions**
-- Recommended: **House Republicans weigh impeaching Defense Secretary Hegseth this week over alleged illegal continuation of Iran war**
+- Recommended: **Trump presses Netanyahu to implement Gaza peace plan after Israeli election**
 - Recommendation: CHANGE (not enforced)
 
 ## Top Stories deck
 
 | Rank | Current | Recommended | Score | Why |
 | ---: | --- | --- | ---: | --- |
-| 1 | Krakow gunman killed his parents and sister before Main Market Square attack that left six dead | House Republicans weigh impeaching Defense Secretary Hegseth this week over alleged illegal continuation of Iran war | 95 | importance 100; freshness 99.99; urgency 8/10 |
-| 2 | Zelenskyy accuses Russia of escalating strikes on power grid to pressure Ukraine ahead of Abu Dhabi talks | Saudi Aramco building in Riyadh damaged after coalition intercepts Houthi missiles | 83 | importance 75; freshness 94.58; urgency 7/10 |
-| 3 | Saudi Aramco building in Riyadh damaged after coalition intercepts Houthi missiles | Taiwan's Content Agency and Partners Invest $180 Million in 27 Entertainment Projects | 72 | importance 45; freshness 93.15; urgency 7/10 |
-| 4 | Putin expands state takeover of Japan Tobacco's Russian operations to seven companies worth up to $3.7 billion | Krakow gunman killed his parents and sister before Main Market Square attack that left six dead | 71 | importance 43; freshness 80.3; urgency 8/10 |
-| 5 | Drone attack on Colombian military base kills three soldiers and wounds 16 | Indonesian Horror Hit 'Pabrik Gula' Gets 2028 Sequel | 67 | importance 31; freshness 91.68; urgency 7/10 |
-| 6 | Cost-of-living protests spread to 31 European countries since mid-September | Six killed in shooting in Krakow, Poland; British citizen among dead | 67 | importance 68; freshness 81.64; urgency 3/10 |
-| 7 | BBC authenticates video of gunfire during Krakow attack that killed six | Khawaja defends sandpaper scandal claims, says he didn't name teammates | 65 | importance 40; freshness 94.8; urgency 5/10 |
-| 8 | Paraguay formally charges ousted president Santiago Peña with breach of trust over Ueno Bank collapse | Australia routs Samoa 44-12 to reach 16th straight Rugby League World Cup final | 64 | importance 30; freshness 99.99; urgency 6/10 |
-| 9 | Israeli President Herzog tasks opposition leader Eisenkot with forming government after inconclusive election | NASA opens astronaut applications to expand Artemis moon program | 62 | importance 15; freshness 99.99; urgency 6/10 |
-| 10 | Wisconsin state trooper detained by ICE released under supervision after intervention by DHS secretary | AI tools are enabling automated hacking at scale, upending the cybersecurity industry | 62 | importance 50; freshness 80.3; urgency 3/10 |
-| 11 | Six killed in shooting in Krakow, Poland; British citizen among dead | SNL Weekend Update mocks Trump over midterm losses and Miller promotion | 67 | importance 47; freshness 88.14; urgency 5/10; -6 category saturation |
-| 12 | Secret Service arrests man near White House with guns who said voices told him to kill Trump | Congress demands answers on Nvidia CEO's reported ties to alleged Chinese spy | 61 | importance 47; freshness 80.3; urgency 3/10 |
+| 1 | Houthi strikes hit Aramco Tower in Riyadh, target airport and oil facilities | Trump presses Netanyahu to implement Gaza peace plan after Israeli election | 88 | importance 100; freshness 91.38; urgency 6/10 |
+| 2 | Iran warns of severe retaliation if US resumes strikes as Trump signals pause | Attorney General dismisses Calley Means' White House corruption allegations as former FDA chief backs some claims | 81 | importance 67; freshness 99.99; urgency 7/10 |
+| 3 | At least seven killed, over 100 injured in train collision near Giza, Egypt | Arrest made in shooting that killed one during Winston-Salem State University homecoming weekend | 77 | importance 61; freshness 99.99; urgency 6/10 |
+| 4 | Two Polish officers who stopped Krakow gunman emerge from comas as prosecutors open terror investigation | Variety highlights unconventional casting in 'Being Heumann' and 'La Bola Negra' for Oscar predictions | 76 | importance 77; freshness 99.45; urgency 4/10 |
+| 5 | Paraguay formally charges ousted president Santiago Peña with breach of trust over Ueno Bank collapse | Two Polish officers who stopped Krakow gunman emerge from comas as prosecutors open terror investigation | 76 | importance 61; freshness 92.03; urgency 6/10 |
+| 6 | Krakow gunman killed his parents and sister before Main Market Square attack that left six dead | Wall Street braces for pivotal week with earnings from Constellation Energy, CoreWeave, Nebius, Applied Materials and Cisco, plus fresh inflation data, as Nasdaq sits in correction territory amid AI spending concerns | 76 | importance 75; freshness 88.63; urgency 6/10 |
+| 7 | Israeli President Herzog tasks opposition leader Eisenkot with forming government after inconclusive election | House Republicans weigh impeaching Defense Secretary Hegseth this week over alleged illegal continuation of Iran war | 80 | importance 100; freshness 83.37; urgency 3/10; -6 category saturation |
+| 8 | Arrest made in shooting that killed one during Winston-Salem State University homecoming weekend | Falkirk climb to third in Scottish Premiership after fifth straight win | 70 | importance 40; freshness 98.47; urgency 7/10 |
+| 9 | Wisconsin state trooper detained by ICE released under supervision after intervention by DHS secretary | Houthi strikes hit Aramco Tower in Riyadh, target airport and oil facilities | 69 | importance 36; freshness 99.99; urgency 8/10 |
+| 10 | Six killed in shooting in Krakow, Poland; British citizen among dead | Nvidia board launches independent investigation into CEO Jensen Huang after reports of Chinese intelligence targeting | 66 | importance 15; freshness 99.99; urgency 8/10 |
+| 11 | Secret Service arrests man near White House with guns who said voices told him to kill Trump | At least seven killed, over 100 injured in train collision near Giza, Egypt | 69 | importance 55; freshness 94.67; urgency 6/10; -6 category saturation |
+| 12 | Hamilton and Verstappen to start from back of grid at São Paulo Grand Prix | Six killed in shooting in Krakow, Poland; British citizen among dead | 63 | importance 68; freshness 65.02; urgency 3/10 |
 
 ## Recommended moves
 
-- **House Republicans weigh impeaching Defense Secretary Hegseth this week over alleged illegal continuation of Iran war**: 45 → 1 — importance 100; freshness 99.99; urgency 8/10
-- **Taiwan's Content Agency and Partners Invest $180 Million in 27 Entertainment Projects**: 43 → 3 — importance 45; freshness 93.15; urgency 7/10
-- **Indonesian Horror Hit 'Pabrik Gula' Gets 2028 Sequel**: 44 → 5 — importance 31; freshness 91.68; urgency 7/10
-- **Congress demands answers on Nvidia CEO's reported ties to alleged Chinese spy**: 46 → 12 — importance 47; freshness 80.3; urgency 3/10
-- **SNL Weekend Update mocks Trump over midterm losses and Miller promotion**: 37 → 11 — importance 47; freshness 88.14; urgency 5/10; -6 category saturation
-- **Khawaja defends sandpaper scandal claims, says he didn't name teammates**: 29 → 7 — importance 40; freshness 94.8; urgency 5/10
-- **Australia routs Samoa 44-12 to reach 16th straight Rugby League World Cup final**: 27 → 8 — importance 30; freshness 99.99; urgency 6/10
-- **AI tools are enabling automated hacking at scale, upending the cybersecurity industry**: 23 → 10 — importance 50; freshness 80.3; urgency 3/10
-- **Zelenskyy accuses Russia of escalating strikes on power grid to pressure Ukraine ahead of Abu Dhabi talks**: 2 → 13 — importance 0; freshness 0.0; urgency 8/10
-- **NASA opens astronaut applications to expand Artemis moon program**: 19 → 9 — importance 15; freshness 99.99; urgency 6/10
-- **Putin expands state takeover of Japan Tobacco's Russian operations to seven companies worth up to $3.7 billion**: 4 → 14 — importance 30; freshness 94.94; urgency 6/10
-- **BBC authenticates video of gunfire during Krakow attack that killed six**: 7 → 17 — importance 28; freshness 93.83; urgency 4/10
+- **Trump presses Netanyahu to implement Gaza peace plan after Israeli election**: 50 → 1 — importance 100; freshness 91.38; urgency 6/10
+- **Attorney General dismisses Calley Means' White House corruption allegations as former FDA chief backs some claims**: 48 → 2 — importance 67; freshness 99.99; urgency 7/10
+- **House Republicans weigh impeaching Defense Secretary Hegseth this week over alleged illegal continuation of Iran war**: 52 → 7 — importance 100; freshness 83.37; urgency 3/10; -6 category saturation
+- **Variety highlights unconventional casting in 'Being Heumann' and 'La Bola Negra' for Oscar predictions**: 44 → 4 — importance 77; freshness 99.45; urgency 4/10
+- **Falkirk climb to third in Scottish Premiership after fifth straight win**: 38 → 8 — importance 40; freshness 98.47; urgency 7/10
+- **Iran warns of severe retaliation if US resumes strikes as Trump signals pause**: 2 → 13 — importance 0; freshness 0.0; urgency 8/10
+- **Krakow gunman killed his parents and sister before Main Market Square attack that left six dead**: 6 → 15 — importance 43; freshness 63.68; urgency 3/10
+- **Israeli President Herzog tasks opposition leader Eisenkot with forming government after inconclusive election**: 7 → 16 — importance 25; freshness 66.63; urgency 3/10
+- **Paraguay formally charges ousted president Santiago Peña with breach of trust over Ueno Bank collapse**: 5 → 14 — importance 5; freshness 30.1; urgency 3/10
+- **Wall Street braces for pivotal week with earnings from Constellation Energy, CoreWeave, Nebius, Applied Materials and Cisco, plus fresh inflation data, as Nasdaq sits in correction territory amid AI spending concerns**: 14 → 6 — importance 75; freshness 88.63; urgency 6/10
+- **Houthi strikes hit Aramco Tower in Riyadh, target airport and oil facilities**: 1 → 9 — importance 36; freshness 99.99; urgency 8/10
+- **At least seven killed, over 100 injured in train collision near Giza, Egypt**: 3 → 11 — importance 55; freshness 94.67; urgency 6/10; -6 category saturation
 
 ## Guardrails
 
