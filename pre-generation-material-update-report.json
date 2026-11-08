@@ -1,90 +1,77 @@
 {
-  "generated_at": "2026-11-08T03:01:43Z",
-  "evaluated": 7,
-  "material_updates": 0,
-  "duplicates_suppressed": 7,
+  "generated_at": "2026-11-08T13:02:13Z",
+  "evaluated": 5,
+  "material_updates": 1,
+  "duplicates_suppressed": 3,
   "holds_suppressed": 0,
-  "new_or_unmatched": 0,
+  "new_or_unmatched": 1,
   "items": [
     {
       "category": "world",
       "title": "What we know so far after Krakow gun attack",
       "source_url": "https://www.bbc.co.uk/news/articles/cmd7q15drwgeo?at_medium=RSS&at_campaign=rss",
-      "action": "duplicate_use_existing_canonical",
+      "action": "update_existing_canonical",
       "selected_candidate_slug": "2026-11-08-gunman-kills-six-in-attack-on-krakows-main-square-three-more-bodies-found-at-his",
-      "confidence": 0.97,
+      "confidence": 0.95,
       "novel_facts": [
-        "Names of injured officers (Jakub Kulik, Artur Morański) already minor detail, not independently newsworthy",
-        "Minor witness quote detail expansion"
+        "The three bodies found at the gunman's home identified as his father (53), mother (52), and sister (21)",
+        "Injured police officers named as Senior Constable Jakub Kulik and Senior Constable Artur Morański",
+        "Update that two hospitalized women have been released and remaining patients, including the two officers, are in stable condition",
+        "Local governor states the suspect remains in critical condition in hospital"
       ],
-      "reason": "This is the same BBC source article (identical source_url and source_headline) describing the same Krakow shooting with identical casualty figures, suspect details, and motive. No new material facts like an arrest change, death toll revision, or official finding beyond what's already in the canonical version; it's essentially the same 'what we know so far' explainer.",
-      "cache_hit": true
-    },
-    {
-      "category": "world",
-      "title": "Paraguay's former president charged after bank collapse",
-      "source_url": "https://www.bbc.co.uk/news/articles/c68jzzvjgdy9o?at_medium=RSS&at_campaign=rss",
-      "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-11-07-paraguays-president-impeached-arrested-after-bank-collapse-left-millions-unable",
-      "confidence": 0.97,
-      "novel_facts": [],
-      "reason": "Same BBC source article (identical source_url and source_headline) covering Peña's impeachment, arrest, and formal charges over the Ueno Bank collapse. All facts—charges, vote count, successor, protests—match the existing canonical with no new developments.",
-      "cache_hit": true
+      "reason": "This is the same Krakow Main Square shooting event as the canonical article, sharing the same gunman, victim count, far-right motive, and family-home deaths. The incoming article adds material updates: identification of the three family victims, naming of the injured police officers, and updated hospital status for victims and officers, which should be folded into the existing canonical rather than spawning a new story.",
+      "cache_hit": false
     },
     {
       "category": "business",
-      "title": "U.S. Treasury moves to cut off crypto exchange MEXC over $16 billion in alleged illicit flows - CoinDesk",
-      "source_url": "https://www.coindesk.com/business/2026/11/07/u-s-treasury-moves-to-cut-off-crypto-exchange-mexc-over-usd16-billion-in-alleged-illicit-flows",
+      "title": "How midterm elections sent Wall Street from celebration to mayhem in just 24 hours / this week - Yahoo Finance",
+      "source_url": "https://finance.yahoo.com/markets/article/stocks-soared-on-the-democratic-sweep-less-than-24-hours-later-the-ai-trade-cracked-183312401.html",
       "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-11-08-treasury-moves-to-cut-off-crypto-exchange-mexc-from-us-financial-system-over-all",
+      "selected_candidate_slug": "2026-11-08-stocks-plunge-into-correction-after-brief-post-midterm-rally-as-ai-regulation-fe",
       "confidence": 0.97,
-      "novel_facts": [],
-      "reason": "Both articles report the identical Treasury action against MEXC over $16 billion in alleged sanctions-related flows, citing the same figures, countries, and NatGold delisting response with no new developments in the incoming piece.",
+      "novel_facts": [
+        "Elon Musk 'data centers in space' tweet included in incoming but not candidate body (minor color, not material)"
+      ],
+      "reason": "This is the exact same Yahoo Finance article (identical source_url) covering the same market reversal event, with nearly identical content and no new material facts like updated figures, casualties, or official findings.",
       "cache_hit": false
     },
     {
       "category": "tech",
-      "title": "The US let Nvidia sell chips to an empty office in China",
-      "source_url": "https://www.theverge.com/ai-artificial-intelligence/1029483/nvidia-ai-chips-china-blacklist-government",
+      "title": "Megaspeed exec was recruited to spy on Nvidia CEO, according to US intelligence memo",
+      "source_url": "https://techcrunch.com/2026/11/07/chinese-exec-was-recruited-to-spy-on-nvidia-ceo-according-to-us-intelligence-memo/",
       "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-11-07-us-approved-nvidia-chip-sales-to-chinese-firm-with-empty-office-and-ties-to-blac",
+      "selected_candidate_slug": "2026-11-08-us-intelligence-memo-claimed-chinese-officials-recruited-tech-executive-to-spy-o",
       "confidence": 0.98,
       "novel_facts": [],
-      "reason": "Identical source article (same source_url and source_headline) reporting the same NYT investigation into New Matrix as an empty-office Chinese firm approved for Nvidia H200 chip sales. No new facts beyond the existing canonical; this is a rewritten version of the same wire story.",
-      "cache_hit": true
+      "reason": "This is the same TechCrunch article (identical source_url) reporting on the same intelligence memo alleging Alice Huang was recruited to spy on Jensen Huang, with identical details about Megaspeed, New Matrix, and Nvidia's response. No new facts are introduced beyond the existing canonical.",
+      "cache_hit": false
     },
     {
-      "category": "entertainment",
-      "title": "Sylvester Stallone Says His 20-Year Rivalry With Arnold Schwarzenegger Only Ended When He Ran for Governor and Wasn’t ‘Doing Movies Anymore’",
-      "source_url": "https://variety.com/2026/film/news/sylvester-stallone-rivalry-arnold-schwarzenegger-1236942209/",
+      "category": "sports",
+      "title": "Marcus Freeman, Notre Dame silence doubters by knocking off top-ranked Miami, solidifying their CFP ranking - Fox News",
+      "source_url": "https://www.foxnews.com/outkick-sports/marcus-freeman-notre-dame-silence-doubters-knocking-top-ranked-miami-solidifying-cfp-ranking",
       "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-11-08-sylvester-stallone-says-his-20-year-rivalry-with-arnold-schwarzenegger-ended-whe",
-      "confidence": 0.98,
+      "selected_candidate_slug": "2026-11-08-notre-dame-defeats-miami-24-17-in-matchup-of-top-ranked-teams",
+      "confidence": 0.95,
       "novel_facts": [],
-      "reason": "Identical source article (same Variety URL, same date) rephrasing the same Stallone podcast quotes about his rivalry with Schwarzenegger ending when Schwarzenegger ran for governor. No new facts beyond the existing canonical summary.",
+      "reason": "Both articles cover the same Notre Dame-Miami game with identical final score (24-17) and playoff implications. The incoming article is commentary/analysis on the same game already captured in the canonical, with no new facts like injuries, rule changes, or follow-up consequences.",
       "cache_hit": false
     },
     {
       "category": "entertainment",
-      "title": "Richard Lloyd, founding member and guitarist of punk band Television, dies aged 75 - The Guardian",
-      "source_url": "https://www.theguardian.com/music/2026/nov/07/richard-lloyd-punk-band-television-dies-aged-75",
-      "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-11-07-richard-lloyd-television-guitarist-whose-interplay-with-tom-verlaine-shaped-marq",
-      "confidence": 0.97,
-      "novel_facts": [],
-      "reason": "Both articles report the same death of Richard Lloyd with identical cause, location, date, and family statement details. No new facts such as further accountability, investigation, or consequence are introduced; the incoming article is a standard obituary aggregation covering the same ground as the canonical.",
-      "cache_hit": true
-    },
-    {
-      "category": "politics",
-      "title": "\"Congress will investigate\": Nvidia CEO Jensen Huang faces probe over alleged Chinese spy ties",
-      "source_url": "https://www.axios.com/2026/11/07/jensen-huang-nvidia-congress-china-spy",
-      "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-11-08-congress-demands-answers-on-nvidia-ceos-reported-ties-to-alleged-chinese-spy",
-      "confidence": 0.97,
-      "novel_facts": [],
-      "reason": "This is the same Axios source article (same URL) covering the identical facts: Jensen Huang's alleged relationship with suspected Chinese spy Alice Huang, Coons' investigation pledge, and the House GOP briefing request with Nov. 11 deadline. No new facts beyond the existing canonical.",
-      "cache_hit": true
+      "title": "‘SNL’ Weekend Update Drags Trump Over Midterm Drubbing, Stephen Miller Promotion",
+      "source_url": "https://www.rollingstone.com/tv-movies/tv-movie-news/snl-weekend-update-drags-trump-midterm-drubbing-stephen-miller-promotion-1235654378/",
+      "action": "new_story",
+      "selected_candidate_slug": "",
+      "confidence": 0.9,
+      "novel_facts": [
+        "SNL Weekend Update sketch content",
+        "Colin Jost and Michael Che jokes",
+        "Elon Musk parody segment by Jeremy Culhane",
+        "Comedic commentary on Trump's reaction to midterms"
+      ],
+      "reason": "This is an entertainment/TV recap article about an SNL comedy sketch that references the real-world chief-of-staff swap and midterm losses, but the actual event being reported is the SNL broadcast itself, not the underlying political news. It's a distinct real-world event (a TV show airing) from the candidate's hard-news story about the personnel change, warranting its own entry rather than being folded into the news article.",
+      "cache_hit": false
     }
   ]
 }
