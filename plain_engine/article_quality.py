@@ -4,6 +4,17 @@ import json,re
 from datetime import datetime,timezone
 from pathlib import Path
 MIN_HERO_BODY_WORDS=120;MIN_CARD_BODY_WORDS=60;MAX_CARD_BODY_WORDS=140;MIN_SOURCE_WORDS=80
+_MODEL_TASK_DIALOGUE = re.compile(
+ r"(?:\bi appreciate you sharing this task\b|"
+ r"\bi (?:don.t|do not) have access to (?:the )?(?:actual )?(?:content|source|article)\b|"
+ r"\bi (?:can.t|cannot) (?:responsibly )?rewrite\b|"
+ r"\bcould you (?:please )?(?:share|provide) (?:the )?(?:source|full text|article|material)\b|"
+ r"\byou.ve only provided the headlines\b|"
+ r"\bas an ai(?: language model)?\b|"
+ r"\bi would need you to provide (?:the )?(?:full text|source|article)\b)",
+ re.I,
+)
+
 def word_count(t):return len(re.findall(r"\b[\w’'-]+\b",str(t or '')))
 def paragraph_count(t):return len([p for p in re.split(r'\n\s*\n',str(t or '')) if word_count(p)>=8])
 def sentence_count(t):return len([s for s in re.split(r'(?<=[.!?])\s+',str(t or '').strip()) if word_count(s)>=5])
@@ -156,6 +167,7 @@ def publication_quality(item,*,hero=False):
  if body_words<minimum:reasons.append(f'body_under_{minimum}_words')
  if not hero and body_words>MAX_CARD_BODY_WORDS:reasons.append(f'card_body_over_{MAX_CARD_BODY_WORDS}_words')
  if word_count(source)<MIN_SOURCE_WORDS:reasons.append(f'source_under_{MIN_SOURCE_WORDS}_words')
+ if _MODEL_TASK_DIALOGUE.search(body):reasons.append('ai_refusal_or_task_dialogue_in_article')
  # Plain cards are intentionally concise two-paragraph summaries. Do not impose
  # a full-article sentence-count contract on them. Heroes remain article-shaped.
  if hero:

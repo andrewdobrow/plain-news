@@ -387,7 +387,7 @@ def test_parse_first_json_value_tolerates_trailing_model_commentary():
     assert parse_first_json_value(raw, expected_type=list)==[2,1,4]
 
 
-def test_plain_category_classification_keeps_non_none_pool_depth():
+def test_plain_category_classification_rejects_cross_tagged_category_misroutes():
     import scripts.generate as gen
     rows=[];mapping={}
     for i in range(12):
@@ -401,9 +401,11 @@ def test_plain_category_classification_keeps_non_none_pool_depth():
         else:
             mapping[key]=['us']
     kept=gen._apply_category_classification(rows,'business',mapping,limit=18)
-    assert len(kept)==11
-    assert [r['category_fit_hint'] for r in kept[:3]]==['positive']*3
-    assert all(r['category_fit_hint']=='cross_tagged' for r in kept[3:])
+    # Deliberately prioritize section integrity over padding to full depth.
+    # Sources classified for U.S. news must not silently fill Business.
+    assert len(kept)==3
+    assert all(r['category_fit_hint']=='positive' for r in kept)
+    assert [r['title'] for r in kept]==[f'Business source {i}' for i in range(3)]
     assert not any(r['title']=='Business source 11' for r in kept)
 
 
