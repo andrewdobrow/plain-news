@@ -42,6 +42,7 @@ REQUIRED_PLAIN_MODULES = {
     "archive_identity", "article_quality", "assignment_pipeline",
     "category_classifier", "editorial_rules", "generation_cache",
     "image_authority", "model_response", "national_relevance", "source_recovery",
+    "front_page_hero",
 }
 
 # These tokens must occur in the live generator. Their presence prevents a
@@ -70,6 +71,9 @@ REQUIRED_LIVE_GENERATOR_HOOKS = {
     "_filter_publication_ready_sources": "TCT-style pre-writer source-depth gate",
     "_archive_depth_backfill": "recent canonical backfill for thin live sections",
     "_enforce_card_summary_product": "Plain card-vs-hero product boundary",
+    "evaluate_front_page_candidates": "hard-gated national cross-section hero selection",
+    "enforce_final_front_page_hero": "final canonical hero freshness barrier",
+    "_standalone_front_page_hero": "safe full-article promotion without altering category leads",
 }
 
 REQUIRED_ASSIGNMENT_PIPELINE_HOOKS = {
@@ -96,6 +100,8 @@ REQUIRED_WORKFLOW_TOKENS = {
     "pytest": "regression tests",
     "compileall": "production compile check",
     "actions/upload-artifact@v4": "generation diagnostics upload",
+    "front-page-hero-selection.json": "national hero decision audit upload",
+    "front-page-hero-selection-final.json": "canonical hero contract audit upload",
     "-size +90M": "repository file-size guard",
 }
 
