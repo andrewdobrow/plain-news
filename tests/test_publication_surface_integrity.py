@@ -165,3 +165,101 @@ def test_explicit_cross_tagging_is_not_treated_as_section_eligibility():
     selected=g._apply_category_classification(rows,"us",classification,limit=18)
     assert len(selected)==1
     assert selected[0]["title"]=="Federal agency announces US policy"
+
+
+def test_false_story_identity_recovers_from_recent_verified_politics_canonical(monkeypatch,tmp_path):
+    """Reproduce failed run: a cached Dana White lead matched a different old article."""
+    import scripts.generate as g
+    from datetime import datetime, timedelta, timezone
+    now=datetime.now(timezone.utc)
+    live=article(
+        "Trump offers UFC chief Dana White White House press secretary job",
+        story_id="story_000064",
+    )
+    current=section("politics",live)
+    fresh_headline="Congress passes nationwide election integrity legislation"
+    fresh_article=article(fresh_headline,story_id="story_000352")
+    recent={
+        "slug":"recent-verified-politics",
+        "headline":fresh_headline,
+        "story_id":"story_000352",
+        "category_key":"politics", "category_label":"Politics",
+        "first_published":(now-timedelta(hours=2)).isoformat(),
+        "date":now.date().isoformat(), "lastmod":now.date().isoformat(),
+        "source_url":"https://example.org/verified/legislation",
+        "body":fresh_article["body"], "teaser":fresh_article["body"][:170],
+    }
+    unrelated={
+        "slug":"old-unrelated-us-canonical",
+        "headline":"Federal judge blocks Postal Service restrictions on mail-in ballot delivery",
+        "story_id":"story_000064",
+        "category_key":"us", "category_label":"U.S.",
+        "date":"2026-07-02","lastmod":"2026-07-02",
+    }
+    saved=[unrelated,recent]
+    (tmp_path/"archive.json").write_text(json.dumps(saved))
+    monkeypatch.setattr(g,"OUTPUT_DIR",tmp_path)
+    monkeypatch.setattr(g,"render_archive_page",lambda *a,**kw:"<html>safe archive</html>")
+    monkeypatch.setattr(g,"update_sitemap",lambda *a,**kw:"<xml/>")
+    monkeypatch.setattr(g,"update_news_sitemap",lambda *a,**kw:"<xml/>")
+    monkeypatch.setattr(g,"_write_publication_integrity_report",lambda *a,**kw:None)
+    output=g.write_archives([current],current,client=object(),cache=object(),
+                            material_update_entries=[])
+    assert current["hero"]["headline"]==fresh_headline
+    assert current["hero"]["_archived_slug"]==recent["slug"]
+    assert [row["slug"] for row in output]==[unrelated["slug"],recent["slug"]]
+    assert not (tmp_path/"articles"/"old-unrelated-us-canonical.html").exists()
+    report=json.loads((tmp_path/"archive-identity-recovery-report.json").read_text())
+    assert len(report["recoveries"])==1
+    assert report["recoveries"][0]["discarded_live_headline"].startswith("Trump offers UFC")
+    assert report["recoveries"][0]["recovered_slug"]==recent["slug"]
+
+
+def test_unrelated_identity_match_cannot_use_old_or_refusal_archive_backup(monkeypatch,tmp_path):
+    import scripts.generate as g
+    from datetime import datetime, timedelta, timezone
+    now=datetime.now(timezone.utc)
+    broken=article("Trump offers UFC chief Dana White White House press secretary job",
+                   story_id="story_000064")
+    current=section("politics",broken)
+    recent={
+        "slug":"recent-refusal-politics",
+        "headline":"Congress announces national legislation",
+        "story_id":"story_000352",
+        "category_key":"politics","date":now.date().isoformat(),
+        "lastmod":now.date().isoformat(),
+        "first_published":(now-timedelta(hours=2)).isoformat(),
+        "body":REFUSAL,
+    }
+    unrelated={
+        "slug":"old-unrelated","headline":"Federal judge blocks Postal Service restrictions",
+        "story_id":"story_000064","category_key":"us","date":"2026-07-02",
+    }
+    saved=[unrelated,recent]
+    (tmp_path/"archive.json").write_text(json.dumps(saved))
+    monkeypatch.setattr(g,"OUTPUT_DIR",tmp_path)
+    with pytest.raises(RuntimeError,match="no safe recent same-section canonical recovery"):
+        g.write_archives([current],current,client=object(),cache=object(),material_update_entries=[])
+    assert json.loads((tmp_path/"archive.json").read_text())==saved
+
+
+def test_recovery_never_uses_a_historically_old_article_with_new_lastmod(monkeypatch,tmp_path):
+    import scripts.generate as g
+    from datetime import datetime, timedelta, timezone
+    now=datetime.now(timezone.utc)
+    live=article("Trump offers UFC chief Dana White White House press secretary job",
+                 story_id="story_000064")
+    original=section("politics",live)
+    old_body=article("Congress passes nationwide election integrity legislation")["body"]
+    entries=[
+        {"slug":"old-wrong","headline":"Federal judge blocks Postal Service restrictions",
+         "story_id":"story_000064","category_key":"us","date":"2026-07-02"},
+        {"slug":"old-rebranded","headline":"Congress passes nationwide election integrity legislation",
+         "story_id":"story_000352","category_key":"politics","date":"2026-07-01",
+         "first_published":(now-timedelta(days=14)).isoformat(),
+         "lastmod":now.date().isoformat(),"body":old_body},
+    ]
+    (tmp_path/"archive.json").write_text(json.dumps(entries))
+    monkeypatch.setattr(g,"OUTPUT_DIR",tmp_path)
+    with pytest.raises(RuntimeError,match="no safe recent same-section canonical recovery"):
+        g.write_archives([original],original,client=object(),cache=object(),material_update_entries=[])
