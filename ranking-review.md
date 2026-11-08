@@ -4,41 +4,41 @@
 
 ## Hero
 
-- Current: **AI tools are enabling automated hacking at scale, upending the cybersecurity industry**
-- Recommended: **AI tools are enabling automated hacking at scale, upending the cybersecurity industry**
+- Current: **Treasury moves to cut off crypto exchange MEXC from U.S. financial system over alleged $16 billion in illicit transactions**
+- Recommended: **Treasury moves to cut off crypto exchange MEXC from U.S. financial system over alleged $16 billion in illicit transactions**
 - Recommendation: KEEP (not enforced)
 
 ## Top Stories deck
 
 | Rank | Current | Recommended | Score | Why |
 | ---: | --- | --- | ---: | --- |
-| 1 | Gunman kills six in attack on Krakow's main square, three more bodies found at his home | Six killed in shooting in Krakow, Poland; British national among victims | 80 | importance 68; freshness 99.26; urgency 7/10 |
-| 2 | Israel's president taps Gadi Eisenkot to form next government | AI tools are enabling automated hacking at scale, upending the cybersecurity industry | 78 | importance 50; freshness 99.98; urgency 8/10 |
-| 3 | Paraguay formally charges ousted president Santiago Peña over bank collapse | Gunman kills six in attack on Krakow's main square, three more bodies found at his home | 75 | importance 43; freshness 96.02; urgency 8/10 |
-| 4 | US offers $20 million reward for information on Iran's nuclear program | Israel's president taps Gadi Eisenkot to form next government | 73 | importance 55; freshness 96.6; urgency 8/10 |
-| 5 | Wisconsin state trooper detained by ICE released under supervision after intervention by DHS secretary | Congress demands answers on Nvidia CEO's reported ties to alleged Chinese spy | 73 | importance 47; freshness 92.9; urgency 7/10 |
-| 6 | Six killed in shooting in Krakow, Poland; British national among victims | Sylvester Stallone says rivalry with Arnold Schwarzenegger ended when Schwarzenegger ran for California governor | 72 | importance 65; freshness 98.7; urgency 4/10 |
-| 7 | Actress Ambika Mod says glass ceiling for South Asian actors 'always getting higher' | Papua New Guinea's most expensive film wraps after 40-day shoot | 71 | importance 62; freshness 97.68; urgency 4/10 |
-| 8 | Norris takes pole in rain-delayed Brazilian Grand Prix qualifying amid dangerous conditions | Treasury moves to cut crypto exchange MEXC from U.S. financial system over alleged $16 billion in illicit transactions | 68 | importance 45; freshness 87.07; urgency 7/10 |
-| 9 | Hutchinson beats Buatsi to win WBC light-heavyweight title | U.S. intelligence memo says China recruited Megaspeed executive to spy on Nvidia CEO | 64 | importance 20; freshness 93.2; urgency 7/10 |
-| 10 | Israel's president tasks opposition leader Eisenkot with forming government | AI filmmaking could surpass 35mm costs as token fees rise, Korean producers warn | 69 | importance 50; freshness 98.49; urgency 5/10; -6 category saturation |
-| 11 | Secret Service arrests man near White House with guns who said voices told him to kill Trump | UConn beats Michigan 85-77 in rare opening-week rematch of last season's NCAA title game | 63 | importance 50; freshness 87.49; urgency 3/10 |
-| 12 | Hamilton and Verstappen to start from back of grid at São Paulo Grand Prix | Microsoft researcher John Langford exits, declares AI Frontiers group finished | 63 | importance 45; freshness 85.96; urgency 5/10 |
+| 1 | Gunman kills one, wounds five in shooting in central Israel | Six killed in shooting in Krakow, Poland; British citizen among dead | 76 | importance 68; freshness 99.99; urgency 5/10 |
+| 2 | Israeli president tasks Eisenkot with forming government after inconclusive election | Sylvester Stallone says his 20-year rivalry with Arnold Schwarzenegger ended when Schwarzenegger ran for California governor | 72 | importance 65; freshness 99.99; urgency 4/10 |
+| 3 | Paraguay formally charges ousted president Santiago Peña with breach of trust over Ueno Bank collapse | Israeli president tasks Eisenkot with forming government after inconclusive election | 70 | importance 55; freshness 95.25; urgency 7/10 |
+| 4 | Gunman kills six in attack on Krakow's main square, three more bodies found at his home | No. 1 Miami faces No. 11 Notre Dame in top-15 college football showdown | 69 | importance 40; freshness 98.42; urgency 6/10 |
+| 5 | Six killed in shooting in Krakow, Poland; British citizen among dead | AI tools are enabling automated hacking at scale, upending the cybersecurity industry | 66 | importance 50; freshness 98.65; urgency 3/10 |
+| 6 | Norris takes pole in wet Brazilian qualifying, hopes for rain in Sunday's race | Congress demands answers on Nvidia CEO's reported ties to alleged Chinese spy | 65 | importance 47; freshness 98.65; urgency 3/10 |
+| 7 | Wisconsin state trooper detained by ICE released under supervision after intervention by DHS secretary | Treasury moves to cut off crypto exchange MEXC over alleged $16 billion in illicit transactions | 65 | importance 45; freshness 85.73; urgency 6/10 |
+| 8 | Secret Service arrests man near White House with guns who said voices told him to kill Trump | Gunman kills six in attack on Krakow's main square, three more bodies found at his home | 64 | importance 43; freshness 98.65; urgency 3/10 |
+| 9 | Hamilton and Verstappen to start from back of grid at São Paulo Grand Prix | Tech stocks fall below S&P 500 valuation for first time since 2017 | 64 | importance 56; freshness 78.08; urgency 7/10 |
+| 10 | Texas Attorney General Ken Paxton enters Senate race | US intelligence memo alleges Chinese state security recruited tech executive to spy on Nvidia CEO | 63 | importance 20; freshness 91.85; urgency 7/10 |
+| 11 | Tech stocks fall below S&P 500 valuation for first time since 2017 | UConn beats Michigan 85-77 in rare opening-week rematch of last season's NCAA title game | 63 | importance 50; freshness 86.15; urgency 3/10 |
+| 12 | Musk says SpaceX could buy legacy telecom carrier, move telecom stocks | Godzilla Minus Zero heads toward $32 million opening weekend, surpassing predecessor's total domestic run | 58 | importance 40; freshness 98.65; urgency 3/10 |
 
 ## Recommended moves
 
-- **Congress demands answers on Nvidia CEO's reported ties to alleged Chinese spy**: 41 → 5 — importance 47; freshness 92.9; urgency 7/10
-- **Papua New Guinea's most expensive film wraps after 40-day shoot**: 38 → 7 — importance 62; freshness 97.68; urgency 4/10
-- **Sylvester Stallone says rivalry with Arnold Schwarzenegger ended when Schwarzenegger ran for California governor**: 34 → 6 — importance 65; freshness 98.7; urgency 4/10
-- **AI filmmaking could surpass 35mm costs as token fees rise, Korean producers warn**: 35 → 10 — importance 50; freshness 98.49; urgency 5/10; -6 category saturation
-- **UConn beats Michigan 85-77 in rare opening-week rematch of last season's NCAA title game**: 32 → 11 — importance 50; freshness 87.49; urgency 3/10
-- **AI tools are enabling automated hacking at scale, upending the cybersecurity industry**: 19 → 2 — importance 50; freshness 99.98; urgency 8/10
-- **Wisconsin state trooper detained by ICE released under supervision after intervention by DHS secretary**: 5 → 15 — importance 15; freshness 95.61; urgency 6/10
-- **Paraguay formally charges ousted president Santiago Peña over bank collapse**: 3 → 13 — importance 5; freshness 89.87; urgency 7/10
-- **US offers $20 million reward for information on Iran's nuclear program**: 4 → 14 — importance 0; freshness 0.0; urgency 7/10
-- **Microsoft researcher John Langford exits, declares AI Frontiers group finished**: 21 → 12 — importance 45; freshness 85.96; urgency 5/10
-- **Secret Service arrests man near White House with guns who said voices told him to kill Trump**: 11 → 20 — importance 47; freshness 66.43; urgency 3/10
-- **Israel's president tasks opposition leader Eisenkot with forming government**: 10 → 19 — importance 25; freshness 94.94; urgency 4/10
+- **Congress demands answers on Nvidia CEO's reported ties to alleged Chinese spy**: 42 → 6 — importance 47; freshness 98.65; urgency 3/10
+- **Sylvester Stallone says his 20-year rivalry with Arnold Schwarzenegger ended when Schwarzenegger ran for California governor**: 33 → 2 — importance 65; freshness 99.99; urgency 4/10
+- **Godzilla Minus Zero heads toward $32 million opening weekend, surpassing predecessor's total domestic run**: 39 → 12 — importance 40; freshness 98.65; urgency 3/10
+- **No. 1 Miami faces No. 11 Notre Dame in top-15 college football showdown**: 25 → 4 — importance 40; freshness 98.42; urgency 6/10
+- **UConn beats Michigan 85-77 in rare opening-week rematch of last season's NCAA title game**: 32 → 11 — importance 50; freshness 86.15; urgency 3/10
+- **AI tools are enabling automated hacking at scale, upending the cybersecurity industry**: 22 → 5 — importance 50; freshness 98.65; urgency 3/10
+- **Gunman kills one, wounds five in shooting in central Israel**: 1 → 13 — importance 28; freshness 0.0; urgency 8/10
+- **Paraguay formally charges ousted president Santiago Peña with breach of trust over Ueno Bank collapse**: 3 → 14 — importance 5; freshness 65.08; urgency 3/10
+- **Secret Service arrests man near White House with guns who said voices told him to kill Trump**: 8 → 17 — importance 47; freshness 65.08; urgency 3/10
+- **Wisconsin state trooper detained by ICE released under supervision after intervention by DHS secretary**: 7 → 16 — importance 15; freshness 98.65; urgency 3/10
+- **Norris takes pole in wet Brazilian qualifying, hopes for rain in Sunday's race**: 6 → 15 — importance 0; freshness 96.19; urgency 7/10
+- **Hamilton and Verstappen to start from back of grid at São Paulo Grand Prix**: 9 → 18 — importance 0; freshness 86.15; urgency 3/10
 
 ## Guardrails
 

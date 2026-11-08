@@ -1,33 +1,56 @@
 {
-  "generated_at": "2026-11-08T01:11:18Z",
-  "evaluated": 4,
-  "material_updates": 1,
-  "duplicates_suppressed": 2,
-  "holds_suppressed": 1,
+  "generated_at": "2026-11-08T02:00:47Z",
+  "evaluated": 9,
+  "material_updates": 0,
+  "duplicates_suppressed": 9,
+  "holds_suppressed": 0,
   "new_or_unmatched": 0,
   "items": [
     {
       "category": "world",
+      "title": "What we know so far after Krakow gun attack",
+      "source_url": "https://www.bbc.co.uk/news/articles/cmd7q15drwgeo?at_medium=RSS&at_campaign=rss",
+      "action": "duplicate_use_existing_canonical",
+      "selected_candidate_slug": "2026-11-08-gunman-kills-six-in-attack-on-krakows-main-square-three-more-bodies-found-at-his",
+      "confidence": 0.97,
+      "novel_facts": [
+        "Names of injured officers (Jakub Kulik, Artur Morański) already minor detail, not independently newsworthy",
+        "Minor witness quote detail expansion"
+      ],
+      "reason": "This is the same BBC source article (identical source_url and source_headline) describing the same Krakow shooting with identical casualty figures, suspect details, and motive. No new material facts like an arrest change, death toll revision, or official finding beyond what's already in the canonical version; it's essentially the same 'what we know so far' explainer.",
+      "cache_hit": false
+    },
+    {
+      "category": "world",
       "title": "Paraguay's former president charged after bank collapse",
       "source_url": "https://www.bbc.co.uk/news/articles/c68jzzvjgdy9o?at_medium=RSS&at_campaign=rss",
-      "action": "update_existing_canonical",
+      "action": "duplicate_use_existing_canonical",
       "selected_candidate_slug": "2026-11-07-paraguays-president-impeached-arrested-after-bank-collapse-left-millions-unable",
-      "confidence": 0.9,
-      "novel_facts": [
-        "Prosecutors have formally charged Peña with breach of trust and administration for personal gain (previously only 'due to be questioned')"
-      ],
-      "reason": "Same event as canonical (Peña impeachment/arrest over Ueno Bank collapse), but incoming confirms formal charges were filed, advancing the story beyond the canonical's 'due to be questioned' status—a material legal development that should update the existing canonical.",
+      "confidence": 0.97,
+      "novel_facts": [],
+      "reason": "Same BBC source article (identical source_url and source_headline) covering Peña's impeachment, arrest, and formal charges over the Ueno Bank collapse. All facts—charges, vote count, successor, protests—match the existing canonical with no new developments.",
       "cache_hit": false
     },
     {
       "category": "us",
-      "title": "3 things to know about Stephen Miller, new White House chief of staff - The Washington Post",
-      "source_url": "https://www.washingtonpost.com/politics/2026/11/07/what-know-about-stephen-miller-new-white-house-chief-staff/",
-      "action": "hold",
-      "selected_candidate_slug": "2026-11-07-trump-replaces-chief-of-staff-susie-wiles-with-stephen-miller-after-gop-midterm",
-      "confidence": 0.8,
+      "title": "Wisconsin state trooper detained by ICE to be released from custody - CBS News",
+      "source_url": "https://www.cbsnews.com/minnesota/news/wisconsin-state-trooper-detained-by-ice-released-from-custody/",
+      "action": "duplicate_use_existing_canonical",
+      "selected_candidate_slug": "2026-11-08-wisconsin-state-trooper-detained-by-ice-released-under-supervision-after-interve",
+      "confidence": 0.98,
       "novel_facts": [],
-      "reason": "The incoming article is an aggregated headline roundup about Stephen Miller's promotion to chief of staff, the same event already covered in the canonical article. It contains no new verified facts, only a list of other outlets' headlines, and does not meet the bar for a material update or independent follow-up.",
+      "reason": "Same named trooper, same detention and release facts, same attorney quotes and DHS statement; incoming article is a near-identical rewrite of the existing canonical with no new developments beyond what's already reported.",
+      "cache_hit": false
+    },
+    {
+      "category": "us",
+      "title": "Hutchinson beats Buatsi to win WBC light-heavyweight title",
+      "source_url": "https://www.bbc.co.uk/sport/boxing/articles/cqx2vw8demexo?at_medium=RSS&at_campaign=rss",
+      "action": "duplicate_use_existing_canonical",
+      "selected_candidate_slug": "2026-11-08-willy-hutchinson-upsets-joshua-buatsi-to-win-wbc-light-heavyweight-title-in-manc",
+      "confidence": 0.98,
+      "novel_facts": [],
+      "reason": "This is the same BBC article about Hutchinson's WBC title win over Buatsi, same fight, scorecards, quotes, and context as the existing canonical published one day earlier. No new facts such as a ranking change, injury update, or further consequence are present.",
       "cache_hit": false
     },
     {
@@ -38,7 +61,29 @@
       "selected_candidate_slug": "2026-11-07-us-approved-nvidia-chip-sales-to-chinese-firm-with-empty-office-and-ties-to-blac",
       "confidence": 0.98,
       "novel_facts": [],
-      "reason": "Both articles are the same NYT-sourced Verge piece about Nvidia's H200 chip sale approval to the shell company New Matrix, with identical facts, quotes, and framing. No new information is added in the incoming version.",
+      "reason": "Identical source article (same source_url and source_headline) reporting the same NYT investigation into New Matrix as an empty-office Chinese firm approved for Nvidia H200 chip sales. No new facts beyond the existing canonical; this is a rewritten version of the same wire story.",
+      "cache_hit": true
+    },
+    {
+      "category": "sports",
+      "title": "Hutchinson beats Buatsi to win WBC light-heavyweight title",
+      "source_url": "https://www.bbc.co.uk/sport/boxing/articles/cqx2vw8demexo?at_medium=RSS&at_campaign=rss",
+      "action": "duplicate_use_existing_canonical",
+      "selected_candidate_slug": "2026-11-08-willy-hutchinson-upsets-joshua-buatsi-to-win-wbc-light-heavyweight-title-in-manc",
+      "confidence": 0.98,
+      "novel_facts": [],
+      "reason": "This is the same BBC article about Hutchinson's WBC title win over Buatsi, same fight, scorecards, quotes, and context as the existing canonical published one day earlier. No new facts such as a ranking change, injury update, or further consequence are present.",
+      "cache_hit": true
+    },
+    {
+      "category": "sports",
+      "title": "Hutchinson beats Buatsi to win WBC light-heavyweight title - BBC",
+      "source_url": "https://www.bbc.com/sport/boxing/articles/cqx2vw8demexo",
+      "action": "duplicate_use_existing_canonical",
+      "selected_candidate_slug": "2026-11-08-willy-hutchinson-upsets-joshua-buatsi-to-win-wbc-light-heavyweight-title-in-manc",
+      "confidence": 0.98,
+      "novel_facts": [],
+      "reason": "This is the same BBC article (same source_url) covering Hutchinson's win over Buatsi for the WBC light-heavyweight title in Manchester, with identical fight details, score, quotes, and context already present in the canonical article. No new facts are introduced.",
       "cache_hit": false
     },
     {
@@ -49,7 +94,18 @@
       "selected_candidate_slug": "2026-11-07-richard-lloyd-television-guitarist-whose-interplay-with-tom-verlaine-shaped-marq",
       "confidence": 0.97,
       "novel_facts": [],
-      "reason": "Both articles report the same death of Richard Lloyd, Television guitarist, with identical cause, location, date, and family statement details. The incoming article adds background on CBGB and a 2005 Guardian review but introduces no material new facts about the death itself; it is a rehash/obituary overlap of the same event already covered by the canonical.",
+      "reason": "Both articles report the same death of Richard Lloyd with identical cause, location, date, and family statement details. No new facts such as further accountability, investigation, or consequence are introduced; the incoming article is a standard obituary aggregation covering the same ground as the canonical.",
+      "cache_hit": true
+    },
+    {
+      "category": "politics",
+      "title": "\"Congress will investigate\": Nvidia CEO Jensen Huang faces probe over alleged Chinese spy ties",
+      "source_url": "https://www.axios.com/2026/11/07/jensen-huang-nvidia-congress-china-spy",
+      "action": "duplicate_use_existing_canonical",
+      "selected_candidate_slug": "2026-11-08-congress-demands-answers-on-nvidia-ceos-reported-ties-to-alleged-chinese-spy",
+      "confidence": 0.97,
+      "novel_facts": [],
+      "reason": "This is the same Axios source article (same URL) covering the identical facts: Jensen Huang's alleged relationship with suspected Chinese spy Alice Huang, Coons' investigation pledge, and the House GOP briefing request with Nov. 11 deadline. No new facts beyond the existing canonical.",
       "cache_hit": false
     }
   ]

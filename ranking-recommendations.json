@@ -2,16 +2,16 @@
   "schema_version": 4,
   "version": "1.13.7.0-shadow",
   "mode": "recommend",
-  "generated_at": "2026-11-08T01:22:05Z",
+  "generated_at": "2026-11-08T02:10:36Z",
   "publication_behavior_changed": false,
   "hero": {
-    "current_headline": "AI tools are enabling automated hacking at scale, upending the cybersecurity industry",
-    "recommended_headline": "AI tools are enabling automated hacking at scale, upending the cybersecurity industry",
-    "current_score": 78,
-    "recommended_score": 78,
-    "top_scoring_candidate_headline": "Six killed in shooting in Krakow, Poland; British national among victims",
-    "top_scoring_candidate_score": 80,
-    "score_margin": 2,
+    "current_headline": "Treasury moves to cut off crypto exchange MEXC from U.S. financial system over alleged $16 billion in illicit transactions",
+    "recommended_headline": "Treasury moves to cut off crypto exchange MEXC from U.S. financial system over alleged $16 billion in illicit transactions",
+    "current_score": 69,
+    "recommended_score": 69,
+    "top_scoring_candidate_headline": "Six killed in shooting in Krakow, Poland; British citizen among dead",
+    "top_scoring_candidate_score": 76,
+    "score_margin": 7,
     "change_threshold": 8,
     "change_recommended": false,
     "observe_only": true,
@@ -35,143 +35,147 @@
     "max_reported_recommendations": 12
   },
   "summary": {
-    "input_placements": 46,
+    "input_placements": 45,
     "legacy_identity_placements_excluded": 0,
-    "unique_cards_observed": 41,
-    "cards_observed": 41,
-    "duplicate_placements_excluded": 5,
-    "registry_matches": 41,
-    "high_confidence_registry_matches": 41,
-    "identity_warning_count": 0,
+    "unique_cards_observed": 43,
+    "cards_observed": 43,
+    "duplicate_placements_excluded": 2,
+    "registry_matches": 43,
+    "high_confidence_registry_matches": 43,
+    "identity_warning_count": 1,
     "fallback_scores": 0,
     "registry_match_rate": 1.0,
     "high_confidence_match_rate": 1.0,
-    "recommended_moves": 21,
-    "unchanged_positions": 0,
+    "recommended_moves": 20,
+    "unchanged_positions": 1,
     "reported_moves": 12,
     "deck_limit": 12,
     "current_deck_count": 12,
     "recommended_deck_count": 12,
-    "stale_or_ineligible_candidates_excluded_from_deck": 3,
+    "stale_or_ineligible_candidates_excluded_from_deck": 4,
     "excluded_candidates": 0,
     "recent_high_urgency_exclusions": 0,
     "hero_change_recommended": false,
-    "enforcement_readiness": "eligible_for_review",
-    "enforcement_readiness_reason": "At least 80% of unique cards matched persistent story IDs, every identity was corroborated, and no recent high-urgency candidate was filtered"
+    "enforcement_readiness": "not_ready",
+    "enforcement_readiness_reason": "Persistent story identity conflict or non-high-confidence story match detected"
   },
   "current_order": [
+    "Gunman kills one, wounds five in shooting in central Israel",
+    "Israeli president tasks Eisenkot with forming government after inconclusive election",
+    "Paraguay formally charges ousted president Santiago Peña with breach of trust over Ueno Bank collapse",
     "Gunman kills six in attack on Krakow's main square, three more bodies found at his home",
-    "Israel's president taps Gadi Eisenkot to form next government",
-    "Paraguay formally charges ousted president Santiago Peña over bank collapse",
-    "US offers $20 million reward for information on Iran's nuclear program",
+    "Six killed in shooting in Krakow, Poland; British citizen among dead",
+    "Norris takes pole in wet Brazilian qualifying, hopes for rain in Sunday's race",
     "Wisconsin state trooper detained by ICE released under supervision after intervention by DHS secretary",
-    "Six killed in shooting in Krakow, Poland; British national among victims",
-    "Actress Ambika Mod says glass ceiling for South Asian actors 'always getting higher'",
-    "Norris takes pole in rain-delayed Brazilian Grand Prix qualifying amid dangerous conditions",
-    "Hutchinson beats Buatsi to win WBC light-heavyweight title",
-    "Israel's president tasks opposition leader Eisenkot with forming government",
     "Secret Service arrests man near White House with guns who said voices told him to kill Trump",
     "Hamilton and Verstappen to start from back of grid at São Paulo Grand Prix",
-    "Wall Street whipsawed after midterms as tech selloff pushes Nasdaq into correction",
-    "Treasury moves to cut crypto exchange MEXC from U.S. financial system over alleged $16 billion in illicit transactions",
-    "Musk says SpaceX could buy legacy telecom carrier, use spectrum 'ten times more effectively'",
-    "U.S. intelligence memo says China recruited Megaspeed executive to spy on Nvidia CEO",
+    "Texas Attorney General Ken Paxton enters Senate race",
+    "Tech stocks fall below S&P 500 valuation for first time since 2017",
+    "Musk says SpaceX could buy legacy telecom carrier, move telecom stocks",
+    "Treasury moves to cut off crypto exchange MEXC over alleged $16 billion in illicit transactions",
     "Tesla to wind down Cybertruck production in Texas next year, Musk says",
     "Wave of bomb threats and cyberattacks across Europe raises questions about coordination",
+    "US intelligence memo alleges Chinese state security recruited tech executive to spy on Nvidia CEO",
+    "Scientists find two massive tears in Arabian tectonic plate beneath Iran",
+    "Phone makers expand lineup of child-focused devices with monitoring and restricted access",
+    "NASA opens public sign-up to send names to Titan aboard Dragonfly rotorcraft",
+    "PC RAM capacities decline for first time as 16 GB gains on 32 GB and 64 GB configurations",
+    "Zelda: Ocarina of Time Remake Runs on Jailbroken PS5 and iPhone After Switch 2 Launch",
     "AI tools are enabling automated hacking at scale, upending the cybersecurity industry",
-    "Binance CFO departs weeks after $6.3 billion hack linked to North Korean group",
-    "Microsoft researcher John Langford exits, declares AI Frontiers group finished",
-    "Scientists identify two enormous tears in tectonic plate beneath Iran",
-    "Companies roll out child-focused phones and monitoring devices as parents seek safer alternatives to smartphones",
-    "NASA invites public to send names to Saturn's moon Titan aboard Dragonfly mission",
-    "Zelda: Ocarina of Time Remake Runs on Jailbroken PS5 and iPhone Days After Launch",
-    "Chris Billam-Smith stopped for first time as Chev Clarke wins with seventh-round knockdowns",
-    "Norris takes pole for Sao Paulo Grand Prix in wet qualifying as Hamilton and Verstappen start from back",
-    "Vikings linked to Colts quarterback Daniel Jones and running back Jonathan Taylor ahead of trade deadline",
-    "BBC commentator calls FA Cup fog tie 'worst conditions in 35-year career'",
-    "Aberdeen manager Stephen Robinson faces uncertain future after 4-0 home loss to last-place Hibernian",
+    "Chainalysis says breach exposed credentials and security tokens for all customers",
+    "Oregon routs Ohio State 41-28, likely ending Buckeyes' playoff hopes with fake punt sparking turnaround",
+    "No. 1 Miami faces No. 11 Notre Dame in top-15 college football showdown",
+    "NFL handbook language grants Commissioner broad discretion over Brandon Aiyuk reinstatement as 49ers seek bonus repayment",
+    "Lando Norris takes pole for Sao Paulo Grand Prix in rain-disrupted qualifying",
+    "Chev Clarke stops Chris Billam-Smith in seventh round for first career stoppage loss",
+    "Rob Gronkowski's Patriots Hall of Fame ceremony draws criticism after teammate's explicit anecdote",
+    "Willy Hutchinson upsets Joshua Buatsi to win WBC light-heavyweight title in Manchester rematch",
     "No. 9 BYU meets Utah in first top-10 Holy War matchup, drawing national ABC broadcast",
     "UConn beats Michigan 85-77 in rare opening-week rematch of last season's NCAA title game",
-    "Godzilla Minus Zero heads toward $32 million opening weekend, surpassing predecessor's total domestic run",
-    "Sylvester Stallone says rivalry with Arnold Schwarzenegger ended when Schwarzenegger ran for California governor",
-    "AI filmmaking could surpass 35mm costs as token fees rise, Korean producers warn",
+    "Sylvester Stallone says his 20-year rivalry with Arnold Schwarzenegger ended when Schwarzenegger ran for California governor",
+    "Animation director denies AI use in Dior ad, cites automated interpolation tool",
     "Pokemon anime studio unveils AI coloring tool trained on three hand-painted frames",
-    "Animator Sylvain Chomet denies AI use in Dior ad, cites automated interpolation tool",
-    "Papua New Guinea's most expensive film wraps after 40-day shoot",
-    "Eleven artists compete for Best New Artist at 2026 Latin Grammys",
-    "Conan O'Brien plays small Los Angeles venues with cover band the Vigodas",
-    "Congress demands answers on Nvidia CEO's reported ties to alleged Chinese spy"
+    "Bill Skarsgård says he wasn't considered for James Bond role but would play a villain",
+    "'Heated Rivalry' Season 2 in Production With 6 Episodes, Third Season Unconfirmed",
+    "Jodie Sweetin says she had $190 in bank account before filming 'Fuller House'",
+    "Godzilla Minus Zero heads toward $32 million opening weekend, surpassing predecessor's total domestic run",
+    "Godzilla Minus Zero Opens to Record $30 Million-Plus for Live-Action Foreign-Language Film",
+    "Federal judge blocks Postal Service restrictions on mail-in ballot delivery",
+    "Congress demands answers on Nvidia CEO's reported ties to alleged Chinese spy",
+    "Trump replaces chief of staff Susie Wiles with Stephen Miller after GOP midterm losses"
   ],
   "recommended_order": [
-    "Six killed in shooting in Krakow, Poland; British national among victims",
+    "Six killed in shooting in Krakow, Poland; British citizen among dead",
+    "Sylvester Stallone says his 20-year rivalry with Arnold Schwarzenegger ended when Schwarzenegger ran for California governor",
+    "Israeli president tasks Eisenkot with forming government after inconclusive election",
+    "No. 1 Miami faces No. 11 Notre Dame in top-15 college football showdown",
     "AI tools are enabling automated hacking at scale, upending the cybersecurity industry",
-    "Gunman kills six in attack on Krakow's main square, three more bodies found at his home",
-    "Israel's president taps Gadi Eisenkot to form next government",
     "Congress demands answers on Nvidia CEO's reported ties to alleged Chinese spy",
-    "Sylvester Stallone says rivalry with Arnold Schwarzenegger ended when Schwarzenegger ran for California governor",
-    "Papua New Guinea's most expensive film wraps after 40-day shoot",
-    "Treasury moves to cut crypto exchange MEXC from U.S. financial system over alleged $16 billion in illicit transactions",
-    "U.S. intelligence memo says China recruited Megaspeed executive to spy on Nvidia CEO",
-    "AI filmmaking could surpass 35mm costs as token fees rise, Korean producers warn",
+    "Treasury moves to cut off crypto exchange MEXC over alleged $16 billion in illicit transactions",
+    "Gunman kills six in attack on Krakow's main square, three more bodies found at his home",
+    "Tech stocks fall below S&P 500 valuation for first time since 2017",
+    "US intelligence memo alleges Chinese state security recruited tech executive to spy on Nvidia CEO",
     "UConn beats Michigan 85-77 in rare opening-week rematch of last season's NCAA title game",
-    "Microsoft researcher John Langford exits, declares AI Frontiers group finished",
-    "Paraguay formally charges ousted president Santiago Peña over bank collapse",
-    "US offers $20 million reward for information on Iran's nuclear program",
+    "Godzilla Minus Zero heads toward $32 million opening weekend, surpassing predecessor's total domestic run",
+    "Gunman kills one, wounds five in shooting in central Israel",
+    "Paraguay formally charges ousted president Santiago Peña with breach of trust over Ueno Bank collapse",
+    "Norris takes pole in wet Brazilian qualifying, hopes for rain in Sunday's race",
     "Wisconsin state trooper detained by ICE released under supervision after intervention by DHS secretary",
-    "Actress Ambika Mod says glass ceiling for South Asian actors 'always getting higher'",
-    "Norris takes pole in rain-delayed Brazilian Grand Prix qualifying amid dangerous conditions",
-    "Hutchinson beats Buatsi to win WBC light-heavyweight title",
-    "Israel's president tasks opposition leader Eisenkot with forming government",
     "Secret Service arrests man near White House with guns who said voices told him to kill Trump",
     "Hamilton and Verstappen to start from back of grid at São Paulo Grand Prix",
-    "Wall Street whipsawed after midterms as tech selloff pushes Nasdaq into correction",
-    "Musk says SpaceX could buy legacy telecom carrier, use spectrum 'ten times more effectively'",
+    "Texas Attorney General Ken Paxton enters Senate race",
+    "Musk says SpaceX could buy legacy telecom carrier, move telecom stocks",
     "Tesla to wind down Cybertruck production in Texas next year, Musk says",
     "Wave of bomb threats and cyberattacks across Europe raises questions about coordination",
-    "Binance CFO departs weeks after $6.3 billion hack linked to North Korean group",
-    "Scientists identify two enormous tears in tectonic plate beneath Iran",
-    "Companies roll out child-focused phones and monitoring devices as parents seek safer alternatives to smartphones",
-    "NASA invites public to send names to Saturn's moon Titan aboard Dragonfly mission",
-    "Zelda: Ocarina of Time Remake Runs on Jailbroken PS5 and iPhone Days After Launch",
-    "Chris Billam-Smith stopped for first time as Chev Clarke wins with seventh-round knockdowns",
-    "Norris takes pole for Sao Paulo Grand Prix in wet qualifying as Hamilton and Verstappen start from back",
-    "Vikings linked to Colts quarterback Daniel Jones and running back Jonathan Taylor ahead of trade deadline",
-    "BBC commentator calls FA Cup fog tie 'worst conditions in 35-year career'",
-    "Aberdeen manager Stephen Robinson faces uncertain future after 4-0 home loss to last-place Hibernian",
+    "Scientists find two massive tears in Arabian tectonic plate beneath Iran",
+    "Phone makers expand lineup of child-focused devices with monitoring and restricted access",
+    "NASA opens public sign-up to send names to Titan aboard Dragonfly rotorcraft",
+    "PC RAM capacities decline for first time as 16 GB gains on 32 GB and 64 GB configurations",
+    "Zelda: Ocarina of Time Remake Runs on Jailbroken PS5 and iPhone After Switch 2 Launch",
+    "Chainalysis says breach exposed credentials and security tokens for all customers",
+    "Oregon routs Ohio State 41-28, likely ending Buckeyes' playoff hopes with fake punt sparking turnaround",
+    "NFL handbook language grants Commissioner broad discretion over Brandon Aiyuk reinstatement as 49ers seek bonus repayment",
+    "Lando Norris takes pole for Sao Paulo Grand Prix in rain-disrupted qualifying",
+    "Chev Clarke stops Chris Billam-Smith in seventh round for first career stoppage loss",
+    "Rob Gronkowski's Patriots Hall of Fame ceremony draws criticism after teammate's explicit anecdote",
+    "Willy Hutchinson upsets Joshua Buatsi to win WBC light-heavyweight title in Manchester rematch",
     "No. 9 BYU meets Utah in first top-10 Holy War matchup, drawing national ABC broadcast",
-    "Godzilla Minus Zero heads toward $32 million opening weekend, surpassing predecessor's total domestic run",
+    "Animation director denies AI use in Dior ad, cites automated interpolation tool",
     "Pokemon anime studio unveils AI coloring tool trained on three hand-painted frames",
-    "Animator Sylvain Chomet denies AI use in Dior ad, cites automated interpolation tool",
-    "Eleven artists compete for Best New Artist at 2026 Latin Grammys",
-    "Conan O'Brien plays small Los Angeles venues with cover band the Vigodas"
+    "Bill Skarsgård says he wasn't considered for James Bond role but would play a villain",
+    "'Heated Rivalry' Season 2 in Production With 6 Episodes, Third Season Unconfirmed",
+    "Jodie Sweetin says she had $190 in bank account before filming 'Fuller House'",
+    "Godzilla Minus Zero Opens to Record $30 Million-Plus for Live-Action Foreign-Language Film",
+    "Federal judge blocks Postal Service restrictions on mail-in ballot delivery",
+    "Trump replaces chief of staff Susie Wiles with Stephen Miller after GOP midterm losses"
   ],
   "current_deck": [
+    "Gunman kills one, wounds five in shooting in central Israel",
+    "Israeli president tasks Eisenkot with forming government after inconclusive election",
+    "Paraguay formally charges ousted president Santiago Peña with breach of trust over Ueno Bank collapse",
     "Gunman kills six in attack on Krakow's main square, three more bodies found at his home",
-    "Israel's president taps Gadi Eisenkot to form next government",
-    "Paraguay formally charges ousted president Santiago Peña over bank collapse",
-    "US offers $20 million reward for information on Iran's nuclear program",
+    "Six killed in shooting in Krakow, Poland; British citizen among dead",
+    "Norris takes pole in wet Brazilian qualifying, hopes for rain in Sunday's race",
     "Wisconsin state trooper detained by ICE released under supervision after intervention by DHS secretary",
-    "Six killed in shooting in Krakow, Poland; British national among victims",
-    "Actress Ambika Mod says glass ceiling for South Asian actors 'always getting higher'",
-    "Norris takes pole in rain-delayed Brazilian Grand Prix qualifying amid dangerous conditions",
-    "Hutchinson beats Buatsi to win WBC light-heavyweight title",
-    "Israel's president tasks opposition leader Eisenkot with forming government",
     "Secret Service arrests man near White House with guns who said voices told him to kill Trump",
-    "Hamilton and Verstappen to start from back of grid at São Paulo Grand Prix"
+    "Hamilton and Verstappen to start from back of grid at São Paulo Grand Prix",
+    "Texas Attorney General Ken Paxton enters Senate race",
+    "Tech stocks fall below S&P 500 valuation for first time since 2017",
+    "Musk says SpaceX could buy legacy telecom carrier, move telecom stocks"
   ],
   "recommended_deck": [
-    "Six killed in shooting in Krakow, Poland; British national among victims",
+    "Six killed in shooting in Krakow, Poland; British citizen among dead",
+    "Sylvester Stallone says his 20-year rivalry with Arnold Schwarzenegger ended when Schwarzenegger ran for California governor",
+    "Israeli president tasks Eisenkot with forming government after inconclusive election",
+    "No. 1 Miami faces No. 11 Notre Dame in top-15 college football showdown",
     "AI tools are enabling automated hacking at scale, upending the cybersecurity industry",
-    "Gunman kills six in attack on Krakow's main square, three more bodies found at his home",
-    "Israel's president taps Gadi Eisenkot to form next government",
     "Congress demands answers on Nvidia CEO's reported ties to alleged Chinese spy",
-    "Sylvester Stallone says rivalry with Arnold Schwarzenegger ended when Schwarzenegger ran for California governor",
-    "Papua New Guinea's most expensive film wraps after 40-day shoot",
-    "Treasury moves to cut crypto exchange MEXC from U.S. financial system over alleged $16 billion in illicit transactions",
-    "U.S. intelligence memo says China recruited Megaspeed executive to spy on Nvidia CEO",
-    "AI filmmaking could surpass 35mm costs as token fees rise, Korean producers warn",
+    "Treasury moves to cut off crypto exchange MEXC over alleged $16 billion in illicit transactions",
+    "Gunman kills six in attack on Krakow's main square, three more bodies found at his home",
+    "Tech stocks fall below S&P 500 valuation for first time since 2017",
+    "US intelligence memo alleges Chinese state security recruited tech executive to spy on Nvidia CEO",
     "UConn beats Michigan 85-77 in rare opening-week rematch of last season's NCAA title game",
-    "Microsoft researcher John Langford exits, declares AI Frontiers group finished"
+    "Godzilla Minus Zero heads toward $32 million opening weekend, surpassing predecessor's total domestic run"
   ],
   "recommendations": [
     {
@@ -179,47 +183,47 @@
       "headline": "Congress demands answers on Nvidia CEO's reported ties to alleged Chinese spy",
       "story_id": "story_000352",
       "identity": "story:story_000352",
-      "from_position": 41,
-      "to_position": 5,
-      "score": 73,
-      "selection_score": 73.0,
-      "explanation": "importance 47; freshness 92.9; urgency 7/10",
+      "from_position": 42,
+      "to_position": 6,
+      "score": 65,
+      "selection_score": 65.0,
+      "explanation": "importance 47; freshness 98.65; urgency 3/10",
       "enforced": false
     },
     {
       "action": "recommend_promote_to_top_deck",
-      "headline": "Papua New Guinea's most expensive film wraps after 40-day shoot",
-      "story_id": "story_000349",
-      "identity": "story:story_000349",
-      "from_position": 38,
-      "to_position": 7,
-      "score": 71,
-      "selection_score": 71.0,
-      "explanation": "importance 62; freshness 97.68; urgency 4/10",
-      "enforced": false
-    },
-    {
-      "action": "recommend_promote_to_top_deck",
-      "headline": "Sylvester Stallone says rivalry with Arnold Schwarzenegger ended when Schwarzenegger ran for California governor",
+      "headline": "Sylvester Stallone says his 20-year rivalry with Arnold Schwarzenegger ended when Schwarzenegger ran for California governor",
       "story_id": "story_000345",
       "identity": "story:story_000345",
-      "from_position": 34,
-      "to_position": 6,
+      "from_position": 33,
+      "to_position": 2,
       "score": 72,
       "selection_score": 72.0,
-      "explanation": "importance 65; freshness 98.7; urgency 4/10",
+      "explanation": "importance 65; freshness 99.99; urgency 4/10",
       "enforced": false
     },
     {
       "action": "recommend_promote_to_top_deck",
-      "headline": "AI filmmaking could surpass 35mm costs as token fees rise, Korean producers warn",
-      "story_id": "story_000346",
-      "identity": "story:story_000346",
-      "from_position": 35,
-      "to_position": 10,
+      "headline": "Godzilla Minus Zero heads toward $32 million opening weekend, surpassing predecessor's total domestic run",
+      "story_id": "story_000344",
+      "identity": "story:story_000344",
+      "from_position": 39,
+      "to_position": 12,
+      "score": 58,
+      "selection_score": 58.0,
+      "explanation": "importance 40; freshness 98.65; urgency 3/10",
+      "enforced": false
+    },
+    {
+      "action": "recommend_promote_to_top_deck",
+      "headline": "No. 1 Miami faces No. 11 Notre Dame in top-15 college football showdown",
+      "story_id": "story_000358",
+      "identity": "story:story_000358",
+      "from_position": 25,
+      "to_position": 4,
       "score": 69,
-      "selection_score": 63.0,
-      "explanation": "importance 50; freshness 98.49; urgency 5/10; -6 category saturation",
+      "selection_score": 69.0,
+      "explanation": "importance 40; freshness 98.42; urgency 6/10",
       "enforced": false
     },
     {
@@ -231,7 +235,7 @@
       "to_position": 11,
       "score": 63,
       "selection_score": 63.0,
-      "explanation": "importance 50; freshness 87.49; urgency 3/10",
+      "explanation": "importance 50; freshness 86.15; urgency 3/10",
       "enforced": false
     },
     {
@@ -239,59 +243,35 @@
       "headline": "AI tools are enabling automated hacking at scale, upending the cybersecurity industry",
       "story_id": "story_000332",
       "identity": "story:story_000332",
-      "from_position": 19,
-      "to_position": 2,
-      "score": 78,
-      "selection_score": 78.0,
-      "explanation": "importance 50; freshness 99.98; urgency 8/10",
+      "from_position": 22,
+      "to_position": 5,
+      "score": 66,
+      "selection_score": 66.0,
+      "explanation": "importance 50; freshness 98.65; urgency 3/10",
       "enforced": false
     },
     {
       "action": "recommend_demote_from_top_deck",
-      "headline": "Wisconsin state trooper detained by ICE released under supervision after intervention by DHS secretary",
-      "story_id": "story_000324",
-      "identity": "story:story_000324",
-      "from_position": 5,
-      "to_position": 15,
-      "score": 61,
-      "selection_score": 61,
-      "explanation": "importance 15; freshness 95.61; urgency 6/10",
+      "headline": "Gunman kills one, wounds five in shooting in central Israel",
+      "story_id": "story_000354",
+      "identity": "story:story_000354",
+      "from_position": 1,
+      "to_position": 13,
+      "score": 45,
+      "selection_score": 45,
+      "explanation": "importance 28; freshness 0.0; urgency 8/10",
       "enforced": false
     },
     {
       "action": "recommend_demote_from_top_deck",
-      "headline": "Paraguay formally charges ousted president Santiago Peña over bank collapse",
+      "headline": "Paraguay formally charges ousted president Santiago Peña with breach of trust over Ueno Bank collapse",
       "story_id": "story_000251",
       "identity": "story:story_000251",
       "from_position": 3,
-      "to_position": 13,
-      "score": 53,
-      "selection_score": 53,
-      "explanation": "importance 5; freshness 89.87; urgency 7/10",
-      "enforced": false
-    },
-    {
-      "action": "recommend_demote_from_top_deck",
-      "headline": "US offers $20 million reward for information on Iran's nuclear program",
-      "story_id": "story_000141",
-      "identity": "story:story_000141",
-      "from_position": 4,
       "to_position": 14,
-      "score": 35,
-      "selection_score": 35,
-      "explanation": "importance 0; freshness 0.0; urgency 7/10",
-      "enforced": false
-    },
-    {
-      "action": "recommend_promote_to_top_deck",
-      "headline": "Microsoft researcher John Langford exits, declares AI Frontiers group finished",
-      "story_id": "story_000334",
-      "identity": "story:story_000334",
-      "from_position": 21,
-      "to_position": 12,
-      "score": 63,
-      "selection_score": 63.0,
-      "explanation": "importance 45; freshness 85.96; urgency 5/10",
+      "score": 39,
+      "selection_score": 39,
+      "explanation": "importance 5; freshness 65.08; urgency 3/10",
       "enforced": false
     },
     {
@@ -299,38 +279,62 @@
       "headline": "Secret Service arrests man near White House with guns who said voices told him to kill Trump",
       "story_id": "story_000249",
       "identity": "story:story_000249",
-      "from_position": 11,
-      "to_position": 20,
-      "score": 58,
-      "selection_score": 58,
-      "explanation": "importance 47; freshness 66.43; urgency 3/10",
+      "from_position": 8,
+      "to_position": 17,
+      "score": 57,
+      "selection_score": 57,
+      "explanation": "importance 47; freshness 65.08; urgency 3/10",
       "enforced": false
     },
     {
       "action": "recommend_demote_from_top_deck",
-      "headline": "Israel's president tasks opposition leader Eisenkot with forming government",
-      "story_id": "story_000329",
-      "identity": "story:story_000329",
-      "from_position": 10,
-      "to_position": 19,
-      "score": 56,
-      "selection_score": 56,
-      "explanation": "importance 25; freshness 94.94; urgency 4/10",
+      "headline": "Wisconsin state trooper detained by ICE released under supervision after intervention by DHS secretary",
+      "story_id": "story_000324",
+      "identity": "story:story_000324",
+      "from_position": 7,
+      "to_position": 16,
+      "score": 55,
+      "selection_score": 55,
+      "explanation": "importance 15; freshness 98.65; urgency 3/10",
+      "enforced": false
+    },
+    {
+      "action": "recommend_demote_from_top_deck",
+      "headline": "Norris takes pole in wet Brazilian qualifying, hopes for rain in Sunday's race",
+      "story_id": "story_000327",
+      "identity": "story:story_000327",
+      "from_position": 6,
+      "to_position": 15,
+      "score": 53,
+      "selection_score": 53,
+      "explanation": "importance 0; freshness 96.19; urgency 7/10",
+      "enforced": false
+    },
+    {
+      "action": "recommend_demote_from_top_deck",
+      "headline": "Hamilton and Verstappen to start from back of grid at São Paulo Grand Prix",
+      "story_id": "story_000291",
+      "identity": "story:story_000291",
+      "from_position": 9,
+      "to_position": 18,
+      "score": 43,
+      "selection_score": 43,
+      "explanation": "importance 0; freshness 86.15; urgency 3/10",
       "enforced": false
     }
   ],
   "items": [
     {
-      "current_position": 6,
+      "current_position": 5,
       "recommended_position": 1,
-      "first_placement_position": 6,
-      "headline": "Six killed in shooting in Krakow, Poland; British national among victims",
+      "first_placement_position": 5,
+      "headline": "Six killed in shooting in Krakow, Poland; British citizen among dead",
       "category_key": "us",
-      "slug": "",
+      "slug": "2026-11-08-six-killed-in-shooting-in-krakow-poland-british-citizen-among-dead",
       "story_id": "story_000325",
-      "score": 80,
+      "score": 76,
       "score_breakdown": {
-        "score": 80,
+        "score": 76,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 68,
         "importance_basis": "persistent_story_importance",
@@ -356,15 +360,15 @@
             "points": 10
           }
         ],
-        "freshness": 99.26,
-        "urgency": 7,
+        "freshness": 99.99,
+        "urgency": 5,
         "relevance": 88,
         "regions": [],
         "source_trust": 94,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 0.45,
-        "timestamp_basis": "registry:latest_timeline",
+        "age_hours": 0.0,
+        "timestamp_basis": "archive:first_published",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
       },
@@ -387,283 +391,19 @@
       "custom": false,
       "position_locked": false,
       "position_lock_reason": "",
-      "selection_score": 80.0,
+      "selection_score": 76.0,
       "category_saturation_penalty": 0.0,
       "region_saturation_penalty": 0.0,
       "diversity_penalty": 0.0,
-      "selection_reason": "importance 68; freshness 99.26; urgency 7/10"
+      "selection_reason": "importance 68; freshness 99.99; urgency 5/10"
     },
     {
-      "current_position": 19,
+      "current_position": 33,
       "recommended_position": 2,
-      "first_placement_position": 19,
-      "headline": "AI tools are enabling automated hacking at scale, upending the cybersecurity industry",
-      "category_key": "tech",
-      "slug": "",
-      "story_id": "story_000332",
-      "score": 78,
-      "score_breakdown": {
-        "score": 78,
-        "basis": "homepage_editorial_shadow_v2",
-        "importance": 50,
-        "importance_basis": "persistent_story_importance",
-        "importance_reasons": [
-          {
-            "code": "election",
-            "label": "Major election/political consequence",
-            "points": 25
-          },
-          {
-            "code": "public_safety",
-            "label": "Public-safety event",
-            "points": 10
-          },
-          {
-            "code": "national_scope",
-            "label": "Nationwide U.S. scope",
-            "points": 15
-          }
-        ],
-        "freshness": 99.98,
-        "urgency": 8,
-        "relevance": 100,
-        "regions": [],
-        "source_trust": 89,
-        "breaking_bonus": 0.0,
-        "material_update_bonus": 0.0,
-        "age_hours": 0.01,
-        "timestamp_basis": "registry:latest_timeline",
-        "deck_eligible": true,
-        "eligibility_reason": "fresh_window"
-      },
-      "deck_eligible": true,
-      "eligibility_reason": "fresh_window",
-      "match_basis": "persistent_story_id+source_url",
-      "identity_confidence": "high",
-      "identity_evidence": [
-        "source_url"
-      ],
-      "identity_warning": "",
-      "identity": "story:story_000332",
-      "identity_basis": "persistent_story_id",
-      "placement_count": 1,
-      "placement_categories": [
-        "tech"
-      ],
-      "pinned": false,
-      "pin_position": null,
-      "custom": false,
-      "position_locked": false,
-      "position_lock_reason": "",
-      "selection_score": 78.0,
-      "category_saturation_penalty": 0.0,
-      "region_saturation_penalty": 0.0,
-      "diversity_penalty": 0.0,
-      "selection_reason": "importance 50; freshness 99.98; urgency 8/10"
-    },
-    {
-      "current_position": 1,
-      "recommended_position": 3,
-      "first_placement_position": 1,
-      "headline": "Gunman kills six in attack on Krakow's main square, three more bodies found at his home",
-      "category_key": "world",
-      "slug": "",
-      "story_id": "story_000322",
-      "score": 75,
-      "score_breakdown": {
-        "score": 75,
-        "basis": "homepage_editorial_shadow_v2",
-        "importance": 43,
-        "importance_basis": "persistent_story_importance",
-        "importance_reasons": [
-          {
-            "code": "public_safety",
-            "label": "Public-safety event",
-            "points": 10
-          },
-          {
-            "code": "multiple_deaths",
-            "label": "Multiple deaths reported",
-            "points": 18
-          },
-          {
-            "code": "national_scope",
-            "label": "Nationwide U.S. scope",
-            "points": 15
-          }
-        ],
-        "freshness": 96.02,
-        "urgency": 8,
-        "relevance": 100,
-        "regions": [],
-        "source_trust": 94,
-        "breaking_bonus": 0.0,
-        "material_update_bonus": 0.0,
-        "age_hours": 2.39,
-        "timestamp_basis": "registry:latest_timeline",
-        "deck_eligible": true,
-        "eligibility_reason": "fresh_window"
-      },
-      "deck_eligible": true,
-      "eligibility_reason": "fresh_window",
-      "match_basis": "persistent_story_id+source_url",
-      "identity_confidence": "high",
-      "identity_evidence": [
-        "source_url"
-      ],
-      "identity_warning": "",
-      "identity": "story:story_000322",
-      "identity_basis": "persistent_story_id",
-      "placement_count": 1,
-      "placement_categories": [
-        "world"
-      ],
-      "pinned": false,
-      "pin_position": null,
-      "custom": false,
-      "position_locked": false,
-      "position_lock_reason": "",
-      "selection_score": 75.0,
-      "category_saturation_penalty": 0.0,
-      "region_saturation_penalty": 0.0,
-      "diversity_penalty": 0.0,
-      "selection_reason": "importance 43; freshness 96.02; urgency 8/10"
-    },
-    {
-      "current_position": 2,
-      "recommended_position": 4,
-      "first_placement_position": 2,
-      "headline": "Israel's president taps Gadi Eisenkot to form next government",
-      "category_key": "world",
-      "slug": "",
-      "story_id": "story_000323",
-      "score": 73,
-      "score_breakdown": {
-        "score": 73,
-        "basis": "homepage_editorial_shadow_v2",
-        "importance": 55,
-        "importance_basis": "persistent_story_importance",
-        "importance_reasons": [
-          {
-            "code": "election",
-            "label": "Major election/political consequence",
-            "points": 25
-          },
-          {
-            "code": "war_diplomacy",
-            "label": "War, diplomacy or national-security consequence",
-            "points": 30
-          }
-        ],
-        "freshness": 96.6,
-        "urgency": 8,
-        "relevance": 72,
-        "regions": [],
-        "source_trust": 55,
-        "breaking_bonus": 0.0,
-        "material_update_bonus": 0.0,
-        "age_hours": 2.04,
-        "timestamp_basis": "registry:latest_timeline",
-        "deck_eligible": true,
-        "eligibility_reason": "fresh_window"
-      },
-      "deck_eligible": true,
-      "eligibility_reason": "fresh_window",
-      "match_basis": "persistent_story_id+source_url",
-      "identity_confidence": "high",
-      "identity_evidence": [
-        "source_url"
-      ],
-      "identity_warning": "",
-      "identity": "story:story_000323",
-      "identity_basis": "persistent_story_id",
-      "placement_count": 1,
-      "placement_categories": [
-        "world"
-      ],
-      "pinned": false,
-      "pin_position": null,
-      "custom": false,
-      "position_locked": false,
-      "position_lock_reason": "",
-      "selection_score": 73.0,
-      "category_saturation_penalty": 0.0,
-      "region_saturation_penalty": 0.0,
-      "diversity_penalty": 0.0,
-      "selection_reason": "importance 55; freshness 96.6; urgency 8/10"
-    },
-    {
-      "current_position": 41,
-      "recommended_position": 5,
-      "first_placement_position": 45,
-      "headline": "Congress demands answers on Nvidia CEO's reported ties to alleged Chinese spy",
-      "category_key": "politics",
-      "slug": "",
-      "story_id": "story_000352",
-      "score": 73,
-      "score_breakdown": {
-        "score": 73,
-        "basis": "homepage_editorial_shadow_v2",
-        "importance": 47,
-        "importance_basis": "persistent_story_importance",
-        "importance_reasons": [
-          {
-            "code": "federal_action",
-            "label": "Federal/national government action",
-            "points": 32
-          },
-          {
-            "code": "national_scope",
-            "label": "Nationwide U.S. scope",
-            "points": 15
-          }
-        ],
-        "freshness": 92.9,
-        "urgency": 7,
-        "relevance": 100,
-        "regions": [
-          "New York"
-        ],
-        "source_trust": 90,
-        "breaking_bonus": 0.0,
-        "material_update_bonus": 0.0,
-        "age_hours": 4.26,
-        "timestamp_basis": "registry:latest_timeline",
-        "deck_eligible": true,
-        "eligibility_reason": "fresh_window"
-      },
-      "deck_eligible": true,
-      "eligibility_reason": "fresh_window",
-      "match_basis": "persistent_story_id+source_url",
-      "identity_confidence": "high",
-      "identity_evidence": [
-        "source_url"
-      ],
-      "identity_warning": "",
-      "identity": "story:story_000352",
-      "identity_basis": "persistent_story_id",
-      "placement_count": 1,
-      "placement_categories": [
-        "politics"
-      ],
-      "pinned": false,
-      "pin_position": null,
-      "custom": false,
-      "position_locked": false,
-      "position_lock_reason": "",
-      "selection_score": 73.0,
-      "category_saturation_penalty": 0.0,
-      "region_saturation_penalty": 0.0,
-      "diversity_penalty": 0.0,
-      "selection_reason": "importance 47; freshness 92.9; urgency 7/10"
-    },
-    {
-      "current_position": 34,
-      "recommended_position": 6,
-      "first_placement_position": 37,
-      "headline": "Sylvester Stallone says rivalry with Arnold Schwarzenegger ended when Schwarzenegger ran for California governor",
+      "first_placement_position": 34,
+      "headline": "Sylvester Stallone says his 20-year rivalry with Arnold Schwarzenegger ended when Schwarzenegger ran for California governor",
       "category_key": "entertainment",
-      "slug": "",
+      "slug": "2026-11-08-sylvester-stallone-says-his-20-year-rivalry-with-arnold-schwarzenegger-ended-whe",
       "story_id": "story_000345",
       "score": 72,
       "score_breakdown": {
@@ -688,7 +428,7 @@
             "points": 10
           }
         ],
-        "freshness": 98.7,
+        "freshness": 99.99,
         "urgency": 4,
         "relevance": 82,
         "regions": [
@@ -697,8 +437,8 @@
         "source_trust": 90,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 0.78,
-        "timestamp_basis": "registry:latest_timeline",
+        "age_hours": 0.0,
+        "timestamp_basis": "archive:first_published",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
       },
@@ -725,52 +465,42 @@
       "category_saturation_penalty": 0.0,
       "region_saturation_penalty": 0.0,
       "diversity_penalty": 0.0,
-      "selection_reason": "importance 65; freshness 98.7; urgency 4/10"
+      "selection_reason": "importance 65; freshness 99.99; urgency 4/10"
     },
     {
-      "current_position": 38,
-      "recommended_position": 7,
-      "first_placement_position": 41,
-      "headline": "Papua New Guinea's most expensive film wraps after 40-day shoot",
-      "category_key": "entertainment",
+      "current_position": 2,
+      "recommended_position": 3,
+      "first_placement_position": 2,
+      "headline": "Israeli president tasks Eisenkot with forming government after inconclusive election",
+      "category_key": "world",
       "slug": "",
-      "story_id": "story_000349",
-      "score": 71,
+      "story_id": "story_000323",
+      "score": 70,
       "score_breakdown": {
-        "score": 71,
+        "score": 70,
         "basis": "homepage_editorial_shadow_v2",
-        "importance": 62,
+        "importance": 55,
         "importance_basis": "persistent_story_importance",
         "importance_reasons": [
+          {
+            "code": "election",
+            "label": "Major election/political consequence",
+            "points": 25
+          },
           {
             "code": "war_diplomacy",
             "label": "War, diplomacy or national-security consequence",
             "points": 30
-          },
-          {
-            "code": "public_safety",
-            "label": "Public-safety event",
-            "points": 10
-          },
-          {
-            "code": "cultural_sports",
-            "label": "Major sports/cultural event",
-            "points": 12
-          },
-          {
-            "code": "global_scope",
-            "label": "Major international consequence",
-            "points": 10
           }
         ],
-        "freshness": 97.68,
-        "urgency": 4,
-        "relevance": 85,
+        "freshness": 95.25,
+        "urgency": 7,
+        "relevance": 72,
         "regions": [],
-        "source_trust": 90,
+        "source_trust": 55,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 1.39,
+        "age_hours": 2.85,
         "timestamp_basis": "registry:latest_timeline",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -783,34 +513,233 @@
         "source_url"
       ],
       "identity_warning": "",
-      "identity": "story:story_000349",
+      "identity": "story:story_000323",
       "identity_basis": "persistent_story_id",
       "placement_count": 1,
       "placement_categories": [
-        "entertainment"
+        "world"
       ],
       "pinned": false,
       "pin_position": null,
       "custom": false,
       "position_locked": false,
       "position_lock_reason": "",
-      "selection_score": 71.0,
+      "selection_score": 70.0,
       "category_saturation_penalty": 0.0,
       "region_saturation_penalty": 0.0,
       "diversity_penalty": 0.0,
-      "selection_reason": "importance 62; freshness 97.68; urgency 4/10"
+      "selection_reason": "importance 55; freshness 95.25; urgency 7/10"
     },
     {
-      "current_position": 14,
-      "recommended_position": 8,
-      "first_placement_position": 14,
-      "headline": "Treasury moves to cut crypto exchange MEXC from U.S. financial system over alleged $16 billion in illicit transactions",
+      "current_position": 25,
+      "recommended_position": 4,
+      "first_placement_position": 26,
+      "headline": "No. 1 Miami faces No. 11 Notre Dame in top-15 college football showdown",
+      "category_key": "sports",
+      "slug": "",
+      "story_id": "story_000358",
+      "score": 69,
+      "score_breakdown": {
+        "score": 69,
+        "basis": "homepage_editorial_shadow_v2",
+        "importance": 40,
+        "importance_basis": "persistent_story_importance",
+        "importance_reasons": [
+          {
+            "code": "major_disaster",
+            "label": "Major disaster or emergency",
+            "points": 30
+          },
+          {
+            "code": "multistate_scope",
+            "label": "Multi-state U.S. scope",
+            "points": 10
+          }
+        ],
+        "freshness": 98.42,
+        "urgency": 6,
+        "relevance": 95,
+        "regions": [
+          "New York",
+          "Alabama"
+        ],
+        "source_trust": 89,
+        "breaking_bonus": 0.0,
+        "material_update_bonus": 0.0,
+        "age_hours": 0.95,
+        "timestamp_basis": "registry:latest_timeline",
+        "deck_eligible": true,
+        "eligibility_reason": "fresh_window"
+      },
+      "deck_eligible": true,
+      "eligibility_reason": "fresh_window",
+      "match_basis": "persistent_story_id+source_url",
+      "identity_confidence": "high",
+      "identity_evidence": [
+        "source_url"
+      ],
+      "identity_warning": "",
+      "identity": "story:story_000358",
+      "identity_basis": "persistent_story_id",
+      "placement_count": 1,
+      "placement_categories": [
+        "sports"
+      ],
+      "pinned": false,
+      "pin_position": null,
+      "custom": false,
+      "position_locked": false,
+      "position_lock_reason": "",
+      "selection_score": 69.0,
+      "category_saturation_penalty": 0.0,
+      "region_saturation_penalty": 0.0,
+      "diversity_penalty": 0.0,
+      "selection_reason": "importance 40; freshness 98.42; urgency 6/10"
+    },
+    {
+      "current_position": 22,
+      "recommended_position": 5,
+      "first_placement_position": 23,
+      "headline": "AI tools are enabling automated hacking at scale, upending the cybersecurity industry",
+      "category_key": "tech",
+      "slug": "2026-11-08-ai-tools-are-enabling-automated-hacking-at-scale-upending-the-cybersecurity-indu",
+      "story_id": "story_000332",
+      "score": 66,
+      "score_breakdown": {
+        "score": 66,
+        "basis": "homepage_editorial_shadow_v2",
+        "importance": 50,
+        "importance_basis": "persistent_story_importance",
+        "importance_reasons": [
+          {
+            "code": "election",
+            "label": "Major election/political consequence",
+            "points": 25
+          },
+          {
+            "code": "public_safety",
+            "label": "Public-safety event",
+            "points": 10
+          },
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "freshness": 98.65,
+        "urgency": 3,
+        "relevance": 100,
+        "regions": [],
+        "source_trust": 89,
+        "breaking_bonus": 0.0,
+        "material_update_bonus": 0.0,
+        "age_hours": 0.81,
+        "timestamp_basis": "archive:first_published",
+        "deck_eligible": true,
+        "eligibility_reason": "fresh_window"
+      },
+      "deck_eligible": true,
+      "eligibility_reason": "fresh_window",
+      "match_basis": "persistent_story_id+source_url",
+      "identity_confidence": "high",
+      "identity_evidence": [
+        "source_url"
+      ],
+      "identity_warning": "",
+      "identity": "story:story_000332",
+      "identity_basis": "persistent_story_id",
+      "placement_count": 1,
+      "placement_categories": [
+        "tech"
+      ],
+      "pinned": false,
+      "pin_position": null,
+      "custom": false,
+      "position_locked": false,
+      "position_lock_reason": "",
+      "selection_score": 66.0,
+      "category_saturation_penalty": 0.0,
+      "region_saturation_penalty": 0.0,
+      "diversity_penalty": 0.0,
+      "selection_reason": "importance 50; freshness 98.65; urgency 3/10"
+    },
+    {
+      "current_position": 42,
+      "recommended_position": 6,
+      "first_placement_position": 44,
+      "headline": "Congress demands answers on Nvidia CEO's reported ties to alleged Chinese spy",
+      "category_key": "politics",
+      "slug": "2026-11-08-congress-demands-answers-on-nvidia-ceos-reported-ties-to-alleged-chinese-spy",
+      "story_id": "story_000352",
+      "score": 65,
+      "score_breakdown": {
+        "score": 65,
+        "basis": "homepage_editorial_shadow_v2",
+        "importance": 47,
+        "importance_basis": "persistent_story_importance",
+        "importance_reasons": [
+          {
+            "code": "federal_action",
+            "label": "Federal/national government action",
+            "points": 32
+          },
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "freshness": 98.65,
+        "urgency": 3,
+        "relevance": 100,
+        "regions": [
+          "New York"
+        ],
+        "source_trust": 90,
+        "breaking_bonus": 0.0,
+        "material_update_bonus": 0.0,
+        "age_hours": 0.81,
+        "timestamp_basis": "archive:first_published",
+        "deck_eligible": true,
+        "eligibility_reason": "fresh_window"
+      },
+      "deck_eligible": true,
+      "eligibility_reason": "fresh_window",
+      "match_basis": "persistent_story_id+source_url",
+      "identity_confidence": "high",
+      "identity_evidence": [
+        "source_url"
+      ],
+      "identity_warning": "",
+      "identity": "story:story_000352",
+      "identity_basis": "persistent_story_id",
+      "placement_count": 1,
+      "placement_categories": [
+        "politics"
+      ],
+      "pinned": false,
+      "pin_position": null,
+      "custom": false,
+      "position_locked": false,
+      "position_lock_reason": "",
+      "selection_score": 65.0,
+      "category_saturation_penalty": 0.0,
+      "region_saturation_penalty": 0.0,
+      "diversity_penalty": 0.0,
+      "selection_reason": "importance 47; freshness 98.65; urgency 3/10"
+    },
+    {
+      "current_position": 13,
+      "recommended_position": 7,
+      "first_placement_position": 13,
+      "headline": "Treasury moves to cut off crypto exchange MEXC over alleged $16 billion in illicit transactions",
       "category_key": "business",
       "slug": "",
       "story_id": "story_000330",
-      "score": 68,
+      "score": 65,
       "score_breakdown": {
-        "score": 68,
+        "score": 65,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 45,
         "importance_basis": "persistent_story_importance",
@@ -826,14 +755,14 @@
             "points": 15
           }
         ],
-        "freshness": 87.07,
-        "urgency": 7,
+        "freshness": 85.73,
+        "urgency": 6,
         "relevance": 100,
         "regions": [],
         "source_trust": 55,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 7.76,
+        "age_hours": 8.56,
         "timestamp_basis": "registry:latest_timeline",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -857,23 +786,159 @@
       "custom": false,
       "position_locked": false,
       "position_lock_reason": "",
-      "selection_score": 68.0,
+      "selection_score": 65.0,
       "category_saturation_penalty": 0.0,
       "region_saturation_penalty": 0.0,
       "diversity_penalty": 0.0,
-      "selection_reason": "importance 45; freshness 87.07; urgency 7/10"
+      "selection_reason": "importance 45; freshness 85.73; urgency 6/10"
     },
     {
-      "current_position": 16,
-      "recommended_position": 9,
-      "first_placement_position": 16,
-      "headline": "U.S. intelligence memo says China recruited Megaspeed executive to spy on Nvidia CEO",
-      "category_key": "business",
-      "slug": "",
-      "story_id": "story_000331",
+      "current_position": 4,
+      "recommended_position": 8,
+      "first_placement_position": 4,
+      "headline": "Gunman kills six in attack on Krakow's main square, three more bodies found at his home",
+      "category_key": "world",
+      "slug": "2026-11-08-gunman-kills-six-in-attack-on-krakows-main-square-three-more-bodies-found-at-his",
+      "story_id": "story_000322",
       "score": 64,
       "score_breakdown": {
         "score": 64,
+        "basis": "homepage_editorial_shadow_v2",
+        "importance": 43,
+        "importance_basis": "persistent_story_importance",
+        "importance_reasons": [
+          {
+            "code": "public_safety",
+            "label": "Public-safety event",
+            "points": 10
+          },
+          {
+            "code": "multiple_deaths",
+            "label": "Multiple deaths reported",
+            "points": 18
+          },
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "freshness": 98.65,
+        "urgency": 3,
+        "relevance": 100,
+        "regions": [],
+        "source_trust": 94,
+        "breaking_bonus": 0.0,
+        "material_update_bonus": 0.0,
+        "age_hours": 0.81,
+        "timestamp_basis": "archive:first_published",
+        "deck_eligible": true,
+        "eligibility_reason": "fresh_window"
+      },
+      "deck_eligible": true,
+      "eligibility_reason": "fresh_window",
+      "match_basis": "persistent_story_id+source_url",
+      "identity_confidence": "high",
+      "identity_evidence": [
+        "source_url"
+      ],
+      "identity_warning": "",
+      "identity": "story:story_000322",
+      "identity_basis": "persistent_story_id",
+      "placement_count": 1,
+      "placement_categories": [
+        "world"
+      ],
+      "pinned": false,
+      "pin_position": null,
+      "custom": false,
+      "position_locked": false,
+      "position_lock_reason": "",
+      "selection_score": 64.0,
+      "category_saturation_penalty": 0.0,
+      "region_saturation_penalty": 0.0,
+      "diversity_penalty": 0.0,
+      "selection_reason": "importance 43; freshness 98.65; urgency 3/10"
+    },
+    {
+      "current_position": 11,
+      "recommended_position": 9,
+      "first_placement_position": 11,
+      "headline": "Tech stocks fall below S&P 500 valuation for first time since 2017",
+      "category_key": "business",
+      "slug": "",
+      "story_id": "story_000355",
+      "score": 64,
+      "score_breakdown": {
+        "score": 64,
+        "basis": "homepage_editorial_shadow_v2",
+        "importance": 56,
+        "importance_basis": "persistent_story_importance",
+        "importance_reasons": [
+          {
+            "code": "macroeconomy",
+            "label": "Broad economic consequence",
+            "points": 28
+          },
+          {
+            "code": "business_tech",
+            "label": "Major business/technology development",
+            "points": 18
+          },
+          {
+            "code": "public_safety",
+            "label": "Public-safety event",
+            "points": 10
+          }
+        ],
+        "freshness": 78.08,
+        "urgency": 7,
+        "relevance": 60,
+        "regions": [],
+        "source_trust": 45,
+        "breaking_bonus": 0.0,
+        "material_update_bonus": 0.0,
+        "age_hours": 13.15,
+        "timestamp_basis": "registry:latest_timeline",
+        "deck_eligible": true,
+        "eligibility_reason": "fresh_window"
+      },
+      "deck_eligible": true,
+      "eligibility_reason": "fresh_window",
+      "match_basis": "persistent_story_id+source_url",
+      "identity_confidence": "high",
+      "identity_evidence": [
+        "source_url"
+      ],
+      "identity_warning": "",
+      "identity": "story:story_000355",
+      "identity_basis": "persistent_story_id",
+      "placement_count": 1,
+      "placement_categories": [
+        "business"
+      ],
+      "pinned": false,
+      "pin_position": null,
+      "custom": false,
+      "position_locked": false,
+      "position_lock_reason": "",
+      "selection_score": 64.0,
+      "category_saturation_penalty": 0.0,
+      "region_saturation_penalty": 0.0,
+      "diversity_penalty": 0.0,
+      "selection_reason": "importance 56; freshness 78.08; urgency 7/10"
+    },
+    {
+      "current_position": 16,
+      "recommended_position": 10,
+      "first_placement_position": 17,
+      "headline": "US intelligence memo alleges Chinese state security recruited tech executive to spy on Nvidia CEO",
+      "category_key": "tech",
+      "slug": "",
+      "story_id": "story_000331",
+      "score": 63,
+      "score_breakdown": {
+        "score": 63,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 20,
         "importance_basis": "persistent_story_importance",
@@ -889,7 +954,7 @@
             "points": 15
           }
         ],
-        "freshness": 93.2,
+        "freshness": 91.85,
         "urgency": 7,
         "relevance": 100,
         "regions": [
@@ -898,7 +963,7 @@
         "source_trust": 87,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 4.08,
+        "age_hours": 4.89,
         "timestamp_basis": "registry:latest_timeline",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -913,9 +978,8 @@
       "identity_warning": "",
       "identity": "story:story_000331",
       "identity_basis": "persistent_story_id",
-      "placement_count": 2,
+      "placement_count": 1,
       "placement_categories": [
-        "business",
         "tech"
       ],
       "pinned": false,
@@ -923,84 +987,16 @@
       "custom": false,
       "position_locked": false,
       "position_lock_reason": "",
-      "selection_score": 64.0,
+      "selection_score": 63.0,
       "category_saturation_penalty": 0.0,
       "region_saturation_penalty": 0.0,
       "diversity_penalty": 0.0,
-      "selection_reason": "importance 20; freshness 93.2; urgency 7/10"
-    },
-    {
-      "current_position": 35,
-      "recommended_position": 10,
-      "first_placement_position": 38,
-      "headline": "AI filmmaking could surpass 35mm costs as token fees rise, Korean producers warn",
-      "category_key": "entertainment",
-      "slug": "",
-      "story_id": "story_000346",
-      "score": 69,
-      "score_breakdown": {
-        "score": 69,
-        "basis": "homepage_editorial_shadow_v2",
-        "importance": 50,
-        "importance_basis": "persistent_story_importance",
-        "importance_reasons": [
-          {
-            "code": "war_diplomacy",
-            "label": "War, diplomacy or national-security consequence",
-            "points": 30
-          },
-          {
-            "code": "public_safety",
-            "label": "Public-safety event",
-            "points": 10
-          },
-          {
-            "code": "global_scope",
-            "label": "Major international consequence",
-            "points": 10
-          }
-        ],
-        "freshness": 98.49,
-        "urgency": 5,
-        "relevance": 88,
-        "regions": [],
-        "source_trust": 90,
-        "breaking_bonus": 0.0,
-        "material_update_bonus": 0.0,
-        "age_hours": 0.9,
-        "timestamp_basis": "registry:latest_timeline",
-        "deck_eligible": true,
-        "eligibility_reason": "fresh_window"
-      },
-      "deck_eligible": true,
-      "eligibility_reason": "fresh_window",
-      "match_basis": "persistent_story_id+source_url",
-      "identity_confidence": "high",
-      "identity_evidence": [
-        "source_url"
-      ],
-      "identity_warning": "",
-      "identity": "story:story_000346",
-      "identity_basis": "persistent_story_id",
-      "placement_count": 1,
-      "placement_categories": [
-        "entertainment"
-      ],
-      "pinned": false,
-      "pin_position": null,
-      "custom": false,
-      "position_locked": false,
-      "position_lock_reason": "",
-      "selection_score": 63.0,
-      "category_saturation_penalty": 6.0,
-      "region_saturation_penalty": 0.0,
-      "diversity_penalty": 6.0,
-      "selection_reason": "importance 50; freshness 98.49; urgency 5/10; -6 category saturation"
+      "selection_reason": "importance 20; freshness 91.85; urgency 7/10"
     },
     {
       "current_position": 32,
       "recommended_position": 11,
-      "first_placement_position": 35,
+      "first_placement_position": 33,
       "headline": "UConn beats Michigan 85-77 in rare opening-week rematch of last season's NCAA title game",
       "category_key": "sports",
       "slug": "2026-11-07-uconn-beats-michigan-85-77-in-rare-opening-week-rematch-of-last-seasons-ncaa-tit",
@@ -1028,7 +1024,7 @@
             "points": 10
           }
         ],
-        "freshness": 87.49,
+        "freshness": 86.15,
         "urgency": 3,
         "relevance": 95,
         "regions": [
@@ -1042,7 +1038,7 @@
         "source_trust": 89,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 7.5,
+        "age_hours": 8.31,
         "timestamp_basis": "archive:first_published",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -1070,21 +1066,21 @@
       "category_saturation_penalty": 0.0,
       "region_saturation_penalty": 0.0,
       "diversity_penalty": 0.0,
-      "selection_reason": "importance 50; freshness 87.49; urgency 3/10"
+      "selection_reason": "importance 50; freshness 86.15; urgency 3/10"
     },
     {
-      "current_position": 21,
+      "current_position": 39,
       "recommended_position": 12,
-      "first_placement_position": 23,
-      "headline": "Microsoft researcher John Langford exits, declares AI Frontiers group finished",
-      "category_key": "tech",
-      "slug": "",
-      "story_id": "story_000334",
-      "score": 63,
+      "first_placement_position": 41,
+      "headline": "Godzilla Minus Zero heads toward $32 million opening weekend, surpassing predecessor's total domestic run",
+      "category_key": "entertainment",
+      "slug": "2026-11-08-godzilla-minus-zero-heads-toward-32-million-opening-weekend-surpassing-predecess",
+      "story_id": "story_000344",
+      "score": 58,
       "score_breakdown": {
-        "score": 63,
+        "score": 58,
         "basis": "homepage_editorial_shadow_v2",
-        "importance": 45,
+        "importance": 40,
         "importance_basis": "persistent_story_importance",
         "importance_reasons": [
           {
@@ -1093,22 +1089,20 @@
             "points": 30
           },
           {
-            "code": "national_scope",
-            "label": "Nationwide U.S. scope",
-            "points": 15
+            "code": "global_scope",
+            "label": "Major international consequence",
+            "points": 10
           }
         ],
-        "freshness": 85.96,
-        "urgency": 5,
-        "relevance": 100,
-        "regions": [
-          "New York"
-        ],
+        "freshness": 98.65,
+        "urgency": 3,
+        "relevance": 85,
+        "regions": [],
         "source_trust": 55,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 8.43,
-        "timestamp_basis": "registry:latest_timeline",
+        "age_hours": 0.81,
+        "timestamp_basis": "archive:first_published",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
       },
@@ -1120,34 +1114,94 @@
         "source_url"
       ],
       "identity_warning": "",
-      "identity": "story:story_000334",
+      "identity": "story:story_000344",
       "identity_basis": "persistent_story_id",
       "placement_count": 1,
       "placement_categories": [
-        "tech"
+        "entertainment"
       ],
       "pinned": false,
       "pin_position": null,
       "custom": false,
       "position_locked": false,
       "position_lock_reason": "",
-      "selection_score": 63.0,
+      "selection_score": 58.0,
       "category_saturation_penalty": 0.0,
       "region_saturation_penalty": 0.0,
       "diversity_penalty": 0.0,
-      "selection_reason": "importance 45; freshness 85.96; urgency 5/10"
+      "selection_reason": "importance 40; freshness 98.65; urgency 3/10"
+    },
+    {
+      "current_position": 1,
+      "recommended_position": 13,
+      "first_placement_position": 1,
+      "headline": "Gunman kills one, wounds five in shooting in central Israel",
+      "category_key": "world",
+      "slug": "2026-06-07-gunman-kills-one-and-wounds-several-in-central-israel-shooting",
+      "story_id": "story_000354",
+      "score": 45,
+      "score_breakdown": {
+        "score": 45,
+        "basis": "homepage_editorial_shadow_v2",
+        "importance": 28,
+        "importance_basis": "persistent_story_importance",
+        "importance_reasons": [
+          {
+            "code": "public_safety",
+            "label": "Public-safety event",
+            "points": 10
+          },
+          {
+            "code": "multiple_deaths",
+            "label": "Multiple deaths reported",
+            "points": 18
+          }
+        ],
+        "freshness": 0.0,
+        "urgency": 8,
+        "relevance": 82,
+        "regions": [
+          "New York"
+        ],
+        "source_trust": 95,
+        "breaking_bonus": 0.0,
+        "material_update_bonus": 0.0,
+        "age_hours": 3698.18,
+        "timestamp_basis": "archive:date",
+        "deck_eligible": false,
+        "eligibility_reason": "older_than_60_hours"
+      },
+      "deck_eligible": false,
+      "eligibility_reason": "older_than_60_hours",
+      "match_basis": "persistent_story_id+source_url",
+      "identity_confidence": "high",
+      "identity_evidence": [
+        "source_url"
+      ],
+      "identity_warning": "",
+      "identity": "story:story_000354",
+      "identity_basis": "persistent_story_id",
+      "placement_count": 1,
+      "placement_categories": [
+        "world"
+      ],
+      "pinned": false,
+      "pin_position": null,
+      "custom": false,
+      "position_locked": false,
+      "position_lock_reason": ""
     },
     {
       "current_position": 3,
-      "recommended_position": 13,
+      "recommended_position": 14,
       "first_placement_position": 3,
-      "headline": "Paraguay formally charges ousted president Santiago Peña over bank collapse",
+      "headline": "Paraguay formally charges ousted president Santiago Peña with breach of trust over Ueno Bank collapse",
       "category_key": "world",
-      "slug": "",
+      "slug": "2026-11-07-paraguays-president-impeached-arrested-after-bank-collapse-left-millions-unable",
       "story_id": "story_000251",
-      "score": 53,
+      "score": 39,
       "score_breakdown": {
-        "score": 53,
+        "score": 39,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 5,
         "importance_basis": "persistent_story_importance",
@@ -1158,15 +1212,15 @@
             "points": 5
           }
         ],
-        "freshness": 89.87,
-        "urgency": 7,
+        "freshness": 65.08,
+        "urgency": 3,
         "relevance": 60,
         "regions": [],
         "source_trust": 94,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 6.08,
-        "timestamp_basis": "registry:latest_timeline",
+        "age_hours": 20.95,
+        "timestamp_basis": "archive:first_published",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
       },
@@ -1191,201 +1245,28 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 4,
-      "recommended_position": 14,
-      "first_placement_position": 4,
-      "headline": "US offers $20 million reward for information on Iran's nuclear program",
-      "category_key": "world",
-      "slug": "",
-      "story_id": "story_000141",
-      "score": 35,
-      "score_breakdown": {
-        "score": 35,
-        "basis": "homepage_editorial_shadow_v2",
-        "importance": 0,
-        "importance_basis": "persistent_score_breakdown",
-        "importance_reasons": [
-          {
-            "code": "archived",
-            "label": "Archived story",
-            "points": -40
-          }
-        ],
-        "freshness": 0.0,
-        "urgency": 7,
-        "relevance": 100,
-        "regions": [
-          "North Carolina",
-          "New Hampshire",
-          "Pennsylvania",
-          "Washington",
-          "Wisconsin",
-          "Kentucky",
-          "Maryland",
-          "Illinois",
-          "New York",
-          "Michigan",
-          "Florida",
-          "Georgia",
-          "Maine",
-          "Texas",
-          "Ohio"
-        ],
-        "source_trust": 94,
-        "breaking_bonus": 0.0,
-        "material_update_bonus": 0.0,
-        "age_hours": 1514.9,
-        "timestamp_basis": "registry:latest_timeline",
-        "deck_eligible": false,
-        "eligibility_reason": "older_than_60_hours"
-      },
-      "deck_eligible": false,
-      "eligibility_reason": "older_than_60_hours",
-      "match_basis": "persistent_story_id+source_url",
-      "identity_confidence": "high",
-      "identity_evidence": [
-        "source_url"
-      ],
-      "identity_warning": "",
-      "identity": "story:story_000141",
-      "identity_basis": "persistent_story_id",
-      "placement_count": 2,
-      "placement_categories": [
-        "world",
-        "politics"
-      ],
-      "pinned": false,
-      "pin_position": null,
-      "custom": false,
-      "position_locked": false,
-      "position_lock_reason": ""
-    },
-    {
-      "current_position": 5,
+      "current_position": 6,
       "recommended_position": 15,
-      "first_placement_position": 5,
-      "headline": "Wisconsin state trooper detained by ICE released under supervision after intervention by DHS secretary",
-      "category_key": "us",
-      "slug": "",
-      "story_id": "story_000324",
-      "score": 61,
-      "score_breakdown": {
-        "score": 61,
-        "basis": "homepage_editorial_shadow_v2",
-        "importance": 15,
-        "importance_basis": "persistent_story_importance",
-        "importance_reasons": [
-          {
-            "code": "national_scope",
-            "label": "Nationwide U.S. scope",
-            "points": 15
-          }
-        ],
-        "freshness": 95.61,
-        "urgency": 6,
-        "relevance": 100,
-        "regions": [
-          "New Mexico",
-          "Wisconsin"
-        ],
-        "source_trust": 91,
-        "breaking_bonus": 0.0,
-        "material_update_bonus": 0.0,
-        "age_hours": 2.63,
-        "timestamp_basis": "registry:latest_timeline",
-        "deck_eligible": true,
-        "eligibility_reason": "fresh_window"
-      },
-      "deck_eligible": true,
-      "eligibility_reason": "fresh_window",
-      "match_basis": "persistent_story_id+source_url",
-      "identity_confidence": "high",
-      "identity_evidence": [
-        "source_url"
-      ],
-      "identity_warning": "",
-      "identity": "story:story_000324",
-      "identity_basis": "persistent_story_id",
-      "placement_count": 1,
-      "placement_categories": [
-        "us"
-      ],
-      "pinned": false,
-      "pin_position": null,
-      "custom": false,
-      "position_locked": false,
-      "position_lock_reason": ""
-    },
-    {
-      "current_position": 7,
-      "recommended_position": 16,
-      "first_placement_position": 7,
-      "headline": "Actress Ambika Mod says glass ceiling for South Asian actors 'always getting higher'",
-      "category_key": "us",
-      "slug": "",
-      "story_id": "story_000326",
-      "score": 54,
-      "score_breakdown": {
-        "score": 54,
-        "basis": "homepage_editorial_shadow_v2",
-        "importance": 0,
-        "importance_basis": "persistent_score_breakdown",
-        "importance_reasons": [],
-        "freshness": 99.08,
-        "urgency": 7,
-        "relevance": 60,
-        "regions": [],
-        "source_trust": 94,
-        "breaking_bonus": 0.0,
-        "material_update_bonus": 0.0,
-        "age_hours": 0.55,
-        "timestamp_basis": "registry:latest_timeline",
-        "deck_eligible": true,
-        "eligibility_reason": "fresh_window"
-      },
-      "deck_eligible": true,
-      "eligibility_reason": "fresh_window",
-      "match_basis": "persistent_story_id+source_url",
-      "identity_confidence": "high",
-      "identity_evidence": [
-        "source_url"
-      ],
-      "identity_warning": "",
-      "identity": "story:story_000326",
-      "identity_basis": "persistent_story_id",
-      "placement_count": 1,
-      "placement_categories": [
-        "us"
-      ],
-      "pinned": false,
-      "pin_position": null,
-      "custom": false,
-      "position_locked": false,
-      "position_lock_reason": ""
-    },
-    {
-      "current_position": 8,
-      "recommended_position": 17,
-      "first_placement_position": 8,
-      "headline": "Norris takes pole in rain-delayed Brazilian Grand Prix qualifying amid dangerous conditions",
+      "first_placement_position": 6,
+      "headline": "Norris takes pole in wet Brazilian qualifying, hopes for rain in Sunday's race",
       "category_key": "us",
       "slug": "",
       "story_id": "story_000327",
-      "score": 49,
+      "score": 53,
       "score_breakdown": {
-        "score": 49,
+        "score": 53,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 0,
         "importance_basis": "persistent_score_breakdown",
         "importance_reasons": [],
-        "freshness": 97.54,
-        "urgency": 5,
+        "freshness": 96.19,
+        "urgency": 7,
         "relevance": 60,
         "regions": [],
         "source_trust": 94,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 1.48,
+        "age_hours": 2.29,
         "timestamp_basis": "registry:latest_timeline",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -1411,84 +1292,38 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 9,
-      "recommended_position": 18,
-      "first_placement_position": 9,
-      "headline": "Hutchinson beats Buatsi to win WBC light-heavyweight title",
+      "current_position": 7,
+      "recommended_position": 16,
+      "first_placement_position": 7,
+      "headline": "Wisconsin state trooper detained by ICE released under supervision after intervention by DHS secretary",
       "category_key": "us",
-      "slug": "",
-      "story_id": "story_000328",
-      "score": 49,
+      "slug": "2026-11-08-wisconsin-state-trooper-detained-by-ice-released-under-supervision-after-interve",
+      "story_id": "story_000324",
+      "score": 55,
       "score_breakdown": {
-        "score": 49,
+        "score": 55,
         "basis": "homepage_editorial_shadow_v2",
-        "importance": 0,
-        "importance_basis": "persistent_score_breakdown",
-        "importance_reasons": [],
-        "freshness": 96.78,
-        "urgency": 5,
-        "relevance": 60,
-        "regions": [],
-        "source_trust": 94,
-        "breaking_bonus": 0.0,
-        "material_update_bonus": 0.0,
-        "age_hours": 1.93,
-        "timestamp_basis": "registry:latest_timeline",
-        "deck_eligible": true,
-        "eligibility_reason": "fresh_window"
-      },
-      "deck_eligible": true,
-      "eligibility_reason": "fresh_window",
-      "match_basis": "persistent_story_id+source_url",
-      "identity_confidence": "high",
-      "identity_evidence": [
-        "source_url",
-        "exact_title"
-      ],
-      "identity_warning": "",
-      "identity": "story:story_000328",
-      "identity_basis": "persistent_story_id",
-      "placement_count": 2,
-      "placement_categories": [
-        "us",
-        "sports"
-      ],
-      "pinned": false,
-      "pin_position": null,
-      "custom": false,
-      "position_locked": false,
-      "position_lock_reason": ""
-    },
-    {
-      "current_position": 10,
-      "recommended_position": 19,
-      "first_placement_position": 10,
-      "headline": "Israel's president tasks opposition leader Eisenkot with forming government",
-      "category_key": "us",
-      "slug": "",
-      "story_id": "story_000329",
-      "score": 56,
-      "score_breakdown": {
-        "score": 56,
-        "basis": "homepage_editorial_shadow_v2",
-        "importance": 25,
+        "importance": 15,
         "importance_basis": "persistent_story_importance",
         "importance_reasons": [
           {
-            "code": "election",
-            "label": "Major election/political consequence",
-            "points": 25
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
           }
         ],
-        "freshness": 94.94,
-        "urgency": 4,
-        "relevance": 72,
-        "regions": [],
-        "source_trust": 94,
+        "freshness": 98.65,
+        "urgency": 3,
+        "relevance": 100,
+        "regions": [
+          "New Mexico",
+          "Wisconsin"
+        ],
+        "source_trust": 91,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 3.04,
-        "timestamp_basis": "registry:latest_timeline",
+        "age_hours": 0.81,
+        "timestamp_basis": "archive:first_published",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
       },
@@ -1497,11 +1332,10 @@
       "match_basis": "persistent_story_id+source_url",
       "identity_confidence": "high",
       "identity_evidence": [
-        "source_url",
-        "exact_title"
+        "source_url"
       ],
       "identity_warning": "",
-      "identity": "story:story_000329",
+      "identity": "story:story_000324",
       "identity_basis": "persistent_story_id",
       "placement_count": 1,
       "placement_categories": [
@@ -1514,16 +1348,16 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 11,
-      "recommended_position": 20,
-      "first_placement_position": 11,
+      "current_position": 8,
+      "recommended_position": 17,
+      "first_placement_position": 8,
       "headline": "Secret Service arrests man near White House with guns who said voices told him to kill Trump",
       "category_key": "us",
       "slug": "2026-11-07-secret-service-arrests-man-near-white-house-with-guns-who-said-voices-told-him-t",
       "story_id": "story_000249",
-      "score": 58,
+      "score": 57,
       "score_breakdown": {
-        "score": 58,
+        "score": 57,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 47,
         "importance_basis": "persistent_story_importance",
@@ -1539,7 +1373,7 @@
             "points": 15
           }
         ],
-        "freshness": 66.43,
+        "freshness": 65.08,
         "urgency": 3,
         "relevance": 100,
         "regions": [
@@ -1548,7 +1382,7 @@
         "source_trust": 91,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 20.14,
+        "age_hours": 20.95,
         "timestamp_basis": "archive:first_published",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -1574,28 +1408,28 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 12,
-      "recommended_position": 21,
-      "first_placement_position": 12,
+      "current_position": 9,
+      "recommended_position": 18,
+      "first_placement_position": 9,
       "headline": "Hamilton and Verstappen to start from back of grid at São Paulo Grand Prix",
       "category_key": "us",
       "slug": "2026-11-07-hamilton-and-verstappen-to-start-from-back-of-grid-at-sao-paulo-grand-prix",
       "story_id": "story_000291",
-      "score": 44,
+      "score": 43,
       "score_breakdown": {
-        "score": 44,
+        "score": 43,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 0,
         "importance_basis": "persistent_score_breakdown",
         "importance_reasons": [],
-        "freshness": 87.49,
+        "freshness": 86.15,
         "urgency": 3,
         "relevance": 72,
         "regions": [],
         "source_trust": 94,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 7.5,
+        "age_hours": 8.31,
         "timestamp_basis": "archive:first_published",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -1621,16 +1455,16 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 13,
-      "recommended_position": 22,
-      "first_placement_position": 13,
-      "headline": "Wall Street whipsawed after midterms as tech selloff pushes Nasdaq into correction",
+      "current_position": 10,
+      "recommended_position": 19,
+      "first_placement_position": 10,
+      "headline": "Texas Attorney General Ken Paxton enters Senate race",
       "category_key": "business",
-      "slug": "",
+      "slug": "2026-06-06-texas-attorney-general-ken-paxton-enters-senate-race",
       "story_id": "story_000112",
-      "score": 39,
+      "score": 37,
       "score_breakdown": {
-        "score": 39,
+        "score": 37,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 0,
         "importance_basis": "persistent_score_breakdown",
@@ -1642,7 +1476,7 @@
           }
         ],
         "freshness": 0.0,
-        "urgency": 9,
+        "urgency": 8,
         "relevance": 100,
         "regions": [
           "Texas"
@@ -1650,8 +1484,8 @@
         "source_trust": 92,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 1522.4,
-        "timestamp_basis": "registry:latest_timeline",
+        "age_hours": 3722.18,
+        "timestamp_basis": "archive:date",
         "deck_eligible": false,
         "eligibility_reason": "older_than_60_hours"
       },
@@ -1677,10 +1511,10 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 15,
-      "recommended_position": 23,
-      "first_placement_position": 15,
-      "headline": "Musk says SpaceX could buy legacy telecom carrier, use spectrum 'ten times more effectively'",
+      "current_position": 12,
+      "recommended_position": 20,
+      "first_placement_position": 12,
+      "headline": "Musk says SpaceX could buy legacy telecom carrier, move telecom stocks",
       "category_key": "business",
       "slug": "",
       "story_id": "story_000006",
@@ -1706,7 +1540,7 @@
         "source_trust": 95,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 1540.79,
+        "age_hours": 1541.6,
         "timestamp_basis": "registry:latest_timeline",
         "deck_eligible": false,
         "eligibility_reason": "older_than_60_hours"
@@ -1733,9 +1567,9 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 17,
-      "recommended_position": 24,
-      "first_placement_position": 17,
+      "current_position": 14,
+      "recommended_position": 21,
+      "first_placement_position": 14,
       "headline": "Tesla to wind down Cybertruck production in Texas next year, Musk says",
       "category_key": "business",
       "slug": "2026-11-07-tesla-to-wind-down-cybertruck-production-in-texas-next-year-musk-says",
@@ -1747,7 +1581,7 @@
         "importance": 0,
         "importance_basis": "persistent_score_breakdown",
         "importance_reasons": [],
-        "freshness": 66.43,
+        "freshness": 65.08,
         "urgency": 3,
         "relevance": 82,
         "regions": [
@@ -1756,7 +1590,7 @@
         "source_trust": 94,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 20.14,
+        "age_hours": 20.95,
         "timestamp_basis": "archive:first_published",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -1782,9 +1616,9 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 18,
-      "recommended_position": 25,
-      "first_placement_position": 18,
+      "current_position": 15,
+      "recommended_position": 22,
+      "first_placement_position": 15,
       "headline": "Wave of bomb threats and cyberattacks across Europe raises questions about coordination",
       "category_key": "business",
       "slug": "2026-11-07-wave-of-bomb-threats-and-cyberattacks-across-europe-raises-questions-about-coord",
@@ -1802,7 +1636,7 @@
             "points": 18
           }
         ],
-        "freshness": 87.49,
+        "freshness": 86.15,
         "urgency": 3,
         "relevance": 82,
         "regions": [
@@ -1811,7 +1645,7 @@
         "source_trust": 95,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 7.5,
+        "age_hours": 8.31,
         "timestamp_basis": "archive:first_published",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -1837,69 +1671,16 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 20,
-      "recommended_position": 26,
-      "first_placement_position": 22,
-      "headline": "Binance CFO departs weeks after $6.3 billion hack linked to North Korean group",
-      "category_key": "tech",
-      "slug": "",
-      "story_id": "story_000333",
-      "score": 58,
-      "score_breakdown": {
-        "score": 58,
-        "basis": "homepage_editorial_shadow_v2",
-        "importance": 15,
-        "importance_basis": "persistent_story_importance",
-        "importance_reasons": [
-          {
-            "code": "national_scope",
-            "label": "Nationwide U.S. scope",
-            "points": 15
-          }
-        ],
-        "freshness": 86.72,
-        "urgency": 6,
-        "relevance": 100,
-        "regions": [],
-        "source_trust": 87,
-        "breaking_bonus": 0.0,
-        "material_update_bonus": 0.0,
-        "age_hours": 7.97,
-        "timestamp_basis": "registry:latest_timeline",
-        "deck_eligible": true,
-        "eligibility_reason": "fresh_window"
-      },
-      "deck_eligible": true,
-      "eligibility_reason": "fresh_window",
-      "match_basis": "persistent_story_id+source_url",
-      "identity_confidence": "high",
-      "identity_evidence": [
-        "source_url"
-      ],
-      "identity_warning": "",
-      "identity": "story:story_000333",
-      "identity_basis": "persistent_story_id",
-      "placement_count": 1,
-      "placement_categories": [
-        "tech"
-      ],
-      "pinned": false,
-      "pin_position": null,
-      "custom": false,
-      "position_locked": false,
-      "position_lock_reason": ""
-    },
-    {
-      "current_position": 22,
-      "recommended_position": 27,
-      "first_placement_position": 24,
-      "headline": "Scientists identify two enormous tears in tectonic plate beneath Iran",
+      "current_position": 17,
+      "recommended_position": 23,
+      "first_placement_position": 18,
+      "headline": "Scientists find two massive tears in Arabian tectonic plate beneath Iran",
       "category_key": "tech",
       "slug": "",
       "story_id": "story_000335",
-      "score": 47,
+      "score": 49,
       "score_breakdown": {
-        "score": 47,
+        "score": 49,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 10,
         "importance_basis": "persistent_story_importance",
@@ -1910,14 +1691,14 @@
             "points": 10
           }
         ],
-        "freshness": 89.5,
-        "urgency": 4,
+        "freshness": 88.16,
+        "urgency": 5,
         "relevance": 72,
         "regions": [],
         "source_trust": 55,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 6.3,
+        "age_hours": 7.11,
         "timestamp_basis": "registry:latest_timeline",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -1943,10 +1724,10 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 23,
-      "recommended_position": 28,
-      "first_placement_position": 25,
-      "headline": "Companies roll out child-focused phones and monitoring devices as parents seek safer alternatives to smartphones",
+      "current_position": 18,
+      "recommended_position": 24,
+      "first_placement_position": 19,
+      "headline": "Phone makers expand lineup of child-focused devices with monitoring and restricted access",
       "category_key": "tech",
       "slug": "",
       "story_id": "story_000336",
@@ -1957,14 +1738,14 @@
         "importance": 0,
         "importance_basis": "persistent_score_breakdown",
         "importance_reasons": [],
-        "freshness": 89.39,
+        "freshness": 88.04,
         "urgency": 4,
         "relevance": 60,
         "regions": [],
         "source_trust": 87,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 6.37,
+        "age_hours": 7.18,
         "timestamp_basis": "registry:latest_timeline",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -1990,16 +1771,16 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 24,
-      "recommended_position": 29,
-      "first_placement_position": 26,
-      "headline": "NASA invites public to send names to Saturn's moon Titan aboard Dragonfly mission",
+      "current_position": 19,
+      "recommended_position": 25,
+      "first_placement_position": 20,
+      "headline": "NASA opens public sign-up to send names to Titan aboard Dragonfly rotorcraft",
       "category_key": "tech",
       "slug": "",
       "story_id": "story_000337",
-      "score": 61,
+      "score": 62,
       "score_breakdown": {
-        "score": 61,
+        "score": 62,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 52,
         "importance_basis": "persistent_story_importance",
@@ -2020,14 +1801,14 @@
             "points": 15
           }
         ],
-        "freshness": 82.72,
-        "urgency": 3,
+        "freshness": 81.37,
+        "urgency": 4,
         "relevance": 100,
         "regions": [],
         "source_trust": 55,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 10.37,
+        "age_hours": 11.18,
         "timestamp_basis": "registry:latest_timeline",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -2053,10 +1834,57 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 25,
-      "recommended_position": 30,
-      "first_placement_position": 27,
-      "headline": "Zelda: Ocarina of Time Remake Runs on Jailbroken PS5 and iPhone Days After Launch",
+      "current_position": 20,
+      "recommended_position": 26,
+      "first_placement_position": 21,
+      "headline": "PC RAM capacities decline for first time as 16 GB gains on 32 GB and 64 GB configurations",
+      "category_key": "tech",
+      "slug": "",
+      "story_id": "story_000356",
+      "score": 41,
+      "score_breakdown": {
+        "score": 41,
+        "basis": "homepage_editorial_shadow_v2",
+        "importance": 0,
+        "importance_basis": "persistent_score_breakdown",
+        "importance_reasons": [],
+        "freshness": 96.46,
+        "urgency": 3,
+        "relevance": 60,
+        "regions": [],
+        "source_trust": 55,
+        "breaking_bonus": 0.0,
+        "material_update_bonus": 0.0,
+        "age_hours": 2.13,
+        "timestamp_basis": "registry:latest_timeline",
+        "deck_eligible": true,
+        "eligibility_reason": "fresh_window"
+      },
+      "deck_eligible": true,
+      "eligibility_reason": "fresh_window",
+      "match_basis": "persistent_story_id+source_url",
+      "identity_confidence": "high",
+      "identity_evidence": [
+        "source_url"
+      ],
+      "identity_warning": "",
+      "identity": "story:story_000356",
+      "identity_basis": "persistent_story_id",
+      "placement_count": 1,
+      "placement_categories": [
+        "tech"
+      ],
+      "pinned": false,
+      "pin_position": null,
+      "custom": false,
+      "position_locked": false,
+      "position_lock_reason": ""
+    },
+    {
+      "current_position": 21,
+      "recommended_position": 27,
+      "first_placement_position": 22,
+      "headline": "Zelda: Ocarina of Time Remake Runs on Jailbroken PS5 and iPhone After Switch 2 Launch",
       "category_key": "tech",
       "slug": "",
       "story_id": "story_000338",
@@ -2067,14 +1895,14 @@
         "importance": 0,
         "importance_basis": "persistent_score_breakdown",
         "importance_reasons": [],
-        "freshness": 90.93,
+        "freshness": 89.59,
         "urgency": 7,
         "relevance": 60,
         "regions": [],
         "source_trust": 55,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 5.44,
+        "age_hours": 6.25,
         "timestamp_basis": "registry:latest_timeline",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -2100,28 +1928,139 @@
       "position_lock_reason": ""
     },
     {
+      "current_position": 23,
+      "recommended_position": 28,
+      "first_placement_position": 24,
+      "headline": "Chainalysis says breach exposed credentials and security tokens for all customers",
+      "category_key": "tech",
+      "slug": "2026-11-07-chainalysis-says-breach-exposed-credentials-and-security-tokens-for-all-customer",
+      "story_id": "story_000257",
+      "score": 47,
+      "score_breakdown": {
+        "score": 47,
+        "basis": "homepage_editorial_shadow_v2",
+        "importance": 15,
+        "importance_basis": "persistent_story_importance",
+        "importance_reasons": [
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "freshness": 65.08,
+        "urgency": 3,
+        "relevance": 100,
+        "regions": [],
+        "source_trust": 91,
+        "breaking_bonus": 0.0,
+        "material_update_bonus": 0.0,
+        "age_hours": 20.95,
+        "timestamp_basis": "archive:first_published",
+        "deck_eligible": true,
+        "eligibility_reason": "fresh_window"
+      },
+      "deck_eligible": true,
+      "eligibility_reason": "fresh_window",
+      "match_basis": "persistent_story_id+source_url",
+      "identity_confidence": "high",
+      "identity_evidence": [
+        "source_url"
+      ],
+      "identity_warning": "",
+      "identity": "story:story_000257",
+      "identity_basis": "persistent_story_id",
+      "placement_count": 1,
+      "placement_categories": [
+        "tech"
+      ],
+      "pinned": false,
+      "pin_position": null,
+      "custom": false,
+      "position_locked": false,
+      "position_lock_reason": ""
+    },
+    {
+      "current_position": 24,
+      "recommended_position": 29,
+      "first_placement_position": 25,
+      "headline": "Oregon routs Ohio State 41-28, likely ending Buckeyes' playoff hopes with fake punt sparking turnaround",
+      "category_key": "sports",
+      "slug": "2026-11-08-oregon-routs-ohio-state-41-28-likely-ending-buckeyes-playoff-hopes-with-fake-pun",
+      "story_id": "story_000357",
+      "score": 61,
+      "score_breakdown": {
+        "score": 61,
+        "basis": "homepage_editorial_shadow_v2",
+        "importance": 10,
+        "importance_basis": "persistent_story_importance",
+        "importance_reasons": [
+          {
+            "code": "multistate_scope",
+            "label": "Multi-state U.S. scope",
+            "points": 10
+          }
+        ],
+        "freshness": 99.99,
+        "urgency": 7,
+        "relevance": 95,
+        "regions": [
+          "Wisconsin",
+          "Indiana",
+          "Oregon",
+          "Ohio"
+        ],
+        "source_trust": 89,
+        "breaking_bonus": 0.0,
+        "material_update_bonus": 0.0,
+        "age_hours": 0.0,
+        "timestamp_basis": "archive:first_published",
+        "deck_eligible": true,
+        "eligibility_reason": "fresh_window"
+      },
+      "deck_eligible": true,
+      "eligibility_reason": "fresh_window",
+      "match_basis": "persistent_story_id+source_url",
+      "identity_confidence": "high",
+      "identity_evidence": [
+        "source_url"
+      ],
+      "identity_warning": "",
+      "identity": "story:story_000357",
+      "identity_basis": "persistent_story_id",
+      "placement_count": 1,
+      "placement_categories": [
+        "sports"
+      ],
+      "pinned": false,
+      "pin_position": null,
+      "custom": false,
+      "position_locked": false,
+      "position_lock_reason": ""
+    },
+    {
       "current_position": 26,
-      "recommended_position": 31,
-      "first_placement_position": 29,
-      "headline": "Chris Billam-Smith stopped for first time as Chev Clarke wins with seventh-round knockdowns",
+      "recommended_position": 30,
+      "first_placement_position": 27,
+      "headline": "NFL handbook language grants Commissioner broad discretion over Brandon Aiyuk reinstatement as 49ers seek bonus repayment",
       "category_key": "sports",
       "slug": "",
-      "story_id": "story_000339",
-      "score": 50,
+      "story_id": "story_000359",
+      "score": 48,
       "score_breakdown": {
-        "score": 50,
+        "score": 48,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 0,
         "importance_basis": "persistent_score_breakdown",
         "importance_reasons": [],
-        "freshness": 99.26,
-        "urgency": 5,
+        "freshness": 97.78,
+        "urgency": 6,
         "relevance": 60,
         "regions": [],
-        "source_trust": 94,
+        "source_trust": 55,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 0.45,
+        "age_hours": 1.33,
         "timestamp_basis": "registry:latest_timeline",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -2134,7 +2073,7 @@
         "source_url"
       ],
       "identity_warning": "",
-      "identity": "story:story_000339",
+      "identity": "story:story_000359",
       "identity_basis": "persistent_story_id",
       "placement_count": 1,
       "placement_categories": [
@@ -2148,9 +2087,9 @@
     },
     {
       "current_position": 27,
-      "recommended_position": 32,
-      "first_placement_position": 30,
-      "headline": "Norris takes pole for Sao Paulo Grand Prix in wet qualifying as Hamilton and Verstappen start from back",
+      "recommended_position": 31,
+      "first_placement_position": 28,
+      "headline": "Lando Norris takes pole for Sao Paulo Grand Prix in rain-disrupted qualifying",
       "category_key": "sports",
       "slug": "",
       "story_id": "story_000340",
@@ -2161,14 +2100,14 @@
         "importance": 0,
         "importance_basis": "persistent_score_breakdown",
         "importance_reasons": [],
-        "freshness": 97.54,
+        "freshness": 96.19,
         "urgency": 5,
         "relevance": 60,
         "regions": [],
         "source_trust": 94,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 1.48,
+        "age_hours": 2.29,
         "timestamp_basis": "registry:latest_timeline",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -2195,29 +2134,27 @@
     },
     {
       "current_position": 28,
-      "recommended_position": 33,
-      "first_placement_position": 31,
-      "headline": "Vikings linked to Colts quarterback Daniel Jones and running back Jonathan Taylor ahead of trade deadline",
+      "recommended_position": 32,
+      "first_placement_position": 29,
+      "headline": "Chev Clarke stops Chris Billam-Smith in seventh round for first career stoppage loss",
       "category_key": "sports",
       "slug": "",
-      "story_id": "story_000341",
-      "score": 49,
+      "story_id": "story_000339",
+      "score": 47,
       "score_breakdown": {
-        "score": 49,
+        "score": 47,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 0,
         "importance_basis": "persistent_score_breakdown",
         "importance_reasons": [],
-        "freshness": 97.58,
-        "urgency": 5,
-        "relevance": 82,
-        "regions": [
-          "Minnesota"
-        ],
-        "source_trust": 55,
+        "freshness": 97.91,
+        "urgency": 4,
+        "relevance": 60,
+        "regions": [],
+        "source_trust": 94,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 1.45,
+        "age_hours": 1.25,
         "timestamp_basis": "registry:latest_timeline",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -2230,7 +2167,7 @@
         "source_url"
       ],
       "identity_warning": "",
-      "identity": "story:story_000341",
+      "identity": "story:story_000339",
       "identity_basis": "persistent_story_id",
       "placement_count": 1,
       "placement_categories": [
@@ -2244,62 +2181,15 @@
     },
     {
       "current_position": 29,
-      "recommended_position": 34,
-      "first_placement_position": 32,
-      "headline": "BBC commentator calls FA Cup fog tie 'worst conditions in 35-year career'",
+      "recommended_position": 33,
+      "first_placement_position": 30,
+      "headline": "Rob Gronkowski's Patriots Hall of Fame ceremony draws criticism after teammate's explicit anecdote",
       "category_key": "sports",
       "slug": "",
-      "story_id": "story_000342",
-      "score": 45,
+      "story_id": "story_000360",
+      "score": 58,
       "score_breakdown": {
-        "score": 45,
-        "basis": "homepage_editorial_shadow_v2",
-        "importance": 0,
-        "importance_basis": "persistent_score_breakdown",
-        "importance_reasons": [],
-        "freshness": 98.22,
-        "urgency": 3,
-        "relevance": 60,
-        "regions": [],
-        "source_trust": 94,
-        "breaking_bonus": 0.0,
-        "material_update_bonus": 0.0,
-        "age_hours": 1.07,
-        "timestamp_basis": "registry:latest_timeline",
-        "deck_eligible": true,
-        "eligibility_reason": "fresh_window"
-      },
-      "deck_eligible": true,
-      "eligibility_reason": "fresh_window",
-      "match_basis": "persistent_story_id+source_url",
-      "identity_confidence": "high",
-      "identity_evidence": [
-        "source_url"
-      ],
-      "identity_warning": "",
-      "identity": "story:story_000342",
-      "identity_basis": "persistent_story_id",
-      "placement_count": 1,
-      "placement_categories": [
-        "sports"
-      ],
-      "pinned": false,
-      "pin_position": null,
-      "custom": false,
-      "position_locked": false,
-      "position_lock_reason": ""
-    },
-    {
-      "current_position": 30,
-      "recommended_position": 35,
-      "first_placement_position": 33,
-      "headline": "Aberdeen manager Stephen Robinson faces uncertain future after 4-0 home loss to last-place Hibernian",
-      "category_key": "sports",
-      "slug": "",
-      "story_id": "story_000343",
-      "score": 61,
-      "score_breakdown": {
-        "score": 61,
+        "score": 58,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 40,
         "importance_basis": "persistent_story_importance",
@@ -2315,14 +2205,14 @@
             "points": 10
           }
         ],
-        "freshness": 97.83,
+        "freshness": 95.15,
         "urgency": 3,
         "relevance": 85,
         "regions": [],
-        "source_trust": 94,
+        "source_trust": 55,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 1.3,
+        "age_hours": 2.91,
         "timestamp_basis": "registry:latest_timeline",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -2335,7 +2225,54 @@
         "source_url"
       ],
       "identity_warning": "",
-      "identity": "story:story_000343",
+      "identity": "story:story_000360",
+      "identity_basis": "persistent_story_id",
+      "placement_count": 1,
+      "placement_categories": [
+        "sports"
+      ],
+      "pinned": false,
+      "pin_position": null,
+      "custom": false,
+      "position_locked": false,
+      "position_lock_reason": ""
+    },
+    {
+      "current_position": 30,
+      "recommended_position": 34,
+      "first_placement_position": 31,
+      "headline": "Willy Hutchinson upsets Joshua Buatsi to win WBC light-heavyweight title in Manchester rematch",
+      "category_key": "sports",
+      "slug": "2026-11-08-willy-hutchinson-upsets-joshua-buatsi-to-win-wbc-light-heavyweight-title-in-manc",
+      "story_id": "story_000328",
+      "score": 45,
+      "score_breakdown": {
+        "score": 45,
+        "basis": "homepage_editorial_shadow_v2",
+        "importance": 0,
+        "importance_basis": "persistent_score_breakdown",
+        "importance_reasons": [],
+        "freshness": 98.65,
+        "urgency": 3,
+        "relevance": 60,
+        "regions": [],
+        "source_trust": 94,
+        "breaking_bonus": 0.0,
+        "material_update_bonus": 0.0,
+        "age_hours": 0.81,
+        "timestamp_basis": "archive:first_published",
+        "deck_eligible": true,
+        "eligibility_reason": "fresh_window"
+      },
+      "deck_eligible": true,
+      "eligibility_reason": "fresh_window",
+      "match_basis": "persistent_story_id+source_url",
+      "identity_confidence": "high",
+      "identity_evidence": [
+        "source_url"
+      ],
+      "identity_warning": "",
+      "identity": "story:story_000328",
       "identity_basis": "persistent_story_id",
       "placement_count": 1,
       "placement_categories": [
@@ -2349,20 +2286,20 @@
     },
     {
       "current_position": 31,
-      "recommended_position": 36,
-      "first_placement_position": 34,
+      "recommended_position": 35,
+      "first_placement_position": 32,
       "headline": "No. 9 BYU meets Utah in first top-10 Holy War matchup, drawing national ABC broadcast",
       "category_key": "sports",
       "slug": "2026-11-07-no-9-byu-meets-utah-in-first-top-10-holy-war-matchup-drawing-national-abc-broadc",
       "story_id": "story_000266",
-      "score": 37,
+      "score": 36,
       "score_breakdown": {
-        "score": 37,
+        "score": 36,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 0,
         "importance_basis": "persistent_score_breakdown",
         "importance_reasons": [],
-        "freshness": 66.43,
+        "freshness": 65.08,
         "urgency": 3,
         "relevance": 82,
         "regions": [
@@ -2371,7 +2308,7 @@
         "source_trust": 55,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 20.14,
+        "age_hours": 20.95,
         "timestamp_basis": "archive:first_published",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -2397,115 +2334,10 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 33,
-      "recommended_position": 37,
-      "first_placement_position": 36,
-      "headline": "Godzilla Minus Zero heads toward $32 million opening weekend, surpassing predecessor's total domestic run",
-      "category_key": "entertainment",
-      "slug": "",
-      "story_id": "story_000344",
-      "score": 63,
-      "score_breakdown": {
-        "score": 63,
-        "basis": "homepage_editorial_shadow_v2",
-        "importance": 40,
-        "importance_basis": "persistent_story_importance",
-        "importance_reasons": [
-          {
-            "code": "war_diplomacy",
-            "label": "War, diplomacy or national-security consequence",
-            "points": 30
-          },
-          {
-            "code": "global_scope",
-            "label": "Major international consequence",
-            "points": 10
-          }
-        ],
-        "freshness": 88.02,
-        "urgency": 6,
-        "relevance": 85,
-        "regions": [],
-        "source_trust": 55,
-        "breaking_bonus": 0.0,
-        "material_update_bonus": 0.0,
-        "age_hours": 7.19,
-        "timestamp_basis": "registry:latest_timeline",
-        "deck_eligible": true,
-        "eligibility_reason": "fresh_window"
-      },
-      "deck_eligible": true,
-      "eligibility_reason": "fresh_window",
-      "match_basis": "persistent_story_id+source_url",
-      "identity_confidence": "high",
-      "identity_evidence": [
-        "source_url"
-      ],
-      "identity_warning": "",
-      "identity": "story:story_000344",
-      "identity_basis": "persistent_story_id",
-      "placement_count": 1,
-      "placement_categories": [
-        "entertainment"
-      ],
-      "pinned": false,
-      "pin_position": null,
-      "custom": false,
-      "position_locked": false,
-      "position_lock_reason": ""
-    },
-    {
-      "current_position": 36,
-      "recommended_position": 38,
-      "first_placement_position": 39,
-      "headline": "Pokemon anime studio unveils AI coloring tool trained on three hand-painted frames",
-      "category_key": "entertainment",
-      "slug": "",
-      "story_id": "story_000347",
-      "score": 50,
-      "score_breakdown": {
-        "score": 50,
-        "basis": "homepage_editorial_shadow_v2",
-        "importance": 0,
-        "importance_basis": "persistent_score_breakdown",
-        "importance_reasons": [],
-        "freshness": 97.26,
-        "urgency": 5,
-        "relevance": 72,
-        "regions": [],
-        "source_trust": 90,
-        "breaking_bonus": 0.0,
-        "material_update_bonus": 0.0,
-        "age_hours": 1.64,
-        "timestamp_basis": "registry:latest_timeline",
-        "deck_eligible": true,
-        "eligibility_reason": "fresh_window"
-      },
-      "deck_eligible": true,
-      "eligibility_reason": "fresh_window",
-      "match_basis": "persistent_story_id+source_url",
-      "identity_confidence": "high",
-      "identity_evidence": [
-        "source_url"
-      ],
-      "identity_warning": "",
-      "identity": "story:story_000347",
-      "identity_basis": "persistent_story_id",
-      "placement_count": 1,
-      "placement_categories": [
-        "entertainment"
-      ],
-      "pinned": false,
-      "pin_position": null,
-      "custom": false,
-      "position_locked": false,
-      "position_lock_reason": ""
-    },
-    {
-      "current_position": 37,
-      "recommended_position": 39,
-      "first_placement_position": 40,
-      "headline": "Animator Sylvain Chomet denies AI use in Dior ad, cites automated interpolation tool",
+      "current_position": 34,
+      "recommended_position": 36,
+      "first_placement_position": 35,
+      "headline": "Animation director denies AI use in Dior ad, cites automated interpolation tool",
       "category_key": "entertainment",
       "slug": "",
       "story_id": "story_000348",
@@ -2522,14 +2354,14 @@
             "points": 25
           }
         ],
-        "freshness": 88.35,
+        "freshness": 87.01,
         "urgency": 5,
         "relevance": 60,
         "regions": [],
         "source_trust": 55,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 6.99,
+        "age_hours": 7.8,
         "timestamp_basis": "registry:latest_timeline",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -2555,39 +2387,28 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 39,
-      "recommended_position": 40,
-      "first_placement_position": 42,
-      "headline": "Eleven artists compete for Best New Artist at 2026 Latin Grammys",
+      "current_position": 35,
+      "recommended_position": 37,
+      "first_placement_position": 36,
+      "headline": "Pokemon anime studio unveils AI coloring tool trained on three hand-painted frames",
       "category_key": "entertainment",
       "slug": "",
-      "story_id": "story_000350",
-      "score": 53,
+      "story_id": "story_000347",
+      "score": 48,
       "score_breakdown": {
-        "score": 53,
+        "score": 48,
         "basis": "homepage_editorial_shadow_v2",
-        "importance": 18,
-        "importance_basis": "persistent_story_importance",
-        "importance_reasons": [
-          {
-            "code": "cultural_sports",
-            "label": "Major sports/cultural event",
-            "points": 12
-          },
-          {
-            "code": "single_death",
-            "label": "Death reported",
-            "points": 6
-          }
-        ],
-        "freshness": 94.8,
+        "importance": 0,
+        "importance_basis": "persistent_score_breakdown",
+        "importance_reasons": [],
+        "freshness": 95.91,
         "urgency": 4,
         "relevance": 72,
         "regions": [],
-        "source_trust": 86,
+        "source_trust": 90,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 3.12,
+        "age_hours": 2.45,
         "timestamp_basis": "registry:latest_timeline",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -2600,7 +2421,160 @@
         "source_url"
       ],
       "identity_warning": "",
-      "identity": "story:story_000350",
+      "identity": "story:story_000347",
+      "identity_basis": "persistent_story_id",
+      "placement_count": 1,
+      "placement_categories": [
+        "entertainment"
+      ],
+      "pinned": false,
+      "pin_position": null,
+      "custom": false,
+      "position_locked": false,
+      "position_lock_reason": ""
+    },
+    {
+      "current_position": 36,
+      "recommended_position": 38,
+      "first_placement_position": 37,
+      "headline": "Bill Skarsgård says he wasn't considered for James Bond role but would play a villain",
+      "category_key": "entertainment",
+      "slug": "",
+      "story_id": "story_000361",
+      "score": 43,
+      "score_breakdown": {
+        "score": 43,
+        "basis": "homepage_editorial_shadow_v2",
+        "importance": 0,
+        "importance_basis": "persistent_score_breakdown",
+        "importance_reasons": [],
+        "freshness": 93.43,
+        "urgency": 3,
+        "relevance": 60,
+        "regions": [],
+        "source_trust": 90,
+        "breaking_bonus": 0.0,
+        "material_update_bonus": 0.0,
+        "age_hours": 3.94,
+        "timestamp_basis": "registry:latest_timeline",
+        "deck_eligible": true,
+        "eligibility_reason": "fresh_window"
+      },
+      "deck_eligible": true,
+      "eligibility_reason": "fresh_window",
+      "match_basis": "persistent_story_id+source_url",
+      "identity_confidence": "high",
+      "identity_evidence": [
+        "source_url"
+      ],
+      "identity_warning": "",
+      "identity": "story:story_000361",
+      "identity_basis": "persistent_story_id",
+      "placement_count": 1,
+      "placement_categories": [
+        "entertainment"
+      ],
+      "pinned": false,
+      "pin_position": null,
+      "custom": false,
+      "position_locked": false,
+      "position_lock_reason": ""
+    },
+    {
+      "current_position": 37,
+      "recommended_position": 39,
+      "first_placement_position": 38,
+      "headline": "'Heated Rivalry' Season 2 in Production With 6 Episodes, Third Season Unconfirmed",
+      "category_key": "entertainment",
+      "slug": "",
+      "story_id": "story_000362",
+      "score": 50,
+      "score_breakdown": {
+        "score": 50,
+        "basis": "homepage_editorial_shadow_v2",
+        "importance": 15,
+        "importance_basis": "persistent_story_importance",
+        "importance_reasons": [
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "freshness": 89.51,
+        "urgency": 3,
+        "relevance": 100,
+        "regions": [],
+        "source_trust": 55,
+        "breaking_bonus": 0.0,
+        "material_update_bonus": 0.0,
+        "age_hours": 6.29,
+        "timestamp_basis": "registry:latest_timeline",
+        "deck_eligible": true,
+        "eligibility_reason": "fresh_window"
+      },
+      "deck_eligible": true,
+      "eligibility_reason": "fresh_window",
+      "match_basis": "persistent_story_id+source_url",
+      "identity_confidence": "high",
+      "identity_evidence": [
+        "source_url"
+      ],
+      "identity_warning": "",
+      "identity": "story:story_000362",
+      "identity_basis": "persistent_story_id",
+      "placement_count": 1,
+      "placement_categories": [
+        "entertainment"
+      ],
+      "pinned": false,
+      "pin_position": null,
+      "custom": false,
+      "position_locked": false,
+      "position_lock_reason": ""
+    },
+    {
+      "current_position": 38,
+      "recommended_position": 40,
+      "first_placement_position": 39,
+      "headline": "Jodie Sweetin says she had $190 in bank account before filming 'Fuller House'",
+      "category_key": "entertainment",
+      "slug": "",
+      "story_id": "story_000363",
+      "score": 46,
+      "score_breakdown": {
+        "score": 46,
+        "basis": "homepage_editorial_shadow_v2",
+        "importance": 10,
+        "importance_basis": "persistent_story_importance",
+        "importance_reasons": [
+          {
+            "code": "public_safety",
+            "label": "Public-safety event",
+            "points": 10
+          }
+        ],
+        "freshness": 88.07,
+        "urgency": 3,
+        "relevance": 60,
+        "regions": [],
+        "source_trust": 90,
+        "breaking_bonus": 0.0,
+        "material_update_bonus": 0.0,
+        "age_hours": 7.16,
+        "timestamp_basis": "registry:latest_timeline",
+        "deck_eligible": true,
+        "eligibility_reason": "fresh_window"
+      },
+      "deck_eligible": true,
+      "eligibility_reason": "fresh_window",
+      "match_basis": "persistent_story_id+source_url",
+      "identity_confidence": "high",
+      "identity_evidence": [
+        "source_url"
+      ],
+      "identity_warning": "",
+      "identity": "story:story_000363",
       "identity_basis": "persistent_story_id",
       "placement_count": 1,
       "placement_categories": [
@@ -2615,16 +2589,16 @@
     {
       "current_position": 40,
       "recommended_position": 41,
-      "first_placement_position": 43,
-      "headline": "Conan O'Brien plays small Los Angeles venues with cover band the Vigodas",
+      "first_placement_position": 42,
+      "headline": "Godzilla Minus Zero Opens to Record $30 Million-Plus for Live-Action Foreign-Language Film",
       "category_key": "entertainment",
-      "slug": "",
-      "story_id": "story_000351",
-      "score": 60,
+      "slug": "2026-11-07-godzilla-minus-zero-opens-to-record-30-million-plus-for-live-action-foreign-lang",
+      "story_id": "story_000275",
+      "score": 54,
       "score_breakdown": {
-        "score": 60,
+        "score": 54,
         "basis": "homepage_editorial_shadow_v2",
-        "importance": 46,
+        "importance": 45,
         "importance_basis": "persistent_story_importance",
         "importance_reasons": [
           {
@@ -2633,27 +2607,20 @@
             "points": 30
           },
           {
-            "code": "public_safety",
-            "label": "Public-safety event",
-            "points": 10
-          },
-          {
-            "code": "single_death",
-            "label": "Death reported",
-            "points": 6
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
           }
         ],
-        "freshness": 88.18,
+        "freshness": 65.08,
         "urgency": 3,
-        "relevance": 82,
-        "regions": [
-          "California"
-        ],
-        "source_trust": 86,
+        "relevance": 100,
+        "regions": [],
+        "source_trust": 55,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 7.09,
-        "timestamp_basis": "registry:latest_timeline",
+        "age_hours": 20.95,
+        "timestamp_basis": "archive:first_published",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
       },
@@ -2665,7 +2632,7 @@
         "source_url"
       ],
       "identity_warning": "",
-      "identity": "story:story_000351",
+      "identity": "story:story_000275",
       "identity_basis": "persistent_story_id",
       "placement_count": 1,
       "placement_categories": [
@@ -2676,70 +2643,191 @@
       "custom": false,
       "position_locked": false,
       "position_lock_reason": ""
+    },
+    {
+      "current_position": 41,
+      "recommended_position": 42,
+      "first_placement_position": 43,
+      "headline": "Federal judge blocks Postal Service restrictions on mail-in ballot delivery",
+      "category_key": "politics",
+      "slug": "2026-07-02-federal-judge-blocks-postal-service-restrictions-on-mail-in-ballot-delivery",
+      "story_id": "story_000064",
+      "score": 31,
+      "score_breakdown": {
+        "score": 31,
+        "basis": "homepage_editorial_shadow_v2",
+        "importance": 0,
+        "importance_basis": "persistent_score_breakdown",
+        "importance_reasons": [
+          {
+            "code": "archived",
+            "label": "Archived story",
+            "points": -40
+          }
+        ],
+        "freshness": 0.0,
+        "urgency": 5,
+        "relevance": 100,
+        "regions": [
+          "Washington Dc",
+          "Washington"
+        ],
+        "source_trust": 94,
+        "breaking_bonus": 0.0,
+        "material_update_bonus": 0.0,
+        "age_hours": 3098.18,
+        "timestamp_basis": "archive:date",
+        "deck_eligible": false,
+        "eligibility_reason": "older_than_60_hours"
+      },
+      "deck_eligible": false,
+      "eligibility_reason": "older_than_60_hours",
+      "match_basis": "persistent_story_id+source_url",
+      "identity_confidence": "high",
+      "identity_evidence": [
+        "source_url"
+      ],
+      "identity_warning": "",
+      "identity": "story:story_000064",
+      "identity_basis": "persistent_story_id",
+      "placement_count": 1,
+      "placement_categories": [
+        "politics"
+      ],
+      "pinned": false,
+      "pin_position": null,
+      "custom": false,
+      "position_locked": false,
+      "position_lock_reason": ""
+    },
+    {
+      "current_position": 43,
+      "recommended_position": 43,
+      "first_placement_position": 45,
+      "headline": "Trump replaces chief of staff Susie Wiles with Stephen Miller after GOP midterm losses",
+      "category_key": "politics",
+      "slug": "2026-11-07-trump-replaces-chief-of-staff-susie-wiles-with-stephen-miller-after-gop-midterm",
+      "story_id": "story_000141",
+      "score": 42,
+      "score_breakdown": {
+        "score": 42,
+        "basis": "homepage_editorial_shadow_v2",
+        "importance": 0,
+        "importance_basis": "persistent_score_breakdown",
+        "importance_reasons": [
+          {
+            "code": "archived",
+            "label": "Archived story",
+            "points": -40
+          }
+        ],
+        "freshness": 65.08,
+        "urgency": 3,
+        "relevance": 100,
+        "regions": [
+          "North Carolina",
+          "New Hampshire",
+          "Pennsylvania",
+          "Washington",
+          "Wisconsin",
+          "Kentucky",
+          "Maryland",
+          "Illinois",
+          "Michigan",
+          "New York",
+          "Florida",
+          "Georgia",
+          "Maine",
+          "Texas",
+          "Ohio"
+        ],
+        "source_trust": 94,
+        "breaking_bonus": 0.0,
+        "material_update_bonus": 0.0,
+        "age_hours": 20.95,
+        "timestamp_basis": "archive:first_published",
+        "deck_eligible": true,
+        "eligibility_reason": "fresh_window"
+      },
+      "deck_eligible": true,
+      "eligibility_reason": "fresh_window",
+      "match_basis": "source_url",
+      "identity_confidence": "high",
+      "identity_evidence": [
+        "source_url"
+      ],
+      "identity_warning": "uncorroborated_persistent_story_id:story_000320;persistent_story_id_conflicts_with_source",
+      "identity": "story:story_000141",
+      "identity_basis": "persistent_story_id",
+      "placement_count": 1,
+      "placement_categories": [
+        "politics"
+      ],
+      "pinned": false,
+      "pin_position": null,
+      "custom": false,
+      "position_locked": true,
+      "position_lock_reason": "identity_conflict"
     }
   ],
   "stale_or_ineligible_deck_candidates": [
     {
-      "headline": "US offers $20 million reward for information on Iran's nuclear program",
-      "current_position": 4,
-      "age_hours": 1514.9,
+      "headline": "Gunman kills one, wounds five in shooting in central Israel",
+      "current_position": 1,
+      "age_hours": 3698.18,
       "eligibility_reason": "older_than_60_hours",
-      "score": 35
+      "score": 45
     },
     {
-      "headline": "Wall Street whipsawed after midterms as tech selloff pushes Nasdaq into correction",
-      "current_position": 13,
-      "age_hours": 1522.4,
+      "headline": "Texas Attorney General Ken Paxton enters Senate race",
+      "current_position": 10,
+      "age_hours": 3722.18,
       "eligibility_reason": "older_than_60_hours",
-      "score": 39
+      "score": 37
     },
     {
-      "headline": "Musk says SpaceX could buy legacy telecom carrier, use spectrum 'ten times more effectively'",
-      "current_position": 15,
-      "age_hours": 1540.79,
+      "headline": "Musk says SpaceX could buy legacy telecom carrier, move telecom stocks",
+      "current_position": 12,
+      "age_hours": 1541.6,
       "eligibility_reason": "older_than_60_hours",
       "score": 33
+    },
+    {
+      "headline": "Federal judge blocks Postal Service restrictions on mail-in ballot delivery",
+      "current_position": 41,
+      "age_hours": 3098.18,
+      "eligibility_reason": "older_than_60_hours",
+      "score": 31
     }
   ],
   "excluded_duplicate_placements": [
     {
-      "headline": "Data center restrictions gain ground in midterm elections as voters reject ballot measures, elect skeptical leaders",
-      "placement_position": 20,
-      "canonical_position": 13,
+      "headline": "Texas Attorney General Ken Paxton enters Senate race",
+      "placement_position": 16,
+      "canonical_position": 10,
       "identity": "story:story_000112",
       "identity_basis": "persistent_story_id"
     },
     {
-      "headline": "U.S. intelligence memo alleges Chinese espionage targeting Nvidia CEO",
-      "placement_position": 21,
-      "canonical_position": 16,
-      "identity": "story:story_000331",
-      "identity_basis": "persistent_story_id"
-    },
-    {
-      "headline": "Willy Hutchinson upsets Joshua Buatsi to win WBC light-heavyweight title in Manchester rematch",
-      "placement_position": 28,
-      "canonical_position": 9,
-      "identity": "story:story_000328",
-      "identity_basis": "persistent_story_id"
-    },
-    {
-      "headline": "New York City Mayor Zohran Mamdani Meets With Puerto Rican Band Chuwi in San Juan",
-      "placement_position": 44,
-      "canonical_position": 15,
+      "headline": "New York Mayor Zohran Mamdani Meets Puerto Rican Band Chuwi in San Juan",
+      "placement_position": 40,
+      "canonical_position": 12,
       "identity": "story:story_000006",
-      "identity_basis": "persistent_story_id"
-    },
-    {
-      "headline": "Trump replaces chief of staff Susie Wiles with Stephen Miller after GOP midterm losses",
-      "placement_position": 46,
-      "canonical_position": 4,
-      "identity": "story:story_000141",
       "identity_basis": "persistent_story_id"
     }
   ],
   "excluded_legacy_identity_placements": [],
-  "identity_warnings": [],
+  "identity_warnings": [
+    {
+      "headline": "Trump replaces chief of staff Susie Wiles with Stephen Miller after GOP midterm losses",
+      "current_position": 43,
+      "story_id": "story_000141",
+      "match_basis": "source_url",
+      "identity_confidence": "high",
+      "identity_warning": "uncorroborated_persistent_story_id:story_000320;persistent_story_id_conflicts_with_source",
+      "position_lock_reason": "identity_conflict"
+    }
+  ],
   "excluded_candidates": [],
   "recent_high_urgency_exclusions": []
 }
