@@ -294,3 +294,80 @@ def test_eastern_display_time_observes_november_standard_time(monkeypatch):
     assert generate.now_et()=="1:00 PM ET"
     published=format_datetime(fixed-timedelta(hours=2),usegmt=True)
     assert generate.format_age(published)=="11:00 AM ET"
+
+
+def test_fresh_world_development_beats_21_hour_old_targeted_treasury_action():
+    """Regression: Nov 8 2026 news audit chose yesterday's MEXC headline."""
+    now = datetime(2026, 11, 8, 23, 9, tzinfo=timezone.utc)
+    mexc = story(
+        "Treasury moves to cut off crypto exchange MEXC from U.S. financial "
+        "system over alleged $16 billion in illicit transactions",
+        now, hours=21, urgency=3, category="business",
+    )
+    strikes = story(
+        "Houthi strikes hit Aramco Tower in Riyadh, target airport and oil facilities",
+        now, hours=1.5, urgency=8, category="world",
+    )
+    ranked, rejected = evaluate_front_page_candidates([
+        section("business", mexc),
+        section("world", strikes),
+    ], now=now)
+    assert not rejected
+    assert ranked[0]["headline"] == strikes["headline"]
+    assert ranked[0]["tier"] == 4
+    assert ranked[1]["tier"] == 3
+    assert ranked[1]["tier_reason"] == "targeted_federal_entity_action"
+    assert ranked[0]["score"] > ranked[1]["score"]
+
+
+def test_fresh_important_federal_action_can_still_beat_world_event():
+    now = datetime(2026, 11, 8, 23, 9, tzinfo=timezone.utc)
+    federal = story("Supreme Court rules on nationwide federal voting law", now, hours=1, urgency=9)
+    world = story("Ukraine launches drone strikes on Moscow in major offensive",
+                  now, hours=1, urgency=8, category="world")
+    ranked, _ = evaluate_front_page_candidates(
+        [section("politics", federal), section("world", world)], now=now
+    )
+    assert ranked[0]["headline"] == federal["headline"]
+    assert ranked[0]["tier"] > ranked[1]["tier"]
+
+
+def test_recency_can_overcome_single_significance_tier_gap():
+    now = datetime(2026, 11, 8, 23, 9, tzinfo=timezone.utc)
+    yesterday = story("Federal Reserve announces national interest rate decision",
+                      now, hours=22, urgency=3, category="business")
+    new_world = story("Ukraine launches drone strikes on Moscow in major offensive",
+                      now, hours=1, urgency=8, category="world")
+    ranked, _ = evaluate_front_page_candidates(
+        [section("business", yesterday), section("world", new_world)], now=now
+    )
+    assert ranked[0]["headline"] == new_world["headline"]
+    assert ranked[1]["tier"] == ranked[0]["tier"] + 1
+
+
+def test_old_major_story_remains_eligible_if_only_newer_alternative_is_minor():
+    now = datetime(2026, 11, 8, 23, 9, tzinfo=timezone.utc)
+    federal = story("Supreme Court rules on nationwide federal policy",
+                    now, hours=20, urgency=9)
+    routine = story("Local officials describe regional infrastructure repairs",
+                    now, hours=1, urgency=5, category="us")
+    ranked, _ = evaluate_front_page_candidates(
+        [section("politics", federal), section("us", routine)], now=now
+    )
+    assert ranked[0]["headline"] == federal["headline"]
+
+
+def test_score_audit_includes_explainable_freshness_penalty():
+    now = datetime(2026, 11, 8, 23, 9, tzinfo=timezone.utc)
+    old = story("Federal Reserve announces nationwide interest rate decision",
+                now, hours=22, urgency=6, category="business")
+    new = story("Federal Reserve announces nationwide interest rate decision",
+                now, hours=2, urgency=6, category="business")
+    ranked, _ = evaluate_front_page_candidates(
+        [section("business", old), section("business", new)], now=now
+    )
+    assert ranked[0]["age_hours"] == 2
+    assert ranked[0]["score"] > ranked[1]["score"]
+    assert ranked[0]["score_breakdown"]["freshness"] > ranked[1]["score_breakdown"]["freshness"]
+    for row in ranked:
+        assert row["score"] == round(sum(row["score_breakdown"].values()), 2)
