@@ -39,6 +39,7 @@ from plain_engine.assignment_pipeline import run_live_assignment_category, run_a
 from plain_engine.front_page_hero import evaluate_front_page_candidates, candidate_audit_row, canonical_timestamp
 from plain_engine.category_classifier import classify_stories
 from plain_engine.article_quality import enforce_category_quality, write_quality_report, publication_quality, protected_material_update_pending_recomposition, word_count, MIN_SOURCE_WORDS
+from plain_engine.publication_surface import surface_errors, category_fit_reasons, canonical_reuse_is_corroborated, verify_category_heroes
 from plain_engine.model_usage import ModelUsageTracker, instrument_anthropic_client
 from plain_engine.model_response import extract_model_text, parse_first_json_value
 from plain_engine.semantic_publication_gate import retrieve_recent_candidates, adjudicate_candidates, ACTION_DUPLICATE, ACTION_UPDATE, ACTION_NEW, ACTION_HOLD
@@ -2530,6 +2531,16 @@ def write_archives(all_categories, top_cat, *, client=None, cache=None, material
             elif action!=ACTION_NEW:
                 raise RuntimeError(f"Invalid terminal publication decision: {sem}")
         if existing:
+            # Persistent story IDs can suffer false positives. An unrelated
+            # identity match must never overwrite a verified live story with
+            # old canonical copy (or vice versa). Protected updates have their
+            # independent, target-bound semantic authorization.
+            if not target_slug and not canonical_reuse_is_corroborated(hero, existing):
+                raise RuntimeError(
+                    f"Terminal archive identity mismatch in {cat_key}: "
+                    f"live={headline!r}; canonical={existing.get('headline')!r}; "
+                    "refusing unrelated canonical substitution"
+                )
             slug=existing["slug"];hero["_archived_slug"]=slug
             editorial_action=str(hero.get("editorial_action") or "").casefold(); should_update=bool(target_slug) or editorial_action in {"update_existing","replace_canonical"} or (sem or {}).get("action")==ACTION_UPDATE
             if not should_update:
@@ -2575,6 +2586,16 @@ def write_archives(all_categories, top_cat, *, client=None, cache=None, material
     if uncommitted_before_write:
         raise RuntimeError(
             f"Validated material update(s) reached publication but have no commit receipt: {uncommitted_before_write}"
+        )
+    # IMPORTANT: this must run after all canonical substitutions/compositions
+    # but BEFORE any public article, archive, sitemap or front-page files write.
+    # The old pipeline validated writer copy and then silently replaced it with
+    # archived refusal text. Never trust the earlier quality report here.
+    final_integrity_failures = verify_category_heroes(all_categories, top_cat)
+    if final_integrity_failures:
+        raise RuntimeError(
+            "Terminal publication integrity barrier blocked unsafe news: "
+            + json.dumps(final_integrity_failures[:12],ensure_ascii=False)
         )
     for path,content in staged:path.write_text(content,encoding="utf-8")
     archive_path.write_text(json.dumps(working,ensure_ascii=False,indent=2),encoding="utf-8");(OUTPUT_DIR/"archive.html").write_text(render_archive_page(working),encoding="utf-8");(OUTPUT_DIR/"sitemap.xml").write_text(update_sitemap(working),encoding="utf-8");(OUTPUT_DIR/"news-sitemap.xml").write_text(update_news_sitemap(working),encoding="utf-8")
@@ -2768,6 +2789,8 @@ def recover_category_from_archive(cat_key, cat_label, archive, *, card_count=CAR
         slug=str(row.get("slug") or "").strip(); headline=str(row.get("headline") or "").strip()
         if not slug or not headline:
             continue
+        if row.get("withdrawn") or row.get("ranking_eligible") is False:
+            continue
         raw_date=str(row.get("lastmod") or row.get("date") or "").strip()
         try:
             dt=datetime.fromisoformat(raw_date[:10])
@@ -2930,7 +2953,10 @@ def _apply_category_classification(rows, cat_key, classifications, *, limit=18):
         else:
             row["category_fit_hint"]="cross_tagged"
             secondary.append(row)
-    return (positive+secondary)[:max(1,int(limit or 18))]
+    # A classification explicitly assigning a story to ANOTHER section is not
+    # suitable evidence for this section. Do not let cross-tagged World/Sports
+    # feeds fill U.S. or Tech sections merely to meet a card quota.
+    return positive[:max(1,int(limit or 18))]
 
 
 def main():
@@ -3046,8 +3072,15 @@ def main():
                     )
             hero_item=data.get("hero") or {}
             hero_quality_ok=bool(hero_item.get("publication_quality_ok",True) or protected_material_update_pending_recomposition(hero_item))
-            if not hero_item or not hero_quality_ok:
-                live_error="publication-quality contract rejected live hero";data=None;cacheable=False
+            # A model can output source-access refusals that superficially meet
+            # word-count tests, or write a valid article for the wrong section.
+            # Recover safely before the persistent engine/cache sees it.
+            hero_surface_reasons=surface_errors(hero_item,cat_key,hero=True) if hero_item else ["missing_hero"]
+            if not hero_item or not hero_quality_ok or (
+                hero_surface_reasons and not protected_material_update_pending_recomposition(hero_item)
+            ):
+                live_error="live hero failed editorial surface checks: "+str(hero_surface_reasons)
+                data=None;cacheable=False
         if data is None:
             protected_failure = bool(
                 sources
