@@ -1,147 +1,23 @@
 {
-  "generated_at": "2026-11-09T00:05:22Z",
-  "evaluated": 11,
-  "material_updates": 1,
-  "duplicates_suppressed": 8,
+  "generated_at": "2026-11-09T13:02:33Z",
+  "evaluated": 1,
+  "material_updates": 0,
+  "duplicates_suppressed": 1,
   "holds_suppressed": 0,
-  "new_or_unmatched": 2,
+  "new_or_unmatched": 0,
   "items": [
     {
-      "category": "world",
-      "title": "Aramco Tower hit in heart of Saudi capital as Houthis launch fresh strikes - BBC",
-      "source_url": "https://www.bbc.com/news/articles/c6ly3mjx958eo",
-      "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-11-08-houthi-strikes-hit-aramco-tower-in-riyadh-target-airport-and-oil-facilities",
-      "confidence": 0.98,
-      "novel_facts": [],
-      "reason": "This is the same BBC article covering the identical Houthi missile strike on Aramco Tower in Riyadh, with matching details on damage assessment, casualty figures, and related strikes. No new facts beyond what's already in the canonical version.",
-      "cache_hit": false
-    },
-    {
-      "category": "world",
-      "title": "Aramco Tower hit in heart of Saudi capital as Houthis launch fresh strikes",
-      "source_url": "https://www.bbc.co.uk/news/articles/c6ly3mjx958eo?at_medium=RSS&at_campaign=rss",
-      "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-11-08-houthi-strikes-hit-aramco-tower-in-riyadh-target-airport-and-oil-facilities",
-      "confidence": 0.98,
-      "novel_facts": [],
-      "reason": "This is the same BBC article about Houthi strikes on the Aramco Tower in Riyadh, with identical details on damage, casualties, airport/oil facility targeting, and the al-Shariyah context. No new facts are present beyond the existing canonical.",
-      "cache_hit": false
-    },
-    {
-      "category": "us",
-      "title": "1 dead, 3 others injured following two separate shootings at Winston-Salem State University - WXII",
-      "source_url": "https://www.wxii12.com/article/winston-salem-state-shooting-three-hospitalized/74367022",
-      "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-11-08-arrest-made-in-shooting-that-killed-one-during-winston-salem-state-university-ho",
-      "confidence": 0.95,
-      "novel_facts": [],
-      "reason": "This incoming article is an earlier, less detailed report on the same shooting incident already covered by the canonical, which includes victim names, arrest, charges, and additional context. The incoming article adds no new facts beyond what the canonical already reports; it is superseded, not updating, material.",
-      "cache_hit": false
-    },
-    {
       "category": "business",
-      "title": "Nvidia opens investigation after reports CEO Jensen Huang was targeted by Chinese intelligence - NBC News",
-      "source_url": "https://www.nbcnews.com/tech/tech-news/nvidia-ceo-jensen-huang-investigation-rcna608148",
-      "action": "update_existing_canonical",
+      "title": "Nvidia launches investigation into CEO's affair with suspected Chinese spy",
+      "source_url": "https://www.bbc.co.uk/news/articles/c3dxw10rjn9no?at_medium=RSS&at_campaign=rss",
+      "action": "duplicate_use_existing_canonical",
       "selected_candidate_slug": "2026-11-08-nvidia-board-launches-independent-investigation-into-ceo-jensen-huang-after-repo",
       "confidence": 0.9,
       "novel_facts": [
-        "President Trump publicly defended Huang, calling him 'an honorable guy'",
-        "Trump said he would bring Huang on his upcoming Asia trip",
-        "Trump responded to question about whether he wished he'd acted on the intelligence",
-        "NYT report that concerns rose as high as Secretary of State Marco Rubio"
+        "Additional quote from Rubio declining to comment en route to G7",
+        "China's Foreign Ministry spokesperson reiterating denial of espionage claims"
       ],
-      "reason": "This is the same Nvidia/Jensen Huang investigation story already canonicalized, sharing nearly identical sourcing, quotes, and facts. The incoming article adds material new developments from later Sunday reporting, including President Trump's public comments defending Huang and confirming his continued trust, plus new detail that concerns reached Secretary Rubio. These are meaningful updates to the same unfolding story rather than a separate newsworthy angle, so they should update the existing canonical rather than create a new URL.",
-      "cache_hit": false
-    },
-    {
-      "category": "business",
-      "title": "U.S. Cleared Nvidia Chips to Chinese Firms With Empty Offices and Troubling Ties - The New York Times",
-      "source_url": "https://www.nytimes.com/2026/11/07/business/economy/nvidia-chips-chinese-firms.html",
-      "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-11-07-us-approved-nvidia-chip-sales-to-chinese-firm-with-empty-office-and-ties-to-blac",
-      "confidence": 0.9,
-      "novel_facts": [],
-      "reason": "Incoming article is an aggregation of the same NYT investigation already covered in the canonical Verge-sourced article about Nvidia chips approved for sale to a Chinese firm with an empty office and blacklist ties. No new facts beyond re-aggregated headlines are present.",
-      "cache_hit": true
-    },
-    {
-      "category": "tech",
-      "title": "Nvidia will investigate CEO Jensen Huang’s relationship with possible Chinese spy",
-      "source_url": "https://techcrunch.com/2026/11/08/nvidia-says-its-investigating-ceo-jensen-huangs-relationship-with-possible-chinese-spy/",
-      "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-11-08-congress-demands-answers-on-nvidia-ceos-reported-ties-to-alleged-chinese-spy",
-      "confidence": 0.97,
-      "novel_facts": [],
-      "reason": "Identical source article to the existing canonical covering Nvidia's board investigation into Huang's affair with alleged Chinese operative Alice Huang; no new facts beyond what's already captured, including the congressional scrutiny context.",
-      "cache_hit": false
-    },
-    {
-      "category": "tech",
-      "title": "Nvidia is investigating Jensen Huang’s relationship with a Chinese spy",
-      "source_url": "https://www.theverge.com/ai-artificial-intelligence/1029562/nvidia-investigating-jensen-huang-relationship-chinese-spy",
-      "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-11-08-congress-demands-answers-on-nvidia-ceos-reported-ties-to-alleged-chinese-spy",
-      "confidence": 0.95,
-      "novel_facts": [],
-      "reason": "Both articles report the same Nvidia board investigation into Jensen Huang's relationship with Alice Huang, quoting the identical board statement. The canonical candidate additionally includes Huang's personal admission of an affair and congressional scrutiny details, which are more developed than the incoming piece, meaning the incoming article adds no new facts beyond what's already canonical.",
-      "cache_hit": false
-    },
-    {
-      "category": "sports",
-      "title": "New York Jets vs. Kansas City Chiefs Live Score and Stats - November 8, 2026 Gametracker - CBS Sports",
-      "source_url": "https://www.cbssports.com/nfl/gametracker/recap/NFL_20261108_NYJ@KC/",
-      "action": "new_story",
-      "selected_candidate_slug": "",
-      "confidence": 0.98,
-      "novel_facts": [
-        "Chiefs defeat Jets 35-12 at Arrowhead Stadium",
-        "Kenneth Walker scores 3 TDs",
-        "Mahomes injures elbow on strip-sack by David Bailey",
-        "Geno Smith sacked 5 times",
-        "Butker misses two field goals amid kicking controversy"
-      ],
-      "reason": "This article covers a completely different NFL game (Jets vs. Chiefs) than the candidate (Lions vs. Dolphins). They share only the date and generic gametracker headline format, not any participant, team, or outcome. No real-world event overlap exists.",
-      "cache_hit": false
-    },
-    {
-      "category": "sports",
-      "title": "Denver Broncos vs. Carolina Panthers Live Score and Stats - November 8, 2026 Gametracker - CBS Sports",
-      "source_url": "https://www.cbssports.com/nfl/gametracker/recap/NFL_20261108_DEN@CAR/",
-      "action": "new_story",
-      "selected_candidate_slug": "",
-      "confidence": 0.97,
-      "novel_facts": [
-        "Broncos vs Panthers game, final score 26-21",
-        "Bo Nix 237 passing yards, two TDs",
-        "Nik Bonitto strip-sack with 1:24 left",
-        "Broncos improve to 7-2, fifth straight win",
-        "Panthers fall to 3-5, third straight loss"
-      ],
-      "reason": "Incoming article covers the Broncos-Panthers NFL game, an entirely different matchup, teams, players, and venue than the candidate's Lions-Dolphins game. Only superficial headline template similarity (CBS Sports gametracker format, same date) is shared; no common participants, teams, or location.",
-      "cache_hit": false
-    },
-    {
-      "category": "entertainment",
-      "title": "Del Casher, Guitarist Who Invented the Wah-Wah Pedal, Dead at 88",
-      "source_url": "https://www.rollingstone.com/music/music-news/del-casher-guitarist-invented-wah-wah-pedal-dead-obituary-1235654482/",
-      "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-11-08-del-casher-guitarist-who-invented-the-wah-wah-pedal-dies-at-88",
-      "confidence": 0.98,
-      "novel_facts": [],
-      "reason": "Identical obituary from the same Rolling Stone source URL, same subject, date of death, and details; no new facts beyond the existing canonical article.",
-      "cache_hit": false
-    },
-    {
-      "category": "politics",
-      "title": "Blanche dismisses Means allegations as GOP's MAHA feud deepens",
-      "source_url": "https://www.axios.com/2026/11/08/todd-blanche-calley-means-susie-wiles-maha-allegations",
-      "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-11-08-attorney-general-dismisses-calley-means-white-house-corruption-allegations-as-fo",
-      "confidence": 0.98,
-      "novel_facts": [],
-      "reason": "Identical source article and source headline, same quotes, same named parties (Blanche, Means, Wiles, Makary, Blair, Fabrizio, Ballard Partners), no new facts beyond the existing canonical.",
+      "reason": "This covers the same investigation, same CEO, same alleged spy relationship, and same Trump comments already reported in the canonical NBC article. The added Rubio and Chinese foreign ministry quotes are supplementary color/reaction, not a material new development (no arrest, ruling, identification, or consequential change), so it should update rather than fork into a new story.",
       "cache_hit": false
     }
   ]

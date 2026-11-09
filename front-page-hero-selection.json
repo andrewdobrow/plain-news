@@ -1,33 +1,55 @@
 {
   "version": 1,
-  "generated_at": "2026-11-09T00:14:30.056791+00:00",
+  "generated_at": "2026-11-09T13:10:42.452300+00:00",
   "policy": "national_impact_canonical_freshness_verified_full_article",
   "selected": {
-    "headline": "Researchers trace mysterious global power grid frequency drops to synchronized battery backup systems",
-    "category_key": "tech",
+    "headline": "Krakow mass shooting suspect dies in hospital as Polish prosecutors say motive investigation continues",
+    "category_key": "world",
     "standalone_card_promoted": false
   },
   "candidates": [
     {
-      "headline": "Researchers trace mysterious global power grid frequency drops to synchronized battery backup systems",
-      "category_key": "tech",
-      "category_label": "Tech & Science",
+      "headline": "Krakow mass shooting suspect dies in hospital as Polish prosecutors say motive investigation continues",
+      "category_key": "world",
+      "category_label": "World",
       "role": "hero",
-      "score": 215.65,
+      "score": 228.3,
       "tier": 4,
       "tier_reason": "security_emergency",
-      "urgency_score": 7,
-      "importance_score": 0,
+      "urgency_score": 8,
+      "importance_score": 16,
       "national_relevance": "unknown",
-      "age_hours": 3.74,
+      "age_hours": 1.24,
       "timestamp_basis": "item:source_published_raw",
-      "source_timestamp": "2026-11-08T20:30:00+00:00",
+      "source_timestamp": "2026-11-09T11:56:25+00:00",
       "score_breakdown": {
         "significance": 144.0,
-        "urgency": 28.0,
+        "urgency": 32.0,
         "national_relevance": 9.0,
-        "independent_importance": 0.0,
-        "freshness": 34.65
+        "independent_importance": 2.4,
+        "freshness": 40.9
+      }
+    },
+    {
+      "headline": "Nvidia CEO Jensen Huang affair with suspected Chinese spy triggers national security probe",
+      "category_key": "world",
+      "category_label": "World",
+      "role": "card",
+      "score": 207.93,
+      "tier": 4,
+      "tier_reason": "security_emergency",
+      "urgency_score": 6,
+      "importance_score": 32,
+      "national_relevance": "unknown",
+      "age_hours": 7.15,
+      "timestamp_basis": "item:source_published_raw",
+      "source_timestamp": "2026-11-09T06:01:52+00:00",
+      "score_breakdown": {
+        "significance": 144.0,
+        "urgency": 24.0,
+        "national_relevance": 9.0,
+        "independent_importance": 4.8,
+        "freshness": 26.13
       }
     },
     {
@@ -35,13 +57,13 @@
       "category_key": "world",
       "category_label": "World",
       "role": "card",
-      "score": 206.28,
+      "score": 173.94,
       "tier": 4,
       "tier_reason": "major_international_development",
       "urgency_score": 3,
       "importance_score": 0,
       "national_relevance": "unknown",
-      "age_hours": 1.09,
+      "age_hours": 14.02,
       "timestamp_basis": "archive:first_published",
       "source_timestamp": "2026-11-08T23:09:14+00:00",
       "score_breakdown": {
@@ -49,51 +71,117 @@
         "urgency": 12.0,
         "national_relevance": 9.0,
         "independent_importance": 0.0,
-        "freshness": 41.28
+        "freshness": 8.94
       }
     },
     {
-      "headline": "Markets face pivotal week with inflation data, Fed rate expectations, and AI earnings",
+      "headline": "South Africa arrests nine foreign nationals allegedly trying to leave to fight in Ukraine war",
+      "category_key": "world",
+      "category_label": "World",
+      "role": "card",
+      "score": 153.65,
+      "tier": 2,
+      "tier_reason": "international_development_without_broad_consequence",
+      "urgency_score": 5,
+      "importance_score": 40,
+      "national_relevance": "global_major",
+      "age_hours": 0.62,
+      "timestamp_basis": "item:source_published_raw",
+      "source_timestamp": "2026-11-09T12:33:24+00:00",
+      "score_breakdown": {
+        "significance": 72.0,
+        "urgency": 20.0,
+        "national_relevance": 13.2,
+        "independent_importance": 6.0,
+        "freshness": 42.45
+      }
+    },
+    {
+      "headline": "Four killed in Gaza after sand embankment collapses onto tents following heavy rains",
+      "category_key": "world",
+      "category_label": "World",
+      "role": "card",
+      "score": 149.5,
+      "tier": 2,
+      "tier_reason": "international_development_without_broad_consequence",
+      "urgency_score": 7,
+      "importance_score": 6,
+      "national_relevance": "international",
+      "age_hours": 2.48,
+      "timestamp_basis": "item:source_published_raw",
+      "source_timestamp": "2026-11-09T10:41:57+00:00",
+      "score_breakdown": {
+        "significance": 72.0,
+        "urgency": 28.0,
+        "national_relevance": 10.8,
+        "independent_importance": 0.9,
+        "freshness": 37.8
+      }
+    },
+    {
+      "headline": "At least 34 migrants die after boat capsizes off Senegal en route to Canary Islands",
+      "category_key": "world",
+      "category_label": "World",
+      "role": "card",
+      "score": 147.53,
+      "tier": 2,
+      "tier_reason": "international_development_without_broad_consequence",
+      "urgency_score": 7,
+      "importance_score": 0,
+      "national_relevance": "unknown",
+      "age_hours": 2.19,
+      "timestamp_basis": "item:source_published_raw",
+      "source_timestamp": "2026-11-09T10:59:26+00:00",
+      "score_breakdown": {
+        "significance": 72.0,
+        "urgency": 28.0,
+        "national_relevance": 9.0,
+        "independent_importance": 0.0,
+        "freshness": 38.53
+      }
+    },
+    {
+      "headline": "President Trump defends Nvidia CEO Jensen Huang after board launches investigation into Chinese intelligence targeting",
       "category_key": "business",
       "category_label": "Business",
       "role": "card",
-      "score": 205.45,
-      "tier": 4,
-      "tier_reason": "macroeconomic_development",
-      "urgency_score": 6,
-      "importance_score": 28,
-      "national_relevance": "unknown",
-      "age_hours": 7.9,
-      "timestamp_basis": "item:source_published_raw",
-      "source_timestamp": "2026-11-08T16:20:25+00:00",
-      "score_breakdown": {
-        "significance": 144.0,
-        "urgency": 24.0,
-        "national_relevance": 9.0,
-        "independent_importance": 4.2,
-        "freshness": 24.25
-      }
-    },
-    {
-      "headline": "Trump replaces chief of staff Susie Wiles with Stephen Miller after GOP midterm losses",
-      "category_key": "politics",
-      "category_label": "Politics",
-      "role": "card",
-      "score": 156.0,
-      "tier": 5,
-      "tier_reason": "concrete_federal_action",
+      "score": 137.94,
+      "tier": 3,
+      "tier_reason": "targeted_federal_entity_action",
       "urgency_score": 3,
       "importance_score": 0,
       "national_relevance": "unknown",
-      "age_hours": 43.02,
+      "age_hours": 14.02,
       "timestamp_basis": "archive:first_published",
-      "source_timestamp": "2026-11-07T05:13:26+00:00",
+      "source_timestamp": "2026-11-08T23:09:14+00:00",
       "score_breakdown": {
-        "significance": 180.0,
+        "significance": 108.0,
         "urgency": 12.0,
         "national_relevance": 9.0,
         "independent_importance": 0.0,
-        "freshness": -45.0
+        "freshness": 8.94
+      }
+    },
+    {
+      "headline": "Asian markets rebound after $2.5 trillion Wall Street sell-off; Nvidia board investigates CEO over relationship",
+      "category_key": "business",
+      "category_label": "Business",
+      "role": "hero",
+      "score": 113.76,
+      "tier": 1,
+      "tier_reason": "limited_national_reach",
+      "urgency_score": 8,
+      "importance_score": 0,
+      "national_relevance": "unknown",
+      "age_hours": 2.9,
+      "timestamp_basis": "item:source_published_raw",
+      "source_timestamp": "2026-11-09T10:16:56+00:00",
+      "score_breakdown": {
+        "significance": 36.0,
+        "urgency": 32.0,
+        "national_relevance": 9.0,
+        "independent_importance": 0.0,
+        "freshness": 36.76
       }
     },
     {
@@ -101,87 +189,131 @@
       "category_key": "us",
       "category_label": "U.S.",
       "role": "hero",
-      "score": 147.88,
+      "score": 112.66,
       "tier": 2,
       "tier_reason": "domestic_development",
-      "urgency_score": 6,
+      "urgency_score": 5,
       "importance_score": 0,
       "national_relevance": "unknown",
-      "age_hours": 0.45,
-      "timestamp_basis": "item:source_published_raw",
-      "source_timestamp": "2026-11-08T23:47:37+00:00",
-      "score_breakdown": {
-        "significance": 72.0,
-        "urgency": 24.0,
-        "national_relevance": 9.0,
-        "independent_importance": 0.0,
-        "freshness": 42.88
-      }
-    },
-    {
-      "headline": "Train collision near Cairo kills seven, injures more than 125",
-      "category_key": "world",
-      "category_label": "World",
-      "role": "card",
-      "score": 146.23,
-      "tier": 2,
-      "tier_reason": "international_development_without_broad_consequence",
-      "urgency_score": 6,
-      "importance_score": 10,
-      "national_relevance": "unknown",
-      "age_hours": 1.71,
-      "timestamp_basis": "item:source_published_raw",
-      "source_timestamp": "2026-11-08T22:32:03+00:00",
-      "score_breakdown": {
-        "significance": 72.0,
-        "urgency": 24.0,
-        "national_relevance": 9.0,
-        "independent_importance": 1.5,
-        "freshness": 39.73
-      }
-    },
-    {
-      "headline": "Surgeons dining in Krakow described treating shooting victims in street before ambulances arrived",
-      "category_key": "world",
-      "category_label": "World",
-      "role": "card",
-      "score": 144.82,
-      "tier": 2,
-      "tier_reason": "international_development_without_broad_consequence",
-      "urgency_score": 5,
-      "importance_score": 10,
-      "national_relevance": "unknown",
-      "age_hours": 0.67,
-      "timestamp_basis": "item:source_published_raw",
-      "source_timestamp": "2026-11-08T23:34:18+00:00",
+      "age_hours": 12.94,
+      "timestamp_basis": "archive:first_published",
+      "source_timestamp": "2026-11-09T00:14:31+00:00",
       "score_breakdown": {
         "significance": 72.0,
         "urgency": 20.0,
         "national_relevance": 9.0,
-        "independent_importance": 1.5,
-        "freshness": 42.32
+        "independent_importance": 0.0,
+        "freshness": 11.66
       }
     },
     {
-      "headline": "Krakow shooter's parents and sister found dead at family home as terrorism charges advance",
-      "category_key": "world",
-      "category_label": "World",
+      "headline": "Tesla launches robotaxi service in San Antonio, its fourth Texas city",
+      "category_key": "tech",
+      "category_label": "Tech & Science",
       "role": "card",
-      "score": 143.68,
-      "tier": 2,
-      "tier_reason": "international_development_without_broad_consequence",
-      "urgency_score": 7,
-      "importance_score": 6,
-      "national_relevance": "unknown",
-      "age_hours": 4.09,
+      "score": 112.12,
+      "tier": 1,
+      "tier_reason": "limited_national_reach",
+      "urgency_score": 6,
+      "importance_score": 0,
+      "national_relevance": "us_state_regional",
+      "age_hours": 1.67,
       "timestamp_basis": "item:source_published_raw",
-      "source_timestamp": "2026-11-08T20:09:11+00:00",
+      "source_timestamp": "2026-11-09T11:30:24+00:00",
       "score_breakdown": {
-        "significance": 72.0,
+        "significance": 36.0,
+        "urgency": 24.0,
+        "national_relevance": 12.3,
+        "independent_importance": 0.0,
+        "freshness": 39.82
+      }
+    },
+    {
+      "headline": "Meta expands AI age detection for Instagram teen accounts worldwide after $17.1 billion settlement",
+      "category_key": "tech",
+      "category_label": "Tech & Science",
+      "role": "hero",
+      "score": 110.05,
+      "tier": 1,
+      "tier_reason": "limited_national_reach",
+      "urgency_score": 6,
+      "importance_score": 0,
+      "national_relevance": "unknown",
+      "age_hours": 1.18,
+      "timestamp_basis": "item:source_published_raw",
+      "source_timestamp": "2026-11-09T12:00:00+00:00",
+      "score_breakdown": {
+        "significance": 36.0,
+        "urgency": 24.0,
+        "national_relevance": 9.0,
+        "independent_importance": 0.0,
+        "freshness": 41.05
+      }
+    },
+    {
+      "headline": "Elon Musk's companies face Democratic investigations after $475 million midterm spending resulted in losses",
+      "category_key": "politics",
+      "category_label": "Politics",
+      "role": "hero",
+      "score": 109.89,
+      "tier": 1,
+      "tier_reason": "limited_national_reach",
+      "urgency_score": 7,
+      "importance_score": 0,
+      "national_relevance": "unknown",
+      "age_hours": 2.84,
+      "timestamp_basis": "item:source_published_raw",
+      "source_timestamp": "2026-11-09T10:20:05+00:00",
+      "score_breakdown": {
+        "significance": 36.0,
         "urgency": 28.0,
         "national_relevance": 9.0,
-        "independent_importance": 0.9,
-        "freshness": 33.78
+        "independent_importance": 0.0,
+        "freshness": 36.89
+      }
+    },
+    {
+      "headline": "Democrats explore ties with MAHA movement on food policy despite vaccine clash with Kennedy",
+      "category_key": "politics",
+      "category_label": "Politics",
+      "role": "card",
+      "score": 106.31,
+      "tier": 1,
+      "tier_reason": "limited_national_reach",
+      "urgency_score": 6,
+      "importance_score": 0,
+      "national_relevance": "unknown",
+      "age_hours": 2.68,
+      "timestamp_basis": "item:source_published_raw",
+      "source_timestamp": "2026-11-09T10:30:05+00:00",
+      "score_breakdown": {
+        "significance": 36.0,
+        "urgency": 24.0,
+        "national_relevance": 9.0,
+        "independent_importance": 0.0,
+        "freshness": 37.31
+      }
+    },
+    {
+      "headline": "Restaurant chains refocus on food quality to win back diners",
+      "category_key": "business",
+      "category_label": "Business",
+      "role": "card",
+      "score": 106.05,
+      "tier": 1,
+      "tier_reason": "limited_national_reach",
+      "urgency_score": 5,
+      "importance_score": 0,
+      "national_relevance": "unknown",
+      "age_hours": 1.18,
+      "timestamp_basis": "item:source_published_raw",
+      "source_timestamp": "2026-11-09T12:00:01+00:00",
+      "score_breakdown": {
+        "significance": 36.0,
+        "urgency": 20.0,
+        "national_relevance": 9.0,
+        "independent_importance": 0.0,
+        "freshness": 41.05
       }
     },
     {
@@ -189,13 +321,13 @@
       "category_key": "us",
       "category_label": "U.S.",
       "role": "card",
-      "score": 136.68,
+      "score": 104.34,
       "tier": 2,
       "tier_reason": "domestic_development",
       "urgency_score": 3,
       "importance_score": 16,
       "national_relevance": "unknown",
-      "age_hours": 1.09,
+      "age_hours": 14.02,
       "timestamp_basis": "archive:first_published",
       "source_timestamp": "2026-11-08T23:09:14+00:00",
       "score_breakdown": {
@@ -203,7 +335,73 @@
         "urgency": 12.0,
         "national_relevance": 9.0,
         "independent_importance": 2.4,
-        "freshness": 41.28
+        "freshness": 8.94
+      }
+    },
+    {
+      "headline": "House Democrats plan to move Jan. 6 police memorial plaque from Capitol basement to more visible location",
+      "category_key": "politics",
+      "category_label": "Politics",
+      "role": "card",
+      "score": 101.26,
+      "tier": 1,
+      "tier_reason": "limited_national_reach",
+      "urgency_score": 5,
+      "importance_score": 0,
+      "national_relevance": "unknown",
+      "age_hours": 3.1,
+      "timestamp_basis": "item:source_published_raw",
+      "source_timestamp": "2026-11-09T10:05:00+00:00",
+      "score_breakdown": {
+        "significance": 36.0,
+        "urgency": 20.0,
+        "national_relevance": 9.0,
+        "independent_importance": 0.0,
+        "freshness": 36.26
+      }
+    },
+    {
+      "headline": "Hubble finds dwarf galaxies retain only 11 percent of oxygen their stars produce",
+      "category_key": "tech",
+      "category_label": "Tech & Science",
+      "role": "card",
+      "score": 98.53,
+      "tier": 1,
+      "tier_reason": "limited_national_reach",
+      "urgency_score": 5,
+      "importance_score": 40,
+      "national_relevance": "global_major",
+      "age_hours": 8.09,
+      "timestamp_basis": "item:source_published_raw",
+      "source_timestamp": "2026-11-09T05:05:22+00:00",
+      "score_breakdown": {
+        "significance": 36.0,
+        "urgency": 20.0,
+        "national_relevance": 12.75,
+        "independent_importance": 6.0,
+        "freshness": 23.78
+      }
+    },
+    {
+      "headline": "Samsung reportedly plans Snapdragon chip for Galaxy S27 Ultra despite overheating concerns",
+      "category_key": "tech",
+      "category_label": "Tech & Science",
+      "role": "card",
+      "score": 96.01,
+      "tier": 1,
+      "tier_reason": "limited_national_reach",
+      "urgency_score": 7,
+      "importance_score": 0,
+      "national_relevance": "unknown",
+      "age_hours": 8.4,
+      "timestamp_basis": "item:source_published_raw",
+      "source_timestamp": "2026-11-09T04:46:54+00:00",
+      "score_breakdown": {
+        "significance": 36.0,
+        "urgency": 28.0,
+        "national_relevance": 9.0,
+        "independent_importance": 0.0,
+        "freshness": 23.01
       }
     },
     {
@@ -211,13 +409,13 @@
       "category_key": "business",
       "category_label": "Business",
       "role": "card",
-      "score": 126.08,
+      "score": 93.74,
       "tier": 3,
       "tier_reason": "targeted_federal_entity_action",
       "urgency_score": 3,
       "importance_score": 15,
       "national_relevance": "us_national",
-      "age_hours": 22.07,
+      "age_hours": 35.01,
       "timestamp_basis": "archive:first_published",
       "source_timestamp": "2026-11-08T02:10:24+00:00",
       "score_breakdown": {
@@ -225,117 +423,29 @@
         "urgency": 12.0,
         "national_relevance": 15.0,
         "independent_importance": 2.25,
-        "freshness": -11.17
+        "freshness": -43.51
       }
     },
     {
-      "headline": "Warren Buffett's Market-Crash Strategy: Buy and Hold Through Volatility",
-      "category_key": "business",
-      "category_label": "Business",
-      "role": "card",
-      "score": 120.15,
-      "tier": 1,
-      "tier_reason": "limited_national_reach",
-      "urgency_score": 7,
-      "importance_score": 50,
-      "national_relevance": "global_major",
-      "age_hours": 3.24,
-      "timestamp_basis": "item:source_published_raw",
-      "source_timestamp": "2026-11-08T21:00:00+00:00",
-      "score_breakdown": {
-        "significance": 36.0,
-        "urgency": 28.0,
-        "national_relevance": 12.75,
-        "independent_importance": 7.5,
-        "freshness": 35.9
-      }
-    },
-    {
-      "headline": "Paraguay formally charges ousted president Santiago Peña with breach of trust over Ueno Bank collapse",
-      "category_key": "world",
-      "category_label": "World",
-      "role": "card",
-      "score": 120.0,
-      "tier": 4,
-      "tier_reason": "major_foreign_government_crisis",
-      "urgency_score": 3,
-      "importance_score": 0,
-      "national_relevance": "unknown",
-      "age_hours": 43.02,
-      "timestamp_basis": "archive:first_published",
-      "source_timestamp": "2026-11-07T05:13:26+00:00",
-      "score_breakdown": {
-        "significance": 144.0,
-        "urgency": 12.0,
-        "national_relevance": 9.0,
-        "independent_importance": 0.0,
-        "freshness": -45.0
-      }
-    },
-    {
-      "headline": "Nvidia board launches independent investigation into CEO Jensen Huang after reports he was targeted by Chinese intelligence; Trump publicly defends Huang and reveals Rubio-level concern inside government",
-      "category_key": "business",
-      "category_label": "Business",
-      "role": "hero",
-      "score": 119.62,
-      "tier": 1,
-      "tier_reason": "limited_national_reach",
-      "urgency_score": 8,
-      "importance_score": 0,
-      "national_relevance": "unknown",
-      "age_hours": 0.55,
-      "timestamp_basis": "validated_source_development",
-      "source_timestamp": "2026-11-08T23:41:30+00:00",
-      "score_breakdown": {
-        "significance": 36.0,
-        "urgency": 32.0,
-        "national_relevance": 9.0,
-        "independent_importance": 0.0,
-        "freshness": 42.62
-      }
-    },
-    {
-      "headline": "DeSantis positions for 2028 presidential run as Rubio deflects speculation following GOP midterm losses",
-      "category_key": "politics",
-      "category_label": "Politics",
-      "role": "hero",
-      "score": 116.82,
-      "tier": 1,
-      "tier_reason": "limited_national_reach",
-      "urgency_score": 7,
-      "importance_score": 25,
-      "national_relevance": "unknown",
-      "age_hours": 1.57,
-      "timestamp_basis": "item:source_published_raw",
-      "source_timestamp": "2026-11-08T22:40:04+00:00",
-      "score_breakdown": {
-        "significance": 36.0,
-        "urgency": 28.0,
-        "national_relevance": 9.0,
-        "independent_importance": 3.75,
-        "freshness": 40.07
-      }
-    },
-    {
-      "headline": "Nvidia CEO Jensen Huang acknowledges affair with alleged Chinese government agent as board launches security investigation",
+      "headline": "Microsoft clarifies Registry Editor sample app is not a Windows 11 replacement after online confusion",
       "category_key": "tech",
       "category_label": "Tech & Science",
       "role": "card",
-      "score": 113.68,
+      "score": 93.39,
       "tier": 1,
       "tier_reason": "limited_national_reach",
       "urgency_score": 7,
       "importance_score": 0,
       "national_relevance": "unknown",
-      "age_hours": 1.33,
+      "age_hours": 9.44,
       "timestamp_basis": "item:source_published_raw",
-      "source_timestamp": "2026-11-08T22:54:50+00:00",
+      "source_timestamp": "2026-11-09T03:44:05+00:00",
       "score_breakdown": {
         "significance": 36.0,
         "urgency": 28.0,
         "national_relevance": 9.0,
         "independent_importance": 0.0,
-        "freshness": 40.68
+        "freshness": 20.39
       }
     },
     {
@@ -343,13 +453,13 @@
       "category_key": "politics",
       "category_label": "Politics",
       "role": "card",
-      "score": 111.33,
+      "score": 78.99,
       "tier": 1,
       "tier_reason": "limited_national_reach",
       "urgency_score": 3,
       "importance_score": 47,
       "national_relevance": "us_national",
-      "age_hours": 1.09,
+      "age_hours": 14.02,
       "timestamp_basis": "archive:first_published",
       "source_timestamp": "2026-11-08T23:09:14+00:00",
       "score_breakdown": {
@@ -357,117 +467,51 @@
         "urgency": 12.0,
         "national_relevance": 15.0,
         "independent_importance": 7.05,
-        "freshness": 41.28
+        "freshness": 8.94
       }
     },
     {
-      "headline": "Akai opens GitHub repository for MPC music production hardware",
-      "category_key": "tech",
-      "category_label": "Tech & Science",
+      "headline": "DeSantis positions for 2028 presidential run as Rubio deflects speculation following GOP midterm losses",
+      "category_key": "politics",
+      "category_label": "Politics",
       "role": "card",
-      "score": 103.8,
+      "score": 72.41,
       "tier": 1,
       "tier_reason": "limited_national_reach",
-      "urgency_score": 4,
-      "importance_score": 40,
-      "national_relevance": "global_major",
-      "age_hours": 4.38,
-      "timestamp_basis": "item:source_published_raw",
-      "source_timestamp": "2026-11-08T19:51:39+00:00",
+      "urgency_score": 3,
+      "importance_score": 25,
+      "national_relevance": "unknown",
+      "age_hours": 12.94,
+      "timestamp_basis": "archive:first_published",
+      "source_timestamp": "2026-11-09T00:14:31+00:00",
       "score_breakdown": {
         "significance": 36.0,
-        "urgency": 16.0,
-        "national_relevance": 12.75,
-        "independent_importance": 6.0,
-        "freshness": 33.05
+        "urgency": 12.0,
+        "national_relevance": 9.0,
+        "independent_importance": 3.75,
+        "freshness": 11.66
       }
     },
     {
-      "headline": "Apple accelerates Siri upgrades under internal pressure to match OpenAI and Meta AI assistants",
+      "headline": "Researchers trace mysterious global power grid frequency drops to synchronized battery backup systems",
       "category_key": "tech",
       "category_label": "Tech & Science",
       "role": "card",
-      "score": 100.66,
+      "score": 68.66,
       "tier": 1,
       "tier_reason": "limited_national_reach",
-      "urgency_score": 6,
+      "urgency_score": 3,
       "importance_score": 0,
       "national_relevance": "unknown",
-      "age_hours": 4.94,
-      "timestamp_basis": "item:source_published_raw",
-      "source_timestamp": "2026-11-08T19:18:19+00:00",
+      "age_hours": 12.94,
+      "timestamp_basis": "archive:first_published",
+      "source_timestamp": "2026-11-09T00:14:31+00:00",
       "score_breakdown": {
         "significance": 36.0,
-        "urgency": 24.0,
+        "urgency": 12.0,
         "national_relevance": 9.0,
         "independent_importance": 0.0,
-        "freshness": 31.66
-      }
-    },
-    {
-      "headline": "Epic Games confirms launcher support for SteamOS and other Linux distributions",
-      "category_key": "tech",
-      "category_label": "Tech & Science",
-      "role": "card",
-      "score": 100.57,
-      "tier": 1,
-      "tier_reason": "limited_national_reach",
-      "urgency_score": 5,
-      "importance_score": 0,
-      "national_relevance": "unknown",
-      "age_hours": 3.37,
-      "timestamp_basis": "item:source_published_raw",
-      "source_timestamp": "2026-11-08T20:52:05+00:00",
-      "score_breakdown": {
-        "significance": 36.0,
-        "urgency": 20.0,
-        "national_relevance": 9.0,
-        "independent_importance": 0.0,
-        "freshness": 35.57
-      }
-    },
-    {
-      "headline": "Elvis Presley estate and Eminem publisher sue AI music company Suno over voice cloning",
-      "category_key": "tech",
-      "category_label": "Tech & Science",
-      "role": "card",
-      "score": 95.87,
-      "tier": 1,
-      "tier_reason": "limited_national_reach",
-      "urgency_score": 6,
-      "importance_score": 0,
-      "national_relevance": "unknown",
-      "age_hours": 6.85,
-      "timestamp_basis": "item:source_published_raw",
-      "source_timestamp": "2026-11-08T17:23:19+00:00",
-      "score_breakdown": {
-        "significance": 36.0,
-        "urgency": 24.0,
-        "national_relevance": 9.0,
-        "independent_importance": 0.0,
-        "freshness": 26.87
-      }
-    },
-    {
-      "headline": "Sequoia Capital partners blindsided by Roelof Botha's SpaceX board appointment",
-      "category_key": "tech",
-      "category_label": "Tech & Science",
-      "role": "card",
-      "score": 94.04,
-      "tier": 1,
-      "tier_reason": "limited_national_reach",
-      "urgency_score": 4,
-      "importance_score": 0,
-      "national_relevance": "unknown",
-      "age_hours": 4.38,
-      "timestamp_basis": "item:source_published_raw",
-      "source_timestamp": "2026-11-08T19:51:30+00:00",
-      "score_breakdown": {
-        "significance": 36.0,
-        "urgency": 16.0,
-        "national_relevance": 9.0,
-        "independent_importance": 0.0,
-        "freshness": 33.04
+        "freshness": 11.66
       }
     },
     {
@@ -475,13 +519,13 @@
       "category_key": "world",
       "category_label": "World",
       "role": "card",
-      "score": 87.99,
+      "score": 55.65,
       "tier": 2,
       "tier_reason": "international_development_without_broad_consequence",
       "urgency_score": 3,
       "importance_score": 25,
       "national_relevance": "unknown",
-      "age_hours": 21.1,
+      "age_hours": 34.04,
       "timestamp_basis": "archive:first_published",
       "source_timestamp": "2026-11-08T03:08:21+00:00",
       "score_breakdown": {
@@ -489,29 +533,7 @@
         "urgency": 12.0,
         "national_relevance": 9.0,
         "independent_importance": 3.75,
-        "freshness": -8.76
-      }
-    },
-    {
-      "headline": "Binance names new CFO days after $6.3 billion crypto hack attributed to North Korean hackers",
-      "category_key": "business",
-      "category_label": "Business",
-      "role": "card",
-      "score": 86.65,
-      "tier": 1,
-      "tier_reason": "limited_national_reach",
-      "urgency_score": 6,
-      "importance_score": 0,
-      "national_relevance": "unknown",
-      "age_hours": 10.54,
-      "timestamp_basis": "item:source_published_raw",
-      "source_timestamp": "2026-11-08T13:42:00+00:00",
-      "score_breakdown": {
-        "significance": 36.0,
-        "urgency": 24.0,
-        "national_relevance": 9.0,
-        "independent_importance": 0.0,
-        "freshness": 17.65
+        "freshness": -41.1
       }
     },
     {
@@ -519,13 +541,13 @@
       "category_key": "us",
       "category_label": "U.S.",
       "role": "card",
-      "score": 84.23,
+      "score": 51.89,
       "tier": 2,
       "tier_reason": "domestic_development",
       "urgency_score": 3,
       "importance_score": 16,
       "national_relevance": "unknown",
-      "age_hours": 22.07,
+      "age_hours": 35.01,
       "timestamp_basis": "archive:first_published",
       "source_timestamp": "2026-11-08T02:10:24+00:00",
       "score_breakdown": {
@@ -533,29 +555,7 @@
         "urgency": 12.0,
         "national_relevance": 9.0,
         "independent_importance": 2.4,
-        "freshness": -11.17
-      }
-    },
-    {
-      "headline": "House Republicans weigh impeaching Defense Secretary Hegseth this week over alleged illegal continuation of Iran war",
-      "category_key": "politics",
-      "category_label": "Politics",
-      "role": "card",
-      "score": 83.55,
-      "tier": 1,
-      "tier_reason": "limited_national_reach",
-      "urgency_score": 3,
-      "importance_score": 40,
-      "national_relevance": "global_major",
-      "age_hours": 11.06,
-      "timestamp_basis": "archive:first_published",
-      "source_timestamp": "2026-11-08T13:10:54+00:00",
-      "score_breakdown": {
-        "significance": 36.0,
-        "urgency": 12.0,
-        "national_relevance": 13.2,
-        "independent_importance": 6.0,
-        "freshness": 16.35
+        "freshness": -43.51
       }
     },
     {
@@ -563,13 +563,13 @@
       "category_key": "us",
       "category_label": "U.S.",
       "role": "card",
-      "score": 83.12,
+      "score": 51.3,
       "tier": 2,
       "tier_reason": "domestic_development",
       "urgency_score": 3,
       "importance_score": 0,
       "national_relevance": "us_state_regional",
-      "age_hours": 22.87,
+      "age_hours": 35.81,
       "timestamp_basis": "archive:first_published",
       "source_timestamp": "2026-11-08T01:22:05+00:00",
       "score_breakdown": {
@@ -577,7 +577,29 @@
         "urgency": 12.0,
         "national_relevance": 12.3,
         "independent_importance": 0.0,
-        "freshness": -13.18
+        "freshness": -45.0
+      }
+    },
+    {
+      "headline": "House Republicans weigh impeaching Defense Secretary Hegseth this week over alleged illegal continuation of Iran war",
+      "category_key": "politics",
+      "category_label": "Politics",
+      "role": "card",
+      "score": 51.21,
+      "tier": 1,
+      "tier_reason": "limited_national_reach",
+      "urgency_score": 3,
+      "importance_score": 40,
+      "national_relevance": "global_major",
+      "age_hours": 24.0,
+      "timestamp_basis": "archive:first_published",
+      "source_timestamp": "2026-11-08T13:10:54+00:00",
+      "score_breakdown": {
+        "significance": 36.0,
+        "urgency": 12.0,
+        "national_relevance": 13.2,
+        "independent_importance": 6.0,
+        "freshness": -15.99
       }
     },
     {
@@ -585,13 +607,13 @@
       "category_key": "world",
       "category_label": "World",
       "role": "card",
-      "score": 80.72,
+      "score": 48.9,
       "tier": 2,
       "tier_reason": "international_development_without_broad_consequence",
       "urgency_score": 3,
       "importance_score": 6,
       "national_relevance": "unknown",
-      "age_hours": 22.87,
+      "age_hours": 35.81,
       "timestamp_basis": "archive:first_published",
       "source_timestamp": "2026-11-08T01:22:05+00:00",
       "score_breakdown": {
@@ -599,7 +621,7 @@
         "urgency": 12.0,
         "national_relevance": 9.0,
         "independent_importance": 0.9,
-        "freshness": -13.18
+        "freshness": -45.0
       }
     },
     {
@@ -607,13 +629,13 @@
       "category_key": "business",
       "category_label": "Business",
       "role": "card",
-      "score": 73.35,
+      "score": 41.01,
       "tier": 1,
       "tier_reason": "analysis_or_speculation",
       "urgency_score": 3,
       "importance_score": 0,
       "national_relevance": "unknown",
-      "age_hours": 11.06,
+      "age_hours": 24.0,
       "timestamp_basis": "archive:first_published",
       "source_timestamp": "2026-11-08T13:10:54+00:00",
       "score_breakdown": {
@@ -621,28 +643,50 @@
         "urgency": 12.0,
         "national_relevance": 9.0,
         "independent_importance": 0.0,
-        "freshness": 16.35
+        "freshness": -15.99
       }
     },
     {
-      "headline": "Secret Service arrests man near White House with guns who said voices told him to kill Trump",
-      "category_key": "us",
-      "category_label": "U.S.",
+      "headline": "U.S. intelligence memo claimed Chinese officials recruited tech executive to spy on Nvidia CEO",
+      "category_key": "tech",
+      "category_label": "Tech & Science",
       "role": "card",
-      "score": 61.05,
-      "tier": 2,
-      "tier_reason": "domestic_development",
+      "score": 24.15,
+      "tier": 1,
+      "tier_reason": "limited_national_reach",
       "urgency_score": 3,
-      "importance_score": 47,
+      "importance_score": 15,
       "national_relevance": "us_national",
-      "age_hours": 43.02,
+      "age_hours": 34.04,
       "timestamp_basis": "archive:first_published",
-      "source_timestamp": "2026-11-07T05:13:26+00:00",
+      "source_timestamp": "2026-11-08T03:08:21+00:00",
       "score_breakdown": {
-        "significance": 72.0,
+        "significance": 36.0,
         "urgency": 12.0,
         "national_relevance": 15.0,
-        "independent_importance": 7.05,
+        "independent_importance": 2.25,
+        "freshness": -41.1
+      }
+    },
+    {
+      "headline": "Wave of bomb threats and cyberattacks across Europe raises questions about coordination",
+      "category_key": "business",
+      "category_label": "Business",
+      "role": "card",
+      "score": 16.5,
+      "tier": 1,
+      "tier_reason": "analysis_or_speculation",
+      "urgency_score": 3,
+      "importance_score": 18,
+      "national_relevance": "international",
+      "age_hours": 43.31,
+      "timestamp_basis": "archive:first_published",
+      "source_timestamp": "2026-11-07T17:51:51+00:00",
+      "score_breakdown": {
+        "significance": 36.0,
+        "urgency": 12.0,
+        "national_relevance": 10.8,
+        "independent_importance": 2.7,
         "freshness": -45.0
       }
     },
@@ -651,13 +695,13 @@
       "category_key": "business",
       "category_label": "Business",
       "role": "card",
-      "score": 48.24,
+      "score": 15.9,
       "tier": 1,
       "tier_reason": "limited_national_reach",
       "urgency_score": 3,
       "importance_score": 0,
       "national_relevance": "unknown",
-      "age_hours": 21.1,
+      "age_hours": 34.04,
       "timestamp_basis": "archive:first_published",
       "source_timestamp": "2026-11-08T03:08:21+00:00",
       "score_breakdown": {
@@ -665,7 +709,7 @@
         "urgency": 12.0,
         "national_relevance": 9.0,
         "independent_importance": 0.0,
-        "freshness": -8.76
+        "freshness": -41.1
       }
     },
     {
@@ -673,13 +717,13 @@
       "category_key": "tech",
       "category_label": "Tech & Science",
       "role": "card",
-      "score": 43.82,
+      "score": 12.0,
       "tier": 1,
       "tier_reason": "analysis_or_speculation",
       "urgency_score": 3,
       "importance_score": 0,
       "national_relevance": "unknown",
-      "age_hours": 22.87,
+      "age_hours": 35.81,
       "timestamp_basis": "archive:first_published",
       "source_timestamp": "2026-11-08T01:22:05+00:00",
       "score_breakdown": {
@@ -687,7 +731,7 @@
         "urgency": 12.0,
         "national_relevance": 9.0,
         "independent_importance": 0.0,
-        "freshness": -13.18
+        "freshness": -45.0
       }
     },
     {
@@ -695,13 +739,13 @@
       "category_key": "tech",
       "category_label": "Tech & Science",
       "role": "card",
-      "score": 43.82,
+      "score": 12.0,
       "tier": 1,
       "tier_reason": "limited_national_reach",
       "urgency_score": 3,
       "importance_score": 0,
       "national_relevance": "unknown",
-      "age_hours": 22.87,
+      "age_hours": 35.81,
       "timestamp_basis": "archive:first_published",
       "source_timestamp": "2026-11-08T01:22:05+00:00",
       "score_breakdown": {
@@ -709,61 +753,25 @@
         "urgency": 12.0,
         "national_relevance": 9.0,
         "independent_importance": 0.0,
-        "freshness": -13.18
-      }
-    },
-    {
-      "headline": "Wave of bomb threats and cyberattacks across Europe raises questions about coordination",
-      "category_key": "business",
-      "category_label": "Business",
-      "role": "card",
-      "score": 29.56,
-      "tier": 1,
-      "tier_reason": "analysis_or_speculation",
-      "urgency_score": 3,
-      "importance_score": 18,
-      "national_relevance": "international",
-      "age_hours": 30.38,
-      "timestamp_basis": "archive:first_published",
-      "source_timestamp": "2026-11-07T17:51:51+00:00",
-      "score_breakdown": {
-        "significance": 36.0,
-        "urgency": 12.0,
-        "national_relevance": 10.8,
-        "independent_importance": 2.7,
-        "freshness": -31.94
-      }
-    },
-    {
-      "headline": "Tesla to wind down Cybertruck production in Texas next year, Musk says",
-      "category_key": "business",
-      "category_label": "Business",
-      "role": "card",
-      "score": 15.3,
-      "tier": 1,
-      "tier_reason": "limited_national_reach",
-      "urgency_score": 3,
-      "importance_score": 0,
-      "national_relevance": "us_state_regional",
-      "age_hours": 43.02,
-      "timestamp_basis": "archive:first_published",
-      "source_timestamp": "2026-11-07T05:13:26+00:00",
-      "score_breakdown": {
-        "significance": 36.0,
-        "urgency": 12.0,
-        "national_relevance": 12.3,
-        "independent_importance": 0.0,
         "freshness": -45.0
       }
     }
   ],
   "excluded": [
     {
-      "headline": "Iran warns it will escalate attacks if US resumes strikes, as Trump says renewed action is 'highly unlikely' if nuclear talks progress",
+      "headline": "Paraguay formally charges ousted president Santiago Peña with breach of trust over Ueno Bank collapse",
       "category_key": "world",
-      "role": "hero",
+      "role": "card",
       "reason": "missing_or_stale_canonical_timestamp",
-      "age_hours": 1514.02,
+      "age_hours": 55.95,
+      "timestamp_basis": "archive:first_published"
+    },
+    {
+      "headline": "Secret Service arrests man near White House with guns who said voices told him to kill Trump",
+      "category_key": "us",
+      "role": "card",
+      "reason": "missing_or_stale_canonical_timestamp",
+      "age_hours": 55.95,
       "timestamp_basis": "archive:first_published"
     },
     {
@@ -771,152 +779,168 @@
       "category_key": "us",
       "role": "card",
       "reason": "misclassified_sports_entertainment_content",
-      "age_hours": 30.38,
+      "age_hours": 43.31,
       "timestamp_basis": "archive:first_published"
     },
     {
-      "headline": "Kenneth Walker scores three touchdowns as Chiefs defeat Jets 35-12, Mahomes plays through elbow injury",
+      "headline": "Tesla to wind down Cybertruck production in Texas next year, Musk says",
+      "category_key": "business",
+      "role": "card",
+      "reason": "missing_or_stale_canonical_timestamp",
+      "age_hours": 55.95,
+      "timestamp_basis": "archive:first_published"
+    },
+    {
+      "headline": "Blades Brown, 19, becomes youngest PGA Tour winner in 95 years with playoff victory in Mexico",
       "category_key": "sports",
       "role": "hero",
       "reason": "sports_entertainment_not_eligible",
-      "age_hours": 1.62,
+      "age_hours": 2.86,
       "timestamp_basis": "item:source_published_raw"
     },
     {
-      "headline": "Broncos beat Panthers 26-21 for fifth straight win, extend one-score streak to 16",
+      "headline": "Coco Gauff opens WTA Finals with three-set win over Jessica Pegula",
       "category_key": "sports",
       "role": "card",
       "reason": "sports_entertainment_not_eligible",
-      "age_hours": 1.96,
+      "age_hours": 5.84,
       "timestamp_basis": "item:source_published_raw"
     },
     {
-      "headline": "Norris wins chaotic Sao Paulo GP as Mercedes clinches constructors' title",
+      "headline": "Ramla Ali wins unified super-bantamweight world title with split-decision victory over Mikiah Kreps",
       "category_key": "sports",
       "role": "card",
       "reason": "sports_entertainment_not_eligible",
-      "age_hours": 2.05,
+      "age_hours": 2.54,
       "timestamp_basis": "item:source_published_raw"
     },
     {
-      "headline": "Falkirk rise to third in Scottish Premiership with fifth straight win",
+      "headline": "USA and Pacific Islands to host 2030 Rugby League World Cup with expanded fields",
       "category_key": "sports",
       "role": "card",
       "reason": "sports_entertainment_not_eligible",
-      "age_hours": 2.0,
+      "age_hours": 5.07,
       "timestamp_basis": "item:source_published_raw"
     },
     {
-      "headline": "NFL trade deadline speculation centers on running backs and defensive stars",
+      "headline": "Warner backs Khawaja's account that full Australia team knew about 2018 ball-tampering scandal",
       "category_key": "sports",
       "role": "card",
       "reason": "sports_entertainment_not_eligible",
-      "age_hours": 2.56,
+      "age_hours": 3.83,
       "timestamp_basis": "item:source_published_raw"
     },
     {
-      "headline": "Norris earns top marks in Sao Paulo Grand Prix driver ratings after pole-to-win performance",
+      "headline": "Newcastle's Dan Burn called into England squad after Marc Guehi ruled out with hip injury",
       "category_key": "sports",
       "role": "card",
       "reason": "sports_entertainment_not_eligible",
-      "age_hours": 2.3,
+      "age_hours": 1.07,
       "timestamp_basis": "item:source_published_raw"
     },
     {
-      "headline": "Chelsea among clubs tracking Aston Villa's Kamara",
+      "headline": "Bayern Munich honorary president says Jamal Musiala may never return to his best",
       "category_key": "sports",
       "role": "card",
       "reason": "sports_entertainment_not_eligible",
-      "age_hours": 3.1,
+      "age_hours": 2.16,
       "timestamp_basis": "item:source_published_raw"
     },
     {
-      "headline": "Willy Hutchinson upsets Joshua Buatsi to win WBC light-heavyweight title in Manchester rematch",
+      "headline": "Chelsea warns staff over Fantasy Premier League leaks",
       "category_key": "sports",
       "role": "card",
       "reason": "sports_entertainment_not_eligible",
-      "age_hours": 22.87,
-      "timestamp_basis": "archive:first_published"
+      "age_hours": 0.49,
+      "timestamp_basis": "item:source_published_raw"
     },
     {
-      "headline": "Oregon routs Ohio State 41-28, likely ending Buckeyes' playoff hopes with fake punt sparking turnaround",
+      "headline": "Alisson wants to sign new Liverpool contract",
       "category_key": "sports",
       "role": "card",
       "reason": "sports_entertainment_not_eligible",
-      "age_hours": 22.07,
-      "timestamp_basis": "archive:first_published"
+      "age_hours": 1.18,
+      "timestamp_basis": "item:source_published_raw"
+    },
+    {
+      "headline": "Russell Brand sentencing hearing underway after rape and sexual assault convictions",
+      "category_key": "entertainment",
+      "role": "hero",
+      "reason": "sports_entertainment_not_eligible",
+      "age_hours": 0.21,
+      "timestamp_basis": "item:source_published_raw"
+    },
+    {
+      "headline": "Next James Bond actor expected to be announced by year's end",
+      "category_key": "entertainment",
+      "role": "card",
+      "reason": "sports_entertainment_not_eligible",
+      "age_hours": 6.39,
+      "timestamp_basis": "item:source_published_raw"
+    },
+    {
+      "headline": "Mariah Carey to headline Live at Powderham 2027 festival in Devon",
+      "category_key": "entertainment",
+      "role": "card",
+      "reason": "sports_entertainment_not_eligible",
+      "age_hours": 3.23,
+      "timestamp_basis": "item:source_published_raw"
+    },
+    {
+      "headline": "Nicholas Denton, Hugh Bonneville and Tim Downie cast in film about making of 'Witchfinder General'",
+      "category_key": "entertainment",
+      "role": "card",
+      "reason": "sports_entertainment_not_eligible",
+      "age_hours": 2.68,
+      "timestamp_basis": "item:source_published_raw"
+    },
+    {
+      "headline": "Jeff Goldblum, John Turturro and Rian Johnson set for Marrakech Film Festival conversations and honors",
+      "category_key": "entertainment",
+      "role": "card",
+      "reason": "sports_entertainment_not_eligible",
+      "age_hours": 3.13,
+      "timestamp_basis": "item:source_published_raw"
+    },
+    {
+      "headline": "Anthony Chen-Produced 'Somewhere in the South' Wins Top Prize at Taiwan Creative Content Fest",
+      "category_key": "entertainment",
+      "role": "card",
+      "reason": "sports_entertainment_not_eligible",
+      "age_hours": 3.17,
+      "timestamp_basis": "item:source_published_raw"
+    },
+    {
+      "headline": "Michael Ball surprises couple at wedding after on-air proposal",
+      "category_key": "entertainment",
+      "role": "card",
+      "reason": "sports_entertainment_not_eligible",
+      "age_hours": 6.95,
+      "timestamp_basis": "item:source_published_raw"
+    },
+    {
+      "headline": "John Oliver celebrates Democratic midterm victories, mocks Elon Musk and Haley Stevens",
+      "category_key": "entertainment",
+      "role": "card",
+      "reason": "sports_entertainment_not_eligible",
+      "age_hours": 8.7,
+      "timestamp_basis": "item:source_published_raw"
     },
     {
       "headline": "Denis Villeneuve says he is finishing Dune: Part Three while beginning James Bond movie, teases casting before joking at LACMA gala",
       "category_key": "entertainment",
-      "role": "hero",
-      "reason": "sports_entertainment_not_eligible",
-      "age_hours": 0.33,
-      "timestamp_basis": "item:source_published_raw"
-    },
-    {
-      "headline": "Erika Kirk condemns Dave Chappelle, other comedians for joking about husband's killing",
-      "category_key": "entertainment",
       "role": "card",
       "reason": "sports_entertainment_not_eligible",
-      "age_hours": 1.5,
-      "timestamp_basis": "item:source_published_raw"
+      "age_hours": 12.94,
+      "timestamp_basis": "archive:first_published"
     },
     {
-      "headline": "Maya Jama steps down as Love Island host after three years",
-      "category_key": "entertainment",
+      "headline": "Trump replaces chief of staff Susie Wiles with Stephen Miller after GOP midterm losses",
+      "category_key": "politics",
       "role": "card",
-      "reason": "sports_entertainment_not_eligible",
-      "age_hours": 2.91,
-      "timestamp_basis": "item:source_published_raw"
-    },
-    {
-      "headline": "Ron Howard's 'Avedon' Documentary Examines Photographer's Career and Influence",
-      "category_key": "entertainment",
-      "role": "card",
-      "reason": "sports_entertainment_not_eligible",
-      "age_hours": 3.21,
-      "timestamp_basis": "item:source_published_raw"
-    },
-    {
-      "headline": "'Spy x Family' Confirmed for Season 4 and New Theatrical Film in 2027",
-      "category_key": "entertainment",
-      "role": "card",
-      "reason": "sports_entertainment_not_eligible",
-      "age_hours": 0.39,
-      "timestamp_basis": "item:source_published_raw"
-    },
-    {
-      "headline": "Casting predictions spotlight disability drama 'Being Heumann' and Spanish epic 'La Bola Negra' as Oscar contenders",
-      "category_key": "entertainment",
-      "role": "card",
-      "reason": "sports_entertainment_not_eligible",
-      "age_hours": 1.41,
-      "timestamp_basis": "item:source_published_raw"
-    },
-    {
-      "headline": "Taylor Swift and Karlie Kloss appear together at Chiefs game for first time in years",
-      "category_key": "entertainment",
-      "role": "card",
-      "reason": "sports_entertainment_not_eligible",
-      "age_hours": 3.58,
-      "timestamp_basis": "item:source_published_raw"
-    },
-    {
-      "headline": "Japanese Anime 'Chiikawa the Movie' Holds Top Spot at South Korean Box Office for Fourth Weekend",
-      "category_key": "entertainment",
-      "role": "card",
-      "reason": "sports_entertainment_not_eligible",
-      "age_hours": 0.53,
-      "timestamp_basis": "item:source_published_raw"
-    },
-    {
-      "headline": "WWE roster left Saudi Arabia before missile attack in Riyadh",
-      "category_key": "entertainment",
-      "role": "card",
-      "reason": "sports_entertainment_not_eligible",
-      "age_hours": 5.17,
-      "timestamp_basis": "item:source_published_raw"
+      "reason": "missing_or_stale_canonical_timestamp",
+      "age_hours": 55.95,
+      "timestamp_basis": "archive:first_published"
     }
   ],
   "card_preparation_failures": []
