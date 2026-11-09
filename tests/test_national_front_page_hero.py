@@ -371,3 +371,39 @@ def test_score_audit_includes_explainable_freshness_penalty():
     assert ranked[0]["score_breakdown"]["freshness"] > ranked[1]["score_breakdown"]["freshness"]
     for row in ranked:
         assert row["score"] == round(sum(row["score_breakdown"].values()), 2)
+
+
+def test_power_grid_frequency_research_cannot_beat_real_recent_infrastructure_strikes():
+    """Regression: Nov 8 19:15 ET winner was misclassified as security emergency."""
+    now = datetime(2026, 11, 9, 0, 14, tzinfo=timezone.utc)
+    tech = story(
+        "Researchers trace mysterious global power grid frequency drops "
+        "to synchronized battery backup systems",
+        now, hours=3.74, urgency=7, category="tech",
+    )
+    world = story(
+        "Houthi strikes hit Aramco Tower in Riyadh, target airport and oil facilities",
+        now, hours=1.09, urgency=3, category="world",
+    )
+    ranked, rejected = evaluate_front_page_candidates([
+        section("tech", tech), section("world", world),
+    ], now=now)
+    assert not rejected
+    assert ranked[0]["category_key"] == "world"
+    assert ranked[1]["category_key"] == "tech"
+    assert ranked[1]["tier_reason"] == "limited_national_reach"
+    assert ranked[1]["tier"] == 1
+
+
+def test_genuine_major_power_grid_outage_is_still_a_national_security_emergency():
+    now = datetime(2026, 11, 9, 0, 14, tzinfo=timezone.utc)
+    grid = story("Major power grid outage leaves multiple states without electricity",
+                 now, hours=1, urgency=8, category="us")
+    routine = story("Researchers trace power grid frequency drops to battery checks",
+                    now, hours=1, urgency=9, category="tech")
+    ranked, _ = evaluate_front_page_candidates(
+        [section("us", grid), section("tech", routine)], now=now
+    )
+    assert ranked[0]["headline"] == grid["headline"]
+    assert ranked[0]["tier_reason"] == "security_emergency"
+    assert ranked[0]["tier"] == 4

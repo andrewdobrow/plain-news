@@ -22,14 +22,36 @@ def _parse(text):
 def _age(raw):
  try:return max(0,(datetime.now(timezone.utc)-parsedate_to_datetime(str(raw)).astimezone(timezone.utc)).total_seconds()/3600)
  except Exception:return None
+def _editor_source_excerpt(text, *, head=3200, tail=500):
+    """Bound assignment-editor context without trimming the publication writer.
+
+    Keep the introduction and later source developments. The assignment stage
+    selects and orders source indices, while the writer receives the original
+    full exact-source text and runs the existing quality checks.
+    """
+    value = str(text or '')
+    if len(value) <= head + tail + 20:
+        return value
+    return value[:head] + "\n[editorial selection excerpt; full source provided to writer]\n" + value[-tail:]
+
+
 def _record(i,s):
  q=str(s.get('source_quality') or 'thin');words=len(str(s.get('article_text') or s.get('summary') or '').split());age=_age(s.get('published'))
+ canonical = s.get('canonical_context') or {}
+ if isinstance(canonical,dict):
+  # A previous canonical can be many paragraphs. The assignment editor needs
+  # event identity and change context, not the full prior article. The writer
+  # still receives the unabridged canonical context separately.
+  canonical = dict(canonical)
+  if canonical.get('body'):
+   canonical['body'] = _editor_source_excerpt(canonical['body'],head=750,tail=150)
  return {
   'source_index':i,'title':s.get('title',''),'published':s.get('published',''),'publisher':s.get('publisher_name',''),
   'source_quality':q,'source_word_count':words,'hero_eligible':q in {'full','summary'} and words>=80 and (age is None or age<=72),
-  'summary':str(s.get('summary') or '')[:1500],'article_text':str(s.get('article_text') or '')[:11000],
+  'summary':str(s.get('summary') or '')[:850],
+  'article_text':_editor_source_excerpt(s.get('article_text') or '',head=3200,tail=500),
   'classified_categories':list(s.get('classified_categories') or []),'category_fit_hint':str(s.get('category_fit_hint') or ''),
-  'canonical_context':s.get('canonical_context') or {},
+  'canonical_context':canonical,
   'material_update_candidate':bool(s.get('pre_generation_material_update')),
   'material_update_canonical_slug':str(s.get('pre_generation_material_update_canonical_slug') or ''),
   'material_update_confidence':float(s.get('material_update_confidence') or 0.0),
