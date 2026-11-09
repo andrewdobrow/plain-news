@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T13:10:08.707745Z",
+  "generated_at": "2026-11-09T23:10:21.708824Z",
   "assignment_editor_model": "claude-sonnet-5",
   "writer_model": "claude-sonnet-4-5",
   "categories": [
@@ -7,58 +7,17 @@
       "category_key": "world",
       "hero_source_index": 2,
       "card_source_indexes": [
-        3,
-        4,
-        1,
-        6
+        1
       ],
       "diagnostics": {
         "model": "claude-sonnet-5",
         "writer_model": "claude-sonnet-4-5",
         "rejected": [
           {
-            "source_index": 5,
-            "reason": "Duplicate coverage of the same Krakow shooting suspect death already captured in the selected hero source."
+            "source_index": 3,
+            "reason": "Duplicate of source 2, same event and facts reported by BBC, differs only in formatting and minor text variations"
           }
         ],
-        "writer_failures": [],
-        "protected_material_update_repairs": [],
-        "hero_recovery_attempts": [],
-        "hero_recovered": false,
-        "editor_selected_card_count": 4,
-        "section_depth_target": 8,
-        "section_depth_accepted_cards": 4,
-        "section_depth_shortfall": 4,
-        "depth_backfill_writer_attempts": 0,
-        "writer_card_attempts": 4,
-        "duration_seconds": 37.579
-      }
-    },
-    {
-      "category_key": "us",
-      "hero_source_index": null,
-      "card_source_indexes": [
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "diagnostics": {
-        "status": "archive_recovery",
-        "reason": "Live source/generation path unavailable; reused recent published canonicals."
-      }
-    },
-    {
-      "category_key": "business",
-      "hero_source_index": 2,
-      "card_source_indexes": [
-        1
-      ],
-      "diagnostics": {
-        "model": "claude-sonnet-5",
-        "writer_model": "claude-sonnet-4-5",
-        "rejected": [],
         "writer_failures": [],
         "protected_material_update_repairs": [],
         "hero_recovery_attempts": [],
@@ -69,16 +28,36 @@
         "section_depth_shortfall": 7,
         "depth_backfill_writer_attempts": 0,
         "writer_card_attempts": 1,
-        "duration_seconds": 17.742
+        "duration_seconds": 15.8
       }
     },
     {
-      "category_key": "tech",
+      "category_key": "us",
       "hero_source_index": 1,
+      "card_source_indexes": [],
+      "diagnostics": {
+        "model": "claude-sonnet-5",
+        "writer_model": "claude-sonnet-4-5",
+        "rejected": [],
+        "writer_failures": [],
+        "protected_material_update_repairs": [],
+        "hero_recovery_attempts": [],
+        "hero_recovered": false,
+        "editor_selected_card_count": 0,
+        "section_depth_target": 8,
+        "section_depth_accepted_cards": 0,
+        "section_depth_shortfall": 8,
+        "depth_backfill_writer_attempts": 0,
+        "writer_card_attempts": 0,
+        "duration_seconds": 11.296
+      }
+    },
+    {
+      "category_key": "business",
+      "hero_source_index": 5,
       "card_source_indexes": [
-        2,
+        3,
         4,
-        5,
         6
       ],
       "diagnostics": {
@@ -86,95 +65,85 @@
         "writer_model": "claude-sonnet-4-5",
         "rejected": [
           {
-            "source_index": 5,
-            "reason": "Unverified rumor and leak speculation about an unreleased phone's chipset choice; thin, speculative consumer-gadget gossip without consequential news value."
+            "source_index": 1,
+            "reason": "Duplicate of source 5's underlying event; this is commentary/analysis coverage of the same Huang investigation story, not a distinct development, and largely overlaps with source 2."
           },
           {
-            "source_index": 6,
-            "reason": "Minor clarification about a mockup app being mistaken for a real Windows feature; low consequence and essentially a correction of online misinformation rather than a substantive tech story."
+            "source_index": 2,
+            "reason": "Near-identical duplicate of source 1 (same BBC commentary piece, unattributed republish), covering the same event as source 5 with no new facts."
           }
         ],
-        "writer_failures": [
+        "writer_failures": [],
+        "protected_material_update_repairs": [
           {
-            "source_index": 3,
-            "reason": [
-              "person_first_reference_not_full_name"
-            ]
+            "surface": "hero",
+            "source_index": 5,
+            "reasons": [
+              "headline_percentage_claim_missing_from_lead"
+            ],
+            "canonical_slug": "2026-11-08-congress-demands-answers-on-nvidia-ceos-reported-ties-to-alleged-chinese-spy"
           }
         ],
-        "protected_material_update_repairs": [],
         "hero_recovery_attempts": [],
         "hero_recovered": false,
         "editor_selected_card_count": 3,
         "section_depth_target": 8,
-        "section_depth_accepted_cards": 4,
-        "section_depth_shortfall": 4,
-        "depth_backfill_writer_attempts": 2,
-        "writer_card_attempts": 5,
-        "duration_seconds": 37.192
+        "section_depth_accepted_cards": 3,
+        "section_depth_shortfall": 5,
+        "depth_backfill_writer_attempts": 0,
+        "writer_card_attempts": 3,
+        "duration_seconds": 36.037
       }
     },
     {
-      "category_key": "sports",
-      "hero_source_index": 9,
+      "category_key": "tech",
+      "hero_source_index": 2,
       "card_source_indexes": [
-        16,
-        8,
-        13,
-        11,
-        2,
-        6,
         1,
-        4
+        6,
+        11,
+        9,
+        14,
+        4,
+        5,
+        10
       ],
       "diagnostics": {
         "model": "claude-sonnet-5",
         "writer_model": "claude-sonnet-4-5",
         "rejected": [
           {
-            "source_index": 1,
-            "reason": "Minor club administrative matter about fantasy football etiquette, not a meaningful sports result or decision with national relevance."
+            "source_index": 3,
+            "reason": "Opinion/commentary piece critiquing a climate pledge rather than a factual news report; not suitable for neutral coverage."
           },
           {
-            "source_index": 4,
-            "reason": "Routine contract-intent comments from a player with no deal agreed; low consequence update."
-          },
-          {
-            "source_index": 5,
-            "reason": "Routine rugby injury update for Ireland squad with limited national interest to U.S. audience."
-          },
-          {
-            "source_index": 7,
-            "reason": "Thin aggregator-style summary of NFL power rankings commentary, largely duplicative of source 15's Packers coverage."
+            "source_index": 8,
+            "reason": "Duplicate of source 7, same event and same reporting."
           },
           {
             "source_index": 10,
-            "reason": "Duplicate of source 9 covering the same Blades Brown PGA win."
+            "reason": "Generic startup funding story about an AI hardware platform; business-centric with limited distinct tech/science consequence beyond corporate valuation."
           },
           {
             "source_index": 12,
-            "reason": "Single-game postgame quote piece lacking a standalone result or decision; overlaps with fuller NFL week nine roundup in source 15."
+            "reason": "Duplicate of source 13, same event and same reporting."
           },
           {
-            "source_index": 14,
-            "reason": "Foreign second-tier soccer match postponement due to fan protest; no U.S. national relevance."
-          },
-          {
-            "source_index": 17,
-            "reason": "Opinion column analysis of an England rugby match already covered in a factual sense elsewhere in the packet; not a new development."
+            "source_index": 13,
+            "reason": "Duplicate of source 12, same event and same reporting; retained neither due to redundancy, selected 5 instead for broader security relevance."
           }
         ],
         "writer_failures": [
           {
-            "source_index": 15,
+            "source_index": 7,
             "reason": [
-              "generated_copy_drifted_from_source_focus"
+              "headline_entity_missing_from_lead"
             ]
           },
           {
             "source_index": 3,
             "reason": [
-              "card_body_over_140_words"
+              "generated_copy_drifted_from_source_focus"
             ]
           }
         ],
@@ -187,118 +156,48 @@
         "section_depth_shortfall": 0,
         "depth_backfill_writer_attempts": 2,
         "writer_card_attempts": 10,
-        "duration_seconds": 70.147
+        "duration_seconds": 68.487
       }
     },
     {
-      "category_key": "entertainment",
-      "hero_source_index": 16,
+      "category_key": "sports",
+      "hero_source_index": 9,
       "card_source_indexes": [
+        2,
         12,
-        7,
+        10,
+        1,
+        3,
         4,
-        5,
         6,
-        14,
-        15
+        11
       ],
       "diagnostics": {
         "model": "claude-sonnet-5",
         "writer_model": "claude-sonnet-4-5",
         "rejected": [
           {
-            "source_index": 2,
-            "reason": "Opinion/listicle-style music debate piece with no significant news event; thin editorial exercise rather than reportable development."
-          },
-          {
             "source_index": 6,
-            "reason": "Niche Taiwan industry pitching awards with no meaningful U.S. national relevance."
+            "reason": "Transfer gossip roundup, speculative and not a confirmed result, deal, or decision."
           },
           {
             "source_index": 8,
-            "reason": "Routine celebrity child support legal dispute; local family court matter without national significance."
-          },
-          {
-            "source_index": 10,
-            "reason": "Duplicate of source 9, same Tonight Show appearance covered twice."
+            "reason": "Listicle/analysis feature on historical coordinator hires, not a current news event."
           },
           {
             "source_index": 11,
-            "reason": "Niche Egyptian filmmaker project development with no national U.S. audience relevance."
-          },
-          {
-            "source_index": 14,
-            "reason": "Local UK human-interest wedding story with no national significance."
-          },
-          {
-            "source_index": 15,
-            "reason": "Primarily a political commentary piece about midterm election results; belongs in politics, not entertainment, and framing is editorializing commentary rather than factual entertainment news."
+            "reason": "Player interview reflecting on past personal matters, not a current athletic result or decision of national significance."
           }
         ],
         "writer_failures": [
           {
-            "source_index": 13,
-            "reason": [
-              "person_first_reference_not_full_name"
-            ]
-          },
-          {
-            "source_index": 9,
-            "reason": [
-              "person_first_reference_not_full_name"
-            ]
-          },
-          {
-            "source_index": 1,
-            "reason": [
-              "person_first_reference_not_full_name"
-            ]
-          },
-          {
-            "source_index": 3,
+            "source_index": 5,
             "reason": [
               "headline_entity_missing_from_lead"
             ]
           },
           {
-            "source_index": 8,
-            "reason": [
-              "headline_entity_missing_from_lead"
-            ]
-          },
-          {
-            "source_index": 11,
-            "reason": [
-              "headline_entity_missing_from_lead"
-            ]
-          }
-        ],
-        "protected_material_update_repairs": [],
-        "hero_recovery_attempts": [],
-        "hero_recovered": false,
-        "editor_selected_card_count": 8,
-        "section_depth_target": 8,
-        "section_depth_accepted_cards": 7,
-        "section_depth_shortfall": 1,
-        "depth_backfill_writer_attempts": 5,
-        "writer_card_attempts": 13,
-        "duration_seconds": 89.168
-      }
-    },
-    {
-      "category_key": "politics",
-      "hero_source_index": 2,
-      "card_source_indexes": [
-        1,
-        4
-      ],
-      "diagnostics": {
-        "model": "claude-sonnet-5",
-        "writer_model": "claude-sonnet-4-5",
-        "rejected": [],
-        "writer_failures": [
-          {
-            "source_index": 3,
+            "source_index": 7,
             "reason": [
               "generated_copy_drifted_from_source_focus"
             ]
@@ -307,13 +206,123 @@
         "protected_material_update_repairs": [],
         "hero_recovery_attempts": [],
         "hero_recovered": false,
-        "editor_selected_card_count": 3,
+        "editor_selected_card_count": 8,
         "section_depth_target": 8,
-        "section_depth_accepted_cards": 2,
-        "section_depth_shortfall": 6,
+        "section_depth_accepted_cards": 8,
+        "section_depth_shortfall": 0,
+        "depth_backfill_writer_attempts": 2,
+        "writer_card_attempts": 10,
+        "duration_seconds": 59.131
+      }
+    },
+    {
+      "category_key": "entertainment",
+      "hero_source_index": 5,
+      "card_source_indexes": [
+        2,
+        16,
+        6,
+        10,
+        12,
+        11,
+        13,
+        9
+      ],
+      "diagnostics": {
+        "model": "claude-sonnet-5",
+        "writer_model": "claude-sonnet-4-5",
+        "rejected": [
+          {
+            "source_index": 1,
+            "reason": "Promotional network announcement for a sports documentary with limited national significance beyond sports/entertainment niche audience."
+          },
+          {
+            "source_index": 3,
+            "reason": "Fan-event color piece about a streaming series anniversary screening; thin, promotional, lacks broad national consequence."
+          },
+          {
+            "source_index": 4,
+            "reason": "Opinion-driven piece about a minor red-carpet dispute at the CMA Awards; editorializing tone and low national consequence."
+          },
+          {
+            "source_index": 7,
+            "reason": "Routine distribution deal announcement for an upcoming film; promotional trade news with limited reader relevance."
+          },
+          {
+            "source_index": 8,
+            "reason": "Duplicate coverage of the same DC Studios leadership change already selected as hero via source 5; would violate same-event distinct-card rule."
+          },
+          {
+            "source_index": 14,
+            "reason": "Niche international IP development deal announcement with limited relevance to a U.S. general-news audience."
+          },
+          {
+            "source_index": 15,
+            "reason": "Routine casting/promotion announcement for a streaming comedy series; thin trade news without broad national significance."
+          }
+        ],
+        "writer_failures": [],
+        "protected_material_update_repairs": [],
+        "hero_recovery_attempts": [],
+        "hero_recovered": false,
+        "editor_selected_card_count": 8,
+        "section_depth_target": 8,
+        "section_depth_accepted_cards": 8,
+        "section_depth_shortfall": 0,
         "depth_backfill_writer_attempts": 0,
-        "writer_card_attempts": 3,
-        "duration_seconds": 27.668
+        "writer_card_attempts": 8,
+        "duration_seconds": 70.989
+      }
+    },
+    {
+      "category_key": "politics",
+      "hero_source_index": 2,
+      "card_source_indexes": [
+        6,
+        3,
+        5
+      ],
+      "diagnostics": {
+        "model": "claude-sonnet-5",
+        "writer_model": "claude-sonnet-4-5",
+        "rejected": [],
+        "writer_failures": [
+          {
+            "source_index": 1,
+            "reason": [
+              "person_first_reference_not_full_name"
+            ]
+          },
+          {
+            "source_index": 4,
+            "reason": [
+              "person_first_reference_not_full_name"
+            ]
+          },
+          {
+            "source_index": 7,
+            "reason": [
+              "headline_entity_missing_from_lead"
+            ]
+          }
+        ],
+        "protected_material_update_repairs": [],
+        "hero_recovery_attempts": [
+          {
+            "source_index": 7,
+            "reason": [
+              "headline_entity_missing_from_lead"
+            ]
+          }
+        ],
+        "hero_recovered": true,
+        "editor_selected_card_count": 6,
+        "section_depth_target": 8,
+        "section_depth_accepted_cards": 3,
+        "section_depth_shortfall": 5,
+        "depth_backfill_writer_attempts": 1,
+        "writer_card_attempts": 6,
+        "duration_seconds": 41.087
       }
     }
   ]

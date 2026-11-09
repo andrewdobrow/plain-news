@@ -1,23 +1,36 @@
 {
-  "generated_at": "2026-11-09T13:02:33Z",
-  "evaluated": 1,
-  "material_updates": 0,
-  "duplicates_suppressed": 1,
-  "holds_suppressed": 0,
+  "generated_at": "2026-11-09T23:02:13Z",
+  "evaluated": 2,
+  "material_updates": 1,
+  "duplicates_suppressed": 0,
+  "holds_suppressed": 1,
   "new_or_unmatched": 0,
   "items": [
     {
       "category": "business",
-      "title": "Nvidia launches investigation into CEO's affair with suspected Chinese spy",
-      "source_url": "https://www.bbc.co.uk/news/articles/c3dxw10rjn9no?at_medium=RSS&at_campaign=rss",
-      "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-11-08-nvidia-board-launches-independent-investigation-into-ceo-jensen-huang-after-repo",
-      "confidence": 0.9,
+      "title": "Stock Market Today: Dow Pushes 1000 Points Higher, Nvidia Stock Slides Over Jensen Huang Affair Probe - WSJ",
+      "source_url": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-11-09-2026",
+      "action": "hold",
+      "selected_candidate_slug": "",
+      "confidence": 0.0,
+      "novel_facts": [],
+      "reason": "Semantic gate model failure; fail-closed hold: semantic gate model returned no JSON object",
+      "cache_hit": false
+    },
+    {
+      "category": "business",
+      "title": "Nvidia shares tumble over investigation into Huang's affair with alleged Chinese spy",
+      "source_url": "https://www.bbc.co.uk/news/articles/c6zxjx01vyleo?at_medium=RSS&at_campaign=rss",
+      "action": "update_existing_canonical",
+      "selected_candidate_slug": "2026-11-08-congress-demands-answers-on-nvidia-ceos-reported-ties-to-alleged-chinese-spy",
+      "confidence": 0.88,
       "novel_facts": [
-        "Additional quote from Rubio declining to comment en route to G7",
-        "China's Foreign Ministry spokesperson reiterating denial of espionage claims"
+        "Nvidia shares fell ~4%, wiping about $250bn off market value",
+        "Trump called Huang an 'honourable guy' and Musk voiced support",
+        "Huang requested to appear for closed-door joint Congressional committee briefing next week",
+        "Analyst commentary (Victoria Fernandez) on Huang's vulnerable position given low ownership stake and single-class voting structure"
       ],
-      "reason": "This covers the same investigation, same CEO, same alleged spy relationship, and same Trump comments already reported in the canonical NBC article. The added Rubio and Chinese foreign ministry quotes are supplementary color/reaction, not a material new development (no arrest, ruling, identification, or consequential change), so it should update rather than fork into a new story.",
+      "reason": "This covers the same Nvidia/Huang espionage-affair investigation as the canonical article, but adds a material market reaction (share price drop, $250bn value loss) and updated details on Congressional briefing timing and executive/political reactions, which are updates to the same ongoing story rather than a separate newsworthy angle.",
       "cache_hit": false
     }
   ]
