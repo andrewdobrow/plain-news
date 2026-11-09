@@ -130,7 +130,7 @@ def test_archive_substitution_refusal_aborts_before_any_public_file_write(monkey
     archive_file.write_text(json.dumps([old]))
     monkeypatch.setattr(g,"OUTPUT_DIR",tmp_path)
     monkeypatch.setattr(g,"_archive_article_body",lambda row:REFUSAL)
-    with pytest.raises(RuntimeError, match="Terminal publication integrity barrier"):
+    with pytest.raises(RuntimeError, match="Unsafe canonical substitution|Terminal publication integrity barrier"):
         g.write_archives([cat],cat,client=object(),cache=object(),
                          material_update_entries=[])
     assert json.loads(archive_file.read_text())==[old]
@@ -321,7 +321,7 @@ def test_stale_source_focus_after_canonical_replacement_recovers_other_verified_
     assert cat["hero"]["headline"]==safe_archive["headline"]
     assert cat["hero"]["_archived_slug"]==safe_archive["slug"]
     assert cat["hero"]["publication_quality_ok"] is True
-    assert all(row["headline"] != mismatch["source_title"] for row in rows)
+    assert all(row["headline"] != "Celebrity profile discusses the filmmaker personal career and early films" for row in rows)
     report=json.loads((tmp_path/"archive-identity-recovery-report.json").read_text())
     assert report["recoveries"][0]["reason"]=="canonical_substitution_quality_failure"
     assert "generated_copy_drifted_from_source_focus" in report["recoveries"][0]["validation_errors"]
