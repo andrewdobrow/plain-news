@@ -2562,6 +2562,43 @@ def _recover_safe_identity_collision_hero(cat_key, cat_label, archive, all_categ
     return None
 
 
+def _replace_unsafe_ordinary_hero_with_canonical(
+    cat_key, cat_label, hero, working, all_categories, top_cat, *,
+    rejected_slug="", failure_reason=""
+):
+    """Quarantine unsafe ordinary lead; use only a vetted recent SAME-section archive.
+
+    No new story, URL or factual claim is invented here. The protected material
+    update path must never use this alternative since it has a mandatory
+    canonical update obligation.
+    """
+    if _validated_material_update_target(hero) or hero.get("pre_generation_material_update"):
+        return None
+    replacement = _recover_safe_identity_collision_hero(
+        cat_key, cat_label, working, all_categories, top_cat, hero,
+        rejected_slug=rejected_slug,
+    )
+    if not replacement:
+        return None
+    matching = find_matching_entry(
+        replacement.get("headline", ""), working, replacement.get("link", ""),
+        replacement.get("story_id", ""),
+    )
+    if not matching or not canonical_reuse_is_corroborated(replacement, matching):
+        return None
+    # Retain the same dictionary reference so the category and front-page
+    # renderers both receive the recovered article, not the rejected draft.
+    hero.clear()
+    hero.update(replacement)
+    hero["_archived_slug"] = str(matching["slug"])
+    hero["editorial_action"] = "ignore"
+    print(
+        f"  {cat_label}: discarded unsafe ordinary hero ({failure_reason}); "
+        f"recovered recent validated same-section article: {hero.get('headline','')[:95]}"
+    )
+    return matching
+
+
 def write_archives(all_categories, top_cat, *, client=None, cache=None, material_update_entries=None):
     """Canonical publication barrier: duplicate/update/new is decided before URLs write."""
     articles_dir = OUTPUT_DIR / "articles"; archive_path = OUTPUT_DIR / "archive.json"; articles_dir.mkdir(exist_ok=True)
@@ -2585,7 +2622,28 @@ def write_archives(all_categories, top_cat, *, client=None, cache=None, material
             if action in {ACTION_DUPLICATE,ACTION_UPDATE} and selected:
                 existing=next((x for x in working if x.get("slug")==selected),None)
             elif action==ACTION_HOLD:
-                raise RuntimeError(f"Terminal publication gate held suspicious story; preserving previous site: {headline}")
+                unsafe_title = headline
+                existing = _replace_unsafe_ordinary_hero_with_canonical(
+                    cat_key, cat_label, hero, working, all_categories, top_cat,
+                    rejected_slug=selected, failure_reason="semantic_publication_hold",
+                )
+                if existing:
+                    identity_recoveries.append({
+                        "category": cat_key,
+                        "discarded_live_headline": unsafe_title,
+                        "mismatched_canonical": "",
+                        "recovered_headline": hero.get("headline", ""),
+                        "recovered_slug": existing.get("slug", ""),
+                        "reason": "semantic_hold_fallback_to_verified_canonical",
+                    })
+                    headline = str(hero.get("headline") or "")
+                    source_url = str(hero.get("link") or "")
+                    sem = None  # The held decision belongs to the discarded story.
+                else:
+                    raise RuntimeError(
+                        f"Terminal publication gate held suspicious story; "
+                        f"no safe recent {cat_key} recovery; preserving previous site: {headline}"
+                    )
             elif action!=ACTION_NEW:
                 raise RuntimeError(f"Invalid terminal publication decision: {sem}")
         if existing:
@@ -2628,7 +2686,69 @@ def write_archives(all_categories, top_cat, *, client=None, cache=None, material
             if not should_update:
                 canonical_body=_archive_article_body(existing)
                 if canonical_body:
-                    hero["headline"]=existing.get("headline",headline);hero["body"]=canonical_body;hero["teaser"]=existing.get("teaser",hero.get("teaser",""));hero["image_url"]=existing.get("source_image_url") or existing.get("image_url") or hero.get("image_url","");hero["image_credit"]=existing.get("image_credit",hero.get("image_credit",""))
+                    # The old writer-quality flag is invalid after substituting
+                    # a canonical body. Validate the exact reader-visible copy,
+                    # keeping incoming source evidence intact so a materially
+                    # different source cannot masquerade as the old article.
+                    candidate = dict(hero)
+                    candidate.update({
+                        "headline": existing.get("headline", headline),
+                        "body": canonical_body,
+                        "teaser": existing.get("teaser", hero.get("teaser", "")),
+                        "image_url": existing.get("source_image_url") or existing.get("image_url") or hero.get("image_url", ""),
+                        "image_credit": existing.get("image_credit", hero.get("image_credit", "")),
+                    })
+                    errors = surface_errors(candidate, cat_key, hero=True)
+                    if errors:
+                        unsafe_title = headline
+                        unsafe_slug = str(existing.get("slug") or "")
+                        recovered = _replace_unsafe_ordinary_hero_with_canonical(
+                            cat_key, cat_label, hero, working, all_categories, top_cat,
+                            rejected_slug=unsafe_slug,
+                            failure_reason="canonical_substitution_failed:" + ",".join(errors),
+                        )
+                        if not recovered:
+                            raise RuntimeError(
+                                f"Unsafe canonical substitution in {cat_key}: "
+                                f"live={unsafe_title!r}; canonical={existing.get('headline')!r}; "
+                                f"errors={errors}; no safe recent same-section recovery"
+                            )
+                        existing = recovered
+                        headline = str(hero.get("headline") or "")
+                        source_url = str(hero.get("link") or "")
+                        canonical_body = _archive_article_body(existing)
+                        candidate = dict(hero)
+                        candidate.update({
+                            "headline": existing.get("headline", headline),
+                            "body": canonical_body,
+                            "teaser": existing.get("teaser", hero.get("teaser", "")),
+                            "image_url": existing.get("source_image_url") or existing.get("image_url") or hero.get("image_url", ""),
+                            "image_credit": existing.get("image_credit", hero.get("image_credit", "")),
+                        })
+                        recovered_errors = surface_errors(candidate, cat_key, hero=True)
+                        if recovered_errors:
+                            raise RuntimeError(
+                                f"Recovered canonical failed terminal quality contract in {cat_key}: "
+                                + ",".join(recovered_errors)
+                            )
+                        identity_recoveries.append({
+                            "category": cat_key,
+                            "discarded_live_headline": unsafe_title,
+                            "mismatched_canonical": str(unsafe_slug),
+                            "recovered_headline": headline,
+                            "recovered_slug": existing.get("slug", ""),
+                            "reason": "canonical_substitution_quality_failure",
+                            "validation_errors": errors,
+                        })
+                    hero.update({
+                        "headline": candidate["headline"],
+                        "body": candidate["body"],
+                        "teaser": candidate.get("teaser", ""),
+                        "image_url": candidate.get("image_url", ""),
+                        "image_credit": candidate.get("image_credit", ""),
+                        "publication_quality_ok": True,
+                        "publication_quality_reasons": [],
+                    })
                 existing["last_seen"]=now_iso;existing["last_seen_source_url"]=source_url
                 if hero.get("story_id"):existing["story_id"]=hero["story_id"]
                 if hero.get("event_key"):existing["event_key"]=hero["event_key"]
