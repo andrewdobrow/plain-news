@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-08T23:09:13.525579+00:00",
+  "generated_at": "2026-11-09T00:14:29.713483+00:00",
   "counts": {
-    "source_social_image": 25,
-    "archive_source_authority": 1,
-    "rss_source": 25,
+    "archive_source_authority": 2,
+    "source_social_image": 27,
+    "rss_source": 23,
     "editorial_fallback": 1,
     "rss_related_source": 1
   },
@@ -11,15 +11,7 @@
     {
       "category": "world",
       "slot": "hero",
-      "headline": "Houthi strikes hit Aramco Tower in Riyadh, target airport and oil facilities",
-      "image_url": "https://ichef.bbci.co.uk/news/1024/branded_news/ea80/live/2b11cc30-dbbb-11f1-93e1-3b657b665bcf.png",
-      "origin": "source_social_image",
-      "rejection": ""
-    },
-    {
-      "category": "world",
-      "slot": "card",
-      "headline": "Iran warns of severe retaliation if US resumes strikes as Trump signals pause",
+      "headline": "Iran warns it will escalate attacks if US resumes strikes, as Trump says renewed action is 'highly unlikely' if nuclear talks progress",
       "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/4169/live/c55f7eb0-aa0e-11f1-9220-c38a4a0d51b4.jpg",
       "origin": "archive_source_authority",
       "rejection": ""
@@ -27,15 +19,23 @@
     {
       "category": "world",
       "slot": "card",
-      "headline": "At least seven killed, over 100 injured in train collision near Giza, Egypt",
-      "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/3886/live/ab03aa70-db8a-11f1-b441-2b33b063138f.jpg",
-      "origin": "rss_source",
+      "headline": "Krakow shooter's parents and sister found dead at family home as terrorism charges advance",
+      "image_url": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/rockcms/2026-11/261108-krakow-nd-7dad8f.jpg",
+      "origin": "source_social_image",
       "rejection": ""
     },
     {
       "category": "world",
       "slot": "card",
-      "headline": "Two Polish officers who stopped Krakow gunman emerge from comas as prosecutors open terror investigation",
+      "headline": "Train collision near Cairo kills seven, injures more than 125",
+      "image_url": "https://www.aljazeera.com/wp-content/uploads/2026/11/AP26312485394808-1794150272.jpg?resize=1920%2C1438",
+      "origin": "source_social_image",
+      "rejection": ""
+    },
+    {
+      "category": "world",
+      "slot": "card",
+      "headline": "Surgeons dining in Krakow described treating shooting victims in street before ambulances arrived",
       "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/e5f9/live/5b43f440-db76-11f1-b1f1-3be4e895d0fe.jpg",
       "origin": "rss_source",
       "rejection": ""
@@ -65,10 +65,18 @@
       "rejection": ""
     },
     {
+      "category": "world",
+      "slot": "card",
+      "headline": "Houthi strikes hit Aramco Tower in Riyadh, target airport and oil facilities",
+      "image_url": "https://ichef.bbci.co.uk/news/1024/branded_news/ea80/live/2b11cc30-dbbb-11f1-93e1-3b657b665bcf.png",
+      "origin": "source_social_image",
+      "rejection": ""
+    },
+    {
       "category": "us",
       "slot": "hero",
-      "headline": "Arrest made in shooting that killed one during Winston-Salem State University homecoming weekend",
-      "image_url": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/rockcms/2026-11/261108-Winston-Salem-State-University-Sign-vl-1005a-4da3f4.jpg",
+      "headline": "Philadelphia boycott of Jewish-owned restaurants draws dueling protests, three arrests",
+      "image_url": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/rockcms/2026-11/261108-philadelphia-boycott-israel-jewish-ww-1418-293a16.jpg",
       "origin": "source_social_image",
       "rejection": ""
     },
@@ -91,6 +99,14 @@
     {
       "category": "us",
       "slot": "card",
+      "headline": "Arrest made in shooting that killed one during Winston-Salem State University homecoming weekend",
+      "image_url": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/rockcms/2026-11/261108-Winston-Salem-State-University-Sign-vl-1005a-4da3f4.jpg",
+      "origin": "source_social_image",
+      "rejection": ""
+    },
+    {
+      "category": "us",
+      "slot": "card",
       "headline": "Secret Service arrests man near White House with guns who said voices told him to kill Trump",
       "image_url": "https://i.guim.co.uk/img/media/30a42bd193109c7cf7e2854cf733ff3179bf6e89/436_0_4356_3485/master/4356.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=3cd69865cb1bc2a51b14544e4254a06b",
       "origin": "source_social_image",
@@ -107,15 +123,23 @@
     {
       "category": "business",
       "slot": "hero",
-      "headline": "Nvidia board launches independent investigation into CEO Jensen Huang after reports of Chinese intelligence targeting",
+      "headline": "Nvidia board launches independent investigation into CEO Jensen Huang after reports he was targeted by Chinese intelligence; Trump publicly defends Huang and reveals Rubio-level concern inside government",
       "image_url": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/rockcms/2025-11/251119-jensen-huang-nvidia-es-42a1a0.jpg",
+      "origin": "archive_source_authority",
+      "rejection": ""
+    },
+    {
+      "category": "business",
+      "slot": "card",
+      "headline": "Binance names new CFO days after $6.3 billion crypto hack attributed to North Korean hackers",
+      "image_url": "https://a57.foxnews.com/static.foxbusiness.com/foxbusiness.com/content/uploads/2026/10/0/0/changpeng-zhao-binance-6-billion-hack.jpg?ve=1&tl=1",
       "origin": "source_social_image",
       "rejection": ""
     },
     {
       "category": "business",
       "slot": "card",
-      "headline": "Wall Street braces for pivotal week with earnings from Constellation Energy, CoreWeave, Nebius, Applied Materials and Cisco, plus fresh inflation data, as Nasdaq sits in correction territory amid AI spending concerns",
+      "headline": "Markets face pivotal week with inflation data, Fed rate expectations, and AI earnings",
       "image_url": "https://s.yimg.com/cv/apiv2/cv/apiv2/social/images/yahoo-finance-default-logo.png",
       "origin": "source_social_image",
       "rejection": ""
@@ -123,8 +147,8 @@
     {
       "category": "business",
       "slot": "card",
-      "headline": "Binance names Justin Yek as CFO, says leadership change unrelated to $6.3 billion hack",
-      "image_url": "https://a57.foxnews.com/static.foxbusiness.com/foxbusiness.com/content/uploads/2026/10/0/0/changpeng-zhao-binance-6-billion-hack.jpg?ve=1&tl=1",
+      "headline": "Warren Buffett's Market-Crash Strategy: Buy and Hold Through Volatility",
+      "image_url": "https://g.foolcdn.com/image/?url=https%3A%2F%2Fg.foolcdn.com%2Feditorial%2Fimages%2F893849%2Fbuffett-tmf-2.jpg&w=1200&op=resize",
       "origin": "source_social_image",
       "rejection": ""
     },
@@ -171,15 +195,7 @@
     {
       "category": "tech",
       "slot": "hero",
-      "headline": "Nvidia board launches independent investigation into CEO's relationship with alleged Chinese operative",
-      "image_url": "https://techcrunch.com/wp-content/uploads/2026/09/GettyImages-2294936867.jpg?resize=1200,800",
-      "origin": "source_social_image",
-      "rejection": ""
-    },
-    {
-      "category": "tech",
-      "slot": "card",
-      "headline": "Researchers trace worldwide power grid frequency drops to synchronized battery checks",
+      "headline": "Researchers trace mysterious global power grid frequency drops to synchronized battery backup systems",
       "image_url": "https://techcrunch.com/wp-content/uploads/2022/08/electrical-grid-at-night.jpg?resize=1200,800",
       "origin": "source_social_image",
       "rejection": ""
@@ -187,7 +203,15 @@
     {
       "category": "tech",
       "slot": "card",
-      "headline": "Apple accelerates Siri overhaul to compete with OpenAI and Meta AI assistants",
+      "headline": "Nvidia CEO Jensen Huang acknowledges affair with alleged Chinese government agent as board launches security investigation",
+      "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/09/gettyimages-2285784039.jpg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
+      "origin": "source_social_image",
+      "rejection": ""
+    },
+    {
+      "category": "tech",
+      "slot": "card",
+      "headline": "Apple accelerates Siri upgrades under internal pressure to match OpenAI and Meta AI assistants",
       "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/07/Siri-AI-Being-invoked-3.jpg?quality=90&strip=all&crop=0%2C10.727837220746%2C100%2C78.544325558509&w=1200",
       "origin": "source_social_image",
       "rejection": ""
@@ -195,8 +219,32 @@
     {
       "category": "tech",
       "slot": "card",
-      "headline": "Epic Games Launcher to officially support SteamOS and Steam Deck",
+      "headline": "Elvis Presley estate and Eminem publisher sue AI music company Suno over voice cloning",
+      "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/22202367/517216004.jpg?quality=90&strip=all&crop=0%2C3.4730210448443%2C100%2C41.13900448979&w=1200",
+      "origin": "source_social_image",
+      "rejection": ""
+    },
+    {
+      "category": "tech",
+      "slot": "card",
+      "headline": "Epic Games confirms launcher support for SteamOS and other Linux distributions",
       "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/05/STK108_EPIC_GAMES_C.jpg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
+      "origin": "source_social_image",
+      "rejection": ""
+    },
+    {
+      "category": "tech",
+      "slot": "card",
+      "headline": "Akai opens GitHub repository for MPC music production hardware",
+      "image_url": "https://synthanatomy.com/wp-content/uploads/2026/11/Akai-MPC-Open-Source.jpg",
+      "origin": "source_social_image",
+      "rejection": ""
+    },
+    {
+      "category": "tech",
+      "slot": "card",
+      "headline": "Sequoia Capital partners blindsided by Roelof Botha's SpaceX board appointment",
+      "image_url": "https://techcrunch.com/wp-content/uploads/2025/10/2243688557.jpg?resize=1200,800",
       "origin": "source_social_image",
       "rejection": ""
     },
@@ -211,39 +259,15 @@
     {
       "category": "tech",
       "slot": "card",
-      "headline": "U.S. intelligence memo claimed Chinese officials recruited tech executive to spy on Nvidia CEO",
+      "headline": "Nvidia board opens independent probe as CEO Jensen Huang admits affair with alleged Chinese operative",
       "image_url": "https://techcrunch.com/wp-content/uploads/2026/09/GettyImages-2294936867.jpg?resize=1200,800",
-      "origin": "source_social_image",
-      "rejection": ""
-    },
-    {
-      "category": "tech",
-      "slot": "card",
-      "headline": "NASA opens astronaut applications to expand Artemis moon program",
-      "image_url": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/rockcms/2026-04/260401-artemis-ii-crew-ew-830p-66a33a.jpg",
-      "origin": "source_social_image",
-      "rejection": ""
-    },
-    {
-      "category": "tech",
-      "slot": "card",
-      "headline": "Chainalysis says breach exposed credentials and security tokens for all customers",
-      "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2022/08/getty-blockchain-1152x648.jpg",
-      "origin": "rss_source",
-      "rejection": ""
-    },
-    {
-      "category": "tech",
-      "slot": "card",
-      "headline": "US approved Nvidia chip sales to Chinese firm with empty office and ties to blacklisted entity",
-      "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/06/STK083_NVIDIA_2.jpg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
       "origin": "source_social_image",
       "rejection": ""
     },
     {
       "category": "sports",
       "slot": "hero",
-      "headline": "Lions extend win streak to four with 19-9 victory over Dolphins in emotional week following Campbell injury",
+      "headline": "Kenneth Walker scores three touchdowns as Chiefs defeat Jets 35-12, Mahomes plays through elbow injury",
       "image_url": "https://sportsfly.cbsistatic.com/fly-887/bundles/sportsmediacss/images/fantasy/default-article-image-large.png",
       "origin": "source_social_image",
       "rejection": ""
@@ -251,7 +275,7 @@
     {
       "category": "sports",
       "slot": "card",
-      "headline": "Broncos beat Panthers 26-21 for fifth straight win behind Nix's two touchdowns",
+      "headline": "Broncos beat Panthers 26-21 for fifth straight win, extend one-score streak to 16",
       "image_url": "https://sportsfly.cbsistatic.com/fly-887/bundles/sportsmediacss/images/fantasy/default-article-image-large.png",
       "origin": "source_social_image",
       "rejection": ""
@@ -259,31 +283,7 @@
     {
       "category": "sports",
       "slot": "card",
-      "headline": "Cowboys beat Colts 27-23 on late Javonte Williams touchdown to improve to 4-5",
-      "image_url": "https://s.yimg.com/lo/mysterio/api/4dd5f2bc78a7a500bae654c123559b33c762a964037670a408281c3fdc6ec84f/lightyear_networkapi/resizefill_w1200_h675%3Bquality_80%3Bformat_webp/https%3A%2F%2Fd29szjachogqwa.cloudfront.net%2Fimages%2F2026-11%2F117c1eb8-9a8a-49f6-9746-d52bfad82ca2",
-      "origin": "source_social_image",
-      "rejection": ""
-    },
-    {
-      "category": "sports",
-      "slot": "card",
-      "headline": "Saints edge Browns in overtime, Tank Dell scores 63-yard touchdown in return from knee injury",
-      "image_url": "https://s.yimg.com/lo/mysterio/api/0a94104b376bff4ecfc730b6eec156deb558c61c1b1950f8121604ccdadae8c5/lightyear_networkapi/resizefill_w1200_h675%3Bquality_80%3Bformat_webp/https%3A%2F%2Fd29szjachogqwa.cloudfront.net%2Fimages%2F2026-11%2F7920a6eb-2cc7-4974-9409-1844b4675a15",
-      "origin": "source_social_image",
-      "rejection": ""
-    },
-    {
-      "category": "sports",
-      "slot": "card",
-      "headline": "Giants' J.J. McCarthy leaves game with hip injury, Jameis Winston leads New York to 19-11 win over Eagles",
-      "image_url": "https://nbcsports.brightspotcdn.com/dims4/default/f3158af/2147483647/strip/true/crop/3665x2062+0+0/resize/1440x810!/quality/90/?url=https%3A%2F%2Fnbc-sports-production-nbc-sports.s3.us-east-1.amazonaws.com%2Fbrightspot%2Fef%2F3d%2F10564c8c402b8090371fff443003%2F2304168843.jpg",
-      "origin": "source_social_image",
-      "rejection": ""
-    },
-    {
-      "category": "sports",
-      "slot": "card",
-      "headline": "Lando Norris wins Sao Paulo Grand Prix after rivals' mistakes as Mercedes clinches constructors' title",
+      "headline": "Norris wins chaotic Sao Paulo GP as Mercedes clinches constructors' title",
       "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/b718/live/a6329430-dba7-11f1-9580-17f5674d0b29.jpg",
       "origin": "rss_source",
       "rejection": ""
@@ -291,7 +291,15 @@
     {
       "category": "sports",
       "slot": "card",
-      "headline": "NFL trade deadline speculation centers on running backs Henry and Taylor",
+      "headline": "Falkirk rise to third in Scottish Premiership with fifth straight win",
+      "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/29a2/live/9f6069b0-dbb7-11f1-be74-51c499abf6a8.jpg",
+      "origin": "rss_source",
+      "rejection": ""
+    },
+    {
+      "category": "sports",
+      "slot": "card",
+      "headline": "NFL trade deadline speculation centers on running backs and defensive stars",
       "image_url": "https://sportshub.cbsistatic.com/i/r/2026/11/08/2e1f98e1-1531-4432-8aaa-92d1056212d6/thumbnail/1200x675/010a50a9e35e8461cf338b3f602580ad/der.jpg",
       "origin": "source_social_image",
       "rejection": ""
@@ -299,7 +307,7 @@
     {
       "category": "sports",
       "slot": "card",
-      "headline": "Norris earns perfect 10 in Sao Paulo Grand Prix driver ratings as Verstappen charges from 21st to second",
+      "headline": "Norris earns top marks in Sao Paulo Grand Prix driver ratings after pole-to-win performance",
       "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/3356/live/e6fd4000-dbbb-11f1-93e1-3b657b665bcf.png",
       "origin": "rss_source",
       "rejection": ""
@@ -307,23 +315,39 @@
     {
       "category": "sports",
       "slot": "card",
-      "headline": "Falkirk climb to third in Scottish Premiership after fifth straight win",
-      "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/29a2/live/9f6069b0-dbb7-11f1-be74-51c499abf6a8.jpg",
+      "headline": "Chelsea among clubs tracking Aston Villa's Kamara",
+      "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/5ca1/live/18cc3840-dbb0-11f1-9047-0dde0754755b.png",
       "origin": "rss_source",
       "rejection": ""
     },
     {
-      "category": "entertainment",
-      "slot": "hero",
-      "headline": "Del Casher, guitarist who invented the wah-wah pedal, dies at 88",
-      "image_url": "https://www.rollingstone.com/wp-content/uploads/2026/11/GettyImages-98557670.jpg?w=1600&#038;h=900&#038;crop=1",
+      "category": "sports",
+      "slot": "card",
+      "headline": "Willy Hutchinson upsets Joshua Buatsi to win WBC light-heavyweight title in Manchester rematch",
+      "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/d2e3/live/7f200090-db01-11f1-969c-27c4482e95aa.jpg",
+      "origin": "rss_source",
+      "rejection": ""
+    },
+    {
+      "category": "sports",
+      "slot": "card",
+      "headline": "Oregon routs Ohio State 41-28, likely ending Buckeyes' playoff hopes with fake punt sparking turnaround",
+      "image_url": "https://sportshub.cbsistatic.com/i/r/2026/11/08/c14e9184-8eb5-406e-8255-8552b6305027/thumbnail/1200x675/c7882ee0cbb1f52e83418a043b902381/oregon-over-osu-1.jpg",
       "origin": "source_social_image",
       "rejection": ""
     },
     {
       "category": "entertainment",
+      "slot": "hero",
+      "headline": "Denis Villeneuve says he is finishing Dune: Part Three while beginning James Bond movie, teases casting before joking at LACMA gala",
+      "image_url": "https://variety.com/wp-content/uploads/2026/11/GF1_9905.jpg",
+      "origin": "rss_source",
+      "rejection": ""
+    },
+    {
+      "category": "entertainment",
       "slot": "card",
-      "headline": "Erika Kirk condemns Dave Chappelle and other comedians for joking about husband's assassination",
+      "headline": "Erika Kirk condemns Dave Chappelle, other comedians for joking about husband's killing",
       "image_url": "https://variety.com/wp-content/uploads/2026/11/US-POLITICS-SHOOTING-KIRK-1000.jpg",
       "origin": "rss_source",
       "rejection": ""
@@ -331,23 +355,15 @@
     {
       "category": "entertainment",
       "slot": "card",
-      "headline": "Maya Jama steps down as host of 'Love Island U.K.' after nine seasons",
-      "image_url": "https://variety.com/wp-content/uploads/2025/11/maya.jpg",
-      "origin": "rss_source",
+      "headline": "Maya Jama steps down as Love Island host after three years",
+      "image_url": "https://ichef.bbci.co.uk/news/1024/branded_news/2f2c/live/327b8220-dbb3-11f1-b35d-8ff000e4934a.jpg",
+      "origin": "source_social_image",
       "rejection": ""
     },
     {
       "category": "entertainment",
       "slot": "card",
-      "headline": "Streaming hit 'Heated Rivalry' earns $1.4 million in limited theatrical re-release",
-      "image_url": "https://variety.com/wp-content/uploads/2025/12/Heated_Rivalry_-__Episode_103-15.jpg",
-      "origin": "rss_source",
-      "rejection": ""
-    },
-    {
-      "category": "entertainment",
-      "slot": "card",
-      "headline": "Ron Howard documentary explores how Richard Avedon revolutionized photography",
+      "headline": "Ron Howard's 'Avedon' Documentary Examines Photographer's Career and Influence",
       "image_url": "https://variety.com/wp-content/uploads/2026/11/avedon-netflix-2.jpg.webp",
       "origin": "rss_source",
       "rejection": ""
@@ -355,7 +371,15 @@
     {
       "category": "entertainment",
       "slot": "card",
-      "headline": "Variety highlights unconventional casting in 'Being Heumann' and 'La Bola Negra' for Oscar predictions",
+      "headline": "'Spy x Family' Confirmed for Season 4 and New Theatrical Film in 2027",
+      "image_url": "https://variety.com/wp-content/uploads/2026/11/Spy-x-Kids.jpg",
+      "origin": "rss_source",
+      "rejection": ""
+    },
+    {
+      "category": "entertainment",
+      "slot": "card",
+      "headline": "Casting predictions spotlight disability drama 'Being Heumann' and Spanish epic 'La Bola Negra' as Oscar contenders",
       "image_url": "https://variety.com/wp-content/uploads/2026/11/1000044877.jpg",
       "origin": "rss_source",
       "rejection": ""
@@ -363,56 +387,32 @@
     {
       "category": "entertainment",
       "slot": "card",
-      "headline": "Andy Serkis says he no longer pushes for performance capture acceptance after playing Gollum",
-      "image_url": "https://variety.com/wp-content/uploads/2026/11/GettyImages-1247589803.jpg",
+      "headline": "Taylor Swift and Karlie Kloss appear together at Chiefs game for first time in years",
+      "image_url": "https://variety.com/wp-content/uploads/2026/11/New-York-Jets-v-Kansas-City-Chiefs-1000.jpg",
       "origin": "rss_source",
       "rejection": ""
     },
     {
       "category": "entertainment",
       "slot": "card",
-      "headline": "Andy Richter says U2 guitarist the Edge once wrote an unproduced screenplay for an 'Elf' sequel",
-      "image_url": "https://www.rollingstone.com/wp-content/uploads/2026/11/GettyImages-2275526542.jpg?w=1600&#038;h=900&#038;crop=1",
+      "headline": "Japanese Anime 'Chiikawa the Movie' Holds Top Spot at South Korean Box Office for Fourth Weekend",
+      "image_url": "https://variety.com/wp-content/uploads/2026/10/Chiikawa-the-Movie-The-Secret-of-Mermaid-Island.jpg",
+      "origin": "rss_source",
+      "rejection": ""
+    },
+    {
+      "category": "entertainment",
+      "slot": "card",
+      "headline": "WWE roster left Saudi Arabia before missile attack in Riyadh",
+      "image_url": "https://d1fcaprh3kb5t7.cloudfront.net/wp-content/uploads/2023/07/27220842/febwwesaudi_1.jpg?v=20261108185959",
       "origin": "source_social_image",
-      "rejection": ""
-    },
-    {
-      "category": "entertainment",
-      "slot": "card",
-      "headline": "'Passing Strange' Premieres in Southern California at Pasadena Playhouse Nearly Two Decades After Broadway",
-      "image_url": "https://variety.com/wp-content/uploads/2026/11/MixCollage-08-Nov-2026-12-19-PM-4793.jpg",
-      "origin": "rss_source",
       "rejection": ""
     },
     {
       "category": "politics",
       "slot": "hero",
-      "headline": "Attorney General dismisses Calley Means' White House corruption allegations as former FDA chief backs some claims",
-      "image_url": "https://images.axios.com/A6-ZTRDQoV6b2jYnzMfvyYc4ZlI=/0x63:4000x2313/1366x768/2026/11/08/1794165659390.jpeg",
-      "origin": "rss_source",
-      "rejection": ""
-    },
-    {
-      "category": "politics",
-      "slot": "card",
-      "headline": "Libertarian operatives court Rep. Thomas Massie for 2028 third-party run",
-      "image_url": "https://images.axios.com/emUQDJW9ZCs0mvRH7Nai1_isNW0=/0x0:6451x3629/1366x768/2026/11/06/1794004729881.jpeg",
-      "origin": "rss_source",
-      "rejection": ""
-    },
-    {
-      "category": "politics",
-      "slot": "card",
-      "headline": "Trump presses Netanyahu to implement Gaza peace plan after Israeli election",
-      "image_url": "https://images.axios.com/L8hzc4MzEpkfXpdBYVpdnE5LyDk=/0x0:6224x3501/1366x768/2026/11/08/1794159488372.jpeg",
-      "origin": "rss_source",
-      "rejection": ""
-    },
-    {
-      "category": "politics",
-      "slot": "card",
-      "headline": "Congress demands answers on Nvidia CEO's reported ties to alleged Chinese spy",
-      "image_url": "https://images.axios.com/VFfno0y_-Z1CoXWqHELtC5MW2Ik=/0x233:4096x2537/1366x768/2026/11/07/1794052637919.jpeg",
+      "headline": "DeSantis positions for 2028 presidential run as Rubio deflects speculation following GOP midterm losses",
+      "image_url": "https://images.axios.com/8KcODt8FqMG-tvGPfNEQnGx8WaY=/0x0:1920x1080/1366x768/2026/11/06/1793975469147.jpeg",
       "origin": "rss_source",
       "rejection": ""
     },
@@ -421,6 +421,14 @@
       "slot": "card",
       "headline": "House Republicans weigh impeaching Defense Secretary Hegseth this week over alleged illegal continuation of Iran war",
       "image_url": "https://images.axios.com/_UnaL9VTm6M_zNK85dBwqE4uzdc=/0x0:8192x4608/1366x768/2026/11/06/1793984656984.jpeg",
+      "origin": "rss_source",
+      "rejection": ""
+    },
+    {
+      "category": "politics",
+      "slot": "card",
+      "headline": "Attorney General dismisses Calley Means' White House corruption allegations as former FDA chief backs some claims",
+      "image_url": "https://images.axios.com/A6-ZTRDQoV6b2jYnzMfvyYc4ZlI=/0x63:4000x2313/1366x768/2026/11/08/1794165659390.jpeg",
       "origin": "rss_source",
       "rejection": ""
     },

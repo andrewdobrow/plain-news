@@ -4,41 +4,41 @@
 
 ## Hero
 
-- Current: **Treasury moves to cut off crypto exchange MEXC from U.S. financial system over alleged $16 billion in illicit transactions**
-- Recommended: **Trump presses Netanyahu to implement Gaza peace plan after Israeli election**
+- Current: **Researchers trace mysterious global power grid frequency drops to synchronized battery backup systems**
+- Recommended: **Krakow shooter's parents and sister found dead at family home as terrorism charges advance**
 - Recommendation: CHANGE (not enforced)
 
 ## Top Stories deck
 
 | Rank | Current | Recommended | Score | Why |
 | ---: | --- | --- | ---: | --- |
-| 1 | Houthi strikes hit Aramco Tower in Riyadh, target airport and oil facilities | Trump presses Netanyahu to implement Gaza peace plan after Israeli election | 88 | importance 100; freshness 91.38; urgency 6/10 |
-| 2 | Iran warns of severe retaliation if US resumes strikes as Trump signals pause | Attorney General dismisses Calley Means' White House corruption allegations as former FDA chief backs some claims | 81 | importance 67; freshness 99.99; urgency 7/10 |
-| 3 | At least seven killed, over 100 injured in train collision near Giza, Egypt | Arrest made in shooting that killed one during Winston-Salem State University homecoming weekend | 77 | importance 61; freshness 99.99; urgency 6/10 |
-| 4 | Two Polish officers who stopped Krakow gunman emerge from comas as prosecutors open terror investigation | Variety highlights unconventional casting in 'Being Heumann' and 'La Bola Negra' for Oscar predictions | 76 | importance 77; freshness 99.45; urgency 4/10 |
-| 5 | Paraguay formally charges ousted president Santiago Peña with breach of trust over Ueno Bank collapse | Two Polish officers who stopped Krakow gunman emerge from comas as prosecutors open terror investigation | 76 | importance 61; freshness 92.03; urgency 6/10 |
-| 6 | Krakow gunman killed his parents and sister before Main Market Square attack that left six dead | Wall Street braces for pivotal week with earnings from Constellation Energy, CoreWeave, Nebius, Applied Materials and Cisco, plus fresh inflation data, as Nasdaq sits in correction territory amid AI spending concerns | 76 | importance 75; freshness 88.63; urgency 6/10 |
-| 7 | Israeli President Herzog tasks opposition leader Eisenkot with forming government after inconclusive election | House Republicans weigh impeaching Defense Secretary Hegseth this week over alleged illegal continuation of Iran war | 80 | importance 100; freshness 83.37; urgency 3/10; -6 category saturation |
-| 8 | Arrest made in shooting that killed one during Winston-Salem State University homecoming weekend | Falkirk climb to third in Scottish Premiership after fifth straight win | 70 | importance 40; freshness 98.47; urgency 7/10 |
-| 9 | Wisconsin state trooper detained by ICE released under supervision after intervention by DHS secretary | Houthi strikes hit Aramco Tower in Riyadh, target airport and oil facilities | 69 | importance 36; freshness 99.99; urgency 8/10 |
-| 10 | Six killed in shooting in Krakow, Poland; British citizen among dead | Nvidia board launches independent investigation into CEO Jensen Huang after reports of Chinese intelligence targeting | 66 | importance 15; freshness 99.99; urgency 8/10 |
-| 11 | Secret Service arrests man near White House with guns who said voices told him to kill Trump | At least seven killed, over 100 injured in train collision near Giza, Egypt | 69 | importance 55; freshness 94.67; urgency 6/10; -6 category saturation |
-| 12 | Hamilton and Verstappen to start from back of grid at São Paulo Grand Prix | Six killed in shooting in Krakow, Poland; British citizen among dead | 63 | importance 68; freshness 65.02; urgency 3/10 |
+| 1 | Paraguay formally charges ousted president Santiago Peña with breach of trust over Ueno Bank collapse | Krakow shooter's parents and sister found dead at family home as terrorism charges advance | 89 | importance 93; freshness 93.17; urgency 7/10 |
+| 2 | Krakow shooter's parents and sister found dead at family home as terrorism charges advance | Warren Buffett's Market-Crash Strategy: Buy and Hold Through Volatility | 79 | importance 78; freshness 94.58; urgency 7/10 |
+| 3 | Train collision near Cairo kills seven, injures more than 125 | House Republicans weigh impeaching Defense Secretary Hegseth this week over alleged illegal continuation of Iran war | 79 | importance 100; freshness 81.55; urgency 3/10 |
+| 4 | Surgeons dining in Krakow described treating shooting victims in street before ambulances arrived | Markets face pivotal week with inflation data, Fed rate expectations, and AI earnings | 75 | importance 75; freshness 86.81; urgency 6/10 |
+| 5 | Krakow gunman killed his parents and sister before Main Market Square attack that left six dead | Casting predictions spotlight disability drama 'Being Heumann' and Spanish epic 'La Bola Negra' as Oscar contenders | 74 | importance 77; freshness 97.63; urgency 3/10 |
+| 6 | Israeli President Herzog tasks opposition leader Eisenkot with forming government after inconclusive election | Surgeons dining in Krakow described treating shooting victims in street before ambulances arrived | 73 | importance 61; freshness 90.21; urgency 5/10 |
+| 7 | Houthi strikes hit Aramco Tower in Riyadh, target airport and oil facilities | Attorney General dismisses Calley Means' White House corruption allegations as former FDA chief backs some claims | 72 | importance 67; freshness 98.17; urgency 3/10 |
+| 8 | Philadelphia boycott of Jewish-owned restaurants draws dueling protests, three arrests | Philadelphia boycott of Jewish-owned restaurants draws dueling protests, three arrests | 70 | importance 40; freshness 99.98; urgency 6/10 |
+| 9 | Wisconsin state trooper detained by ICE released under supervision after intervention by DHS secretary | Arrest made in shooting that killed one during Winston-Salem State University homecoming weekend | 70 | importance 61; freshness 98.17; urgency 3/10 |
+| 10 | Six killed in shooting in Krakow, Poland; British citizen among dead | Maya Jama steps down as Love Island host after three years | 69 | importance 50; freshness 95.13; urgency 5/10 |
+| 11 | Arrest made in shooting that killed one during Winston-Salem State University homecoming weekend | Denis Villeneuve says he is finishing Dune: Part Three while beginning James Bond movie, teases casting before joking at LACMA gala | 68 | importance 40; freshness 99.98; urgency 6/10; -6 category saturation |
+| 12 | Secret Service arrests man near White House with guns who said voices told him to kill Trump | Train collision near Cairo kills seven, injures more than 125 | 67 | importance 55; freshness 97.14; urgency 6/10; -6 category saturation |
 
 ## Recommended moves
 
-- **Trump presses Netanyahu to implement Gaza peace plan after Israeli election**: 50 → 1 — importance 100; freshness 91.38; urgency 6/10
-- **Attorney General dismisses Calley Means' White House corruption allegations as former FDA chief backs some claims**: 48 → 2 — importance 67; freshness 99.99; urgency 7/10
-- **House Republicans weigh impeaching Defense Secretary Hegseth this week over alleged illegal continuation of Iran war**: 52 → 7 — importance 100; freshness 83.37; urgency 3/10; -6 category saturation
-- **Variety highlights unconventional casting in 'Being Heumann' and 'La Bola Negra' for Oscar predictions**: 44 → 4 — importance 77; freshness 99.45; urgency 4/10
-- **Falkirk climb to third in Scottish Premiership after fifth straight win**: 38 → 8 — importance 40; freshness 98.47; urgency 7/10
-- **Iran warns of severe retaliation if US resumes strikes as Trump signals pause**: 2 → 13 — importance 0; freshness 0.0; urgency 8/10
-- **Krakow gunman killed his parents and sister before Main Market Square attack that left six dead**: 6 → 15 — importance 43; freshness 63.68; urgency 3/10
-- **Israeli President Herzog tasks opposition leader Eisenkot with forming government after inconclusive election**: 7 → 16 — importance 25; freshness 66.63; urgency 3/10
-- **Paraguay formally charges ousted president Santiago Peña with breach of trust over Ueno Bank collapse**: 5 → 14 — importance 5; freshness 30.1; urgency 3/10
-- **Wall Street braces for pivotal week with earnings from Constellation Energy, CoreWeave, Nebius, Applied Materials and Cisco, plus fresh inflation data, as Nasdaq sits in correction territory amid AI spending concerns**: 14 → 6 — importance 75; freshness 88.63; urgency 6/10
-- **Houthi strikes hit Aramco Tower in Riyadh, target airport and oil facilities**: 1 → 9 — importance 36; freshness 99.99; urgency 8/10
-- **At least seven killed, over 100 injured in train collision near Giza, Egypt**: 3 → 11 — importance 55; freshness 94.67; urgency 6/10; -6 category saturation
+- **House Republicans weigh impeaching Defense Secretary Hegseth this week over alleged illegal continuation of Iran war**: 51 → 3 — importance 100; freshness 81.55; urgency 3/10
+- **Attorney General dismisses Calley Means' White House corruption allegations as former FDA chief backs some claims**: 52 → 7 — importance 67; freshness 98.17; urgency 3/10
+- **Casting predictions spotlight disability drama 'Being Heumann' and Spanish epic 'La Bola Negra' as Oscar contenders**: 46 → 5 — importance 77; freshness 97.63; urgency 3/10
+- **Maya Jama steps down as Love Island host after three years**: 43 → 10 — importance 50; freshness 95.13; urgency 5/10
+- **Denis Villeneuve says he is finishing Dune: Part Three while beginning James Bond movie, teases casting before joking at LACMA gala**: 41 → 11 — importance 40; freshness 99.98; urgency 6/10; -6 category saturation
+- **Warren Buffett's Market-Crash Strategy: Buy and Hold Through Volatility**: 17 → 2 — importance 78; freshness 94.58; urgency 7/10
+- **Markets face pivotal week with inflation data, Fed rate expectations, and AI earnings**: 16 → 4 — importance 75; freshness 86.81; urgency 6/10
+- **Paraguay formally charges ousted president Santiago Peña with breach of trust over Ueno Bank collapse**: 1 → 13 — importance 5; freshness 28.29; urgency 5/10
+- **Train collision near Cairo kills seven, injures more than 125**: 3 → 12 — importance 55; freshness 97.14; urgency 6/10; -6 category saturation
+- **Houthi strikes hit Aramco Tower in Riyadh, target airport and oil facilities**: 7 → 16 — importance 36; freshness 98.17; urgency 3/10
+- **Krakow gunman killed his parents and sister before Main Market Square attack that left six dead**: 5 → 14 — importance 43; freshness 61.86; urgency 3/10
+- **Israeli President Herzog tasks opposition leader Eisenkot with forming government after inconclusive election**: 6 → 15 — importance 25; freshness 64.81; urgency 3/10
 
 ## Guardrails
 

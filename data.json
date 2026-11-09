@@ -1,5 +1,5 @@
 {
-  "updated": "6:00 PM ET",
+  "updated": "7:00 PM ET",
   "market": {
     "live": false,
     "sp500": {
@@ -25,45 +25,75 @@
     },
     "oil": {
       "label": "Oil",
-      "price": "90.83",
-      "change": "+0.00",
-      "up": true,
+      "price": "90.40",
+      "change": "-0.47",
+      "up": false,
       "live": false
     }
   },
   "front_page": {
     "hero": {
-      "headline": "Treasury moves to cut off crypto exchange MEXC from U.S. financial system over alleged $16 billion in illicit transactions",
-      "teaser": "The U.S. Treasury Department moved to cut off cryptocurrency exchange MEXC from the American financial system over allegations the platform processed $16 billion in illicit transac",
-      "body": "The U.S. Treasury Department moved to cut off cryptocurrency exchange MEXC from the American financial system over allegations the platform processed $16 billion in illicit transactions linked to Iran, North Korea and Russia. The action targets MEXC Global for alleged sanctions violations.\n\nThe Treasury decision blocks MEXC from accessing U.S. financial infrastructure and conducting transactions with American counterparties. The enforcement measure represents one of the largest actions against a cryptocurrency exchange based on alleged illicit transaction volume.\n\nThe alleged $16 billion in flows involve transactions connected to sanctioned countries including Iran, North Korea and Russia. The Treasury did not specify the time period over which the transactions allegedly occurred or detail the nature of the illicit activity.\n\nIn response to the Treasury action, digital asset company NatGold Digital announced it would immediately delist its NATG token from MEXC. The move reflects the immediate market consequences for platforms cut off from the U.S. financial system.",
-      "image_url": "https://plainnews.app/images/fallback/business-3.jpg",
-      "image_credit": "Plain",
-      "published": "Yesterday, 12:36 PM ET",
-      "cat_label": "Business",
-      "urgency_score": 3,
-      "story_id": "story_000330",
-      "event_key": "unknown-event-3c2e024cfc"
+      "headline": "Researchers trace mysterious global power grid frequency drops to synchronized battery backup systems",
+      "teaser": "",
+      "body": "Researchers at Forschungszentrum Jülich in Germany have solved a years-long mystery that has troubled grid managers worldwide: unexplained frequency drops occurring every 60 seconds simultaneously on power grids across continents. The culprit is battery backup systems, including those in data centers, that check their charge status at precisely the same time every minute due to internet-synchronized clocks.\n\nDirector Dirk Witthaut led the investigation after Germany's largest transmission system operator, Tennet Germany, brought the puzzle to his team. The researchers initially suspected hydropower plants, which can cause ultra-low frequency oscillations, but could not explain why the pattern persisted without interruption. They realized that such precise timing required a clock mechanism and began installing more than 80 smart power quality meters around the Jülich campus, which houses battery energy storage systems and data center equipment.\n\nThe measurements revealed that transformers attached to battery systems peaked every minute, matching the pattern seen on larger grids. Many stationary batteries, from data center uninterruptible power supplies to grid-scale batteries, check their state of charge every 60 seconds. Because these devices synchronize their clocks via internet connection, they perform this check simultaneously, creating a collective disturbance on the grid. Data from Ireland provided confirmation: as data centers grew to consume 18 percent of the country's electricity by 2022, the minute-by-minute frequency drop on the Irish grid quadrupled from 3 millihertz in 2016 to 12 millihertz in 2021, with some recent drops exceeding 20 millihertz.\n\nThe researchers recommend that manufacturers add randomization to battery charging schedules rather than checking state of charge exactly on the minute. While Ireland's 50 hertz grid can withstand swings of 200 millihertz, the added disruption from synchronized battery checks could push grids toward blackout conditions when combined with other loads. The team also detected similar periodic power fluctuations in internet-connected devices ranging from smart ovens to computer clusters, though a recent study found that less than 3 percent of such devices run the latest firmware, complicating efforts to deploy software fixes.",
+      "image_url": "https://techcrunch.com/wp-content/uploads/2022/08/electrical-grid-at-night.jpg?resize=1200,800",
+      "image_credit": "techcrunch.com",
+      "published": "3:30 PM ET",
+      "cat_label": "Tech & Science",
+      "urgency_score": 7,
+      "story_id": "story_000406",
+      "event_key": "unknown-event-0bc7a64d0c"
     },
     "cards": [
       {
-        "headline": "Iran warns of severe retaliation if US resumes strikes as Trump signals pause",
-        "teaser": "Tehran issued an ultimatum as Trump said renewed attacks are unlikely pending agreement on nuclear program and Strait of Hormuz reopening.",
-        "body": "Iranian Foreign Minister Abbas Araghchi warned Tehran will retaliate severely if the United States resumes military strikes, issuing a two-day proposal calling for an end to hostilities on all fronts in the countries' eight-month war. Trump said Sunday that renewed strikes are highly unlikely if negotiations advance on Iran's nuclear program and reopening the Strait of Hormuz.\n\nTrump said US forces are positioned with three aircraft carriers in the region and ready to strike if necessary. An Iranian military adviser said the country's armed forces have secured weapons and capabilities for years and are prepared to respond if attacked.",
-        "published": "3:16 PM ET",
+        "headline": "Israeli President Herzog tasks opposition leader Eisenkot with forming government after inconclusive election",
+        "teaser": "Israeli President Isaac Herzog has tasked opposition leader Gadi Eisenkot with forming a new coalition government, giving the former military chief 28 days to build an administrati",
+        "body": "Israeli President Isaac Herzog has tasked opposition leader Gadi Eisenkot with forming a new coalition government, giving the former military chief 28 days to build an administrati\n\nHerzog announced the decision after consulting with political parties represented in the incoming Knesset, Israel's parliament. Eisenkot received 67 recommendations for the premiership compared to 46 for Prime Minister Benjamin Netanyahu.",
+        "published": "Yesterday, 5:19 PM ET",
         "cat_label": "World",
-        "urgency_score": 8,
-        "story_id": "story_000086",
-        "event_key": "war-or-military-action-washington"
+        "urgency_score": 3,
+        "story_id": "story_000329",
+        "event_key": "election-173d6eac61"
       },
       {
-        "headline": "Trump presses Netanyahu to implement Gaza peace plan after Israeli election",
-        "teaser": "The president told the Israeli prime minister in a Thursday call to take steps on disarming Hamas and establishing a Palestinian technocratic government.",
-        "body": "President Donald Trump told Israeli Prime Minister Benjamin Netanyahu during a phone call Thursday that he wants Israel to take steps to implement his Gaza peace plan, according to two sources with knowledge of the matter. The roadmap calls for disarming Hamas and demilitarizing Gaza, as well as transferring governing responsibility to a new Palestinian technocratic government.\n\nThe plan has been on hold for months because of Israeli elections held Oct. 27. Trump endorsed Netanyahu shortly before the election but now wants to move forward with the plan regardless of whether Netanyahu or his opponent forms a new government. Secretary of State Marco Rubio, Jared Kushner, and Steve Witkoff also participated in the call, which Netanyahu initiated.",
-        "published": "12:59 PM ET",
-        "cat_label": "Politics",
+        "headline": "Houthi strikes hit Aramco Tower in Riyadh, target airport and oil facilities",
+        "teaser": "Yemen-based Houthi forces struck the Aramco Tower in central Riyadh on Saturday, causing what Saudi Arabia's energy ministry described as minor damage but which video footage authe",
+        "body": "Yemen-based Houthi forces struck the Aramco Tower in central Riyadh on Saturday, causing what Saudi Arabia's energy ministry described as minor damage but which video footage authe\n\nThe tower, located in the Saudi capital's financial district, was hit by a missile or drone strike that shattered windows across multiple floors. No casualties were reported.",
+        "published": "4:37 PM ET",
+        "cat_label": "World",
+        "urgency_score": 3,
+        "story_id": "story_000398",
+        "event_key": "war-or-military-action-07f9ff4549"
+      },
+      {
+        "headline": "Nvidia CEO Jensen Huang acknowledges affair with alleged Chinese government agent as board launches security investigation",
+        "teaser": "Jensen Huang sent a company-wide memo apologizing for an extramarital relationship with Alice Huang, described as an AI executive and Chinese government agent.",
+        "body": "Nvidia CEO Jensen Huang sent a memo to employees acknowledging an extramarital affair with Alice Huang, an AI executive and agent of the Chinese government. In the message, Huang apologized to his family and colleagues, stating he took full responsibility for his actions and the harm caused.\n\nThe company's board of directors initiated an independent investigation into national security concerns related to the relationship. Huang said he supports the investigation and will cooperate fully, adding that he remains committed to protecting Nvidia and supporting American national security.",
+        "published": "5:54 PM ET",
+        "cat_label": "Tech & Science",
+        "urgency_score": 7,
+        "story_id": "story_000433",
+        "event_key": "unknown-event-1d7d9360bc"
+      },
+      {
+        "headline": "Binance names new CFO days after $6.3 billion crypto hack attributed to North Korean hackers",
+        "teaser": "Justin Yek will succeed Kaiser Ng, who is leaving after more than five years to pursue a new venture.",
+        "body": "Binance has named Justin Yek as chief financial officer just over a week after hackers stole approximately $6.3 billion in cryptocurrency from the exchange on October 29. Yek, a former finance executive at payments firm Airwallex, will succeed Kaiser Ng, who is leaving after more than five years to pursue a new venture. A Binance spokesperson said the leadership transition was planned more than six months ago and had no connection to the cyberattack.\n\nThe FBI has attributed the attack to North Korean hackers. Binance has pledged to absorb the losses rather than pass them on to customers and said it had replenished 98 percent of affected token assets as of November 3, with approximately $2.85 billion in stolen assets frozen or intercepted.",
+        "published": "8:42 AM ET",
+        "cat_label": "Business",
         "urgency_score": 6,
-        "story_id": "story_000427",
-        "event_key": "election-2dee8fdb32"
+        "story_id": "story_000404",
+        "event_key": "cybersecurity-incident-1aec61b1c8"
+      },
+      {
+        "headline": "Treasury moves to cut off crypto exchange MEXC from U.S. financial system over alleged $16 billion in illicit transactions",
+        "teaser": "The U.S. Treasury Department moved to cut off cryptocurrency exchange MEXC from the American financial system over allegations the platform processed $16 billion in illicit transac",
+        "body": "The U.S. Treasury Department moved to cut off cryptocurrency exchange MEXC from the American financial system over allegations the platform processed $16 billion in illicit transac\n\nThe action targets MEXC Global for alleged sanctions violations. The Treasury decision blocks MEXC from accessing U.S.",
+        "published": "Yesterday, 12:36 PM ET",
+        "cat_label": "Business",
+        "urgency_score": 3,
+        "story_id": "story_000330",
+        "event_key": "unknown-event-3c2e024cfc"
       },
       {
         "headline": "House Republicans weigh impeaching Defense Secretary Hegseth this week over alleged illegal continuation of Iran war",
@@ -74,36 +104,6 @@
         "urgency_score": 3,
         "story_id": "story_000396",
         "event_key": "election-a7229c0929"
-      },
-      {
-        "headline": "Congress demands answers on Nvidia CEO's reported ties to alleged Chinese spy",
-        "teaser": "Nvidia CEO Jensen Huang is facing congressional scrutiny after reports surfaced that he had a relationship with an alleged Chinese intelligence operative. Sen. Chris Coons pledged",
-        "body": "Nvidia CEO Jensen Huang is facing congressional scrutiny after reports surfaced that he had a relationship with an alleged Chinese intelligence operative. Sen. Chris Coons pledged\n\nChris Coons pledged an investigation, while a group of House Republican committee chairs requested a briefing from Huang by November 11 to determine whether U.S. national security has been compromised.",
-        "published": "Yesterday, 4:06 PM ET",
-        "cat_label": "Politics",
-        "urgency_score": 3,
-        "story_id": "story_000352",
-        "event_key": "unknown-event-87c016aa00"
-      },
-      {
-        "headline": "Nvidia board launches independent investigation into CEO Jensen Huang after reports of Chinese intelligence targeting",
-        "teaser": "",
-        "body": "Nvidia's board of directors announced Sunday that it is opening an independent investigation following reports that CEO Jensen Huang was targeted by a foreign intelligence effort. The investigation comes after The New York Times and Financial Times reported that Huang had a relationship with Alice Huang, a Chinese businesswoman the newspapers said had been recruited to spy for China. The two are not related. A committee of independent directors, assisted by outside counsel, will oversee the investigation, which Nvidia said will examine whether national security or company secrets were compromised. The company stated it has no reason to believe either was compromised but called national and economic security paramount to its interests.\n\nIn a memo to employees that Nvidia shared publicly, Huang acknowledged being unfaithful to his wife. The Financial Times reported Friday that the U.S. government believed Jensen Huang had a romantic relationship with Alice Huang, whose Singapore-based company was buying Nvidia's advanced chips. U.S. intelligence agencies found she had been recruited by China's top intelligence agency, according to the reports. Huang had previously described his interactions with Alice Huang as business-related and said they were related to her company Megaspeed.\n\nNvidia has been at the center of the artificial intelligence boom, producing the world's most sought-after chips. Its top-tier products are mostly restricted from sale to China due to national security concerns, while China has set a 2030 deadline to surpass American AI capabilities. Nvidia is the world's second-largest publicly traded company, worth nearly $4.5 trillion as of Friday.\n\nBefore Sunday's announcement, congressional Republicans had already requested a briefing from Huang. Representative John Moolenaar, chairman of the House Select Committee on China, said the reports raise significant national security concerns regarding China's access to sensitive U.S. technology and information. A Nvidia spokesperson said the news would not slow the company and that Huang is committed to continuing as CEO without interruption.",
-        "published": "4:05 PM ET",
-        "cat_label": "Business",
-        "urgency_score": 8,
-        "story_id": "story_000402",
-        "event_key": "unknown-event-5b5d3c2bdd"
-      },
-      {
-        "headline": "Stocks plunge into correction after brief post-midterm rally as AI regulation fears hit tech",
-        "teaser": "Wall Street reversed from celebration to selloff within 24 hours this week after midterm election results, with the tech-heavy Nasdaq Composite entering correction territory amid c",
-        "body": "Wall Street reversed from celebration to selloff within 24 hours this week after midterm election results, with the tech-heavy Nasdaq Composite entering correction territory amid c\n\nThe Dow surged more than 1,500 points Wednesday following a Democratic sweep of both chambers of Congress, while the S&P 500 rallied nearly 2 percent. By Thursday, stocks had reversed course as investors sold AI and chip stocks.",
-        "published": "Yesterday, 1:33 PM ET",
-        "cat_label": "Business",
-        "urgency_score": 3,
-        "story_id": "story_000112",
-        "event_key": "election-texas"
       }
     ]
   },
@@ -112,41 +112,41 @@
       "key": "world",
       "label": "World",
       "hero": {
-        "headline": "Houthi strikes hit Aramco Tower in Riyadh, target airport and oil facilities",
-        "teaser": "",
-        "body": "Yemen-based Houthi forces struck the Aramco Tower in central Riyadh on Saturday, causing what Saudi Arabia's energy ministry described as minor damage but which video footage authenticated by BBC Verify showed as more extensive. The tower, located in the Saudi capital's financial district, was hit by a missile or drone strike that shattered windows across multiple floors. No casualties were reported. A statement from the Houthi-controlled Saba news agency confirmed the group had targeted Riyadh's business zone without naming the building specifically.\n\nThe Houthis also said they struck Riyadh's airport and Aramco oil storage facilities in separate attacks. Saudi Arabia said its air defenses intercepted and destroyed several missiles. The strikes represented the latest in a series of attacks deep inside Saudi Arabia by the armed group, which the Gulf nation has struggled to contain in recent months.\n\nThe attacks came one day after the Houthis accused a Saudi-led coalition of killing at least 33 people, including women and children, in an air strike on al-Shariyah, a town east of the Yemeni capital Sanaa. Footage broadcast by Houthi-run television showed rescuers pulling bodies from rubble. Saba said 39 people were injured. Saudi Arabia has not commented on the accusation.\n\nA Saudi-led coalition has fought the Houthis for more than a decade in support of Yemen's internationally recognized government. The largely dormant conflict intensified following the outbreak of war with Iran. An informal ceasefire collapsed in July after the Tehran-backed Houthis announced a maritime embargo against Saudi Arabia and began attacking Saudi airports, oil facilities, and Red Sea tankers. The United Nations said more than 1,600 people have been killed and more than 300,000 displaced since fighting resumed.",
-        "image_url": "https://ichef.bbci.co.uk/news/1024/branded_news/ea80/live/2b11cc30-dbbb-11f1-93e1-3b657b665bcf.png",
-        "image_credit": "bbc.com",
-        "published": "4:37 PM ET",
-        "urgency_score": 8,
-        "story_id": "story_000398",
-        "event_key": "war-or-military-action-07f9ff4549"
+        "headline": "Paraguay formally charges ousted president Santiago Peña with breach of trust over Ueno Bank collapse",
+        "teaser": "Prosecutors have formally charged former President Santiago Peña with breach of trust and administration for personal gain, following his impeachment and arrest over the Ueno Bank collapse that left three million Paraguayans unable to access their savings.",
+        "body": "Prosecutors in Paraguay have formally charged former President Santiago Peña with breach of trust and administration for personal gain following his impeachment and arrest over the collapse of Ueno Bank. Peña was impeached and placed under house arrest Friday after lawmakers unanimously voted to remove him from office over the digital bank's demise, which has left more than half of Paraguay's population—an estimated three million depositors—unable to access their savings and pensions. Vice President Pedro Alliana was sworn in as interim president and will serve until 2028.\n\nThe impeachment passed with 44 of 45 senators voting in favor. Peña, who until last year held shares in the company that owned the bank, had offered to step down Thursday. Rather than accept his resignation, senators impeached him and charged him with misconduct, stripping him of the immunity usually granted to former presidents. Senate President Basilio Núñez said Peña was found guilty of dereliction of duty. Peña has denied any wrongdoing, and his defense lawyer Ricardo Preda described the allegations as a reckless accusation that was irresponsible and opportunistic.\n\nThe impeachment charges alleged Peña had conflicts of interest, manipulated regulatory oversight, diverted pension funds, and participated in an institutional cover-up involving the central bank. Prosecutor Silvia Margarita Gonzalez Vester had said Peña was due to be questioned Saturday over allegations of breach of trust, influence peddling, and misappropriation of funds. The formal charges now confirm prosecutors are moving forward with criminal prosecution.\n\nThe bank's collapse prompted widespread protests particularly in the capital, Asunción. Senator Rafael Filizzola called the situation the biggest corruption scandal in Paraguay's democratic history. In an address to the nation Thursday, Peña said he was sorry and that it was never his intention to betray the trust placed in him. Alliana pledged that citizens affected by the financial collapse would be fully compensated.",
+        "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/a65d/live/3fe15d20-da57-11f1-af22-a97b84c9ca63.jpg",
+        "image_credit": "",
+        "published": "Yesterday, 2:17 PM ET",
+        "urgency_score": 5,
+        "story_id": "story_000251",
+        "event_key": "arrest-47a8cdddb3"
       },
       "cards": [
         {
-          "headline": "Iran warns of severe retaliation if US resumes strikes as Trump signals pause",
-          "teaser": "Tehran issued an ultimatum as Trump said renewed attacks are unlikely pending agreement on nuclear program and Strait of Hormuz reopening.",
-          "body": "Iranian Foreign Minister Abbas Araghchi warned Tehran will retaliate severely if the United States resumes military strikes, issuing a two-day proposal calling for an end to hostilities on all fronts in the countries' eight-month war. Trump said Sunday that renewed strikes are highly unlikely if negotiations advance on Iran's nuclear program and reopening the Strait of Hormuz.\n\nTrump said US forces are positioned with three aircraft carriers in the region and ready to strike if necessary. An Iranian military adviser said the country's armed forces have secured weapons and capabilities for years and are prepared to respond if attacked.",
-          "published": "3:16 PM ET",
-          "urgency_score": 8,
-          "story_id": "story_000086",
-          "event_key": "war-or-military-action-washington"
+          "headline": "Krakow shooter's parents and sister found dead at family home as terrorism charges advance",
+          "teaser": "Polish prosecutors pursue terrorism charges against the gunman accused of killing six people in a far-right attack in Krakow's Main Market Square.",
+          "body": "Police confirmed that three bodies found in the home of the 24-year-old gunman who opened fire Saturday in Krakow, Poland, were his parents and sister, who most likely died from gunshot wounds. The suspect, who survived a shootout with police and remains hospitalized in critical condition, faces terrorism charges for the attack in Main Market Square that killed six people, including a British national and an Austrian woman, according to Justice Minister Waldemar Żurek.\n\nProsecutors are pursuing a separate murder charge for the three relatives found dead in Ostrowiec Świętokrzyskie, about 90 miles from Krakow. Authorities described the shooter as motivated by far-right and ultranationalistic ideologies. Poland declared two national days of mourning after the midday attack, the country's deadliest shooting in decades.",
+          "published": "3:09 PM ET",
+          "urgency_score": 7,
+          "story_id": "story_000429",
+          "event_key": "named-person-death:united-kingdom"
         },
         {
-          "headline": "At least seven killed, over 100 injured in train collision near Giza, Egypt",
-          "teaser": "Two trains traveling south from Giza and Cairo collided, causing carriages to derail and fall down an embankment.",
-          "body": "At least seven people died and more than 100 were injured when two trains collided near Giza, Egypt. The first train, traveling from Giza to Fayoum, crashed into the rear of a stationary train heading from Cairo to Aswan. Several carriages derailed and fell down an embankment, with images showing overturned cars and emergency crews searching for injured passengers.\n\nEgyptian President Abdul Fattah al-Sisi ordered an investigation and said anyone found negligent would be held accountable. The public prosecutor's office warned the death toll could rise. Calls emerged for the transport minister to resign over the crash, which occurred near the site of Egypt's deadliest train disaster in 2002.",
-          "published": "2:58 PM ET",
+          "headline": "Train collision near Cairo kills seven, injures more than 125",
+          "teaser": "One passenger train struck another from behind, causing carriages to derail in Giza province.",
+          "body": "At least seven people were killed and more than 125 injured when a passenger train traveling between Giza and Fayoum collided with the back of a Cairo-to-Aswan train in Egypt's Giza province on Sunday, according to the Health Ministry. The collision caused the Aswan-bound train to derail onto a countryside road in the al-Ayyat district, overturning at least six carriages.\n\nPresident Abdel Fattah el-Sisi directed authorities to conduct an urgent investigation to hold accountable anyone found negligent. More than 70 ambulances transported casualties to nearby hospitals. Witnesses described passengers trapped inside overturned carriages with injuries including head wounds and broken limbs.",
+          "published": "5:32 PM ET",
           "urgency_score": 6,
-          "story_id": "story_000399",
-          "event_key": "named-person-death:published-at"
+          "story_id": "story_000430",
+          "event_key": "traffic-crash-877e15b885-877e15b885"
         },
         {
-          "headline": "Two Polish officers who stopped Krakow gunman emerge from comas as prosecutors open terror investigation",
-          "teaser": "The officers were hailed as heroes for preventing further deaths during Saturday's attack that killed six people in Krakow's Main Market Square.",
-          "body": "Two Polish police officers who subdued a gunman during a mass shooting in Krakow emerged from comas on Sunday, authorities said. Senior constables Jakub Kulik and Artur Moraski were shot while stopping the attacker, who killed six people and injured 15 in the city's Main Market Square on Saturday. A surgeon who was eating lunch nearby provided emergency treatment at the scene, likely saving one officer's life.\n\nProsecutors launched a terror investigation after ministers said the 24-year-old Polish suspect was apparently inspired by far-right ideologies. The attacker, who remains in critical condition, wore military tactical gear during the three-minute rampage. Police later found the bodies of his parents and sister at his home. A British national and an Austrian woman were among those killed.",
-          "published": "1:22 PM ET",
-          "urgency_score": 6,
+          "headline": "Surgeons dining in Krakow described treating shooting victims in street before ambulances arrived",
+          "teaser": "Two doctors who were having lunch near the Main Market Square when a gunman opened fire on Saturday rushed to provide emergency care to wounded officers and the attacker.",
+          "body": "Two surgeons who were having lunch near Krakow's Main Market Square when a gunman opened fire Saturday described rushing to treat victims before ambulances arrived. Professor Michal Pędziwiatr said his colleague used his hand to stop bleeding from a gravely injured police officer, treatment Pędziwiatr said \"undoubtedly\" saved the officer's life. The doctors treated two wounded officers and the attacker himself.\n\nThe shooting killed six people and injured 15. The two officers, who were injured while subduing the gunman, emerged from comas Sunday. Polish prosecutors launched a terror investigation after officials said the 24-year-old Polish attacker was apparently inspired by far-right ideologies.",
+          "published": "A few minutes ago",
+          "urgency_score": 5,
           "story_id": "story_000400",
           "event_key": "shooting-37af62bc33"
         },
@@ -183,15 +183,15 @@
       "key": "us",
       "label": "U.S.",
       "hero": {
-        "headline": "Arrest made in shooting that killed one during Winston-Salem State University homecoming weekend",
+        "headline": "Philadelphia boycott of Jewish-owned restaurants draws dueling protests, three arrests",
         "teaser": "",
-        "body": "Authorities arrested a 20-year-old man in connection with a shooting that killed one person and injured another during homecoming weekend at Winston-Salem State University in North Carolina. Ziyaire Antonyo Spinks faces charges of murder, assault with a deadly weapon with intent to kill inflicting serious injury, and felony possession of a firearm on an educational campus, Winston-Salem Police Department said Sunday.\n\nThe shooting Saturday night killed Peyton Izaia Patterson, 19, and injured Alyssa Janae Ellerbee, 19, who was treated at a hospital and released. Officers responding after hearing shots fired around 9:46 p.m. found Patterson suffering from a gunshot wound and attempted life-saving measures, but he did not survive. Police said the shooting stemmed from an altercation between two groups and determined it was an isolated incident. Spinks was not a student at the university, according to Assistant Chief Jason Swaim of the Winston-Salem Police Department.\n\nA separate shooting on campus about 36 minutes later injured two additional people. No arrests have been made in that case as of Sunday afternoon, Swaim said. Police stopped a vehicle related to the second shooting but provided no further details.\n\nCourt records show Spinks had two prior pending cases in North Carolina, including concealed weapon and marijuana possession charges from March in Randolph County, and an October indictment in Guilford County for felony conspiracy to commit robbery and robbery with a dangerous weapon. Spinks is being held without bond. The university canceled remaining homecoming activities scheduled for Sunday and made counseling services available to students and staff.",
-        "image_url": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/rockcms/2026-11/261108-Winston-Salem-State-University-Sign-vl-1005a-4da3f4.jpg",
+        "body": "A bicycle demonstration organized to promote a boycott of Jewish-owned restaurants drew roughly 300 pro-Palestinian protesters and 200 counter-protesters to Philadelphia on Sunday, resulting in three arrests as the groups clashed verbally in Rittenhouse Square. Philadelphia police arrested a woman on an assault charge, a man on disorderly conduct, and a 17-year-old on an assault on police charge, according to a police spokesperson. Officers formed lines to keep the opposing groups separated as tensions escalated.\n\nThe event was organized by Philly Bike On Your Left, which describes itself as an anti-fascist, anti-Zionist social cycling collective. The group announced plans on Oct. 31 to boycott what it called Zionist establishments in solidarity with Palestinians, naming six restaurants including Mac Mart, K'Far Café, Huda, Goldie, Schlesinger's and Dizengoff. Half are owned by restaurant group CookNSolo, whose Israeli co-owners have publicly supported and fundraised for Israel. The restaurants reported long lines of customers showing support during the demonstration.\n\nThe planned boycott drew widespread criticism from Philadelphia Mayor Cherelle Parker, Pennsylvania Governor Josh Shapiro and Pennsylvania Attorney General Dave Sunday, who condemned it on social media. The Anti-Defamation League called the protest an attempt to intimidate a Jewish community that has faced generations of violence and to hold Jewish businesses responsible for events in the Middle East, describing it as antisemitic. Nonprofit organization JewBelong installed billboards at 14 locations across Philadelphia urging residents to support Jewish-owned businesses.\n\nPhilly Bike On Your Left said in a statement that the ride had been grossly misrepresented and that the group stands against racism and oppression including antisemitism. The organization said the event was planned around schedules and rejected implications about its timing, which fell on the eve of the anniversary of Kristallnacht, the 1938 Nazi-organized attacks on Jewish communities in Germany, Austria and Sudetenland.",
+        "image_url": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/rockcms/2026-11/261108-philadelphia-boycott-israel-jewish-ww-1418-293a16.jpg",
         "image_credit": "nbcnews.com",
-        "published": "3:50 PM ET",
+        "published": "A few minutes ago",
         "urgency_score": 6,
-        "story_id": "story_000401",
-        "event_key": "named-person-death:north-carolina"
+        "story_id": "story_000431",
+        "event_key": "arrest-pennsylvania"
       },
       "cards": [
         {
@@ -211,6 +211,15 @@
           "urgency_score": 3,
           "story_id": "story_000325",
           "event_key": "named-person-death:krakow-six"
+        },
+        {
+          "headline": "Arrest made in shooting that killed one during Winston-Salem State University homecoming weekend",
+          "teaser": "Authorities arrested a 20-year-old man in connection with a shooting that killed one person and injured another during homecoming weekend at Winston-Salem State University in North",
+          "body": "Authorities arrested a 20-year-old man in connection with a shooting that killed one person and injured another during homecoming weekend at Winston-Salem State University in North\n\nZiyaire Antonyo Spinks faces charges of murder, assault with a deadly weapon with intent to kill inflicting serious injury, and felony possession of a firearm on an educational campus, Winston-Salem Police Department said Sunday. The shooting Saturday night killed Peyton Izaia Patterson, 19, and injured Alyssa Janae Ellerbee, 19, who was treated at a hospital and released.",
+          "published": "3:50 PM ET",
+          "urgency_score": 3,
+          "story_id": "story_000401",
+          "event_key": "named-person-death:north-carolina"
         },
         {
           "headline": "Secret Service arrests man near White House with guns who said voices told him to kill Trump",
@@ -236,34 +245,43 @@
       "key": "business",
       "label": "Business",
       "hero": {
-        "headline": "Nvidia board launches independent investigation into CEO Jensen Huang after reports of Chinese intelligence targeting",
-        "teaser": "",
-        "body": "Nvidia's board of directors announced Sunday that it is opening an independent investigation following reports that CEO Jensen Huang was targeted by a foreign intelligence effort. The investigation comes after The New York Times and Financial Times reported that Huang had a relationship with Alice Huang, a Chinese businesswoman the newspapers said had been recruited to spy for China. The two are not related. A committee of independent directors, assisted by outside counsel, will oversee the investigation, which Nvidia said will examine whether national security or company secrets were compromised. The company stated it has no reason to believe either was compromised but called national and economic security paramount to its interests.\n\nIn a memo to employees that Nvidia shared publicly, Huang acknowledged being unfaithful to his wife. The Financial Times reported Friday that the U.S. government believed Jensen Huang had a romantic relationship with Alice Huang, whose Singapore-based company was buying Nvidia's advanced chips. U.S. intelligence agencies found she had been recruited by China's top intelligence agency, according to the reports. Huang had previously described his interactions with Alice Huang as business-related and said they were related to her company Megaspeed.\n\nNvidia has been at the center of the artificial intelligence boom, producing the world's most sought-after chips. Its top-tier products are mostly restricted from sale to China due to national security concerns, while China has set a 2030 deadline to surpass American AI capabilities. Nvidia is the world's second-largest publicly traded company, worth nearly $4.5 trillion as of Friday.\n\nBefore Sunday's announcement, congressional Republicans had already requested a briefing from Huang. Representative John Moolenaar, chairman of the House Select Committee on China, said the reports raise significant national security concerns regarding China's access to sensitive U.S. technology and information. A Nvidia spokesperson said the news would not slow the company and that Huang is committed to continuing as CEO without interruption.",
+        "headline": "President Trump defends Nvidia CEO Jensen Huang after board launches investigation into Chinese intelligence targeting",
+        "teaser": "President Donald Trump publicly defended Nvidia CEO Jensen Huang on Sunday, calling him an honorable guy and saying he would bring him on an upcoming Asia trip, hours after the company's board announced an independent investigation following reports that Huang was targeted by Chinese intelligence.",
+        "body": "Nvidia's board of directors announced Sunday that it is opening an independent investigation following reports that CEO Jensen Huang was targeted by a foreign intelligence effort, and hours later President Donald Trump publicly defended Huang, calling him an honorable guy who has done an amazing job for the country. Trump said he would support bringing Huang on his upcoming trip through Asia and when asked by reporters if he wished he had acted on intelligence about Alice Huang, the president said no. The investigation comes after The New York Times and Financial Times reported that Huang had a relationship with Alice Huang, a Chinese businesswoman the newspapers said had been recruited to spy for China. The two are not related.\n\nA committee of independent directors, assisted by outside counsel, will oversee the investigation, which Nvidia said will examine whether national security or company secrets were compromised. The company stated it has no reason to believe either was compromised but called national and economic security paramount to its interests. A person familiar with the matter told NBC News that U.S. intelligence agencies had determined that Alice Huang was a Chinese spy and had a relationship with Nvidia's Jensen Huang.\n\nIn a memo to employees that Nvidia shared publicly, Huang acknowledged being unfaithful to his wife. The Financial Times reported that the U.S. government believed Jensen Huang had a romantic relationship with Alice Huang, whose Singapore-based company was buying Nvidia's advanced chips. U.S. intelligence agencies found she had been recruited by China's top intelligence agency, according to the reports. The New York Times reported that concerns inside the U.S. government about Alice Huang and Jensen Huang rose as high as Secretary of State Marco Rubio.\n\nNvidia has been at the center of the artificial intelligence boom, producing the world's most sought-after chips. Its top-tier products are mostly restricted from sale to China due to national security concerns, while China has set a 2030 deadline to surpass American AI capabilities. Nvidia is the world's second-largest publicly traded company, worth nearly $4.5 trillion as of Friday.\n\nBefore Sunday's announcement, congressional Republicans had already requested a briefing from Huang. Representative John Moolenaar, chairman of the House Select Committee on China, said the reports raise significant national security concerns regarding China's access to sensitive U.S. technology and information. A Nvidia spokesperson said the news would not slow the company and that Huang is committed to continuing as CEO without interruption.",
         "image_url": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/rockcms/2025-11/251119-jensen-huang-nvidia-es-42a1a0.jpg",
         "image_credit": "nbcnews.com",
-        "published": "4:05 PM ET",
+        "published": "A few minutes ago",
         "urgency_score": 8,
         "story_id": "story_000402",
         "event_key": "unknown-event-5b5d3c2bdd"
       },
       "cards": [
         {
-          "headline": "Wall Street braces for pivotal week with earnings from Constellation Energy, CoreWeave, Nebius, Applied Materials and Cisco, plus fresh inflation data, as Nasdaq sits in correction territory amid AI spending concerns",
-          "teaser": "Five closely watched companies report earnings this week as investors assess AI infrastructure demand and await U.S. inflation data amid technology stock pressure.",
-          "body": "Investors are preparing for a busy week on Wall Street, with earnings from five closely watched companies, fresh U.S. inflation data and shifting interest rate expectations likely to shape market sentiment. The Nasdaq Composite has entered correction territory, falling nearly 12% from its October 6 record, while technology stocks have come under pressure amid concerns over data-center spending.\n\nConstellation Energy reports Monday, followed by CoreWeave on Tuesday, Nebius Group and Applied Materials on Thursday, and Cisco Systems also Thursday. Economists expect core consumer prices to rise 0.2% month over month in October, potentially lifting the annual rate to 2.7% from 2.6%. Producer price data due Friday will provide another test for markets as traders assess the Federal Reserve's next policy move.",
+          "headline": "Binance names new CFO days after $6.3 billion crypto hack attributed to North Korean hackers",
+          "teaser": "Justin Yek will succeed Kaiser Ng, who is leaving after more than five years to pursue a new venture.",
+          "body": "Binance has named Justin Yek as chief financial officer just over a week after hackers stole approximately $6.3 billion in cryptocurrency from the exchange on October 29. Yek, a former finance executive at payments firm Airwallex, will succeed Kaiser Ng, who is leaving after more than five years to pursue a new venture. A Binance spokesperson said the leadership transition was planned more than six months ago and had no connection to the cyberattack.\n\nThe FBI has attributed the attack to North Korean hackers. Binance has pledged to absorb the losses rather than pass them on to customers and said it had replenished 98 percent of affected token assets as of November 3, with approximately $2.85 billion in stolen assets frozen or intercepted.",
+          "published": "8:42 AM ET",
+          "urgency_score": 6,
+          "story_id": "story_000404",
+          "event_key": "cybersecurity-incident-1aec61b1c8"
+        },
+        {
+          "headline": "Markets face pivotal week with inflation data, Fed rate expectations, and AI earnings",
+          "teaser": "Investors prepare for U.S. inflation figures and results from Constellation Energy, CoreWeave, Nebius, Applied Materials, and Cisco as technology stocks face pressure.",
+          "body": "Investors prepare for U.S. inflation figures and results from Constellation Energy, CoreWeave, Nebius, Applied Materials, and Cisco as technology stocks face pressure.\n\nInvestors are preparing for a busy week on Wall Street, with earnings from five closely watched companies, fresh U.S. inflation data, and shifting interest rate expectations likely to shape market sentiment.",
           "published": "11:20 AM ET",
           "urgency_score": 6,
           "story_id": "story_000403",
           "event_key": "unknown-event-175e8dd895"
         },
         {
-          "headline": "Binance names Justin Yek as CFO, says leadership change unrelated to $6.3 billion hack",
-          "teaser": "The cryptocurrency exchange says the transition was planned more than six months ago, as it reports recovering most stolen assets.",
-          "body": "Binance has appointed Justin Yek, a former finance executive at payments firm Airwallex, as chief financial officer to replace Kaiser Ng, who is leaving after more than five years to pursue a new venture. A Binance spokesperson said the leadership transition was planned more than six months ago and has no connection to the October 29 cyberattack in which hackers stole approximately $6.3 billion in cryptocurrency.\n\nThe announcement comes as Binance works to recover stolen assets from what is believed to be the largest digital asset theft on record. The exchange said it had replenished 98 percent of affected token assets and that approximately $2.85 billion in stolen funds had been frozen or intercepted. Binance has pledged to absorb the losses rather than pass them on to customers.",
-          "published": "8:42 AM ET",
-          "urgency_score": 5,
-          "story_id": "story_000404",
-          "event_key": "cybersecurity-incident-1aec61b1c8"
+          "headline": "Warren Buffett's Market-Crash Strategy: Buy and Hold Through Volatility",
+          "teaser": "The Berkshire Hathaway chairman advises investors to avoid buying only when comfortable and selling when fearful, a strategy that has proven successful through major downturns.",
+          "body": "Warren Buffett advises investors to survive market crashes by holding stocks through volatility rather than buying during comfort and selling during fear. The strategy has historically proven effective even through severe downturns, according to market data cited by the investor.\n\nThe S&P 500 fell nearly 50 percent during the 2000 dot-com collapse and took until 2007 to reach a new high, yet still delivered total returns exceeding 224 percent between 2000 and 2020. That period included two of the worst U.S. recessions, demonstrating the index's long-term recovery pattern despite short-term losses.",
+          "published": "4:00 PM ET",
+          "urgency_score": 7,
+          "story_id": "story_000432",
+          "event_key": "traffic-crash-bc7994f839-bc7994f839"
         },
         {
           "headline": "Treasury moves to cut off crypto exchange MEXC from U.S. financial system over alleged $16 billion in illicit transactions",
@@ -291,15 +309,6 @@
           "urgency_score": 3,
           "story_id": "story_000006",
           "event_key": "election-new-york"
-        },
-        {
-          "headline": "Tesla to wind down Cybertruck production in Texas next year, Musk says",
-          "teaser": "Tesla will wind down production of its Cybertruck vehicles at its Texas factory next year, Elon Musk said Friday. Musk did not specify whether the company plans to stop making the",
-          "body": "Tesla will wind down production of its Cybertruck vehicles at its Texas factory next year, Elon Musk said Friday. Musk did not specify whether the company plans to stop making the\n\nMusk did not specify whether the company plans to stop making the trucks entirely or shift production elsewhere, but said the decision was to make room for building more of its self-driving Cybercab cars. Wes Morrill, the project's lead engineer, wrote on social media that Cybertruck was an incredible technology development platform and lives on through Cybercab, appearing to suggest the vehicle is being discontinued.",
-          "published": "Nov 6, 4:49 PM ET",
-          "urgency_score": 3,
-          "story_id": "story_000254",
-          "event_key": "unknown-event-6d05bae35d"
         }
       ]
     },
@@ -307,70 +316,70 @@
       "key": "tech",
       "label": "Tech & Science",
       "hero": {
-        "headline": "Nvidia board opens independent probe as CEO Jensen Huang admits affair with alleged Chinese operative",
-        "teaser": "Nvidia's board announced an independent investigation after CEO Jensen Huang admitted to an affair with Alice Huang, who U.S. officials believe was recruited by Chinese intelligence to influence him on chip export policy.",
-        "body": "Nvidia's board of directors announced Sunday that it is launching an independent investigation following reports that CEO Jensen Huang was targeted by a Chinese spy operation, after Huang admitted in a company message that he had an affair with Alice Huang, a former executive at Singapore-based chip company Megaspeed. The board action and personal admission follow congressional scrutiny that began last week, when House Republican committee chairs requested a briefing from Huang by November 11 and Sen. Chris Coons pledged an investigation after reports surfaced of Huang's relationship with an alleged Chinese intelligence operative.\n\nMultiple news outlets reported that Alice Huang was recruited by Chinese intelligence officials to influence Jensen Huang's position on U.S. chip export policy toward China. A memo circulating among U.S. policymakers earlier this year claimed that Alice Huang had been recruited by China's Ministry of State Security to spy on Nvidia's CEO. The New York Times and Financial Times reported she was specifically tasked with convincing him to lobby U.S. officials to allow exports of advanced chips to China, and the Financial Times also reported that the two had a romantic relationship.\n\nIn his message to the company, Jensen Huang acknowledged the affair without mentioning Alice Huang by name. He wrote that he was unfaithful to his wife and that his actions hurt her and their children, adding that he had fallen short of his responsibility to the company. He told colleagues and the board that they deserve better from him.\n\nThe board said in its announcement that it has no reason to believe that either national security or company secrets were compromised. The investigation will be conducted by independent directors working with outside legal counsel. The board stated that Huang fully supports the review and has committed to cooperating with it, and that it has confidence in Huang and his leadership team.\n\nNvidia produces chips central to advanced artificial intelligence development, a technology priority for the Trump administration as it seeks to maintain a competitive edge over China. Reports indicate Nvidia chips have reached Chinese companies despite export restrictions. Nvidia had previously denied that Jensen Huang's relationship with Alice Huang was anything beyond a typical business contact and said no sensitive information was shared. The Chinese government has also denied involvement.",
-        "image_url": "https://techcrunch.com/wp-content/uploads/2026/09/GettyImages-2294936867.jpg?resize=1200,800",
+        "headline": "Researchers trace mysterious global power grid frequency drops to synchronized battery backup systems",
+        "teaser": "",
+        "body": "Researchers at Forschungszentrum Jülich in Germany have solved a years-long mystery that has troubled grid managers worldwide: unexplained frequency drops occurring every 60 seconds simultaneously on power grids across continents. The culprit is battery backup systems, including those in data centers, that check their charge status at precisely the same time every minute due to internet-synchronized clocks.\n\nDirector Dirk Witthaut led the investigation after Germany's largest transmission system operator, Tennet Germany, brought the puzzle to his team. The researchers initially suspected hydropower plants, which can cause ultra-low frequency oscillations, but could not explain why the pattern persisted without interruption. They realized that such precise timing required a clock mechanism and began installing more than 80 smart power quality meters around the Jülich campus, which houses battery energy storage systems and data center equipment.\n\nThe measurements revealed that transformers attached to battery systems peaked every minute, matching the pattern seen on larger grids. Many stationary batteries, from data center uninterruptible power supplies to grid-scale batteries, check their state of charge every 60 seconds. Because these devices synchronize their clocks via internet connection, they perform this check simultaneously, creating a collective disturbance on the grid. Data from Ireland provided confirmation: as data centers grew to consume 18 percent of the country's electricity by 2022, the minute-by-minute frequency drop on the Irish grid quadrupled from 3 millihertz in 2016 to 12 millihertz in 2021, with some recent drops exceeding 20 millihertz.\n\nThe researchers recommend that manufacturers add randomization to battery charging schedules rather than checking state of charge exactly on the minute. While Ireland's 50 hertz grid can withstand swings of 200 millihertz, the added disruption from synchronized battery checks could push grids toward blackout conditions when combined with other loads. The team also detected similar periodic power fluctuations in internet-connected devices ranging from smart ovens to computer clusters, though a recent study found that less than 3 percent of such devices run the latest firmware, complicating efforts to deploy software fixes.",
+        "image_url": "https://techcrunch.com/wp-content/uploads/2022/08/electrical-grid-at-night.jpg?resize=1200,800",
         "image_credit": "techcrunch.com",
-        "published": "4:00 PM ET",
-        "urgency_score": 8,
-        "story_id": "story_000405",
-        "event_key": "unknown-event-2c3b9ff4fc"
+        "published": "3:30 PM ET",
+        "urgency_score": 7,
+        "story_id": "story_000406",
+        "event_key": "unknown-event-0bc7a64d0c"
       },
       "cards": [
         {
-          "headline": "Researchers trace worldwide power grid frequency drops to synchronized battery checks",
-          "teaser": "German scientists solve mystery of minute-by-minute frequency sags occurring simultaneously on grids across continents.",
-          "body": "Researchers at Forschungszentrum Jülich in Germany have identified the cause of mysterious synchronized frequency drops occurring every 60 seconds on power grids worldwide. The team, led by Dirk Witthaut, determined that battery backup systems and uninterruptible power supplies check their charge status at the same time each minute because their internet-connected clocks are synchronized. In Ireland, where data centers consume 18 percent of grid electricity, the frequency drop quadrupled between 2016 and 2021.\n\nThe researchers recommend manufacturers add randomization to battery check schedules to prevent the synchronized disturbances. They also identified similar periodic fluctuations in Internet of Things devices, which pose an additional risk as most run outdated firmware and remain unpatched.",
-          "published": "3:30 PM ET",
-          "urgency_score": 6,
-          "story_id": "story_000406",
-          "event_key": "unknown-event-0bc7a64d0c"
+          "headline": "Nvidia CEO Jensen Huang acknowledges affair with alleged Chinese government agent as board launches security investigation",
+          "teaser": "Jensen Huang sent a company-wide memo apologizing for an extramarital relationship with Alice Huang, described as an AI executive and Chinese government agent.",
+          "body": "Nvidia CEO Jensen Huang sent a memo to employees acknowledging an extramarital affair with Alice Huang, an AI executive and agent of the Chinese government. In the message, Huang apologized to his family and colleagues, stating he took full responsibility for his actions and the harm caused.\n\nThe company's board of directors initiated an independent investigation into national security concerns related to the relationship. Huang said he supports the investigation and will cooperate fully, adding that he remains committed to protecting Nvidia and supporting American national security.",
+          "published": "5:54 PM ET",
+          "urgency_score": 7,
+          "story_id": "story_000433",
+          "event_key": "unknown-event-1d7d9360bc"
         },
         {
-          "headline": "Apple accelerates Siri overhaul to compete with OpenAI and Meta AI assistants",
-          "teaser": "CEO John Ternus is pushing to transform Siri into a more capable AI agent after rivals launched advanced assistants.",
-          "body": "Apple Chief Executive John Ternus is pressuring artificial intelligence head Craig Federighi to accelerate development of Siri into a more powerful AI agent that can compete with OpenAI's Dots and Meta's Muse, according to Bloomberg. The company acknowledges it is not keeping pace with rivals despite delivering a functional Siri AI update on a short timeline.\n\nApple plans to give Siri fine-grained control over first-party apps such as Photos and Safari in iOS 27.3, expected in coming months. Third-party app integration allowing Siri to place orders through services like Grubhub or book reservations through OpenTable is expected to arrive later in the spring. Apple aims to make Siri more agentic, enabling it to track goals and pursue ongoing tasks without users initiating each step.",
+          "headline": "Apple accelerates Siri upgrades under internal pressure to match OpenAI and Meta AI assistants",
+          "teaser": "CEO John Ternus is pushing to expand Siri's capabilities with deeper app control and third-party integrations.",
+          "body": "Apple is accelerating its Siri development roadmap as CEO John Ternus pressures software chief Craig Federighi to deliver features that can compete with OpenAI's Dots and Meta's Muse assistants. The company plans to give Siri fine-grained control over first-party apps, such as cropping images in Photos and organizing Safari tabs, in an update expected with iOS 27.3.\n\nA larger upgrade enabling third-party app integration is planned for spring, allowing Siri to perform tasks like placing food orders through Grubhub or booking restaurant reservations through OpenTable. Apple aims to make Siri more agentic, capable of tracking goals and pursuing ongoing objectives without user intervention for each step, according to Bloomberg.",
           "published": "2:18 PM ET",
-          "urgency_score": 5,
+          "urgency_score": 6,
           "story_id": "story_000407",
           "event_key": "unknown-event-69a23b1e6b"
         },
         {
-          "headline": "Epic Games Launcher to officially support SteamOS and Steam Deck",
-          "teaser": "Epic confirms its game launcher will run on Valve's Linux-based platform, though Fortnite compatibility remains unresolved.",
-          "body": "Epic Games confirmed that its game launcher will officially support SteamOS and Steam Deck, along with several other Linux distributions including Fedora, according to Communications Director Jake Jones. The company is testing packaging formats and plans to restore AppImage support this month.\n\nFortnite compatibility with SteamOS remains uncertain. Epic said Steam Deck does not support the required features for its Easy Anti-Cheat v2 solution, though the company is in discussions with Valve about future support. Epic announced it was investigating SteamOS compatibility in October.",
+          "headline": "Elvis Presley estate and Eminem publisher sue AI music company Suno over voice cloning",
+          "teaser": "The lawsuits claim Suno illegally generates music mimicking the artists and cite Tennessee's ELVIS Act.",
+          "body": "Rights holders for Elvis Presley's music and the publisher of Eminem records filed lawsuits against AI music company Suno, alleging it illegally generates music and lyrics that mimic those artists. The Presley suit invokes Tennessee's Ensuring Likeness Voice and Image Security Act, which prohibits AI companies from cloning a singer's voice without permission.\n\nSuno spokesperson Cat McCormack said the company exists to help people create original music and prohibits unauthorized use of artists' work, adding that it blocks prompts for specific artist names and screens uploaded content. The company faces additional lawsuits from Sony, Universal Music Group, and other rights holders over similar claims.",
+          "published": "12:23 PM ET",
+          "urgency_score": 6,
+          "story_id": "story_000434",
+          "event_key": "unknown-event-d65536d1db"
+        },
+        {
+          "headline": "Epic Games confirms launcher support for SteamOS and other Linux distributions",
+          "teaser": "The company plans to support multiple Linux platforms, but anti-cheat compatibility issues mean Fortnite may not run on Steam Deck.",
+          "body": "Epic Games confirmed that its launcher will officially support SteamOS and other Linux distributions, including Fedora, Cachy, and Omarchy, according to Communications Director Jake Jones. The company said it is testing packaging formats and plans to restore AppImage support this month.\n\nThe launcher support does not guarantee that Fortnite will run on SteamOS. Epic said Steam Deck does not support the required features for its Easy Anti-Cheat v2 solution, though the company is in discussions with Valve about future compatibility.",
           "published": "3:52 PM ET",
-          "urgency_score": 3,
+          "urgency_score": 5,
           "story_id": "story_000408",
           "event_key": "unknown-event-5ab9c8a3d4"
         },
         {
-          "headline": "AI tools are enabling automated hacking at scale, upending the cybersecurity industry",
-          "teaser": "Artificial intelligence systems are now enabling attackers to automate the entire hacking process in real time, fundamentally disrupting the cybersecurity industry built over the p",
-          "body": "Artificial intelligence systems are now enabling attackers to automate the entire hacking process in real time, fundamentally disrupting the cybersecurity industry built over the p\n\nOpen-weight AI models have advanced to the point where they can automatically identify software vulnerabilities, write exploits, and break into targets simultaneously, collapsing what was traditionally a multi-step process requiring teams of skilled hackers. Stamos described a wave of breaches in recent weeks affecting major technology companies, including a chain of attacks that began with a compromise of Fireworks, an AI services provider.",
-          "published": "Yesterday, 10:00 AM ET",
-          "urgency_score": 3,
-          "story_id": "story_000332",
-          "event_key": "election-527d96c923"
+          "headline": "Akai opens GitHub repository for MPC music production hardware",
+          "teaser": "The company has published open-source components for its MPC lineup, enabling developers to modify the devices.",
+          "body": "Akai has published an official GitHub repository containing open-source components for its MPC music production hardware, managed by Pete Goodliffe, chief technical officer of the MPC platform. The repository covers three device generations, including the MPC X, MPC Live series, MPC One series, MPC Key models, and the upcoming MPC Sample.\n\nThe move does not open-source the entire MPC operating system but provides the Linux environment components required by open-source licenses. Akai previously announced plans to make its MPC Sample hardware sampler open source and is set to unveil 22 new products at NAMM 2027, many available for experimentation.",
+          "published": "2:51 PM ET",
+          "urgency_score": 4,
+          "story_id": "story_000435",
+          "event_key": "unknown-event-a399c1305e"
         },
         {
-          "headline": "U.S. intelligence memo claimed Chinese officials recruited tech executive to spy on Nvidia CEO",
-          "teaser": "A U.S. intelligence memo circulated earlier this year claimed that Alice Huang, an executive at Singapore-based company Megaspeed, was recruited by China's Ministry of State Securi",
-          "body": "A U.S. intelligence memo circulated earlier this year claimed that Alice Huang, an executive at Singapore-based company Megaspeed, was recruited by China's Ministry of State Securi\n\nThe New York Times first reported on the memo, which was based on U.S. The Financial Times subsequently reported that the memo also claimed Jensen Huang had a romantic relationship with Alice Huang.",
-          "published": "Yesterday, 4:17 PM ET",
-          "urgency_score": 3,
-          "story_id": "story_000331",
-          "event_key": "unknown-event-acd0df1754"
-        },
-        {
-          "headline": "NASA opens astronaut applications to expand Artemis moon program",
-          "teaser": "NASA announced Saturday that it is accepting applications for a new astronaut class to support its Artemis program, which aims to establish a permanent lunar base. The space agency",
-          "body": "NASA announced Saturday that it is accepting applications for a new astronaut class to support its Artemis program, which aims to establish a permanent lunar base. The space agency\n\nThe space agency made the announcement during an air show at Kennedy Space Center focused on lunar exploration and aviation technology. Aspiring astronauts have until December 3 to submit applications.",
-          "published": "Yesterday, 4:15 PM ET",
-          "urgency_score": 3,
-          "story_id": "story_000380",
-          "event_key": "unknown-event-5f5bd17531"
+          "headline": "Sequoia Capital partners blindsided by Roelof Botha's SpaceX board appointment",
+          "teaser": "Former leader joined board without firm approval, complicating trading of $20 billion stake.",
+          "body": "Sequoia Capital partners were reportedly blindsided when former steward Roelof Botha joined the SpaceX board this summer without seeking compliance approval or partnership sign-off, according to the Financial Times. Botha, who stepped down as the firm's leader last year, previously worked with SpaceX CEO Elon Musk at PayPal.\n\nBotha's board role could complicate Sequoia's ability to trade its $20 billion stake in SpaceX. The episode has deepened tensions between Botha and the firm, which this week announced major structural changes including closing its London office and merging early-stage and growth teams. A Sequoia spokesperson said the firm continues to collaborate closely with Botha.",
+          "published": "2:51 PM ET",
+          "urgency_score": 4,
+          "story_id": "story_000436",
+          "event_key": "business-transaction-35687bac82"
         }
       ]
     },
@@ -378,70 +387,70 @@
       "key": "sports",
       "label": "Sports",
       "hero": {
-        "headline": "Lions extend win streak to four with 19-9 victory over Dolphins in emotional week following Campbell injury",
+        "headline": "Kenneth Walker scores three touchdowns as Chiefs defeat Jets 35-12, Mahomes plays through elbow injury",
         "teaser": "",
-        "body": "The Detroit Lions defeated the Miami Dolphins 19-9 on Sunday in Miami Gardens, Florida, extending their winning streak to four games in an emotional week following the neck injury of All-Pro linebacker Jack Campbell. Jahmyr Gibbs rushed for a touchdown and Jared Goff threw for 170 yards as the Lions honored their injured teammate, who was placed on injured reserve after being hospitalized with a neck injury suffered during the previous week's win over Minnesota.\n\nThe victory moved Lions coach Dan Campbell into second place alone on the franchise's all-time wins list with 54 regular-season victories in his sixth season. Wayne Fontes holds the franchise record with 66 wins from 1988 to 1996. \"The whole week was prepare and play like Jack. Kind of felt like we owed it to him,\" Campbell said after the game.\n\nDetroit's top-ranked offense managed 271 yards, well below its season average of 395.4 yards per game, as Miami's defense pressured Goff throughout. The Lions quarterback completed 17 of 25 passes while being sacked three times and threw his second interception of the season. Gibbs averaged 3.7 yards per carry on 20 attempts, scoring an 8-yard touchdown in the third quarter that put Detroit ahead 16-6. Kicker Jake Bates made four field goals, including a 43-yarder with 4:28 remaining that gave the Lions a 10-point lead.\n\nLions players arrived at Hard Rock Stadium wearing number 46 jerseys to honor Campbell, whose jersey hung in his locker before the game. Miami quarterback Malik Willis completed 13 of 25 passes for 128 yards and an interception while dealing with a groin injury. The Dolphins went 0 for 3 in the red zone and committed 11 penalties in the loss. Detroit will travel to Munich to face New England next Sunday, while Miami hosts Indianapolis.",
+        "body": "Kenneth Walker scored three touchdowns as the Kansas City Chiefs defeated the New York Jets 35-12 on Sunday, snapping a two-game losing streak. Chiefs quarterback Patrick Mahomes threw for 242 yards and two touchdowns despite playing through a right elbow injury sustained on a second-quarter strip-sack by Jets defensive lineman David Bailey that left his arm bent at an awkward angle. Mahomes flexed his elbow on the sideline, threw warmup passes, and returned to the game, though he received treatment from Chiefs trainer Julie Frymyer at halftime and planned additional testing afterward.\n\nWalker finished with 143 yards from scrimmage, including two touchdown receptions and a rushing score, while the Chiefs defense sacked Jets quarterback Geno Smith five times and held New York out of the end zone. The Jets managed just 229 total yards and were credited with minus-9 yards in the third quarter, when Kansas City scored twice to turn a 14-12 halftime lead into a comfortable victory. Smith finished with 165 yards passing for the Jets, who have now lost four consecutive games.\n\nThe Jets were without star receiver Garrett Wilson due to a concussion and relied on short passes and runs by Braelon Allen and Breece Hall, who returned from a five-game absence due to a quadriceps injury. Kicker Jason Sanders made four first-half field goals but missed from 53 yards before halftime, as New York failed to reach the end zone.\n\nChiefs kicker Harrison Butker missed field goal attempts from both 56 yards and on a retry, raising questions about his roster status after Kansas City recently signed former All-Pro kicker Justin Tucker to the practice squad. Coach Andy Reid declined to address the kicking situation, saying he would not make any decisions immediately. The Chiefs improved to 6-2 while the Jets fell to 2-7.",
         "image_url": "https://sportsfly.cbsistatic.com/fly-887/bundles/sportsmediacss/images/fantasy/default-article-image-large.png",
         "image_credit": "cbssports.com",
-        "published": "A few minutes ago",
+        "published": "5:37 PM ET",
         "urgency_score": 6,
-        "story_id": "story_000409",
-        "event_key": "unknown-event-0ec00ed3a1"
+        "story_id": "story_000437",
+        "event_key": "unknown-event-a19d93c3b7"
       },
       "cards": [
         {
-          "headline": "Broncos beat Panthers 26-21 for fifth straight win behind Nix's two touchdowns",
-          "teaser": "Denver improved to 7-2 after a late defensive stand and a crucial third-quarter coach's challenge that overturned a potential Carolina touchdown.",
-          "body": "Bo Nix threw for 237 yards and two touchdowns as the Denver Broncos defeated the Carolina Panthers 26-21 on Sunday for their fifth consecutive win. The Broncos improved to 7-2 after Nik Bonitto sealed the game with a strip-sack of Bryce Young and fumble recovery with 1:24 remaining.\n\nA third-quarter coach's challenge by Denver's Sean Payton proved pivotal. Officials reversed an incomplete pass ruling to an interception by Devon Key at the goal line, ending a Carolina scoring threat. Denver capitalized with an 80-yard drive for a 19-14 lead. Jonah Coleman and Pat Bryant also scored touchdowns for the Broncos, while Young threw three touchdown passes for Carolina.",
-          "published": "A few minutes ago",
+          "headline": "Broncos beat Panthers 26-21 for fifth straight win, extend one-score streak to 16",
+          "teaser": "Bo Nix threw for two touchdowns as Denver improved to 7-2 and took sole possession of first place in the AFC West.",
+          "body": "Bo Nix threw for 237 yards and two touchdowns as the Denver Broncos defeated the Carolina Panthers 26-21 on Sunday for their fifth consecutive win. The victory extended Denver's streak of one-score wins to 16 games and moved the Broncos to 7-2, putting them alone atop the AFC West entering their bye week.\n\nNik Bonitto sealed the win with a strip-sack of Bryce Young with 1:24 remaining. Jonah Coleman rushed for 57 yards and a touchdown, while Courtland Sutton and Pat Bryant each caught scoring passes. Young threw for 276 yards and three touchdowns for Carolina, which fell to 3-5 despite rallying late.",
+          "published": "5:17 PM ET",
           "urgency_score": 6,
           "story_id": "story_000410",
           "event_key": "unknown-event-136b987fea"
         },
         {
-          "headline": "Cowboys beat Colts 27-23 on late Javonte Williams touchdown to improve to 4-5",
-          "teaser": "Dallas overcame a wild CeeDee Lamb fumble in the fourth quarter after an incredible catch-turned-turnover nearly cost them the game in Indianapolis.",
-          "body": "The Dallas Cowboys defeated the Indianapolis Colts 27-23 on Sunday after Javonte Williams scored the go-ahead touchdown in the final two minutes at Lucas Oil Stadium. Dallas improved to 4-5 and sits second in the NFC East behind the New York Giants.\n\nCeeDee Lamb made an incredible sideline catch in the fourth quarter that turned into a 48-yard gain, but fumbled while being tackled, giving Indianapolis the ball back. The Colts drove into the red zone, but Quinnen Williams forced a fumble to return possession to Dallas. Lamb finished with 195 yards and a touchdown on 10 catches, while Dak Prescott threw for 335 yards and two touchdowns.",
-          "published": "4:36 PM ET",
-          "urgency_score": 5,
-          "story_id": "story_000411",
-          "event_key": "unknown-event-a9d9d865d6"
-        },
-        {
-          "headline": "Saints edge Browns in overtime, Tank Dell scores 63-yard touchdown in return from knee injury",
-          "teaser": "New Orleans secured an overtime win after Cleveland's failed two-point conversion, while Houston receiver Tank Dell found the end zone for the first time since leg injuries sidelined him for over a year.",
-          "body": "The New Orleans Saints defeated the Cleveland Browns in overtime after tight end Harold Fannon caught a 39-yard touchdown pass from Shedeur Sanders, but a failed two-point conversion gave the Saints the victory. The teams combined for just six points in the first half before the late-game drama.\n\nHouston receiver Tank Dell scored his first touchdown since returning from leg injuries that kept him out more than a year, catching a 63-yard pass from C.J. Stroud against the Chargers. Green Bay dominated New England as the Packers built a commanding lead, while running back Josh Jacobs left the game with a hand injury. Chargers receiver Ladd McConkey was also listed as questionable to return during Sunday's action.",
-          "published": "A few minutes ago",
-          "urgency_score": 5,
-          "story_id": "story_000412",
-          "event_key": "unknown-event-e844d9d098"
-        },
-        {
-          "headline": "Giants' J.J. McCarthy leaves game with hip injury, Jameis Winston leads New York to 19-11 win over Eagles",
-          "teaser": "McCarthy exited in the third quarter after a hit from linebacker Zack Baun.",
-          "body": "New York Giants quarterback J.J. McCarthy left Sunday's game against the Philadelphia Eagles in the third quarter after taking a hit from Eagles linebacker Zack Baun. McCarthy went to the sideline in visible pain after attempting a throw, then headed to the locker room for evaluation. Backup Jameis Winston entered the game and led the Giants to a 19-11 victory.\n\nMcCarthy had completed 9 of 13 passes for 101 yards and was sacked five times in the first half before his departure. The team did not immediately announce his official status during the game.",
-          "published": "3:06 PM ET",
-          "urgency_score": 4,
-          "story_id": "story_000413",
-          "event_key": "shooting-bbcd5e52aa"
-        },
-        {
-          "headline": "Lando Norris wins Sao Paulo Grand Prix after rivals' mistakes as Mercedes clinches constructors' title",
-          "teaser": "The McLaren driver dominated in difficult conditions after pole-sitter Kimi Antonelli and George Russell both made critical errors.",
-          "body": "Lando Norris won the Sao Paulo Grand Prix after Mercedes teammates Kimi Antonelli and George Russell both made critical mistakes in difficult conditions. Norris, starting from pole, lost the lead to Antonelli at the start but reclaimed first place when the newly crowned world champion spun at Turn One on lap 20. Russell spun exiting the pits after working into podium contention, losing 15 to 20 seconds.\n\nMax Verstappen finished second after starting 21st due to an engine penalty. Despite their errors, Russell and Antonelli finished fourth and fifth, clinching Mercedes' ninth constructors' championship and first since 2021. Norris took his first victory since the Dutch Grand Prix in August.",
-          "published": "A few minutes ago",
-          "urgency_score": 5,
+          "headline": "Norris wins chaotic Sao Paulo GP as Mercedes clinches constructors' title",
+          "teaser": "Lando Norris took his first win since August after Kimi Antonelli and George Russell both made critical errors in changing conditions at Interlagos.",
+          "body": "Lando Norris won the Sao Paulo Grand Prix after McLaren teammate errors by Mercedes drivers handed him the lead in difficult wet-dry conditions. Starting from pole, Norris lost first place to newly crowned world champion Kimi Antonelli at the start but regained it when the Italian spun at Turn One on lap 20. George Russell, who had climbed into podium contention, spun exiting the pits and lost significant time.\n\nMax Verstappen finished second after starting 21st due to an engine penalty. Despite the mistakes, Russell and Antonelli finished fourth and fifth, clinching Mercedes' ninth constructors' championship and first since 2021. Norris dominated through a late rain shower to secure his first victory since August's Dutch Grand Prix.",
+          "published": "5:11 PM ET",
+          "urgency_score": 6,
           "story_id": "story_000414",
           "event_key": "traffic-crash-58e6b90d55-58e6b90d55"
         },
         {
-          "headline": "NFL trade deadline speculation centers on running backs Henry and Taylor",
-          "teaser": "Media outlets propose possible deals involving veteran players as the league's trade deadline approaches.",
-          "body": "Multiple sports outlets published speculative trade proposals ahead of the NFL trade deadline, with running backs Derrick Henry and Jonathan Taylor among the players mentioned in potential deals. CBS Sports proposed scenarios including Henry moving to the Patriots and safety Budda Baker to the Bills, while ESPN and other outlets outlined additional possibilities involving veterans such as Tony Pollard and Riq Woolen.\n\nThe reports represent media speculation about roster reshaping rather than confirmed trade negotiations. Teams have until the deadline to finalize any transactions involving players mentioned in the various proposed scenarios.",
+          "headline": "Falkirk rise to third in Scottish Premiership with fifth straight win",
+          "teaser": "John McGlynn's side has defeated Celtic and Hearts in a week, scoring seven goals combined.",
+          "body": "Falkirk climbed to third place in the Scottish Premiership after their fifth consecutive victory, a 5-2 win at Hearts. Manager John McGlynn's side defeated defending champions Celtic and became the first team to beat Hearts at Tynecastle in 19 months, scoring seven goals across the two matches. The turnaround comes a month after Falkirk sat 11th, one point off the bottom of the table.\n\nJacob Murrell leads the league with seven goals and earned the SPFL player of the month award for October. McGlynn brought in 17 new players over the summer after guiding Falkirk to sixth place last season in their return to the top flight.",
+          "published": "5:14 PM ET",
+          "urgency_score": 3,
+          "story_id": "story_000417",
+          "event_key": "unknown-event-70e85b9f7a"
+        },
+        {
+          "headline": "NFL trade deadline speculation centers on running backs and defensive stars",
+          "teaser": "Media outlets propose potential deals involving Derrick Henry, Jonathan Taylor, and other impact players as the league's trade deadline approaches.",
+          "body": "Multiple sports outlets have published trade proposals ahead of the NFL trade deadline, highlighting running backs Derrick Henry and Jonathan Taylor along with safety Budda Baker and other notable players. The speculation includes scenarios such as Henry joining the Patriots and Baker moving to the Bills.\n\nThe reports represent media analysis of potential roster moves rather than confirmed negotiations. ESPN and CBS Sports both released rankings and proposed deals involving players including Tony Pollard, Riq Woolen, and Garrett Wilson as teams evaluate roster adjustments before the deadline.",
           "published": "4:41 PM ET",
           "urgency_score": 4,
           "story_id": "story_000415",
           "event_key": "unknown-event-cf1fdacabc"
+        },
+        {
+          "headline": "Norris earns top marks in Sao Paulo Grand Prix driver ratings after pole-to-win performance",
+          "teaser": "McLaren's Lando Norris received a perfect 10/10 rating for his Brazilian weekend, while Max Verstappen earned 9.5/10 for charging from 21st to second.",
+          "body": "Lando Norris received a perfect 10/10 rating for his Sao Paulo Grand Prix weekend, which included pole position in wet conditions and a controlled drive to his third win of the season. The McLaren driver briefly lost the lead at the start but regained control after newly crowned world champion Kimi Antonelli spun following an early tire change.\n\nMax Verstappen earned a 9.5/10 for his recovery drive from 21st on the grid to second place, making up 10 positions almost immediately in difficult conditions. Red Bull teammate Isack Hadjar received a 9/10 for qualifying well and finishing third despite a few mistakes during the race.",
+          "published": "4:56 PM ET",
+          "urgency_score": 3,
+          "story_id": "story_000416",
+          "event_key": "traffic-crash-64815780b0-64815780b0"
+        },
+        {
+          "headline": "Chelsea among clubs tracking Aston Villa's Kamara",
+          "teaser": "Chelsea, Inter Milan, and Al-Hilal have placed France midfielder Boubacar Kamara on their watchlists following his injury return.",
+          "body": "Chelsea, Inter Milan, and Al-Hilal have placed Aston Villa midfielder Boubacar Kamara on their summer watchlists following the 26-year-old France international's return from injury, according to reports. The development suggests multiple clubs are monitoring Kamara's fitness and form.\n\nSeparately, Liverpool and on-loan defender Ronald Araujo plan to wait until season's end before deciding on a permanent transfer from Barcelona for £47 million. Manchester United could pursue Nottingham Forest center-back Murillo with a major summer offer for the 24-year-old Brazil international.",
+          "published": "4:08 PM ET",
+          "urgency_score": 7,
+          "story_id": "story_000438",
+          "event_key": "unknown-event-989a88459a"
         }
       ]
     },
@@ -449,70 +458,70 @@
       "key": "entertainment",
       "label": "Entertainment",
       "hero": {
-        "headline": "Del Casher, guitarist who invented the wah-wah pedal, dies at 88",
+        "headline": "Denis Villeneuve says he is finishing Dune: Part Three while beginning James Bond movie, teases casting before joking at LACMA gala",
         "teaser": "",
-        "body": "Del Casher, the guitarist and inventor credited with creating the wah-wah pedal that shaped decades of rock guitar, has died at 88. Casher died October 1 following a battle with cancer, according to a fundraising page for his widow Eiko.\n\nBorn Delton Kacher in Hammond, Indiana, Casher performed with artists including Gene Autry and Lawrence Welk while experimenting with new guitar technologies. In the early 1960s, while playing with the Thomas Organ company's Vox Ampliphonic Orchestra, he asked about making his guitar sound like a trumpet with the ability to suppress the instrument mid-playing. Though Casher often credited Thomas Organ engineer Brad Plunkett with the device's engineering, the wah-wah pedal was considered Casher's creation.\n\nThe pedal, first called the Cry Baby, initially failed to catch on when released in 1967. However, Frank Zappa gave one to Jimi Hendrix after Casher sat in with the Mothers of Invention in 1966. Hendrix used the pedal throughout his album Electric Ladyland, including on Voodoo Child and All Along the Watchtower. Eric Clapton employed it on Cream tracks like Tales of Brave Ulysses, and guitarists including Jimmy Page, Tony Iommi, and David Gilmour soon followed. By 1971, the wah-wah pedal appeared on Isaac Hayes' Theme From Shaft, a number one single and Oscar-winning song.\n\nCasher also contributed to creating the Ecco-Fonic and the Fender Electronic Echo Chamber. He worked with Elvis Presley, appearing in the 1964 film Roustabout, and later contributed film scores. \"I feel gratified that I was there at the beginning,\" Casher told the New York Times. \"I would just like guitar players to think of me once in a while. The only thing I ask is: remember me.\"",
-        "image_url": "https://www.rollingstone.com/wp-content/uploads/2026/11/GettyImages-98557670.jpg?w=1600&#038;h=900&#038;crop=1",
-        "image_credit": "rollingstone.com",
-        "published": "2:13 PM ET",
+        "body": "Director Denis Villeneuve said Saturday that he is putting final touches on the 70mm Imax print of Dune: Part Three while simultaneously starting work on his James Bond film. Speaking at the LACMA Art and Film Gala in Los Angeles, where he was honored, Villeneuve called the third Dune installment a very personal project and the completion of 10 years of work in the desert.\n\nVilleneuve declined to comment on Bond casting speculation on the red carpet, saying every word would be scrutinized, but added that he is having a great time. News broke Friday that Villeneuve and producers Amy Pascal and David Heyman are nearing selection of the new 007, with finalists reportedly including Robert Pattinson, Nicholas Hoult, Callum Turner, Josh O'Connor and Jack Lowden. Inside the gala, Villeneuve began what appeared to be an announcement of the new Bond actor before stopping mid-sentence, joking that producer Amy Pascal was about to have a heart attack.\n\nActress Nicole Kidman presented Villeneuve with his honor after traveling 15 hours overnight from Australia. Kidman, who has not worked with the director, said she feels she knows the deepest parts of Villeneuve through his films. Actress Anya Taylor-Joy, who appears in Dune: Part Three, said she is excited to see what Villeneuve does with fight sequences in the Bond film, adding that she has worked with four of the five reported finalists.\n\nIn his acceptance speech, Villeneuve said Dune: Part Three centers on characters fighting to give their children a better world. He reflected on the importance of human beings continuing to make art together rather than relying on artificial intelligence tools, calling the filmmaking process more important than the result. Dune: Part Three is scheduled to open in theaters in December.",
+        "image_url": "https://variety.com/wp-content/uploads/2026/11/GF1_9905.jpg",
+        "image_credit": "",
+        "published": "A few minutes ago",
         "urgency_score": 6,
-        "story_id": "story_000418",
-        "event_key": "named-person-death:del-casher"
+        "story_id": "story_000439",
+        "event_key": "business-transaction-8b6b6556e5"
       },
       "cards": [
         {
-          "headline": "Erika Kirk condemns Dave Chappelle and other comedians for joking about husband's assassination",
-          "teaser": "Charlie Kirk's widow criticized comedians for treating her husband's death as a punchline, calling it a sign of moral decay.",
-          "body": "Erika Kirk publicly criticized Dave Chappelle and other entertainers for making jokes about the assassination of her husband, conservative activist Charlie Kirk. In a statement on social media Sunday, she called the use of her husband's death as comedy material \"beyond disgusting\" and a sign of \"profound moral decay.\" Kirk, co-founder of Turning Point USA, was shot and killed during a college event in Utah in September 2025.\n\nChappelle drew backlash after footage from his Friday show at Madison Square Garden showed him saying he felt better since Kirk's murder. Podcast hosts Jennifer Welch and Angie Sullivan apologized Saturday for laughing at a joke about Kirk during a recent episode of their show.",
-          "published": "A few minutes ago",
-          "urgency_score": 6,
+          "headline": "Erika Kirk condemns Dave Chappelle, other comedians for joking about husband's killing",
+          "teaser": "The widow of conservative activist Charlie Kirk criticized comedians and commentators for using her husband's death as entertainment.",
+          "body": "The widow of conservative activist Charlie Kirk criticized comedians and commentators for using her husband's death as entertainment.\n\nErika Kirk publicly condemned comedians including Dave Chappelle for joking about the killing of her husband, conservative activist Charlie Kirk. In a statement posted on social media Sunday, she called it \"beyond disgusting\" to see comedians and commentators laugh about political assassination, saying her family will live with the loss every day.",
+          "published": "5:44 PM ET",
+          "urgency_score": 5,
           "story_id": "story_000419",
           "event_key": "shooting-utah"
         },
         {
-          "headline": "Maya Jama steps down as host of 'Love Island U.K.' after nine seasons",
-          "teaser": "The presenter announced her departure on Instagram, saying she is ready to pursue new opportunities.",
-          "body": "Maya Jama announced Sunday that she is stepping down as host of \"Love Island U.K.\" after nine seasons. In an Instagram statement, Jama said she is leaving to pursue new opportunities, writing that she believes \"to truly grow, you have to take a leap every now and then.\"\n\nJama joined the dating series as host in 2023, succeeding Laura Whitmore. During her tenure, she also competed on \"Celebrity Traitors\" and made her acting debut in the second season of Guy Ritchie's \"The Gentlemen.\" Before becoming a presenter, Jama was one of the youngest BBC Radio One DJs.",
-          "published": "2:59 PM ET",
+          "headline": "Maya Jama steps down as Love Island host after three years",
+          "teaser": "The presenter announced on Instagram that it was time to pursue new opportunities after hosting nine seasons of the reality show.",
+          "body": "Maya Jama announced she is stepping down as host of Love Island after three years and nine seasons. The 32-year-old presenter wrote on Instagram that it was \"time to throw myself into something new,\" adding that she has \"always believed that to truly grow, you have to take a leap every now and then.\"\n\nJama took over as host of the reality show in 2023, replacing Laura Whitmore. An ITV spokesperson thanked Jama for her contributions and wished her continued success. Her announcement followed an appearance on Celebrity Traitors that generated speculation about future opportunities.",
+          "published": "4:19 PM ET",
           "urgency_score": 5,
-          "story_id": "story_000420",
-          "event_key": "fire-5ed37c7d56-5ed37c7d56"
+          "story_id": "story_000440",
+          "event_key": "fire-00c70442b8-00c70442b8"
         },
         {
-          "headline": "Streaming hit 'Heated Rivalry' earns $1.4 million in limited theatrical re-release",
-          "teaser": "The hockey romance series drew fans to 945 theaters nearly a year after its streaming debut, signaling a potential trend of TV shows returning to the big screen.",
-          "body": "Nearly a year after debuting on streaming, \"Heated Rivalry\" has earned $1.4 million from a limited theatrical re-release in 945 theaters, according to distributor Regal Entertainment. The Canadian-produced hockey romance series about Shane Hollander and Ilya Rozanov offered paired episodes at $9.99 per showtime, below the $12.87 average movie ticket price.\n\nThe re-release follows similar theatrical runs of television shows, though most featured new episodes rather than previously available content. Industry analysts see potential for TV series with passionate fan bases to use theaters as extensions of the viewing experience, particularly during gaps between seasons. \"Heated Rivalry,\" based on Rachel Reid's book series, became a streaming sensation in early 2026 and is preparing for a second season in 2027.",
-          "published": "2:19 PM ET",
-          "urgency_score": 5,
-          "story_id": "story_000421",
-          "event_key": "unknown-event-330b9c8547"
-        },
-        {
-          "headline": "Ron Howard documentary explores how Richard Avedon revolutionized photography",
-          "teaser": "A new film examines the legendary photographer's six-decade career transforming portraiture and fashion photography.",
-          "body": "Ron Howard's documentary \"Avedon\" examines how photographer Richard Avedon transformed portraiture by stripping subjects to their essence against stark white backgrounds. The film traces Avedon's career from his formative experience taking military identification photographs during World War II through his iconic fashion work and celebrity portraits, showing how he turned head-on, minimalist images into an art form that revealed subjects' unfiltered humanity.\n\nThe documentary features interviews with models, critics, and cultural figures including Tina Brown, Calvin Klein, and Avedon's son John, alongside archival footage and hundreds of Avedon's photographs from 16,000 sittings conducted between 1944 and his death in 2004. Howard's film demonstrates how Avedon's democratic approach to photography unified his portrait, fashion, and commercial work across six decades.",
+          "headline": "Ron Howard's 'Avedon' Documentary Examines Photographer's Career and Influence",
+          "teaser": "The film explores how Richard Avedon changed photography by creating intimate, direct portraits stripped of artifice.",
+          "body": "Ron Howard's documentary about photographer Richard Avedon traces how the artist developed his distinctive style of head-on portraits against white backgrounds. The approach originated during World War II when Avedon, stationed in the Merchant Marines at 19, photographed military personnel for identification cards and noticed how the simple format revealed individual character.\n\nThe film includes archival clips and interviews with models, critics, and art-world figures including Tina Brown, Twiggy, and Avedon's son John. It examines his work across fashion, portraiture, and commercial photography from 1944 until his death in 2004, documenting roughly 16,000 sittings. The documentary shows how Avedon used minimal setups and brief shooting sessions to capture unguarded moments, producing iconic images of subjects including Marilyn Monroe and Charlie Chaplin.",
           "published": "4:02 PM ET",
           "urgency_score": 4,
           "story_id": "story_000151",
           "event_key": "war-or-military-action-new-york"
         },
         {
-          "headline": "Variety highlights unconventional casting in 'Being Heumann' and 'La Bola Negra' for Oscar predictions",
-          "teaser": "Two films stand out in the Academy's second-year casting category for their bold choices in assembling ensembles with newcomers and non-traditional actors.",
-          "body": "Variety's awards predictions highlight \"Being Heumann\" and \"La Bola Negra\" as standouts in the Oscar casting category, now in its second year. Siân Heder's \"Being Heumann,\" about Judy Heumann and the 1977 San Francisco disability rights sit-in, features more than 20 disabled actors around breakout Ruth Madeley, many with little or no acting experience. Casting directors Bernie Telsey and Adam Caldwell assembled the ensemble for the Apple drama.\n\nLos Javis' Netflix film \"La Bola Negra\" follows three gay men across three eras of Spain. Casting directors Eva Leira and Yolanda Serrano paired pop singer Guitarricadelafuente's acting debut and newcomers Milo Quifes and Carlos González with actors including Penélope Cruz and Glenn Close. Oscar nominations will be announced in January, with the ceremony scheduled for March 14, 2027.",
+          "headline": "'Spy x Family' Confirmed for Season 4 and New Theatrical Film in 2027",
+          "teaser": "Japanese studio Toho announced a fourth season of the popular anime series and a new feature film, both set for 2027 release.",
+          "body": "Japanese studio Toho Co., Ltd. announced that the anime series \"Spy x Family\" will return for a fourth season in 2027, with a new theatrical film opening in Japan the same year. The studio released a teaser image showing the Forger family—Loid, Yor, Anya, and Bond—walking down a European-style city street.\n\nThe series, adapted from the manga by Endo Tatsuya, first aired in 2022 and follows a spy who assembles a fake family for a classified mission, unaware his wife is an assassin and his adopted daughter can read minds. Toho said release dates and story details for both the season and film would be announced later.",
           "published": "A few minutes ago",
           "urgency_score": 4,
+          "story_id": "story_000441",
+          "event_key": "unknown-event-7ccb602f91"
+        },
+        {
+          "headline": "Casting predictions spotlight disability drama 'Being Heumann' and Spanish epic 'La Bola Negra' as Oscar contenders",
+          "teaser": "Two films stand out in the second-year category for their bold discoveries, including 20-plus disabled actors and Spanish pop singer debut.",
+          "body": "Awards forecasters are highlighting \"Being Heumann\" and \"La Bola Negra\" as leading contenders in the Oscars' second-year casting category. Siân Heder's Apple drama about disability rights activist Judy Heumann featured more than 20 disabled actors, many with little or no acting experience, around breakout Ruth Madeley. \n\nThe Netflix film from Los Javis cast Spanish pop singer Guitarricadelafuente in his acting debut alongside newcomers Milo Quifes and Carlos González, supported by Penélope Cruz and Glenn Close. The 99th Oscars will take place March 14, 2027.",
+          "published": "5:50 PM ET",
+          "urgency_score": 3,
           "story_id": "story_000422",
           "event_key": "election-e0b5f4039f"
         },
         {
-          "headline": "Andy Serkis says he no longer pushes for performance capture acceptance after playing Gollum",
-          "teaser": "The actor, who is directing and reprising his role in an upcoming 'Lord of the Rings' film, says he has stopped being 'evangelical' about the technology.",
-          "body": "Andy Serkis said he has stopped actively advocating for performance capture acceptance in Hollywood after his work as Gollum in \"The Lord of the Rings.\" He compared performances like Gollum to prosthetics work, saying a performance under a digital mask should be understood the same way as one beneath a physical mask, but acknowledged the technique remains misunderstood by some.\n\nSerkis is directing and reprising his role as Gollum in \"The Lord of the Rings: The Hunt for Gollum,\" scheduled to open in theaters in December. Director Peter Jackson said in May that concerns about artificial intelligence have likely prevented Serkis from winning awards for the performance-capture role, despite it being entirely human-generated.",
-          "published": "1:58 PM ET",
-          "urgency_score": 4,
-          "story_id": "story_000423",
-          "event_key": "unknown-event-8f5df88345"
+          "headline": "Taylor Swift and Karlie Kloss appear together at Chiefs game for first time in years",
+          "teaser": "The pair attended Sunday's Kansas City Chiefs-New York Jets game at Arrowhead Stadium, marking their first public appearance together in years.",
+          "body": "Taylor Swift and Karlie Kloss attended the Kansas City Chiefs-New York Jets game at Arrowhead Stadium on Sunday, marking their first public appearance together in years. Cameras captured the model and singer sitting in a box at the Kansas City stadium, accompanied by Swift's parents, Andrea and Scott.\n\nKloss previously attended Swift's July wedding to Chiefs tight end Travis Kelce at Madison Square Garden. The two became close friends in the early 2010s and appeared on a 2015 Vogue cover together. Kloss was featured in Swift's \"Bad Blood\" music video that same year.",
+          "published": "3:39 PM ET",
+          "urgency_score": 3,
+          "story_id": "story_000442",
+          "event_key": "unknown-event-ea10481588"
         }
       ]
     },
@@ -520,44 +529,17 @@
       "key": "politics",
       "label": "Politics",
       "hero": {
-        "headline": "Attorney General dismisses Calley Means' White House corruption allegations as former FDA chief backs some claims",
+        "headline": "DeSantis positions for 2028 presidential run as Rubio deflects speculation following GOP midterm losses",
         "teaser": "",
-        "body": "Attorney General Todd Blanche on Sunday dismissed corruption allegations made by former Trump health adviser Calley Means against senior White House officials, calling Means a disgruntled former administration official. Blanche told CNN he would not investigate claims Means made on a podcast, even as former FDA Commissioner Marty Makary corroborated aspects of the allegations and Representative Marlin Stutzman, an Indiana Republican, said any impropriety claims should be examined.\n\nMeans alleged in a Friday interview that former White House chief of staff Susie Wiles blocked an initiative to examine children's sugar consumption because she wanted sugar industry donations for midterm elections. He also accused Wiles' deputies of pushing policies favorable to flavored vaping and kratom industries, and said Trump pollster Tony Fabrizio advised against defining ultra-processed foods while receiving money from PepsiCo. Trump announced Friday that Wiles would be replaced by Stephen Miller.\n\nMakary told CBS in a statement that big tobacco exploited connections to administration and Health and Human Services officials, alleging repeated pressure to approve fruit-flavored vapes. Makary said kratom lobbyists similarly tried to undermine his attempts to restrict the substances, but did not identify which officials pressured him.\n\nFormer White House adviser James Blair, whom Means accused of wrongdoing, disputed the allegations and said he followed Trump's instructions to ensure the FDA made timely decisions on applications. Fabrizio called Means' claim that he was in the pocket of big pharma ridiculous and demonstrably false. Lobbying firm Ballard Partners, where Wiles worked seven years ago, said it did not lobby the White House on flavored vapes or glyphosate as Means alleged. The White House and Justice Department did not respond to requests for comment.",
-        "image_url": "https://images.axios.com/A6-ZTRDQoV6b2jYnzMfvyYc4ZlI=/0x63:4000x2313/1366x768/2026/11/08/1794165659390.jpeg",
+        "body": "Florida Governor Ron DeSantis is positioning himself for a 2028 presidential campaign while Secretary of State Marco Rubio has dismissed reports he is considering a White House bid, as Republicans reassess the party's presidential landscape following midterm election losses. The maneuvering by both Florida Republicans underscores volatility in the early stages of the 2028 primary, where Vice President Vance had been viewed as a likely frontrunner before Tuesday's election results.\n\nDeSantis, whose term as governor ends in January, has fueled speculation through a postelection media campaign that included appearances on podcasts and CNN. Asked whether he plans to run for president, DeSantis declined to answer directly but said the midterm results should serve as a warning to Republicans. \"We really got blasted into oblivion, and Florida is kind of the last one standing,\" he said, emphasizing that Florida was the only red-wall state to withstand the national Democratic gains. He said he has not made plans because \"this is a very uncertain time.\"\n\nRubio, who serves in the Trump administration until January 2029, has repeatedly said he will not run for president and would not challenge Vance. During the White House election watch party Tuesday, supporters urged Rubio to reconsider running, according to a source familiar with the scene, with some arguing he could restore Republican standing with Latino voters. Two days later, published reports suggested Rubio was actively considering resigning to pursue a presidential campaign. Rubio denied the reports to the New York Times, and longtime associates told Axios the reporting was false.\n\nBoth DeSantis and Rubio previously ran for president, in 2024 and 2016 respectively, giving them national profiles. Some Republican donors have indicated they would support DeSantis in 2028, and at least one supporter has told Vance he should not run, according to the Wall Street Journal.",
+        "image_url": "https://images.axios.com/8KcODt8FqMG-tvGPfNEQnGx8WaY=/0x0:1920x1080/1366x768/2026/11/06/1793975469147.jpeg",
         "image_credit": "",
-        "published": "4:12 PM ET",
+        "published": "5:40 PM ET",
         "urgency_score": 7,
-        "story_id": "story_000426",
-        "event_key": "court-ruling-41f8611430"
+        "story_id": "story_000141",
+        "event_key": "election-florida"
       },
       "cards": [
-        {
-          "headline": "Libertarian operatives court Rep. Thomas Massie for 2028 third-party run",
-          "teaser": "A coalition of Libertarian Party organizers and MAGA defectors is recruiting the outgoing congressman, hoping to build a spoiler campaign against the GOP nominee.",
-          "body": "Libertarian Party operatives and MAGA defectors are privately and publicly encouraging outgoing Rep. Thomas Massie to seek the Libertarian presidential nomination in 2028, aiming to challenge the Republican nominee. Organizers believe Massie, who lost a bitter primary after raising nearly $10 million and criticizing President Trump, could leverage the party's ballot access to win five percent of the national vote and qualify for federal funding.\n\nThe effort is led by Michael Heise, whose Mises Caucus took control of the Libertarian Party in 2022. Organizers plan to focus on anti-war sentiment and appeal to disillusioned MAGA supporters and populist voters. Massie did not respond to requests for comment.",
-          "published": "A few minutes ago",
-          "urgency_score": 5,
-          "story_id": "story_000141",
-          "event_key": "election-florida"
-        },
-        {
-          "headline": "Trump presses Netanyahu to implement Gaza peace plan after Israeli election",
-          "teaser": "The president told the Israeli prime minister in a Thursday call to take steps on disarming Hamas and establishing a Palestinian technocratic government.",
-          "body": "President Donald Trump told Israeli Prime Minister Benjamin Netanyahu during a phone call Thursday that he wants Israel to take steps to implement his Gaza peace plan, according to two sources with knowledge of the matter. The roadmap calls for disarming Hamas and demilitarizing Gaza, as well as transferring governing responsibility to a new Palestinian technocratic government.\n\nThe plan has been on hold for months because of Israeli elections held Oct. 27. Trump endorsed Netanyahu shortly before the election but now wants to move forward with the plan regardless of whether Netanyahu or his opponent forms a new government. Secretary of State Marco Rubio, Jared Kushner, and Steve Witkoff also participated in the call, which Netanyahu initiated.",
-          "published": "12:59 PM ET",
-          "urgency_score": 6,
-          "story_id": "story_000427",
-          "event_key": "election-2dee8fdb32"
-        },
-        {
-          "headline": "Congress demands answers on Nvidia CEO's reported ties to alleged Chinese spy",
-          "teaser": "Nvidia CEO Jensen Huang is facing congressional scrutiny after reports surfaced that he had a relationship with an alleged Chinese intelligence operative. Sen. Chris Coons pledged",
-          "body": "Nvidia CEO Jensen Huang is facing congressional scrutiny after reports surfaced that he had a relationship with an alleged Chinese intelligence operative. Sen. Chris Coons pledged\n\nChris Coons pledged an investigation, while a group of House Republican committee chairs requested a briefing from Huang by November 11 to determine whether U.S. national security has been compromised.",
-          "published": "Yesterday, 4:06 PM ET",
-          "urgency_score": 3,
-          "story_id": "story_000352",
-          "event_key": "unknown-event-87c016aa00"
-        },
         {
           "headline": "House Republicans weigh impeaching Defense Secretary Hegseth this week over alleged illegal continuation of Iran war",
           "teaser": "House Republican leaders expect enough GOP defections to impeach Defense Secretary Pete Hegseth when Representative Thomas Massie forces a vote this week on his resolution accusing",
@@ -566,6 +548,15 @@
           "urgency_score": 3,
           "story_id": "story_000396",
           "event_key": "election-a7229c0929"
+        },
+        {
+          "headline": "Attorney General dismisses Calley Means' White House corruption allegations as former FDA chief backs some claims",
+          "teaser": "Attorney General Todd Blanche on Sunday dismissed corruption allegations made by former Trump health adviser Calley Means against senior White House officials, calling Means a disg",
+          "body": "Attorney General Todd Blanche on Sunday dismissed corruption allegations made by former Trump health adviser Calley Means against senior White House officials, calling Means a disg\n\nBlanche told CNN he would not investigate claims Means made on a podcast, even as former FDA Commissioner Marty Makary corroborated aspects of the allegations and Representative Marlin Stutzman, an Indiana Republican, said any impropriety claims should be examined. Means alleged in a Friday interview that former White House chief of staff Susie Wiles blocked an initiative to examine children's sugar consumption because she wanted sugar industry donations for midterm elections.",
+          "published": "4:12 PM ET",
+          "urgency_score": 3,
+          "story_id": "story_000426",
+          "event_key": "court-ruling-41f8611430"
         },
         {
           "headline": "Trump replaces chief of staff Susie Wiles with Stephen Miller after GOP midterm losses",

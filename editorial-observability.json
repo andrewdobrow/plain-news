@@ -7,54 +7,42 @@
     "resolver_version": "3.0",
     "relationship_engine_version": "1.5"
   },
-  "generated_at": "2026-11-08T23:09:10Z",
+  "generated_at": "2026-11-09T00:14:26Z",
   "mode": "enforce",
   "publication_behavior_changed": false,
   "activation": {},
   "registry_path": "/home/runner/work/plain-news/plain-news/story-registry.json",
   "audit": {
-    "candidates_processed": 33,
+    "candidates_processed": 34,
     "routes": {
-      "generate_new": 30,
-      "skip": 3
+      "generate_new": 16,
+      "skip": 18
     },
     "eligibility": {
-      "low_value": 3,
-      "publishable": 30
+      "low_value": 1,
+      "publishable": 33
     },
     "source_classes": {
-      "aggregator": 3,
-      "entertainment_news": 9,
+      "aggregator": 1,
+      "entertainment_news": 7,
       "international_news": 6,
       "national_news": 5,
       "sports_news": 3,
-      "technology_news": 4,
-      "unknown": 3
+      "technology_news": 6,
+      "unknown": 6
     },
     "rejected_count": 0,
     "rejected_examples": []
   },
   "relationships": {
     "counts": {
-      "new_story": 30,
-      "same_event": 3
+      "new_story": 16,
+      "same_event": 18
     },
     "examples": [
       {
-        "story_id": "story_000398",
-        "title": "Houthi strikes hit Aramco Tower in Riyadh, target airport and oil facilities",
-        "event_key": "war-or-military-action-07f9ff4549",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
         "story_id": "story_000086",
-        "title": "Iran warns of severe retaliation if US resumes strikes as Trump signals pause",
+        "title": "Iran warns it will escalate attacks if US resumes strikes, as Trump says renewed action is 'highly unlikely' if nuclear talks progress",
         "event_key": "war-or-military-action-washington",
         "relationship": "same_event",
         "confidence": 1.0,
@@ -67,19 +55,65 @@
         ]
       },
       {
-        "story_id": "story_000399",
-        "title": "At least seven killed, over 100 injured in train collision near Giza, Egypt",
-        "event_key": "named-person-death:published-at",
+        "story_id": "story_000429",
+        "title": "Krakow shooter's parents and sister found dead at family home as terrorism charges advance",
+        "event_key": "named-person-death:united-kingdom",
         "relationship": "new_story",
-        "confidence": 0.100467,
+        "confidence": 0.402279,
+        "reason": "Created new story: conservative merge requirements were not met",
+        "decision_trace": [
+          "Category: crime_public_safety",
+          "Facts overlap: 1.00",
+          "Locations overlap: 0.00",
+          "Agencies overlap: 0.00",
+          "Event types overlap: 1.00",
+          "Entities overlap: 0.05",
+          "Title support: 0.25",
+          "Event-key support: 0.60",
+          "Identity anchors: 2",
+          "Threshold: 0.78"
+        ]
+      },
+      {
+        "story_id": "story_000430",
+        "title": "Train collision near Cairo kills seven, injures more than 125",
+        "event_key": "traffic-crash-877e15b885-877e15b885",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000400",
+        "title": "Surgeons dining in Krakow described treating shooting victims in street before ambulances arrived",
+        "event_key": "shooting-37af62bc33",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "reason": "Exact event key already belongs to this story",
+        "decision_trace": [
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000431",
+        "title": "Philadelphia boycott of Jewish-owned restaurants draws dueling protests, three arrests",
+        "event_key": "arrest-pennsylvania",
+        "relationship": "new_story",
+        "confidence": 0.130297,
         "reason": "Created new story: conservative merge requirements were not met",
         "decision_trace": [
           "Category: crime_public_safety",
           "Facts overlap: 0.00",
           "Locations overlap: 0.00",
           "Agencies overlap: 0.00",
-          "Event types overlap: 0.67",
-          "Entities overlap: 0.08",
+          "Event types overlap: 1.00",
+          "Entities overlap: 0.03",
           "Title support: 0.00",
           "Event-key support: 0.00",
           "Identity anchors: 2",
@@ -87,69 +121,51 @@
         ]
       },
       {
-        "story_id": "story_000400",
-        "title": "Two Polish officers who stopped Krakow gunman emerge from comas as prosecutors open terror investigation",
-        "event_key": "shooting-37af62bc33",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
-        "story_id": "story_000401",
-        "title": "Arrest made in shooting that killed one during Winston-Salem State University homecoming weekend",
-        "event_key": "named-person-death:north-carolina",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
         "story_id": "story_000402",
-        "title": "Nvidia board launches independent investigation into CEO Jensen Huang after reports of Chinese intelligence targeting",
+        "title": "Nvidia board launches independent investigation into CEO Jensen Huang after reports he was targeted by Chinese intelligence; Trump publicly defends Huang and reveals Rubio-level concern inside government",
         "event_key": "unknown-event-5b5d3c2bdd",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "reason": "Exact event key already belongs to this story",
         "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
-        "story_id": "story_000403",
-        "title": "Wall Street braces for pivotal week with earnings from Constellation Energy, CoreWeave, Nebius, Applied Materials and Cisco, plus fresh inflation data, as Nasdaq sits in correction territory amid AI spending concerns",
-        "event_key": "unknown-event-175e8dd895",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
         ]
       },
       {
         "story_id": "story_000404",
-        "title": "Binance names Justin Yek as CFO, says leadership change unrelated to $6.3 billion hack",
+        "title": "Binance names new CFO days after $6.3 billion crypto hack attributed to North Korean hackers",
         "event_key": "cybersecurity-incident-1aec61b1c8",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "reason": "Exact event key already belongs to this story",
         "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
         ]
       },
       {
-        "story_id": "story_000405",
-        "title": "Nvidia board launches independent investigation into CEO's relationship with alleged Chinese operative",
-        "event_key": "unknown-event-2c3b9ff4fc",
+        "story_id": "story_000403",
+        "title": "Markets face pivotal week with inflation data, Fed rate expectations, and AI earnings",
+        "event_key": "unknown-event-175e8dd895",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "reason": "Exact event key already belongs to this story",
+        "decision_trace": [
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000432",
+        "title": "Warren Buffett's Market-Crash Strategy: Buy and Hold Through Volatility",
+        "event_key": "traffic-crash-bc7994f839-bc7994f839",
         "relationship": "new_story",
         "confidence": 0.0,
         "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
@@ -160,8 +176,22 @@
       },
       {
         "story_id": "story_000406",
-        "title": "Researchers trace worldwide power grid frequency drops to synchronized battery checks",
+        "title": "Researchers trace mysterious global power grid frequency drops to synchronized battery backup systems",
         "event_key": "unknown-event-0bc7a64d0c",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "reason": "Exact event key already belongs to this story",
+        "decision_trace": [
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000433",
+        "title": "Nvidia CEO Jensen Huang acknowledges affair with alleged Chinese government agent as board launches security investigation",
+        "event_key": "unknown-event-1d7d9360bc",
         "relationship": "new_story",
         "confidence": 0.0,
         "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
@@ -172,8 +202,22 @@
       },
       {
         "story_id": "story_000407",
-        "title": "Apple accelerates Siri overhaul to compete with OpenAI and Meta AI assistants",
+        "title": "Apple accelerates Siri upgrades under internal pressure to match OpenAI and Meta AI assistants",
         "event_key": "unknown-event-69a23b1e6b",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "reason": "Exact event key already belongs to this story",
+        "decision_trace": [
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000434",
+        "title": "Elvis Presley estate and Eminem publisher sue AI music company Suno over voice cloning",
+        "event_key": "unknown-event-d65536d1db",
         "relationship": "new_story",
         "confidence": 0.0,
         "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
@@ -184,8 +228,21 @@
       },
       {
         "story_id": "story_000408",
-        "title": "Epic Games Launcher to officially support SteamOS and Steam Deck",
+        "title": "Epic Games confirms launcher support for SteamOS and other Linux distributions",
         "event_key": "unknown-event-5ab9c8a3d4",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "reason": "Exact source article URL already belongs to this story",
+        "decision_trace": [
+          "Exact source article identity: true",
+          "Normalized source URL: https://www.theverge.com/games/1029557/epic-games-launcher-is-coming-to-steamos",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000435",
+        "title": "Akai opens GitHub repository for MPC music production hardware",
+        "event_key": "unknown-event-a399c1305e",
         "relationship": "new_story",
         "confidence": 0.0,
         "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
@@ -195,9 +252,21 @@
         ]
       },
       {
-        "story_id": "story_000409",
-        "title": "Lions extend win streak to four with 19-9 victory over Dolphins in emotional week following Campbell injury",
-        "event_key": "unknown-event-0ec00ed3a1",
+        "story_id": "story_000436",
+        "title": "Sequoia Capital partners blindsided by Roelof Botha's SpaceX board appointment",
+        "event_key": "business-transaction-35687bac82",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000437",
+        "title": "Kenneth Walker scores three touchdowns as Chiefs defeat Jets 35-12, Mahomes plays through elbow injury",
+        "event_key": "unknown-event-a19d93c3b7",
         "relationship": "new_story",
         "confidence": 0.0,
         "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
@@ -208,106 +277,51 @@
       },
       {
         "story_id": "story_000410",
-        "title": "Broncos beat Panthers 26-21 for fifth straight win behind Nix's two touchdowns",
+        "title": "Broncos beat Panthers 26-21 for fifth straight win, extend one-score streak to 16",
         "event_key": "unknown-event-136b987fea",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "reason": "Exact event key already belongs to this story",
         "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
-        "story_id": "story_000411",
-        "title": "Cowboys beat Colts 27-23 on late Javonte Williams touchdown to improve to 4-5",
-        "event_key": "unknown-event-a9d9d865d6",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
-        "story_id": "story_000412",
-        "title": "Saints edge Browns in overtime, Tank Dell scores 63-yard touchdown in return from knee injury",
-        "event_key": "unknown-event-e844d9d098",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
-        "story_id": "story_000413",
-        "title": "Giants' J.J. McCarthy leaves game with hip injury, Jameis Winston leads New York to 19-11 win over Eagles",
-        "event_key": "shooting-bbcd5e52aa",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
         ]
       },
       {
         "story_id": "story_000414",
-        "title": "Lando Norris wins Sao Paulo Grand Prix after rivals' mistakes as Mercedes clinches constructors' title",
+        "title": "Norris wins chaotic Sao Paulo GP as Mercedes clinches constructors' title",
         "event_key": "traffic-crash-58e6b90d55-58e6b90d55",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "reason": "Exact event key already belongs to this story",
         "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
         ]
       },
       {
-        "story_id": "story_000415",
-        "title": "NFL trade deadline speculation centers on running backs Henry and Taylor",
-        "event_key": "unknown-event-cf1fdacabc",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "story_id": "story_000417",
+        "title": "Falkirk rise to third in Scottish Premiership with fifth straight win",
+        "event_key": "unknown-event-70e85b9f7a",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "reason": "Exact event key already belongs to this story",
         "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
-        "story_id": "story_000416",
-        "title": "Norris earns perfect 10 in Sao Paulo Grand Prix driver ratings as Verstappen charges from 21st to second",
-        "event_key": "traffic-crash-64815780b0-64815780b0",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
         ]
       }
     ],
     "decision_trace_examples": [
       {
-        "story_id": "story_000398",
-        "title": "Houthi strikes hit Aramco Tower in Riyadh, target airport and oil facilities",
-        "event_key": "war-or-military-action-07f9ff4549",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "matched_existing": false,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
         "story_id": "story_000086",
-        "title": "Iran warns of severe retaliation if US resumes strikes as Trump signals pause",
+        "title": "Iran warns it will escalate attacks if US resumes strikes, as Trump says renewed action is 'highly unlikely' if nuclear talks progress",
         "event_key": "war-or-military-action-washington",
         "relationship": "same_event",
         "confidence": 1.0,
@@ -321,11 +335,60 @@
         ]
       },
       {
-        "story_id": "story_000399",
-        "title": "At least seven killed, over 100 injured in train collision near Giza, Egypt",
-        "event_key": "named-person-death:published-at",
+        "story_id": "story_000429",
+        "title": "Krakow shooter's parents and sister found dead at family home as terrorism charges advance",
+        "event_key": "named-person-death:united-kingdom",
         "relationship": "new_story",
-        "confidence": 0.100467,
+        "confidence": 0.402279,
+        "matched_existing": false,
+        "reason": "Created new story: conservative merge requirements were not met",
+        "decision_trace": [
+          "Category: crime_public_safety",
+          "Facts overlap: 1.00",
+          "Locations overlap: 0.00",
+          "Agencies overlap: 0.00",
+          "Event types overlap: 1.00",
+          "Entities overlap: 0.05",
+          "Title support: 0.25",
+          "Event-key support: 0.60",
+          "Identity anchors: 2",
+          "Threshold: 0.78"
+        ]
+      },
+      {
+        "story_id": "story_000430",
+        "title": "Train collision near Cairo kills seven, injures more than 125",
+        "event_key": "traffic-crash-877e15b885-877e15b885",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "matched_existing": false,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000400",
+        "title": "Surgeons dining in Krakow described treating shooting victims in street before ambulances arrived",
+        "event_key": "shooting-37af62bc33",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "matched_existing": true,
+        "reason": "Exact event key already belongs to this story",
+        "decision_trace": [
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000431",
+        "title": "Philadelphia boycott of Jewish-owned restaurants draws dueling protests, three arrests",
+        "event_key": "arrest-pennsylvania",
+        "relationship": "new_story",
+        "confidence": 0.130297,
         "matched_existing": false,
         "reason": "Created new story: conservative merge requirements were not met",
         "decision_trace": [
@@ -333,8 +396,8 @@
           "Facts overlap: 0.00",
           "Locations overlap: 0.00",
           "Agencies overlap: 0.00",
-          "Event types overlap: 0.67",
-          "Entities overlap: 0.08",
+          "Event types overlap: 1.00",
+          "Entities overlap: 0.03",
           "Title support: 0.00",
           "Event-key support: 0.00",
           "Identity anchors: 2",
@@ -342,74 +405,54 @@
         ]
       },
       {
-        "story_id": "story_000400",
-        "title": "Two Polish officers who stopped Krakow gunman emerge from comas as prosecutors open terror investigation",
-        "event_key": "shooting-37af62bc33",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "matched_existing": false,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
-        "story_id": "story_000401",
-        "title": "Arrest made in shooting that killed one during Winston-Salem State University homecoming weekend",
-        "event_key": "named-person-death:north-carolina",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "matched_existing": false,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
         "story_id": "story_000402",
-        "title": "Nvidia board launches independent investigation into CEO Jensen Huang after reports of Chinese intelligence targeting",
+        "title": "Nvidia board launches independent investigation into CEO Jensen Huang after reports he was targeted by Chinese intelligence; Trump publicly defends Huang and reveals Rubio-level concern inside government",
         "event_key": "unknown-event-5b5d3c2bdd",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "matched_existing": false,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "matched_existing": true,
+        "reason": "Exact event key already belongs to this story",
         "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
-        "story_id": "story_000403",
-        "title": "Wall Street braces for pivotal week with earnings from Constellation Energy, CoreWeave, Nebius, Applied Materials and Cisco, plus fresh inflation data, as Nasdaq sits in correction territory amid AI spending concerns",
-        "event_key": "unknown-event-175e8dd895",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "matched_existing": false,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
         ]
       },
       {
         "story_id": "story_000404",
-        "title": "Binance names Justin Yek as CFO, says leadership change unrelated to $6.3 billion hack",
+        "title": "Binance names new CFO days after $6.3 billion crypto hack attributed to North Korean hackers",
         "event_key": "cybersecurity-incident-1aec61b1c8",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "matched_existing": false,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "matched_existing": true,
+        "reason": "Exact event key already belongs to this story",
         "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
         ]
       },
       {
-        "story_id": "story_000405",
-        "title": "Nvidia board launches independent investigation into CEO's relationship with alleged Chinese operative",
-        "event_key": "unknown-event-2c3b9ff4fc",
+        "story_id": "story_000403",
+        "title": "Markets face pivotal week with inflation data, Fed rate expectations, and AI earnings",
+        "event_key": "unknown-event-175e8dd895",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "matched_existing": true,
+        "reason": "Exact event key already belongs to this story",
+        "decision_trace": [
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000432",
+        "title": "Warren Buffett's Market-Crash Strategy: Buy and Hold Through Volatility",
+        "event_key": "traffic-crash-bc7994f839-bc7994f839",
         "relationship": "new_story",
         "confidence": 0.0,
         "matched_existing": false,
@@ -421,8 +464,23 @@
       },
       {
         "story_id": "story_000406",
-        "title": "Researchers trace worldwide power grid frequency drops to synchronized battery checks",
+        "title": "Researchers trace mysterious global power grid frequency drops to synchronized battery backup systems",
         "event_key": "unknown-event-0bc7a64d0c",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "matched_existing": true,
+        "reason": "Exact event key already belongs to this story",
+        "decision_trace": [
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000433",
+        "title": "Nvidia CEO Jensen Huang acknowledges affair with alleged Chinese government agent as board launches security investigation",
+        "event_key": "unknown-event-1d7d9360bc",
         "relationship": "new_story",
         "confidence": 0.0,
         "matched_existing": false,
@@ -434,8 +492,23 @@
       },
       {
         "story_id": "story_000407",
-        "title": "Apple accelerates Siri overhaul to compete with OpenAI and Meta AI assistants",
+        "title": "Apple accelerates Siri upgrades under internal pressure to match OpenAI and Meta AI assistants",
         "event_key": "unknown-event-69a23b1e6b",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "matched_existing": true,
+        "reason": "Exact event key already belongs to this story",
+        "decision_trace": [
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000434",
+        "title": "Elvis Presley estate and Eminem publisher sue AI music company Suno over voice cloning",
+        "event_key": "unknown-event-d65536d1db",
         "relationship": "new_story",
         "confidence": 0.0,
         "matched_existing": false,
@@ -447,8 +520,22 @@
       },
       {
         "story_id": "story_000408",
-        "title": "Epic Games Launcher to officially support SteamOS and Steam Deck",
+        "title": "Epic Games confirms launcher support for SteamOS and other Linux distributions",
         "event_key": "unknown-event-5ab9c8a3d4",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "matched_existing": true,
+        "reason": "Exact source article URL already belongs to this story",
+        "decision_trace": [
+          "Exact source article identity: true",
+          "Normalized source URL: https://www.theverge.com/games/1029557/epic-games-launcher-is-coming-to-steamos",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000435",
+        "title": "Akai opens GitHub repository for MPC music production hardware",
+        "event_key": "unknown-event-a399c1305e",
         "relationship": "new_story",
         "confidence": 0.0,
         "matched_existing": false,
@@ -459,9 +546,22 @@
         ]
       },
       {
-        "story_id": "story_000409",
-        "title": "Lions extend win streak to four with 19-9 victory over Dolphins in emotional week following Campbell injury",
-        "event_key": "unknown-event-0ec00ed3a1",
+        "story_id": "story_000436",
+        "title": "Sequoia Capital partners blindsided by Roelof Botha's SpaceX board appointment",
+        "event_key": "business-transaction-35687bac82",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "matched_existing": false,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000437",
+        "title": "Kenneth Walker scores three touchdowns as Chiefs defeat Jets 35-12, Mahomes plays through elbow injury",
+        "event_key": "unknown-event-a19d93c3b7",
         "relationship": "new_story",
         "confidence": 0.0,
         "matched_existing": false,
@@ -473,93 +573,47 @@
       },
       {
         "story_id": "story_000410",
-        "title": "Broncos beat Panthers 26-21 for fifth straight win behind Nix's two touchdowns",
+        "title": "Broncos beat Panthers 26-21 for fifth straight win, extend one-score streak to 16",
         "event_key": "unknown-event-136b987fea",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "matched_existing": false,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "matched_existing": true,
+        "reason": "Exact event key already belongs to this story",
         "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
-        "story_id": "story_000411",
-        "title": "Cowboys beat Colts 27-23 on late Javonte Williams touchdown to improve to 4-5",
-        "event_key": "unknown-event-a9d9d865d6",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "matched_existing": false,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
-        "story_id": "story_000412",
-        "title": "Saints edge Browns in overtime, Tank Dell scores 63-yard touchdown in return from knee injury",
-        "event_key": "unknown-event-e844d9d098",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "matched_existing": false,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
-        "story_id": "story_000413",
-        "title": "Giants' J.J. McCarthy leaves game with hip injury, Jameis Winston leads New York to 19-11 win over Eagles",
-        "event_key": "shooting-bbcd5e52aa",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "matched_existing": false,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
         ]
       },
       {
         "story_id": "story_000414",
-        "title": "Lando Norris wins Sao Paulo Grand Prix after rivals' mistakes as Mercedes clinches constructors' title",
+        "title": "Norris wins chaotic Sao Paulo GP as Mercedes clinches constructors' title",
         "event_key": "traffic-crash-58e6b90d55-58e6b90d55",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "matched_existing": false,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "matched_existing": true,
+        "reason": "Exact event key already belongs to this story",
         "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
         ]
       },
       {
-        "story_id": "story_000415",
-        "title": "NFL trade deadline speculation centers on running backs Henry and Taylor",
-        "event_key": "unknown-event-cf1fdacabc",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "matched_existing": false,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "story_id": "story_000417",
+        "title": "Falkirk rise to third in Scottish Premiership with fifth straight win",
+        "event_key": "unknown-event-70e85b9f7a",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "matched_existing": true,
+        "reason": "Exact event key already belongs to this story",
         "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
-        "story_id": "story_000416",
-        "title": "Norris earns perfect 10 in Sao Paulo Grand Prix driver ratings as Verstappen charges from 21st to second",
-        "event_key": "traffic-crash-64815780b0-64815780b0",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "matched_existing": false,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
         ]
       }
     ]
@@ -567,91 +621,56 @@
   "follow_up_detection": {
     "mode": "observe_only",
     "publication_behavior_changed": false,
-    "candidate_count": 2,
-    "high_confidence_candidate_count": 0,
+    "candidate_count": 1,
+    "high_confidence_candidate_count": 1,
     "unanchored_candidate_suppressed_count": 0,
     "current_relationships": {
-      "new_story": 2
+      "new_story": 1
     },
     "milestones": {
-      "death": 1,
-      "investigation": 1,
-      "opening": 1
+      "death": 1
     },
     "reason_codes": {
-      "entity_match": 2,
+      "agency_match": 1,
+      "entity_match": 1,
       "event_type_match": 1,
-      "identity_anchor_qualified": 2,
-      "location_match": 2,
-      "novel_milestone": 2,
-      "title_continuity": 1
+      "identity_anchor_qualified": 1,
+      "location_match": 1,
+      "novel_milestone": 1
     },
     "examples": [
       {
-        "headline": "Nvidia board launches independent investigation into CEO Jensen Huang after reports of Chinese intelligence targeting",
-        "event_key": "unknown-event-5b5d3c2bdd",
-        "current_story_id": "story_000402",
+        "headline": "Krakow shooter's parents and sister found dead at family home as terrorism charges advance",
+        "event_key": "named-person-death:united-kingdom",
+        "current_story_id": "story_000429",
         "current_relationship": "new_story",
-        "candidate_story_id": "story_000352",
-        "candidate_confidence": 0.641667,
-        "candidate_milestones": [
-          "investigation",
-          "opening"
-        ],
-        "candidate_reason_codes": [
-          "novel_milestone",
-          "location_match",
-          "entity_match",
-          "title_continuity",
-          "identity_anchor_qualified"
-        ],
-        "candidate_trace": [
-          "Follow-up candidate mode: observe_only",
-          "Candidate story: story_000352",
-          "Novel milestones: investigation, opening",
-          "Exact event-key anchor: False",
-          "Facts overlap: 0.00",
-          "Title overlap: 0.42",
-          "Location match: True",
-          "Agency match: False",
-          "Event type match: False",
-          "Entity match: True",
-          "Agency conflict: False",
-          "Event type conflict: False",
-          "Candidate confidence: 0.64"
-        ]
-      },
-      {
-        "headline": "Del Casher, guitarist who invented the wah-wah pedal, dies at 88",
-        "event_key": "named-person-death:del-casher",
-        "current_story_id": "story_000418",
-        "current_relationship": "new_story",
-        "candidate_story_id": "story_000372",
-        "candidate_confidence": 0.6925,
+        "candidate_story_id": "story_000246",
+        "candidate_confidence": 0.78,
         "candidate_milestones": [
           "death"
         ],
         "candidate_reason_codes": [
           "novel_milestone",
           "location_match",
+          "agency_match",
           "event_type_match",
           "entity_match",
           "identity_anchor_qualified"
         ],
         "candidate_trace": [
           "Follow-up candidate mode: observe_only",
-          "Candidate story: story_000372",
+          "Candidate story: story_000246",
           "Novel milestones: death",
           "Exact event-key anchor: False",
           "Facts overlap: 0.00",
-          "Title overlap: 0.12",
+          "Title overlap: 0.00",
           "Location match: True",
-          "Agency match: False",
+          "Agency match: True",
           "Event type match: True",
           "Entity match: True",
           "Agency conflict: False",
           "Event type conflict: False",
-          "Candidate confidence: 0.69"
+          "Candidate confidence: 0.78"
         ]
       }
     ],
@@ -661,9 +680,9 @@
     "retrospective": {
       "mode": "retrospective_observe_only",
       "publication_behavior_changed": false,
-      "stories_with_timelines": 3,
-      "timeline_entries_examined": 6,
-      "transitions_examined": 3,
+      "stories_with_timelines": 4,
+      "timeline_entries_examined": 8,
+      "transitions_examined": 4,
       "candidate_scope": "distinct_article_transitions",
       "candidate_count": 0,
       "high_confidence_candidate_count": 0,
@@ -689,40 +708,40 @@
   },
   "audience_relevance": {
     "scopes": {
-      "global_major": 17,
-      "international": 23,
-      "unknown": 57,
-      "us_multistate": 11,
-      "us_national": 48,
-      "us_state_regional": 21
+      "global_major": 22,
+      "international": 24,
+      "unknown": 61,
+      "us_multistate": 13,
+      "us_national": 50,
+      "us_state_regional": 23
     },
-    "average_score": 79.69
+    "average_score": 79.78
   },
   "editorial_proximity": {
     "scopes": {
-      "global_major": 17,
-      "international": 23,
-      "unknown": 57,
-      "us_multistate": 11,
-      "us_national": 48,
-      "us_state_regional": 21
+      "global_major": 22,
+      "international": 24,
+      "unknown": 61,
+      "us_multistate": 13,
+      "us_national": 50,
+      "us_state_regional": 23
     },
-    "average_priority": 21.84
+    "average_priority": 22.23
   },
   "story_lifecycle": {
     "counts": {
-      "active": 159,
-      "breaking": 2,
-      "developing": 3,
-      "ongoing": 13
+      "active": 169,
+      "breaking": 3,
+      "developing": 4,
+      "ongoing": 17
     }
   },
   "registry_health": {
     "repair_version": 16,
     "changed": false,
     "status": "clean",
-    "active_stories_before": 384,
-    "active_stories_after": 384,
+    "active_stories_before": 414,
+    "active_stories_after": 414,
     "quarantined_story_count": 0,
     "quarantined_story_ids": [],
     "quarantine_reasons": {},
@@ -751,20 +770,20 @@
     "unified_incident_groups_resolved": 0,
     "unified_incident_story_records_removed": 0,
     "remaining_unified_incident_groups": 0,
-    "generated_at": "2026-11-08T23:08:44Z",
-    "quarantined_story_records_retained": 10,
-    "active_story_count": 415
+    "generated_at": "2026-11-09T00:14:03Z",
+    "quarantined_story_records_retained": 11,
+    "active_story_count": 431
   },
   "stories": {
-    "total": 177,
+    "total": 193,
     "importance_levels": {
-      "breaking": 7,
-      "high": 20,
-      "normal": 47,
-      "low": 103,
+      "breaking": 8,
+      "high": 22,
+      "normal": 52,
+      "low": 111,
       "archived": 0
     },
-    "average_importance": 24.6,
+    "average_importance": 25.02,
     "top": [
       {
         "story_id": "story_000396",
@@ -779,7 +798,7 @@
           "freshness_multiplier": 0.95,
           "source_multiplier": 1.12,
           "source_trust": 90,
-          "age_hours": 10.4
+          "age_hours": 11.48
         },
         "level": "breaking",
         "importance_reasons": [
@@ -828,7 +847,7 @@
           "state": "breaking",
           "reason": "Breaking importance with a current or undated update",
           "last_updated": "2026-11-08T12:45:05+00:00",
-          "hours_since_update": 10.4,
+          "hours_since_update": 11.48,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -843,10 +862,10 @@
           "score": 100,
           "importance": 100,
           "proximity_multiplier": 1.0,
-          "freshness_multiplier": 1.0,
+          "freshness_multiplier": 0.95,
           "source_multiplier": 1.12,
           "source_trust": 90,
-          "age_hours": 5.16
+          "age_hours": 6.25
         },
         "level": "breaking",
         "importance_reasons": [
@@ -890,7 +909,78 @@
           "state": "breaking",
           "reason": "Breaking importance with a current or undated update",
           "last_updated": "2026-11-08T17:59:28+00:00",
-          "hours_since_update": 5.16,
+          "hours_since_update": 6.25,
+          "event_count": 1,
+          "timeline_entries": 1
+        }
+      },
+      {
+        "story_id": "story_000429",
+        "title": "Parents, sister of far-right Kraków shooter found dead in family home - NBC News",
+        "score": 93,
+        "editorial_priority": 100,
+        "editorial_score": 100,
+        "score_breakdown": {
+          "score": 100,
+          "importance": 93,
+          "proximity_multiplier": 1.0,
+          "freshness_multiplier": 1.0,
+          "source_multiplier": 1.123,
+          "source_trust": 91,
+          "age_hours": 4.08
+        },
+        "level": "breaking",
+        "importance_reasons": [
+          {
+            "code": "federal_action",
+            "label": "Federal/national government action",
+            "points": 32
+          },
+          {
+            "code": "war_diplomacy",
+            "label": "War, diplomacy or national-security consequence",
+            "points": 30
+          },
+          {
+            "code": "public_safety",
+            "label": "Public-safety event",
+            "points": 10
+          },
+          {
+            "code": "single_death",
+            "label": "Death reported",
+            "points": 6
+          },
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "audience_relevance": {
+          "scope": "us_national",
+          "score": 100,
+          "regions": [
+            "California"
+          ],
+          "places": [
+            "California"
+          ]
+        },
+        "editorial_proximity": {
+          "score": 100,
+          "scope": "us_national",
+          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
+        },
+        "event_count": 1,
+        "timeline_entries": 1,
+        "relationship_decisions": 1,
+        "canonical_source_candidates": 1,
+        "lifecycle": {
+          "state": "breaking",
+          "reason": "Breaking importance with a current or undated update",
+          "last_updated": "2026-11-08T20:09:11+00:00",
+          "hours_since_update": 4.08,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -908,7 +998,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 1.12,
           "source_trust": 90,
-          "age_hours": 45.98
+          "age_hours": 47.06
         },
         "level": "breaking",
         "importance_reasons": [
@@ -952,7 +1042,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-11-07T01:10:14+00:00",
-          "hours_since_update": 45.98,
+          "hours_since_update": 47.06,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -970,7 +1060,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 1.015,
           "source_trust": 55,
-          "age_hours": 44.4
+          "age_hours": 45.49
         },
         "level": "breaking",
         "importance_reasons": [
@@ -1004,13 +1094,13 @@
           "scope": "us_national",
           "score": 100,
           "regions": [
-            "California",
             "Washington",
+            "California",
             "Florida"
           ],
           "places": [
-            "California",
             "Washington",
+            "California",
             "Florida"
           ]
         },
@@ -1027,7 +1117,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-11-07T02:45:00+00:00",
-          "hours_since_update": 44.4,
+          "hours_since_update": 45.49,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1045,7 +1135,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 1.015,
           "source_trust": 55,
-          "age_hours": 45.81
+          "age_hours": 46.9
         },
         "level": "breaking",
         "importance_reasons": [
@@ -1089,7 +1179,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-11-07T01:20:00+00:00",
-          "hours_since_update": 45.81,
+          "hours_since_update": 46.9,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1107,7 +1197,7 @@
           "freshness_multiplier": 0.95,
           "source_multiplier": 1.12,
           "source_trust": 90,
-          "age_hours": 13.21
+          "age_hours": 14.3
         },
         "level": "high",
         "importance_reasons": [
@@ -1146,7 +1236,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-11-08T09:56:23+00:00",
-          "hours_since_update": 13.21,
+          "hours_since_update": 14.3,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1164,7 +1254,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 1.12,
           "source_trust": 90,
-          "age_hours": 48.63
+          "age_hours": 49.72
         },
         "level": "breaking",
         "importance_reasons": [
@@ -1212,7 +1302,7 @@
           "state": "ongoing",
           "reason": "Story is older than 48 hours but remains within the active news window",
           "last_updated": "2026-11-06T22:31:00+00:00",
-          "hours_since_update": 48.63,
+          "hours_since_update": 49.72,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1230,7 +1320,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 1.123,
           "source_trust": 91,
-          "age_hours": 33.83
+          "age_hours": 34.92
         },
         "level": "breaking",
         "importance_reasons": [
@@ -1274,7 +1364,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-11-07T13:19:00+00:00",
-          "hours_since_update": 33.83,
+          "hours_since_update": 34.92,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1292,7 +1382,7 @@
           "freshness_multiplier": 1.0,
           "source_multiplier": 1.12,
           "source_trust": 90,
-          "age_hours": 0.32
+          "age_hours": 1.41
         },
         "level": "high",
         "importance_reasons": [
@@ -1336,7 +1426,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-11-08T22:50:00+00:00",
-          "hours_since_update": 0.32,
+          "hours_since_update": 1.41,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1354,7 +1444,7 @@
           "freshness_multiplier": 1.0,
           "source_multiplier": 1.12,
           "source_trust": 90,
-          "age_hours": 1.95
+          "age_hours": 3.03
         },
         "level": "high",
         "importance_reasons": [
@@ -1398,7 +1488,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-11-08T21:12:24+00:00",
-          "hours_since_update": 1.95,
+          "hours_since_update": 3.03,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1416,7 +1506,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 1.12,
           "source_trust": 90,
-          "age_hours": 33.42
+          "age_hours": 34.51
         },
         "level": "high",
         "importance_reasons": [
@@ -1455,7 +1545,69 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-11-07T13:43:44+00:00",
-          "hours_since_update": 33.42,
+          "hours_since_update": 34.51,
+          "event_count": 1,
+          "timeline_entries": 1
+        }
+      },
+      {
+        "story_id": "story_000432",
+        "title": "Warren Buffett Has 1 Simple Rule for Surviving a Stock Market Crash, and History Says It's Never Once Failed - The Motley Fool",
+        "score": 78,
+        "editorial_priority": 70,
+        "editorial_score": 70,
+        "score_breakdown": {
+          "score": 70,
+          "importance": 78,
+          "proximity_multiplier": 0.88,
+          "freshness_multiplier": 1.0,
+          "source_multiplier": 1.015,
+          "source_trust": 55,
+          "age_hours": 3.24
+        },
+        "level": "high",
+        "importance_reasons": [
+          {
+            "code": "macroeconomy",
+            "label": "Broad economic consequence",
+            "points": 28
+          },
+          {
+            "code": "war_diplomacy",
+            "label": "War, diplomacy or national-security consequence",
+            "points": 30
+          },
+          {
+            "code": "public_safety",
+            "label": "Public-safety event",
+            "points": 10
+          },
+          {
+            "code": "global_scope",
+            "label": "Major international consequence",
+            "points": 10
+          }
+        ],
+        "audience_relevance": {
+          "scope": "global_major",
+          "score": 85,
+          "regions": [],
+          "places": []
+        },
+        "editorial_proximity": {
+          "score": 88,
+          "scope": "global_major",
+          "reason": "Major world development has broad consequence for a U.S. general-news audience"
+        },
+        "event_count": 1,
+        "timeline_entries": 1,
+        "relationship_decisions": 1,
+        "canonical_source_candidates": 1,
+        "lifecycle": {
+          "state": "active",
+          "reason": "Single-event story is current",
+          "last_updated": "2026-11-08T21:00:00+00:00",
+          "hours_since_update": 3.24,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1473,7 +1625,7 @@
           "freshness_multiplier": 0.95,
           "source_multiplier": 0.985,
           "source_trust": 45,
-          "age_hours": 6.81
+          "age_hours": 7.9
         },
         "level": "high",
         "importance_reasons": [
@@ -1512,7 +1664,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-11-08T16:20:25+00:00",
-          "hours_since_update": 6.81,
+          "hours_since_update": 7.9,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1530,7 +1682,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 1.126,
           "source_trust": 92,
-          "age_hours": 54.08
+          "age_hours": 55.17
         },
         "level": "high",
         "importance_reasons": [
@@ -1569,7 +1721,7 @@
           "state": "ongoing",
           "reason": "Story is older than 48 hours but remains within the active news window",
           "last_updated": "2026-11-06T17:04:07+00:00",
-          "hours_since_update": 54.08,
+          "hours_since_update": 55.17,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1587,7 +1739,7 @@
           "freshness_multiplier": 1.0,
           "source_multiplier": 1.132,
           "source_trust": 94,
-          "age_hours": 4.77
+          "age_hours": 5.86
         },
         "level": "high",
         "importance_reasons": [
@@ -1631,7 +1783,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-11-08T18:22:53+00:00",
-          "hours_since_update": 4.77,
+          "hours_since_update": 5.86,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1649,7 +1801,7 @@
           "freshness_multiplier": 1.0,
           "source_multiplier": 1.123,
           "source_trust": 91,
-          "age_hours": 2.3
+          "age_hours": 3.39
         },
         "level": "high",
         "importance_reasons": [
@@ -1697,7 +1849,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-11-08T20:50:57+00:00",
-          "hours_since_update": 2.3,
+          "hours_since_update": 3.39,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1715,7 +1867,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 1.12,
           "source_trust": 90,
-          "age_hours": 30.15
+          "age_hours": 31.24
         },
         "level": "high",
         "importance_reasons": [
@@ -1759,7 +1911,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-11-07T17:00:00+00:00",
-          "hours_since_update": 30.15,
+          "hours_since_update": 31.24,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1777,7 +1929,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 1.132,
           "source_trust": 94,
-          "age_hours": 50.04
+          "age_hours": 51.13
         },
         "level": "high",
         "importance_reasons": [
@@ -1816,7 +1968,7 @@
           "state": "ongoing",
           "reason": "Story is older than 48 hours but remains within the active news window",
           "last_updated": "2026-11-06T21:06:25+00:00",
-          "hours_since_update": 50.04,
+          "hours_since_update": 51.13,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1834,7 +1986,7 @@
           "freshness_multiplier": 0.95,
           "source_multiplier": 1.132,
           "source_trust": 94,
-          "age_hours": 22.23
+          "age_hours": 23.31
         },
         "level": "high",
         "importance_reasons": [
@@ -1878,126 +2030,7 @@
           "state": "active",
           "reason": "Single-event story is current",
           "last_updated": "2026-11-08T00:55:17+00:00",
-          "hours_since_update": 22.23,
-          "event_count": 1,
-          "timeline_entries": 1
-        }
-      },
-      {
-        "story_id": "story_000365",
-        "title": "Drone and missile attacks wound 9 in Ukraine as country prepares for talks with Russia and US - AP News",
-        "score": 55,
-        "editorial_priority": 60,
-        "editorial_score": 60,
-        "score_breakdown": {
-          "score": 60,
-          "importance": 55,
-          "proximity_multiplier": 1.0,
-          "freshness_multiplier": 0.95,
-          "source_multiplier": 1.144,
-          "source_trust": 98,
-          "age_hours": 22.53
-        },
-        "level": "high",
-        "importance_reasons": [
-          {
-            "code": "war_diplomacy",
-            "label": "War, diplomacy or national-security consequence",
-            "points": 30
-          },
-          {
-            "code": "public_safety",
-            "label": "Public-safety event",
-            "points": 10
-          },
-          {
-            "code": "national_scope",
-            "label": "Nationwide U.S. scope",
-            "points": 15
-          }
-        ],
-        "audience_relevance": {
-          "scope": "us_national",
-          "score": 100,
-          "regions": [],
-          "places": []
-        },
-        "editorial_proximity": {
-          "score": 100,
-          "scope": "us_national",
-          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
-        },
-        "event_count": 1,
-        "timeline_entries": 1,
-        "relationship_decisions": 1,
-        "canonical_source_candidates": 1,
-        "lifecycle": {
-          "state": "active",
-          "reason": "Single-event story is current",
-          "last_updated": "2026-11-08T00:37:00+00:00",
-          "hours_since_update": 22.53,
-          "event_count": 1,
-          "timeline_entries": 1
-        }
-      },
-      {
-        "story_id": "story_000349",
-        "title": "Papua New Guinea’s Most Expensive Film, ‘Mussau: The First Song,’ Wraps Shoot, Unveils First Looks (EXCLUSIVE)",
-        "score": 62,
-        "editorial_priority": 58,
-        "editorial_score": 58,
-        "score_breakdown": {
-          "score": 58,
-          "importance": 62,
-          "proximity_multiplier": 0.88,
-          "freshness_multiplier": 0.95,
-          "source_multiplier": 1.12,
-          "source_trust": 90,
-          "age_hours": 23.17
-        },
-        "level": "high",
-        "importance_reasons": [
-          {
-            "code": "war_diplomacy",
-            "label": "War, diplomacy or national-security consequence",
-            "points": 30
-          },
-          {
-            "code": "public_safety",
-            "label": "Public-safety event",
-            "points": 10
-          },
-          {
-            "code": "cultural_sports",
-            "label": "Major sports/cultural event",
-            "points": 12
-          },
-          {
-            "code": "global_scope",
-            "label": "Major international consequence",
-            "points": 10
-          }
-        ],
-        "audience_relevance": {
-          "scope": "global_major",
-          "score": 85,
-          "regions": [],
-          "places": []
-        },
-        "editorial_proximity": {
-          "score": 88,
-          "scope": "global_major",
-          "reason": "Major world development has broad consequence for a U.S. general-news audience"
-        },
-        "event_count": 1,
-        "timeline_entries": 1,
-        "relationship_decisions": 1,
-        "canonical_source_candidates": 1,
-        "lifecycle": {
-          "state": "active",
-          "reason": "Single-event story is current",
-          "last_updated": "2026-11-07T23:58:45+00:00",
-          "hours_since_update": 23.17,
+          "hours_since_update": 23.31,
           "event_count": 1,
           "timeline_entries": 1
         }

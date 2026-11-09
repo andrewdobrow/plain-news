@@ -1,46 +1,11 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-08T23:08:42.704949+00:00",
+  "generated_at": "2026-11-09T00:14:01.508209+00:00",
   "mode": "enforce",
   "items": [
     {
       "mode": "enforce",
       "slot": "hero",
-      "action": "publish_new",
-      "route": "generate_new",
-      "story_id": "story_000398",
-      "event_key": "war-or-military-action-07f9ff4549",
-      "eligible": true,
-      "eligibility_status": "publishable",
-      "eligibility_reasons": [
-        "Candidate passed deterministic editorial eligibility rules"
-      ],
-      "relationship": "new_story",
-      "relationship_confidence": 0.0,
-      "relationship_reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-      "source_class": "international_news",
-      "source_trust": 94,
-      "new_facts": [],
-      "canonical_title": "Aramco Tower hit in heart of Saudi capital as Houthis launch fresh strikes - BBC",
-      "canonical_source": "BBC",
-      "canonical_url": "https://www.bbc.com/news/articles/c6ly3mjx958eo",
-      "decision_trace": [
-        "Sparse event-key resolver guard: true",
-        "Resolver same-event merge bypassed: true"
-      ],
-      "follow_up_candidate_story_id": "",
-      "follow_up_candidate_confidence": 0.0,
-      "follow_up_candidate_milestones": [],
-      "follow_up_candidate_reason_codes": [],
-      "follow_up_candidate_trace": [],
-      "follow_up_candidate_mode": "observe_only",
-      "category_key": "world",
-      "headline": "Houthi strikes hit Aramco Tower in Riyadh, target airport and oil facilities",
-      "link": "https://www.bbc.com/news/articles/c6ly3mjx958eo"
-    },
-    {
-      "mode": "enforce",
-      "slot": "card:0",
       "action": "ignore",
       "route": "skip",
       "story_id": "story_000086",
@@ -72,41 +37,182 @@
       "follow_up_candidate_trace": [],
       "follow_up_candidate_mode": "observe_only",
       "category_key": "world",
-      "headline": "Iran warns of severe retaliation if US resumes strikes as Trump signals pause",
+      "headline": "Iran warns it will escalate attacks if US resumes strikes, as Trump says renewed action is 'highly unlikely' if nuclear talks progress",
       "link": "https://www.aljazeera.com/news/2026/11/8/iran-threatens-to-rain-down-hell-if-us-escalates-war"
     },
     {
       "mode": "enforce",
-      "slot": "card:1",
+      "slot": "card:0",
       "action": "publish_new",
       "route": "generate_new",
-      "story_id": "story_000399",
-      "event_key": "named-person-death:published-at",
+      "story_id": "story_000429",
+      "event_key": "named-person-death:united-kingdom",
       "eligible": true,
       "eligibility_status": "publishable",
       "eligibility_reasons": [
         "Candidate passed deterministic editorial eligibility rules"
       ],
       "relationship": "new_story",
-      "relationship_confidence": 0.100467,
+      "relationship_confidence": 0.402279,
       "relationship_reason": "Created new story: conservative merge requirements were not met",
+      "source_class": "national_news",
+      "source_trust": 91,
+      "new_facts": [
+        "24-year-old"
+      ],
+      "canonical_title": "Parents, sister of far-right Kraków shooter found dead in family home - NBC News",
+      "canonical_source": "NBC News",
+      "canonical_url": "https://www.nbcnews.com/world/europe/krakow-shooting-killed-6-motivated-far-right-views-rcna608080",
+      "decision_trace": [
+        "Category: crime_public_safety",
+        "Facts overlap: 1.00",
+        "Locations overlap: 0.00",
+        "Agencies overlap: 0.00",
+        "Event types overlap: 1.00",
+        "Entities overlap: 0.05",
+        "Title support: 0.25",
+        "Event-key support: 0.60",
+        "Identity anchors: 2",
+        "Threshold: 0.78"
+      ],
+      "follow_up_candidate_story_id": "story_000246",
+      "follow_up_candidate_confidence": 0.78,
+      "follow_up_candidate_milestones": [
+        "death"
+      ],
+      "follow_up_candidate_reason_codes": [
+        "novel_milestone",
+        "location_match",
+        "agency_match",
+        "event_type_match",
+        "entity_match",
+        "identity_anchor_qualified"
+      ],
+      "follow_up_candidate_trace": [
+        "Follow-up candidate mode: observe_only",
+        "Candidate story: story_000246",
+        "Novel milestones: death",
+        "Exact event-key anchor: False",
+        "Facts overlap: 0.00",
+        "Title overlap: 0.00",
+        "Location match: True",
+        "Agency match: True",
+        "Event type match: True",
+        "Entity match: True",
+        "Agency conflict: False",
+        "Event type conflict: False",
+        "Candidate confidence: 0.78"
+      ],
+      "follow_up_candidate_mode": "observe_only",
+      "category_key": "world",
+      "headline": "Krakow shooter's parents and sister found dead at family home as terrorism charges advance",
+      "link": "https://www.nbcnews.com/world/europe/krakow-shooting-killed-6-motivated-far-right-views-rcna608080"
+    },
+    {
+      "mode": "enforce",
+      "slot": "card:1",
+      "action": "publish_new",
+      "route": "generate_new",
+      "story_id": "story_000430",
+      "event_key": "traffic-crash-877e15b885-877e15b885",
+      "eligible": true,
+      "eligibility_status": "publishable",
+      "eligibility_reasons": [
+        "Candidate passed deterministic editorial eligibility rules"
+      ],
+      "relationship": "new_story",
+      "relationship_confidence": 0.0,
+      "relationship_reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+      "source_class": "unknown",
+      "source_trust": 55,
+      "new_facts": [
+        "370 people killed"
+      ],
+      "canonical_title": "Train crash kills seven, injures dozens near Egypt’s Cairo city - Al Jazeera",
+      "canonical_source": "aljazeera.com",
+      "canonical_url": "https://www.aljazeera.com/news/2026/11/8/train-crash-kills-four-injures-dozens-near-egypts-cairo-city",
+      "decision_trace": [
+        "Sparse event-key resolver guard: true",
+        "Resolver same-event merge bypassed: true"
+      ],
+      "follow_up_candidate_story_id": "",
+      "follow_up_candidate_confidence": 0.0,
+      "follow_up_candidate_milestones": [],
+      "follow_up_candidate_reason_codes": [],
+      "follow_up_candidate_trace": [],
+      "follow_up_candidate_mode": "observe_only",
+      "category_key": "world",
+      "headline": "Train collision near Cairo kills seven, injures more than 125",
+      "link": "https://www.aljazeera.com/news/2026/11/8/train-crash-kills-four-injures-dozens-near-egypts-cairo-city"
+    },
+    {
+      "mode": "enforce",
+      "slot": "card:2",
+      "action": "ignore",
+      "route": "skip",
+      "story_id": "story_000400",
+      "event_key": "shooting-37af62bc33",
+      "eligible": true,
+      "eligibility_status": "publishable",
+      "eligibility_reasons": [
+        "Candidate passed deterministic editorial eligibility rules"
+      ],
+      "relationship": "same_event",
+      "relationship_confidence": 1.0,
+      "relationship_reason": "Exact event key already belongs to this story",
       "source_class": "international_news",
       "source_trust": 94,
-      "new_facts": [
-        "100 people injured",
-        "2009 people killed",
-        "7 people dead"
-      ],
-      "canonical_title": "Seven dead and more than 100 injured after trains collide in Egypt",
+      "new_facts": [],
+      "canonical_title": "Surgeon having lunch near Krakow shooting undoubtedly saved officer's life, colleague says",
       "canonical_source": "bbc.co.uk",
-      "canonical_url": "https://www.bbc.co.uk/news/articles/cwvgr20mmmevo?at_medium=RSS&at_campaign=rss",
+      "canonical_url": "https://www.bbc.co.uk/news/articles/c5x2vw4e1gx1o?at_medium=RSS&at_campaign=rss",
+      "decision_trace": [
+        "Relationship: same_event",
+        "Exact event-key mapping: true",
+        "No novel follow-up milestone: true",
+        "Confidence: 1.00"
+      ],
+      "follow_up_candidate_story_id": "",
+      "follow_up_candidate_confidence": 0.0,
+      "follow_up_candidate_milestones": [],
+      "follow_up_candidate_reason_codes": [],
+      "follow_up_candidate_trace": [],
+      "follow_up_candidate_mode": "observe_only",
+      "category_key": "world",
+      "headline": "Surgeons dining in Krakow described treating shooting victims in street before ambulances arrived",
+      "link": "https://www.bbc.co.uk/news/articles/c5x2vw4e1gx1o?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "mode": "enforce",
+      "slot": "hero",
+      "action": "publish_new",
+      "route": "generate_new",
+      "story_id": "story_000431",
+      "event_key": "arrest-pennsylvania",
+      "eligible": true,
+      "eligibility_status": "publishable",
+      "eligibility_reasons": [
+        "Candidate passed deterministic editorial eligibility rules"
+      ],
+      "relationship": "new_story",
+      "relationship_confidence": 0.130297,
+      "relationship_reason": "Created new story: conservative merge requirements were not met",
+      "source_class": "national_news",
+      "source_trust": 91,
+      "new_facts": [
+        "17-year-old",
+        "3 people arrested"
+      ],
+      "canonical_title": "Tensions rise in Philadelphia over boycott of Jewish-owned restaurants - NBC News",
+      "canonical_source": "NBC News",
+      "canonical_url": "https://www.nbcnews.com/news/us-news/billboards-urge-boycott-boycott-jewish-owned-businesses-rcna608119",
       "decision_trace": [
         "Category: crime_public_safety",
         "Facts overlap: 0.00",
         "Locations overlap: 0.00",
         "Agencies overlap: 0.00",
-        "Event types overlap: 0.67",
-        "Entities overlap: 0.08",
+        "Event types overlap: 1.00",
+        "Entities overlap: 0.03",
         "Title support: 0.00",
         "Event-key support: 0.00",
         "Identity anchors: 2",
@@ -118,89 +224,15 @@
       "follow_up_candidate_reason_codes": [],
       "follow_up_candidate_trace": [],
       "follow_up_candidate_mode": "observe_only",
-      "category_key": "world",
-      "headline": "At least seven killed, over 100 injured in train collision near Giza, Egypt",
-      "link": "https://www.bbc.co.uk/news/articles/cwvgr20mmmevo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "mode": "enforce",
-      "slot": "card:2",
-      "action": "publish_new",
-      "route": "generate_new",
-      "story_id": "story_000400",
-      "event_key": "shooting-37af62bc33",
-      "eligible": true,
-      "eligibility_status": "publishable",
-      "eligibility_reasons": [
-        "Candidate passed deterministic editorial eligibility rules"
-      ],
-      "relationship": "new_story",
-      "relationship_confidence": 0.0,
-      "relationship_reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-      "source_class": "international_news",
-      "source_trust": 94,
-      "new_facts": [
-        "24-year-old"
-      ],
-      "canonical_title": "Surgeon having lunch near Krakow shooting undoubtedly saved officer's life, colleague says",
-      "canonical_source": "bbc.co.uk",
-      "canonical_url": "https://www.bbc.co.uk/news/articles/c5x2vw4e1gx1o?at_medium=RSS&at_campaign=rss",
-      "decision_trace": [
-        "Sparse event-key resolver guard: true",
-        "Resolver same-event merge bypassed: true"
-      ],
-      "follow_up_candidate_story_id": "",
-      "follow_up_candidate_confidence": 0.0,
-      "follow_up_candidate_milestones": [],
-      "follow_up_candidate_reason_codes": [],
-      "follow_up_candidate_trace": [],
-      "follow_up_candidate_mode": "observe_only",
-      "category_key": "world",
-      "headline": "Two Polish officers who stopped Krakow gunman emerge from comas as prosecutors open terror investigation",
-      "link": "https://www.bbc.co.uk/news/articles/c5x2vw4e1gx1o?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "mode": "enforce",
-      "slot": "hero",
-      "action": "publish_new",
-      "route": "generate_new",
-      "story_id": "story_000401",
-      "event_key": "named-person-death:north-carolina",
-      "eligible": true,
-      "eligibility_status": "publishable",
-      "eligibility_reasons": [
-        "Candidate passed deterministic editorial eligibility rules"
-      ],
-      "relationship": "new_story",
-      "relationship_confidence": 0.0,
-      "relationship_reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-      "source_class": "national_news",
-      "source_trust": 91,
-      "new_facts": [
-        "19-year-old"
-      ],
-      "canonical_title": "Arrest made following shootings that killed 1 and injured 3 others on Winston-Salem State University campus - NBC News",
-      "canonical_source": "NBC News",
-      "canonical_url": "https://www.nbcnews.com/news/us-news/shootings-winston-salem-state-university-campus-rcna608082",
-      "decision_trace": [
-        "Sparse event-key resolver guard: true",
-        "Resolver same-event merge bypassed: true"
-      ],
-      "follow_up_candidate_story_id": "",
-      "follow_up_candidate_confidence": 0.0,
-      "follow_up_candidate_milestones": [],
-      "follow_up_candidate_reason_codes": [],
-      "follow_up_candidate_trace": [],
-      "follow_up_candidate_mode": "observe_only",
       "category_key": "us",
-      "headline": "Arrest made in shooting that killed one during Winston-Salem State University homecoming weekend",
-      "link": "https://www.nbcnews.com/news/us-news/shootings-winston-salem-state-university-campus-rcna608082"
+      "headline": "Philadelphia boycott of Jewish-owned restaurants draws dueling protests, three arrests",
+      "link": "https://www.nbcnews.com/news/us-news/billboards-urge-boycott-boycott-jewish-owned-businesses-rcna608119"
     },
     {
       "mode": "enforce",
       "slot": "hero",
-      "action": "publish_new",
-      "route": "generate_new",
+      "action": "ignore",
+      "route": "skip",
       "story_id": "story_000402",
       "event_key": "unknown-event-5b5d3c2bdd",
       "eligible": true,
@@ -208,9 +240,9 @@
       "eligibility_reasons": [
         "Candidate passed deterministic editorial eligibility rules"
       ],
-      "relationship": "new_story",
-      "relationship_confidence": 0.0,
-      "relationship_reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+      "relationship": "same_event",
+      "relationship_confidence": 1.0,
+      "relationship_reason": "Exact event key already belongs to this story",
       "source_class": "national_news",
       "source_trust": 91,
       "new_facts": [],
@@ -218,66 +250,10 @@
       "canonical_source": "NBC News",
       "canonical_url": "https://www.nbcnews.com/tech/tech-news/nvidia-ceo-jensen-huang-investigation-rcna608148",
       "decision_trace": [
-        "Sparse event-key resolver guard: true",
-        "Resolver same-event merge bypassed: true"
-      ],
-      "follow_up_candidate_story_id": "story_000352",
-      "follow_up_candidate_confidence": 0.641667,
-      "follow_up_candidate_milestones": [
-        "investigation",
-        "opening"
-      ],
-      "follow_up_candidate_reason_codes": [
-        "novel_milestone",
-        "location_match",
-        "entity_match",
-        "title_continuity",
-        "identity_anchor_qualified"
-      ],
-      "follow_up_candidate_trace": [
-        "Follow-up candidate mode: observe_only",
-        "Candidate story: story_000352",
-        "Novel milestones: investigation, opening",
-        "Exact event-key anchor: False",
-        "Facts overlap: 0.00",
-        "Title overlap: 0.42",
-        "Location match: True",
-        "Agency match: False",
-        "Event type match: False",
-        "Entity match: True",
-        "Agency conflict: False",
-        "Event type conflict: False",
-        "Candidate confidence: 0.64"
-      ],
-      "follow_up_candidate_mode": "observe_only",
-      "category_key": "business",
-      "headline": "Nvidia board launches independent investigation into CEO Jensen Huang after reports of Chinese intelligence targeting",
-      "link": "https://www.nbcnews.com/tech/tech-news/nvidia-ceo-jensen-huang-investigation-rcna608148"
-    },
-    {
-      "mode": "enforce",
-      "slot": "card:0",
-      "action": "publish_new",
-      "route": "generate_new",
-      "story_id": "story_000403",
-      "event_key": "unknown-event-175e8dd895",
-      "eligible": true,
-      "eligibility_status": "low_value",
-      "eligibility_reasons": [
-        "Aggregator source accepted at reduced editorial value"
-      ],
-      "relationship": "new_story",
-      "relationship_confidence": 0.0,
-      "relationship_reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-      "source_class": "aggregator",
-      "source_trust": 45,
-      "new_facts": [],
-      "canonical_title": "Top 5 stocks to watch this week - Yahoo Finance",
-      "canonical_source": "finance.yahoo.com",
-      "canonical_url": "https://finance.yahoo.com/markets/stocks/articles/top-5-stocks-watch-week-162025831.html",
-      "decision_trace": [
-        "Sparse event-key resolver guard: true",
-        "Resolver same-event merge bypassed: true"
+        "Relationship: same_event",
+        "Exact event-key mapping: true",
+        "No novel follow-up milestone: true",
+        "Confidence: 1.00"
       ],
       "follow_up_candidate_story_id": "",
       "follow_up_candidate_confidence": 0.0,
@@ -286,14 +262,14 @@
       "follow_up_candidate_trace": [],
       "follow_up_candidate_mode": "observe_only",
       "category_key": "business",
-      "headline": "Wall Street braces for pivotal week with earnings from Constellation Energy, CoreWeave, Nebius, Applied Materials and Cisco, plus fresh inflation data, as Nasdaq sits in correction territory amid AI spending concerns",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/top-5-stocks-watch-week-162025831.html"
+      "headline": "Nvidia board launches independent investigation into CEO Jensen Huang after reports he was targeted by Chinese intelligence; Trump publicly defends Huang and reveals Rubio-level concern inside government",
+      "link": "https://www.nbcnews.com/tech/tech-news/nvidia-ceo-jensen-huang-investigation-rcna608148"
     },
     {
       "mode": "enforce",
-      "slot": "card:1",
-      "action": "publish_new",
-      "route": "generate_new",
+      "slot": "card:0",
+      "action": "ignore",
+      "route": "skip",
       "story_id": "story_000404",
       "event_key": "cybersecurity-incident-1aec61b1c8",
       "eligible": true,
@@ -301,15 +277,89 @@
       "eligibility_reasons": [
         "Candidate passed deterministic editorial eligibility rules"
       ],
-      "relationship": "new_story",
-      "relationship_confidence": 0.0,
-      "relationship_reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+      "relationship": "same_event",
+      "relationship_confidence": 1.0,
+      "relationship_reason": "Exact event key already belongs to this story",
       "source_class": "unknown",
       "source_trust": 55,
       "new_facts": [],
       "canonical_title": "Binance names new CFO days after $6.3 billion cryptocurrency hack - Fox Business",
       "canonical_source": "foxbusiness.com",
       "canonical_url": "https://www.foxbusiness.com/fox-news-tech/binance-names-new-cfo-days-cryptocurrency-hack",
+      "decision_trace": [
+        "Relationship: same_event",
+        "Exact event-key mapping: true",
+        "No novel follow-up milestone: true",
+        "Confidence: 1.00"
+      ],
+      "follow_up_candidate_story_id": "",
+      "follow_up_candidate_confidence": 0.0,
+      "follow_up_candidate_milestones": [],
+      "follow_up_candidate_reason_codes": [],
+      "follow_up_candidate_trace": [],
+      "follow_up_candidate_mode": "observe_only",
+      "category_key": "business",
+      "headline": "Binance names new CFO days after $6.3 billion crypto hack attributed to North Korean hackers",
+      "link": "https://www.foxbusiness.com/fox-news-tech/binance-names-new-cfo-days-cryptocurrency-hack"
+    },
+    {
+      "mode": "enforce",
+      "slot": "card:1",
+      "action": "ignore",
+      "route": "skip",
+      "story_id": "story_000403",
+      "event_key": "unknown-event-175e8dd895",
+      "eligible": true,
+      "eligibility_status": "low_value",
+      "eligibility_reasons": [
+        "Aggregator source accepted at reduced editorial value"
+      ],
+      "relationship": "same_event",
+      "relationship_confidence": 1.0,
+      "relationship_reason": "Exact event key already belongs to this story",
+      "source_class": "aggregator",
+      "source_trust": 45,
+      "new_facts": [],
+      "canonical_title": "Top 5 stocks to watch this week - Yahoo Finance",
+      "canonical_source": "finance.yahoo.com",
+      "canonical_url": "https://finance.yahoo.com/markets/stocks/articles/top-5-stocks-watch-week-162025831.html",
+      "decision_trace": [
+        "Relationship: same_event",
+        "Exact event-key mapping: true",
+        "No novel follow-up milestone: true",
+        "Confidence: 1.00"
+      ],
+      "follow_up_candidate_story_id": "",
+      "follow_up_candidate_confidence": 0.0,
+      "follow_up_candidate_milestones": [],
+      "follow_up_candidate_reason_codes": [],
+      "follow_up_candidate_trace": [],
+      "follow_up_candidate_mode": "observe_only",
+      "category_key": "business",
+      "headline": "Markets face pivotal week with inflation data, Fed rate expectations, and AI earnings",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/top-5-stocks-watch-week-162025831.html"
+    },
+    {
+      "mode": "enforce",
+      "slot": "card:2",
+      "action": "publish_new",
+      "route": "generate_new",
+      "story_id": "story_000432",
+      "event_key": "traffic-crash-bc7994f839-bc7994f839",
+      "eligible": true,
+      "eligibility_status": "publishable",
+      "eligibility_reasons": [
+        "Candidate passed deterministic editorial eligibility rules"
+      ],
+      "relationship": "new_story",
+      "relationship_confidence": 0.0,
+      "relationship_reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+      "source_class": "unknown",
+      "source_trust": 55,
+      "new_facts": [],
+      "canonical_title": "Warren Buffett Has 1 Simple Rule for Surviving a Stock Market Crash, and History Says It's Never Once Failed - The Motley Fool",
+      "canonical_source": "fool.com",
+      "canonical_url": "https://www.fool.com/investing/2026/11/08/warren-buffett-has-1-crucial-rule-for-surviving-a/",
       "decision_trace": [
         "Sparse event-key resolver guard: true",
         "Resolver same-event merge bypassed: true"
@@ -321,49 +371,14 @@
       "follow_up_candidate_trace": [],
       "follow_up_candidate_mode": "observe_only",
       "category_key": "business",
-      "headline": "Binance names Justin Yek as CFO, says leadership change unrelated to $6.3 billion hack",
-      "link": "https://www.foxbusiness.com/fox-news-tech/binance-names-new-cfo-days-cryptocurrency-hack"
+      "headline": "Warren Buffett's Market-Crash Strategy: Buy and Hold Through Volatility",
+      "link": "https://www.fool.com/investing/2026/11/08/warren-buffett-has-1-crucial-rule-for-surviving-a/"
     },
     {
       "mode": "enforce",
       "slot": "hero",
-      "action": "publish_new",
-      "route": "generate_new",
-      "story_id": "story_000405",
-      "event_key": "unknown-event-2c3b9ff4fc",
-      "eligible": true,
-      "eligibility_status": "publishable",
-      "eligibility_reasons": [
-        "Candidate passed deterministic editorial eligibility rules"
-      ],
-      "relationship": "new_story",
-      "relationship_confidence": 0.0,
-      "relationship_reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-      "source_class": "technology_news",
-      "source_trust": 87,
-      "new_facts": [],
-      "canonical_title": "Nvidia will investigate CEO Jensen Huang’s relationship with possible Chinese spy",
-      "canonical_source": "techcrunch.com",
-      "canonical_url": "https://techcrunch.com/2026/11/08/nvidia-says-its-investigating-ceo-jensen-huangs-relationship-with-possible-chinese-spy/",
-      "decision_trace": [
-        "Sparse event-key resolver guard: true",
-        "Resolver same-event merge bypassed: true"
-      ],
-      "follow_up_candidate_story_id": "",
-      "follow_up_candidate_confidence": 0.0,
-      "follow_up_candidate_milestones": [],
-      "follow_up_candidate_reason_codes": [],
-      "follow_up_candidate_trace": [],
-      "follow_up_candidate_mode": "observe_only",
-      "category_key": "tech",
-      "headline": "Nvidia board launches independent investigation into CEO's relationship with alleged Chinese operative",
-      "link": "https://techcrunch.com/2026/11/08/nvidia-says-its-investigating-ceo-jensen-huangs-relationship-with-possible-chinese-spy/"
-    },
-    {
-      "mode": "enforce",
-      "slot": "card:0",
-      "action": "publish_new",
-      "route": "generate_new",
+      "action": "ignore",
+      "route": "skip",
       "story_id": "story_000406",
       "event_key": "unknown-event-0bc7a64d0c",
       "eligible": true,
@@ -371,9 +386,9 @@
       "eligibility_reasons": [
         "Candidate passed deterministic editorial eligibility rules"
       ],
-      "relationship": "new_story",
-      "relationship_confidence": 0.0,
-      "relationship_reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+      "relationship": "same_event",
+      "relationship_confidence": 1.0,
+      "relationship_reason": "Exact event key already belongs to this story",
       "source_class": "technology_news",
       "source_trust": 87,
       "new_facts": [],
@@ -381,6 +396,43 @@
       "canonical_source": "techcrunch.com",
       "canonical_url": "https://techcrunch.com/2026/11/08/coordinated-disturbances-haunt-grids-worldwide-heres-how-researchers-solved-the-mystery/",
       "decision_trace": [
+        "Relationship: same_event",
+        "Exact event-key mapping: true",
+        "No novel follow-up milestone: true",
+        "Confidence: 1.00"
+      ],
+      "follow_up_candidate_story_id": "",
+      "follow_up_candidate_confidence": 0.0,
+      "follow_up_candidate_milestones": [],
+      "follow_up_candidate_reason_codes": [],
+      "follow_up_candidate_trace": [],
+      "follow_up_candidate_mode": "observe_only",
+      "category_key": "tech",
+      "headline": "Researchers trace mysterious global power grid frequency drops to synchronized battery backup systems",
+      "link": "https://techcrunch.com/2026/11/08/coordinated-disturbances-haunt-grids-worldwide-heres-how-researchers-solved-the-mystery/"
+    },
+    {
+      "mode": "enforce",
+      "slot": "card:0",
+      "action": "publish_new",
+      "route": "generate_new",
+      "story_id": "story_000433",
+      "event_key": "unknown-event-1d7d9360bc",
+      "eligible": true,
+      "eligibility_status": "publishable",
+      "eligibility_reasons": [
+        "Candidate passed deterministic editorial eligibility rules"
+      ],
+      "relationship": "new_story",
+      "relationship_confidence": 0.0,
+      "relationship_reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+      "source_class": "technology_news",
+      "source_trust": 89,
+      "new_facts": [],
+      "canonical_title": "Here’s the full text of Jensen Huang’s memo to Nvidia",
+      "canonical_source": "theverge.com",
+      "canonical_url": "https://www.theverge.com/ai-artificial-intelligence/1029595/full-text-jensen-huang-affair-memo-nvidia",
+      "decision_trace": [
         "Sparse event-key resolver guard: true",
         "Resolver same-event merge bypassed: true"
       ],
@@ -391,14 +443,14 @@
       "follow_up_candidate_trace": [],
       "follow_up_candidate_mode": "observe_only",
       "category_key": "tech",
-      "headline": "Researchers trace worldwide power grid frequency drops to synchronized battery checks",
-      "link": "https://techcrunch.com/2026/11/08/coordinated-disturbances-haunt-grids-worldwide-heres-how-researchers-solved-the-mystery/"
+      "headline": "Nvidia CEO Jensen Huang acknowledges affair with alleged Chinese government agent as board launches security investigation",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1029595/full-text-jensen-huang-affair-memo-nvidia"
     },
     {
       "mode": "enforce",
       "slot": "card:1",
-      "action": "publish_new",
-      "route": "generate_new",
+      "action": "ignore",
+      "route": "skip",
       "story_id": "story_000407",
       "event_key": "unknown-event-69a23b1e6b",
       "eligible": true,
@@ -406,9 +458,9 @@
       "eligibility_reasons": [
         "Candidate passed deterministic editorial eligibility rules"
       ],
-      "relationship": "new_story",
-      "relationship_confidence": 0.0,
-      "relationship_reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+      "relationship": "same_event",
+      "relationship_confidence": 1.0,
+      "relationship_reason": "Exact event key already belongs to this story",
       "source_class": "technology_news",
       "source_trust": 89,
       "new_facts": [],
@@ -416,8 +468,10 @@
       "canonical_source": "theverge.com",
       "canonical_url": "https://www.theverge.com/ai-artificial-intelligence/1029552/apple-siri-ai-agentic",
       "decision_trace": [
-        "Sparse event-key resolver guard: true",
-        "Resolver same-event merge bypassed: true"
+        "Relationship: same_event",
+        "Exact event-key mapping: true",
+        "No novel follow-up milestone: true",
+        "Confidence: 1.00"
       ],
       "follow_up_candidate_story_id": "",
       "follow_up_candidate_confidence": 0.0,
@@ -426,7 +480,7 @@
       "follow_up_candidate_trace": [],
       "follow_up_candidate_mode": "observe_only",
       "category_key": "tech",
-      "headline": "Apple accelerates Siri overhaul to compete with OpenAI and Meta AI assistants",
+      "headline": "Apple accelerates Siri upgrades under internal pressure to match OpenAI and Meta AI assistants",
       "link": "https://www.theverge.com/ai-artificial-intelligence/1029552/apple-siri-ai-agentic"
     },
     {
@@ -434,8 +488,8 @@
       "slot": "card:2",
       "action": "publish_new",
       "route": "generate_new",
-      "story_id": "story_000408",
-      "event_key": "unknown-event-5ab9c8a3d4",
+      "story_id": "story_000434",
+      "event_key": "unknown-event-d65536d1db",
       "eligible": true,
       "eligibility_status": "publishable",
       "eligibility_reasons": [
@@ -447,9 +501,9 @@
       "source_class": "technology_news",
       "source_trust": 89,
       "new_facts": [],
-      "canonical_title": "Epic Games Launcher is coming to SteamOS",
+      "canonical_title": "Elvis and Eminem rights holders are suing Suno",
       "canonical_source": "theverge.com",
-      "canonical_url": "https://www.theverge.com/games/1029557/epic-games-launcher-is-coming-to-steamos",
+      "canonical_url": "https://www.theverge.com/ai-artificial-intelligence/1029533/elvis-eminem-suno-ai-music-clone-lawsuit",
       "decision_trace": [
         "Sparse event-key resolver guard: true",
         "Resolver same-event merge bypassed: true"
@@ -461,156 +515,52 @@
       "follow_up_candidate_trace": [],
       "follow_up_candidate_mode": "observe_only",
       "category_key": "tech",
-      "headline": "Epic Games Launcher to officially support SteamOS and Steam Deck",
-      "link": "https://www.theverge.com/games/1029557/epic-games-launcher-is-coming-to-steamos"
-    },
-    {
-      "mode": "enforce",
-      "slot": "hero",
-      "action": "publish_new",
-      "route": "generate_new",
-      "story_id": "story_000409",
-      "event_key": "unknown-event-0ec00ed3a1",
-      "eligible": true,
-      "eligibility_status": "publishable",
-      "eligibility_reasons": [
-        "Candidate passed deterministic editorial eligibility rules"
-      ],
-      "relationship": "new_story",
-      "relationship_confidence": 0.0,
-      "relationship_reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-      "source_class": "sports_news",
-      "source_trust": 89,
-      "new_facts": [],
-      "canonical_title": "Detroit Lions vs. Miami Dolphins Live Score and Stats - November 8, 2026 Gametracker - CBS Sports",
-      "canonical_source": "CBS Sports",
-      "canonical_url": "https://www.cbssports.com/nfl/gametracker/recap/NFL_20261108_DET@MIA/",
-      "decision_trace": [
-        "Sparse event-key resolver guard: true",
-        "Resolver same-event merge bypassed: true"
-      ],
-      "follow_up_candidate_story_id": "",
-      "follow_up_candidate_confidence": 0.0,
-      "follow_up_candidate_milestones": [],
-      "follow_up_candidate_reason_codes": [],
-      "follow_up_candidate_trace": [],
-      "follow_up_candidate_mode": "observe_only",
-      "category_key": "sports",
-      "headline": "Lions extend win streak to four with 19-9 victory over Dolphins in emotional week following Campbell injury",
-      "link": "https://www.cbssports.com/nfl/gametracker/recap/NFL_20261108_DET@MIA/"
-    },
-    {
-      "mode": "enforce",
-      "slot": "card:0",
-      "action": "publish_new",
-      "route": "generate_new",
-      "story_id": "story_000410",
-      "event_key": "unknown-event-136b987fea",
-      "eligible": true,
-      "eligibility_status": "publishable",
-      "eligibility_reasons": [
-        "Candidate passed deterministic editorial eligibility rules"
-      ],
-      "relationship": "new_story",
-      "relationship_confidence": 0.0,
-      "relationship_reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-      "source_class": "sports_news",
-      "source_trust": 89,
-      "new_facts": [],
-      "canonical_title": "Denver Broncos vs. Carolina Panthers Live Score and Stats - November 8, 2026 Gametracker - CBS Sports",
-      "canonical_source": "CBS Sports",
-      "canonical_url": "https://www.cbssports.com/nfl/gametracker/recap/NFL_20261108_DEN@CAR/",
-      "decision_trace": [
-        "Sparse event-key resolver guard: true",
-        "Resolver same-event merge bypassed: true"
-      ],
-      "follow_up_candidate_story_id": "",
-      "follow_up_candidate_confidence": 0.0,
-      "follow_up_candidate_milestones": [],
-      "follow_up_candidate_reason_codes": [],
-      "follow_up_candidate_trace": [],
-      "follow_up_candidate_mode": "observe_only",
-      "category_key": "sports",
-      "headline": "Broncos beat Panthers 26-21 for fifth straight win behind Nix's two touchdowns",
-      "link": "https://www.cbssports.com/nfl/gametracker/recap/NFL_20261108_DEN@CAR/"
-    },
-    {
-      "mode": "enforce",
-      "slot": "card:1",
-      "action": "publish_new",
-      "route": "generate_new",
-      "story_id": "story_000411",
-      "event_key": "unknown-event-a9d9d865d6",
-      "eligible": true,
-      "eligibility_status": "low_value",
-      "eligibility_reasons": [
-        "Aggregator source accepted at reduced editorial value"
-      ],
-      "relationship": "new_story",
-      "relationship_confidence": 0.0,
-      "relationship_reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-      "source_class": "aggregator",
-      "source_trust": 45,
-      "new_facts": [],
-      "canonical_title": "Cowboys survive after wild CeeDee Lamb catch and fumble late in win over Colts - Yahoo Sports",
-      "canonical_source": "sports.yahoo.com",
-      "canonical_url": "https://sports.yahoo.com/nfl/breaking-news/article/cowboys-survive-after-wild-ceedee-lamb-catch-and-fumble-late-in-win-over-colts-213512226.html",
-      "decision_trace": [
-        "Sparse event-key resolver guard: true",
-        "Resolver same-event merge bypassed: true"
-      ],
-      "follow_up_candidate_story_id": "",
-      "follow_up_candidate_confidence": 0.0,
-      "follow_up_candidate_milestones": [],
-      "follow_up_candidate_reason_codes": [],
-      "follow_up_candidate_trace": [],
-      "follow_up_candidate_mode": "observe_only",
-      "category_key": "sports",
-      "headline": "Cowboys beat Colts 27-23 on late Javonte Williams touchdown to improve to 4-5",
-      "link": "https://sports.yahoo.com/nfl/breaking-news/article/cowboys-survive-after-wild-ceedee-lamb-catch-and-fumble-late-in-win-over-colts-213512226.html"
-    },
-    {
-      "mode": "enforce",
-      "slot": "card:2",
-      "action": "publish_new",
-      "route": "generate_new",
-      "story_id": "story_000412",
-      "event_key": "unknown-event-e844d9d098",
-      "eligible": true,
-      "eligibility_status": "low_value",
-      "eligibility_reasons": [
-        "Aggregator source accepted at reduced editorial value"
-      ],
-      "relationship": "new_story",
-      "relationship_confidence": 0.0,
-      "relationship_reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-      "source_class": "aggregator",
-      "source_trust": 45,
-      "new_facts": [],
-      "canonical_title": "Week 9 NFL scores, live updates: Ladd McConkey, Josh Jacobs questionable to return; Tank Dell's first TD returning from gruesome knee injury goes for 63 yards - Yahoo Sports",
-      "canonical_source": "sports.yahoo.com",
-      "canonical_url": "https://sports.yahoo.com/nfl/live/nfl-scores-news-live-updates-week-9-schedule-inactives-highlights-stats-where-to-watch-140628566.html",
-      "decision_trace": [
-        "Sparse event-key resolver guard: true",
-        "Resolver same-event merge bypassed: true"
-      ],
-      "follow_up_candidate_story_id": "",
-      "follow_up_candidate_confidence": 0.0,
-      "follow_up_candidate_milestones": [],
-      "follow_up_candidate_reason_codes": [],
-      "follow_up_candidate_trace": [],
-      "follow_up_candidate_mode": "observe_only",
-      "category_key": "sports",
-      "headline": "Saints edge Browns in overtime, Tank Dell scores 63-yard touchdown in return from knee injury",
-      "link": "https://sports.yahoo.com/nfl/live/nfl-scores-news-live-updates-week-9-schedule-inactives-highlights-stats-where-to-watch-140628566.html"
+      "headline": "Elvis Presley estate and Eminem publisher sue AI music company Suno over voice cloning",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1029533/elvis-eminem-suno-ai-music-clone-lawsuit"
     },
     {
       "mode": "enforce",
       "slot": "card:3",
+      "action": "ignore",
+      "route": "skip",
+      "story_id": "story_000408",
+      "event_key": "unknown-event-5ab9c8a3d4",
+      "eligible": true,
+      "eligibility_status": "publishable",
+      "eligibility_reasons": [
+        "Candidate passed deterministic editorial eligibility rules"
+      ],
+      "relationship": "same_event",
+      "relationship_confidence": 1.0,
+      "relationship_reason": "Exact source article URL already belongs to this story",
+      "source_class": "technology_news",
+      "source_trust": 89,
+      "new_facts": [],
+      "canonical_title": "Epic Games Launcher is coming to SteamOS - The Verge",
+      "canonical_source": "The Verge",
+      "canonical_url": "https://www.theverge.com/games/1029557/epic-games-launcher-is-coming-to-steamos",
+      "decision_trace": [
+        "Exact source article identity: true",
+        "Normalized source URL: https://www.theverge.com/games/1029557/epic-games-launcher-is-coming-to-steamos",
+        "Confidence: 1.00"
+      ],
+      "follow_up_candidate_story_id": "",
+      "follow_up_candidate_confidence": 0.0,
+      "follow_up_candidate_milestones": [],
+      "follow_up_candidate_reason_codes": [],
+      "follow_up_candidate_trace": [],
+      "follow_up_candidate_mode": "observe_only",
+      "category_key": "tech",
+      "headline": "Epic Games confirms launcher support for SteamOS and other Linux distributions",
+      "link": "https://www.theverge.com/games/1029557/epic-games-launcher-is-coming-to-steamos"
+    },
+    {
+      "mode": "enforce",
+      "slot": "card:4",
       "action": "publish_new",
       "route": "generate_new",
-      "story_id": "story_000413",
-      "event_key": "shooting-bbcd5e52aa",
+      "story_id": "story_000435",
+      "event_key": "unknown-event-a399c1305e",
       "eligible": true,
       "eligibility_status": "publishable",
       "eligibility_reasons": [
@@ -622,9 +572,9 @@
       "source_class": "unknown",
       "source_trust": 55,
       "new_facts": [],
-      "canonical_title": "J.J. McCarthy heads to locker room after Zack Baun hit in third quarter - NBC Sports",
-      "canonical_source": "nbcsports.com",
-      "canonical_url": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/j-j-mccarthy-heads-to-locker-room-after-zach-baun-hit-in-third-quarter",
+      "canonical_title": "Akai MPC is moving toward an open platform, and the first step is here - synth anatomy",
+      "canonical_source": "synthanatomy.com",
+      "canonical_url": "https://synthanatomy.com/2026/11/akai-mpc-is-now-open-source-standalone-and-mpc-sample.html",
       "decision_trace": [
         "Sparse event-key resolver guard: true",
         "Resolver same-event merge bypassed: true"
@@ -635,17 +585,17 @@
       "follow_up_candidate_reason_codes": [],
       "follow_up_candidate_trace": [],
       "follow_up_candidate_mode": "observe_only",
-      "category_key": "sports",
-      "headline": "Giants' J.J. McCarthy leaves game with hip injury, Jameis Winston leads New York to 19-11 win over Eagles",
-      "link": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/j-j-mccarthy-heads-to-locker-room-after-zach-baun-hit-in-third-quarter"
+      "category_key": "tech",
+      "headline": "Akai opens GitHub repository for MPC music production hardware",
+      "link": "https://synthanatomy.com/2026/11/akai-mpc-is-now-open-source-standalone-and-mpc-sample.html"
     },
     {
       "mode": "enforce",
-      "slot": "card:4",
+      "slot": "card:5",
       "action": "publish_new",
       "route": "generate_new",
-      "story_id": "story_000414",
-      "event_key": "traffic-crash-58e6b90d55-58e6b90d55",
+      "story_id": "story_000436",
+      "event_key": "business-transaction-35687bac82",
       "eligible": true,
       "eligibility_status": "publishable",
       "eligibility_reasons": [
@@ -654,12 +604,12 @@
       "relationship": "new_story",
       "relationship_confidence": 0.0,
       "relationship_reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-      "source_class": "international_news",
-      "source_trust": 94,
+      "source_class": "technology_news",
+      "source_trust": 87,
       "new_facts": [],
-      "canonical_title": "Norris wins gripping race after Antonelli and Russell errors",
-      "canonical_source": "bbc.co.uk",
-      "canonical_url": "https://www.bbc.co.uk/sport/formula1/articles/c35yn19r7zkvo?at_medium=RSS&at_campaign=rss",
+      "canonical_title": "Sequoia partners reportedly blindsided when Roelof Botha joined SpaceX board",
+      "canonical_source": "techcrunch.com",
+      "canonical_url": "https://techcrunch.com/2026/11/08/sequoia-partners-reportedly-blindsided-when-roelof-botha-joined-spacex-board/",
       "decision_trace": [
         "Sparse event-key resolver guard: true",
         "Resolver same-event merge bypassed: true"
@@ -670,17 +620,17 @@
       "follow_up_candidate_reason_codes": [],
       "follow_up_candidate_trace": [],
       "follow_up_candidate_mode": "observe_only",
-      "category_key": "sports",
-      "headline": "Lando Norris wins Sao Paulo Grand Prix after rivals' mistakes as Mercedes clinches constructors' title",
-      "link": "https://www.bbc.co.uk/sport/formula1/articles/c35yn19r7zkvo?at_medium=RSS&at_campaign=rss"
+      "category_key": "tech",
+      "headline": "Sequoia Capital partners blindsided by Roelof Botha's SpaceX board appointment",
+      "link": "https://techcrunch.com/2026/11/08/sequoia-partners-reportedly-blindsided-when-roelof-botha-joined-spacex-board/"
     },
     {
       "mode": "enforce",
-      "slot": "card:5",
+      "slot": "hero",
       "action": "publish_new",
       "route": "generate_new",
-      "story_id": "story_000415",
-      "event_key": "unknown-event-cf1fdacabc",
+      "story_id": "story_000437",
+      "event_key": "unknown-event-a19d93c3b7",
       "eligible": true,
       "eligibility_status": "publishable",
       "eligibility_reasons": [
@@ -692,9 +642,9 @@
       "source_class": "sports_news",
       "source_trust": 89,
       "new_facts": [],
-      "canonical_title": "10 NFL trades that need to happen: Derrick Henry to Patriots, Budda Baker to Bills among options - CBS Sports",
+      "canonical_title": "New York Jets vs. Kansas City Chiefs Live Score and Stats - November 8, 2026 Gametracker - CBS Sports",
       "canonical_source": "CBS Sports",
-      "canonical_url": "https://www.cbssports.com/nfl/news/10-nfl-trades-deadline-derrick-henry-patriots-budda-baker-bills/",
+      "canonical_url": "https://www.cbssports.com/nfl/gametracker/recap/NFL_20261108_NYJ@KC/",
       "decision_trace": [
         "Sparse event-key resolver guard: true",
         "Resolver same-event merge bypassed: true"
@@ -706,14 +656,162 @@
       "follow_up_candidate_trace": [],
       "follow_up_candidate_mode": "observe_only",
       "category_key": "sports",
-      "headline": "NFL trade deadline speculation centers on running backs Henry and Taylor",
+      "headline": "Kenneth Walker scores three touchdowns as Chiefs defeat Jets 35-12, Mahomes plays through elbow injury",
+      "link": "https://www.cbssports.com/nfl/gametracker/recap/NFL_20261108_NYJ@KC/"
+    },
+    {
+      "mode": "enforce",
+      "slot": "card:0",
+      "action": "ignore",
+      "route": "skip",
+      "story_id": "story_000410",
+      "event_key": "unknown-event-136b987fea",
+      "eligible": true,
+      "eligibility_status": "publishable",
+      "eligibility_reasons": [
+        "Candidate passed deterministic editorial eligibility rules"
+      ],
+      "relationship": "same_event",
+      "relationship_confidence": 1.0,
+      "relationship_reason": "Exact event key already belongs to this story",
+      "source_class": "sports_news",
+      "source_trust": 89,
+      "new_facts": [],
+      "canonical_title": "Denver Broncos vs. Carolina Panthers Live Score and Stats - November 8, 2026 Gametracker - CBS Sports",
+      "canonical_source": "CBS Sports",
+      "canonical_url": "https://www.cbssports.com/nfl/gametracker/recap/NFL_20261108_DEN@CAR/",
+      "decision_trace": [
+        "Relationship: same_event",
+        "Exact event-key mapping: true",
+        "No novel follow-up milestone: true",
+        "Confidence: 1.00"
+      ],
+      "follow_up_candidate_story_id": "",
+      "follow_up_candidate_confidence": 0.0,
+      "follow_up_candidate_milestones": [],
+      "follow_up_candidate_reason_codes": [],
+      "follow_up_candidate_trace": [],
+      "follow_up_candidate_mode": "observe_only",
+      "category_key": "sports",
+      "headline": "Broncos beat Panthers 26-21 for fifth straight win, extend one-score streak to 16",
+      "link": "https://www.cbssports.com/nfl/gametracker/recap/NFL_20261108_DEN@CAR/"
+    },
+    {
+      "mode": "enforce",
+      "slot": "card:1",
+      "action": "ignore",
+      "route": "skip",
+      "story_id": "story_000414",
+      "event_key": "traffic-crash-58e6b90d55-58e6b90d55",
+      "eligible": true,
+      "eligibility_status": "publishable",
+      "eligibility_reasons": [
+        "Candidate passed deterministic editorial eligibility rules"
+      ],
+      "relationship": "same_event",
+      "relationship_confidence": 1.0,
+      "relationship_reason": "Exact event key already belongs to this story",
+      "source_class": "international_news",
+      "source_trust": 94,
+      "new_facts": [],
+      "canonical_title": "Norris wins gripping race after Antonelli and Russell errors",
+      "canonical_source": "bbc.co.uk",
+      "canonical_url": "https://www.bbc.co.uk/sport/formula1/articles/c35yn19r7zkvo?at_medium=RSS&at_campaign=rss",
+      "decision_trace": [
+        "Relationship: same_event",
+        "Exact event-key mapping: true",
+        "No novel follow-up milestone: true",
+        "Confidence: 1.00"
+      ],
+      "follow_up_candidate_story_id": "",
+      "follow_up_candidate_confidence": 0.0,
+      "follow_up_candidate_milestones": [],
+      "follow_up_candidate_reason_codes": [],
+      "follow_up_candidate_trace": [],
+      "follow_up_candidate_mode": "observe_only",
+      "category_key": "sports",
+      "headline": "Norris wins chaotic Sao Paulo GP as Mercedes clinches constructors' title",
+      "link": "https://www.bbc.co.uk/sport/formula1/articles/c35yn19r7zkvo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "mode": "enforce",
+      "slot": "card:2",
+      "action": "ignore",
+      "route": "skip",
+      "story_id": "story_000417",
+      "event_key": "unknown-event-70e85b9f7a",
+      "eligible": true,
+      "eligibility_status": "publishable",
+      "eligibility_reasons": [
+        "Candidate passed deterministic editorial eligibility rules"
+      ],
+      "relationship": "same_event",
+      "relationship_confidence": 1.0,
+      "relationship_reason": "Exact event key already belongs to this story",
+      "source_class": "international_news",
+      "source_trust": 94,
+      "new_facts": [],
+      "canonical_title": "Falkirk add goals and grit to McGlynn's guile on rapid rise",
+      "canonical_source": "bbc.co.uk",
+      "canonical_url": "https://www.bbc.co.uk/sport/football/articles/crwyd4q0k8ddo?at_medium=RSS&at_campaign=rss",
+      "decision_trace": [
+        "Relationship: same_event",
+        "Exact event-key mapping: true",
+        "No novel follow-up milestone: true",
+        "Confidence: 1.00"
+      ],
+      "follow_up_candidate_story_id": "",
+      "follow_up_candidate_confidence": 0.0,
+      "follow_up_candidate_milestones": [],
+      "follow_up_candidate_reason_codes": [],
+      "follow_up_candidate_trace": [],
+      "follow_up_candidate_mode": "observe_only",
+      "category_key": "sports",
+      "headline": "Falkirk rise to third in Scottish Premiership with fifth straight win",
+      "link": "https://www.bbc.co.uk/sport/football/articles/crwyd4q0k8ddo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "mode": "enforce",
+      "slot": "card:3",
+      "action": "ignore",
+      "route": "skip",
+      "story_id": "story_000415",
+      "event_key": "unknown-event-cf1fdacabc",
+      "eligible": true,
+      "eligibility_status": "publishable",
+      "eligibility_reasons": [
+        "Candidate passed deterministic editorial eligibility rules"
+      ],
+      "relationship": "same_event",
+      "relationship_confidence": 1.0,
+      "relationship_reason": "Exact event key already belongs to this story",
+      "source_class": "sports_news",
+      "source_trust": 89,
+      "new_facts": [],
+      "canonical_title": "10 NFL trades that need to happen: Derrick Henry to Patriots, Budda Baker to Bills among options - CBS Sports",
+      "canonical_source": "CBS Sports",
+      "canonical_url": "https://www.cbssports.com/nfl/news/10-nfl-trades-deadline-derrick-henry-patriots-budda-baker-bills/",
+      "decision_trace": [
+        "Relationship: same_event",
+        "Exact event-key mapping: true",
+        "No novel follow-up milestone: true",
+        "Confidence: 1.00"
+      ],
+      "follow_up_candidate_story_id": "",
+      "follow_up_candidate_confidence": 0.0,
+      "follow_up_candidate_milestones": [],
+      "follow_up_candidate_reason_codes": [],
+      "follow_up_candidate_trace": [],
+      "follow_up_candidate_mode": "observe_only",
+      "category_key": "sports",
+      "headline": "NFL trade deadline speculation centers on running backs and defensive stars",
       "link": "https://www.cbssports.com/nfl/news/10-nfl-trades-deadline-derrick-henry-patriots-budda-baker-bills/"
     },
     {
       "mode": "enforce",
-      "slot": "card:6",
-      "action": "publish_new",
-      "route": "generate_new",
+      "slot": "card:4",
+      "action": "ignore",
+      "route": "skip",
       "story_id": "story_000416",
       "event_key": "traffic-crash-64815780b0-64815780b0",
       "eligible": true,
@@ -721,9 +819,9 @@
       "eligibility_reasons": [
         "Candidate passed deterministic editorial eligibility rules"
       ],
-      "relationship": "new_story",
-      "relationship_confidence": 0.0,
-      "relationship_reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+      "relationship": "same_event",
+      "relationship_confidence": 1.0,
+      "relationship_reason": "Exact event key already belongs to this story",
       "source_class": "international_news",
       "source_trust": 94,
       "new_facts": [],
@@ -731,8 +829,10 @@
       "canonical_source": "bbc.co.uk",
       "canonical_url": "https://www.bbc.co.uk/sport/formula1/articles/c5y43jzvrnz0o?at_medium=RSS&at_campaign=rss",
       "decision_trace": [
-        "Sparse event-key resolver guard: true",
-        "Resolver same-event merge bypassed: true"
+        "Relationship: same_event",
+        "Exact event-key mapping: true",
+        "No novel follow-up milestone: true",
+        "Confidence: 1.00"
       ],
       "follow_up_candidate_story_id": "",
       "follow_up_candidate_confidence": 0.0,
@@ -741,16 +841,16 @@
       "follow_up_candidate_trace": [],
       "follow_up_candidate_mode": "observe_only",
       "category_key": "sports",
-      "headline": "Norris earns perfect 10 in Sao Paulo Grand Prix driver ratings as Verstappen charges from 21st to second",
+      "headline": "Norris earns top marks in Sao Paulo Grand Prix driver ratings after pole-to-win performance",
       "link": "https://www.bbc.co.uk/sport/formula1/articles/c5y43jzvrnz0o?at_medium=RSS&at_campaign=rss"
     },
     {
       "mode": "enforce",
-      "slot": "card:7",
+      "slot": "card:5",
       "action": "publish_new",
       "route": "generate_new",
-      "story_id": "story_000417",
-      "event_key": "unknown-event-70e85b9f7a",
+      "story_id": "story_000438",
+      "event_key": "unknown-event-989a88459a",
       "eligible": true,
       "eligibility_status": "publishable",
       "eligibility_reasons": [
@@ -762,12 +862,14 @@
       "source_class": "international_news",
       "source_trust": 94,
       "new_facts": [
-        "30-year-old",
-        "64-year-old"
+        "19-year-old",
+        "21-year-old",
+        "26-year-old",
+        "27-year-old"
       ],
-      "canonical_title": "Falkirk add goals and grit to McGlynn's guile on rapid rise",
+      "canonical_title": "Villa's Kamara on Chelsea watchlist - Monday's gossip",
       "canonical_source": "bbc.co.uk",
-      "canonical_url": "https://www.bbc.co.uk/sport/football/articles/crwyd4q0k8ddo?at_medium=RSS&at_campaign=rss",
+      "canonical_url": "https://www.bbc.co.uk/sport/football/articles/c8qlnqggwge0o?at_medium=RSS&at_campaign=rss",
       "decision_trace": [
         "Sparse event-key resolver guard: true",
         "Resolver same-event merge bypassed: true"
@@ -779,16 +881,16 @@
       "follow_up_candidate_trace": [],
       "follow_up_candidate_mode": "observe_only",
       "category_key": "sports",
-      "headline": "Falkirk climb to third in Scottish Premiership after fifth straight win",
-      "link": "https://www.bbc.co.uk/sport/football/articles/crwyd4q0k8ddo?at_medium=RSS&at_campaign=rss"
+      "headline": "Chelsea among clubs tracking Aston Villa's Kamara",
+      "link": "https://www.bbc.co.uk/sport/football/articles/c8qlnqggwge0o?at_medium=RSS&at_campaign=rss"
     },
     {
       "mode": "enforce",
       "slot": "hero",
       "action": "publish_new",
       "route": "generate_new",
-      "story_id": "story_000418",
-      "event_key": "named-person-death:del-casher",
+      "story_id": "story_000439",
+      "event_key": "business-transaction-8b6b6556e5",
       "eligible": true,
       "eligibility_status": "publishable",
       "eligibility_reasons": [
@@ -796,54 +898,32 @@
       ],
       "relationship": "new_story",
       "relationship_confidence": 0.0,
-      "relationship_reason": "Created new story: conservative merge requirements were not met",
+      "relationship_reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
       "source_class": "entertainment_news",
-      "source_trust": 86,
+      "source_trust": 90,
       "new_facts": [],
-      "canonical_title": "Del Casher, Guitarist Who Invented the Wah-Wah Pedal, Dead at 88",
-      "canonical_source": "rollingstone.com",
-      "canonical_url": "https://www.rollingstone.com/music/music-news/del-casher-guitarist-invented-wah-wah-pedal-dead-obituary-1235654482/",
+      "canonical_title": "Denis Villeneuve Teases James Bond Progress at LACMA Art + Film Gala: ‘I’m Having a Great Time’",
+      "canonical_source": "variety.com",
+      "canonical_url": "https://variety.com/gallery/denis-villeneuve-james-bond-lacma-art-film-gala/",
       "decision_trace": [
-        "No sufficiently supported match",
-        "Threshold: 0.78"
+        "Sparse event-key resolver guard: true",
+        "Resolver same-event merge bypassed: true"
       ],
-      "follow_up_candidate_story_id": "story_000372",
-      "follow_up_candidate_confidence": 0.6925,
-      "follow_up_candidate_milestones": [
-        "death"
-      ],
-      "follow_up_candidate_reason_codes": [
-        "novel_milestone",
-        "location_match",
-        "event_type_match",
-        "entity_match",
-        "identity_anchor_qualified"
-      ],
-      "follow_up_candidate_trace": [
-        "Follow-up candidate mode: observe_only",
-        "Candidate story: story_000372",
-        "Novel milestones: death",
-        "Exact event-key anchor: False",
-        "Facts overlap: 0.00",
-        "Title overlap: 0.12",
-        "Location match: True",
-        "Agency match: False",
-        "Event type match: True",
-        "Entity match: True",
-        "Agency conflict: False",
-        "Event type conflict: False",
-        "Candidate confidence: 0.69"
-      ],
+      "follow_up_candidate_story_id": "",
+      "follow_up_candidate_confidence": 0.0,
+      "follow_up_candidate_milestones": [],
+      "follow_up_candidate_reason_codes": [],
+      "follow_up_candidate_trace": [],
       "follow_up_candidate_mode": "observe_only",
       "category_key": "entertainment",
-      "headline": "Del Casher, guitarist who invented the wah-wah pedal, dies at 88",
-      "link": "https://www.rollingstone.com/music/music-news/del-casher-guitarist-invented-wah-wah-pedal-dead-obituary-1235654482/"
+      "headline": "Denis Villeneuve says he is finishing Dune: Part Three while beginning James Bond movie, teases casting before joking at LACMA gala",
+      "link": "https://variety.com/gallery/denis-villeneuve-james-bond-lacma-art-film-gala/"
     },
     {
       "mode": "enforce",
       "slot": "card:0",
-      "action": "publish_new",
-      "route": "generate_new",
+      "action": "ignore",
+      "route": "skip",
       "story_id": "story_000419",
       "event_key": "shooting-utah",
       "eligible": true,
@@ -851,9 +931,9 @@
       "eligibility_reasons": [
         "Candidate passed deterministic editorial eligibility rules"
       ],
-      "relationship": "new_story",
-      "relationship_confidence": 0.0,
-      "relationship_reason": "Created new story: conservative merge requirements were not met",
+      "relationship": "same_event",
+      "relationship_confidence": 1.0,
+      "relationship_reason": "Exact event key already belongs to this story",
       "source_class": "entertainment_news",
       "source_trust": 90,
       "new_facts": [],
@@ -861,8 +941,10 @@
       "canonical_source": "variety.com",
       "canonical_url": "https://variety.com/2026/digital/news/dave-chappelles-charlie-kirk-joke-erika-kirk-responds-1236942735/",
       "decision_trace": [
-        "No sufficiently supported match",
-        "Threshold: 0.78"
+        "Relationship: same_event",
+        "Exact event-key mapping: true",
+        "No novel follow-up milestone: true",
+        "Confidence: 1.00"
       ],
       "follow_up_candidate_story_id": "",
       "follow_up_candidate_confidence": 0.0,
@@ -871,7 +953,7 @@
       "follow_up_candidate_trace": [],
       "follow_up_candidate_mode": "observe_only",
       "category_key": "entertainment",
-      "headline": "Erika Kirk condemns Dave Chappelle and other comedians for joking about husband's assassination",
+      "headline": "Erika Kirk condemns Dave Chappelle, other comedians for joking about husband's killing",
       "link": "https://variety.com/2026/digital/news/dave-chappelles-charlie-kirk-joke-erika-kirk-responds-1236942735/"
     },
     {
@@ -879,8 +961,8 @@
       "slot": "card:1",
       "action": "publish_new",
       "route": "generate_new",
-      "story_id": "story_000420",
-      "event_key": "fire-5ed37c7d56-5ed37c7d56",
+      "story_id": "story_000440",
+      "event_key": "fire-00c70442b8-00c70442b8",
       "eligible": true,
       "eligibility_status": "publishable",
       "eligibility_reasons": [
@@ -889,12 +971,14 @@
       "relationship": "new_story",
       "relationship_confidence": 0.0,
       "relationship_reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-      "source_class": "entertainment_news",
-      "source_trust": 90,
-      "new_facts": [],
-      "canonical_title": "Maya Jama Exits ‘Love Island U.K.’ as Host After 9 Seasons: ‘All Good Things Must Come to an End’",
-      "canonical_source": "variety.com",
-      "canonical_url": "https://variety.com/2026/tv/news/maya-jama-exits-love-island-uk-as-host-1236942610/",
+      "source_class": "international_news",
+      "source_trust": 94,
+      "new_facts": [
+        "32-year-old"
+      ],
+      "canonical_title": "Maya Jama steps down as host of reality TV show Love Island - BBC",
+      "canonical_source": "BBC",
+      "canonical_url": "https://www.bbc.com/news/articles/cwzrd5jj47ndo",
       "decision_trace": [
         "Sparse event-key resolver guard: true",
         "Resolver same-event merge bypassed: true"
@@ -906,47 +990,12 @@
       "follow_up_candidate_trace": [],
       "follow_up_candidate_mode": "observe_only",
       "category_key": "entertainment",
-      "headline": "Maya Jama steps down as host of 'Love Island U.K.' after nine seasons",
-      "link": "https://variety.com/2026/tv/news/maya-jama-exits-love-island-uk-as-host-1236942610/"
+      "headline": "Maya Jama steps down as Love Island host after three years",
+      "link": "https://www.bbc.com/news/articles/cwzrd5jj47ndo"
     },
     {
       "mode": "enforce",
       "slot": "card:2",
-      "action": "publish_new",
-      "route": "generate_new",
-      "story_id": "story_000421",
-      "event_key": "unknown-event-330b9c8547",
-      "eligible": true,
-      "eligibility_status": "publishable",
-      "eligibility_reasons": [
-        "Candidate passed deterministic editorial eligibility rules"
-      ],
-      "relationship": "new_story",
-      "relationship_confidence": 0.0,
-      "relationship_reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-      "source_class": "entertainment_news",
-      "source_trust": 90,
-      "new_facts": [],
-      "canonical_title": "Box Office: ‘Heated Rivalry’ Fans Drive Show’s Theatrical Release to $1.4 Million",
-      "canonical_source": "variety.com",
-      "canonical_url": "https://variety.com/2026/film/box-office/heated-rivalry-theatrical-release-box-office-grosses-1236942444/",
-      "decision_trace": [
-        "Sparse event-key resolver guard: true",
-        "Resolver same-event merge bypassed: true"
-      ],
-      "follow_up_candidate_story_id": "",
-      "follow_up_candidate_confidence": 0.0,
-      "follow_up_candidate_milestones": [],
-      "follow_up_candidate_reason_codes": [],
-      "follow_up_candidate_trace": [],
-      "follow_up_candidate_mode": "observe_only",
-      "category_key": "entertainment",
-      "headline": "Streaming hit 'Heated Rivalry' earns $1.4 million in limited theatrical re-release",
-      "link": "https://variety.com/2026/film/box-office/heated-rivalry-theatrical-release-box-office-grosses-1236942444/"
-    },
-    {
-      "mode": "enforce",
-      "slot": "card:3",
       "action": "ignore",
       "route": "skip",
       "story_id": "story_000151",
@@ -978,14 +1027,49 @@
       "follow_up_candidate_trace": [],
       "follow_up_candidate_mode": "observe_only",
       "category_key": "entertainment",
-      "headline": "Ron Howard documentary explores how Richard Avedon revolutionized photography",
+      "headline": "Ron Howard's 'Avedon' Documentary Examines Photographer's Career and Influence",
       "link": "https://variety.com/2026/film/reviews/avedon-review-ron-howard-richard-avedon-1236942472/"
     },
     {
       "mode": "enforce",
-      "slot": "card:4",
+      "slot": "card:3",
       "action": "publish_new",
       "route": "generate_new",
+      "story_id": "story_000441",
+      "event_key": "unknown-event-7ccb602f91",
+      "eligible": true,
+      "eligibility_status": "publishable",
+      "eligibility_reasons": [
+        "Candidate passed deterministic editorial eligibility rules"
+      ],
+      "relationship": "new_story",
+      "relationship_confidence": 0.0,
+      "relationship_reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+      "source_class": "entertainment_news",
+      "source_trust": 90,
+      "new_facts": [],
+      "canonical_title": "‘Spy x Family’ Season 4 and New Theatrical Film Set for 2027",
+      "canonical_source": "variety.com",
+      "canonical_url": "https://variety.com/2026/film/news/spy-x-family-season-4-new-theatrical-film-2027-1236942775/",
+      "decision_trace": [
+        "Sparse event-key resolver guard: true",
+        "Resolver same-event merge bypassed: true"
+      ],
+      "follow_up_candidate_story_id": "",
+      "follow_up_candidate_confidence": 0.0,
+      "follow_up_candidate_milestones": [],
+      "follow_up_candidate_reason_codes": [],
+      "follow_up_candidate_trace": [],
+      "follow_up_candidate_mode": "observe_only",
+      "category_key": "entertainment",
+      "headline": "'Spy x Family' Confirmed for Season 4 and New Theatrical Film in 2027",
+      "link": "https://variety.com/2026/film/news/spy-x-family-season-4-new-theatrical-film-2027-1236942775/"
+    },
+    {
+      "mode": "enforce",
+      "slot": "card:4",
+      "action": "ignore",
+      "route": "skip",
       "story_id": "story_000422",
       "event_key": "election-e0b5f4039f",
       "eligible": true,
@@ -993,9 +1077,9 @@
       "eligibility_reasons": [
         "Candidate passed deterministic editorial eligibility rules"
       ],
-      "relationship": "new_story",
-      "relationship_confidence": 0.0,
-      "relationship_reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+      "relationship": "same_event",
+      "relationship_confidence": 1.0,
+      "relationship_reason": "Exact event key already belongs to this story",
       "source_class": "entertainment_news",
       "source_trust": 90,
       "new_facts": [],
@@ -1003,8 +1087,10 @@
       "canonical_source": "variety.com",
       "canonical_url": "https://variety.com/feature/2027-oscars-best-casting-predictions-1236878513/",
       "decision_trace": [
-        "Sparse event-key resolver guard: true",
-        "Resolver same-event merge bypassed: true"
+        "Relationship: same_event",
+        "Exact event-key mapping: true",
+        "No novel follow-up milestone: true",
+        "Confidence: 1.00"
       ],
       "follow_up_candidate_story_id": "",
       "follow_up_candidate_confidence": 0.0,
@@ -1013,7 +1099,7 @@
       "follow_up_candidate_trace": [],
       "follow_up_candidate_mode": "observe_only",
       "category_key": "entertainment",
-      "headline": "Variety highlights unconventional casting in 'Being Heumann' and 'La Bola Negra' for Oscar predictions",
+      "headline": "Casting predictions spotlight disability drama 'Being Heumann' and Spanish epic 'La Bola Negra' as Oscar contenders",
       "link": "https://variety.com/feature/2027-oscars-best-casting-predictions-1236878513/"
     },
     {
@@ -1021,8 +1107,8 @@
       "slot": "card:5",
       "action": "publish_new",
       "route": "generate_new",
-      "story_id": "story_000423",
-      "event_key": "unknown-event-8f5df88345",
+      "story_id": "story_000442",
+      "event_key": "unknown-event-ea10481588",
       "eligible": true,
       "eligibility_status": "publishable",
       "eligibility_reasons": [
@@ -1034,9 +1120,9 @@
       "source_class": "entertainment_news",
       "source_trust": 90,
       "new_facts": [],
-      "canonical_title": "Andy Serkis Says He Was ‘Evangelical’ About Performance Capture After Playing Gollum in ‘Lord of the Rings’ but Now Accepts It’s ‘Misunderstood’: ‘If You Get It? Great’",
+      "canonical_title": "Taylor Swift and Karlie Kloss Reunite at Travis Kelce’s Chiefs Game Against Jets",
       "canonical_source": "variety.com",
-      "canonical_url": "https://variety.com/2026/film/news/andy-serkis-motion-capture-gollum-1236942445/",
+      "canonical_url": "https://variety.com/2026/digital/news/taylor-swift-karlie-kloss-reunite-travis-kelce-chiefs-game-1236942684/",
       "decision_trace": [
         "Sparse event-key resolver guard: true",
         "Resolver same-event merge bypassed: true"
@@ -1048,16 +1134,16 @@
       "follow_up_candidate_trace": [],
       "follow_up_candidate_mode": "observe_only",
       "category_key": "entertainment",
-      "headline": "Andy Serkis says he no longer pushes for performance capture acceptance after playing Gollum",
-      "link": "https://variety.com/2026/film/news/andy-serkis-motion-capture-gollum-1236942445/"
+      "headline": "Taylor Swift and Karlie Kloss appear together at Chiefs game for first time in years",
+      "link": "https://variety.com/2026/digital/news/taylor-swift-karlie-kloss-reunite-travis-kelce-chiefs-game-1236942684/"
     },
     {
       "mode": "enforce",
       "slot": "card:6",
       "action": "publish_new",
       "route": "generate_new",
-      "story_id": "story_000424",
-      "event_key": "unknown-event-f237ccc9f5",
+      "story_id": "story_000443",
+      "event_key": "unknown-event-d7199570cf",
       "eligible": true,
       "eligibility_status": "publishable",
       "eligibility_reasons": [
@@ -1067,11 +1153,11 @@
       "relationship_confidence": 0.0,
       "relationship_reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
       "source_class": "entertainment_news",
-      "source_trust": 86,
+      "source_trust": 90,
       "new_facts": [],
-      "canonical_title": "Andy Richter Claims U2’s the Edge Wrote an ‘Elf’ Sequel Screenplay",
-      "canonical_source": "rollingstone.com",
-      "canonical_url": "https://www.rollingstone.com/tv-movies/tv-movie-news/andy-richter-u2-the-edge-screenplay-elf-sequel-1235654475/",
+      "canonical_title": "Korea Box Office: Anime Phenomenon ‘Chiikawa’ Staves Off Corporate Thriller ‘Final Interview’ to Retain Top Spot",
+      "canonical_source": "variety.com",
+      "canonical_url": "https://variety.com/2026/film/box-office/korea-box-office-chiikawa-final-interview-1236942770/",
       "decision_trace": [
         "Sparse event-key resolver guard: true",
         "Resolver same-event merge bypassed: true"
@@ -1083,16 +1169,16 @@
       "follow_up_candidate_trace": [],
       "follow_up_candidate_mode": "observe_only",
       "category_key": "entertainment",
-      "headline": "Andy Richter says U2 guitarist the Edge once wrote an unproduced screenplay for an 'Elf' sequel",
-      "link": "https://www.rollingstone.com/tv-movies/tv-movie-news/andy-richter-u2-the-edge-screenplay-elf-sequel-1235654475/"
+      "headline": "Japanese Anime 'Chiikawa the Movie' Holds Top Spot at South Korean Box Office for Fourth Weekend",
+      "link": "https://variety.com/2026/film/box-office/korea-box-office-chiikawa-final-interview-1236942770/"
     },
     {
       "mode": "enforce",
       "slot": "card:7",
       "action": "publish_new",
       "route": "generate_new",
-      "story_id": "story_000425",
-      "event_key": "unknown-event-339488c0f7",
+      "story_id": "story_000444",
+      "event_key": "unknown-event-11a55884d3",
       "eligible": true,
       "eligibility_status": "publishable",
       "eligibility_reasons": [
@@ -1101,12 +1187,14 @@
       "relationship": "new_story",
       "relationship_confidence": 0.0,
       "relationship_reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-      "source_class": "entertainment_news",
-      "source_trust": 90,
-      "new_facts": [],
-      "canonical_title": "‘Passing Strange’ Comes to Pasadena Playhouse: Creators Stew and Heidi Rodewald on the Rock Musical Reaching L.A. Almost Two Decades After Tony-Winning Broadway Run",
-      "canonical_source": "variety.com",
-      "canonical_url": "https://variety.com/2026/legit/news/passing-strange-pasadena-playhouse-stew-heidi-interview-1236942647/",
+      "source_class": "unknown",
+      "source_trust": 55,
+      "new_facts": [
+        "no injuries reported"
+      ],
+      "canonical_title": "Report: WWE Roster Out Of Saudi Before Latest Missile Attack - Fightful",
+      "canonical_source": "fightful.com",
+      "canonical_url": "https://www.fightful.com/wrestling/report-wwe-roster-out-of-saudi-before-latest-missile-attack/",
       "decision_trace": [
         "Sparse event-key resolver guard: true",
         "Resolver same-event merge bypassed: true"
@@ -1118,33 +1206,35 @@
       "follow_up_candidate_trace": [],
       "follow_up_candidate_mode": "observe_only",
       "category_key": "entertainment",
-      "headline": "'Passing Strange' Premieres in Southern California at Pasadena Playhouse Nearly Two Decades After Broadway",
-      "link": "https://variety.com/2026/legit/news/passing-strange-pasadena-playhouse-stew-heidi-interview-1236942647/"
+      "headline": "WWE roster left Saudi Arabia before missile attack in Riyadh",
+      "link": "https://www.fightful.com/wrestling/report-wwe-roster-out-of-saudi-before-latest-missile-attack/"
     },
     {
       "mode": "enforce",
       "slot": "hero",
-      "action": "publish_new",
-      "route": "generate_new",
-      "story_id": "story_000426",
-      "event_key": "court-ruling-41f8611430",
+      "action": "ignore",
+      "route": "skip",
+      "story_id": "story_000141",
+      "event_key": "election-florida",
       "eligible": true,
       "eligibility_status": "publishable",
       "eligibility_reasons": [
         "Candidate passed deterministic editorial eligibility rules"
       ],
-      "relationship": "new_story",
-      "relationship_confidence": 0.0,
-      "relationship_reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+      "relationship": "same_event",
+      "relationship_confidence": 1.0,
+      "relationship_reason": "Exact event key already belongs to this story",
       "source_class": "national_news",
       "source_trust": 90,
       "new_facts": [],
-      "canonical_title": "Blanche dismisses Means allegations as GOP's MAHA feud deepens",
+      "canonical_title": "Scoop: Republican midterms convention speakers revealed",
       "canonical_source": "axios.com",
-      "canonical_url": "https://www.axios.com/2026/11/08/todd-blanche-calley-means-susie-wiles-maha-allegations",
+      "canonical_url": "https://www.axios.com/2026/09/05/republican-convention-dallas-trump-midterms",
       "decision_trace": [
-        "Sparse event-key resolver guard: true",
-        "Resolver same-event merge bypassed: true"
+        "Relationship: same_event",
+        "Exact event-key mapping: true",
+        "No novel follow-up milestone: true",
+        "Confidence: 1.00"
       ],
       "follow_up_candidate_story_id": "",
       "follow_up_candidate_confidence": 0.0,
@@ -1153,8 +1243,8 @@
       "follow_up_candidate_trace": [],
       "follow_up_candidate_mode": "observe_only",
       "category_key": "politics",
-      "headline": "Attorney General dismisses Calley Means' White House corruption allegations as former FDA chief backs some claims",
-      "link": "https://www.axios.com/2026/11/08/todd-blanche-calley-means-susie-wiles-maha-allegations"
+      "headline": "DeSantis positions for 2028 presidential run as Rubio deflects speculation following GOP midterm losses",
+      "link": "https://www.axios.com/2026/11/08/florida-desantis-rubio-2028"
     },
     {
       "mode": "enforce",
@@ -1190,57 +1280,22 @@
       "follow_up_candidate_trace": [],
       "follow_up_candidate_mode": "observe_only",
       "category_key": "politics",
-      "headline": "Libertarian operatives court Rep. Thomas Massie for 2028 third-party run",
+      "headline": "Libertarian operatives court Rep. Thomas Massie for potential 2028 spoiler bid",
       "link": "https://www.axios.com/2026/11/08/massie-president-2028-libertarian"
-    },
-    {
-      "mode": "enforce",
-      "slot": "card:1",
-      "action": "publish_new",
-      "route": "generate_new",
-      "story_id": "story_000427",
-      "event_key": "election-2dee8fdb32",
-      "eligible": true,
-      "eligibility_status": "publishable",
-      "eligibility_reasons": [
-        "Candidate passed deterministic editorial eligibility rules"
-      ],
-      "relationship": "new_story",
-      "relationship_confidence": 0.0,
-      "relationship_reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-      "source_class": "national_news",
-      "source_trust": 90,
-      "new_facts": [],
-      "canonical_title": "Scoop: Trump asked Netanyahu to move on Gaza peace plan in post-election call",
-      "canonical_source": "axios.com",
-      "canonical_url": "https://www.axios.com/2026/11/08/trump-netanyahu-implement-gaza-peace-plan",
-      "decision_trace": [
-        "Sparse event-key resolver guard: true",
-        "Resolver same-event merge bypassed: true"
-      ],
-      "follow_up_candidate_story_id": "",
-      "follow_up_candidate_confidence": 0.0,
-      "follow_up_candidate_milestones": [],
-      "follow_up_candidate_reason_codes": [],
-      "follow_up_candidate_trace": [],
-      "follow_up_candidate_mode": "observe_only",
-      "category_key": "politics",
-      "headline": "Trump presses Netanyahu to implement Gaza peace plan after Israeli election",
-      "link": "https://www.axios.com/2026/11/08/trump-netanyahu-implement-gaza-peace-plan"
     }
   ],
   "counts": {
-    "processed": 33,
+    "processed": 34,
     "rejected": 0,
-    "same_category_duplicates": 0,
+    "same_category_duplicates": 1,
     "errors": 0
   },
   "registry_health": {
     "repair_version": 16,
     "changed": false,
     "status": "clean",
-    "active_stories_before": 384,
-    "active_stories_after": 384,
+    "active_stories_before": 414,
+    "active_stories_after": 414,
     "quarantined_story_count": 0,
     "quarantined_story_ids": [],
     "quarantine_reasons": {},
@@ -1269,9 +1324,9 @@
     "unified_incident_groups_resolved": 0,
     "unified_incident_story_records_removed": 0,
     "remaining_unified_incident_groups": 0,
-    "generated_at": "2026-11-08T23:08:44Z",
-    "quarantined_story_records_retained": 10,
-    "active_story_count": 415
+    "generated_at": "2026-11-09T00:14:03Z",
+    "quarantined_story_records_retained": 11,
+    "active_story_count": 431
   },
   "observability": {
     "engine": {
