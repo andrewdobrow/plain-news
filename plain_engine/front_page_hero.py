@@ -56,10 +56,22 @@ _ECON_ACTION = re.compile(
 )
 _SECURITY_ACTION = re.compile(
     r"\b(?:terrorist attack|terror attack|national security|"
-    r"critical infrastructure|power grid|cyberattack|data breach|"
+    r"critical infrastructure|cyberattack|data breach|"
     r"nationwide outage|mass shooting|federal emergency|"
     r"major hurricane|earthquake|tsunami)\b", re.I,
 )
+# A scientific explanation of background grid-frequency behavior is not a
+# nationwide power emergency. A power-grid headline needs a concrete outage,
+# attack or significant interruption before it receives crisis significance.
+_GRID_EMERGENCY = re.compile(
+    r"\b(?:grid|power network|electricity network)\b.{0,90}\b"
+    r"(?:blackout|outage|shut(?:s|ting)? down|failure|failed|"
+    r"attack|hacked|cyberattack|sabotage|widespread disruption|collapse)\b"
+    r"|\b(?:blackout|outage|shutdown|failure|attack|hacked|"
+    r"cyberattack|sabotage|disruption|collapse)\b.{0,90}\b"
+    r"(?:grid|power network|electricity network)\b", re.I,
+)
+
 _ANALYSIS = re.compile(
     r"\b(?:could|might|may|opinion|analysis|commentary|"
     r"expert says|experts say|warns?|predicts?|"
@@ -175,7 +187,7 @@ def _major_event_tier(category_key, headline):
     government = bool(_GOV_ACTION.search(title) or _GOV_REVERSE.search(title))
     conflict = bool(_WAR_ACTION.search(title))
     economy = bool(_ECON_ACTION.search(title))
-    security = bool(_SECURITY_ACTION.search(title))
+    security = bool(_SECURITY_ACTION.search(title) or _GRID_EMERGENCY.search(title))
     election = bool(_SENATE_ELECTION.search(title))
     foreign_crisis = bool(_FOREIGN_GOVERNMENT_CRISIS.search(title))
     analysis = bool(_ANALYSIS.search(title))
@@ -199,7 +211,7 @@ def _major_event_tier(category_key, headline):
     if economy and not analysis:
         return 4, "macroeconomic_development"
     if security and not analysis:
-        return 4 if re.search(r"\b(?:nationwide|national|mass|grid|major|multiple states)\b", title, re.I) else 3, "security_emergency"
+        return 4 if re.search(r"\b(?:nationwide|national|mass|major|multiple states)\b", title, re.I) or _GRID_EMERGENCY.search(title) else 3, "security_emergency"
     if election and not analysis:
         return 3, "significant_electoral_development"
 
