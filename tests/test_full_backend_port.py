@@ -641,3 +641,59 @@ def test_final_plain_card_surface_contract_compacts_any_accidental_full_body():
     assert word_count(category['cards'][0]['body']) <= gen.CARD_SUMMARY_MAX_WORDS
     assert paragraph_count(category['cards'][0]['body']) == 2
     assert category['hero']['body'] == full
+
+
+def test_assignment_editor_uses_bounded_source_evidence_without_changing_writer_input():
+    """Save repeated editor-token cost; preserve complete evidence for publishing."""
+    import json
+    from plain_engine.assignment_pipeline import build_assignment_editor_packet
+    full_text = (
+        "Agency officials described a nationwide public safety policy supported by "
+        "published documents. " * 180
+        + "FINAL VERIFIED DEVELOPMENT ABOUT ENFORCEMENT AND EFFECTIVE DATE"
+    )
+    previous = "Older reporting describes the history and relevant institutions. " * 180
+    source = {
+        "title": "Federal agency announces nationwide public safety rule",
+        "summary": "Federal agency published a major new rule with confirmed scope. " * 38,
+        "article_text": full_text,
+        "source_quality": "full",
+        "canonical_context": {
+            "slug": "older-event", "headline": "Earlier rule",
+            "body": previous,
+        },
+        "classified_categories": ["us"],
+    }
+    editor = json.loads(
+        build_assignment_editor_packet("us", "U.S.", [source])
+    )["sources"][0]
+    assert len(editor["article_text"]) < 3900
+    assert editor["article_text"].startswith("Agency officials")
+    assert "FINAL VERIFIED DEVELOPMENT ABOUT ENFORCEMENT AND EFFECTIVE DATE" in editor["article_text"]
+    assert len(editor["summary"]) <= 850
+    assert len(editor["canonical_context"]["body"]) < 1000
+    assert editor["source_word_count"] == len(full_text.split())
+    assert editor["hero_eligible"]
+    # Writer inputs and canonical update context remain untouched.
+    assert source["article_text"] == full_text
+    assert source["canonical_context"]["body"] == previous
+    assert "FINAL VERIFIED DEVELOPMENT" in full_text
+
+
+def test_editor_packet_includes_material_update_identifiers_after_compaction():
+    import json
+    from plain_engine.assignment_pipeline import build_assignment_editor_packet
+    source = {
+        "title": "Agency confirms new milestone in ongoing national case",
+        "article_text": "Officials reported confirmed developments in a national case. " * 160,
+        "source_quality": "full",
+        "pre_generation_material_update": True,
+        "pre_generation_material_update_canonical_slug": "trusted-canonical",
+        "material_update_novel_facts": ["New official ruling confirmed"],
+        "material_update_confidence": 0.95,
+    }
+    editor = json.loads(build_assignment_editor_packet("politics", "Politics", [source]))["sources"][0]
+    assert editor["material_update_candidate"] is True
+    assert editor["material_update_canonical_slug"] == "trusted-canonical"
+    assert editor["material_update_novel_facts"] == ["New official ruling confirmed"]
+    assert editor["hero_eligible"] is True
