@@ -331,7 +331,10 @@ def evaluate_front_page_candidates(all_categories, archive=None, *, now=None, he
             # use the section label as a proxy (foreign stories occasionally
             # arrive misfiled in U.S.), and cannot outrank a much larger world
             # event by itself.
-            audience_points = 22.0 if relevance.scope == "us_national" else 0.0
+            audience_points = (
+                round(22.0 * max(0.0, 1.0 - max(0.0, age) / 12.0), 2)
+                if relevance.scope == "us_national" else 0.0
+            )
             score = round(
                 tier_points + urgency_points + relevance_points
                 + importance_points + freshness_points + audience_points, 2
