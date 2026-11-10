@@ -5,40 +5,40 @@
 ## Hero
 
 - Current: **Van Hollen declines to rule out challenging Schumer for Senate Democratic leader as caucus debates strategy**
-- Recommended: **National average gas price falls below $4 per gallon for first time since July**
-- Recommendation: CHANGE (not enforced)
+- Recommended: **Van Hollen declines to rule out challenging Schumer for Senate Democratic leader as caucus debates strategy**
+- Recommendation: KEEP (not enforced)
 
 ## Top Stories deck
 
 | Rank | Current | Recommended | Score | Why |
 | ---: | --- | --- | ---: | --- |
-| 1 | Krakow mass shooting suspect dies in hospital as Polish prosecutors say motive investigation continues | National average gas price falls below $4 per gallon for first time since July | 91 | importance 100; freshness 93.25; urgency 7/10 |
-| 2 | U.S. moves refueling aircraft from UK base to Germany and Spain amid reported Iran threat | State Department objects to El Salvador's Haiti military operations despite Trump's support | 85 | importance 93; freshness 95.23; urgency 5/10 |
-| 3 | Israel's new parliament sworn in as Eisenkot seeks to form government and unseat Netanyahu | Anthropic sets $70-78 IPO price range, targeting up to $1.4 trillion valuation in largest-ever tech offering | 77 | importance 47; freshness 99.99; urgency 8/10 |
-| 4 | Israeli forces kill 14-year-old Palestinian boy in West Bank raid | Arsene Wenger considers FIFA presidential run against Gianni Infantino | 76 | importance 65; freshness 92.81; urgency 6/10 |
-| 5 | Police officer killed in backpack explosion in northern Spain | Hugging Face exec warns cyberattacks could force open AI platforms to close access | 74 | importance 58; freshness 99.66; urgency 6/10 |
-| 6 | France accuses Iran's Revolutionary Guard of orchestrating cyberattacks on European supermarket refrigeration systems | Seven Republican senators call for delay in GOP leadership elections | 74 | importance 72; freshness 81.43; urgency 5/10 |
-| 7 | Paraguay formally charges ousted president Santiago Peña with breach of trust over Ueno Bank collapse | ICE detains 8-year-old Haitian boy at routine check-in after TPS termination, prompting San Diego school district response | 71 | importance 62; freshness 81.43; urgency 5/10 |
-| 8 | Krakow gunman killed his parents and sister before Main Market Square attack that left six dead | Lionsgate acquires U.S. and U.K. rights to Hungarian period drama 'Rise of the Raven' | 70 | importance 55; freshness 98.0; urgency 4/10 |
-| 9 | ICE detains 8-year-old Haitian boy at routine check-in after TPS termination, prompting San Diego school district response | Google DeepMind uses AI to formally verify Signal protocol cryptography | 70 | importance 40; freshness 99.99; urgency 7/10 |
-| 10 | Philadelphia boycott of Jewish-owned restaurants draws dueling protests, three arrests | Trump says FBI investigating Nvidia CEO's relationship with alleged Chinese spy | 75 | importance 52; freshness 91.98; urgency 7/10; -6 category saturation |
-| 11 | Supreme Court allows border wall construction in Texas Big Bend region in 8-1 ruling | Eight Genre Films Head to American Film Market With Black Mandala, Red Owl | 69 | importance 36; freshness 99.66; urgency 7/10 |
-| 12 | Wisconsin state trooper detained by ICE released under supervision after intervention by DHS secretary | UFC 334 features Ciryl Gane's first heavyweight title defense and Amanda Nunes' return | 67 | importance 47; freshness 93.18; urgency 4/10 |
+| 1 | Krakow mass shooting suspect dies in hospital as Polish prosecutors say motive investigation continues | Clashes erupt in Bangladesh as supporters of ousted PM Hasina demand her return | 79 | importance 80; freshness 93.77; urgency 6/10 |
+| 2 | Clashes erupt in Bangladesh as supporters of ousted PM Hasina demand her return | House GOP report faults Justice Department for decades of failures in Epstein case, urges reinterviewing witnesses | 78 | importance 58; freshness 99.99; urgency 7/10 |
+| 3 | Spain's king and queen attend memorial service for 69 rail crash victims | NRC grants X-energy construction permit for four small modular reactors at Texas Dow plant | 74 | importance 45; freshness 99.99; urgency 7/10 |
+| 4 | France accuses Iran's Revolutionary Guard of orchestrating cyberattacks on European supermarket refrigeration systems | Democratic lawmakers demand answers after 8-year-old Haitian boy detained by ICE in San Diego | 72 | importance 47; freshness 96.28; urgency 6/10 |
+| 5 | Paraguay formally charges ousted president Santiago Peña with breach of trust over Ueno Bank collapse | Van Hollen declines to rule out challenging Schumer for Senate Democratic leader as caucus debates strategy | 72 | importance 77; freshness 64.79; urgency 5/10 |
+| 6 | Krakow gunman killed his parents and sister before Main Market Square attack that left six dead | Disney Plus app on Meta Quest adds more than 60 3D movies | 70 | importance 40; freshness 99.97; urgency 7/10 |
+| 7 | Israeli President Herzog tasks opposition leader Eisenkot with forming government after inconclusive election | Jeffries pushes to restrict China chip exports in defense bill | 67 | importance 77; freshness 60.01; urgency 3/10 |
+| 8 | Houthi strikes hit Aramco Tower in Riyadh, target airport and oil facilities | Vikings acquire Kirk Cousins from Raiders in trade deadline deal | 67 | importance 38; freshness 99.99; urgency 7/10 |
+| 9 | House GOP report faults Justice Department for decades of failures in Epstein case, urges reinterviewing witnesses | Nvidia hires outside law firm for independent investigation into CEO's relationship with alleged Chinese spy | 66 | importance 15; freshness 99.99; urgency 8/10 |
+| 10 | Democratic lawmakers demand answers after 8-year-old Haitian boy detained by ICE in San Diego | Sony cancels live-service shooter Fairgames | 70 | importance 40; freshness 99.97; urgency 7/10; -6 category saturation |
+| 11 | ICE detains 8-year-old Haitian boy at routine check-in after TPS termination, prompting San Diego school district response | Spain's king and queen attend memorial service for 69 rail crash victims | 63 | importance 41; freshness 95.99; urgency 5/10 |
+| 12 | Philadelphia boycott of Jewish-owned restaurants draws dueling protests, three arrests | Chiefs acquire Colts WR Josh Downs in trade deadline deal | 62 | importance 20; freshness 96.14; urgency 6/10 |
 
 ## Recommended moves
 
-- **State Department objects to El Salvador's Haiti military operations despite Trump's support**: 56 → 2 — importance 93; freshness 95.23; urgency 5/10
-- **Seven Republican senators call for delay in GOP leadership elections**: 53 → 6 — importance 72; freshness 81.43; urgency 5/10
-- **Lionsgate acquires U.S. and U.K. rights to Hungarian period drama 'Rise of the Raven'**: 51 → 8 — importance 55; freshness 98.0; urgency 4/10
-- **Eight Genre Films Head to American Film Market With Black Mandala, Red Owl**: 52 → 11 — importance 36; freshness 99.66; urgency 7/10
-- **Arsene Wenger considers FIFA presidential run against Gianni Infantino**: 37 → 4 — importance 65; freshness 92.81; urgency 6/10
-- **UFC 334 features Ciryl Gane's first heavyweight title defense and Amanda Nunes' return**: 39 → 12 — importance 47; freshness 93.18; urgency 4/10
-- **Hugging Face exec warns cyberattacks could force open AI platforms to close access**: 28 → 5 — importance 58; freshness 99.66; urgency 6/10
-- **National average gas price falls below $4 per gallon for first time since July**: 19 → 1 — importance 100; freshness 93.25; urgency 7/10
-- **Google DeepMind uses AI to formally verify Signal protocol cryptography**: 26 → 9 — importance 40; freshness 99.99; urgency 7/10
-- **Anthropic sets $70-78 IPO price range, targeting up to $1.4 trillion valuation in largest-ever tech offering**: 17 → 3 — importance 47; freshness 99.99; urgency 8/10
-- **Krakow mass shooting suspect dies in hospital as Polish prosecutors say motive investigation continues**: 1 → 13 — importance 56; freshness 59.96; urgency 5/10
-- **U.S. moves refueling aircraft from UK base to Germany and Spain amid reported Iran threat**: 2 → 14 — importance 15; freshness 98.19; urgency 7/10
+- **Jeffries pushes to restrict China chip exports in defense bill**: 58 → 7 — importance 77; freshness 60.01; urgency 3/10
+- **Van Hollen declines to rule out challenging Schumer for Senate Democratic leader as caucus debates strategy**: 54 → 5 — importance 77; freshness 64.79; urgency 5/10
+- **Vikings acquire Kirk Cousins from Raiders in trade deadline deal**: 36 → 8 — importance 38; freshness 99.99; urgency 7/10
+- **Disney Plus app on Meta Quest adds more than 60 3D movies**: 33 → 6 — importance 40; freshness 99.97; urgency 7/10
+- **Chiefs acquire Colts WR Josh Downs in trade deadline deal**: 37 → 12 — importance 20; freshness 96.14; urgency 6/10
+- **NRC grants X-energy construction permit for four small modular reactors at Texas Dow plant**: 27 → 3 — importance 45; freshness 99.99; urgency 7/10
+- **Sony cancels live-service shooter Fairgames**: 34 → 10 — importance 40; freshness 99.97; urgency 7/10; -6 category saturation
+- **Krakow mass shooting suspect dies in hospital as Polish prosecutors say motive investigation continues**: 1 → 13 — importance 56; freshness 43.33; urgency 5/10
+- **France accuses Iran's Revolutionary Guard of orchestrating cyberattacks on European supermarket refrigeration systems**: 4 → 14 — importance 45; freshness 60.01; urgency 3/10
+- **Krakow gunman killed his parents and sister before Main Market Square attack that left six dead**: 6 → 16 — importance 43; freshness 0.0; urgency 3/10
+- **Houthi strikes hit Aramco Tower in Riyadh, target airport and oil facilities**: 8 → 18 — importance 36; freshness 19.95; urgency 3/10
+- **Israeli President Herzog tasks opposition leader Eisenkot with forming government after inconclusive election**: 7 → 17 — importance 25; freshness 0.0; urgency 3/10
 
 ## Guardrails
 

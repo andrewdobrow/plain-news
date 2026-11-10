@@ -1,64 +1,14 @@
 {
-  "generated_at": "2026-11-10T13:11:01.549209Z",
+  "generated_at": "2026-11-10T23:09:58.320387Z",
   "assignment_editor_model": "claude-sonnet-5",
   "writer_model": "claude-sonnet-4-5",
   "categories": [
     {
       "category_key": "world",
-      "hero_source_index": 5,
+      "hero_source_index": 2,
       "card_source_indexes": [
-        2,
-        1,
-        4,
-        3
-      ],
-      "diagnostics": {
-        "model": "claude-sonnet-5",
-        "writer_model": "claude-sonnet-4-5",
-        "rejected": [
-          {
-            "source_index": 3,
-            "reason": "Routine local crime and explosion incident in Spain with no broader international consequence; not a fit for World coverage."
-          }
-        ],
-        "writer_failures": [],
-        "protected_material_update_repairs": [],
-        "hero_recovery_attempts": [],
-        "hero_recovered": false,
-        "editor_selected_card_count": 3,
-        "section_depth_target": 8,
-        "section_depth_accepted_cards": 4,
-        "section_depth_shortfall": 4,
-        "depth_backfill_writer_attempts": 1,
-        "writer_card_attempts": 4,
-        "duration_seconds": 30.699
-      }
-    },
-    {
-      "category_key": "us",
-      "hero_source_index": null,
-      "card_source_indexes": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "diagnostics": {
-        "status": "archive_recovery",
-        "reason": "Live source/generation path unavailable; reused recent published canonicals."
-      }
-    },
-    {
-      "category_key": "business",
-      "hero_source_index": 3,
-      "card_source_indexes": [
-        8,
         6,
         7,
-        2,
         4
       ],
       "diagnostics": {
@@ -69,11 +19,24 @@
           {
             "source_index": 1,
             "reason": [
-              "headline_money_claim_missing_from_lead"
+              "headline_entity_missing_from_lead"
             ]
           },
           {
             "source_index": 5,
+            "reason": [
+              "generated_copy_drifted_from_source_focus",
+              "headline_entity_missing_from_lead"
+            ]
+          },
+          {
+            "source_index": 8,
+            "reason": [
+              "generated_copy_drifted_from_source_focus"
+            ]
+          },
+          {
+            "source_index": 3,
             "reason": [
               "generated_copy_drifted_from_source_focus"
             ]
@@ -84,25 +47,18 @@
         "hero_recovered": false,
         "editor_selected_card_count": 7,
         "section_depth_target": 8,
-        "section_depth_accepted_cards": 5,
-        "section_depth_shortfall": 3,
+        "section_depth_accepted_cards": 3,
+        "section_depth_shortfall": 5,
         "depth_backfill_writer_attempts": 0,
         "writer_card_attempts": 7,
-        "duration_seconds": 55.32
+        "duration_seconds": 60.186
       }
     },
     {
-      "category_key": "tech",
-      "hero_source_index": 12,
+      "category_key": "us",
+      "hero_source_index": 1,
       "card_source_indexes": [
-        11,
-        1,
-        2,
-        10,
-        8,
-        6,
-        7,
-        5
+        2
       ],
       "diagnostics": {
         "model": "claude-sonnet-5",
@@ -110,32 +66,36 @@
         "rejected": [
           {
             "source_index": 3,
-            "reason": "Routine consumer product review of an incremental laptop refresh with no broader consequence."
-          },
-          {
-            "source_index": 5,
-            "reason": "Product review of a niche electric motorcycle prototype from a small startup; not a consequential tech/policy story."
-          },
-          {
-            "source_index": 9,
-            "reason": "Consumer gadget review of a drone-camera hybrid; routine product coverage without national significance."
-          },
-          {
-            "source_index": 13,
-            "reason": "Centers on a celebrity scandal and internet memes rather than a substantive technology or corporate decision; opinion/entertainment-flavored and not suited to Tech & Science."
+            "reason": "Duplicate coverage of the same House Oversight Committee Epstein report as the selected hero (source 1); no distinct material facts beyond overlapping details."
           }
         ],
+        "writer_failures": [],
+        "protected_material_update_repairs": [],
+        "hero_recovery_attempts": [],
+        "hero_recovered": false,
+        "editor_selected_card_count": 1,
+        "section_depth_target": 8,
+        "section_depth_accepted_cards": 1,
+        "section_depth_shortfall": 7,
+        "depth_backfill_writer_attempts": 0,
+        "writer_card_attempts": 1,
+        "duration_seconds": 16.612
+      }
+    },
+    {
+      "category_key": "business",
+      "hero_source_index": 1,
+      "card_source_indexes": [
+        3
+      ],
+      "diagnostics": {
+        "model": "claude-sonnet-5",
+        "writer_model": "claude-sonnet-4-5",
+        "rejected": [],
         "writer_failures": [
           {
-            "source_index": 4,
+            "source_index": 2,
             "reason": [
-              "headline_money_claim_missing_from_lead"
-            ]
-          },
-          {
-            "source_index": 3,
-            "reason": [
-              "generated_copy_drifted_from_source_focus",
               "headline_entity_missing_from_lead"
             ]
           }
@@ -143,27 +103,27 @@
         "protected_material_update_repairs": [],
         "hero_recovery_attempts": [],
         "hero_recovered": false,
-        "editor_selected_card_count": 8,
+        "editor_selected_card_count": 2,
         "section_depth_target": 8,
-        "section_depth_accepted_cards": 8,
-        "section_depth_shortfall": 0,
-        "depth_backfill_writer_attempts": 2,
-        "writer_card_attempts": 10,
-        "duration_seconds": 73.183
+        "section_depth_accepted_cards": 1,
+        "section_depth_shortfall": 7,
+        "depth_backfill_writer_attempts": 0,
+        "writer_card_attempts": 2,
+        "duration_seconds": 19.138
       }
     },
     {
-      "category_key": "sports",
-      "hero_source_index": 12,
+      "category_key": "tech",
+      "hero_source_index": 9,
       "card_source_indexes": [
-        8,
+        4,
         7,
-        5,
-        6,
+        3,
         13,
+        5,
         1,
-        2,
-        3
+        6,
+        8
       ],
       "diagnostics": {
         "model": "claude-sonnet-5",
@@ -171,42 +131,54 @@
         "rejected": [
           {
             "source_index": 1,
-            "reason": "Local club fan-group dispute over a goal celebration; lacks national sports consequence for a U.S. audience."
+            "reason": "Consumer entertainment feature update for a VR app; routine product news without broad consequence."
           },
           {
-            "source_index": 2,
-            "reason": "Routine international squad call-up for Wales Nations League matches; low national significance."
+            "source_index": 6,
+            "reason": "Video game cancellation is routine entertainment/industry news without national significance."
           },
           {
-            "source_index": 3,
-            "reason": "Routine England squad injury replacement call-up; low national significance and duplicative of routine squad news."
+            "source_index": 8,
+            "reason": "Niche venture capital fund announcement; not a consequential technology or science development."
           },
           {
-            "source_index": 9,
-            "reason": "Promotional vote/listicle for a radio debate on greatest all-British boxing fights, not a current sports result or decision."
+            "source_index": 11,
+            "reason": "Book promotion/interview piece, thin and discovery-only without a concrete news event."
           },
           {
-            "source_index": 10,
-            "reason": "Q&A feature/opinion on Lewis Hamilton's longevity rather than a new result, decision, or achievement."
+            "source_index": 12,
+            "reason": "Routine firmware update roundup for AirPods; minor product news without broad consequence."
+          },
+          {
+            "source_index": 14,
+            "reason": "Minor app shutdown affecting a very small user base; routine product discontinuation."
+          },
+          {
+            "source_index": 16,
+            "reason": "Duplicate of source 15 covering the same Google Fi network announcement."
+          },
+          {
+            "source_index": 17,
+            "reason": "Duplicate coverage of the same Oura-Counsel Health acquisition reported in source 3."
           }
         ],
         "writer_failures": [
           {
-            "source_index": 4,
+            "source_index": 10,
+            "reason": [
+              "generated_copy_drifted_from_source_focus"
+            ]
+          },
+          {
+            "source_index": 2,
             "reason": [
               "person_first_reference_not_full_name"
             ]
           },
           {
-            "source_index": 14,
+            "source_index": 15,
             "reason": [
-              "person_first_reference_not_full_name"
-            ]
-          },
-          {
-            "source_index": 11,
-            "reason": [
-              "generated_copy_drifted_from_source_focus",
+              "headline_entity_missing_from_lead",
               "person_first_reference_not_full_name"
             ]
           }
@@ -220,60 +192,41 @@
         "section_depth_shortfall": 0,
         "depth_backfill_writer_attempts": 3,
         "writer_card_attempts": 11,
-        "duration_seconds": 76.337
+        "duration_seconds": 73.288
       }
     },
     {
-      "category_key": "entertainment",
-      "hero_source_index": 11,
+      "category_key": "sports",
+      "hero_source_index": 8,
       "card_source_indexes": [
         4,
         6,
-        8,
-        16,
-        5,
-        2,
+        10,
         7,
-        1
+        3,
+        9,
+        5
       ],
       "diagnostics": {
         "model": "claude-sonnet-5",
         "writer_model": "claude-sonnet-4-5",
         "rejected": [
           {
-            "source_index": 1,
-            "reason": "Routine trade-market sales listing of low-profile genre films with no national significance for a U.S. general audience."
-          },
-          {
-            "source_index": 3,
-            "reason": "Thin trade announcement about an Indian horror film's first-look presentation at AFM; limited U.S. relevance."
-          },
-          {
-            "source_index": 10,
-            "reason": "Niche festival-circuit production wrap announcement for a Serbian film with minimal U.S. audience relevance."
-          },
-          {
-            "source_index": 12,
-            "reason": "Duplicate of source 11 covering the same Booker Prize win; same event, no distinct facts."
-          },
-          {
-            "source_index": 13,
-            "reason": "Routine celebrity personal news item lacking broader entertainment-industry significance."
-          },
-          {
-            "source_index": 14,
-            "reason": "Rehash of a years-old celebrity feud with no new material development; thin news value."
-          },
-          {
-            "source_index": 15,
-            "reason": "Late-night host commentary on political feud is opinion-driven and better suited to politics coverage, not a genuine entertainment development."
+            "source_index": 2,
+            "reason": "Thin aggregator-style roundup of headlines with no substantive reporting of its own; lacks a concrete news development."
           }
         ],
         "writer_failures": [
           {
-            "source_index": 9,
+            "source_index": 1,
             "reason": [
               "person_first_reference_not_full_name"
+            ]
+          },
+          {
+            "source_index": 2,
+            "reason": [
+              "generated_copy_drifted_from_source_focus"
             ]
           }
         ],
@@ -282,37 +235,163 @@
         "hero_recovered": false,
         "editor_selected_card_count": 8,
         "section_depth_target": 8,
-        "section_depth_accepted_cards": 8,
-        "section_depth_shortfall": 0,
+        "section_depth_accepted_cards": 7,
+        "section_depth_shortfall": 1,
         "depth_backfill_writer_attempts": 1,
         "writer_card_attempts": 9,
-        "duration_seconds": 61.108
+        "duration_seconds": 59.075
+      }
+    },
+    {
+      "category_key": "entertainment",
+      "hero_source_index": 11,
+      "card_source_indexes": [],
+      "diagnostics": {
+        "model": "claude-sonnet-5",
+        "writer_model": "claude-sonnet-4-5",
+        "rejected": [
+          {
+            "source_index": 10,
+            "reason": "Duplicate coverage of the same Walliams story already selected as hero via source 11; redundant same-event report."
+          },
+          {
+            "source_index": 4,
+            "reason": "Niche indie film casting announcement with limited national significance."
+          },
+          {
+            "source_index": 7,
+            "reason": "Concert tour announcement with routine national interest, below top card threshold given stronger available stories."
+          },
+          {
+            "source_index": 8,
+            "reason": "Local Nashville gallery feature on Henry Rollins memorabilia collection; limited national consequence."
+          },
+          {
+            "source_index": 13,
+            "reason": "Minor concert anecdote about a fan gesture; thin, no national significance."
+          },
+          {
+            "source_index": 14,
+            "reason": "Aggregator-style roundup of headlines rather than a substantive single article; thin source."
+          },
+          {
+            "source_index": 15,
+            "reason": "Routine entertainment programming announcement for a new game show; low national consequence relative to selected cards."
+          }
+        ],
+        "writer_failures": [
+          {
+            "source_index": 2,
+            "reason": [
+              "BadRequestError"
+            ]
+          },
+          {
+            "source_index": 3,
+            "reason": [
+              "BadRequestError"
+            ]
+          },
+          {
+            "source_index": 1,
+            "reason": [
+              "BadRequestError"
+            ]
+          },
+          {
+            "source_index": 6,
+            "reason": [
+              "BadRequestError"
+            ]
+          },
+          {
+            "source_index": 5,
+            "reason": [
+              "BadRequestError"
+            ]
+          },
+          {
+            "source_index": 16,
+            "reason": [
+              "BadRequestError"
+            ]
+          },
+          {
+            "source_index": 12,
+            "reason": [
+              "BadRequestError"
+            ]
+          },
+          {
+            "source_index": 9,
+            "reason": [
+              "BadRequestError"
+            ]
+          },
+          {
+            "source_index": 4,
+            "reason": [
+              "BadRequestError"
+            ]
+          },
+          {
+            "source_index": 7,
+            "reason": [
+              "BadRequestError"
+            ]
+          },
+          {
+            "source_index": 8,
+            "reason": [
+              "BadRequestError"
+            ]
+          },
+          {
+            "source_index": 13,
+            "reason": [
+              "BadRequestError"
+            ]
+          },
+          {
+            "source_index": 14,
+            "reason": [
+              "BadRequestError"
+            ]
+          },
+          {
+            "source_index": 15,
+            "reason": [
+              "BadRequestError"
+            ]
+          }
+        ],
+        "protected_material_update_repairs": [],
+        "hero_recovery_attempts": [],
+        "hero_recovered": false,
+        "editor_selected_card_count": 8,
+        "section_depth_target": 8,
+        "section_depth_accepted_cards": 0,
+        "section_depth_shortfall": 8,
+        "depth_backfill_writer_attempts": 6,
+        "writer_card_attempts": 14,
+        "duration_seconds": 26.38
       }
     },
     {
       "category_key": "politics",
-      "hero_source_index": 1,
+      "hero_source_index": null,
       "card_source_indexes": [
-        5,
-        3,
-        2,
-        4
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
       ],
       "diagnostics": {
-        "model": "claude-sonnet-5",
-        "writer_model": "claude-sonnet-4-5",
-        "rejected": [],
-        "writer_failures": [],
-        "protected_material_update_repairs": [],
-        "hero_recovery_attempts": [],
-        "hero_recovered": false,
-        "editor_selected_card_count": 4,
-        "section_depth_target": 8,
-        "section_depth_accepted_cards": 4,
-        "section_depth_shortfall": 4,
-        "depth_backfill_writer_attempts": 0,
-        "writer_card_attempts": 4,
-        "duration_seconds": 36.413
+        "status": "archive_recovery",
+        "reason": "Live source/generation path unavailable; reused recent published canonicals."
       }
     }
   ]
