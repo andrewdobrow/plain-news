@@ -476,3 +476,22 @@ def test_us_audience_fit_not_awarded_to_misfiled_foreign_local_story():
     )
     assert ranked
     assert ranked[0]["score_breakdown"]["us_audience_fit"] == 0
+
+
+def test_us_audience_bonus_expires_for_older_developments():
+    now = datetime(2026, 11, 9, 23, 11, tzinfo=timezone.utc)
+    old = story(
+        "Federal Reserve announces national interest rate decision",
+        now, hours=22, urgency=3, category="business",
+    )
+    recent = story(
+        "Supreme Court allows border wall construction in Texas region",
+        now, hours=2, urgency=8, category="us",
+    )
+    ranked, rejected = evaluate_front_page_candidates(
+        [section("business",old),section("us",recent)],now=now,
+    )
+    assert not rejected
+    scores={x["headline"]:x["score_breakdown"]["us_audience_fit"] for x in ranked}
+    assert scores[old["headline"]] == 0
+    assert scores[recent["headline"]] > 0
