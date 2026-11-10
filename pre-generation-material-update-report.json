@@ -1,85 +1,36 @@
 {
-  "generated_at": "2026-11-10T01:55:31Z",
-  "evaluated": 6,
+  "generated_at": "2026-11-10T13:02:20Z",
+  "evaluated": 2,
   "material_updates": 0,
-  "duplicates_suppressed": 4,
-  "holds_suppressed": 1,
+  "duplicates_suppressed": 1,
+  "holds_suppressed": 0,
   "new_or_unmatched": 1,
   "items": [
     {
       "category": "world",
-      "title": "France accuses Iran of supermarket fridge hacking - BBC",
-      "source_url": "https://www.bbc.com/news/articles/cmg474vk6dyqo",
-      "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-11-09-france-accuses-irans-revolutionary-guard-of-orchestrating-cyberattacks-on-europe",
-      "confidence": 0.98,
-      "novel_facts": [],
-      "reason": "This is the same BBC-sourced article covering France's accusation against Iran's IRGC over supermarket fridge hacking, with identical facts, figures, named officials, and timeline as the existing canonical article. No new developments are present beyond the already-reported details.",
-      "cache_hit": false
-    },
-    {
-      "category": "tech",
-      "title": "Everything we know so far about the Nvidia spy scandal targeting CEO Jensen Huang",
-      "source_url": "https://www.theverge.com/ai-artificial-intelligence/1030422/nvidia-jensen-huang-ai-china-alice-huang",
-      "action": "hold",
-      "selected_candidate_slug": "2026-11-08-nvidia-board-launches-independent-investigation-into-ceo-jensen-huang-after-repo",
-      "confidence": 0.78,
-      "novel_facts": [
-        "NYT reporting that Trump was briefed roughly a year ago on the Huang relationship but took no action",
-        "Rubio helped draft a memo to Trump officials about the relationship before Trump's May trip to China"
-      ],
-      "reason": "This is the same unfolding Nvidia/Jensen Huang spy scandal already covered in the canonical NBC-sourced article, sharing the same named individuals, investigation, and Trump/Rubio involvement. The incoming piece is a recap ('everything we know so far') that adds specific timeline details about Trump's prior knowledge and Rubio's memo before the China trip, which is a material update on the same continuing story rather than a distinct accountability angle meriting its own URL.",
-      "cache_hit": false
-    },
-    {
-      "category": "tech",
-      "title": "Hotel giant Wyndham exposed customer data after app security lapse",
-      "source_url": "https://techcrunch.com/2026/11/09/hotel-giant-wyndham-exposed-customer-data-after-app-security-lapse/",
+      "title": "Israeli forces kill Palestinian boy in West Bank, health ministry says",
+      "source_url": "https://www.bbc.co.uk/news/articles/cqpvgv318yyeo?at_medium=RSS&at_campaign=rss",
       "action": "new_story",
       "selected_candidate_slug": "",
-      "confidence": 0.97,
+      "confidence": 0.95,
       "novel_facts": [
-        "Wyndham hotel app hardcoded credential exposing Salesforce-hosted customer database",
-        "Discovered by researcher Robert Wiggins",
-        "Distinct company, distinct vulnerability unrelated to ServiceNow incident"
+        "14-year-old Moataz Daghlas killed in Burqa village near Nablus",
+        "Shooting occurred Monday evening during alleged stone-throwing operation",
+        "Two others wounded, paramedics detained",
+        "Israeli military blocked Red Crescent access to a wounded person"
       ],
-      "reason": "This article concerns a hardcoded credential vulnerability in Wyndham's app discovered by researcher Robert Wiggins, a completely different company, vulnerability type, and incident from the ServiceNow security bug candidate. No shared participants, company, or event anchors exist.",
-      "cache_hit": false
-    },
-    {
-      "category": "tech",
-      "title": "The race is on to sue Nvidia",
-      "source_url": "https://techcrunch.com/2026/11/09/the-race-is-on-to-sue-nvidia/",
-      "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-11-09-securities-lawsuits-against-nvidia-proliferate-after-board-opens-probe-into-ceos",
-      "confidence": 0.98,
-      "novel_facts": [],
-      "reason": "Same source article (identical source_url and nearly identical content) covering the same securities lawsuit development against Nvidia following the board's probe into Huang. No new facts beyond what's already in the canonical version; this is essentially the same TechCrunch piece.",
-      "cache_hit": false
-    },
-    {
-      "category": "entertainment",
-      "title": "James Gunn and Peter Safran are replaced as heads of DC Studios - Los Angeles Times",
-      "source_url": "https://www.latimes.com/entertainment-arts/business/story/2026-11-09/james-gunn-peter-safran-are-replaced-as-heads-of-dc-studios",
-      "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-11-09-james-gunn-and-peter-safran-ousted-as-dc-studios-co-ceos-leaving-superman-and-ba",
-      "confidence": 0.97,
-      "novel_facts": [
-        "Skydance executives' direct quotes (Ellison/Kreiz)",
-        "Analyst quote from Brent Penter"
-      ],
-      "reason": "Both articles report the same event: Gunn and Safran being replaced as DC Studios heads by Jeremy Latcham, with identical box office details for Superman, Supergirl, and Clayface. The incoming article adds quotes but no new material facts like arrests, deaths, or official rulings that would change the story's substance.",
+      "reason": "This article describes a distinct incident: a different victim (14-year-old Moataz Daghlas), different location (Burqa village near Nablus), different date, and different circumstances (alleged stone-throwing confrontation) than the candidate, which involves a 7-month-old baby killed in Hebron's Tel Rumeida area in June 2026 after a vehicle stop. No shared named participant, location, or date links these two events beyond the general pattern of Israeli forces killing Palestinians in the West Bank, which is insufficient for merging.",
       "cache_hit": false
     },
     {
       "category": "politics",
-      "title": "Jeffries pushes to restrict China chip exports in defense bill",
-      "source_url": "https://www.politico.com/live-updates/2026/11/09/congress/momentum-builds-on-chip-exports-01157548",
+      "title": "Pressure builds on Thune ahead of GOP leadership elections",
+      "source_url": "https://www.axios.com/2026/11/09/thune-senate-republican-leadership-elections",
       "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-11-09-jeffries-pushes-to-restrict-china-chip-exports-in-defense-bill",
+      "selected_candidate_slug": "2026-11-10-seven-republican-senators-call-for-delay-in-gop-leadership-elections",
       "confidence": 0.98,
       "novel_facts": [],
-      "reason": "This is the same article content (near-identical wording and facts) about Jeffries pushing chip export restrictions in the NDAA, matching the existing canonical exactly with no new facts added.",
+      "reason": "This is the same Axios story about senators pushing to delay Thune's leadership election, with identical facts, quotes, and figures as the existing canonical article. No new developments are present.",
       "cache_hit": false
     }
   ]
