@@ -407,3 +407,72 @@ def test_genuine_major_power_grid_outage_is_still_a_national_security_emergency(
     assert ranked[0]["headline"] == grid["headline"]
     assert ranked[0]["tier_reason"] == "security_emergency"
     assert ranked[0]["tier"] == 4
+
+
+def test_us_supreme_court_border_wall_ruling_outranks_polish_shooting_followup():
+    """Nov 9 2026 live audit wrongly placed the Polish suspect update above the U.S. court ruling."""
+    now = datetime(2026, 11, 9, 23, 11, tzinfo=timezone.utc)
+    poland = story(
+        "Krakow mass shooting suspect dies in hospital as Polish prosecutors say "
+        "motive investigation continues",
+        now, hours=10.01, urgency=3, category="world",
+    )
+    court = story(
+        "Supreme Court allows border wall construction in Texas Big Bend region in 8-1 ruling",
+        now, hours=2.90, urgency=8, category="us",
+    )
+    ranked, blocked = evaluate_front_page_candidates(
+        [section("world", poland), section("us", court)], now=now,
+    )
+    assert not blocked
+    assert ranked[0]["headline"] == court["headline"]
+    assert ranked[0]["tier"] == 5
+    assert ranked[0]["tier_reason"] == "concrete_federal_action"
+    assert ranked[0]["score_breakdown"]["us_audience_fit"] > 0
+    assert ranked[1]["tier"] == 2
+    assert ranked[1]["tier_reason"] == "foreign_public_safety_without_direct_us_impact"
+
+
+def test_foreign_local_shooting_followup_is_not_us_national_security_event():
+    now = datetime(2026, 11, 9, 23, 11, tzinfo=timezone.utc)
+    poland = story(
+        "Krakow mass shooting suspect dies in hospital as Polish prosecutors review motive",
+        now, hours=1, urgency=9, category="world",
+    )
+    ranked, blocked = evaluate_front_page_candidates(
+        [section("world", poland)], now=now,
+    )
+    assert not blocked
+    assert ranked[0]["tier"] == 2
+    assert ranked[0]["score_breakdown"]["us_audience_fit"] == 0
+
+
+def test_global_military_attack_on_us_forces_can_still_outrank_routine_domestic_news():
+    now = datetime(2026, 11, 9, 23, 11, tzinfo=timezone.utc)
+    attack = story(
+        "Iran launches missile strikes on US military bases in the Gulf",
+        now, hours=1, urgency=9, category="world",
+    )
+    domestic = story(
+        "Regional authority announces new state office hours",
+        now, hours=1, urgency=8, category="us",
+    )
+    ranked, blocked = evaluate_front_page_candidates(
+        [section("world", attack), section("us", domestic)], now=now
+    )
+    assert not blocked
+    assert ranked[0]["category_key"] == "world"
+    assert ranked[0]["tier"] == 5
+
+
+def test_us_audience_fit_not_awarded_to_misfiled_foreign_local_story():
+    now = datetime(2026, 11, 9, 23, 11, tzinfo=timezone.utc)
+    misfiled = story(
+        "Six killed in shooting in Krakow, Poland; British citizen among dead",
+        now, hours=2, urgency=6, category="us",
+    )
+    ranked, _ = evaluate_front_page_candidates(
+        [section("us", misfiled)], now=now,
+    )
+    assert ranked
+    assert ranked[0]["score_breakdown"]["us_audience_fit"] == 0
