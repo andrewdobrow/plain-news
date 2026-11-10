@@ -4,41 +4,41 @@
 
 ## Hero
 
-- Current: **Krakow mass shooting suspect dies in hospital as Polish prosecutors say motive investigation continues**
-- Recommended: **Jeffries pushes to restrict China chip exports in defense bill**
-- Recommendation: CHANGE (not enforced)
+- Current: **Van Hollen declines to rule out challenging Schumer for Senate Democratic leader as caucus debates strategy**
+- Recommended: **Van Hollen declines to rule out challenging Schumer for Senate Democratic leader as caucus debates strategy**
+- Recommendation: KEEP (not enforced)
 
 ## Top Stories deck
 
 | Rank | Current | Recommended | Score | Why |
 | ---: | --- | --- | ---: | --- |
-| 1 | France accuses Iran's Revolutionary Guard of orchestrating cyberattacks on European supermarket refrigeration systems | Jeffries pushes to restrict China chip exports in defense bill | 83 | importance 77; freshness 99.98; urgency 6/10 |
-| 2 | Explosion at Turkish steel plant kills 17 after crane collapse | Supreme Court allows border wall construction in Texas Big Bend region in 8-1 ruling | 82 | importance 62; freshness 99.98; urgency 8/10 |
-| 3 | Krakow mass shooting suspect dies in hospital as Polish prosecutors say motive investigation continues | Pentagon seeks information on military satellite constellation around the Moon | 81 | importance 77; freshness 93.25; urgency 6/10 |
-| 4 | Paraguay formally charges ousted president Santiago Peña with breach of trust over Ueno Bank collapse | France accuses Iran's Revolutionary Guard of orchestrating cyberattacks on European supermarket refrigeration systems | 74 | importance 45; freshness 99.98; urgency 7/10 |
-| 5 | Krakow gunman killed his parents and sister before Main Market Square attack that left six dead | Alice Huang, former executive at Nvidia customer Megaspeed, under U.S. espionage investigation | 72 | importance 47; freshness 97.67; urgency 6/10 |
-| 6 | Israeli President Herzog tasks opposition leader Eisenkot with forming government after inconclusive election | AI hardware testing startup Nominal raises $240M at $3B valuation | 72 | importance 45; freshness 93.61; urgency 7/10 |
-| 7 | Houthi strikes hit Aramco Tower in Riyadh, target airport and oil facilities | Donnie Dunagan, child actor who voiced Bambi in 1942 Disney classic, dies at 92 | 71 | importance 46; freshness 99.57; urgency 6/10 |
-| 8 | Supreme Court allows border wall construction in Texas Big Bend region in 8-1 ruling | James Gunn and Peter Safran ousted as DC Studios co-CEOs, leaving Superman and Batman franchises in uncertainty | 70 | importance 40; freshness 99.98; urgency 7/10 |
-| 9 | Philadelphia boycott of Jewish-owned restaurants draws dueling protests, three arrests | Skydance details plan for $6 billion in cost savings from Paramount-Warner Bros. Discovery merger | 68 | importance 40; freshness 97.14; urgency 6/10 |
-| 10 | Wisconsin state trooper detained by ICE released under supervision after intervention by DHS secretary | Explosion at Turkish steel plant kills 17 after crane collapse | 65 | importance 41; freshness 95.84; urgency 6/10 |
-| 11 | Six killed in shooting in Krakow, Poland; British citizen among dead | Elon Musk's companies face Democratic investigations after $475 million midterm spending resulted in losses | 70 | importance 72; freshness 83.3; urgency 3/10; -6 category saturation |
-| 12 | Arrest made in shooting that killed one during Winston-Salem State University homecoming weekend | Skydance to bundle Paramount+ and HBO Max in early 2027 | 67 | importance 40; freshness 96.71; urgency 6/10; -6 category saturation |
+| 1 | Krakow mass shooting suspect dies in hospital as Polish prosecutors say motive investigation continues | Seven Republican senators call for delay in GOP leadership elections | 81 | importance 72; freshness 99.99; urgency 6/10 |
+| 2 | Explosion at Turkish steel factory kills at least 17 workers | Van Hollen declines to rule out challenging Schumer for Senate Democratic leader | 80 | importance 77; freshness 89.19; urgency 6/10 |
+| 3 | France accuses Iran's Revolutionary Guard of orchestrating cyberattacks on European supermarket refrigeration systems | ICE detains 8-year-old Haitian boy at routine check-in after TPS termination, prompting San Diego school district response | 78 | importance 62; freshness 99.99; urgency 6/10 |
+| 4 | Paraguay formally charges ousted president Santiago Peña with breach of trust over Ueno Bank collapse | Trump says he was briefed on Nvidia CEO's alleged spy relationship but claims it 'didn't make much of an impact' | 74 | importance 52; freshness 99.98; urgency 6/10 |
+| 5 | Krakow gunman killed his parents and sister before Main Market Square attack that left six dead | Reds first baseman Sal Stewart wins NL Rookie of the Year after 32-homer, 112-RBI season | 74 | importance 65; freshness 99.99; urgency 6/10 |
+| 6 | Israeli President Herzog tasks opposition leader Eisenkot with forming government after inconclusive election | Man Utd expected to sack head coach Michael Carrick | 73 | importance 45; freshness 94.53; urgency 7/10 |
+| 7 | Houthi strikes hit Aramco Tower in Riyadh, target airport and oil facilities | Anthropic to set IPO valuation range this week despite Nasdaq sell-off | 70 | importance 40; freshness 98.99; urgency 7/10 |
+| 8 | ICE detains 8-year-old Haitian boy at routine check-in after TPS termination, prompting San Diego school district response | 'De Gaulle' Wins Top Prize at American French Film Festival | 70 | importance 40; freshness 97.91; urgency 7/10 |
+| 9 | Philadelphia boycott of Jewish-owned restaurants draws dueling protests, three arrests | Supreme Court allows border wall construction in Texas Big Bend region in 8-1 ruling | 70 | importance 62; freshness 95.21; urgency 3/10 |
+| 10 | Supreme Court allows border wall construction in Texas Big Bend region in 8-1 ruling | Jeffries pushes to restrict China chip exports in defense bill | 75 | importance 77; freshness 95.21; urgency 3/10; -6 category saturation |
+| 11 | Wisconsin state trooper detained by ICE released under supervision after intervention by DHS secretary | Donnie Dunagan, voice of Bambi in 1942 Disney classic, dies at 92 | 69 | importance 46; freshness 99.99; urgency 5/10 |
+| 12 | Six killed in shooting in Krakow, Poland; British citizen among dead | Krakow mass shooting suspect dies in hospital as Polish prosecutors say motive investigation continues | 67 | importance 56; freshness 78.53; urgency 5/10 |
 
 ## Recommended moves
 
-- **Jeffries pushes to restrict China chip exports in defense bill**: 51 → 1 — importance 77; freshness 99.98; urgency 6/10
-- **Alice Huang, former executive at Nvidia customer Megaspeed, under U.S. espionage investigation**: 53 → 5 — importance 47; freshness 97.67; urgency 6/10
-- **Elon Musk's companies face Democratic investigations after $475 million midterm spending resulted in losses**: 55 → 11 — importance 72; freshness 83.3; urgency 3/10; -6 category saturation
-- **Donnie Dunagan, child actor who voiced Bambi in 1942 Disney classic, dies at 92**: 43 → 7 — importance 46; freshness 99.57; urgency 6/10
-- **Skydance to bundle Paramount+ and HBO Max in early 2027**: 47 → 12 — importance 40; freshness 96.71; urgency 6/10; -6 category saturation
-- **James Gunn and Peter Safran ousted as DC Studios co-CEOs, leaving Superman and Batman franchises in uncertainty**: 42 → 8 — importance 40; freshness 99.98; urgency 7/10
-- **Pentagon seeks information on military satellite constellation around the Moon**: 29 → 3 — importance 77; freshness 93.25; urgency 6/10
-- **AI hardware testing startup Nominal raises $240M at $3B valuation**: 32 → 6 — importance 45; freshness 93.61; urgency 7/10
-- **Krakow mass shooting suspect dies in hospital as Polish prosecutors say motive investigation continues**: 3 → 13 — importance 56; freshness 83.3; urgency 3/10
-- **Houthi strikes hit Aramco Tower in Riyadh, target airport and oil facilities**: 7 → 17 — importance 36; freshness 59.93; urgency 3/10
-- **Krakow gunman killed his parents and sister before Main Market Square attack that left six dead**: 5 → 15 — importance 43; freshness 23.62; urgency 3/10
-- **Israeli President Herzog tasks opposition leader Eisenkot with forming government after inconclusive election**: 6 → 16 — importance 25; freshness 26.57; urgency 3/10
+- **Seven Republican senators call for delay in GOP leadership elections**: 51 → 1 — importance 72; freshness 99.99; urgency 6/10
+- **Van Hollen declines to rule out challenging Schumer for Senate Democratic leader**: 52 → 2 — importance 77; freshness 89.19; urgency 6/10
+- **Jeffries pushes to restrict China chip exports in defense bill**: 57 → 10 — importance 77; freshness 95.21; urgency 3/10; -6 category saturation
+- **'De Gaulle' Wins Top Prize at American French Film Festival**: 50 → 8 — importance 40; freshness 97.91; urgency 7/10
+- **Man Utd expected to sack head coach Michael Carrick**: 38 → 6 — importance 45; freshness 94.53; urgency 7/10
+- **Donnie Dunagan, voice of Bambi in 1942 Disney classic, dies at 92**: 42 → 11 — importance 46; freshness 99.99; urgency 5/10
+- **Reds first baseman Sal Stewart wins NL Rookie of the Year after 32-homer, 112-RBI season**: 33 → 5 — importance 65; freshness 99.99; urgency 6/10
+- **Trump says he was briefed on Nvidia CEO's alleged spy relationship but claims it 'didn't make much of an impact'**: 27 → 4 — importance 52; freshness 99.98; urgency 6/10
+- **Anthropic to set IPO valuation range this week despite Nasdaq sell-off**: 26 → 7 — importance 40; freshness 98.99; urgency 7/10
+- **Krakow mass shooting suspect dies in hospital as Polish prosecutors say motive investigation continues**: 1 → 12 — importance 56; freshness 78.53; urgency 5/10
+- **Explosion at Turkish steel factory kills at least 17 workers**: 2 → 13 — importance 41; freshness 91.07; urgency 6/10
+- **France accuses Iran's Revolutionary Guard of orchestrating cyberattacks on European supermarket refrigeration systems**: 3 → 14 — importance 45; freshness 95.21; urgency 3/10
 
 ## Guardrails
 
