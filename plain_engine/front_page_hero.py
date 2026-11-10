@@ -26,6 +26,7 @@ _GOV_ACTION = re.compile(
     r"federal court|federal reserve|fed|pentagon|justice department|"
     r"state department|treasury|administration|trump|u\.s\.|us)\b"
     r".{0,90}\b(?:rules?|overturns?|strikes down|blocks?|orders?|"
+    r"allows?|upholds?|permits?|authorizes?|reinstates?|invalidates?|"
     r"signs?|passes?|approves?|vetoes?|halts?|suspends?|"
     r"announces?|launches?|replaces?|fires?|resigns?|"
     r"cuts?|raises?|sanctions?|deploys?|attacks?|"
@@ -34,6 +35,7 @@ _GOV_ACTION = re.compile(
 )
 _GOV_REVERSE = re.compile(
     r"\b(?:rules?|overturns?|strikes down|blocks?|signs?|passes?|"
+    r"allows?|upholds?|permits?|authorizes?|reinstates?|invalidates?|"
     r"approves?|vetoes?|halts?|orders?|cuts?|raises?|"
     r"announces?|replaces?|launches?)\b.{0,75}\b"
     r"(?:supreme court|congress|senate|white house|president|"
@@ -109,6 +111,17 @@ _BROAD_REGULATORY_SCOPE = re.compile(
     r"\b(?:nationwide|industrywide|across the (?:industry|sector)|"
     r"all (?:banks|exchanges|platforms|companies|financial institutions)|"
     r"new federal law|economy.wide)\b", re.I,
+)
+
+# Localized foreign shootings can be important World stories, but an
+# investigation or suspect update abroad is not automatically a U.S.-national
+# security emergency simply because its title contains "mass shooting".
+_FOREIGN_LOCAL_SHOOTING = re.compile(
+    r"\b(?:mass shooting|shooting suspect|gunman|shooting)\b", re.I,
+)
+_DIRECT_US_INVOLVEMENT = re.compile(
+    r"\b(?:united states|u\.s\.|american(?:s)?|us troops|us forces|"
+    r"us government|white house|pentagon|nato)\b", re.I,
 )
 
 _SENATE_ELECTION = re.compile(
@@ -211,6 +224,8 @@ def _major_event_tier(category_key, headline):
     if economy and not analysis:
         return 4, "macroeconomic_development"
     if security and not analysis:
+        if category_key == "world" and _FOREIGN_LOCAL_SHOOTING.search(title) and not _DIRECT_US_INVOLVEMENT.search(title):
+            return 2, "foreign_public_safety_without_direct_us_impact"
         return 4 if re.search(r"\b(?:nationwide|national|mass|major|multiple states)\b", title, re.I) or _GRID_EMERGENCY.search(title) else 3, "security_emergency"
     if election and not analysis:
         return 3, "significant_electoral_development"
@@ -311,9 +326,18 @@ def evaluate_front_page_candidates(all_categories, archive=None, *, now=None, he
             relevance_points = 0.15 * relevance.score
             importance_points = 0.15 * importance.score
             freshness_points = max(-45.0, 44.0 - max(0.0, age) * 2.5)
+            # Plain is a U.S. general-news site: a verified U.S.-national
+            # development receives a modest audience-fit bonus. This does NOT
+            # use the section label as a proxy (foreign stories occasionally
+            # arrive misfiled in U.S.), and cannot outrank a much larger world
+            # event by itself.
+            audience_points = (
+                round(22.0 * max(0.0, 1.0 - max(0.0, age) / 12.0), 2)
+                if relevance.scope == "us_national" else 0.0
+            )
             score = round(
                 tier_points + urgency_points + relevance_points
-                + importance_points + freshness_points, 2
+                + importance_points + freshness_points + audience_points, 2
             )
             candidates.append({
                 "category": cat, "category_key": key, "category_label": label,
@@ -326,6 +350,7 @@ def evaluate_front_page_candidates(all_categories, archive=None, *, now=None, he
                     "national_relevance": round(relevance_points, 2),
                     "independent_importance": round(importance_points, 2),
                     "freshness": round(freshness_points, 2),
+                    "us_audience_fit": round(audience_points, 2),
                 },
                 "national_relevance": relevance.scope,
                 "age_hours": round(age, 2), "timestamp_basis": date_basis,
