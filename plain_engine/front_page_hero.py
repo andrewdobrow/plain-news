@@ -85,7 +85,8 @@ _GRID_EMERGENCY = re.compile(
 )
 
 _ANALYSIS = re.compile(
-    r"\b(?:declines? to rule out|won't rule out|will not rule out|"
+    r"\b(?:declines? to rule out|refuses? to rule out|"
+    r"won't rule out|will not rule out|"
     r"would not rule out|has not ruled out|not ruling out|"
     r"could|might|may|opinion|analysis|commentary|"
     r"expert says|experts say|warns?|predicts?|"
