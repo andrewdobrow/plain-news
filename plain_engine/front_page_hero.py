@@ -25,7 +25,7 @@ _GOV_ACTION = re.compile(
     r"\b(?:president|white house|congress|senate|house|supreme court|"
     r"federal court|federal reserve|fed|pentagon|justice department|"
     r"state department|treasury|administration|trump|u\.s\.|us)\b"
-    r".{0,90}\b(?:rules?|overturns?|strikes down|blocks?|orders?|"
+    r".{0,90}\b(?:overturns?|strikes down|blocks?|orders?|"
     r"allows?|upholds?|permits?|authorizes?|reinstates?|invalidates?|"
     r"signs?|passes?|approves?|vetoes?|halts?|suspends?|"
     r"announces?|launches?|replaces?|fires?|resigns?|"
@@ -34,12 +34,22 @@ _GOV_ACTION = re.compile(
     re.I,
 )
 _GOV_REVERSE = re.compile(
-    r"\b(?:rules?|overturns?|strikes down|blocks?|signs?|passes?|"
+    r"\b(?:overturns?|strikes down|blocks?|signs?|passes?|"
     r"allows?|upholds?|permits?|authorizes?|reinstates?|invalidates?|"
     r"approves?|vetoes?|halts?|orders?|cuts?|raises?|"
     r"announces?|replaces?|launches?)\b.{0,75}\b"
     r"(?:supreme court|congress|senate|white house|president|"
     r"federal reserve|trump|federal government)\b", re.I,
+)
+# A legal ruling is a completed court action; phrases such as "rules out" 
+# or "declines to rule out challenging a senator" are NOT court rulings.
+# Keep this distinct from generic government verbs to prevent legislative
+# strategy stories accidentally acquiring the highest national significance.
+_COURT_DECISION = re.compile(
+    r"\b(?:supreme court|federal court|appeals court)\b.{0,90}"
+    r"\b(?:rules?|ruled)\b(?!\s+out\b)"
+    r"|\b(?:rules?|ruled)\b(?!\s+out\b).{0,75}"
+    r"\b(?:supreme court|federal court|appeals court)\b", re.I,
 )
 _WAR_ACTION = re.compile(
     r"\b(?:strikes?|airstrikes?|invades?|invaded|launches? missiles?|"
@@ -75,7 +85,9 @@ _GRID_EMERGENCY = re.compile(
 )
 
 _ANALYSIS = re.compile(
-    r"\b(?:could|might|may|opinion|analysis|commentary|"
+    r"\b(?:declines? to rule out|won't rule out|will not rule out|"
+    r"would not rule out|has not ruled out|not ruling out|"
+    r"could|might|may|opinion|analysis|commentary|"
     r"expert says|experts say|warns?|predicts?|"
     r"enabling|what to know|how (?:to|the)|"
     r"future of|raises questions|explainer)\b", re.I,
@@ -197,7 +209,11 @@ def _major_event_tier(category_key, headline):
     if _SPORTS_EVENT.search(title) or _ENTERTAINMENT_EVENT.search(title):
         return 0, "sports_entertainment_content_outside_its_category"
 
-    government = bool(_GOV_ACTION.search(title) or _GOV_REVERSE.search(title))
+    government = bool(
+        _GOV_ACTION.search(title)
+        or _GOV_REVERSE.search(title)
+        or _COURT_DECISION.search(title)
+    )
     conflict = bool(_WAR_ACTION.search(title))
     economy = bool(_ECON_ACTION.search(title))
     security = bool(_SECURITY_ACTION.search(title) or _GRID_EMERGENCY.search(title))
