@@ -495,3 +495,72 @@ def test_us_audience_bonus_expires_for_older_developments():
     scores={x["headline"]:x["score_breakdown"]["us_audience_fit"] for x in ranked}
     assert scores[old["headline"]] == 0
     assert scores[recent["headline"]] > 0
+
+
+
+def test_senate_rule_out_speculation_does_not_block_fresh_national_reporting():
+    """Exact Nov 10 6 PM failure: 'rule out ... Senate' was a false Tier-5 court action."""
+    now = datetime(2026, 11, 10, 23, 10, tzinfo=timezone.utc)
+    speculation = story(
+        "Van Hollen declines to rule out challenging Schumer for Senate Democratic "
+        "leader as caucus debates strategy",
+        now, hours=21.12, urgency=5, category="politics",
+    )
+    new_report = story(
+        "House GOP report faults Justice Department for decades of failures in "
+        "Epstein case, urges reinterviewing witnesses",
+        now, hours=1.65, urgency=7, category="us",
+    )
+    ranked, rejected = evaluate_front_page_candidates(
+        [section("politics", speculation), section("us", new_report)], now=now
+    )
+    assert not rejected
+    assert ranked[0]["headline"] == new_report["headline"]
+    assert ranked[0]["age_hours"] < 2
+    assert ranked[1]["tier"] == 1
+    assert ranked[1]["tier_reason"] == "analysis_or_speculation"
+    assert ranked[1]["score"] < ranked[0]["score"]
+
+
+@pytest.mark.parametrize("title", [
+    "Van Hollen declines to rule out challenging Schumer for Senate Democratic leader",
+    "Senator refuses to rule out challenging Senate leadership",
+    "Senate Democrat won't rule out a challenge for majority leader",
+    "Senate candidate has not ruled out leadership challenge",
+])
+def test_possible_political_candidacy_is_never_a_concrete_federal_action(title):
+    now = datetime(2026, 11, 10, 23, 10, tzinfo=timezone.utc)
+    ranked, excluded = evaluate_front_page_candidates(
+        [section("politics", story(title, now, category="politics"))], now=now
+    )
+    assert not excluded
+    assert ranked[0]["tier"] < 3
+    assert ranked[0]["tier_reason"] != "concrete_federal_action"
+
+
+@pytest.mark.parametrize("title", [
+    "Supreme Court rules on national federal election policy",
+    "Supreme Court ruled on nationwide federal election challenge",
+    "Federal court rules on national government voting protections",
+    "Supreme Court allows border wall construction in Texas region",
+])
+def test_actual_federal_court_decision_retains_major_significance(title):
+    now = datetime(2026, 11, 10, 23, 10, tzinfo=timezone.utc)
+    ranked, rejected = evaluate_front_page_candidates(
+        [section("us", story(title, now, category="us"))], now=now
+    )
+    assert not rejected
+    assert ranked[0]["tier"] == 5
+    assert ranked[0]["tier_reason"] == "concrete_federal_action"
+
+
+def test_senate_rules_out_a_candidate_is_not_a_federal_court_decision():
+    now = datetime(2026, 11, 10, 23, 10, tzinfo=timezone.utc)
+    ranked, rejected = evaluate_front_page_candidates(
+        [section("politics", story(
+            "Senate committee rules out candidate for party leadership",
+            now, category="politics"
+        ))], now=now
+    )
+    assert not rejected
+    assert ranked[0]["tier"] < 5
