@@ -4,7 +4,7 @@
   "by_model": {},
   "by_workload_class": {},
   "calls": [],
-  "failed_requests_without_usage": 21,
+  "failed_requests_without_usage": 23,
   "failures": [
     {
       "callsite": {
@@ -12,7 +12,7 @@
         "function": "classify_stories",
         "line": 20
       },
-      "duration_seconds": 0.2,
+      "duration_seconds": 0.263,
       "error_type": "BadRequestError",
       "requested_model": "claude-sonnet-4-5",
       "sequence": 1,
@@ -24,7 +24,7 @@
         "function": "classify_stories",
         "line": 20
       },
-      "duration_seconds": 0.093,
+      "duration_seconds": 0.108,
       "error_type": "BadRequestError",
       "requested_model": "claude-sonnet-4-5",
       "sequence": 2,
@@ -36,7 +36,7 @@
         "function": "classify_stories",
         "line": 20
       },
-      "duration_seconds": 0.088,
+      "duration_seconds": 0.11,
       "error_type": "BadRequestError",
       "requested_model": "claude-sonnet-4-5",
       "sequence": 3,
@@ -48,7 +48,7 @@
         "function": "classify_stories",
         "line": 20
       },
-      "duration_seconds": 0.094,
+      "duration_seconds": 0.124,
       "error_type": "BadRequestError",
       "requested_model": "claude-sonnet-4-5",
       "sequence": 4,
@@ -56,27 +56,27 @@
     },
     {
       "callsite": {
-        "file": "assignment_pipeline.py",
-        "function": "run_assignment_editor",
-        "line": 146
+        "file": "category_classifier.py",
+        "function": "classify_stories",
+        "line": 20
       },
-      "duration_seconds": 0.168,
+      "duration_seconds": 0.107,
       "error_type": "BadRequestError",
-      "requested_model": "claude-sonnet-5",
+      "requested_model": "claude-sonnet-4-5",
       "sequence": 5,
-      "workload_class": "assignment_editor"
+      "workload_class": "classification"
     },
     {
       "callsite": {
-        "file": "assignment_pipeline.py",
-        "function": "run_assignment_editor",
-        "line": 146
+        "file": "semantic_publication_gate.py",
+        "function": "adjudicate_candidates",
+        "line": 956
       },
-      "duration_seconds": 0.123,
+      "duration_seconds": 0.226,
       "error_type": "BadRequestError",
       "requested_model": "claude-sonnet-5",
       "sequence": 6,
-      "workload_class": "assignment_editor"
+      "workload_class": "identity_decision"
     },
     {
       "callsite": {
@@ -84,7 +84,7 @@
         "function": "run_assignment_editor",
         "line": 146
       },
-      "duration_seconds": 0.109,
+      "duration_seconds": 0.176,
       "error_type": "BadRequestError",
       "requested_model": "claude-sonnet-5",
       "sequence": 7,
@@ -96,7 +96,7 @@
         "function": "run_assignment_editor",
         "line": 146
       },
-      "duration_seconds": 0.104,
+      "duration_seconds": 0.115,
       "error_type": "BadRequestError",
       "requested_model": "claude-sonnet-5",
       "sequence": 8,
@@ -108,7 +108,7 @@
         "function": "run_assignment_editor",
         "line": 146
       },
-      "duration_seconds": 0.077,
+      "duration_seconds": 0.11,
       "error_type": "BadRequestError",
       "requested_model": "claude-sonnet-5",
       "sequence": 9,
@@ -120,7 +120,7 @@
         "function": "run_assignment_editor",
         "line": 146
       },
-      "duration_seconds": 0.073,
+      "duration_seconds": 0.123,
       "error_type": "BadRequestError",
       "requested_model": "claude-sonnet-5",
       "sequence": 10,
@@ -132,7 +132,7 @@
         "function": "run_assignment_editor",
         "line": 146
       },
-      "duration_seconds": 0.082,
+      "duration_seconds": 0.105,
       "error_type": "BadRequestError",
       "requested_model": "claude-sonnet-5",
       "sequence": 11,
@@ -144,7 +144,7 @@
         "function": "run_assignment_editor",
         "line": 146
       },
-      "duration_seconds": 0.137,
+      "duration_seconds": 0.128,
       "error_type": "BadRequestError",
       "requested_model": "claude-sonnet-5",
       "sequence": 12,
@@ -156,7 +156,7 @@
         "function": "run_assignment_editor",
         "line": 146
       },
-      "duration_seconds": 0.08,
+      "duration_seconds": 0.117,
       "error_type": "BadRequestError",
       "requested_model": "claude-sonnet-5",
       "sequence": 13,
@@ -168,7 +168,7 @@
         "function": "run_assignment_editor",
         "line": 146
       },
-      "duration_seconds": 0.136,
+      "duration_seconds": 0.109,
       "error_type": "BadRequestError",
       "requested_model": "claude-sonnet-5",
       "sequence": 14,
@@ -180,7 +180,7 @@
         "function": "run_assignment_editor",
         "line": 146
       },
-      "duration_seconds": 0.13,
+      "duration_seconds": 0.114,
       "error_type": "BadRequestError",
       "requested_model": "claude-sonnet-5",
       "sequence": 15,
@@ -192,7 +192,7 @@
         "function": "run_assignment_editor",
         "line": 146
       },
-      "duration_seconds": 0.082,
+      "duration_seconds": 0.114,
       "error_type": "BadRequestError",
       "requested_model": "claude-sonnet-5",
       "sequence": 16,
@@ -204,7 +204,7 @@
         "function": "run_assignment_editor",
         "line": 146
       },
-      "duration_seconds": 0.097,
+      "duration_seconds": 0.11,
       "error_type": "BadRequestError",
       "requested_model": "claude-sonnet-5",
       "sequence": 17,
@@ -216,10 +216,34 @@
         "function": "run_assignment_editor",
         "line": 146
       },
-      "duration_seconds": 0.082,
+      "duration_seconds": 0.105,
       "error_type": "BadRequestError",
       "requested_model": "claude-sonnet-5",
       "sequence": 18,
+      "workload_class": "assignment_editor"
+    },
+    {
+      "callsite": {
+        "file": "assignment_pipeline.py",
+        "function": "run_assignment_editor",
+        "line": 146
+      },
+      "duration_seconds": 0.113,
+      "error_type": "BadRequestError",
+      "requested_model": "claude-sonnet-5",
+      "sequence": 19,
+      "workload_class": "assignment_editor"
+    },
+    {
+      "callsite": {
+        "file": "assignment_pipeline.py",
+        "function": "run_assignment_editor",
+        "line": 146
+      },
+      "duration_seconds": 0.14,
+      "error_type": "BadRequestError",
+      "requested_model": "claude-sonnet-5",
+      "sequence": 20,
       "workload_class": "assignment_editor"
     },
     {
@@ -228,38 +252,38 @@
         "function": "promote_duplicate_heroes",
         "line": 1432
       },
-      "duration_seconds": 0.11,
-      "error_type": "BadRequestError",
-      "requested_model": "claude-haiku-4-5-20251001",
-      "sequence": 19,
-      "workload_class": "other"
-    },
-    {
-      "callsite": {
-        "file": "generate.py",
-        "function": "global_rank",
-        "line": 1524
-      },
-      "duration_seconds": 0.079,
-      "error_type": "BadRequestError",
-      "requested_model": "claude-haiku-4-5-20251001",
-      "sequence": 20,
-      "workload_class": "other"
-    },
-    {
-      "callsite": {
-        "file": "generate.py",
-        "function": "global_rank",
-        "line": 1524
-      },
-      "duration_seconds": 0.085,
+      "duration_seconds": 0.147,
       "error_type": "BadRequestError",
       "requested_model": "claude-haiku-4-5-20251001",
       "sequence": 21,
       "workload_class": "other"
+    },
+    {
+      "callsite": {
+        "file": "generate.py",
+        "function": "global_rank",
+        "line": 1524
+      },
+      "duration_seconds": 0.105,
+      "error_type": "BadRequestError",
+      "requested_model": "claude-haiku-4-5-20251001",
+      "sequence": 22,
+      "workload_class": "other"
+    },
+    {
+      "callsite": {
+        "file": "generate.py",
+        "function": "global_rank",
+        "line": 1524
+      },
+      "duration_seconds": 0.114,
+      "error_type": "BadRequestError",
+      "requested_model": "claude-haiku-4-5-20251001",
+      "sequence": 23,
+      "workload_class": "other"
     }
   ],
-  "finished_at": "2026-11-11T13:04:59Z",
+  "finished_at": "2026-11-11T23:06:07Z",
   "observability_version": "1.13.7.1y",
   "pricing_catalog": {
     "claude-opus-5": {
@@ -298,7 +322,7 @@
   },
   "provider": "anthropic",
   "schema_version": 1,
-  "started_at": "2026-11-11T13:00:47Z",
+  "started_at": "2026-11-11T23:00:45Z",
   "totals": {
     "base_input_tokens": 0,
     "cache_read_tokens": 0,
