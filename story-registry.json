@@ -156564,347 +156564,6 @@
         ]
       }
     },
-    "story_000579": {
-      "story_id": "story_000579",
-      "events": [
-        "unknown-event-9350738835",
-        "unknown-event-3837b9cb6e"
-      ],
-      "status": "archived",
-      "lifecycle": {
-        "state": "archived",
-        "reason": "No recorded update for at least 30 days",
-        "last_updated": "2026-09-06T06:24:34+00:00",
-        "hours_since_update": 1576.76,
-        "event_count": 2,
-        "timeline_entries": 2
-      },
-      "lifecycle_history": [
-        {
-          "from": "active",
-          "to": "archived",
-          "reason": "No recorded update for at least 30 days",
-          "last_updated": "2026-09-06T06:24:34+00:00"
-        }
-      ],
-      "titles": [
-        "Taylor's 'dream ending to a dream career'",
-        "Taylor's place among greats set in stone after extraordinary swansong"
-      ],
-      "title_tokens": [
-        "after",
-        "among",
-        "career",
-        "dream",
-        "ending",
-        "extraordinary",
-        "greats",
-        "place",
-        "set",
-        "stone",
-        "swansong",
-        "taylor"
-      ],
-      "fact_tokens": [
-        "old",
-        "year"
-      ],
-      "facts": [
-        "15-year-old"
-      ],
-      "locations": [],
-      "agencies": [],
-      "event_types": [],
-      "entities": [
-        "Amanda Serrano",
-        "Chantelle Cameron",
-        "Croke Park",
-        "Croke Park and",
-        "Deirdre Gogarty's",
-        "Eddie Hearn",
-        "Flora Pili",
-        "International Olympic Committee",
-        "Ireland and",
-        "Jack Charlton's Republic of Ireland",
-        "Katie Taylor",
-        "Lee and Peter",
-        "Limerick. Perhaps",
-        "Madison Square Garden",
-        "Olympic Games. Prophetic",
-        "Perhaps the",
-        "Peter and",
-        "Published22 August",
-        "Published28 April",
-        "Published28 August",
-        "Rio Games",
-        "Serrano Her",
-        "Sofya Ochigava",
-        "World Cups"
-      ],
-      "unified_incident_evidence": [
-        {
-          "evidence_version": 4,
-          "family": "unknown",
-          "concepts": [
-            "age_15",
-            "family_victim",
-            "minor_subject"
-          ],
-          "people": [
-            "katie taylor croke"
-          ],
-          "locations": [],
-          "agencies": [],
-          "distinctive_tokens": [
-            "000",
-            "1986",
-            "1990",
-            "1991",
-            "1994",
-            "2001",
-            "2007",
-            "2012",
-            "2016",
-            "2022",
-            "2024",
-            "able",
-            "accept",
-            "achieved",
-            "act",
-            "add",
-            "addressed",
-            "adoring",
-            "aforementioned",
-            "against",
-            "ago",
-            "all",
-            "allowed",
-            "amanda",
-            "amateur",
-            "among",
-            "appeared",
-            "appreciation",
-            "april",
-            "arena",
-            "articles",
-            "atmosphere",
-            "august",
-            "avenged",
-            "back",
-            "barriers",
-            "battles",
-            "bbc",
-            "became",
-            "because",
-            "become",
-            "been",
-            "before",
-            "being",
-            "belied",
-            "belief",
-            "belts",
-            "best"
-          ],
-          "title_tokens": [
-            "career",
-            "dream",
-            "ending",
-            "taylor"
-          ],
-          "published_at": "2026-09-06T06:24:34+00:00"
-        },
-        {
-          "evidence_version": 4,
-          "family": "unknown",
-          "concepts": [],
-          "people": [],
-          "locations": [],
-          "agencies": [],
-          "distinctive_tokens": [
-            "all",
-            "among",
-            "articles",
-            "back",
-            "bbc",
-            "boxing",
-            "but",
-            "buy",
-            "c5yjr8pp0jwo",
-            "cameron",
-            "campaign",
-            "can",
-            "career",
-            "celebration",
-            "chantelle",
-            "cliched",
-            "cope",
-            "difficulties",
-            "downs",
-            "dream",
-            "eat",
-            "ending",
-            "enjoy",
-            "even",
-            "everyone",
-            "extraordinary",
-            "factoring",
-            "fierce",
-            "going",
-            "greatest",
-            "greats",
-            "has",
-            "have",
-            "heartbreak",
-            "her",
-            "https",
-            "hyperbolic",
-            "icon",
-            "impulse",
-            "indicated",
-            "inside",
-            "ireland",
-            "irish",
-            "just",
-            "legend",
-            "lesser",
-            "look",
-            "loss"
-          ],
-          "title_tokens": [
-            "among",
-            "extraordinary",
-            "greats",
-            "place",
-            "set",
-            "stone",
-            "swansong",
-            "taylor"
-          ],
-          "published_at": "2026-09-06T06:24:34+00:00"
-        }
-      ],
-      "audience_relevance": {
-        "scope": "unknown",
-        "score": 60,
-        "regions": [],
-        "places": []
-      },
-      "resolution_history": [
-        {
-          "event_key": "unknown-event-9350738835",
-          "confidence": 0.0,
-          "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-          "decision_trace": [
-            "Sparse event-key resolver guard: true",
-            "Resolver same-event merge bypassed: true"
-          ],
-          "resolver_version": "2.1",
-          "matched_existing": false,
-          "relationship": "new_story"
-        },
-        {
-          "event_key": "unknown-event-3837b9cb6e",
-          "confidence": 1.0,
-          "reason": "Exact source article URL already belongs to this story",
-          "decision_trace": [
-            "Exact source article identity: true",
-            "Normalized source URL: https://www.bbc.co.uk/sport/boxing/articles/c5yjr8pp0jwo?at_campaign=rss&at_medium=RSS",
-            "Confidence: 1.00"
-          ],
-          "resolver_version": "2.4",
-          "matched_existing": true,
-          "relationship": "same_event"
-        }
-      ],
-      "relationship_history": [
-        {
-          "event_key": "unknown-event-9350738835",
-          "relationship": "new_story",
-          "confidence": 0.0,
-          "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-          "decision_trace": [
-            "Sparse event-key resolver guard: true",
-            "Resolver same-event merge bypassed: true"
-          ],
-          "relationship_engine_version": "1.3"
-        }
-      ],
-      "editorial_proximity": {
-        "score": 60,
-        "scope": "unknown",
-        "reason": "Audience scope is uncertain; retain neutral baseline relevance"
-      },
-      "editorial_priority": 0,
-      "editorial_score": 0,
-      "score_breakdown": {
-        "score": 0,
-        "importance": 0,
-        "proximity_multiplier": 0.6,
-        "freshness_multiplier": 0.55,
-        "source_multiplier": 1.132,
-        "source_trust": 94,
-        "age_hours": 1576.76
-      },
-      "timeline": [
-        {
-          "event_key": "unknown-event-3837b9cb6e",
-          "article_id": "rss-9a4b933f5fd8250a6adb",
-          "published_at": "2026-09-06T06:24:34+00:00",
-          "title": "Taylor's place among greats set in stone after extraordinary swansong",
-          "source": "bbc.co.uk",
-          "url": "https://www.bbc.co.uk/sport/boxing/articles/c5yjr8pp0jwo?at_medium=RSS&at_campaign=rss",
-          "editorial_action": "4",
-          "canonical_article_id": "rss-eed9e898f066d128558c"
-        },
-        {
-          "event_key": "unknown-event-9350738835",
-          "article_id": "rss-eed9e898f066d128558c",
-          "published_at": "2026-09-06T06:24:34+00:00",
-          "title": "Taylor's 'dream ending to a dream career'",
-          "source": "bbc.co.uk",
-          "url": "https://www.bbc.co.uk/sport/boxing/articles/c5yjr8pp0jwo?at_medium=RSS&at_campaign=rss",
-          "editorial_action": "1",
-          "canonical_article_id": "rss-eed9e898f066d128558c"
-        }
-      ],
-      "custom_article_count": 0,
-      "sources": [
-        "bbc.co.uk"
-      ],
-      "source_urls": [
-        "https://www.bbc.co.uk/sport/boxing/articles/c5yjr8pp0jwo?at_medium=RSS&at_campaign=rss"
-      ],
-      "title_candidates": [
-        {
-          "title": "Taylor's 'dream ending to a dream career'",
-          "source": "bbc.co.uk",
-          "source_class": "international_news",
-          "source_trust": 94,
-          "is_custom": false,
-          "priority": 90
-        },
-        {
-          "title": "Taylor's place among greats set in stone after extraordinary swansong",
-          "source": "bbc.co.uk",
-          "source_class": "international_news",
-          "source_trust": 94,
-          "is_custom": false,
-          "priority": 90
-        }
-      ],
-      "canonical_title": "Taylor's place among greats set in stone after extraordinary swansong",
-      "importance": {
-        "score": 0,
-        "level": "archived",
-        "reasons": [
-          {
-            "code": "archived",
-            "label": "Archived story",
-            "points": -40
-          }
-        ]
-      }
-    },
     "story_000580": {
       "story_id": "story_000580",
       "events": [
@@ -162857,8 +162516,6 @@
     "war-or-military-action-43b5bbc21d": "story_000576",
     "business-transaction-mississippi": "story_000577",
     "war-or-military-action-5101169752": "story_000578",
-    "unknown-event-9350738835": "story_000579",
-    "unknown-event-3837b9cb6e": "story_000579",
     "election-436a43a20f": "story_000580",
     "named-person-death:queen-letizia": "story_000581",
     "arrest-california": "story_000582",
@@ -163383,6 +163040,352 @@
       "representative_sources": [
         "bbc.co.uk"
       ]
+    },
+    "story_000579": {
+      "story_id": "story_000579",
+      "events": [
+        "unknown-event-9350738835",
+        "unknown-event-3837b9cb6e"
+      ],
+      "status": "archived",
+      "lifecycle": {
+        "state": "archived",
+        "reason": "No recorded update for at least 30 days",
+        "last_updated": "2026-09-06T06:24:34+00:00",
+        "hours_since_update": 1576.76,
+        "event_count": 2,
+        "timeline_entries": 2
+      },
+      "lifecycle_history": [
+        {
+          "from": "active",
+          "to": "archived",
+          "reason": "No recorded update for at least 30 days",
+          "last_updated": "2026-09-06T06:24:34+00:00"
+        }
+      ],
+      "titles": [
+        "Taylor's 'dream ending to a dream career'",
+        "Taylor's place among greats set in stone after extraordinary swansong"
+      ],
+      "title_tokens": [
+        "after",
+        "among",
+        "career",
+        "dream",
+        "ending",
+        "extraordinary",
+        "greats",
+        "place",
+        "set",
+        "stone",
+        "swansong",
+        "taylor"
+      ],
+      "fact_tokens": [
+        "old",
+        "year"
+      ],
+      "facts": [
+        "15-year-old"
+      ],
+      "locations": [],
+      "agencies": [],
+      "event_types": [],
+      "entities": [
+        "Amanda Serrano",
+        "Chantelle Cameron",
+        "Croke Park",
+        "Croke Park and",
+        "Deirdre Gogarty's",
+        "Eddie Hearn",
+        "Flora Pili",
+        "International Olympic Committee",
+        "Ireland and",
+        "Jack Charlton's Republic of Ireland",
+        "Katie Taylor",
+        "Lee and Peter",
+        "Limerick. Perhaps",
+        "Madison Square Garden",
+        "Olympic Games. Prophetic",
+        "Perhaps the",
+        "Peter and",
+        "Published22 August",
+        "Published28 April",
+        "Published28 August",
+        "Rio Games",
+        "Serrano Her",
+        "Sofya Ochigava",
+        "World Cups"
+      ],
+      "unified_incident_evidence": [
+        {
+          "evidence_version": 4,
+          "family": "unknown",
+          "concepts": [
+            "age_15",
+            "family_victim",
+            "minor_subject"
+          ],
+          "people": [
+            "katie taylor croke"
+          ],
+          "locations": [],
+          "agencies": [],
+          "distinctive_tokens": [
+            "000",
+            "1986",
+            "1990",
+            "1991",
+            "1994",
+            "2001",
+            "2007",
+            "2012",
+            "2016",
+            "2022",
+            "2024",
+            "able",
+            "accept",
+            "achieved",
+            "act",
+            "add",
+            "addressed",
+            "adoring",
+            "aforementioned",
+            "against",
+            "ago",
+            "all",
+            "allowed",
+            "amanda",
+            "amateur",
+            "among",
+            "appeared",
+            "appreciation",
+            "april",
+            "arena",
+            "articles",
+            "atmosphere",
+            "august",
+            "avenged",
+            "back",
+            "barriers",
+            "battles",
+            "bbc",
+            "became",
+            "because",
+            "become",
+            "been",
+            "before",
+            "being",
+            "belied",
+            "belief",
+            "belts",
+            "best"
+          ],
+          "title_tokens": [
+            "career",
+            "dream",
+            "ending",
+            "taylor"
+          ],
+          "published_at": "2026-09-06T06:24:34+00:00"
+        },
+        {
+          "evidence_version": 4,
+          "family": "unknown",
+          "concepts": [],
+          "people": [],
+          "locations": [],
+          "agencies": [],
+          "distinctive_tokens": [
+            "all",
+            "among",
+            "articles",
+            "back",
+            "bbc",
+            "boxing",
+            "but",
+            "buy",
+            "c5yjr8pp0jwo",
+            "cameron",
+            "campaign",
+            "can",
+            "career",
+            "celebration",
+            "chantelle",
+            "cliched",
+            "cope",
+            "difficulties",
+            "downs",
+            "dream",
+            "eat",
+            "ending",
+            "enjoy",
+            "even",
+            "everyone",
+            "extraordinary",
+            "factoring",
+            "fierce",
+            "going",
+            "greatest",
+            "greats",
+            "has",
+            "have",
+            "heartbreak",
+            "her",
+            "https",
+            "hyperbolic",
+            "icon",
+            "impulse",
+            "indicated",
+            "inside",
+            "ireland",
+            "irish",
+            "just",
+            "legend",
+            "lesser",
+            "look",
+            "loss"
+          ],
+          "title_tokens": [
+            "among",
+            "extraordinary",
+            "greats",
+            "place",
+            "set",
+            "stone",
+            "swansong",
+            "taylor"
+          ],
+          "published_at": "2026-09-06T06:24:34+00:00"
+        }
+      ],
+      "audience_relevance": {
+        "scope": "unknown",
+        "score": 60,
+        "regions": [],
+        "places": []
+      },
+      "resolution_history": [
+        {
+          "event_key": "unknown-event-9350738835",
+          "confidence": 0.0,
+          "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+          "decision_trace": [
+            "Sparse event-key resolver guard: true",
+            "Resolver same-event merge bypassed: true"
+          ],
+          "resolver_version": "2.1",
+          "matched_existing": false,
+          "relationship": "new_story"
+        },
+        {
+          "event_key": "unknown-event-3837b9cb6e",
+          "confidence": 1.0,
+          "reason": "Exact source article URL already belongs to this story",
+          "decision_trace": [
+            "Exact source article identity: true",
+            "Normalized source URL: https://www.bbc.co.uk/sport/boxing/articles/c5yjr8pp0jwo?at_campaign=rss&at_medium=RSS",
+            "Confidence: 1.00"
+          ],
+          "resolver_version": "2.4",
+          "matched_existing": true,
+          "relationship": "same_event"
+        }
+      ],
+      "relationship_history": [
+        {
+          "event_key": "unknown-event-9350738835",
+          "relationship": "new_story",
+          "confidence": 0.0,
+          "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+          "decision_trace": [
+            "Sparse event-key resolver guard: true",
+            "Resolver same-event merge bypassed: true"
+          ],
+          "relationship_engine_version": "1.3"
+        }
+      ],
+      "editorial_proximity": {
+        "score": 60,
+        "scope": "unknown",
+        "reason": "Audience scope is uncertain; retain neutral baseline relevance"
+      },
+      "editorial_priority": 0,
+      "editorial_score": 0,
+      "score_breakdown": {
+        "score": 0,
+        "importance": 0,
+        "proximity_multiplier": 0.6,
+        "freshness_multiplier": 0.55,
+        "source_multiplier": 1.132,
+        "source_trust": 94,
+        "age_hours": 1576.76
+      },
+      "timeline": [
+        {
+          "event_key": "unknown-event-3837b9cb6e",
+          "article_id": "rss-9a4b933f5fd8250a6adb",
+          "published_at": "2026-09-06T06:24:34+00:00",
+          "title": "Taylor's place among greats set in stone after extraordinary swansong",
+          "source": "bbc.co.uk",
+          "url": "https://www.bbc.co.uk/sport/boxing/articles/c5yjr8pp0jwo?at_medium=RSS&at_campaign=rss",
+          "editorial_action": "4",
+          "canonical_article_id": "rss-eed9e898f066d128558c"
+        },
+        {
+          "event_key": "unknown-event-9350738835",
+          "article_id": "rss-eed9e898f066d128558c",
+          "published_at": "2026-09-06T06:24:34+00:00",
+          "title": "Taylor's 'dream ending to a dream career'",
+          "source": "bbc.co.uk",
+          "url": "https://www.bbc.co.uk/sport/boxing/articles/c5yjr8pp0jwo?at_medium=RSS&at_campaign=rss",
+          "editorial_action": "1",
+          "canonical_article_id": "rss-eed9e898f066d128558c"
+        }
+      ],
+      "custom_article_count": 0,
+      "sources": [
+        "bbc.co.uk"
+      ],
+      "source_urls": [
+        "https://www.bbc.co.uk/sport/boxing/articles/c5yjr8pp0jwo?at_medium=RSS&at_campaign=rss"
+      ],
+      "title_candidates": [
+        {
+          "title": "Taylor's 'dream ending to a dream career'",
+          "source": "bbc.co.uk",
+          "source_class": "international_news",
+          "source_trust": 94,
+          "is_custom": false,
+          "priority": 90
+        },
+        {
+          "title": "Taylor's place among greats set in stone after extraordinary swansong",
+          "source": "bbc.co.uk",
+          "source_class": "international_news",
+          "source_trust": 94,
+          "is_custom": false,
+          "priority": 90
+        }
+      ],
+      "canonical_title": "Taylor's place among greats set in stone after extraordinary swansong",
+      "importance": {
+        "score": 0,
+        "level": "archived",
+        "reasons": [
+          {
+            "code": "archived",
+            "label": "Archived story",
+            "points": -40
+          }
+        ]
+      },
+      "quarantined_at": "2026-11-11T13:00:37Z",
+      "quarantine_reasons": [
+        "unsupported_sparse_event_merge"
+      ],
+      "repair_version": 16
     }
   },
   "registry_repair": {
@@ -163391,8 +163394,8 @@
       "repair_version": 16,
       "changed": false,
       "status": "clean",
-      "active_stories_before": 560,
-      "active_stories_after": 560,
+      "active_stories_before": 583,
+      "active_stories_after": 583,
       "quarantined_story_count": 0,
       "quarantined_story_ids": [],
       "quarantine_reasons": {},
@@ -163421,87 +163424,9 @@
       "unified_incident_groups_resolved": 0,
       "unified_incident_story_records_removed": 0,
       "remaining_unified_incident_groups": 0,
-      "generated_at": "2026-11-10T23:10:01Z"
+      "generated_at": "2026-11-11T13:00:42Z"
     },
     "history": [
-      {
-        "repair_version": 16,
-        "changed": false,
-        "status": "clean",
-        "active_stories_before": 460,
-        "active_stories_after": 460,
-        "quarantined_story_count": 0,
-        "quarantined_story_ids": [],
-        "quarantine_reasons": {},
-        "duplicate_groups_merged": 0,
-        "duplicate_story_records_removed": 0,
-        "merged_story_ids": {},
-        "remaining_exact_duplicate_title_groups": 0,
-        "publisher_title_duplicate_groups_resolved": 0,
-        "remaining_publisher_title_duplicate_groups": 0,
-        "source_identity_groups_resolved": 0,
-        "source_story_records_removed": 0,
-        "remaining_source_identity_groups": 0,
-        "incident_identity_groups_resolved": 0,
-        "incident_story_records_removed": 0,
-        "remaining_incident_identity_groups": 0,
-        "selective_incident_anchor_groups_repaired": 0,
-        "selective_timeline_entries_moved": 0,
-        "contaminated_story_records_preserved": 0,
-        "unsupported_structured_event_keys_pruned": 0,
-        "timeline_coherence_story_records_repaired": 0,
-        "timeline_coherence_entries_detached": 0,
-        "timeline_coherence_new_story_ids": [],
-        "remaining_timeline_coherence_violations": 0,
-        "timeline_coherence_violation_story_ids": [],
-        "incident_anchor_to_story_count": 17,
-        "unified_incident_groups_resolved": 0,
-        "unified_incident_story_records_removed": 0,
-        "remaining_unified_incident_groups": 0,
-        "generated_at": "2026-11-09T23:10:23Z"
-      },
-      {
-        "repair_version": 16,
-        "changed": true,
-        "status": "repaired",
-        "active_stories_before": 497,
-        "active_stories_after": 496,
-        "quarantined_story_count": 1,
-        "quarantined_story_ids": [
-          "story_000476"
-        ],
-        "quarantine_reasons": {
-          "story_000476": [
-            "unsupported_sparse_event_merge"
-          ]
-        },
-        "duplicate_groups_merged": 0,
-        "duplicate_story_records_removed": 0,
-        "merged_story_ids": {},
-        "remaining_exact_duplicate_title_groups": 0,
-        "publisher_title_duplicate_groups_resolved": 0,
-        "remaining_publisher_title_duplicate_groups": 0,
-        "source_identity_groups_resolved": 0,
-        "source_story_records_removed": 0,
-        "remaining_source_identity_groups": 0,
-        "incident_identity_groups_resolved": 0,
-        "incident_story_records_removed": 0,
-        "remaining_incident_identity_groups": 0,
-        "selective_incident_anchor_groups_repaired": 0,
-        "selective_timeline_entries_moved": 0,
-        "contaminated_story_records_preserved": 0,
-        "unsupported_structured_event_keys_pruned": 0,
-        "timeline_coherence_story_records_repaired": 0,
-        "timeline_coherence_entries_detached": 0,
-        "timeline_coherence_new_story_ids": [],
-        "remaining_timeline_coherence_violations": 0,
-        "timeline_coherence_violation_story_ids": [],
-        "incident_anchor_to_story_count": 19,
-        "unified_incident_groups_resolved": 0,
-        "unified_incident_story_records_removed": 0,
-        "remaining_unified_incident_groups": 0,
-        "generated_at": "2026-11-10T01:54:18Z"
-      },
       {
         "repair_version": 16,
         "changed": false,
@@ -163801,6 +163726,84 @@
         "unified_incident_story_records_removed": 0,
         "remaining_unified_incident_groups": 0,
         "generated_at": "2026-11-10T23:10:01Z"
+      },
+      {
+        "repair_version": 16,
+        "changed": true,
+        "status": "repaired",
+        "active_stories_before": 584,
+        "active_stories_after": 583,
+        "quarantined_story_count": 1,
+        "quarantined_story_ids": [
+          "story_000579"
+        ],
+        "quarantine_reasons": {
+          "story_000579": [
+            "unsupported_sparse_event_merge"
+          ]
+        },
+        "duplicate_groups_merged": 0,
+        "duplicate_story_records_removed": 0,
+        "merged_story_ids": {},
+        "remaining_exact_duplicate_title_groups": 0,
+        "publisher_title_duplicate_groups_resolved": 0,
+        "remaining_publisher_title_duplicate_groups": 0,
+        "source_identity_groups_resolved": 0,
+        "source_story_records_removed": 0,
+        "remaining_source_identity_groups": 0,
+        "incident_identity_groups_resolved": 0,
+        "incident_story_records_removed": 0,
+        "remaining_incident_identity_groups": 0,
+        "selective_incident_anchor_groups_repaired": 0,
+        "selective_timeline_entries_moved": 0,
+        "contaminated_story_records_preserved": 0,
+        "unsupported_structured_event_keys_pruned": 0,
+        "timeline_coherence_story_records_repaired": 0,
+        "timeline_coherence_entries_detached": 0,
+        "timeline_coherence_new_story_ids": [],
+        "remaining_timeline_coherence_violations": 0,
+        "timeline_coherence_violation_story_ids": [],
+        "incident_anchor_to_story_count": 20,
+        "unified_incident_groups_resolved": 0,
+        "unified_incident_story_records_removed": 0,
+        "remaining_unified_incident_groups": 0,
+        "generated_at": "2026-11-11T13:00:40Z"
+      },
+      {
+        "repair_version": 16,
+        "changed": false,
+        "status": "clean",
+        "active_stories_before": 583,
+        "active_stories_after": 583,
+        "quarantined_story_count": 0,
+        "quarantined_story_ids": [],
+        "quarantine_reasons": {},
+        "duplicate_groups_merged": 0,
+        "duplicate_story_records_removed": 0,
+        "merged_story_ids": {},
+        "remaining_exact_duplicate_title_groups": 0,
+        "publisher_title_duplicate_groups_resolved": 0,
+        "remaining_publisher_title_duplicate_groups": 0,
+        "source_identity_groups_resolved": 0,
+        "source_story_records_removed": 0,
+        "remaining_source_identity_groups": 0,
+        "incident_identity_groups_resolved": 0,
+        "incident_story_records_removed": 0,
+        "remaining_incident_identity_groups": 0,
+        "selective_incident_anchor_groups_repaired": 0,
+        "selective_timeline_entries_moved": 0,
+        "contaminated_story_records_preserved": 0,
+        "unsupported_structured_event_keys_pruned": 0,
+        "timeline_coherence_story_records_repaired": 0,
+        "timeline_coherence_entries_detached": 0,
+        "timeline_coherence_new_story_ids": [],
+        "remaining_timeline_coherence_violations": 0,
+        "timeline_coherence_violation_story_ids": [],
+        "incident_anchor_to_story_count": 20,
+        "unified_incident_groups_resolved": 0,
+        "unified_incident_story_records_removed": 0,
+        "remaining_unified_incident_groups": 0,
+        "generated_at": "2026-11-11T13:00:42Z"
       }
     ]
   },

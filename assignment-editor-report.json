@@ -1,380 +1,111 @@
 {
-  "generated_at": "2026-11-10T23:09:58.320387Z",
+  "generated_at": "2026-11-11T13:04:48.742926Z",
   "assignment_editor_model": "claude-sonnet-5",
   "writer_model": "claude-sonnet-4-5",
   "categories": [
     {
       "category_key": "world",
-      "hero_source_index": 2,
+      "hero_source_index": null,
       "card_source_indexes": [
-        6,
-        7,
-        4
+        null,
+        null,
+        null,
+        null,
+        null
       ],
       "diagnostics": {
-        "model": "claude-sonnet-5",
-        "writer_model": "claude-sonnet-4-5",
-        "rejected": [],
-        "writer_failures": [
-          {
-            "source_index": 1,
-            "reason": [
-              "headline_entity_missing_from_lead"
-            ]
-          },
-          {
-            "source_index": 5,
-            "reason": [
-              "generated_copy_drifted_from_source_focus",
-              "headline_entity_missing_from_lead"
-            ]
-          },
-          {
-            "source_index": 8,
-            "reason": [
-              "generated_copy_drifted_from_source_focus"
-            ]
-          },
-          {
-            "source_index": 3,
-            "reason": [
-              "generated_copy_drifted_from_source_focus"
-            ]
-          }
-        ],
-        "protected_material_update_repairs": [],
-        "hero_recovery_attempts": [],
-        "hero_recovered": false,
-        "editor_selected_card_count": 7,
-        "section_depth_target": 8,
-        "section_depth_accepted_cards": 3,
-        "section_depth_shortfall": 5,
-        "depth_backfill_writer_attempts": 0,
-        "writer_card_attempts": 7,
-        "duration_seconds": 60.186
+        "status": "archive_recovery",
+        "reason": "Live source/generation path unavailable; reused recent published canonicals."
       }
     },
     {
       "category_key": "us",
-      "hero_source_index": 1,
+      "hero_source_index": null,
       "card_source_indexes": [
-        2
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
       ],
       "diagnostics": {
-        "model": "claude-sonnet-5",
-        "writer_model": "claude-sonnet-4-5",
-        "rejected": [
-          {
-            "source_index": 3,
-            "reason": "Duplicate coverage of the same House Oversight Committee Epstein report as the selected hero (source 1); no distinct material facts beyond overlapping details."
-          }
-        ],
-        "writer_failures": [],
-        "protected_material_update_repairs": [],
-        "hero_recovery_attempts": [],
-        "hero_recovered": false,
-        "editor_selected_card_count": 1,
-        "section_depth_target": 8,
-        "section_depth_accepted_cards": 1,
-        "section_depth_shortfall": 7,
-        "depth_backfill_writer_attempts": 0,
-        "writer_card_attempts": 1,
-        "duration_seconds": 16.612
+        "status": "archive_recovery",
+        "reason": "Live source/generation path unavailable; reused recent published canonicals."
       }
     },
     {
       "category_key": "business",
-      "hero_source_index": 1,
+      "hero_source_index": null,
       "card_source_indexes": [
-        3
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
       ],
       "diagnostics": {
-        "model": "claude-sonnet-5",
-        "writer_model": "claude-sonnet-4-5",
-        "rejected": [],
-        "writer_failures": [
-          {
-            "source_index": 2,
-            "reason": [
-              "headline_entity_missing_from_lead"
-            ]
-          }
-        ],
-        "protected_material_update_repairs": [],
-        "hero_recovery_attempts": [],
-        "hero_recovered": false,
-        "editor_selected_card_count": 2,
-        "section_depth_target": 8,
-        "section_depth_accepted_cards": 1,
-        "section_depth_shortfall": 7,
-        "depth_backfill_writer_attempts": 0,
-        "writer_card_attempts": 2,
-        "duration_seconds": 19.138
+        "status": "archive_recovery",
+        "reason": "Live source/generation path unavailable; reused recent published canonicals."
       }
     },
     {
       "category_key": "tech",
-      "hero_source_index": 9,
+      "hero_source_index": null,
       "card_source_indexes": [
-        4,
-        7,
-        3,
-        13,
-        5,
-        1,
-        6,
-        8
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
       ],
       "diagnostics": {
-        "model": "claude-sonnet-5",
-        "writer_model": "claude-sonnet-4-5",
-        "rejected": [
-          {
-            "source_index": 1,
-            "reason": "Consumer entertainment feature update for a VR app; routine product news without broad consequence."
-          },
-          {
-            "source_index": 6,
-            "reason": "Video game cancellation is routine entertainment/industry news without national significance."
-          },
-          {
-            "source_index": 8,
-            "reason": "Niche venture capital fund announcement; not a consequential technology or science development."
-          },
-          {
-            "source_index": 11,
-            "reason": "Book promotion/interview piece, thin and discovery-only without a concrete news event."
-          },
-          {
-            "source_index": 12,
-            "reason": "Routine firmware update roundup for AirPods; minor product news without broad consequence."
-          },
-          {
-            "source_index": 14,
-            "reason": "Minor app shutdown affecting a very small user base; routine product discontinuation."
-          },
-          {
-            "source_index": 16,
-            "reason": "Duplicate of source 15 covering the same Google Fi network announcement."
-          },
-          {
-            "source_index": 17,
-            "reason": "Duplicate coverage of the same Oura-Counsel Health acquisition reported in source 3."
-          }
-        ],
-        "writer_failures": [
-          {
-            "source_index": 10,
-            "reason": [
-              "generated_copy_drifted_from_source_focus"
-            ]
-          },
-          {
-            "source_index": 2,
-            "reason": [
-              "person_first_reference_not_full_name"
-            ]
-          },
-          {
-            "source_index": 15,
-            "reason": [
-              "headline_entity_missing_from_lead",
-              "person_first_reference_not_full_name"
-            ]
-          }
-        ],
-        "protected_material_update_repairs": [],
-        "hero_recovery_attempts": [],
-        "hero_recovered": false,
-        "editor_selected_card_count": 8,
-        "section_depth_target": 8,
-        "section_depth_accepted_cards": 8,
-        "section_depth_shortfall": 0,
-        "depth_backfill_writer_attempts": 3,
-        "writer_card_attempts": 11,
-        "duration_seconds": 73.288
+        "status": "archive_recovery",
+        "reason": "Live source/generation path unavailable; reused recent published canonicals."
       }
     },
     {
       "category_key": "sports",
-      "hero_source_index": 8,
+      "hero_source_index": null,
       "card_source_indexes": [
-        4,
-        6,
-        10,
-        7,
-        3,
-        9,
-        5
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
       ],
       "diagnostics": {
-        "model": "claude-sonnet-5",
-        "writer_model": "claude-sonnet-4-5",
-        "rejected": [
-          {
-            "source_index": 2,
-            "reason": "Thin aggregator-style roundup of headlines with no substantive reporting of its own; lacks a concrete news development."
-          }
-        ],
-        "writer_failures": [
-          {
-            "source_index": 1,
-            "reason": [
-              "person_first_reference_not_full_name"
-            ]
-          },
-          {
-            "source_index": 2,
-            "reason": [
-              "generated_copy_drifted_from_source_focus"
-            ]
-          }
-        ],
-        "protected_material_update_repairs": [],
-        "hero_recovery_attempts": [],
-        "hero_recovered": false,
-        "editor_selected_card_count": 8,
-        "section_depth_target": 8,
-        "section_depth_accepted_cards": 7,
-        "section_depth_shortfall": 1,
-        "depth_backfill_writer_attempts": 1,
-        "writer_card_attempts": 9,
-        "duration_seconds": 59.075
+        "status": "archive_recovery",
+        "reason": "Live source/generation path unavailable; reused recent published canonicals."
       }
     },
     {
       "category_key": "entertainment",
-      "hero_source_index": 11,
-      "card_source_indexes": [],
+      "hero_source_index": null,
+      "card_source_indexes": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
       "diagnostics": {
-        "model": "claude-sonnet-5",
-        "writer_model": "claude-sonnet-4-5",
-        "rejected": [
-          {
-            "source_index": 10,
-            "reason": "Duplicate coverage of the same Walliams story already selected as hero via source 11; redundant same-event report."
-          },
-          {
-            "source_index": 4,
-            "reason": "Niche indie film casting announcement with limited national significance."
-          },
-          {
-            "source_index": 7,
-            "reason": "Concert tour announcement with routine national interest, below top card threshold given stronger available stories."
-          },
-          {
-            "source_index": 8,
-            "reason": "Local Nashville gallery feature on Henry Rollins memorabilia collection; limited national consequence."
-          },
-          {
-            "source_index": 13,
-            "reason": "Minor concert anecdote about a fan gesture; thin, no national significance."
-          },
-          {
-            "source_index": 14,
-            "reason": "Aggregator-style roundup of headlines rather than a substantive single article; thin source."
-          },
-          {
-            "source_index": 15,
-            "reason": "Routine entertainment programming announcement for a new game show; low national consequence relative to selected cards."
-          }
-        ],
-        "writer_failures": [
-          {
-            "source_index": 2,
-            "reason": [
-              "BadRequestError"
-            ]
-          },
-          {
-            "source_index": 3,
-            "reason": [
-              "BadRequestError"
-            ]
-          },
-          {
-            "source_index": 1,
-            "reason": [
-              "BadRequestError"
-            ]
-          },
-          {
-            "source_index": 6,
-            "reason": [
-              "BadRequestError"
-            ]
-          },
-          {
-            "source_index": 5,
-            "reason": [
-              "BadRequestError"
-            ]
-          },
-          {
-            "source_index": 16,
-            "reason": [
-              "BadRequestError"
-            ]
-          },
-          {
-            "source_index": 12,
-            "reason": [
-              "BadRequestError"
-            ]
-          },
-          {
-            "source_index": 9,
-            "reason": [
-              "BadRequestError"
-            ]
-          },
-          {
-            "source_index": 4,
-            "reason": [
-              "BadRequestError"
-            ]
-          },
-          {
-            "source_index": 7,
-            "reason": [
-              "BadRequestError"
-            ]
-          },
-          {
-            "source_index": 8,
-            "reason": [
-              "BadRequestError"
-            ]
-          },
-          {
-            "source_index": 13,
-            "reason": [
-              "BadRequestError"
-            ]
-          },
-          {
-            "source_index": 14,
-            "reason": [
-              "BadRequestError"
-            ]
-          },
-          {
-            "source_index": 15,
-            "reason": [
-              "BadRequestError"
-            ]
-          }
-        ],
-        "protected_material_update_repairs": [],
-        "hero_recovery_attempts": [],
-        "hero_recovered": false,
-        "editor_selected_card_count": 8,
-        "section_depth_target": 8,
-        "section_depth_accepted_cards": 0,
-        "section_depth_shortfall": 8,
-        "depth_backfill_writer_attempts": 6,
-        "writer_card_attempts": 14,
-        "duration_seconds": 26.38
+        "status": "archive_recovery",
+        "reason": "Live source/generation path unavailable; reused recent published canonicals."
       }
     },
     {

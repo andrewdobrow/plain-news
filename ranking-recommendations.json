@@ -2,18 +2,18 @@
   "schema_version": 4,
   "version": "1.13.7.0-shadow",
   "mode": "recommend",
-  "generated_at": "2026-11-10T23:10:52Z",
+  "generated_at": "2026-11-11T13:04:59Z",
   "publication_behavior_changed": false,
   "hero": {
-    "current_headline": "Van Hollen declines to rule out challenging Schumer for Senate Democratic leader as caucus debates strategy",
+    "current_headline": "Supreme Court allows border wall construction in Texas Big Bend region in 8-1 ruling",
     "recommended_headline": "Van Hollen declines to rule out challenging Schumer for Senate Democratic leader as caucus debates strategy",
-    "current_score": 72,
-    "recommended_score": 72,
-    "top_scoring_candidate_headline": "Clashes erupt in Bangladesh as supporters of ousted PM Hasina demand her return",
-    "top_scoring_candidate_score": 79,
-    "score_margin": 7,
+    "current_score": 56,
+    "recommended_score": 67,
+    "top_scoring_candidate_headline": "Van Hollen declines to rule out challenging Schumer for Senate Democratic leader as caucus debates strategy",
+    "top_scoring_candidate_score": 67,
+    "score_margin": 11,
     "change_threshold": 8,
-    "change_recommended": false,
+    "change_recommended": true,
     "observe_only": true,
     "changed": false
   },
@@ -35,13 +35,13 @@
     "max_reported_recommendations": 12
   },
   "summary": {
-    "input_placements": 62,
+    "input_placements": 59,
     "legacy_identity_placements_excluded": 0,
-    "unique_cards_observed": 60,
-    "cards_observed": 60,
-    "duplicate_placements_excluded": 2,
-    "registry_matches": 60,
-    "high_confidence_registry_matches": 60,
+    "unique_cards_observed": 58,
+    "cards_observed": 58,
+    "duplicate_placements_excluded": 1,
+    "registry_matches": 58,
+    "high_confidence_registry_matches": 58,
     "identity_warning_count": 0,
     "fallback_scores": 0,
     "registry_match_rate": 1.0,
@@ -52,61 +52,59 @@
     "deck_limit": 12,
     "current_deck_count": 12,
     "recommended_deck_count": 12,
-    "stale_or_ineligible_candidates_excluded_from_deck": 18,
+    "stale_or_ineligible_candidates_excluded_from_deck": 33,
     "excluded_candidates": 0,
     "recent_high_urgency_exclusions": 0,
-    "hero_change_recommended": false,
+    "hero_change_recommended": true,
     "enforcement_readiness": "eligible_for_review",
     "enforcement_readiness_reason": "At least 80% of unique cards matched persistent story IDs, every identity was corroborated, and no recent high-urgency candidate was filtered"
   },
   "current_order": [
     "Krakow mass shooting suspect dies in hospital as Polish prosecutors say motive investigation continues",
-    "Clashes erupt in Bangladesh as supporters of ousted PM Hasina demand her return",
-    "Spain's king and queen attend memorial service for 69 rail crash victims",
     "France accuses Iran's Revolutionary Guard of orchestrating cyberattacks on European supermarket refrigeration systems",
     "Paraguay formally charges ousted president Santiago Peña with breach of trust over Ueno Bank collapse",
     "Krakow gunman killed his parents and sister before Main Market Square attack that left six dead",
     "Israeli President Herzog tasks opposition leader Eisenkot with forming government after inconclusive election",
     "Houthi strikes hit Aramco Tower in Riyadh, target airport and oil facilities",
-    "House GOP report faults Justice Department for decades of failures in Epstein case, urges reinterviewing witnesses",
-    "Democratic lawmakers demand answers after 8-year-old Haitian boy detained by ICE in San Diego",
     "ICE detains 8-year-old Haitian boy at routine check-in after TPS termination, prompting San Diego school district response",
+    "House GOP report faults Justice Department for decades of failures in Epstein case, urges reinterviewing witnesses",
     "Philadelphia boycott of Jewish-owned restaurants draws dueling protests, three arrests",
     "Supreme Court allows border wall construction in Texas Big Bend region in 8-1 ruling",
     "Wisconsin state trooper detained by ICE released under supervision after intervention by DHS secretary",
     "Six killed in shooting in Krakow, Poland; British citizen among dead",
     "Arrest made in shooting that killed one during Winston-Salem State University homecoming weekend",
     "Secret Service arrests man near White House with guns who said voices told him to kill Trump",
-    "Nvidia hires outside law firm for independent investigation into CEO's relationship with alleged Chinese spy",
-    "Oura acquires AI primary care startup Counsel Health for $625 million",
+    "Hamilton and Verstappen to start from back of grid at São Paulo Grand Prix",
     "Qantas to outsource 850 jobs to Accenture, most moving to India",
     "Anthropic sets $70-78 IPO price range, targeting up to $1.4 trillion valuation in largest-ever tech offering",
+    "Nvidia hires outside law firm for independent investigation into CEO's relationship with alleged Chinese spy",
     "Nvidia shares drop 4 percent, wiping $250 billion off market value, after board launches probe into CEO affair",
     "President Trump defends Nvidia CEO Jensen Huang after board launches investigation into Chinese intelligence targeting",
     "Asian markets rebound after $2.5 trillion Wall Street sell-off; Nvidia board investigates CEO over relationship",
     "Treasury moves to cut off crypto exchange MEXC from U.S. financial system over alleged $16 billion in illicit transactions",
     "Stocks plunge into correction after brief post-midterm rally as AI regulation fears hit tech",
+    "Musk says SpaceX could acquire legacy telecom carrier and use spectrum ten times more effectively",
+    "Wyndham exposed millions of customer records after hardcoded password found in Android app",
+    "Google DeepMind uses AI to formally verify Signal protocol cryptography",
     "NRC grants X-energy construction permit for four small modular reactors at Texas Dow plant",
-    "Grok Build coding agent exposes thousands of users' confidential data through shareable links",
-    "New York opens AI safety registration portal, requiring disclosure from OpenAI and Anthropic",
-    "Oura to acquire AI medical chatbot startup Counsel Health for $625 million",
-    "Anthropic's seven co-founders will each sell $250 million in shares at IPO while retaining voting control",
-    "OpenAI acquires AI travel startup Odessia in apparent acqui-hire",
-    "Disney Plus app on Meta Quest adds more than 60 3D movies",
-    "Sony cancels live-service shooter Fairgames",
-    "Proximal Ventures raises $27.5 million debut fund for AI drug development startups",
-    "Vikings acquire Kirk Cousins from Raiders in trade deadline deal",
-    "Chiefs acquire Colts WR Josh Downs in trade deadline deal",
-    "Broncos acquire Chargers linebacker Daiyan Henley in division trade",
-    "Bills acquire safety Amani Hooker from Titans in trade deadline deal",
-    "Colts reject multiple trade offers for running back Jonathan Taylor",
-    "Steelers scale back pursuit of trade deadline wide receiver, insider says",
-    "NFL reinstates Brandon Aiyuk, agent expects him to play this season with new team",
-    "Scotland coach names McTominay to five-player leadership group ahead of Nations League qualifier",
+    "Researchers trace mysterious global power grid frequency drops to synchronized battery backup systems",
+    "Meta expands AI age detection for Instagram teen accounts worldwide after $17.1 billion settlement",
+    "Securities lawsuits against Nvidia proliferate after board opens probe into CEO's ties to suspected spy",
+    "AI tools are enabling automated hacking at scale, upending the cybersecurity industry",
+    "U.S. intelligence memo claimed Chinese officials recruited tech executive to spy on Nvidia CEO",
+    "NASA opens astronaut applications to expand Artemis moon program",
     "Reds first baseman Sal Stewart wins NL Rookie of the Year after 32-homer, 112-RBI season",
-    "David Walliams accused of sexual misconduct, including grooming allegations involving 15-year-old, after losing court bid",
+    "Bills join 49ers atop NFL at 7-1 as season reaches midpoint",
+    "Vikings acquire Kirk Cousins from Raiders in trade deadline deal",
+    "Kenneth Walker scores three touchdowns as Chiefs defeat Jets 35-12, Mahomes plays through elbow injury",
+    "Blades Brown, 19, becomes youngest PGA Tour winner in 95 years with playoff victory in Mexico",
+    "Jaguars acquire defensive tackle Davon Godchaux from Saints in second trade of the day",
+    "Willy Hutchinson upsets Joshua Buatsi to win WBC light-heavyweight title in Manchester rematch",
+    "Oregon routs Ohio State 41-28, likely ending Buckeyes' playoff hopes with fake punt sparking turnaround",
+    "Notre Dame defeats Miami 24-17 in matchup of top-ranked teams",
     "Donnie Dunagan, voice of Bambi in 1942 Disney classic, dies at 92",
     "M. John Harrison becomes oldest Booker Prize winner at 81 for post-apocalyptic novel The End of Everything",
+    "David Walliams accused of sexual misconduct, including grooming allegations involving 15-year-old, after losing court bid",
     "Denis Villeneuve says he is finishing Dune: Part Three while beginning James Bond movie, teases casting before joking at LACMA gala",
     "Russell Brand sentencing hearing underway after rape and sexual assault convictions",
     "James Gunn and Peter Safran ousted as DC Studios co-CEOs, leaving Superman and Batman franchises in uncertainty",
@@ -122,62 +120,60 @@
     "Attorney General dismisses Calley Means' White House corruption allegations as former FDA chief backs some claims"
   ],
   "recommended_order": [
-    "Clashes erupt in Bangladesh as supporters of ousted PM Hasina demand her return",
-    "House GOP report faults Justice Department for decades of failures in Epstein case, urges reinterviewing witnesses",
-    "NRC grants X-energy construction permit for four small modular reactors at Texas Dow plant",
-    "Democratic lawmakers demand answers after 8-year-old Haitian boy detained by ICE in San Diego",
     "Van Hollen declines to rule out challenging Schumer for Senate Democratic leader as caucus debates strategy",
-    "Disney Plus app on Meta Quest adds more than 60 3D movies",
+    "House GOP report faults Justice Department for decades of failures in Epstein case, urges reinterviewing witnesses",
+    "ICE detains 8-year-old Haitian boy at routine check-in after TPS termination, prompting San Diego school district response",
     "Jeffries pushes to restrict China chip exports in defense bill",
+    "NRC grants X-energy construction permit for four small modular reactors at Texas Dow plant",
+    "Anthropic sets $70-78 IPO price range, targeting up to $1.4 trillion valuation in largest-ever tech offering",
+    "Donnie Dunagan, voice of Bambi in 1942 Disney classic, dies at 92",
+    "Seven Republican senators call for delay in GOP leadership elections",
     "Vikings acquire Kirk Cousins from Raiders in trade deadline deal",
-    "Nvidia hires outside law firm for independent investigation into CEO's relationship with alleged Chinese spy",
-    "Sony cancels live-service shooter Fairgames",
-    "Spain's king and queen attend memorial service for 69 rail crash victims",
-    "Chiefs acquire Colts WR Josh Downs in trade deadline deal",
     "Krakow mass shooting suspect dies in hospital as Polish prosecutors say motive investigation continues",
+    "Google DeepMind uses AI to formally verify Signal protocol cryptography",
+    "Supreme Court allows border wall construction in Texas Big Bend region in 8-1 ruling",
     "France accuses Iran's Revolutionary Guard of orchestrating cyberattacks on European supermarket refrigeration systems",
     "Paraguay formally charges ousted president Santiago Peña with breach of trust over Ueno Bank collapse",
     "Krakow gunman killed his parents and sister before Main Market Square attack that left six dead",
     "Israeli President Herzog tasks opposition leader Eisenkot with forming government after inconclusive election",
     "Houthi strikes hit Aramco Tower in Riyadh, target airport and oil facilities",
-    "ICE detains 8-year-old Haitian boy at routine check-in after TPS termination, prompting San Diego school district response",
     "Philadelphia boycott of Jewish-owned restaurants draws dueling protests, three arrests",
-    "Supreme Court allows border wall construction in Texas Big Bend region in 8-1 ruling",
     "Wisconsin state trooper detained by ICE released under supervision after intervention by DHS secretary",
     "Six killed in shooting in Krakow, Poland; British citizen among dead",
     "Arrest made in shooting that killed one during Winston-Salem State University homecoming weekend",
     "Secret Service arrests man near White House with guns who said voices told him to kill Trump",
-    "Oura acquires AI primary care startup Counsel Health for $625 million",
+    "Hamilton and Verstappen to start from back of grid at São Paulo Grand Prix",
     "Qantas to outsource 850 jobs to Accenture, most moving to India",
-    "Anthropic sets $70-78 IPO price range, targeting up to $1.4 trillion valuation in largest-ever tech offering",
+    "Nvidia hires outside law firm for independent investigation into CEO's relationship with alleged Chinese spy",
     "Nvidia shares drop 4 percent, wiping $250 billion off market value, after board launches probe into CEO affair",
     "President Trump defends Nvidia CEO Jensen Huang after board launches investigation into Chinese intelligence targeting",
     "Asian markets rebound after $2.5 trillion Wall Street sell-off; Nvidia board investigates CEO over relationship",
     "Treasury moves to cut off crypto exchange MEXC from U.S. financial system over alleged $16 billion in illicit transactions",
     "Stocks plunge into correction after brief post-midterm rally as AI regulation fears hit tech",
-    "Grok Build coding agent exposes thousands of users' confidential data through shareable links",
-    "New York opens AI safety registration portal, requiring disclosure from OpenAI and Anthropic",
-    "Oura to acquire AI medical chatbot startup Counsel Health for $625 million",
-    "Anthropic's seven co-founders will each sell $250 million in shares at IPO while retaining voting control",
-    "OpenAI acquires AI travel startup Odessia in apparent acqui-hire",
-    "Proximal Ventures raises $27.5 million debut fund for AI drug development startups",
-    "Broncos acquire Chargers linebacker Daiyan Henley in division trade",
-    "Bills acquire safety Amani Hooker from Titans in trade deadline deal",
-    "Colts reject multiple trade offers for running back Jonathan Taylor",
-    "Steelers scale back pursuit of trade deadline wide receiver, insider says",
-    "NFL reinstates Brandon Aiyuk, agent expects him to play this season with new team",
-    "Scotland coach names McTominay to five-player leadership group ahead of Nations League qualifier",
+    "Musk says SpaceX could acquire legacy telecom carrier and use spectrum ten times more effectively",
+    "Wyndham exposed millions of customer records after hardcoded password found in Android app",
+    "Researchers trace mysterious global power grid frequency drops to synchronized battery backup systems",
+    "Meta expands AI age detection for Instagram teen accounts worldwide after $17.1 billion settlement",
+    "Securities lawsuits against Nvidia proliferate after board opens probe into CEO's ties to suspected spy",
+    "AI tools are enabling automated hacking at scale, upending the cybersecurity industry",
+    "U.S. intelligence memo claimed Chinese officials recruited tech executive to spy on Nvidia CEO",
+    "NASA opens astronaut applications to expand Artemis moon program",
     "Reds first baseman Sal Stewart wins NL Rookie of the Year after 32-homer, 112-RBI season",
-    "David Walliams accused of sexual misconduct, including grooming allegations involving 15-year-old, after losing court bid",
-    "Donnie Dunagan, voice of Bambi in 1942 Disney classic, dies at 92",
+    "Bills join 49ers atop NFL at 7-1 as season reaches midpoint",
+    "Kenneth Walker scores three touchdowns as Chiefs defeat Jets 35-12, Mahomes plays through elbow injury",
+    "Blades Brown, 19, becomes youngest PGA Tour winner in 95 years with playoff victory in Mexico",
+    "Jaguars acquire defensive tackle Davon Godchaux from Saints in second trade of the day",
+    "Willy Hutchinson upsets Joshua Buatsi to win WBC light-heavyweight title in Manchester rematch",
+    "Oregon routs Ohio State 41-28, likely ending Buckeyes' playoff hopes with fake punt sparking turnaround",
+    "Notre Dame defeats Miami 24-17 in matchup of top-ranked teams",
     "M. John Harrison becomes oldest Booker Prize winner at 81 for post-apocalyptic novel The End of Everything",
+    "David Walliams accused of sexual misconduct, including grooming allegations involving 15-year-old, after losing court bid",
     "Denis Villeneuve says he is finishing Dune: Part Three while beginning James Bond movie, teases casting before joking at LACMA gala",
     "Russell Brand sentencing hearing underway after rape and sexual assault convictions",
     "James Gunn and Peter Safran ousted as DC Studios co-CEOs, leaving Superman and Batman franchises in uncertainty",
     "Godzilla Minus Zero heads toward $32 million opening weekend, surpassing predecessor's total domestic run",
     "Sylvester Stallone says his 20-year rivalry with Arnold Schwarzenegger ended when Schwarzenegger ran for California governor",
     "Stephen Colbert and Yo-Yo Ma's Harvard event cut short by fire alarm amid graduate student union strike",
-    "Seven Republican senators call for delay in GOP leadership elections",
     "DeSantis positions for 2028 presidential run as Rubio deflects speculation following GOP midterm losses",
     "Elon Musk's companies face Democratic investigations after $475 million midterm spending resulted in losses",
     "House Republicans weigh impeaching Defense Secretary Hegseth this week over alleged illegal continuation of Iran war",
@@ -185,31 +181,31 @@
   ],
   "current_deck": [
     "Krakow mass shooting suspect dies in hospital as Polish prosecutors say motive investigation continues",
-    "Clashes erupt in Bangladesh as supporters of ousted PM Hasina demand her return",
-    "Spain's king and queen attend memorial service for 69 rail crash victims",
     "France accuses Iran's Revolutionary Guard of orchestrating cyberattacks on European supermarket refrigeration systems",
     "Paraguay formally charges ousted president Santiago Peña with breach of trust over Ueno Bank collapse",
     "Krakow gunman killed his parents and sister before Main Market Square attack that left six dead",
     "Israeli President Herzog tasks opposition leader Eisenkot with forming government after inconclusive election",
     "Houthi strikes hit Aramco Tower in Riyadh, target airport and oil facilities",
-    "House GOP report faults Justice Department for decades of failures in Epstein case, urges reinterviewing witnesses",
-    "Democratic lawmakers demand answers after 8-year-old Haitian boy detained by ICE in San Diego",
     "ICE detains 8-year-old Haitian boy at routine check-in after TPS termination, prompting San Diego school district response",
-    "Philadelphia boycott of Jewish-owned restaurants draws dueling protests, three arrests"
+    "House GOP report faults Justice Department for decades of failures in Epstein case, urges reinterviewing witnesses",
+    "Philadelphia boycott of Jewish-owned restaurants draws dueling protests, three arrests",
+    "Supreme Court allows border wall construction in Texas Big Bend region in 8-1 ruling",
+    "Wisconsin state trooper detained by ICE released under supervision after intervention by DHS secretary",
+    "Six killed in shooting in Krakow, Poland; British citizen among dead"
   ],
   "recommended_deck": [
-    "Clashes erupt in Bangladesh as supporters of ousted PM Hasina demand her return",
-    "House GOP report faults Justice Department for decades of failures in Epstein case, urges reinterviewing witnesses",
-    "NRC grants X-energy construction permit for four small modular reactors at Texas Dow plant",
-    "Democratic lawmakers demand answers after 8-year-old Haitian boy detained by ICE in San Diego",
     "Van Hollen declines to rule out challenging Schumer for Senate Democratic leader as caucus debates strategy",
-    "Disney Plus app on Meta Quest adds more than 60 3D movies",
+    "House GOP report faults Justice Department for decades of failures in Epstein case, urges reinterviewing witnesses",
+    "ICE detains 8-year-old Haitian boy at routine check-in after TPS termination, prompting San Diego school district response",
     "Jeffries pushes to restrict China chip exports in defense bill",
+    "NRC grants X-energy construction permit for four small modular reactors at Texas Dow plant",
+    "Anthropic sets $70-78 IPO price range, targeting up to $1.4 trillion valuation in largest-ever tech offering",
+    "Donnie Dunagan, voice of Bambi in 1942 Disney classic, dies at 92",
+    "Seven Republican senators call for delay in GOP leadership elections",
     "Vikings acquire Kirk Cousins from Raiders in trade deadline deal",
-    "Nvidia hires outside law firm for independent investigation into CEO's relationship with alleged Chinese spy",
-    "Sony cancels live-service shooter Fairgames",
-    "Spain's king and queen attend memorial service for 69 rail crash victims",
-    "Chiefs acquire Colts WR Josh Downs in trade deadline deal"
+    "Krakow mass shooting suspect dies in hospital as Polish prosecutors say motive investigation continues",
+    "Google DeepMind uses AI to formally verify Signal protocol cryptography",
+    "Supreme Court allows border wall construction in Texas Big Bend region in 8-1 ruling"
   ],
   "recommendations": [
     {
@@ -217,11 +213,11 @@
       "headline": "Jeffries pushes to restrict China chip exports in defense bill",
       "story_id": "story_000510",
       "identity": "story:story_000510",
-      "from_position": 58,
-      "to_position": 7,
-      "score": 67,
-      "selection_score": 67.0,
-      "explanation": "importance 77; freshness 60.01; urgency 3/10",
+      "from_position": 56,
+      "to_position": 4,
+      "score": 61,
+      "selection_score": 61.0,
+      "explanation": "importance 77; freshness 36.84; urgency 3/10",
       "enforced": false
     },
     {
@@ -229,11 +225,35 @@
       "headline": "Van Hollen declines to rule out challenging Schumer for Senate Democratic leader as caucus debates strategy",
       "story_id": "story_000537",
       "identity": "story:story_000537",
-      "from_position": 54,
-      "to_position": 5,
-      "score": 72,
-      "selection_score": 72.0,
-      "explanation": "importance 77; freshness 64.79; urgency 5/10",
+      "from_position": 52,
+      "to_position": 1,
+      "score": 67,
+      "selection_score": 67.0,
+      "explanation": "importance 77; freshness 41.62; urgency 5/10",
+      "enforced": false
+    },
+    {
+      "action": "recommend_promote_to_top_deck",
+      "headline": "Seven Republican senators call for delay in GOP leadership elections",
+      "story_id": "story_000536",
+      "identity": "story:story_000536",
+      "from_position": 53,
+      "to_position": 8,
+      "score": 60,
+      "selection_score": 54.0,
+      "explanation": "importance 72; freshness 41.62; urgency 3/10; -6 category saturation",
+      "enforced": false
+    },
+    {
+      "action": "recommend_promote_to_top_deck",
+      "headline": "Donnie Dunagan, voice of Bambi in 1942 Disney classic, dies at 92",
+      "story_id": "story_000502",
+      "identity": "story:story_000502",
+      "from_position": 43,
+      "to_position": 7,
+      "score": 55,
+      "selection_score": 55.0,
+      "explanation": "importance 46; freshness 41.62; urgency 5/10",
       "enforced": false
     },
     {
@@ -242,34 +262,10 @@
       "story_id": "story_000594",
       "identity": "story:story_000594",
       "from_position": 36,
-      "to_position": 8,
-      "score": 67,
-      "selection_score": 67.0,
-      "explanation": "importance 38; freshness 99.99; urgency 7/10",
-      "enforced": false
-    },
-    {
-      "action": "recommend_promote_to_top_deck",
-      "headline": "Disney Plus app on Meta Quest adds more than 60 3D movies",
-      "story_id": "story_000591",
-      "identity": "story:story_000591",
-      "from_position": 33,
-      "to_position": 6,
-      "score": 70,
-      "selection_score": 70.0,
-      "explanation": "importance 40; freshness 99.97; urgency 7/10",
-      "enforced": false
-    },
-    {
-      "action": "recommend_promote_to_top_deck",
-      "headline": "Chiefs acquire Colts WR Josh Downs in trade deadline deal",
-      "story_id": "story_000595",
-      "identity": "story:story_000595",
-      "from_position": 37,
-      "to_position": 12,
-      "score": 62,
-      "selection_score": 62.0,
-      "explanation": "importance 20; freshness 96.14; urgency 6/10",
+      "to_position": 9,
+      "score": 53,
+      "selection_score": 53.0,
+      "explanation": "importance 38; freshness 76.82; urgency 3/10",
       "enforced": false
     },
     {
@@ -278,34 +274,34 @@
       "story_id": "story_000586",
       "identity": "story:story_000586",
       "from_position": 27,
-      "to_position": 3,
-      "score": 74,
-      "selection_score": 74.0,
-      "explanation": "importance 45; freshness 99.99; urgency 7/10",
+      "to_position": 5,
+      "score": 59,
+      "selection_score": 59.0,
+      "explanation": "importance 45; freshness 76.82; urgency 3/10",
       "enforced": false
     },
     {
       "action": "recommend_promote_to_top_deck",
-      "headline": "Sony cancels live-service shooter Fairgames",
-      "story_id": "story_000592",
-      "identity": "story:story_000592",
-      "from_position": 34,
-      "to_position": 10,
-      "score": 70,
-      "selection_score": 64.0,
-      "explanation": "importance 40; freshness 99.97; urgency 7/10; -6 category saturation",
+      "headline": "Google DeepMind uses AI to formally verify Signal protocol cryptography",
+      "story_id": "story_000551",
+      "identity": "story:story_000551",
+      "from_position": 26,
+      "to_position": 11,
+      "score": 52,
+      "selection_score": 52.0,
+      "explanation": "importance 40; freshness 60.19; urgency 3/10",
       "enforced": false
     },
     {
-      "action": "recommend_demote_from_top_deck",
-      "headline": "Krakow mass shooting suspect dies in hospital as Polish prosecutors say motive investigation continues",
-      "story_id": "story_000446",
-      "identity": "story:story_000446",
-      "from_position": 1,
-      "to_position": 13,
-      "score": 59,
-      "selection_score": 59,
-      "explanation": "importance 56; freshness 43.33; urgency 5/10",
+      "action": "recommend_promote_to_top_deck",
+      "headline": "Anthropic sets $70-78 IPO price range, targeting up to $1.4 trillion valuation in largest-ever tech offering",
+      "story_id": "story_000545",
+      "identity": "story:story_000545",
+      "from_position": 17,
+      "to_position": 6,
+      "score": 56,
+      "selection_score": 56.0,
+      "explanation": "importance 47; freshness 60.19; urgency 3/10",
       "enforced": false
     },
     {
@@ -313,11 +309,11 @@
       "headline": "France accuses Iran's Revolutionary Guard of orchestrating cyberattacks on European supermarket refrigeration systems",
       "story_id": "story_000477",
       "identity": "story:story_000477",
-      "from_position": 4,
-      "to_position": 14,
-      "score": 56,
-      "selection_score": 56,
-      "explanation": "importance 45; freshness 60.01; urgency 3/10",
+      "from_position": 2,
+      "to_position": 13,
+      "score": 50,
+      "selection_score": 50,
+      "explanation": "importance 45; freshness 36.84; urgency 3/10",
       "enforced": false
     },
     {
@@ -325,8 +321,8 @@
       "headline": "Krakow gunman killed his parents and sister before Main Market Square attack that left six dead",
       "story_id": "story_000322",
       "identity": "story:story_000322",
-      "from_position": 6,
-      "to_position": 16,
+      "from_position": 4,
+      "to_position": 15,
       "score": 41,
       "selection_score": 41,
       "explanation": "importance 43; freshness 0.0; urgency 3/10",
@@ -337,11 +333,11 @@
       "headline": "Houthi strikes hit Aramco Tower in Riyadh, target airport and oil facilities",
       "story_id": "story_000398",
       "identity": "story:story_000398",
-      "from_position": 8,
-      "to_position": 18,
-      "score": 38,
-      "selection_score": 38,
-      "explanation": "importance 36; freshness 19.95; urgency 3/10",
+      "from_position": 6,
+      "to_position": 17,
+      "score": 34,
+      "selection_score": 34,
+      "explanation": "importance 36; freshness 0.0; urgency 3/10",
       "enforced": false
     },
     {
@@ -349,8 +345,8 @@
       "headline": "Israeli President Herzog tasks opposition leader Eisenkot with forming government after inconclusive election",
       "story_id": "story_000329",
       "identity": "story:story_000329",
-      "from_position": 7,
-      "to_position": 17,
+      "from_position": 5,
+      "to_position": 16,
       "score": 31,
       "selection_score": 31,
       "explanation": "importance 25; freshness 0.0; urgency 3/10",
@@ -359,45 +355,54 @@
   ],
   "items": [
     {
-      "current_position": 2,
+      "current_position": 52,
       "recommended_position": 1,
-      "first_placement_position": 2,
-      "headline": "Clashes erupt in Bangladesh as supporters of ousted PM Hasina demand her return",
-      "category_key": "world",
-      "slug": "",
-      "story_id": "story_000580",
-      "score": 79,
+      "first_placement_position": 52,
+      "headline": "Van Hollen declines to rule out challenging Schumer for Senate Democratic leader as caucus debates strategy",
+      "category_key": "politics",
+      "slug": "2026-11-10-van-hollen-declines-to-rule-out-challenging-schumer-for-senate-democratic-leader",
+      "story_id": "story_000537",
+      "score": 67,
       "score_breakdown": {
-        "score": 79,
+        "score": 67,
         "basis": "homepage_editorial_shadow_v2",
-        "importance": 80,
+        "importance": 77,
         "importance_basis": "persistent_story_importance",
         "importance_reasons": [
+          {
+            "code": "federal_action",
+            "label": "Federal/national government action",
+            "points": 32
+          },
           {
             "code": "election",
             "label": "Major election/political consequence",
             "points": 25
           },
           {
-            "code": "public_safety",
-            "label": "Public-safety event",
-            "points": 10
+            "code": "multi_agency",
+            "label": "Multiple agencies involved",
+            "points": 5
           },
           {
-            "code": "mass_casualty",
-            "label": "Mass-casualty event",
-            "points": 45
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
           }
         ],
-        "freshness": 93.77,
-        "urgency": 6,
-        "relevance": 72,
-        "regions": [],
-        "source_trust": 94,
+        "freshness": 41.62,
+        "urgency": 5,
+        "relevance": 100,
+        "regions": [
+          "Connecticut",
+          "Maryland",
+          "New York"
+        ],
+        "source_trust": 92,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 3.74,
-        "timestamp_basis": "registry:latest_timeline",
+        "age_hours": 35.03,
+        "timestamp_basis": "archive:first_published",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
       },
@@ -409,34 +414,34 @@
         "source_url"
       ],
       "identity_warning": "",
-      "identity": "story:story_000580",
+      "identity": "story:story_000537",
       "identity_basis": "persistent_story_id",
       "placement_count": 1,
       "placement_categories": [
-        "world"
+        "politics"
       ],
       "pinned": false,
       "pin_position": null,
       "custom": false,
       "position_locked": false,
       "position_lock_reason": "",
-      "selection_score": 79.0,
+      "selection_score": 67.0,
       "category_saturation_penalty": 0.0,
       "region_saturation_penalty": 0.0,
       "diversity_penalty": 0.0,
-      "selection_reason": "importance 80; freshness 93.77; urgency 6/10"
+      "selection_reason": "importance 77; freshness 41.62; urgency 5/10"
     },
     {
-      "current_position": 9,
+      "current_position": 8,
       "recommended_position": 2,
-      "first_placement_position": 10,
+      "first_placement_position": 8,
       "headline": "House GOP report faults Justice Department for decades of failures in Epstein case, urges reinterviewing witnesses",
       "category_key": "us",
       "slug": "2026-11-10-house-gop-report-faults-justice-department-for-decades-of-failures-in-epstein-ca",
       "story_id": "story_000582",
-      "score": 78,
+      "score": 64,
       "score_breakdown": {
-        "score": 78,
+        "score": 64,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 58,
         "importance_basis": "persistent_story_importance",
@@ -462,8 +467,8 @@
             "points": 15
           }
         ],
-        "freshness": 99.99,
-        "urgency": 7,
+        "freshness": 76.82,
+        "urgency": 3,
         "relevance": 100,
         "regions": [
           "California",
@@ -472,7 +477,7 @@
         "source_trust": 91,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 0.0,
+        "age_hours": 13.91,
         "timestamp_basis": "archive:first_published",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -496,31 +501,36 @@
       "custom": false,
       "position_locked": false,
       "position_lock_reason": "",
-      "selection_score": 78.0,
+      "selection_score": 64.0,
       "category_saturation_penalty": 0.0,
       "region_saturation_penalty": 0.0,
       "diversity_penalty": 0.0,
-      "selection_reason": "importance 58; freshness 99.99; urgency 7/10"
+      "selection_reason": "importance 58; freshness 76.82; urgency 3/10"
     },
     {
-      "current_position": 27,
+      "current_position": 7,
       "recommended_position": 3,
-      "first_placement_position": 28,
-      "headline": "NRC grants X-energy construction permit for four small modular reactors at Texas Dow plant",
-      "category_key": "tech",
-      "slug": "2026-11-10-nrc-grants-x-energy-construction-permit-for-four-small-modular-reactors-at-texas",
-      "story_id": "story_000586",
-      "score": 74,
+      "first_placement_position": 7,
+      "headline": "ICE detains 8-year-old Haitian boy at routine check-in after TPS termination, prompting San Diego school district response",
+      "category_key": "us",
+      "slug": "2026-11-10-ice-detains-8-year-old-haitian-boy-at-routine-check-in-after-tps-termination-pro",
+      "story_id": "story_000514",
+      "score": 61,
       "score_breakdown": {
-        "score": 74,
+        "score": 61,
         "basis": "homepage_editorial_shadow_v2",
-        "importance": 45,
+        "importance": 62,
         "importance_basis": "persistent_story_importance",
         "importance_reasons": [
           {
-            "code": "war_diplomacy",
-            "label": "War, diplomacy or national-security consequence",
-            "points": 30
+            "code": "federal_action",
+            "label": "Federal/national government action",
+            "points": 32
+          },
+          {
+            "code": "court_action",
+            "label": "Significant court/criminal-justice action",
+            "points": 15
           },
           {
             "code": "national_scope",
@@ -528,16 +538,16 @@
             "points": 15
           }
         ],
-        "freshness": 99.99,
-        "urgency": 7,
+        "freshness": 41.62,
+        "urgency": 5,
         "relevance": 100,
         "regions": [
-          "Texas"
+          "California"
         ],
-        "source_trust": 87,
+        "source_trust": 91,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 0.0,
+        "age_hours": 35.03,
         "timestamp_basis": "archive:first_published",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -550,72 +560,7 @@
         "source_url"
       ],
       "identity_warning": "",
-      "identity": "story:story_000586",
-      "identity_basis": "persistent_story_id",
-      "placement_count": 1,
-      "placement_categories": [
-        "tech"
-      ],
-      "pinned": false,
-      "pin_position": null,
-      "custom": false,
-      "position_locked": false,
-      "position_lock_reason": "",
-      "selection_score": 74.0,
-      "category_saturation_penalty": 0.0,
-      "region_saturation_penalty": 0.0,
-      "diversity_penalty": 0.0,
-      "selection_reason": "importance 45; freshness 99.99; urgency 7/10"
-    },
-    {
-      "current_position": 10,
-      "recommended_position": 4,
-      "first_placement_position": 11,
-      "headline": "Democratic lawmakers demand answers after 8-year-old Haitian boy detained by ICE in San Diego",
-      "category_key": "us",
-      "slug": "",
-      "story_id": "story_000583",
-      "score": 72,
-      "score_breakdown": {
-        "score": 72,
-        "basis": "homepage_editorial_shadow_v2",
-        "importance": 47,
-        "importance_basis": "persistent_story_importance",
-        "importance_reasons": [
-          {
-            "code": "federal_action",
-            "label": "Federal/national government action",
-            "points": 32
-          },
-          {
-            "code": "national_scope",
-            "label": "Nationwide U.S. scope",
-            "points": 15
-          }
-        ],
-        "freshness": 96.28,
-        "urgency": 6,
-        "relevance": 100,
-        "regions": [
-          "California"
-        ],
-        "source_trust": 91,
-        "breaking_bonus": 0.0,
-        "material_update_bonus": 0.0,
-        "age_hours": 2.23,
-        "timestamp_basis": "registry:latest_timeline",
-        "deck_eligible": true,
-        "eligibility_reason": "fresh_window"
-      },
-      "deck_eligible": true,
-      "eligibility_reason": "fresh_window",
-      "match_basis": "persistent_story_id+source_url",
-      "identity_confidence": "high",
-      "identity_evidence": [
-        "source_url"
-      ],
-      "identity_warning": "",
-      "identity": "story:story_000583",
+      "identity": "story:story_000514",
       "identity_basis": "persistent_story_id",
       "placement_count": 1,
       "placement_categories": [
@@ -626,163 +571,23 @@
       "custom": false,
       "position_locked": false,
       "position_lock_reason": "",
-      "selection_score": 72.0,
+      "selection_score": 61.0,
       "category_saturation_penalty": 0.0,
       "region_saturation_penalty": 0.0,
       "diversity_penalty": 0.0,
-      "selection_reason": "importance 47; freshness 96.28; urgency 6/10"
+      "selection_reason": "importance 62; freshness 41.62; urgency 5/10"
     },
     {
-      "current_position": 54,
-      "recommended_position": 5,
-      "first_placement_position": 55,
-      "headline": "Van Hollen declines to rule out challenging Schumer for Senate Democratic leader as caucus debates strategy",
-      "category_key": "politics",
-      "slug": "2026-11-10-van-hollen-declines-to-rule-out-challenging-schumer-for-senate-democratic-leader",
-      "story_id": "story_000537",
-      "score": 72,
-      "score_breakdown": {
-        "score": 72,
-        "basis": "homepage_editorial_shadow_v2",
-        "importance": 77,
-        "importance_basis": "persistent_story_importance",
-        "importance_reasons": [
-          {
-            "code": "federal_action",
-            "label": "Federal/national government action",
-            "points": 32
-          },
-          {
-            "code": "election",
-            "label": "Major election/political consequence",
-            "points": 25
-          },
-          {
-            "code": "multi_agency",
-            "label": "Multiple agencies involved",
-            "points": 5
-          },
-          {
-            "code": "national_scope",
-            "label": "Nationwide U.S. scope",
-            "points": 15
-          }
-        ],
-        "freshness": 64.79,
-        "urgency": 5,
-        "relevance": 100,
-        "regions": [
-          "Connecticut",
-          "Maryland",
-          "New York"
-        ],
-        "source_trust": 92,
-        "breaking_bonus": 0.0,
-        "material_update_bonus": 0.0,
-        "age_hours": 21.12,
-        "timestamp_basis": "archive:first_published",
-        "deck_eligible": true,
-        "eligibility_reason": "fresh_window"
-      },
-      "deck_eligible": true,
-      "eligibility_reason": "fresh_window",
-      "match_basis": "persistent_story_id+source_url",
-      "identity_confidence": "high",
-      "identity_evidence": [
-        "source_url"
-      ],
-      "identity_warning": "",
-      "identity": "story:story_000537",
-      "identity_basis": "persistent_story_id",
-      "placement_count": 1,
-      "placement_categories": [
-        "politics"
-      ],
-      "pinned": false,
-      "pin_position": null,
-      "custom": false,
-      "position_locked": false,
-      "position_lock_reason": "",
-      "selection_score": 72.0,
-      "category_saturation_penalty": 0.0,
-      "region_saturation_penalty": 0.0,
-      "diversity_penalty": 0.0,
-      "selection_reason": "importance 77; freshness 64.79; urgency 5/10"
-    },
-    {
-      "current_position": 33,
-      "recommended_position": 6,
-      "first_placement_position": 34,
-      "headline": "Disney Plus app on Meta Quest adds more than 60 3D movies",
-      "category_key": "tech",
-      "slug": "",
-      "story_id": "story_000591",
-      "score": 70,
-      "score_breakdown": {
-        "score": 70,
-        "basis": "homepage_editorial_shadow_v2",
-        "importance": 40,
-        "importance_basis": "persistent_story_importance",
-        "importance_reasons": [
-          {
-            "code": "war_diplomacy",
-            "label": "War, diplomacy or national-security consequence",
-            "points": 30
-          },
-          {
-            "code": "global_scope",
-            "label": "Major international consequence",
-            "points": 10
-          }
-        ],
-        "freshness": 99.97,
-        "urgency": 7,
-        "relevance": 85,
-        "regions": [],
-        "source_trust": 89,
-        "breaking_bonus": 0.0,
-        "material_update_bonus": 0.0,
-        "age_hours": 0.02,
-        "timestamp_basis": "registry:latest_timeline",
-        "deck_eligible": true,
-        "eligibility_reason": "fresh_window"
-      },
-      "deck_eligible": true,
-      "eligibility_reason": "fresh_window",
-      "match_basis": "persistent_story_id+source_url",
-      "identity_confidence": "high",
-      "identity_evidence": [
-        "source_url"
-      ],
-      "identity_warning": "",
-      "identity": "story:story_000591",
-      "identity_basis": "persistent_story_id",
-      "placement_count": 1,
-      "placement_categories": [
-        "tech"
-      ],
-      "pinned": false,
-      "pin_position": null,
-      "custom": false,
-      "position_locked": false,
-      "position_lock_reason": "",
-      "selection_score": 70.0,
-      "category_saturation_penalty": 0.0,
-      "region_saturation_penalty": 0.0,
-      "diversity_penalty": 0.0,
-      "selection_reason": "importance 40; freshness 99.97; urgency 7/10"
-    },
-    {
-      "current_position": 58,
-      "recommended_position": 7,
-      "first_placement_position": 59,
+      "current_position": 56,
+      "recommended_position": 4,
+      "first_placement_position": 56,
       "headline": "Jeffries pushes to restrict China chip exports in defense bill",
       "category_key": "politics",
       "slug": "2026-11-09-jeffries-pushes-to-restrict-china-chip-exports-in-defense-bill",
       "story_id": "story_000510",
-      "score": 67,
+      "score": 61,
       "score_breakdown": {
-        "score": 67,
+        "score": 61,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 77,
         "importance_basis": "persistent_story_importance",
@@ -803,14 +608,14 @@
             "points": 15
           }
         ],
-        "freshness": 60.01,
+        "freshness": 36.84,
         "urgency": 3,
         "relevance": 100,
         "regions": [],
         "source_trust": 92,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 24.0,
+        "age_hours": 37.9,
         "timestamp_basis": "archive:first_published",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -835,23 +640,294 @@
       "custom": false,
       "position_locked": false,
       "position_lock_reason": "",
-      "selection_score": 67.0,
+      "selection_score": 61.0,
       "category_saturation_penalty": 0.0,
       "region_saturation_penalty": 0.0,
       "diversity_penalty": 0.0,
-      "selection_reason": "importance 77; freshness 60.01; urgency 3/10"
+      "selection_reason": "importance 77; freshness 36.84; urgency 3/10"
+    },
+    {
+      "current_position": 27,
+      "recommended_position": 5,
+      "first_placement_position": 27,
+      "headline": "NRC grants X-energy construction permit for four small modular reactors at Texas Dow plant",
+      "category_key": "tech",
+      "slug": "2026-11-10-nrc-grants-x-energy-construction-permit-for-four-small-modular-reactors-at-texas",
+      "story_id": "story_000586",
+      "score": 59,
+      "score_breakdown": {
+        "score": 59,
+        "basis": "homepage_editorial_shadow_v2",
+        "importance": 45,
+        "importance_basis": "persistent_story_importance",
+        "importance_reasons": [
+          {
+            "code": "war_diplomacy",
+            "label": "War, diplomacy or national-security consequence",
+            "points": 30
+          },
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "freshness": 76.82,
+        "urgency": 3,
+        "relevance": 100,
+        "regions": [
+          "Texas"
+        ],
+        "source_trust": 87,
+        "breaking_bonus": 0.0,
+        "material_update_bonus": 0.0,
+        "age_hours": 13.91,
+        "timestamp_basis": "archive:first_published",
+        "deck_eligible": true,
+        "eligibility_reason": "fresh_window"
+      },
+      "deck_eligible": true,
+      "eligibility_reason": "fresh_window",
+      "match_basis": "persistent_story_id+source_url",
+      "identity_confidence": "high",
+      "identity_evidence": [
+        "source_url"
+      ],
+      "identity_warning": "",
+      "identity": "story:story_000586",
+      "identity_basis": "persistent_story_id",
+      "placement_count": 1,
+      "placement_categories": [
+        "tech"
+      ],
+      "pinned": false,
+      "pin_position": null,
+      "custom": false,
+      "position_locked": false,
+      "position_lock_reason": "",
+      "selection_score": 59.0,
+      "category_saturation_penalty": 0.0,
+      "region_saturation_penalty": 0.0,
+      "diversity_penalty": 0.0,
+      "selection_reason": "importance 45; freshness 76.82; urgency 3/10"
+    },
+    {
+      "current_position": 17,
+      "recommended_position": 6,
+      "first_placement_position": 17,
+      "headline": "Anthropic sets $70-78 IPO price range, targeting up to $1.4 trillion valuation in largest-ever tech offering",
+      "category_key": "business",
+      "slug": "2026-11-10-anthropic-sets-70-78-ipo-price-range-targeting-up-to-14-trillion-valuation-in-la",
+      "story_id": "story_000545",
+      "score": 56,
+      "score_breakdown": {
+        "score": 56,
+        "basis": "homepage_editorial_shadow_v2",
+        "importance": 47,
+        "importance_basis": "persistent_story_importance",
+        "importance_reasons": [
+          {
+            "code": "federal_action",
+            "label": "Federal/national government action",
+            "points": 32
+          },
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "freshness": 60.19,
+        "urgency": 3,
+        "relevance": 100,
+        "regions": [
+          "New York"
+        ],
+        "source_trust": 88,
+        "breaking_bonus": 0.0,
+        "material_update_bonus": 0.0,
+        "age_hours": 23.89,
+        "timestamp_basis": "archive:first_published",
+        "deck_eligible": true,
+        "eligibility_reason": "fresh_window"
+      },
+      "deck_eligible": true,
+      "eligibility_reason": "fresh_window",
+      "match_basis": "persistent_story_id+source_url",
+      "identity_confidence": "high",
+      "identity_evidence": [
+        "source_url"
+      ],
+      "identity_warning": "",
+      "identity": "story:story_000545",
+      "identity_basis": "persistent_story_id",
+      "placement_count": 1,
+      "placement_categories": [
+        "business"
+      ],
+      "pinned": false,
+      "pin_position": null,
+      "custom": false,
+      "position_locked": false,
+      "position_lock_reason": "",
+      "selection_score": 56.0,
+      "category_saturation_penalty": 0.0,
+      "region_saturation_penalty": 0.0,
+      "diversity_penalty": 0.0,
+      "selection_reason": "importance 47; freshness 60.19; urgency 3/10"
+    },
+    {
+      "current_position": 43,
+      "recommended_position": 7,
+      "first_placement_position": 43,
+      "headline": "Donnie Dunagan, voice of Bambi in 1942 Disney classic, dies at 92",
+      "category_key": "entertainment",
+      "slug": "2026-11-10-donnie-dunagan-voice-of-bambi-in-1942-disney-classic-dies-at-92",
+      "story_id": "story_000502",
+      "score": 55,
+      "score_breakdown": {
+        "score": 55,
+        "basis": "homepage_editorial_shadow_v2",
+        "importance": 46,
+        "importance_basis": "persistent_story_importance",
+        "importance_reasons": [
+          {
+            "code": "war_diplomacy",
+            "label": "War, diplomacy or national-security consequence",
+            "points": 30
+          },
+          {
+            "code": "single_death",
+            "label": "Death reported",
+            "points": 6
+          },
+          {
+            "code": "multistate_scope",
+            "label": "Multi-state U.S. scope",
+            "points": 10
+          }
+        ],
+        "freshness": 41.62,
+        "urgency": 5,
+        "relevance": 95,
+        "regions": [
+          "Alabama",
+          "Texas"
+        ],
+        "source_trust": 86,
+        "breaking_bonus": 0.0,
+        "material_update_bonus": 0.0,
+        "age_hours": 35.03,
+        "timestamp_basis": "archive:first_published",
+        "deck_eligible": true,
+        "eligibility_reason": "fresh_window"
+      },
+      "deck_eligible": true,
+      "eligibility_reason": "fresh_window",
+      "match_basis": "persistent_story_id+source_url",
+      "identity_confidence": "high",
+      "identity_evidence": [
+        "source_url"
+      ],
+      "identity_warning": "",
+      "identity": "story:story_000502",
+      "identity_basis": "persistent_story_id",
+      "placement_count": 1,
+      "placement_categories": [
+        "entertainment"
+      ],
+      "pinned": false,
+      "pin_position": null,
+      "custom": false,
+      "position_locked": false,
+      "position_lock_reason": "",
+      "selection_score": 55.0,
+      "category_saturation_penalty": 0.0,
+      "region_saturation_penalty": 0.0,
+      "diversity_penalty": 0.0,
+      "selection_reason": "importance 46; freshness 41.62; urgency 5/10"
+    },
+    {
+      "current_position": 53,
+      "recommended_position": 8,
+      "first_placement_position": 53,
+      "headline": "Seven Republican senators call for delay in GOP leadership elections",
+      "category_key": "politics",
+      "slug": "2026-11-10-seven-republican-senators-call-for-delay-in-gop-leadership-elections",
+      "story_id": "story_000536",
+      "score": 60,
+      "score_breakdown": {
+        "score": 60,
+        "basis": "homepage_editorial_shadow_v2",
+        "importance": 72,
+        "importance_basis": "persistent_story_importance",
+        "importance_reasons": [
+          {
+            "code": "federal_action",
+            "label": "Federal/national government action",
+            "points": 32
+          },
+          {
+            "code": "election",
+            "label": "Major election/political consequence",
+            "points": 25
+          },
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "freshness": 41.62,
+        "urgency": 3,
+        "relevance": 100,
+        "regions": [
+          "Utah"
+        ],
+        "source_trust": 90,
+        "breaking_bonus": 0.0,
+        "material_update_bonus": 0.0,
+        "age_hours": 35.03,
+        "timestamp_basis": "archive:first_published",
+        "deck_eligible": true,
+        "eligibility_reason": "fresh_window"
+      },
+      "deck_eligible": true,
+      "eligibility_reason": "fresh_window",
+      "match_basis": "persistent_story_id+source_url",
+      "identity_confidence": "high",
+      "identity_evidence": [
+        "source_url"
+      ],
+      "identity_warning": "",
+      "identity": "story:story_000536",
+      "identity_basis": "persistent_story_id",
+      "placement_count": 1,
+      "placement_categories": [
+        "politics"
+      ],
+      "pinned": false,
+      "pin_position": null,
+      "custom": false,
+      "position_locked": false,
+      "position_lock_reason": "",
+      "selection_score": 54.0,
+      "category_saturation_penalty": 6.0,
+      "region_saturation_penalty": 0.0,
+      "diversity_penalty": 6.0,
+      "selection_reason": "importance 72; freshness 41.62; urgency 3/10; -6 category saturation"
     },
     {
       "current_position": 36,
-      "recommended_position": 8,
-      "first_placement_position": 37,
+      "recommended_position": 9,
+      "first_placement_position": 36,
       "headline": "Vikings acquire Kirk Cousins from Raiders in trade deadline deal",
       "category_key": "sports",
       "slug": "2026-11-10-vikings-acquire-kirk-cousins-from-raiders-in-trade-deadline-deal",
       "story_id": "story_000594",
-      "score": 67,
+      "score": 53,
       "score_breakdown": {
-        "score": 67,
+        "score": 53,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 38,
         "importance_basis": "persistent_story_importance",
@@ -877,8 +953,8 @@
             "points": 10
           }
         ],
-        "freshness": 99.99,
-        "urgency": 7,
+        "freshness": 76.82,
+        "urgency": 3,
         "relevance": 95,
         "regions": [
           "Minnesota",
@@ -887,7 +963,7 @@
         "source_trust": 45,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 0.0,
+        "age_hours": 13.91,
         "timestamp_basis": "archive:first_published",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -911,282 +987,23 @@
       "custom": false,
       "position_locked": false,
       "position_lock_reason": "",
-      "selection_score": 67.0,
+      "selection_score": 53.0,
       "category_saturation_penalty": 0.0,
       "region_saturation_penalty": 0.0,
       "diversity_penalty": 0.0,
-      "selection_reason": "importance 38; freshness 99.99; urgency 7/10"
-    },
-    {
-      "current_position": 18,
-      "recommended_position": 9,
-      "first_placement_position": 19,
-      "headline": "Nvidia hires outside law firm for independent investigation into CEO's relationship with alleged Chinese spy",
-      "category_key": "business",
-      "slug": "2026-11-10-nvidia-hires-outside-law-firm-for-independent-investigation-into-ceos-relationsh",
-      "story_id": "story_000584",
-      "score": 66,
-      "score_breakdown": {
-        "score": 66,
-        "basis": "homepage_editorial_shadow_v2",
-        "importance": 15,
-        "importance_basis": "persistent_story_importance",
-        "importance_reasons": [
-          {
-            "code": "national_scope",
-            "label": "Nationwide U.S. scope",
-            "points": 15
-          }
-        ],
-        "freshness": 99.99,
-        "urgency": 8,
-        "relevance": 100,
-        "regions": [
-          "Washington",
-          "New York"
-        ],
-        "source_trust": 94,
-        "breaking_bonus": 0.0,
-        "material_update_bonus": 0.0,
-        "age_hours": 0.0,
-        "timestamp_basis": "archive:first_published",
-        "deck_eligible": true,
-        "eligibility_reason": "fresh_window"
-      },
-      "deck_eligible": true,
-      "eligibility_reason": "fresh_window",
-      "match_basis": "persistent_story_id+source_url",
-      "identity_confidence": "high",
-      "identity_evidence": [
-        "source_url"
-      ],
-      "identity_warning": "",
-      "identity": "story:story_000584",
-      "identity_basis": "persistent_story_id",
-      "placement_count": 1,
-      "placement_categories": [
-        "business"
-      ],
-      "pinned": false,
-      "pin_position": null,
-      "custom": false,
-      "position_locked": false,
-      "position_lock_reason": "",
-      "selection_score": 66.0,
-      "category_saturation_penalty": 0.0,
-      "region_saturation_penalty": 0.0,
-      "diversity_penalty": 0.0,
-      "selection_reason": "importance 15; freshness 99.99; urgency 8/10"
-    },
-    {
-      "current_position": 34,
-      "recommended_position": 10,
-      "first_placement_position": 35,
-      "headline": "Sony cancels live-service shooter Fairgames",
-      "category_key": "tech",
-      "slug": "",
-      "story_id": "story_000592",
-      "score": 70,
-      "score_breakdown": {
-        "score": 70,
-        "basis": "homepage_editorial_shadow_v2",
-        "importance": 40,
-        "importance_basis": "persistent_story_importance",
-        "importance_reasons": [
-          {
-            "code": "war_diplomacy",
-            "label": "War, diplomacy or national-security consequence",
-            "points": 30
-          },
-          {
-            "code": "global_scope",
-            "label": "Major international consequence",
-            "points": 10
-          }
-        ],
-        "freshness": 99.97,
-        "urgency": 7,
-        "relevance": 85,
-        "regions": [],
-        "source_trust": 89,
-        "breaking_bonus": 0.0,
-        "material_update_bonus": 0.0,
-        "age_hours": 0.02,
-        "timestamp_basis": "registry:latest_timeline",
-        "deck_eligible": true,
-        "eligibility_reason": "fresh_window"
-      },
-      "deck_eligible": true,
-      "eligibility_reason": "fresh_window",
-      "match_basis": "persistent_story_id+source_url",
-      "identity_confidence": "high",
-      "identity_evidence": [
-        "source_url",
-        "exact_title"
-      ],
-      "identity_warning": "",
-      "identity": "story:story_000592",
-      "identity_basis": "persistent_story_id",
-      "placement_count": 1,
-      "placement_categories": [
-        "tech"
-      ],
-      "pinned": false,
-      "pin_position": null,
-      "custom": false,
-      "position_locked": false,
-      "position_lock_reason": "",
-      "selection_score": 64.0,
-      "category_saturation_penalty": 6.0,
-      "region_saturation_penalty": 0.0,
-      "diversity_penalty": 6.0,
-      "selection_reason": "importance 40; freshness 99.97; urgency 7/10; -6 category saturation"
-    },
-    {
-      "current_position": 3,
-      "recommended_position": 11,
-      "first_placement_position": 3,
-      "headline": "Spain's king and queen attend memorial service for 69 rail crash victims",
-      "category_key": "world",
-      "slug": "",
-      "story_id": "story_000581",
-      "score": 63,
-      "score_breakdown": {
-        "score": 63,
-        "basis": "homepage_editorial_shadow_v2",
-        "importance": 41,
-        "importance_basis": "persistent_story_importance",
-        "importance_reasons": [
-          {
-            "code": "election",
-            "label": "Major election/political consequence",
-            "points": 25
-          },
-          {
-            "code": "public_safety",
-            "label": "Public-safety event",
-            "points": 10
-          },
-          {
-            "code": "single_death",
-            "label": "Death reported",
-            "points": 6
-          }
-        ],
-        "freshness": 95.99,
-        "urgency": 5,
-        "relevance": 60,
-        "regions": [],
-        "source_trust": 94,
-        "breaking_bonus": 0.0,
-        "material_update_bonus": 0.0,
-        "age_hours": 2.4,
-        "timestamp_basis": "registry:latest_timeline",
-        "deck_eligible": true,
-        "eligibility_reason": "fresh_window"
-      },
-      "deck_eligible": true,
-      "eligibility_reason": "fresh_window",
-      "match_basis": "persistent_story_id+source_url",
-      "identity_confidence": "high",
-      "identity_evidence": [
-        "source_url"
-      ],
-      "identity_warning": "",
-      "identity": "story:story_000581",
-      "identity_basis": "persistent_story_id",
-      "placement_count": 1,
-      "placement_categories": [
-        "world"
-      ],
-      "pinned": false,
-      "pin_position": null,
-      "custom": false,
-      "position_locked": false,
-      "position_lock_reason": "",
-      "selection_score": 63.0,
-      "category_saturation_penalty": 0.0,
-      "region_saturation_penalty": 0.0,
-      "diversity_penalty": 0.0,
-      "selection_reason": "importance 41; freshness 95.99; urgency 5/10"
-    },
-    {
-      "current_position": 37,
-      "recommended_position": 12,
-      "first_placement_position": 38,
-      "headline": "Chiefs acquire Colts WR Josh Downs in trade deadline deal",
-      "category_key": "sports",
-      "slug": "",
-      "story_id": "story_000595",
-      "score": 62,
-      "score_breakdown": {
-        "score": 62,
-        "basis": "homepage_editorial_shadow_v2",
-        "importance": 20,
-        "importance_basis": "persistent_story_importance",
-        "importance_reasons": [
-          {
-            "code": "public_safety",
-            "label": "Public-safety event",
-            "points": 10
-          },
-          {
-            "code": "multistate_scope",
-            "label": "Multi-state U.S. scope",
-            "points": 10
-          }
-        ],
-        "freshness": 96.14,
-        "urgency": 6,
-        "relevance": 95,
-        "regions": [
-          "New York",
-          "Kansas"
-        ],
-        "source_trust": 89,
-        "breaking_bonus": 0.0,
-        "material_update_bonus": 0.0,
-        "age_hours": 2.31,
-        "timestamp_basis": "registry:latest_timeline",
-        "deck_eligible": true,
-        "eligibility_reason": "fresh_window"
-      },
-      "deck_eligible": true,
-      "eligibility_reason": "fresh_window",
-      "match_basis": "persistent_story_id+source_url",
-      "identity_confidence": "high",
-      "identity_evidence": [
-        "source_url"
-      ],
-      "identity_warning": "",
-      "identity": "story:story_000595",
-      "identity_basis": "persistent_story_id",
-      "placement_count": 1,
-      "placement_categories": [
-        "sports"
-      ],
-      "pinned": false,
-      "pin_position": null,
-      "custom": false,
-      "position_locked": false,
-      "position_lock_reason": "",
-      "selection_score": 62.0,
-      "category_saturation_penalty": 0.0,
-      "region_saturation_penalty": 0.0,
-      "diversity_penalty": 0.0,
-      "selection_reason": "importance 20; freshness 96.14; urgency 6/10"
+      "selection_reason": "importance 38; freshness 76.82; urgency 3/10"
     },
     {
       "current_position": 1,
-      "recommended_position": 13,
+      "recommended_position": 10,
       "first_placement_position": 1,
       "headline": "Krakow mass shooting suspect dies in hospital as Polish prosecutors say motive investigation continues",
       "category_key": "world",
       "slug": "2026-11-09-krakow-mass-shooting-suspect-dies-in-hospital-as-polish-prosecutors-say-motive-i",
       "story_id": "story_000446",
-      "score": 59,
+      "score": 53,
       "score_breakdown": {
-        "score": 59,
+        "score": 53,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 56,
         "importance_basis": "persistent_story_importance",
@@ -1212,14 +1029,14 @@
             "points": 10
           }
         ],
-        "freshness": 43.33,
+        "freshness": 20.16,
         "urgency": 5,
         "relevance": 88,
         "regions": [],
         "source_trust": 94,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 34.0,
+        "age_hours": 47.9,
         "timestamp_basis": "archive:first_published",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -1234,28 +1051,166 @@
       "identity_warning": "",
       "identity": "story:story_000446",
       "identity_basis": "persistent_story_id",
-      "placement_count": 2,
+      "placement_count": 1,
       "placement_categories": [
-        "world",
         "world"
       ],
       "pinned": false,
       "pin_position": null,
       "custom": false,
       "position_locked": false,
-      "position_lock_reason": ""
+      "position_lock_reason": "",
+      "selection_score": 53.0,
+      "category_saturation_penalty": 0.0,
+      "region_saturation_penalty": 0.0,
+      "diversity_penalty": 0.0,
+      "selection_reason": "importance 56; freshness 20.16; urgency 5/10"
     },
     {
-      "current_position": 4,
-      "recommended_position": 14,
-      "first_placement_position": 5,
+      "current_position": 26,
+      "recommended_position": 11,
+      "first_placement_position": 26,
+      "headline": "Google DeepMind uses AI to formally verify Signal protocol cryptography",
+      "category_key": "tech",
+      "slug": "2026-11-10-google-deepmind-uses-ai-to-formally-verify-signal-protocol-cryptography",
+      "story_id": "story_000551",
+      "score": 52,
+      "score_breakdown": {
+        "score": 52,
+        "basis": "homepage_editorial_shadow_v2",
+        "importance": 40,
+        "importance_basis": "persistent_story_importance",
+        "importance_reasons": [
+          {
+            "code": "war_diplomacy",
+            "label": "War, diplomacy or national-security consequence",
+            "points": 30
+          },
+          {
+            "code": "global_scope",
+            "label": "Major international consequence",
+            "points": 10
+          }
+        ],
+        "freshness": 60.19,
+        "urgency": 3,
+        "relevance": 85,
+        "regions": [],
+        "source_trust": 90,
+        "breaking_bonus": 0.0,
+        "material_update_bonus": 0.0,
+        "age_hours": 23.89,
+        "timestamp_basis": "archive:first_published",
+        "deck_eligible": true,
+        "eligibility_reason": "fresh_window"
+      },
+      "deck_eligible": true,
+      "eligibility_reason": "fresh_window",
+      "match_basis": "persistent_story_id+source_url",
+      "identity_confidence": "high",
+      "identity_evidence": [
+        "source_url"
+      ],
+      "identity_warning": "",
+      "identity": "story:story_000551",
+      "identity_basis": "persistent_story_id",
+      "placement_count": 1,
+      "placement_categories": [
+        "tech"
+      ],
+      "pinned": false,
+      "pin_position": null,
+      "custom": false,
+      "position_locked": false,
+      "position_lock_reason": "",
+      "selection_score": 52.0,
+      "category_saturation_penalty": 0.0,
+      "region_saturation_penalty": 0.0,
+      "diversity_penalty": 0.0,
+      "selection_reason": "importance 40; freshness 60.19; urgency 3/10"
+    },
+    {
+      "current_position": 10,
+      "recommended_position": 12,
+      "first_placement_position": 10,
+      "headline": "Supreme Court allows border wall construction in Texas Big Bend region in 8-1 ruling",
+      "category_key": "us",
+      "slug": "2026-11-09-supreme-court-allows-border-wall-construction-in-texas-big-bend-region-in-8-1-ru",
+      "story_id": "story_000479",
+      "score": 56,
+      "score_breakdown": {
+        "score": 56,
+        "basis": "homepage_editorial_shadow_v2",
+        "importance": 62,
+        "importance_basis": "persistent_story_importance",
+        "importance_reasons": [
+          {
+            "code": "federal_action",
+            "label": "Federal/national government action",
+            "points": 32
+          },
+          {
+            "code": "court_action",
+            "label": "Significant court/criminal-justice action",
+            "points": 15
+          },
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "freshness": 36.84,
+        "urgency": 3,
+        "relevance": 100,
+        "regions": [
+          "Washington",
+          "Texas"
+        ],
+        "source_trust": 91,
+        "breaking_bonus": 0.0,
+        "material_update_bonus": 0.0,
+        "age_hours": 37.9,
+        "timestamp_basis": "archive:first_published",
+        "deck_eligible": true,
+        "eligibility_reason": "fresh_window"
+      },
+      "deck_eligible": true,
+      "eligibility_reason": "fresh_window",
+      "match_basis": "persistent_story_id+source_url",
+      "identity_confidence": "high",
+      "identity_evidence": [
+        "source_url"
+      ],
+      "identity_warning": "",
+      "identity": "story:story_000479",
+      "identity_basis": "persistent_story_id",
+      "placement_count": 1,
+      "placement_categories": [
+        "us"
+      ],
+      "pinned": false,
+      "pin_position": null,
+      "custom": false,
+      "position_locked": false,
+      "position_lock_reason": "",
+      "selection_score": 50.0,
+      "category_saturation_penalty": 6.0,
+      "region_saturation_penalty": 0.0,
+      "diversity_penalty": 6.0,
+      "selection_reason": "importance 62; freshness 36.84; urgency 3/10; -6 category saturation"
+    },
+    {
+      "current_position": 2,
+      "recommended_position": 13,
+      "first_placement_position": 2,
       "headline": "France accuses Iran's Revolutionary Guard of orchestrating cyberattacks on European supermarket refrigeration systems",
       "category_key": "world",
       "slug": "2026-11-09-france-accuses-irans-revolutionary-guard-of-orchestrating-cyberattacks-on-europe",
       "story_id": "story_000477",
-      "score": 56,
+      "score": 50,
       "score_breakdown": {
-        "score": 56,
+        "score": 50,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 45,
         "importance_basis": "persistent_story_importance",
@@ -1271,14 +1226,14 @@
             "points": 15
           }
         ],
-        "freshness": 60.01,
+        "freshness": 36.84,
         "urgency": 3,
         "relevance": 100,
         "regions": [],
         "source_trust": 94,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 24.0,
+        "age_hours": 37.9,
         "timestamp_basis": "archive:first_published",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -1304,9 +1259,9 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 5,
-      "recommended_position": 15,
-      "first_placement_position": 6,
+      "current_position": 3,
+      "recommended_position": 14,
+      "first_placement_position": 3,
       "headline": "Paraguay formally charges ousted president Santiago Peña with breach of trust over Ueno Bank collapse",
       "category_key": "world",
       "slug": "2026-11-07-paraguays-president-impeached-arrested-after-bank-collapse-left-millions-unable",
@@ -1331,7 +1286,7 @@
         "source_trust": 94,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 89.96,
+        "age_hours": 103.86,
         "timestamp_basis": "archive:first_published",
         "deck_eligible": false,
         "eligibility_reason": "older_than_60_hours"
@@ -1357,9 +1312,9 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 6,
-      "recommended_position": 16,
-      "first_placement_position": 7,
+      "current_position": 4,
+      "recommended_position": 15,
+      "first_placement_position": 4,
       "headline": "Krakow gunman killed his parents and sister before Main Market Square attack that left six dead",
       "category_key": "world",
       "slug": "2026-11-08-gunman-kills-six-in-attack-on-krakows-main-square-three-more-bodies-found-at-his",
@@ -1394,7 +1349,7 @@
         "source_trust": 94,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 69.81,
+        "age_hours": 83.72,
         "timestamp_basis": "archive:first_published",
         "deck_eligible": false,
         "eligibility_reason": "older_than_60_hours"
@@ -1420,9 +1375,9 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 7,
-      "recommended_position": 17,
-      "first_placement_position": 8,
+      "current_position": 5,
+      "recommended_position": 16,
+      "first_placement_position": 5,
       "headline": "Israeli President Herzog tasks opposition leader Eisenkot with forming government after inconclusive election",
       "category_key": "world",
       "slug": "2026-11-08-israeli-president-herzog-tasks-opposition-leader-eisenkot-with-forming-governmen",
@@ -1447,7 +1402,7 @@
         "source_trust": 94,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 68.04,
+        "age_hours": 81.94,
         "timestamp_basis": "archive:first_published",
         "deck_eligible": false,
         "eligibility_reason": "older_than_60_hours"
@@ -1473,16 +1428,16 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 8,
-      "recommended_position": 18,
-      "first_placement_position": 9,
+      "current_position": 6,
+      "recommended_position": 17,
+      "first_placement_position": 6,
       "headline": "Houthi strikes hit Aramco Tower in Riyadh, target airport and oil facilities",
       "category_key": "world",
       "slug": "2026-11-08-houthi-strikes-hit-aramco-tower-in-riyadh-target-airport-and-oil-facilities",
       "story_id": "story_000398",
-      "score": 38,
+      "score": 34,
       "score_breakdown": {
-        "score": 38,
+        "score": 34,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 36,
         "importance_basis": "persistent_story_importance",
@@ -1498,20 +1453,20 @@
             "points": 6
           }
         ],
-        "freshness": 19.95,
+        "freshness": 0.0,
         "urgency": 3,
         "relevance": 60,
         "regions": [],
         "source_trust": 94,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 48.03,
+        "age_hours": 61.93,
         "timestamp_basis": "archive:first_published",
         "deck_eligible": false,
-        "eligibility_reason": "older_than_48_hours_not_urgent_enough"
+        "eligibility_reason": "older_than_60_hours"
       },
       "deck_eligible": false,
-      "eligibility_reason": "older_than_48_hours_not_urgent_enough",
+      "eligibility_reason": "older_than_60_hours",
       "match_basis": "persistent_story_id+source_url",
       "identity_confidence": "high",
       "identity_evidence": [
@@ -1531,81 +1486,16 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 11,
-      "recommended_position": 19,
-      "first_placement_position": 12,
-      "headline": "ICE detains 8-year-old Haitian boy at routine check-in after TPS termination, prompting San Diego school district response",
-      "category_key": "us",
-      "slug": "2026-11-10-ice-detains-8-year-old-haitian-boy-at-routine-check-in-after-tps-termination-pro",
-      "story_id": "story_000514",
-      "score": 63,
-      "score_breakdown": {
-        "score": 63,
-        "basis": "homepage_editorial_shadow_v2",
-        "importance": 62,
-        "importance_basis": "persistent_story_importance",
-        "importance_reasons": [
-          {
-            "code": "federal_action",
-            "label": "Federal/national government action",
-            "points": 32
-          },
-          {
-            "code": "court_action",
-            "label": "Significant court/criminal-justice action",
-            "points": 15
-          },
-          {
-            "code": "national_scope",
-            "label": "Nationwide U.S. scope",
-            "points": 15
-          }
-        ],
-        "freshness": 64.79,
-        "urgency": 3,
-        "relevance": 100,
-        "regions": [
-          "California"
-        ],
-        "source_trust": 91,
-        "breaking_bonus": 0.0,
-        "material_update_bonus": 0.0,
-        "age_hours": 21.12,
-        "timestamp_basis": "archive:first_published",
-        "deck_eligible": true,
-        "eligibility_reason": "fresh_window"
-      },
-      "deck_eligible": true,
-      "eligibility_reason": "fresh_window",
-      "match_basis": "persistent_story_id+source_url",
-      "identity_confidence": "high",
-      "identity_evidence": [
-        "source_url"
-      ],
-      "identity_warning": "",
-      "identity": "story:story_000514",
-      "identity_basis": "persistent_story_id",
-      "placement_count": 1,
-      "placement_categories": [
-        "us"
-      ],
-      "pinned": false,
-      "pin_position": null,
-      "custom": false,
-      "position_locked": false,
-      "position_lock_reason": ""
-    },
-    {
-      "current_position": 12,
-      "recommended_position": 20,
-      "first_placement_position": 13,
+      "current_position": 9,
+      "recommended_position": 18,
+      "first_placement_position": 9,
       "headline": "Philadelphia boycott of Jewish-owned restaurants draws dueling protests, three arrests",
       "category_key": "us",
       "slug": "2026-11-09-philadelphia-boycott-of-jewish-owned-restaurants-draws-dueling-protests-three-ar",
       "story_id": "story_000431",
-      "score": 45,
+      "score": 39,
       "score_breakdown": {
-        "score": 45,
+        "score": 39,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 40,
         "importance_basis": "persistent_story_importance",
@@ -1621,7 +1511,7 @@
             "points": 15
           }
         ],
-        "freshness": 21.77,
+        "freshness": 0.0,
         "urgency": 3,
         "relevance": 100,
         "regions": [
@@ -1630,13 +1520,13 @@
         "source_trust": 91,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 46.94,
+        "age_hours": 60.84,
         "timestamp_basis": "archive:first_published",
-        "deck_eligible": true,
-        "eligibility_reason": "fresh_window"
+        "deck_eligible": false,
+        "eligibility_reason": "older_than_60_hours"
       },
-      "deck_eligible": true,
-      "eligibility_reason": "fresh_window",
+      "deck_eligible": false,
+      "eligibility_reason": "older_than_60_hours",
       "match_basis": "persistent_story_id+source_url",
       "identity_confidence": "high",
       "identity_evidence": [
@@ -1656,75 +1546,9 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 13,
-      "recommended_position": 21,
-      "first_placement_position": 14,
-      "headline": "Supreme Court allows border wall construction in Texas Big Bend region in 8-1 ruling",
-      "category_key": "us",
-      "slug": "2026-11-09-supreme-court-allows-border-wall-construction-in-texas-big-bend-region-in-8-1-ru",
-      "story_id": "story_000479",
-      "score": 61,
-      "score_breakdown": {
-        "score": 61,
-        "basis": "homepage_editorial_shadow_v2",
-        "importance": 62,
-        "importance_basis": "persistent_story_importance",
-        "importance_reasons": [
-          {
-            "code": "federal_action",
-            "label": "Federal/national government action",
-            "points": 32
-          },
-          {
-            "code": "court_action",
-            "label": "Significant court/criminal-justice action",
-            "points": 15
-          },
-          {
-            "code": "national_scope",
-            "label": "Nationwide U.S. scope",
-            "points": 15
-          }
-        ],
-        "freshness": 60.01,
-        "urgency": 3,
-        "relevance": 100,
-        "regions": [
-          "Washington",
-          "Texas"
-        ],
-        "source_trust": 91,
-        "breaking_bonus": 0.0,
-        "material_update_bonus": 0.0,
-        "age_hours": 24.0,
-        "timestamp_basis": "archive:first_published",
-        "deck_eligible": true,
-        "eligibility_reason": "fresh_window"
-      },
-      "deck_eligible": true,
-      "eligibility_reason": "fresh_window",
-      "match_basis": "persistent_story_id+source_url",
-      "identity_confidence": "high",
-      "identity_evidence": [
-        "source_url"
-      ],
-      "identity_warning": "",
-      "identity": "story:story_000479",
-      "identity_basis": "persistent_story_id",
-      "placement_count": 1,
-      "placement_categories": [
-        "us"
-      ],
-      "pinned": false,
-      "pin_position": null,
-      "custom": false,
-      "position_locked": false,
-      "position_lock_reason": ""
-    },
-    {
-      "current_position": 14,
-      "recommended_position": 22,
-      "first_placement_position": 15,
+      "current_position": 11,
+      "recommended_position": 19,
+      "first_placement_position": 11,
       "headline": "Wisconsin state trooper detained by ICE released under supervision after intervention by DHS secretary",
       "category_key": "us",
       "slug": "2026-11-08-wisconsin-state-trooper-detained-by-ice-released-under-supervision-after-interve",
@@ -1752,7 +1576,7 @@
         "source_trust": 91,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 69.81,
+        "age_hours": 83.72,
         "timestamp_basis": "archive:first_published",
         "deck_eligible": false,
         "eligibility_reason": "older_than_60_hours"
@@ -1778,9 +1602,9 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 15,
-      "recommended_position": 23,
-      "first_placement_position": 16,
+      "current_position": 12,
+      "recommended_position": 20,
+      "first_placement_position": 12,
       "headline": "Six killed in shooting in Krakow, Poland; British citizen among dead",
       "category_key": "us",
       "slug": "2026-11-08-six-killed-in-shooting-in-krakow-poland-british-citizen-among-dead",
@@ -1820,7 +1644,7 @@
         "source_trust": 94,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 69.01,
+        "age_hours": 82.91,
         "timestamp_basis": "archive:first_published",
         "deck_eligible": false,
         "eligibility_reason": "older_than_60_hours"
@@ -1846,16 +1670,16 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 16,
-      "recommended_position": 24,
-      "first_placement_position": 17,
+      "current_position": 13,
+      "recommended_position": 21,
+      "first_placement_position": 13,
       "headline": "Arrest made in shooting that killed one during Winston-Salem State University homecoming weekend",
       "category_key": "us",
       "slug": "2026-11-08-arrest-made-in-shooting-that-killed-one-during-winston-salem-state-university-ho",
       "story_id": "story_000401",
-      "score": 51,
+      "score": 47,
       "score_breakdown": {
-        "score": 51,
+        "score": 47,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 61,
         "importance_basis": "persistent_story_importance",
@@ -1881,7 +1705,7 @@
             "points": 15
           }
         ],
-        "freshness": 19.95,
+        "freshness": 0.0,
         "urgency": 3,
         "relevance": 100,
         "regions": [
@@ -1890,13 +1714,13 @@
         "source_trust": 91,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 48.03,
+        "age_hours": 61.93,
         "timestamp_basis": "archive:first_published",
         "deck_eligible": false,
-        "eligibility_reason": "older_than_48_hours_not_urgent_enough"
+        "eligibility_reason": "older_than_60_hours"
       },
       "deck_eligible": false,
-      "eligibility_reason": "older_than_48_hours_not_urgent_enough",
+      "eligibility_reason": "older_than_60_hours",
       "match_basis": "persistent_story_id+source_url",
       "identity_confidence": "high",
       "identity_evidence": [
@@ -1916,9 +1740,9 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 17,
-      "recommended_position": 25,
-      "first_placement_position": 18,
+      "current_position": 14,
+      "recommended_position": 22,
+      "first_placement_position": 14,
       "headline": "Secret Service arrests man near White House with guns who said voices told him to kill Trump",
       "category_key": "us",
       "slug": "2026-11-07-secret-service-arrests-man-near-white-house-with-guns-who-said-voices-told-him-t",
@@ -1950,7 +1774,7 @@
         "source_trust": 91,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 89.96,
+        "age_hours": 103.86,
         "timestamp_basis": "archive:first_published",
         "deck_eligible": false,
         "eligibility_reason": "older_than_60_hours"
@@ -1976,51 +1800,45 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 19,
-      "recommended_position": 26,
-      "first_placement_position": 20,
-      "headline": "Oura acquires AI primary care startup Counsel Health for $625 million",
-      "category_key": "business",
-      "slug": "",
-      "story_id": "story_000585",
-      "score": 56,
+      "current_position": 15,
+      "recommended_position": 23,
+      "first_placement_position": 15,
+      "headline": "Hamilton and Verstappen to start from back of grid at São Paulo Grand Prix",
+      "category_key": "us",
+      "slug": "2026-11-07-hamilton-and-verstappen-to-start-from-back-of-grid-at-sao-paulo-grand-prix",
+      "story_id": "story_000291",
+      "score": 23,
       "score_breakdown": {
-        "score": 56,
+        "score": 23,
         "basis": "homepage_editorial_shadow_v2",
-        "importance": 25,
-        "importance_basis": "persistent_story_importance",
-        "importance_reasons": [
-          {
-            "code": "election",
-            "label": "Major election/political consequence",
-            "points": 25
-          }
-        ],
-        "freshness": 93.69,
-        "urgency": 5,
-        "relevance": 60,
+        "importance": 0,
+        "importance_basis": "persistent_score_breakdown",
+        "importance_reasons": [],
+        "freshness": 0.0,
+        "urgency": 3,
+        "relevance": 72,
         "regions": [],
-        "source_trust": 87,
+        "source_trust": 94,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 3.79,
-        "timestamp_basis": "registry:latest_timeline",
-        "deck_eligible": true,
-        "eligibility_reason": "fresh_window"
+        "age_hours": 91.22,
+        "timestamp_basis": "archive:first_published",
+        "deck_eligible": false,
+        "eligibility_reason": "older_than_60_hours"
       },
-      "deck_eligible": true,
-      "eligibility_reason": "fresh_window",
+      "deck_eligible": false,
+      "eligibility_reason": "older_than_60_hours",
       "match_basis": "persistent_story_id+source_url",
       "identity_confidence": "high",
       "identity_evidence": [
         "source_url"
       ],
       "identity_warning": "",
-      "identity": "story:story_000585",
+      "identity": "story:story_000291",
       "identity_basis": "persistent_story_id",
       "placement_count": 1,
       "placement_categories": [
-        "business"
+        "us"
       ],
       "pinned": false,
       "pin_position": null,
@@ -2029,28 +1847,28 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 20,
-      "recommended_position": 27,
-      "first_placement_position": 21,
+      "current_position": 16,
+      "recommended_position": 24,
+      "first_placement_position": 16,
       "headline": "Qantas to outsource 850 jobs to Accenture, most moving to India",
       "category_key": "business",
       "slug": "2026-11-10-qantas-to-outsource-850-jobs-to-accenture-most-moving-to-india",
       "story_id": "story_000515",
-      "score": 38,
+      "score": 37,
       "score_breakdown": {
-        "score": 38,
+        "score": 37,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 0,
         "importance_basis": "persistent_score_breakdown",
         "importance_reasons": [],
-        "freshness": 64.79,
-        "urgency": 3,
+        "freshness": 41.62,
+        "urgency": 5,
         "relevance": 72,
         "regions": [],
         "source_trust": 94,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 21.12,
+        "age_hours": 35.03,
         "timestamp_basis": "archive:first_published",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -2076,41 +1894,37 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 21,
-      "recommended_position": 28,
-      "first_placement_position": 22,
-      "headline": "Anthropic sets $70-78 IPO price range, targeting up to $1.4 trillion valuation in largest-ever tech offering",
+      "current_position": 18,
+      "recommended_position": 25,
+      "first_placement_position": 18,
+      "headline": "Nvidia hires outside law firm for independent investigation into CEO's relationship with alleged Chinese spy",
       "category_key": "business",
-      "slug": "2026-11-10-anthropic-sets-70-78-ipo-price-range-targeting-up-to-14-trillion-valuation-in-la",
-      "story_id": "story_000545",
-      "score": 62,
+      "slug": "2026-11-10-nvidia-hires-outside-law-firm-for-independent-investigation-into-ceos-relationsh",
+      "story_id": "story_000584",
+      "score": 50,
       "score_breakdown": {
-        "score": 62,
+        "score": 50,
         "basis": "homepage_editorial_shadow_v2",
-        "importance": 47,
+        "importance": 15,
         "importance_basis": "persistent_story_importance",
         "importance_reasons": [
-          {
-            "code": "federal_action",
-            "label": "Federal/national government action",
-            "points": 32
-          },
           {
             "code": "national_scope",
             "label": "Nationwide U.S. scope",
             "points": 15
           }
         ],
-        "freshness": 83.36,
+        "freshness": 76.82,
         "urgency": 3,
         "relevance": 100,
         "regions": [
+          "Washington",
           "New York"
         ],
-        "source_trust": 88,
+        "source_trust": 94,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 9.98,
+        "age_hours": 13.91,
         "timestamp_basis": "archive:first_published",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -2123,7 +1937,7 @@
         "source_url"
       ],
       "identity_warning": "",
-      "identity": "story:story_000545",
+      "identity": "story:story_000584",
       "identity_basis": "persistent_story_id",
       "placement_count": 1,
       "placement_categories": [
@@ -2136,9 +1950,9 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 22,
-      "recommended_position": 29,
-      "first_placement_position": 23,
+      "current_position": 19,
+      "recommended_position": 26,
+      "first_placement_position": 19,
       "headline": "Nvidia shares drop 4 percent, wiping $250 billion off market value, after board launches probe into CEO affair",
       "category_key": "business",
       "slug": "2026-11-08-congress-demands-answers-on-nvidia-ceos-reported-ties-to-alleged-chinese-spy",
@@ -2176,7 +1990,7 @@
         "source_trust": 94,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 69.81,
+        "age_hours": 83.72,
         "timestamp_basis": "archive:first_published",
         "deck_eligible": false,
         "eligibility_reason": "older_than_60_hours"
@@ -2202,16 +2016,16 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 23,
-      "recommended_position": 30,
-      "first_placement_position": 24,
+      "current_position": 20,
+      "recommended_position": 27,
+      "first_placement_position": 20,
       "headline": "President Trump defends Nvidia CEO Jensen Huang after board launches investigation into Chinese intelligence targeting",
       "category_key": "business",
       "slug": "2026-11-08-nvidia-board-launches-independent-investigation-into-ceo-jensen-huang-after-repo",
       "story_id": "story_000402",
-      "score": 36,
+      "score": 31,
       "score_breakdown": {
-        "score": 36,
+        "score": 31,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 15,
         "importance_basis": "persistent_story_importance",
@@ -2222,7 +2036,7 @@
             "points": 15
           }
         ],
-        "freshness": 19.95,
+        "freshness": 0.0,
         "urgency": 3,
         "relevance": 100,
         "regions": [
@@ -2232,13 +2046,13 @@
         "source_trust": 91,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 48.03,
+        "age_hours": 61.93,
         "timestamp_basis": "archive:first_published",
         "deck_eligible": false,
-        "eligibility_reason": "older_than_48_hours_not_urgent_enough"
+        "eligibility_reason": "older_than_60_hours"
       },
       "deck_eligible": false,
-      "eligibility_reason": "older_than_48_hours_not_urgent_enough",
+      "eligibility_reason": "older_than_60_hours",
       "match_basis": "persistent_story_id+source_url",
       "identity_confidence": "high",
       "identity_evidence": [
@@ -2258,16 +2072,16 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 24,
-      "recommended_position": 31,
-      "first_placement_position": 25,
+      "current_position": 21,
+      "recommended_position": 28,
+      "first_placement_position": 21,
       "headline": "Asian markets rebound after $2.5 trillion Wall Street sell-off; Nvidia board investigates CEO over relationship",
       "category_key": "business",
       "slug": "2026-11-09-asian-markets-rebound-after-25-trillion-wall-street-sell-off-nvidia-board-invest",
       "story_id": "story_000450",
-      "score": 48,
+      "score": 42,
       "score_breakdown": {
-        "score": 48,
+        "score": 42,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 53,
         "importance_basis": "persistent_story_importance",
@@ -2283,14 +2097,14 @@
             "points": 28
           }
         ],
-        "freshness": 43.33,
+        "freshness": 20.16,
         "urgency": 3,
         "relevance": 72,
         "regions": [],
         "source_trust": 55,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 34.0,
+        "age_hours": 47.9,
         "timestamp_basis": "archive:first_published",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -2316,9 +2130,9 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 25,
-      "recommended_position": 32,
-      "first_placement_position": 26,
+      "current_position": 22,
+      "recommended_position": 29,
+      "first_placement_position": 22,
       "headline": "Treasury moves to cut off crypto exchange MEXC from U.S. financial system over alleged $16 billion in illicit transactions",
       "category_key": "business",
       "slug": "2026-11-08-treasury-moves-to-cut-off-crypto-exchange-mexc-from-us-financial-system-over-all",
@@ -2348,7 +2162,7 @@
         "source_trust": 55,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 69.01,
+        "age_hours": 82.91,
         "timestamp_basis": "archive:first_published",
         "deck_eligible": false,
         "eligibility_reason": "older_than_60_hours"
@@ -2374,9 +2188,9 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 26,
-      "recommended_position": 33,
-      "first_placement_position": 27,
+      "current_position": 23,
+      "recommended_position": 30,
+      "first_placement_position": 23,
       "headline": "Stocks plunge into correction after brief post-midterm rally as AI regulation fears hit tech",
       "category_key": "business",
       "slug": "2026-11-08-stocks-plunge-into-correction-after-brief-post-midterm-rally-as-ai-regulation-fe",
@@ -2404,7 +2218,7 @@
         "source_trust": 92,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 68.04,
+        "age_hours": 81.94,
         "timestamp_basis": "archive:first_published",
         "deck_eligible": false,
         "eligibility_reason": "older_than_60_hours"
@@ -2430,29 +2244,94 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 28,
-      "recommended_position": 34,
-      "first_placement_position": 29,
-      "headline": "Grok Build coding agent exposes thousands of users' confidential data through shareable links",
-      "category_key": "tech",
-      "slug": "",
-      "story_id": "story_000587",
-      "score": 53,
+      "current_position": 24,
+      "recommended_position": 31,
+      "first_placement_position": 24,
+      "headline": "Musk says SpaceX could acquire legacy telecom carrier and use spectrum ten times more effectively",
+      "category_key": "business",
+      "slug": "2026-11-08-musk-says-spacex-could-acquire-legacy-telecom-carrier-and-use-spectrum-ten-times",
+      "story_id": "story_000006",
+      "score": 26,
       "score_breakdown": {
-        "score": 53,
+        "score": 26,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 0,
         "importance_basis": "persistent_score_breakdown",
-        "importance_reasons": [],
-        "freshness": 96.73,
-        "urgency": 7,
-        "relevance": 60,
-        "regions": [],
-        "source_trust": 91,
+        "importance_reasons": [
+          {
+            "code": "archived",
+            "label": "Archived story",
+            "points": -40
+          }
+        ],
+        "freshness": 0.0,
+        "urgency": 3,
+        "relevance": 100,
+        "regions": [
+          "Washington",
+          "New York",
+          "Texas"
+        ],
+        "source_trust": 95,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 1.96,
-        "timestamp_basis": "registry:latest_timeline",
+        "age_hours": 71.9,
+        "timestamp_basis": "archive:first_published",
+        "deck_eligible": false,
+        "eligibility_reason": "older_than_60_hours"
+      },
+      "deck_eligible": false,
+      "eligibility_reason": "older_than_60_hours",
+      "match_basis": "persistent_story_id+source_url",
+      "identity_confidence": "high",
+      "identity_evidence": [
+        "source_url"
+      ],
+      "identity_warning": "",
+      "identity": "story:story_000006",
+      "identity_basis": "persistent_story_id",
+      "placement_count": 1,
+      "placement_categories": [
+        "business"
+      ],
+      "pinned": false,
+      "pin_position": null,
+      "custom": false,
+      "position_locked": false,
+      "position_lock_reason": ""
+    },
+    {
+      "current_position": 25,
+      "recommended_position": 32,
+      "first_placement_position": 25,
+      "headline": "Wyndham exposed millions of customer records after hardcoded password found in Android app",
+      "category_key": "tech",
+      "slug": "2026-11-10-wyndham-exposed-millions-of-customer-records-after-hardcoded-password-found-in-a",
+      "story_id": "story_000519",
+      "score": 45,
+      "score_breakdown": {
+        "score": 45,
+        "basis": "homepage_editorial_shadow_v2",
+        "importance": 15,
+        "importance_basis": "persistent_story_importance",
+        "importance_reasons": [
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "freshness": 41.62,
+        "urgency": 5,
+        "relevance": 100,
+        "regions": [
+          "Michigan"
+        ],
+        "source_trust": 87,
+        "breaking_bonus": 0.0,
+        "material_update_bonus": 0.0,
+        "age_hours": 35.03,
+        "timestamp_basis": "archive:first_published",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
       },
@@ -2464,7 +2343,54 @@
         "source_url"
       ],
       "identity_warning": "",
-      "identity": "story:story_000587",
+      "identity": "story:story_000519",
+      "identity_basis": "persistent_story_id",
+      "placement_count": 1,
+      "placement_categories": [
+        "tech"
+      ],
+      "pinned": false,
+      "pin_position": null,
+      "custom": false,
+      "position_locked": false,
+      "position_lock_reason": ""
+    },
+    {
+      "current_position": 28,
+      "recommended_position": 33,
+      "first_placement_position": 28,
+      "headline": "Researchers trace mysterious global power grid frequency drops to synchronized battery backup systems",
+      "category_key": "tech",
+      "slug": "2026-11-09-researchers-trace-mysterious-global-power-grid-frequency-drops-to-synchronized-b",
+      "story_id": "story_000406",
+      "score": 22,
+      "score_breakdown": {
+        "score": 22,
+        "basis": "homepage_editorial_shadow_v2",
+        "importance": 0,
+        "importance_basis": "persistent_score_breakdown",
+        "importance_reasons": [],
+        "freshness": 0.0,
+        "urgency": 3,
+        "relevance": 72,
+        "regions": [],
+        "source_trust": 87,
+        "breaking_bonus": 0.0,
+        "material_update_bonus": 0.0,
+        "age_hours": 60.84,
+        "timestamp_basis": "archive:first_published",
+        "deck_eligible": false,
+        "eligibility_reason": "older_than_60_hours"
+      },
+      "deck_eligible": false,
+      "eligibility_reason": "older_than_60_hours",
+      "match_basis": "persistent_story_id+source_url",
+      "identity_confidence": "high",
+      "identity_evidence": [
+        "source_url"
+      ],
+      "identity_warning": "",
+      "identity": "story:story_000406",
       "identity_basis": "persistent_story_id",
       "placement_count": 1,
       "placement_categories": [
@@ -2478,59 +2404,40 @@
     },
     {
       "current_position": 29,
-      "recommended_position": 35,
-      "first_placement_position": 30,
-      "headline": "New York opens AI safety registration portal, requiring disclosure from OpenAI and Anthropic",
+      "recommended_position": 34,
+      "first_placement_position": 29,
+      "headline": "Meta expands AI age detection for Instagram teen accounts worldwide after $17.1 billion settlement",
       "category_key": "tech",
-      "slug": "",
-      "story_id": "story_000189",
-      "score": 35,
+      "slug": "2026-11-09-meta-expands-ai-age-detection-for-instagram-teen-accounts-worldwide-after-171-bi",
+      "story_id": "story_000452",
+      "score": 27,
       "score_breakdown": {
-        "score": 35,
+        "score": 27,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 0,
         "importance_basis": "persistent_score_breakdown",
-        "importance_reasons": [
-          {
-            "code": "archived",
-            "label": "Archived story",
-            "points": -40
-          }
-        ],
-        "freshness": 0.0,
-        "urgency": 7,
-        "relevance": 100,
-        "regions": [
-          "New Hampshire",
-          "Connecticut",
-          "California",
-          "New Jersey",
-          "Maryland",
-          "New York",
-          "Virginia",
-          "Colorado",
-          "Illinois",
-          "Vermont",
-          "Maine",
-          "Utah"
-        ],
+        "importance_reasons": [],
+        "freshness": 20.16,
+        "urgency": 3,
+        "relevance": 72,
+        "regions": [],
         "source_trust": 89,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 1566.98,
-        "timestamp_basis": "registry:latest_timeline",
-        "deck_eligible": false,
-        "eligibility_reason": "older_than_60_hours"
+        "age_hours": 47.9,
+        "timestamp_basis": "archive:first_published",
+        "deck_eligible": true,
+        "eligibility_reason": "fresh_window"
       },
-      "deck_eligible": false,
-      "eligibility_reason": "older_than_60_hours",
+      "deck_eligible": true,
+      "eligibility_reason": "fresh_window",
       "match_basis": "persistent_story_id+source_url",
       "identity_confidence": "high",
       "identity_evidence": [
         "source_url"
       ],
       "identity_warning": "",
-      "identity": "story:story_000189",
+      "identity": "story:story_000452",
       "identity_basis": "persistent_story_id",
       "placement_count": 1,
       "placement_categories": [
@@ -2544,34 +2451,37 @@
     },
     {
       "current_position": 30,
-      "recommended_position": 36,
-      "first_placement_position": 31,
-      "headline": "Oura to acquire AI medical chatbot startup Counsel Health for $625 million",
+      "recommended_position": 35,
+      "first_placement_position": 30,
+      "headline": "Securities lawsuits against Nvidia proliferate after board opens probe into CEO's ties to suspected spy",
       "category_key": "tech",
-      "slug": "",
-      "story_id": "story_000588",
-      "score": 58,
+      "slug": "2026-11-09-securities-lawsuits-against-nvidia-proliferate-after-board-opens-probe-into-ceos",
+      "story_id": "story_000484",
+      "score": 37,
       "score_breakdown": {
-        "score": 58,
+        "score": 37,
         "basis": "homepage_editorial_shadow_v2",
-        "importance": 25,
+        "importance": 10,
         "importance_basis": "persistent_story_importance",
         "importance_reasons": [
           {
-            "code": "election",
-            "label": "Major election/political consequence",
-            "points": 25
+            "code": "multistate_scope",
+            "label": "Multi-state U.S. scope",
+            "points": 10
           }
         ],
-        "freshness": 99.97,
-        "urgency": 5,
-        "relevance": 60,
-        "regions": [],
-        "source_trust": 89,
+        "freshness": 36.84,
+        "urgency": 3,
+        "relevance": 95,
+        "regions": [
+          "California",
+          "New York"
+        ],
+        "source_trust": 87,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 0.02,
-        "timestamp_basis": "registry:latest_timeline",
+        "age_hours": 37.9,
+        "timestamp_basis": "archive:first_published",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
       },
@@ -2583,7 +2493,7 @@
         "source_url"
       ],
       "identity_warning": "",
-      "identity": "story:story_000588",
+      "identity": "story:story_000484",
       "identity_basis": "persistent_story_id",
       "placement_count": 1,
       "placement_categories": [
@@ -2597,40 +2507,56 @@
     },
     {
       "current_position": 31,
-      "recommended_position": 37,
-      "first_placement_position": 32,
-      "headline": "Anthropic's seven co-founders will each sell $250 million in shares at IPO while retaining voting control",
+      "recommended_position": 36,
+      "first_placement_position": 31,
+      "headline": "AI tools are enabling automated hacking at scale, upending the cybersecurity industry",
       "category_key": "tech",
-      "slug": "",
-      "story_id": "story_000589",
-      "score": 48,
+      "slug": "2026-11-08-ai-tools-are-enabling-automated-hacking-at-scale-upending-the-cybersecurity-indu",
+      "story_id": "story_000332",
+      "score": 43,
       "score_breakdown": {
-        "score": 48,
+        "score": 43,
         "basis": "homepage_editorial_shadow_v2",
-        "importance": 0,
-        "importance_basis": "persistent_score_breakdown",
-        "importance_reasons": [],
-        "freshness": 94.64,
-        "urgency": 5,
-        "relevance": 60,
+        "importance": 50,
+        "importance_basis": "persistent_story_importance",
+        "importance_reasons": [
+          {
+            "code": "election",
+            "label": "Major election/political consequence",
+            "points": 25
+          },
+          {
+            "code": "public_safety",
+            "label": "Public-safety event",
+            "points": 10
+          },
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "freshness": 0.0,
+        "urgency": 3,
+        "relevance": 100,
         "regions": [],
-        "source_trust": 87,
+        "source_trust": 89,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 3.22,
-        "timestamp_basis": "registry:latest_timeline",
-        "deck_eligible": true,
-        "eligibility_reason": "fresh_window"
+        "age_hours": 83.72,
+        "timestamp_basis": "archive:first_published",
+        "deck_eligible": false,
+        "eligibility_reason": "older_than_60_hours"
       },
-      "deck_eligible": true,
-      "eligibility_reason": "fresh_window",
+      "deck_eligible": false,
+      "eligibility_reason": "older_than_60_hours",
       "match_basis": "persistent_story_id+source_url",
       "identity_confidence": "high",
       "identity_evidence": [
         "source_url"
       ],
       "identity_warning": "",
-      "identity": "story:story_000589",
+      "identity": "story:story_000332",
       "identity_basis": "persistent_story_id",
       "placement_count": 1,
       "placement_categories": [
@@ -2644,361 +2570,57 @@
     },
     {
       "current_position": 32,
-      "recommended_position": 38,
-      "first_placement_position": 33,
-      "headline": "OpenAI acquires AI travel startup Odessia in apparent acqui-hire",
+      "recommended_position": 37,
+      "first_placement_position": 32,
+      "headline": "U.S. intelligence memo claimed Chinese officials recruited tech executive to spy on Nvidia CEO",
       "category_key": "tech",
-      "slug": "",
-      "story_id": "story_000590",
-      "score": 46,
+      "slug": "2026-11-08-us-intelligence-memo-claimed-chinese-officials-recruited-tech-executive-to-spy-o",
+      "story_id": "story_000331",
+      "score": 32,
       "score_breakdown": {
-        "score": 46,
+        "score": 32,
         "basis": "homepage_editorial_shadow_v2",
-        "importance": 0,
-        "importance_basis": "persistent_score_breakdown",
-        "importance_reasons": [],
-        "freshness": 96.61,
-        "urgency": 4,
-        "relevance": 60,
-        "regions": [],
-        "source_trust": 87,
-        "breaking_bonus": 0.0,
-        "material_update_bonus": 0.0,
-        "age_hours": 2.03,
-        "timestamp_basis": "registry:latest_timeline",
-        "deck_eligible": true,
-        "eligibility_reason": "fresh_window"
-      },
-      "deck_eligible": true,
-      "eligibility_reason": "fresh_window",
-      "match_basis": "persistent_story_id+source_url",
-      "identity_confidence": "high",
-      "identity_evidence": [
-        "source_url"
-      ],
-      "identity_warning": "",
-      "identity": "story:story_000590",
-      "identity_basis": "persistent_story_id",
-      "placement_count": 1,
-      "placement_categories": [
-        "tech"
-      ],
-      "pinned": false,
-      "pin_position": null,
-      "custom": false,
-      "position_locked": false,
-      "position_lock_reason": ""
-    },
-    {
-      "current_position": 35,
-      "recommended_position": 39,
-      "first_placement_position": 36,
-      "headline": "Proximal Ventures raises $27.5 million debut fund for AI drug development startups",
-      "category_key": "tech",
-      "slug": "",
-      "story_id": "story_000593",
-      "score": 56,
-      "score_breakdown": {
-        "score": 56,
-        "basis": "homepage_editorial_shadow_v2",
-        "importance": 10,
+        "importance": 20,
         "importance_basis": "persistent_story_importance",
         "importance_reasons": [
           {
-            "code": "public_safety",
-            "label": "Public-safety event",
-            "points": 10
-          }
-        ],
-        "freshness": 96.01,
-        "urgency": 7,
-        "relevance": 60,
-        "regions": [],
-        "source_trust": 87,
-        "breaking_bonus": 0.0,
-        "material_update_bonus": 0.0,
-        "age_hours": 2.4,
-        "timestamp_basis": "registry:latest_timeline",
-        "deck_eligible": true,
-        "eligibility_reason": "fresh_window"
-      },
-      "deck_eligible": true,
-      "eligibility_reason": "fresh_window",
-      "match_basis": "persistent_story_id+source_url",
-      "identity_confidence": "high",
-      "identity_evidence": [
-        "source_url"
-      ],
-      "identity_warning": "",
-      "identity": "story:story_000593",
-      "identity_basis": "persistent_story_id",
-      "placement_count": 1,
-      "placement_categories": [
-        "tech"
-      ],
-      "pinned": false,
-      "pin_position": null,
-      "custom": false,
-      "position_locked": false,
-      "position_lock_reason": ""
-    },
-    {
-      "current_position": 38,
-      "recommended_position": 40,
-      "first_placement_position": 39,
-      "headline": "Broncos acquire Chargers linebacker Daiyan Henley in division trade",
-      "category_key": "sports",
-      "slug": "",
-      "story_id": "story_000596",
-      "score": 50,
-      "score_breakdown": {
-        "score": 50,
-        "basis": "homepage_editorial_shadow_v2",
-        "importance": 0,
-        "importance_basis": "persistent_score_breakdown",
-        "importance_reasons": [],
-        "freshness": 95.64,
-        "urgency": 6,
-        "relevance": 60,
-        "regions": [],
-        "source_trust": 86,
-        "breaking_bonus": 0.0,
-        "material_update_bonus": 0.0,
-        "age_hours": 2.62,
-        "timestamp_basis": "registry:latest_timeline",
-        "deck_eligible": true,
-        "eligibility_reason": "fresh_window"
-      },
-      "deck_eligible": true,
-      "eligibility_reason": "fresh_window",
-      "match_basis": "persistent_story_id+source_url",
-      "identity_confidence": "high",
-      "identity_evidence": [
-        "source_url"
-      ],
-      "identity_warning": "",
-      "identity": "story:story_000596",
-      "identity_basis": "persistent_story_id",
-      "placement_count": 1,
-      "placement_categories": [
-        "sports"
-      ],
-      "pinned": false,
-      "pin_position": null,
-      "custom": false,
-      "position_locked": false,
-      "position_lock_reason": ""
-    },
-    {
-      "current_position": 39,
-      "recommended_position": 41,
-      "first_placement_position": 40,
-      "headline": "Bills acquire safety Amani Hooker from Titans in trade deadline deal",
-      "category_key": "sports",
-      "slug": "",
-      "story_id": "story_000597",
-      "score": 58,
-      "score_breakdown": {
-        "score": 58,
-        "basis": "homepage_editorial_shadow_v2",
-        "importance": 30,
-        "importance_basis": "persistent_story_importance",
-        "importance_reasons": [
+            "code": "follow_up",
+            "label": "Story has follow-up coverage",
+            "points": 5
+          },
           {
-            "code": "war_diplomacy",
-            "label": "War, diplomacy or national-security consequence",
-            "points": 30
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
           }
         ],
-        "freshness": 93.62,
-        "urgency": 5,
-        "relevance": 82,
-        "regions": [
-          "Tennessee"
-        ],
-        "source_trust": 55,
-        "breaking_bonus": 0.0,
-        "material_update_bonus": 0.0,
-        "age_hours": 3.83,
-        "timestamp_basis": "registry:latest_timeline",
-        "deck_eligible": true,
-        "eligibility_reason": "fresh_window"
-      },
-      "deck_eligible": true,
-      "eligibility_reason": "fresh_window",
-      "match_basis": "persistent_story_id+source_url",
-      "identity_confidence": "high",
-      "identity_evidence": [
-        "source_url"
-      ],
-      "identity_warning": "",
-      "identity": "story:story_000597",
-      "identity_basis": "persistent_story_id",
-      "placement_count": 1,
-      "placement_categories": [
-        "sports"
-      ],
-      "pinned": false,
-      "pin_position": null,
-      "custom": false,
-      "position_locked": false,
-      "position_lock_reason": ""
-    },
-    {
-      "current_position": 40,
-      "recommended_position": 42,
-      "first_placement_position": 41,
-      "headline": "Colts reject multiple trade offers for running back Jonathan Taylor",
-      "category_key": "sports",
-      "slug": "",
-      "story_id": "story_000598",
-      "score": 53,
-      "score_breakdown": {
-        "score": 53,
-        "basis": "homepage_editorial_shadow_v2",
-        "importance": 10,
-        "importance_basis": "persistent_story_importance",
-        "importance_reasons": [
-          {
-            "code": "multistate_scope",
-            "label": "Multi-state U.S. scope",
-            "points": 10
-          }
-        ],
-        "freshness": 95.28,
-        "urgency": 5,
-        "relevance": 95,
-        "regions": [
-          "Washington",
-          "Tennessee",
-          "Minnesota",
-          "New York",
-          "Arizona",
-          "Kansas"
-        ],
-        "source_trust": 55,
-        "breaking_bonus": 0.0,
-        "material_update_bonus": 0.0,
-        "age_hours": 2.83,
-        "timestamp_basis": "registry:latest_timeline",
-        "deck_eligible": true,
-        "eligibility_reason": "fresh_window"
-      },
-      "deck_eligible": true,
-      "eligibility_reason": "fresh_window",
-      "match_basis": "persistent_story_id+source_url",
-      "identity_confidence": "high",
-      "identity_evidence": [
-        "source_url"
-      ],
-      "identity_warning": "",
-      "identity": "story:story_000598",
-      "identity_basis": "persistent_story_id",
-      "placement_count": 1,
-      "placement_categories": [
-        "sports"
-      ],
-      "pinned": false,
-      "pin_position": null,
-      "custom": false,
-      "position_locked": false,
-      "position_lock_reason": ""
-    },
-    {
-      "current_position": 41,
-      "recommended_position": 43,
-      "first_placement_position": 42,
-      "headline": "Steelers scale back pursuit of trade deadline wide receiver, insider says",
-      "category_key": "sports",
-      "slug": "",
-      "story_id": "story_000599",
-      "score": 48,
-      "score_breakdown": {
-        "score": 48,
-        "basis": "homepage_editorial_shadow_v2",
-        "importance": 12,
-        "importance_basis": "persistent_story_importance",
-        "importance_reasons": [
-          {
-            "code": "cultural_sports",
-            "label": "Major sports/cultural event",
-            "points": 12
-          }
-        ],
-        "freshness": 97.48,
-        "urgency": 4,
-        "relevance": 60,
-        "regions": [],
-        "source_trust": 55,
-        "breaking_bonus": 0.0,
-        "material_update_bonus": 0.0,
-        "age_hours": 1.51,
-        "timestamp_basis": "registry:latest_timeline",
-        "deck_eligible": true,
-        "eligibility_reason": "fresh_window"
-      },
-      "deck_eligible": true,
-      "eligibility_reason": "fresh_window",
-      "match_basis": "persistent_story_id+source_url",
-      "identity_confidence": "high",
-      "identity_evidence": [
-        "source_url"
-      ],
-      "identity_warning": "",
-      "identity": "story:story_000599",
-      "identity_basis": "persistent_story_id",
-      "placement_count": 1,
-      "placement_categories": [
-        "sports"
-      ],
-      "pinned": false,
-      "pin_position": null,
-      "custom": false,
-      "position_locked": false,
-      "position_lock_reason": ""
-    },
-    {
-      "current_position": 42,
-      "recommended_position": 44,
-      "first_placement_position": 43,
-      "headline": "NFL reinstates Brandon Aiyuk, agent expects him to play this season with new team",
-      "category_key": "sports",
-      "slug": "",
-      "story_id": "story_000600",
-      "score": 49,
-      "score_breakdown": {
-        "score": 49,
-        "basis": "homepage_editorial_shadow_v2",
-        "importance": 0,
-        "importance_basis": "persistent_score_breakdown",
-        "importance_reasons": [],
-        "freshness": 94.02,
-        "urgency": 4,
-        "relevance": 82,
+        "freshness": 0.0,
+        "urgency": 3,
+        "relevance": 100,
         "regions": [
           "New York"
         ],
-        "source_trust": 95,
+        "source_trust": 87,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 3.59,
-        "timestamp_basis": "registry:latest_timeline",
-        "deck_eligible": true,
-        "eligibility_reason": "fresh_window"
+        "age_hours": 81.94,
+        "timestamp_basis": "archive:first_published",
+        "deck_eligible": false,
+        "eligibility_reason": "older_than_60_hours"
       },
-      "deck_eligible": true,
-      "eligibility_reason": "fresh_window",
+      "deck_eligible": false,
+      "eligibility_reason": "older_than_60_hours",
       "match_basis": "persistent_story_id+source_url",
       "identity_confidence": "high",
       "identity_evidence": [
         "source_url"
       ],
       "identity_warning": "",
-      "identity": "story:story_000600",
+      "identity": "story:story_000331",
       "identity_basis": "persistent_story_id",
       "placement_count": 1,
       "placement_categories": [
-        "sports"
+        "tech"
       ],
       "pinned": false,
       "pin_position": null,
@@ -3007,45 +2629,51 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 43,
-      "recommended_position": 45,
-      "first_placement_position": 44,
-      "headline": "Scotland coach names McTominay to five-player leadership group ahead of Nations League qualifier",
-      "category_key": "sports",
-      "slug": "",
-      "story_id": "story_000601",
-      "score": 44,
+      "current_position": 33,
+      "recommended_position": 38,
+      "first_placement_position": 33,
+      "headline": "NASA opens astronaut applications to expand Artemis moon program",
+      "category_key": "tech",
+      "slug": "2026-11-08-nasa-opens-astronaut-applications-to-expand-artemis-moon-program",
+      "story_id": "story_000380",
+      "score": 31,
       "score_breakdown": {
-        "score": 44,
+        "score": 31,
         "basis": "homepage_editorial_shadow_v2",
-        "importance": 0,
-        "importance_basis": "persistent_score_breakdown",
-        "importance_reasons": [],
-        "freshness": 96.06,
+        "importance": 15,
+        "importance_basis": "persistent_story_importance",
+        "importance_reasons": [
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "freshness": 0.0,
         "urgency": 3,
-        "relevance": 60,
+        "relevance": 100,
         "regions": [],
-        "source_trust": 94,
+        "source_trust": 91,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 2.36,
-        "timestamp_basis": "registry:latest_timeline",
-        "deck_eligible": true,
-        "eligibility_reason": "fresh_window"
+        "age_hours": 71.9,
+        "timestamp_basis": "archive:first_published",
+        "deck_eligible": false,
+        "eligibility_reason": "older_than_60_hours"
       },
-      "deck_eligible": true,
-      "eligibility_reason": "fresh_window",
+      "deck_eligible": false,
+      "eligibility_reason": "older_than_60_hours",
       "match_basis": "persistent_story_id+source_url",
       "identity_confidence": "high",
       "identity_evidence": [
         "source_url"
       ],
       "identity_warning": "",
-      "identity": "story:story_000601",
+      "identity": "story:story_000380",
       "identity_basis": "persistent_story_id",
       "placement_count": 1,
       "placement_categories": [
-        "sports"
+        "tech"
       ],
       "pinned": false,
       "pin_position": null,
@@ -3054,16 +2682,16 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 44,
-      "recommended_position": 46,
-      "first_placement_position": 45,
+      "current_position": 34,
+      "recommended_position": 39,
+      "first_placement_position": 34,
       "headline": "Reds first baseman Sal Stewart wins NL Rookie of the Year after 32-homer, 112-RBI season",
       "category_key": "sports",
       "slug": "2026-11-10-reds-first-baseman-sal-stewart-wins-nl-rookie-of-the-year-after-32-homer-112-rbi",
       "story_id": "story_000524",
-      "score": 59,
+      "score": 58,
       "score_breakdown": {
-        "score": 59,
+        "score": 58,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 65,
         "importance_basis": "persistent_story_importance",
@@ -3084,20 +2712,20 @@
             "points": 10
           }
         ],
-        "freshness": 64.79,
-        "urgency": 3,
+        "freshness": 41.62,
+        "urgency": 5,
         "relevance": 88,
         "regions": [],
         "source_trust": 55,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 21.12,
+        "age_hours": 35.03,
         "timestamp_basis": "archive:first_published",
-        "deck_eligible": true,
-        "eligibility_reason": "fresh_window"
+        "deck_eligible": false,
+        "eligibility_reason": "routine_sports_older_than_24_hours"
       },
-      "deck_eligible": true,
-      "eligibility_reason": "fresh_window",
+      "deck_eligible": false,
+      "eligibility_reason": "routine_sports_older_than_24_hours",
       "match_basis": "persistent_story_id+source_url",
       "identity_confidence": "high",
       "identity_evidence": [
@@ -3117,16 +2745,136 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 45,
-      "recommended_position": 47,
-      "first_placement_position": 46,
-      "headline": "David Walliams accused of sexual misconduct, including grooming allegations involving 15-year-old, after losing court bid",
-      "category_key": "entertainment",
-      "slug": "2026-11-10-david-walliams-accused-of-sexual-misconduct-including-grooming-allegations-invol",
-      "story_id": "story_000602",
-      "score": 58,
+      "current_position": 35,
+      "recommended_position": 40,
+      "first_placement_position": 35,
+      "headline": "Bills join 49ers atop NFL at 7-1 as season reaches midpoint",
+      "category_key": "sports",
+      "slug": "2026-11-10-bills-join-49ers-atop-nfl-at-7-1-as-season-reaches-midpoint",
+      "story_id": "story_000560",
+      "score": 47,
       "score_breakdown": {
-        "score": 58,
+        "score": 47,
+        "basis": "homepage_editorial_shadow_v2",
+        "importance": 22,
+        "importance_basis": "persistent_story_importance",
+        "importance_reasons": [
+          {
+            "code": "cultural_sports",
+            "label": "Major sports/cultural event",
+            "points": 12
+          },
+          {
+            "code": "multistate_scope",
+            "label": "Multi-state U.S. scope",
+            "points": 10
+          }
+        ],
+        "freshness": 60.19,
+        "urgency": 3,
+        "relevance": 95,
+        "regions": [
+          "Washington",
+          "Minnesota",
+          "New York",
+          "Arizona",
+          "Kansas"
+        ],
+        "source_trust": 94,
+        "breaking_bonus": 0.0,
+        "material_update_bonus": 0.0,
+        "age_hours": 23.89,
+        "timestamp_basis": "archive:first_published",
+        "deck_eligible": true,
+        "eligibility_reason": "fresh_window"
+      },
+      "deck_eligible": true,
+      "eligibility_reason": "fresh_window",
+      "match_basis": "persistent_story_id+source_url",
+      "identity_confidence": "high",
+      "identity_evidence": [
+        "source_url"
+      ],
+      "identity_warning": "",
+      "identity": "story:story_000560",
+      "identity_basis": "persistent_story_id",
+      "placement_count": 1,
+      "placement_categories": [
+        "sports"
+      ],
+      "pinned": false,
+      "pin_position": null,
+      "custom": false,
+      "position_locked": false,
+      "position_lock_reason": ""
+    },
+    {
+      "current_position": 37,
+      "recommended_position": 41,
+      "first_placement_position": 37,
+      "headline": "Kenneth Walker scores three touchdowns as Chiefs defeat Jets 35-12, Mahomes plays through elbow injury",
+      "category_key": "sports",
+      "slug": "2026-11-09-kenneth-walker-scores-three-touchdowns-as-chiefs-defeat-jets-35-12-mahomes-plays",
+      "story_id": "story_000437",
+      "score": 29,
+      "score_breakdown": {
+        "score": 29,
+        "basis": "homepage_editorial_shadow_v2",
+        "importance": 10,
+        "importance_basis": "persistent_story_importance",
+        "importance_reasons": [
+          {
+            "code": "multistate_scope",
+            "label": "Multi-state U.S. scope",
+            "points": 10
+          }
+        ],
+        "freshness": 0.0,
+        "urgency": 3,
+        "relevance": 95,
+        "regions": [
+          "New York",
+          "Kansas"
+        ],
+        "source_trust": 89,
+        "breaking_bonus": 0.0,
+        "material_update_bonus": 0.0,
+        "age_hours": 60.84,
+        "timestamp_basis": "archive:first_published",
+        "deck_eligible": false,
+        "eligibility_reason": "older_than_60_hours"
+      },
+      "deck_eligible": false,
+      "eligibility_reason": "older_than_60_hours",
+      "match_basis": "persistent_story_id+source_url",
+      "identity_confidence": "high",
+      "identity_evidence": [
+        "source_url"
+      ],
+      "identity_warning": "",
+      "identity": "story:story_000437",
+      "identity_basis": "persistent_story_id",
+      "placement_count": 1,
+      "placement_categories": [
+        "sports"
+      ],
+      "pinned": false,
+      "pin_position": null,
+      "custom": false,
+      "position_locked": false,
+      "position_lock_reason": ""
+    },
+    {
+      "current_position": 38,
+      "recommended_position": 42,
+      "first_placement_position": 38,
+      "headline": "Blades Brown, 19, becomes youngest PGA Tour winner in 95 years with playoff victory in Mexico",
+      "category_key": "sports",
+      "slug": "2026-11-09-blades-brown-19-becomes-youngest-pga-tour-winner-in-95-years-with-playoff-victor",
+      "story_id": "story_000457",
+      "score": 32,
+      "score_breakdown": {
+        "score": 32,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 10,
         "importance_basis": "persistent_story_importance",
@@ -3137,14 +2885,323 @@
             "points": 10
           }
         ],
-        "freshness": 99.99,
-        "urgency": 7,
+        "freshness": 20.16,
+        "urgency": 3,
+        "relevance": 82,
+        "regions": [
+          "Michigan"
+        ],
+        "source_trust": 94,
+        "breaking_bonus": 0.0,
+        "material_update_bonus": 0.0,
+        "age_hours": 47.9,
+        "timestamp_basis": "archive:first_published",
+        "deck_eligible": false,
+        "eligibility_reason": "routine_sports_older_than_24_hours"
+      },
+      "deck_eligible": false,
+      "eligibility_reason": "routine_sports_older_than_24_hours",
+      "match_basis": "persistent_story_id+source_url",
+      "identity_confidence": "high",
+      "identity_evidence": [
+        "source_url"
+      ],
+      "identity_warning": "",
+      "identity": "story:story_000457",
+      "identity_basis": "persistent_story_id",
+      "placement_count": 1,
+      "placement_categories": [
+        "sports"
+      ],
+      "pinned": false,
+      "pin_position": null,
+      "custom": false,
+      "position_locked": false,
+      "position_lock_reason": ""
+    },
+    {
+      "current_position": 39,
+      "recommended_position": 43,
+      "first_placement_position": 39,
+      "headline": "Jaguars acquire defensive tackle Davon Godchaux from Saints in second trade of the day",
+      "category_key": "sports",
+      "slug": "2026-11-09-jaguars-acquire-defensive-tackle-davon-godchaux-from-saints-in-second-trade-of-t",
+      "story_id": "story_000492",
+      "score": 27,
+      "score_breakdown": {
+        "score": 27,
+        "basis": "homepage_editorial_shadow_v2",
+        "importance": 0,
+        "importance_basis": "persistent_score_breakdown",
+        "importance_reasons": [],
+        "freshness": 36.84,
+        "urgency": 3,
+        "relevance": 60,
+        "regions": [],
+        "source_trust": 55,
+        "breaking_bonus": 0.0,
+        "material_update_bonus": 0.0,
+        "age_hours": 37.9,
+        "timestamp_basis": "archive:first_published",
+        "deck_eligible": false,
+        "eligibility_reason": "routine_sports_older_than_24_hours"
+      },
+      "deck_eligible": false,
+      "eligibility_reason": "routine_sports_older_than_24_hours",
+      "match_basis": "persistent_story_id+source_url",
+      "identity_confidence": "high",
+      "identity_evidence": [
+        "source_url"
+      ],
+      "identity_warning": "",
+      "identity": "story:story_000492",
+      "identity_basis": "persistent_story_id",
+      "placement_count": 1,
+      "placement_categories": [
+        "sports"
+      ],
+      "pinned": false,
+      "pin_position": null,
+      "custom": false,
+      "position_locked": false,
+      "position_lock_reason": ""
+    },
+    {
+      "current_position": 40,
+      "recommended_position": 44,
+      "first_placement_position": 40,
+      "headline": "Willy Hutchinson upsets Joshua Buatsi to win WBC light-heavyweight title in Manchester rematch",
+      "category_key": "sports",
+      "slug": "2026-11-08-willy-hutchinson-upsets-joshua-buatsi-to-win-wbc-light-heavyweight-title-in-manc",
+      "story_id": "story_000328",
+      "score": 21,
+      "score_breakdown": {
+        "score": 21,
+        "basis": "homepage_editorial_shadow_v2",
+        "importance": 0,
+        "importance_basis": "persistent_score_breakdown",
+        "importance_reasons": [],
+        "freshness": 0.0,
+        "urgency": 3,
         "relevance": 60,
         "regions": [],
         "source_trust": 94,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 0.0,
+        "age_hours": 83.72,
+        "timestamp_basis": "archive:first_published",
+        "deck_eligible": false,
+        "eligibility_reason": "older_than_60_hours"
+      },
+      "deck_eligible": false,
+      "eligibility_reason": "older_than_60_hours",
+      "match_basis": "persistent_story_id+source_url",
+      "identity_confidence": "high",
+      "identity_evidence": [
+        "source_url"
+      ],
+      "identity_warning": "",
+      "identity": "story:story_000328",
+      "identity_basis": "persistent_story_id",
+      "placement_count": 1,
+      "placement_categories": [
+        "sports"
+      ],
+      "pinned": false,
+      "pin_position": null,
+      "custom": false,
+      "position_locked": false,
+      "position_lock_reason": ""
+    },
+    {
+      "current_position": 41,
+      "recommended_position": 45,
+      "first_placement_position": 41,
+      "headline": "Oregon routs Ohio State 41-28, likely ending Buckeyes' playoff hopes with fake punt sparking turnaround",
+      "category_key": "sports",
+      "slug": "2026-11-08-oregon-routs-ohio-state-41-28-likely-ending-buckeyes-playoff-hopes-with-fake-pun",
+      "story_id": "story_000357",
+      "score": 29,
+      "score_breakdown": {
+        "score": 29,
+        "basis": "homepage_editorial_shadow_v2",
+        "importance": 10,
+        "importance_basis": "persistent_story_importance",
+        "importance_reasons": [
+          {
+            "code": "multistate_scope",
+            "label": "Multi-state U.S. scope",
+            "points": 10
+          }
+        ],
+        "freshness": 0.0,
+        "urgency": 3,
+        "relevance": 95,
+        "regions": [
+          "Wisconsin",
+          "Indiana",
+          "Oregon",
+          "Ohio"
+        ],
+        "source_trust": 89,
+        "breaking_bonus": 0.0,
+        "material_update_bonus": 0.0,
+        "age_hours": 82.91,
+        "timestamp_basis": "archive:first_published",
+        "deck_eligible": false,
+        "eligibility_reason": "older_than_60_hours"
+      },
+      "deck_eligible": false,
+      "eligibility_reason": "older_than_60_hours",
+      "match_basis": "persistent_story_id+source_url",
+      "identity_confidence": "high",
+      "identity_evidence": [
+        "source_url"
+      ],
+      "identity_warning": "",
+      "identity": "story:story_000357",
+      "identity_basis": "persistent_story_id",
+      "placement_count": 1,
+      "placement_categories": [
+        "sports"
+      ],
+      "pinned": false,
+      "pin_position": null,
+      "custom": false,
+      "position_locked": false,
+      "position_lock_reason": ""
+    },
+    {
+      "current_position": 42,
+      "recommended_position": 46,
+      "first_placement_position": 42,
+      "headline": "Notre Dame defeats Miami 24-17 in matchup of top-ranked teams",
+      "category_key": "sports",
+      "slug": "2026-11-08-notre-dame-defeats-miami-24-17-in-matchup-of-top-ranked-teams",
+      "story_id": "story_000368",
+      "score": 26,
+      "score_breakdown": {
+        "score": 26,
+        "basis": "homepage_editorial_shadow_v2",
+        "importance": 25,
+        "importance_basis": "persistent_story_importance",
+        "importance_reasons": [
+          {
+            "code": "election",
+            "label": "Major election/political consequence",
+            "points": 25
+          }
+        ],
+        "freshness": 0.0,
+        "urgency": 3,
+        "relevance": 60,
+        "regions": [],
+        "source_trust": 45,
+        "breaking_bonus": 0.0,
+        "material_update_bonus": 0.0,
+        "age_hours": 81.94,
+        "timestamp_basis": "archive:first_published",
+        "deck_eligible": false,
+        "eligibility_reason": "older_than_60_hours"
+      },
+      "deck_eligible": false,
+      "eligibility_reason": "older_than_60_hours",
+      "match_basis": "persistent_story_id+source_url",
+      "identity_confidence": "high",
+      "identity_evidence": [
+        "source_url"
+      ],
+      "identity_warning": "",
+      "identity": "story:story_000368",
+      "identity_basis": "persistent_story_id",
+      "placement_count": 1,
+      "placement_categories": [
+        "sports"
+      ],
+      "pinned": false,
+      "pin_position": null,
+      "custom": false,
+      "position_locked": false,
+      "position_lock_reason": ""
+    },
+    {
+      "current_position": 44,
+      "recommended_position": 47,
+      "first_placement_position": 44,
+      "headline": "M. John Harrison becomes oldest Booker Prize winner at 81 for post-apocalyptic novel The End of Everything",
+      "category_key": "entertainment",
+      "slug": "2026-11-10-m-john-harrison-becomes-oldest-booker-prize-winner-at-81-for-post-apocalyptic-no",
+      "story_id": "story_000569",
+      "score": 38,
+      "score_breakdown": {
+        "score": 38,
+        "basis": "homepage_editorial_shadow_v2",
+        "importance": 0,
+        "importance_basis": "persistent_score_breakdown",
+        "importance_reasons": [],
+        "freshness": 60.19,
+        "urgency": 3,
+        "relevance": 82,
+        "regions": [
+          "New York"
+        ],
+        "source_trust": 94,
+        "breaking_bonus": 0.0,
+        "material_update_bonus": 0.0,
+        "age_hours": 23.89,
+        "timestamp_basis": "archive:first_published",
+        "deck_eligible": true,
+        "eligibility_reason": "fresh_window"
+      },
+      "deck_eligible": true,
+      "eligibility_reason": "fresh_window",
+      "match_basis": "persistent_story_id+source_url",
+      "identity_confidence": "high",
+      "identity_evidence": [
+        "source_url"
+      ],
+      "identity_warning": "",
+      "identity": "story:story_000569",
+      "identity_basis": "persistent_story_id",
+      "placement_count": 1,
+      "placement_categories": [
+        "entertainment"
+      ],
+      "pinned": false,
+      "pin_position": null,
+      "custom": false,
+      "position_locked": false,
+      "position_lock_reason": ""
+    },
+    {
+      "current_position": 45,
+      "recommended_position": 48,
+      "first_placement_position": 45,
+      "headline": "David Walliams accused of sexual misconduct, including grooming allegations involving 15-year-old, after losing court bid",
+      "category_key": "entertainment",
+      "slug": "2026-11-10-david-walliams-accused-of-sexual-misconduct-including-grooming-allegations-invol",
+      "story_id": "story_000602",
+      "score": 43,
+      "score_breakdown": {
+        "score": 43,
+        "basis": "homepage_editorial_shadow_v2",
+        "importance": 10,
+        "importance_basis": "persistent_story_importance",
+        "importance_reasons": [
+          {
+            "code": "public_safety",
+            "label": "Public-safety event",
+            "points": 10
+          }
+        ],
+        "freshness": 76.82,
+        "urgency": 3,
+        "relevance": 60,
+        "regions": [],
+        "source_trust": 94,
+        "breaking_bonus": 0.0,
+        "material_update_bonus": 0.0,
+        "age_hours": 13.91,
         "timestamp_basis": "archive:first_published",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -3171,130 +3228,15 @@
     },
     {
       "current_position": 46,
-      "recommended_position": 48,
-      "first_placement_position": 47,
-      "headline": "Donnie Dunagan, voice of Bambi in 1942 Disney classic, dies at 92",
-      "category_key": "entertainment",
-      "slug": "2026-11-10-donnie-dunagan-voice-of-bambi-in-1942-disney-classic-dies-at-92",
-      "story_id": "story_000502",
-      "score": 56,
-      "score_breakdown": {
-        "score": 56,
-        "basis": "homepage_editorial_shadow_v2",
-        "importance": 46,
-        "importance_basis": "persistent_story_importance",
-        "importance_reasons": [
-          {
-            "code": "war_diplomacy",
-            "label": "War, diplomacy or national-security consequence",
-            "points": 30
-          },
-          {
-            "code": "single_death",
-            "label": "Death reported",
-            "points": 6
-          },
-          {
-            "code": "multistate_scope",
-            "label": "Multi-state U.S. scope",
-            "points": 10
-          }
-        ],
-        "freshness": 64.79,
-        "urgency": 3,
-        "relevance": 95,
-        "regions": [
-          "Alabama",
-          "Texas"
-        ],
-        "source_trust": 86,
-        "breaking_bonus": 0.0,
-        "material_update_bonus": 0.0,
-        "age_hours": 21.12,
-        "timestamp_basis": "archive:first_published",
-        "deck_eligible": true,
-        "eligibility_reason": "fresh_window"
-      },
-      "deck_eligible": true,
-      "eligibility_reason": "fresh_window",
-      "match_basis": "persistent_story_id+source_url",
-      "identity_confidence": "high",
-      "identity_evidence": [
-        "source_url"
-      ],
-      "identity_warning": "",
-      "identity": "story:story_000502",
-      "identity_basis": "persistent_story_id",
-      "placement_count": 1,
-      "placement_categories": [
-        "entertainment"
-      ],
-      "pinned": false,
-      "pin_position": null,
-      "custom": false,
-      "position_locked": false,
-      "position_lock_reason": ""
-    },
-    {
-      "current_position": 47,
       "recommended_position": 49,
-      "first_placement_position": 48,
-      "headline": "M. John Harrison becomes oldest Booker Prize winner at 81 for post-apocalyptic novel The End of Everything",
-      "category_key": "entertainment",
-      "slug": "2026-11-10-m-john-harrison-becomes-oldest-booker-prize-winner-at-81-for-post-apocalyptic-no",
-      "story_id": "story_000569",
-      "score": 44,
-      "score_breakdown": {
-        "score": 44,
-        "basis": "homepage_editorial_shadow_v2",
-        "importance": 0,
-        "importance_basis": "persistent_score_breakdown",
-        "importance_reasons": [],
-        "freshness": 83.36,
-        "urgency": 3,
-        "relevance": 82,
-        "regions": [
-          "New York"
-        ],
-        "source_trust": 94,
-        "breaking_bonus": 0.0,
-        "material_update_bonus": 0.0,
-        "age_hours": 9.98,
-        "timestamp_basis": "archive:first_published",
-        "deck_eligible": true,
-        "eligibility_reason": "fresh_window"
-      },
-      "deck_eligible": true,
-      "eligibility_reason": "fresh_window",
-      "match_basis": "persistent_story_id+source_url",
-      "identity_confidence": "high",
-      "identity_evidence": [
-        "source_url"
-      ],
-      "identity_warning": "",
-      "identity": "story:story_000569",
-      "identity_basis": "persistent_story_id",
-      "placement_count": 1,
-      "placement_categories": [
-        "entertainment"
-      ],
-      "pinned": false,
-      "pin_position": null,
-      "custom": false,
-      "position_locked": false,
-      "position_lock_reason": ""
-    },
-    {
-      "current_position": 48,
-      "recommended_position": 50,
-      "first_placement_position": 49,
+      "first_placement_position": 46,
       "headline": "Denis Villeneuve says he is finishing Dune: Part Three while beginning James Bond movie, teases casting before joking at LACMA gala",
       "category_key": "entertainment",
       "slug": "2026-11-09-denis-villeneuve-says-he-is-finishing-dune-part-three-while-beginning-james-bond",
       "story_id": "story_000439",
-      "score": 43,
+      "score": 38,
       "score_breakdown": {
-        "score": 43,
+        "score": 38,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 40,
         "importance_basis": "persistent_story_importance",
@@ -3310,20 +3252,20 @@
             "points": 10
           }
         ],
-        "freshness": 21.77,
+        "freshness": 0.0,
         "urgency": 3,
         "relevance": 85,
         "regions": [],
         "source_trust": 90,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 46.94,
+        "age_hours": 60.84,
         "timestamp_basis": "archive:first_published",
-        "deck_eligible": true,
-        "eligibility_reason": "fresh_window"
+        "deck_eligible": false,
+        "eligibility_reason": "older_than_60_hours"
       },
-      "deck_eligible": true,
-      "eligibility_reason": "fresh_window",
+      "deck_eligible": false,
+      "eligibility_reason": "older_than_60_hours",
       "match_basis": "persistent_story_id+source_url",
       "identity_confidence": "high",
       "identity_evidence": [
@@ -3343,16 +3285,16 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 49,
-      "recommended_position": 51,
-      "first_placement_position": 50,
+      "current_position": 47,
+      "recommended_position": 50,
+      "first_placement_position": 47,
       "headline": "Russell Brand sentencing hearing underway after rape and sexual assault convictions",
       "category_key": "entertainment",
       "slug": "2026-11-09-russell-brand-sentencing-hearing-underway-after-rape-and-sexual-assault-convicti",
       "story_id": "story_000466",
-      "score": 53,
+      "score": 48,
       "score_breakdown": {
-        "score": 53,
+        "score": 48,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 55,
         "importance_basis": "persistent_story_importance",
@@ -3373,14 +3315,14 @@
             "points": 10
           }
         ],
-        "freshness": 43.33,
+        "freshness": 20.16,
         "urgency": 3,
         "relevance": 85,
         "regions": [],
         "source_trust": 91,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 34.0,
+        "age_hours": 47.9,
         "timestamp_basis": "archive:first_published",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -3406,16 +3348,16 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 50,
-      "recommended_position": 52,
-      "first_placement_position": 51,
+      "current_position": 48,
+      "recommended_position": 51,
+      "first_placement_position": 48,
       "headline": "James Gunn and Peter Safran ousted as DC Studios co-CEOs, leaving Superman and Batman franchises in uncertainty",
       "category_key": "entertainment",
       "slug": "2026-11-09-james-gunn-and-peter-safran-ousted-as-dc-studios-co-ceos-leaving-superman-and-ba",
       "story_id": "story_000501",
-      "score": 52,
+      "score": 46,
       "score_breakdown": {
-        "score": 52,
+        "score": 46,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 40,
         "importance_basis": "persistent_story_importance",
@@ -3431,14 +3373,14 @@
             "points": 10
           }
         ],
-        "freshness": 60.01,
+        "freshness": 36.84,
         "urgency": 3,
         "relevance": 85,
         "regions": [],
         "source_trust": 90,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 24.0,
+        "age_hours": 37.9,
         "timestamp_basis": "archive:first_published",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -3464,9 +3406,9 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 51,
-      "recommended_position": 53,
-      "first_placement_position": 52,
+      "current_position": 49,
+      "recommended_position": 52,
+      "first_placement_position": 49,
       "headline": "Godzilla Minus Zero heads toward $32 million opening weekend, surpassing predecessor's total domestic run",
       "category_key": "entertainment",
       "slug": "2026-11-08-godzilla-minus-zero-heads-toward-32-million-opening-weekend-surpassing-predecess",
@@ -3496,7 +3438,7 @@
         "source_trust": 55,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 69.81,
+        "age_hours": 83.72,
         "timestamp_basis": "archive:first_published",
         "deck_eligible": false,
         "eligibility_reason": "older_than_60_hours"
@@ -3522,9 +3464,9 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 52,
-      "recommended_position": 54,
-      "first_placement_position": 53,
+      "current_position": 50,
+      "recommended_position": 53,
+      "first_placement_position": 50,
       "headline": "Sylvester Stallone says his 20-year rivalry with Arnold Schwarzenegger ended when Schwarzenegger ran for California governor",
       "category_key": "entertainment",
       "slug": "2026-11-08-sylvester-stallone-says-his-20-year-rivalry-with-arnold-schwarzenegger-ended-whe",
@@ -3561,7 +3503,7 @@
         "source_trust": 90,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 69.01,
+        "age_hours": 82.91,
         "timestamp_basis": "archive:first_published",
         "deck_eligible": false,
         "eligibility_reason": "older_than_60_hours"
@@ -3587,9 +3529,9 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 53,
-      "recommended_position": 55,
-      "first_placement_position": 54,
+      "current_position": 51,
+      "recommended_position": 54,
+      "first_placement_position": 51,
       "headline": "Stephen Colbert and Yo-Yo Ma's Harvard event cut short by fire alarm amid graduate student union strike",
       "category_key": "entertainment",
       "slug": "2026-11-08-stephen-colbert-and-yo-yo-mas-harvard-event-cut-short-by-fire-alarm-amid-graduat",
@@ -3616,7 +3558,7 @@
         "source_trust": 55,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 68.04,
+        "age_hours": 81.94,
         "timestamp_basis": "archive:first_published",
         "deck_eligible": false,
         "eligibility_reason": "older_than_60_hours"
@@ -3642,81 +3584,16 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 55,
-      "recommended_position": 56,
-      "first_placement_position": 56,
-      "headline": "Seven Republican senators call for delay in GOP leadership elections",
-      "category_key": "politics",
-      "slug": "2026-11-10-seven-republican-senators-call-for-delay-in-gop-leadership-elections",
-      "story_id": "story_000536",
-      "score": 66,
-      "score_breakdown": {
-        "score": 66,
-        "basis": "homepage_editorial_shadow_v2",
-        "importance": 72,
-        "importance_basis": "persistent_story_importance",
-        "importance_reasons": [
-          {
-            "code": "federal_action",
-            "label": "Federal/national government action",
-            "points": 32
-          },
-          {
-            "code": "election",
-            "label": "Major election/political consequence",
-            "points": 25
-          },
-          {
-            "code": "national_scope",
-            "label": "Nationwide U.S. scope",
-            "points": 15
-          }
-        ],
-        "freshness": 64.79,
-        "urgency": 3,
-        "relevance": 100,
-        "regions": [
-          "Utah"
-        ],
-        "source_trust": 90,
-        "breaking_bonus": 0.0,
-        "material_update_bonus": 0.0,
-        "age_hours": 21.12,
-        "timestamp_basis": "archive:first_published",
-        "deck_eligible": true,
-        "eligibility_reason": "fresh_window"
-      },
-      "deck_eligible": true,
-      "eligibility_reason": "fresh_window",
-      "match_basis": "persistent_story_id+source_url",
-      "identity_confidence": "high",
-      "identity_evidence": [
-        "source_url"
-      ],
-      "identity_warning": "",
-      "identity": "story:story_000536",
-      "identity_basis": "persistent_story_id",
-      "placement_count": 1,
-      "placement_categories": [
-        "politics"
-      ],
-      "pinned": false,
-      "pin_position": null,
-      "custom": false,
-      "position_locked": false,
-      "position_lock_reason": ""
-    },
-    {
-      "current_position": 56,
-      "recommended_position": 57,
-      "first_placement_position": 57,
+      "current_position": 54,
+      "recommended_position": 55,
+      "first_placement_position": 54,
       "headline": "DeSantis positions for 2028 presidential run as Rubio deflects speculation following GOP midterm losses",
       "category_key": "politics",
       "slug": "2026-11-09-desantis-positions-for-2028-presidential-run-as-rubio-deflects-speculation-follo",
       "story_id": "story_000141",
-      "score": 31,
+      "score": 26,
       "score_breakdown": {
-        "score": 31,
+        "score": 26,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 0,
         "importance_basis": "persistent_score_breakdown",
@@ -3727,7 +3604,7 @@
             "points": -40
           }
         ],
-        "freshness": 21.77,
+        "freshness": 0.0,
         "urgency": 3,
         "relevance": 100,
         "regions": [
@@ -3750,13 +3627,13 @@
         "source_trust": 94,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 46.94,
+        "age_hours": 60.84,
         "timestamp_basis": "archive:first_published",
-        "deck_eligible": true,
-        "eligibility_reason": "fresh_window"
+        "deck_eligible": false,
+        "eligibility_reason": "older_than_60_hours"
       },
-      "deck_eligible": true,
-      "eligibility_reason": "fresh_window",
+      "deck_eligible": false,
+      "eligibility_reason": "older_than_60_hours",
       "match_basis": "persistent_story_id+source_url",
       "identity_confidence": "high",
       "identity_evidence": [
@@ -3777,16 +3654,16 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 57,
-      "recommended_position": 58,
-      "first_placement_position": 58,
+      "current_position": 55,
+      "recommended_position": 56,
+      "first_placement_position": 55,
       "headline": "Elon Musk's companies face Democratic investigations after $475 million midterm spending resulted in losses",
       "category_key": "politics",
       "slug": "2026-11-09-elon-musks-companies-face-democratic-investigations-after-475-million-midterm-sp",
       "story_id": "story_000473",
-      "score": 61,
+      "score": 55,
       "score_breakdown": {
-        "score": 61,
+        "score": 55,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 72,
         "importance_basis": "persistent_story_importance",
@@ -3807,7 +3684,7 @@
             "points": 15
           }
         ],
-        "freshness": 43.33,
+        "freshness": 20.16,
         "urgency": 3,
         "relevance": 100,
         "regions": [
@@ -3821,7 +3698,7 @@
         "source_trust": 90,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 34.0,
+        "age_hours": 47.9,
         "timestamp_basis": "archive:first_published",
         "deck_eligible": true,
         "eligibility_reason": "fresh_window"
@@ -3847,16 +3724,16 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 59,
-      "recommended_position": 59,
-      "first_placement_position": 60,
+      "current_position": 57,
+      "recommended_position": 57,
+      "first_placement_position": 57,
       "headline": "House Republicans weigh impeaching Defense Secretary Hegseth this week over alleged illegal continuation of Iran war",
       "category_key": "politics",
       "slug": "2026-11-08-house-republicans-weigh-impeaching-defense-secretary-hegseth-this-week-over-alle",
       "story_id": "story_000396",
-      "score": 61,
+      "score": 60,
       "score_breakdown": {
-        "score": 61,
+        "score": 60,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 100,
         "importance_basis": "persistent_story_importance",
@@ -3887,20 +3764,20 @@
             "points": 15
           }
         ],
-        "freshness": 3.33,
+        "freshness": 0.0,
         "urgency": 3,
         "relevance": 100,
         "regions": [],
         "source_trust": 90,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 58.0,
+        "age_hours": 71.9,
         "timestamp_basis": "archive:first_published",
         "deck_eligible": false,
-        "eligibility_reason": "older_than_48_hours_not_urgent_enough"
+        "eligibility_reason": "older_than_60_hours"
       },
       "deck_eligible": false,
-      "eligibility_reason": "older_than_48_hours_not_urgent_enough",
+      "eligibility_reason": "older_than_60_hours",
       "match_basis": "persistent_story_id+source_url",
       "identity_confidence": "high",
       "identity_evidence": [
@@ -3920,16 +3797,16 @@
       "position_lock_reason": ""
     },
     {
-      "current_position": 60,
-      "recommended_position": 60,
-      "first_placement_position": 61,
+      "current_position": 58,
+      "recommended_position": 58,
+      "first_placement_position": 58,
       "headline": "Attorney General dismisses Calley Means' White House corruption allegations as former FDA chief backs some claims",
       "category_key": "politics",
       "slug": "2026-11-08-attorney-general-dismisses-calley-means-white-house-corruption-allegations-as-fo",
       "story_id": "story_000426",
-      "score": 53,
+      "score": 49,
       "score_breakdown": {
-        "score": 53,
+        "score": 49,
         "basis": "homepage_editorial_shadow_v2",
         "importance": 67,
         "importance_basis": "persistent_story_importance",
@@ -3955,20 +3832,20 @@
             "points": 15
           }
         ],
-        "freshness": 19.95,
+        "freshness": 0.0,
         "urgency": 3,
         "relevance": 100,
         "regions": [],
         "source_trust": 90,
         "breaking_bonus": 0.0,
         "material_update_bonus": 0.0,
-        "age_hours": 48.03,
+        "age_hours": 61.93,
         "timestamp_basis": "archive:first_published",
         "deck_eligible": false,
-        "eligibility_reason": "older_than_48_hours_not_urgent_enough"
+        "eligibility_reason": "older_than_60_hours"
       },
       "deck_eligible": false,
-      "eligibility_reason": "older_than_48_hours_not_urgent_enough",
+      "eligibility_reason": "older_than_60_hours",
       "match_basis": "persistent_story_id+source_url",
       "identity_confidence": "high",
       "identity_evidence": [
@@ -3991,143 +3868,241 @@
   "stale_or_ineligible_deck_candidates": [
     {
       "headline": "Paraguay formally charges ousted president Santiago Peña with breach of trust over Ueno Bank collapse",
-      "current_position": 5,
-      "age_hours": 89.96,
+      "current_position": 3,
+      "age_hours": 103.86,
       "eligibility_reason": "older_than_60_hours",
       "score": 23
     },
     {
       "headline": "Krakow gunman killed his parents and sister before Main Market Square attack that left six dead",
-      "current_position": 6,
-      "age_hours": 69.81,
+      "current_position": 4,
+      "age_hours": 83.72,
       "eligibility_reason": "older_than_60_hours",
       "score": 41
     },
     {
       "headline": "Israeli President Herzog tasks opposition leader Eisenkot with forming government after inconclusive election",
-      "current_position": 7,
-      "age_hours": 68.04,
+      "current_position": 5,
+      "age_hours": 81.94,
       "eligibility_reason": "older_than_60_hours",
       "score": 31
     },
     {
       "headline": "Houthi strikes hit Aramco Tower in Riyadh, target airport and oil facilities",
-      "current_position": 8,
-      "age_hours": 48.03,
-      "eligibility_reason": "older_than_48_hours_not_urgent_enough",
-      "score": 38
+      "current_position": 6,
+      "age_hours": 61.93,
+      "eligibility_reason": "older_than_60_hours",
+      "score": 34
+    },
+    {
+      "headline": "Philadelphia boycott of Jewish-owned restaurants draws dueling protests, three arrests",
+      "current_position": 9,
+      "age_hours": 60.84,
+      "eligibility_reason": "older_than_60_hours",
+      "score": 39
     },
     {
       "headline": "Wisconsin state trooper detained by ICE released under supervision after intervention by DHS secretary",
-      "current_position": 14,
-      "age_hours": 69.81,
+      "current_position": 11,
+      "age_hours": 83.72,
       "eligibility_reason": "older_than_60_hours",
       "score": 31
     },
     {
       "headline": "Six killed in shooting in Krakow, Poland; British citizen among dead",
-      "current_position": 15,
-      "age_hours": 69.01,
+      "current_position": 12,
+      "age_hours": 82.91,
       "eligibility_reason": "older_than_60_hours",
       "score": 48
     },
     {
       "headline": "Arrest made in shooting that killed one during Winston-Salem State University homecoming weekend",
-      "current_position": 16,
-      "age_hours": 48.03,
-      "eligibility_reason": "older_than_48_hours_not_urgent_enough",
-      "score": 51
+      "current_position": 13,
+      "age_hours": 61.93,
+      "eligibility_reason": "older_than_60_hours",
+      "score": 47
     },
     {
       "headline": "Secret Service arrests man near White House with guns who said voices told him to kill Trump",
-      "current_position": 17,
-      "age_hours": 89.96,
+      "current_position": 14,
+      "age_hours": 103.86,
       "eligibility_reason": "older_than_60_hours",
       "score": 42
     },
     {
+      "headline": "Hamilton and Verstappen to start from back of grid at São Paulo Grand Prix",
+      "current_position": 15,
+      "age_hours": 91.22,
+      "eligibility_reason": "older_than_60_hours",
+      "score": 23
+    },
+    {
       "headline": "Nvidia shares drop 4 percent, wiping $250 billion off market value, after board launches probe into CEO affair",
-      "current_position": 22,
-      "age_hours": 69.81,
+      "current_position": 19,
+      "age_hours": 83.72,
       "eligibility_reason": "older_than_60_hours",
       "score": 44
     },
     {
       "headline": "President Trump defends Nvidia CEO Jensen Huang after board launches investigation into Chinese intelligence targeting",
-      "current_position": 23,
-      "age_hours": 48.03,
-      "eligibility_reason": "older_than_48_hours_not_urgent_enough",
-      "score": 36
+      "current_position": 20,
+      "age_hours": 61.93,
+      "eligibility_reason": "older_than_60_hours",
+      "score": 31
     },
     {
       "headline": "Treasury moves to cut off crypto exchange MEXC from U.S. financial system over alleged $16 billion in illicit transactions",
-      "current_position": 25,
-      "age_hours": 69.01,
+      "current_position": 22,
+      "age_hours": 82.91,
       "eligibility_reason": "older_than_60_hours",
       "score": 38
     },
     {
       "headline": "Stocks plunge into correction after brief post-midterm rally as AI regulation fears hit tech",
-      "current_position": 26,
-      "age_hours": 68.04,
+      "current_position": 23,
+      "age_hours": 81.94,
       "eligibility_reason": "older_than_60_hours",
       "score": 26
     },
     {
-      "headline": "New York opens AI safety registration portal, requiring disclosure from OpenAI and Anthropic",
-      "current_position": 29,
-      "age_hours": 1566.98,
+      "headline": "Musk says SpaceX could acquire legacy telecom carrier and use spectrum ten times more effectively",
+      "current_position": 24,
+      "age_hours": 71.9,
       "eligibility_reason": "older_than_60_hours",
-      "score": 35
+      "score": 26
+    },
+    {
+      "headline": "Researchers trace mysterious global power grid frequency drops to synchronized battery backup systems",
+      "current_position": 28,
+      "age_hours": 60.84,
+      "eligibility_reason": "older_than_60_hours",
+      "score": 22
+    },
+    {
+      "headline": "AI tools are enabling automated hacking at scale, upending the cybersecurity industry",
+      "current_position": 31,
+      "age_hours": 83.72,
+      "eligibility_reason": "older_than_60_hours",
+      "score": 43
+    },
+    {
+      "headline": "U.S. intelligence memo claimed Chinese officials recruited tech executive to spy on Nvidia CEO",
+      "current_position": 32,
+      "age_hours": 81.94,
+      "eligibility_reason": "older_than_60_hours",
+      "score": 32
+    },
+    {
+      "headline": "NASA opens astronaut applications to expand Artemis moon program",
+      "current_position": 33,
+      "age_hours": 71.9,
+      "eligibility_reason": "older_than_60_hours",
+      "score": 31
+    },
+    {
+      "headline": "Reds first baseman Sal Stewart wins NL Rookie of the Year after 32-homer, 112-RBI season",
+      "current_position": 34,
+      "age_hours": 35.03,
+      "eligibility_reason": "routine_sports_older_than_24_hours",
+      "score": 58
+    },
+    {
+      "headline": "Kenneth Walker scores three touchdowns as Chiefs defeat Jets 35-12, Mahomes plays through elbow injury",
+      "current_position": 37,
+      "age_hours": 60.84,
+      "eligibility_reason": "older_than_60_hours",
+      "score": 29
+    },
+    {
+      "headline": "Blades Brown, 19, becomes youngest PGA Tour winner in 95 years with playoff victory in Mexico",
+      "current_position": 38,
+      "age_hours": 47.9,
+      "eligibility_reason": "routine_sports_older_than_24_hours",
+      "score": 32
+    },
+    {
+      "headline": "Jaguars acquire defensive tackle Davon Godchaux from Saints in second trade of the day",
+      "current_position": 39,
+      "age_hours": 37.9,
+      "eligibility_reason": "routine_sports_older_than_24_hours",
+      "score": 27
+    },
+    {
+      "headline": "Willy Hutchinson upsets Joshua Buatsi to win WBC light-heavyweight title in Manchester rematch",
+      "current_position": 40,
+      "age_hours": 83.72,
+      "eligibility_reason": "older_than_60_hours",
+      "score": 21
+    },
+    {
+      "headline": "Oregon routs Ohio State 41-28, likely ending Buckeyes' playoff hopes with fake punt sparking turnaround",
+      "current_position": 41,
+      "age_hours": 82.91,
+      "eligibility_reason": "older_than_60_hours",
+      "score": 29
+    },
+    {
+      "headline": "Notre Dame defeats Miami 24-17 in matchup of top-ranked teams",
+      "current_position": 42,
+      "age_hours": 81.94,
+      "eligibility_reason": "older_than_60_hours",
+      "score": 26
+    },
+    {
+      "headline": "Denis Villeneuve says he is finishing Dune: Part Three while beginning James Bond movie, teases casting before joking at LACMA gala",
+      "current_position": 46,
+      "age_hours": 60.84,
+      "eligibility_reason": "older_than_60_hours",
+      "score": 38
     },
     {
       "headline": "Godzilla Minus Zero heads toward $32 million opening weekend, surpassing predecessor's total domestic run",
-      "current_position": 51,
-      "age_hours": 69.81,
+      "current_position": 49,
+      "age_hours": 83.72,
       "eligibility_reason": "older_than_60_hours",
       "score": 35
     },
     {
       "headline": "Sylvester Stallone says his 20-year rivalry with Arnold Schwarzenegger ended when Schwarzenegger ran for California governor",
-      "current_position": 52,
-      "age_hours": 69.01,
+      "current_position": 50,
+      "age_hours": 82.91,
       "eligibility_reason": "older_than_60_hours",
       "score": 46
     },
     {
       "headline": "Stephen Colbert and Yo-Yo Ma's Harvard event cut short by fire alarm amid graduate student union strike",
-      "current_position": 53,
-      "age_hours": 68.04,
+      "current_position": 51,
+      "age_hours": 81.94,
       "eligibility_reason": "older_than_60_hours",
       "score": 24
     },
     {
+      "headline": "DeSantis positions for 2028 presidential run as Rubio deflects speculation following GOP midterm losses",
+      "current_position": 54,
+      "age_hours": 60.84,
+      "eligibility_reason": "older_than_60_hours",
+      "score": 26
+    },
+    {
       "headline": "House Republicans weigh impeaching Defense Secretary Hegseth this week over alleged illegal continuation of Iran war",
-      "current_position": 59,
-      "age_hours": 58.0,
-      "eligibility_reason": "older_than_48_hours_not_urgent_enough",
-      "score": 61
+      "current_position": 57,
+      "age_hours": 71.9,
+      "eligibility_reason": "older_than_60_hours",
+      "score": 60
     },
     {
       "headline": "Attorney General dismisses Calley Means' White House corruption allegations as former FDA chief backs some claims",
-      "current_position": 60,
-      "age_hours": 48.03,
-      "eligibility_reason": "older_than_48_hours_not_urgent_enough",
-      "score": 53
+      "current_position": 58,
+      "age_hours": 61.93,
+      "eligibility_reason": "older_than_60_hours",
+      "score": 49
     }
   ],
   "excluded_duplicate_placements": [
     {
-      "headline": "Krakow mass shooting suspect dies in hospital as Polish prosecutors say motive investigation continues",
-      "placement_position": 4,
-      "canonical_position": 1,
-      "identity": "story:story_000446",
-      "identity_basis": "persistent_story_id"
-    },
-    {
       "headline": "Trump replaces chief of staff Susie Wiles with Stephen Miller after GOP midterm losses",
-      "placement_position": 62,
-      "canonical_position": 56,
+      "placement_position": 59,
+      "canonical_position": 54,
       "identity": "story:story_000141",
       "identity_basis": "persistent_story_id"
     }
