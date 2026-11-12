@@ -7,7 +7,7 @@
     "resolver_version": "3.0",
     "relationship_engine_version": "1.5"
   },
-  "generated_at": "2026-11-11T23:06:06Z",
+  "generated_at": "2026-11-12T13:06:10Z",
   "mode": "enforce",
   "publication_behavior_changed": false,
   "activation": {},
@@ -93,30 +93,6 @@
         ]
       },
       {
-        "story_id": "story_000475",
-        "title": "House Democrats plan more prominent placement for Jan. 6 memorial plaque",
-        "event_key": "named-person-death:house-democrats",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "reason": "Created new story: conservative merge requirements were not met",
-        "decision_trace": [
-          "No sufficiently supported match",
-          "Threshold: 0.78"
-        ]
-      },
-      {
-        "story_id": "story_000474",
-        "title": "Democrats face a tough sell with MAHA voters",
-        "event_key": "election-maryland",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "reason": "Created new story: conservative merge requirements were not met",
-        "decision_trace": [
-          "No sufficiently supported match",
-          "Threshold: 0.78"
-        ]
-      },
-      {
         "story_id": "story_000488",
         "title": "Pentagon mulls placing fleet of military satellites around the Moon",
         "event_key": "war-or-military-action-75d0003c41",
@@ -197,18 +173,6 @@
         ]
       },
       {
-        "story_id": "story_000473",
-        "title": "Elon Musk's empire braces for Democratic crackdown",
-        "event_key": "election-georgia",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "reason": "Created new story: conservative merge requirements were not met",
-        "decision_trace": [
-          "No sufficiently supported match",
-          "Threshold: 0.78"
-        ]
-      },
-      {
         "story_id": "story_000536",
         "title": "Pressure builds on Thune ahead of GOP leadership elections",
         "event_key": "election-utah",
@@ -245,15 +209,27 @@
         ]
       },
       {
-        "story_id": "story_000449",
-        "title": "Jensen Huang: Why a personal scandal for the face of the AI boom has provoked a national security scare",
-        "event_key": "unknown-event-3de9aaf40f",
+        "story_id": "story_000474",
+        "title": "Democrats face a tough sell with MAHA voters",
+        "event_key": "election-maryland",
         "relationship": "new_story",
         "confidence": 0.0,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "reason": "Created new story: conservative merge requirements were not met",
         "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
+          "No sufficiently supported match",
+          "Threshold: 0.78"
+        ]
+      },
+      {
+        "story_id": "story_000475",
+        "title": "House Democrats plan more prominent placement for Jan. 6 memorial plaque",
+        "event_key": "named-person-death:house-democrats",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "reason": "Created new story: conservative merge requirements were not met",
+        "decision_trace": [
+          "No sufficiently supported match",
+          "Threshold: 0.78"
         ]
       },
       {
@@ -278,6 +254,30 @@
         "decision_trace": [
           "Sparse event-key resolver guard: true",
           "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000479",
+        "title": "Supreme Court paves way for Trump to build a section of his border wall in the Big Bend area of Texas - NBC News",
+        "event_key": "court-ruling-texas",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "reason": "Created new story: conservative merge requirements were not met",
+        "decision_trace": [
+          "No sufficiently supported match",
+          "Threshold: 0.78"
+        ]
+      },
+      {
+        "story_id": "story_000514",
+        "title": "A Haitian 8-year-old was taken by ICE at routine check-in, rattling a San Diego school district - NBC News",
+        "event_key": "natural-disaster-california",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "reason": "Created new story: conservative merge requirements were not met",
+        "decision_trace": [
+          "No sufficiently supported match",
+          "Threshold: 0.78"
         ]
       }
     ],
@@ -423,62 +423,6 @@
         ]
       },
       {
-        "story_id": "story_000475",
-        "title": "House Democrats plan more prominent placement for Jan. 6 memorial plaque",
-        "event_key": "named-person-death:house-democrats",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "matched_existing": false,
-        "reason": "Created new story: conservative merge requirements were not met",
-        "decision_trace": [
-          "No sufficiently supported match",
-          "Threshold: 0.78"
-        ]
-      },
-      {
-        "story_id": "story_000475",
-        "title": "House Democrats plan more prominent placement for Jan. 6 memorial plaque",
-        "event_key": "named-person-death:house-democrats",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "matched_existing": true,
-        "reason": "Exact event key already belongs to this story",
-        "decision_trace": [
-          "Relationship: same_event",
-          "Exact event-key mapping: true",
-          "No novel follow-up milestone: true",
-          "Confidence: 1.00"
-        ]
-      },
-      {
-        "story_id": "story_000474",
-        "title": "Democrats face a tough sell with MAHA voters",
-        "event_key": "election-maryland",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "matched_existing": false,
-        "reason": "Created new story: conservative merge requirements were not met",
-        "decision_trace": [
-          "No sufficiently supported match",
-          "Threshold: 0.78"
-        ]
-      },
-      {
-        "story_id": "story_000474",
-        "title": "Democrats face a tough sell with MAHA voters",
-        "event_key": "election-maryland",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "matched_existing": true,
-        "reason": "Exact event key already belongs to this story",
-        "decision_trace": [
-          "Relationship: same_event",
-          "Exact event-key mapping: true",
-          "No novel follow-up milestone: true",
-          "Confidence: 1.00"
-        ]
-      },
-      {
         "story_id": "story_000488",
         "title": "Pentagon mulls placing fleet of military satellites around the Moon",
         "event_key": "war-or-military-action-75d0003c41",
@@ -551,6 +495,70 @@
         "story_id": "story_000537",
         "title": "Chris Van Hollen not closing the door on Schumer challenge",
         "event_key": "election-connecticut",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "matched_existing": true,
+        "reason": "Exact event key already belongs to this story",
+        "decision_trace": [
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000429",
+        "title": "Parents, sister of far-right Kraków shooter found dead in family home - NBC News",
+        "event_key": "named-person-death:united-kingdom",
+        "relationship": "new_story",
+        "confidence": 0.402279,
+        "matched_existing": false,
+        "reason": "Created new story: conservative merge requirements were not met",
+        "decision_trace": [
+          "Category: crime_public_safety",
+          "Facts overlap: 1.00",
+          "Locations overlap: 0.00",
+          "Agencies overlap: 0.00",
+          "Event types overlap: 1.00",
+          "Entities overlap: 0.05",
+          "Title support: 0.25",
+          "Event-key support: 0.60",
+          "Identity anchors: 2",
+          "Threshold: 0.78"
+        ]
+      },
+      {
+        "story_id": "story_000429",
+        "title": "Parents, sister of far-right Kraków shooter found dead in family home - NBC News",
+        "event_key": "named-person-death:united-kingdom",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "matched_existing": true,
+        "reason": "Exact event key already belongs to this story",
+        "decision_trace": [
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000246",
+        "title": "Hegseth calls US-Iran war a 'courageous and historic effort' - Fox News",
+        "event_key": "election-california",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "matched_existing": false,
+        "reason": "Created new story: conservative merge requirements were not met",
+        "decision_trace": [
+          "No sufficiently supported match",
+          "Threshold: 0.78"
+        ]
+      },
+      {
+        "story_id": "story_000246",
+        "title": "Hegseth calls US-Iran war a 'courageous and historic effort' - Fox News",
+        "event_key": "election-california",
         "relationship": "same_event",
         "confidence": 1.0,
         "matched_existing": true,
@@ -626,13 +634,12 @@
       "us_national": 88,
       "us_state_regional": 39
     },
-    "average_priority": 19.79
+    "average_priority": 19.32
   },
   "story_lifecycle": {
     "counts": {
-      "active": 76,
-      "developing": 1,
-      "ongoing": 269
+      "active": 24,
+      "ongoing": 322
     }
   },
   "registry_health": {
@@ -669,7 +676,7 @@
     "unified_incident_groups_resolved": 0,
     "unified_incident_story_records_removed": 0,
     "remaining_unified_incident_groups": 0,
-    "generated_at": "2026-11-11T23:05:56Z",
+    "generated_at": "2026-11-12T13:06:01Z",
     "quarantined_story_records_retained": 17,
     "active_story_count": 584
   },
@@ -697,7 +704,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 1.123,
           "source_trust": 91,
-          "age_hours": 37.95
+          "age_hours": 51.95
         },
         "level": "breaking",
         "importance_reasons": [
@@ -743,10 +750,10 @@
         "relationship_decisions": 1,
         "canonical_source_candidates": 1,
         "lifecycle": {
-          "state": "active",
-          "reason": "Single-event story is current",
+          "state": "ongoing",
+          "reason": "Story is older than 48 hours but remains within the active news window",
           "last_updated": "2026-11-10T09:09:12+00:00",
-          "hours_since_update": 37.95,
+          "hours_since_update": 51.95,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -764,7 +771,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 1.12,
           "source_trust": 90,
-          "age_hours": 36.76
+          "age_hours": 50.77
         },
         "level": "breaking",
         "importance_reasons": [
@@ -810,10 +817,10 @@
         "relationship_decisions": 1,
         "canonical_source_candidates": 1,
         "lifecycle": {
-          "state": "active",
-          "reason": "Single-event story is current",
+          "state": "ongoing",
+          "reason": "Story is older than 48 hours but remains within the active news window",
           "last_updated": "2026-11-10T10:20:13+00:00",
-          "hours_since_update": 36.76,
+          "hours_since_update": 50.77,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -831,7 +838,7 @@
           "freshness_multiplier": 0.7,
           "source_multiplier": 1.12,
           "source_trust": 90,
-          "age_hours": 117.93
+          "age_hours": 131.93
         },
         "level": "breaking",
         "importance_reasons": [
@@ -875,7 +882,7 @@
           "state": "ongoing",
           "reason": "Story is older than 48 hours but remains within the active news window",
           "last_updated": "2026-11-07T01:10:14+00:00",
-          "hours_since_update": 117.93,
+          "hours_since_update": 131.93,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -893,7 +900,7 @@
           "freshness_multiplier": 0.7,
           "source_multiplier": 1.12,
           "source_trust": 90,
-          "age_hours": 82.35
+          "age_hours": 96.35
         },
         "level": "breaking",
         "importance_reasons": [
@@ -942,7 +949,7 @@
           "state": "ongoing",
           "reason": "Story is older than 48 hours but remains within the active news window",
           "last_updated": "2026-11-08T12:45:05+00:00",
-          "hours_since_update": 82.35,
+          "hours_since_update": 96.35,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -960,7 +967,7 @@
           "freshness_multiplier": 0.7,
           "source_multiplier": 1.12,
           "source_trust": 90,
-          "age_hours": 77.11
+          "age_hours": 91.11
         },
         "level": "breaking",
         "importance_reasons": [
@@ -1004,139 +1011,7 @@
           "state": "ongoing",
           "reason": "Story is older than 48 hours but remains within the active news window",
           "last_updated": "2026-11-08T17:59:28+00:00",
-          "hours_since_update": 77.11,
-          "event_count": 1,
-          "timeline_entries": 1
-        }
-      },
-      {
-        "story_id": "story_000475",
-        "title": "House Democrats plan more prominent placement for Jan. 6 memorial plaque",
-        "score": 78,
-        "editorial_priority": 75,
-        "editorial_score": 75,
-        "score_breakdown": {
-          "score": 75,
-          "importance": 78,
-          "proximity_multiplier": 1.0,
-          "freshness_multiplier": 0.85,
-          "source_multiplier": 1.126,
-          "source_trust": 92,
-          "age_hours": 66.02
-        },
-        "level": "high",
-        "importance_reasons": [
-          {
-            "code": "federal_action",
-            "label": "Federal/national government action",
-            "points": 32
-          },
-          {
-            "code": "election",
-            "label": "Major election/political consequence",
-            "points": 25
-          },
-          {
-            "code": "single_death",
-            "label": "Death reported",
-            "points": 6
-          },
-          {
-            "code": "national_scope",
-            "label": "Nationwide U.S. scope",
-            "points": 15
-          }
-        ],
-        "audience_relevance": {
-          "scope": "us_national",
-          "score": 100,
-          "regions": [
-            "New York"
-          ],
-          "places": [
-            "New York"
-          ]
-        },
-        "editorial_proximity": {
-          "score": 100,
-          "scope": "us_national",
-          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
-        },
-        "event_count": 1,
-        "timeline_entries": 1,
-        "relationship_decisions": 1,
-        "canonical_source_candidates": 1,
-        "lifecycle": {
-          "state": "ongoing",
-          "reason": "Story is older than 48 hours but remains within the active news window",
-          "last_updated": "2026-11-09T05:05:00+00:00",
-          "hours_since_update": 66.02,
-          "event_count": 1,
-          "timeline_entries": 1
-        }
-      },
-      {
-        "story_id": "story_000474",
-        "title": "Democrats face a tough sell with MAHA voters",
-        "score": 78,
-        "editorial_priority": 74,
-        "editorial_score": 74,
-        "score_breakdown": {
-          "score": 74,
-          "importance": 78,
-          "proximity_multiplier": 1.0,
-          "freshness_multiplier": 0.85,
-          "source_multiplier": 1.12,
-          "source_trust": 90,
-          "age_hours": 60.6
-        },
-        "level": "high",
-        "importance_reasons": [
-          {
-            "code": "federal_action",
-            "label": "Federal/national government action",
-            "points": 32
-          },
-          {
-            "code": "election",
-            "label": "Major election/political consequence",
-            "points": 25
-          },
-          {
-            "code": "single_death",
-            "label": "Death reported",
-            "points": 6
-          },
-          {
-            "code": "national_scope",
-            "label": "Nationwide U.S. scope",
-            "points": 15
-          }
-        ],
-        "audience_relevance": {
-          "scope": "us_national",
-          "score": 100,
-          "regions": [
-            "Maryland"
-          ],
-          "places": [
-            "Maryland"
-          ]
-        },
-        "editorial_proximity": {
-          "score": 100,
-          "scope": "us_national",
-          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
-        },
-        "event_count": 1,
-        "timeline_entries": 1,
-        "relationship_decisions": 1,
-        "canonical_source_candidates": 1,
-        "lifecycle": {
-          "state": "ongoing",
-          "reason": "Story is older than 48 hours but remains within the active news window",
-          "last_updated": "2026-11-09T10:30:05+00:00",
-          "hours_since_update": 60.6,
+          "hours_since_update": 91.11,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1154,7 +1029,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 1.123,
           "source_trust": 91,
-          "age_hours": 51.96
+          "age_hours": 65.96
         },
         "level": "high",
         "importance_reasons": [
@@ -1193,7 +1068,7 @@
           "state": "ongoing",
           "reason": "Story is older than 48 hours but remains within the active news window",
           "last_updated": "2026-11-09T19:08:37+00:00",
-          "hours_since_update": 51.96,
+          "hours_since_update": 65.96,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1211,7 +1086,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 1.126,
           "source_trust": 92,
-          "age_hours": 53.52
+          "age_hours": 67.52
         },
         "level": "high",
         "importance_reasons": [
@@ -1250,7 +1125,7 @@
           "state": "ongoing",
           "reason": "Story is older than 48 hours but remains within the active news window",
           "last_updated": "2026-11-09T17:35:10+00:00",
-          "hours_since_update": 53.52,
+          "hours_since_update": 67.52,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1268,7 +1143,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 1.126,
           "source_trust": 92,
-          "age_hours": 51.53
+          "age_hours": 65.53
         },
         "level": "high",
         "importance_reasons": [
@@ -1320,7 +1195,7 @@
           "state": "ongoing",
           "reason": "Story is older than 48 hours but remains within the active news window",
           "last_updated": "2026-11-09T19:34:22+00:00",
-          "hours_since_update": 51.53,
+          "hours_since_update": 65.53,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1338,7 +1213,7 @@
           "freshness_multiplier": 0.7,
           "source_multiplier": 1.123,
           "source_trust": 91,
-          "age_hours": 74.95
+          "age_hours": 88.95
         },
         "level": "breaking",
         "importance_reasons": [
@@ -1391,7 +1266,7 @@
           "state": "ongoing",
           "reason": "Story is older than 48 hours but remains within the active news window",
           "last_updated": "2026-11-08T20:09:11+00:00",
-          "hours_since_update": 74.95,
+          "hours_since_update": 88.95,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1409,7 +1284,7 @@
           "freshness_multiplier": 0.7,
           "source_multiplier": 1.015,
           "source_trust": 55,
-          "age_hours": 116.35
+          "age_hours": 130.35
         },
         "level": "breaking",
         "importance_reasons": [
@@ -1466,7 +1341,7 @@
           "state": "ongoing",
           "reason": "Story is older than 48 hours but remains within the active news window",
           "last_updated": "2026-11-07T02:45:00+00:00",
-          "hours_since_update": 116.35,
+          "hours_since_update": 130.35,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1484,7 +1359,7 @@
           "freshness_multiplier": 0.7,
           "source_multiplier": 1.015,
           "source_trust": 55,
-          "age_hours": 117.77
+          "age_hours": 131.77
         },
         "level": "breaking",
         "importance_reasons": [
@@ -1528,78 +1403,7 @@
           "state": "ongoing",
           "reason": "Story is older than 48 hours but remains within the active news window",
           "last_updated": "2026-11-07T01:20:00+00:00",
-          "hours_since_update": 117.77,
-          "event_count": 1,
-          "timeline_entries": 1
-        }
-      },
-      {
-        "story_id": "story_000473",
-        "title": "Elon Musk's empire braces for Democratic crackdown",
-        "score": 72,
-        "editorial_priority": 69,
-        "editorial_score": 69,
-        "score_breakdown": {
-          "score": 69,
-          "importance": 72,
-          "proximity_multiplier": 1.0,
-          "freshness_multiplier": 0.85,
-          "source_multiplier": 1.12,
-          "source_trust": 90,
-          "age_hours": 66.63
-        },
-        "level": "high",
-        "importance_reasons": [
-          {
-            "code": "federal_action",
-            "label": "Federal/national government action",
-            "points": 32
-          },
-          {
-            "code": "election",
-            "label": "Major election/political consequence",
-            "points": 25
-          },
-          {
-            "code": "national_scope",
-            "label": "Nationwide U.S. scope",
-            "points": 15
-          }
-        ],
-        "audience_relevance": {
-          "scope": "us_national",
-          "score": 100,
-          "regions": [
-            "New Mexico",
-            "Washington",
-            "Michigan",
-            "Georgia",
-            "Texas",
-            "Ohio"
-          ],
-          "places": [
-            "New Mexico",
-            "Washington",
-            "Michigan",
-            "Georgia",
-            "Texas",
-            "Ohio"
-          ]
-        },
-        "editorial_proximity": {
-          "score": 100,
-          "scope": "us_national",
-          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
-        },
-        "event_count": 1,
-        "timeline_entries": 1,
-        "relationship_decisions": 1,
-        "canonical_source_candidates": 2,
-        "lifecycle": {
-          "state": "ongoing",
-          "reason": "Story is older than 48 hours but remains within the active news window",
-          "last_updated": "2026-11-09T04:28:32+00:00",
-          "hours_since_update": 66.63,
+          "hours_since_update": 131.77,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1617,7 +1421,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 1.12,
           "source_trust": 90,
-          "age_hours": 47.66
+          "age_hours": 61.66
         },
         "level": "high",
         "importance_reasons": [
@@ -1657,10 +1461,10 @@
         "relationship_decisions": 1,
         "canonical_source_candidates": 1,
         "lifecycle": {
-          "state": "active",
-          "reason": "Single-event story is current",
+          "state": "ongoing",
+          "reason": "Story is older than 48 hours but remains within the active news window",
           "last_updated": "2026-11-09T23:26:23+00:00",
-          "hours_since_update": 47.66,
+          "hours_since_update": 61.66,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1678,7 +1482,7 @@
           "freshness_multiplier": 0.7,
           "source_multiplier": 1.12,
           "source_trust": 90,
-          "age_hours": 120.58
+          "age_hours": 134.58
         },
         "level": "breaking",
         "importance_reasons": [
@@ -1726,7 +1530,7 @@
           "state": "ongoing",
           "reason": "Story is older than 48 hours but remains within the active news window",
           "last_updated": "2026-11-06T22:31:00+00:00",
-          "hours_since_update": 120.58,
+          "hours_since_update": 134.58,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1744,7 +1548,7 @@
           "freshness_multiplier": 0.7,
           "source_multiplier": 1.123,
           "source_trust": 91,
-          "age_hours": 105.78
+          "age_hours": 119.79
         },
         "level": "breaking",
         "importance_reasons": [
@@ -1788,25 +1592,25 @@
           "state": "ongoing",
           "reason": "Story is older than 48 hours but remains within the active news window",
           "last_updated": "2026-11-07T13:19:00+00:00",
-          "hours_since_update": 105.78,
+          "hours_since_update": 119.79,
           "event_count": 1,
           "timeline_entries": 1
         }
       },
       {
-        "story_id": "story_000449",
-        "title": "Jensen Huang: Why a personal scandal for the face of the AI boom has provoked a national security scare",
-        "score": 65,
-        "editorial_priority": 63,
-        "editorial_score": 63,
+        "story_id": "story_000474",
+        "title": "Democrats face a tough sell with MAHA voters",
+        "score": 78,
+        "editorial_priority": 61,
+        "editorial_score": 61,
         "score_breakdown": {
-          "score": 63,
-          "importance": 65,
+          "score": 61,
+          "importance": 78,
           "proximity_multiplier": 1.0,
-          "freshness_multiplier": 0.85,
-          "source_multiplier": 1.132,
-          "source_trust": 94,
-          "age_hours": 65.07
+          "freshness_multiplier": 0.7,
+          "source_multiplier": 1.12,
+          "source_trust": 90,
+          "age_hours": 74.6
         },
         "level": "high",
         "importance_reasons": [
@@ -1816,9 +1620,14 @@
             "points": 32
           },
           {
-            "code": "business_tech",
-            "label": "Major business/technology development",
-            "points": 18
+            "code": "election",
+            "label": "Major election/political consequence",
+            "points": 25
+          },
+          {
+            "code": "single_death",
+            "label": "Death reported",
+            "points": 6
           },
           {
             "code": "national_scope",
@@ -1830,14 +1639,10 @@
           "scope": "us_national",
           "score": 100,
           "regions": [
-            "Washington",
-            "New York",
-            "Oregon"
+            "Maryland"
           ],
           "places": [
-            "Washington",
-            "New York",
-            "Oregon"
+            "Maryland"
           ]
         },
         "editorial_proximity": {
@@ -1852,8 +1657,74 @@
         "lifecycle": {
           "state": "ongoing",
           "reason": "Story is older than 48 hours but remains within the active news window",
-          "last_updated": "2026-11-09T06:01:52+00:00",
-          "hours_since_update": 65.07,
+          "last_updated": "2026-11-09T10:30:05+00:00",
+          "hours_since_update": 74.6,
+          "event_count": 1,
+          "timeline_entries": 1
+        }
+      },
+      {
+        "story_id": "story_000475",
+        "title": "House Democrats plan more prominent placement for Jan. 6 memorial plaque",
+        "score": 78,
+        "editorial_priority": 61,
+        "editorial_score": 61,
+        "score_breakdown": {
+          "score": 61,
+          "importance": 78,
+          "proximity_multiplier": 1.0,
+          "freshness_multiplier": 0.7,
+          "source_multiplier": 1.126,
+          "source_trust": 92,
+          "age_hours": 80.02
+        },
+        "level": "high",
+        "importance_reasons": [
+          {
+            "code": "federal_action",
+            "label": "Federal/national government action",
+            "points": 32
+          },
+          {
+            "code": "election",
+            "label": "Major election/political consequence",
+            "points": 25
+          },
+          {
+            "code": "single_death",
+            "label": "Death reported",
+            "points": 6
+          },
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "audience_relevance": {
+          "scope": "us_national",
+          "score": 100,
+          "regions": [
+            "New York"
+          ],
+          "places": [
+            "New York"
+          ]
+        },
+        "editorial_proximity": {
+          "score": 100,
+          "scope": "us_national",
+          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
+        },
+        "event_count": 1,
+        "timeline_entries": 1,
+        "relationship_decisions": 1,
+        "canonical_source_candidates": 1,
+        "lifecycle": {
+          "state": "ongoing",
+          "reason": "Story is older than 48 hours but remains within the active news window",
+          "last_updated": "2026-11-09T05:05:00+00:00",
+          "hours_since_update": 80.02,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1871,7 +1742,7 @@
           "freshness_multiplier": 0.7,
           "source_multiplier": 1.12,
           "source_trust": 90,
-          "age_hours": 105.37
+          "age_hours": 119.37
         },
         "level": "high",
         "importance_reasons": [
@@ -1910,7 +1781,7 @@
           "state": "ongoing",
           "reason": "Story is older than 48 hours but remains within the active news window",
           "last_updated": "2026-11-07T13:43:44+00:00",
-          "hours_since_update": 105.37,
+          "hours_since_update": 119.37,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1928,7 +1799,7 @@
           "freshness_multiplier": 0.7,
           "source_multiplier": 1.12,
           "source_trust": 90,
-          "age_hours": 85.16
+          "age_hours": 99.16
         },
         "level": "high",
         "importance_reasons": [
@@ -1967,7 +1838,131 @@
           "state": "ongoing",
           "reason": "Story is older than 48 hours but remains within the active news window",
           "last_updated": "2026-11-08T09:56:23+00:00",
-          "hours_since_update": 85.16,
+          "hours_since_update": 99.16,
+          "event_count": 1,
+          "timeline_entries": 1
+        }
+      },
+      {
+        "story_id": "story_000479",
+        "title": "Supreme Court paves way for Trump to build a section of his border wall in the Big Bend area of Texas - NBC News",
+        "score": 62,
+        "editorial_priority": 59,
+        "editorial_score": 59,
+        "score_breakdown": {
+          "score": 59,
+          "importance": 62,
+          "proximity_multiplier": 1.0,
+          "freshness_multiplier": 0.85,
+          "source_multiplier": 1.123,
+          "source_trust": 91,
+          "age_hours": 64.82
+        },
+        "level": "high",
+        "importance_reasons": [
+          {
+            "code": "federal_action",
+            "label": "Federal/national government action",
+            "points": 32
+          },
+          {
+            "code": "court_action",
+            "label": "Significant court/criminal-justice action",
+            "points": 15
+          },
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "audience_relevance": {
+          "scope": "us_national",
+          "score": 100,
+          "regions": [
+            "Washington",
+            "Texas"
+          ],
+          "places": [
+            "Washington",
+            "Texas"
+          ]
+        },
+        "editorial_proximity": {
+          "score": 100,
+          "scope": "us_national",
+          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
+        },
+        "event_count": 1,
+        "timeline_entries": 1,
+        "relationship_decisions": 1,
+        "canonical_source_candidates": 1,
+        "lifecycle": {
+          "state": "ongoing",
+          "reason": "Story is older than 48 hours but remains within the active news window",
+          "last_updated": "2026-11-09T20:17:00+00:00",
+          "hours_since_update": 64.82,
+          "event_count": 1,
+          "timeline_entries": 1
+        }
+      },
+      {
+        "story_id": "story_000514",
+        "title": "A Haitian 8-year-old was taken by ICE at routine check-in, rattling a San Diego school district - NBC News",
+        "score": 62,
+        "editorial_priority": 59,
+        "editorial_score": 59,
+        "score_breakdown": {
+          "score": 59,
+          "importance": 62,
+          "proximity_multiplier": 1.0,
+          "freshness_multiplier": 0.85,
+          "source_multiplier": 1.123,
+          "source_trust": 91,
+          "age_hours": 60.65
+        },
+        "level": "high",
+        "importance_reasons": [
+          {
+            "code": "federal_action",
+            "label": "Federal/national government action",
+            "points": 32
+          },
+          {
+            "code": "court_action",
+            "label": "Significant court/criminal-justice action",
+            "points": 15
+          },
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "audience_relevance": {
+          "scope": "us_national",
+          "score": 100,
+          "regions": [
+            "California"
+          ],
+          "places": [
+            "California"
+          ]
+        },
+        "editorial_proximity": {
+          "score": 100,
+          "scope": "us_national",
+          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
+        },
+        "event_count": 1,
+        "timeline_entries": 1,
+        "relationship_decisions": 1,
+        "canonical_source_candidates": 1,
+        "lifecycle": {
+          "state": "ongoing",
+          "reason": "Story is older than 48 hours but remains within the active news window",
+          "last_updated": "2026-11-10T00:27:00+00:00",
+          "hours_since_update": 60.65,
           "event_count": 1,
           "timeline_entries": 1
         }

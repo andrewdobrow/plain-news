@@ -4,7 +4,7 @@
   "by_model": {},
   "by_workload_class": {},
   "calls": [],
-  "failed_requests_without_usage": 23,
+  "failed_requests_without_usage": 24,
   "failures": [
     {
       "callsite": {
@@ -12,7 +12,7 @@
         "function": "classify_stories",
         "line": 20
       },
-      "duration_seconds": 0.263,
+      "duration_seconds": 0.271,
       "error_type": "BadRequestError",
       "requested_model": "claude-sonnet-4-5",
       "sequence": 1,
@@ -24,7 +24,7 @@
         "function": "classify_stories",
         "line": 20
       },
-      "duration_seconds": 0.108,
+      "duration_seconds": 0.111,
       "error_type": "BadRequestError",
       "requested_model": "claude-sonnet-4-5",
       "sequence": 2,
@@ -36,7 +36,7 @@
         "function": "classify_stories",
         "line": 20
       },
-      "duration_seconds": 0.11,
+      "duration_seconds": 0.122,
       "error_type": "BadRequestError",
       "requested_model": "claude-sonnet-4-5",
       "sequence": 3,
@@ -48,22 +48,10 @@
         "function": "classify_stories",
         "line": 20
       },
-      "duration_seconds": 0.124,
+      "duration_seconds": 0.116,
       "error_type": "BadRequestError",
       "requested_model": "claude-sonnet-4-5",
       "sequence": 4,
-      "workload_class": "classification"
-    },
-    {
-      "callsite": {
-        "file": "category_classifier.py",
-        "function": "classify_stories",
-        "line": 20
-      },
-      "duration_seconds": 0.107,
-      "error_type": "BadRequestError",
-      "requested_model": "claude-sonnet-4-5",
-      "sequence": 5,
       "workload_class": "classification"
     },
     {
@@ -72,10 +60,34 @@
         "function": "adjudicate_candidates",
         "line": 956
       },
-      "duration_seconds": 0.226,
+      "duration_seconds": 0.136,
+      "error_type": "BadRequestError",
+      "requested_model": "claude-sonnet-5",
+      "sequence": 5,
+      "workload_class": "identity_decision"
+    },
+    {
+      "callsite": {
+        "file": "semantic_publication_gate.py",
+        "function": "adjudicate_candidates",
+        "line": 956
+      },
+      "duration_seconds": 0.156,
       "error_type": "BadRequestError",
       "requested_model": "claude-sonnet-5",
       "sequence": 6,
+      "workload_class": "identity_decision"
+    },
+    {
+      "callsite": {
+        "file": "semantic_publication_gate.py",
+        "function": "adjudicate_candidates",
+        "line": 956
+      },
+      "duration_seconds": 0.173,
+      "error_type": "BadRequestError",
+      "requested_model": "claude-sonnet-5",
+      "sequence": 7,
       "workload_class": "identity_decision"
     },
     {
@@ -84,19 +96,7 @@
         "function": "run_assignment_editor",
         "line": 146
       },
-      "duration_seconds": 0.176,
-      "error_type": "BadRequestError",
-      "requested_model": "claude-sonnet-5",
-      "sequence": 7,
-      "workload_class": "assignment_editor"
-    },
-    {
-      "callsite": {
-        "file": "assignment_pipeline.py",
-        "function": "run_assignment_editor",
-        "line": 146
-      },
-      "duration_seconds": 0.115,
+      "duration_seconds": 0.27,
       "error_type": "BadRequestError",
       "requested_model": "claude-sonnet-5",
       "sequence": 8,
@@ -108,7 +108,7 @@
         "function": "run_assignment_editor",
         "line": 146
       },
-      "duration_seconds": 0.11,
+      "duration_seconds": 0.141,
       "error_type": "BadRequestError",
       "requested_model": "claude-sonnet-5",
       "sequence": 9,
@@ -120,7 +120,7 @@
         "function": "run_assignment_editor",
         "line": 146
       },
-      "duration_seconds": 0.123,
+      "duration_seconds": 0.112,
       "error_type": "BadRequestError",
       "requested_model": "claude-sonnet-5",
       "sequence": 10,
@@ -132,7 +132,7 @@
         "function": "run_assignment_editor",
         "line": 146
       },
-      "duration_seconds": 0.105,
+      "duration_seconds": 0.112,
       "error_type": "BadRequestError",
       "requested_model": "claude-sonnet-5",
       "sequence": 11,
@@ -144,7 +144,7 @@
         "function": "run_assignment_editor",
         "line": 146
       },
-      "duration_seconds": 0.128,
+      "duration_seconds": 0.112,
       "error_type": "BadRequestError",
       "requested_model": "claude-sonnet-5",
       "sequence": 12,
@@ -156,7 +156,7 @@
         "function": "run_assignment_editor",
         "line": 146
       },
-      "duration_seconds": 0.117,
+      "duration_seconds": 0.111,
       "error_type": "BadRequestError",
       "requested_model": "claude-sonnet-5",
       "sequence": 13,
@@ -168,7 +168,7 @@
         "function": "run_assignment_editor",
         "line": 146
       },
-      "duration_seconds": 0.109,
+      "duration_seconds": 0.112,
       "error_type": "BadRequestError",
       "requested_model": "claude-sonnet-5",
       "sequence": 14,
@@ -192,7 +192,7 @@
         "function": "run_assignment_editor",
         "line": 146
       },
-      "duration_seconds": 0.114,
+      "duration_seconds": 0.112,
       "error_type": "BadRequestError",
       "requested_model": "claude-sonnet-5",
       "sequence": 16,
@@ -204,7 +204,7 @@
         "function": "run_assignment_editor",
         "line": 146
       },
-      "duration_seconds": 0.11,
+      "duration_seconds": 0.107,
       "error_type": "BadRequestError",
       "requested_model": "claude-sonnet-5",
       "sequence": 17,
@@ -216,7 +216,7 @@
         "function": "run_assignment_editor",
         "line": 146
       },
-      "duration_seconds": 0.105,
+      "duration_seconds": 0.112,
       "error_type": "BadRequestError",
       "requested_model": "claude-sonnet-5",
       "sequence": 18,
@@ -228,7 +228,7 @@
         "function": "run_assignment_editor",
         "line": 146
       },
-      "duration_seconds": 0.113,
+      "duration_seconds": 0.123,
       "error_type": "BadRequestError",
       "requested_model": "claude-sonnet-5",
       "sequence": 19,
@@ -240,10 +240,22 @@
         "function": "run_assignment_editor",
         "line": 146
       },
-      "duration_seconds": 0.14,
+      "duration_seconds": 0.113,
       "error_type": "BadRequestError",
       "requested_model": "claude-sonnet-5",
       "sequence": 20,
+      "workload_class": "assignment_editor"
+    },
+    {
+      "callsite": {
+        "file": "assignment_pipeline.py",
+        "function": "run_assignment_editor",
+        "line": 146
+      },
+      "duration_seconds": 0.117,
+      "error_type": "BadRequestError",
+      "requested_model": "claude-sonnet-5",
+      "sequence": 21,
       "workload_class": "assignment_editor"
     },
     {
@@ -255,18 +267,6 @@
       "duration_seconds": 0.147,
       "error_type": "BadRequestError",
       "requested_model": "claude-haiku-4-5-20251001",
-      "sequence": 21,
-      "workload_class": "other"
-    },
-    {
-      "callsite": {
-        "file": "generate.py",
-        "function": "global_rank",
-        "line": 1524
-      },
-      "duration_seconds": 0.105,
-      "error_type": "BadRequestError",
-      "requested_model": "claude-haiku-4-5-20251001",
       "sequence": 22,
       "workload_class": "other"
     },
@@ -276,14 +276,26 @@
         "function": "global_rank",
         "line": 1524
       },
-      "duration_seconds": 0.114,
+      "duration_seconds": 0.106,
       "error_type": "BadRequestError",
       "requested_model": "claude-haiku-4-5-20251001",
       "sequence": 23,
       "workload_class": "other"
+    },
+    {
+      "callsite": {
+        "file": "generate.py",
+        "function": "global_rank",
+        "line": 1524
+      },
+      "duration_seconds": 0.115,
+      "error_type": "BadRequestError",
+      "requested_model": "claude-haiku-4-5-20251001",
+      "sequence": 24,
+      "workload_class": "other"
     }
   ],
-  "finished_at": "2026-11-11T23:06:07Z",
+  "finished_at": "2026-11-12T13:06:11Z",
   "observability_version": "1.13.7.1y",
   "pricing_catalog": {
     "claude-opus-5": {
@@ -322,7 +334,7 @@
   },
   "provider": "anthropic",
   "schema_version": 1,
-  "started_at": "2026-11-11T23:00:45Z",
+  "started_at": "2026-11-12T13:00:41Z",
   "totals": {
     "base_input_tokens": 0,
     "cache_read_tokens": 0,

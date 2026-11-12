@@ -1,20 +1,53 @@
 {
-  "generated_at": "2026-11-11T23:02:09Z",
-  "evaluated": 1,
+  "generated_at": "2026-11-12T13:01:45Z",
+  "evaluated": 4,
   "material_updates": 0,
   "duplicates_suppressed": 0,
-  "holds_suppressed": 1,
+  "holds_suppressed": 4,
   "new_or_unmatched": 0,
   "items": [
     {
-      "category": "entertainment",
-      "title": "DC Actor Frank Grillo Praises James Gunn and Peter Safran After They Exit the Studio: ‘It’s Just Been Extraordinary’",
-      "source_url": "https://variety.com/2026/film/news/frank-grillo-james-gunn-peter-safran-dc-studios-exit-1236945547/",
+      "category": "world",
+      "title": "Ukraine says military Starlink disrupted again as US envoys meet Putin in Moscow",
+      "source_url": "https://www.bbc.co.uk/news/articles/cwrkgmymk55zo?at_medium=RSS&at_campaign=rss",
       "action": "hold",
       "selected_candidate_slug": "",
       "confidence": 0.0,
       "novel_facts": [],
-      "reason": "Semantic gate model failure; fail-closed hold: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cgwygxxev61ymWRF58mVP'}",
+      "reason": "Semantic gate model failure; fail-closed hold: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cgy5UysLJmBF1qRjd11uB'}",
+      "cache_hit": false
+    },
+    {
+      "category": "world",
+      "title": "US envoys arrive in Moscow for Ukraine talks with Vladimir Putin - BBC",
+      "source_url": "https://www.bbc.com/news/articles/cwrkgmymk55zo",
+      "action": "hold",
+      "selected_candidate_slug": "",
+      "confidence": 0.0,
+      "novel_facts": [],
+      "reason": "Semantic gate model failure; fail-closed hold: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cgy5W99UFeCmHcjaPSWJD'}",
+      "cache_hit": false
+    },
+    {
+      "category": "us",
+      "title": "Ukraine says military Starlink disrupted again as US envoys meet Putin in Moscow",
+      "source_url": "https://www.bbc.co.uk/news/articles/cwrkgmymk55zo?at_medium=RSS&at_campaign=rss",
+      "action": "hold",
+      "selected_candidate_slug": "",
+      "confidence": 0.0,
+      "novel_facts": [],
+      "reason": "Semantic gate model failure; fail-closed hold: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cgy5UysLJmBF1qRjd11uB'}",
+      "cache_hit": true
+    },
+    {
+      "category": "us",
+      "title": "Ukraine says it’s facing new restrictions to the Starshield network, as Trump envoys meet with Putin - NBC News",
+      "source_url": "https://www.nbcnews.com/world/ukraine/ukraine-starshield-limits-russia-war-trump-musk-rcna608938",
+      "action": "hold",
+      "selected_candidate_slug": "",
+      "confidence": 0.0,
+      "novel_facts": [],
+      "reason": "Semantic gate model failure; fail-closed hold: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cgy5ZdugJ5ShjxTaB7cWY'}",
       "cache_hit": false
     }
   ]
