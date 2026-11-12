@@ -7,7 +7,7 @@
     "resolver_version": "3.0",
     "relationship_engine_version": "1.5"
   },
-  "generated_at": "2026-11-12T13:06:10Z",
+  "generated_at": "2026-11-12T23:05:03Z",
   "mode": "enforce",
   "publication_behavior_changed": false,
   "activation": {},
@@ -90,42 +90,6 @@
         "decision_trace": [
           "Sparse event-key resolver guard: true",
           "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
-        "story_id": "story_000488",
-        "title": "Pentagon mulls placing fleet of military satellites around the Moon",
-        "event_key": "war-or-military-action-75d0003c41",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
-        "story_id": "story_000510",
-        "title": "Jeffries pushes to restrict China chip exports in defense bill",
-        "event_key": "unknown-event-087b976287",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
-        "story_id": "story_000537",
-        "title": "Chris Van Hollen not closing the door on Schumer challenge",
-        "event_key": "election-connecticut",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "reason": "Created new story: conservative merge requirements were not met",
-        "decision_trace": [
-          "No sufficiently supported match",
-          "Threshold: 0.78"
         ]
       },
       {
@@ -233,6 +197,42 @@
         ]
       },
       {
+        "story_id": "story_000488",
+        "title": "Pentagon mulls placing fleet of military satellites around the Moon",
+        "event_key": "war-or-military-action-75d0003c41",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000510",
+        "title": "Jeffries pushes to restrict China chip exports in defense bill",
+        "event_key": "unknown-event-087b976287",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000537",
+        "title": "Chris Van Hollen not closing the door on Schumer challenge",
+        "event_key": "election-connecticut",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "reason": "Created new story: conservative merge requirements were not met",
+        "decision_trace": [
+          "No sufficiently supported match",
+          "Threshold: 0.78"
+        ]
+      },
+      {
         "story_id": "story_000320",
         "title": "Trump's \"war-time consigliere\" and the Miller Doctrine",
         "event_key": "court-ruling-29bb909ee0",
@@ -257,18 +257,6 @@
         ]
       },
       {
-        "story_id": "story_000479",
-        "title": "Supreme Court paves way for Trump to build a section of his border wall in the Big Bend area of Texas - NBC News",
-        "event_key": "court-ruling-texas",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "reason": "Created new story: conservative merge requirements were not met",
-        "decision_trace": [
-          "No sufficiently supported match",
-          "Threshold: 0.78"
-        ]
-      },
-      {
         "story_id": "story_000514",
         "title": "A Haitian 8-year-old was taken by ICE at routine check-in, rattling a San Diego school district - NBC News",
         "event_key": "natural-disaster-california",
@@ -278,6 +266,18 @@
         "decision_trace": [
           "No sufficiently supported match",
           "Threshold: 0.78"
+        ]
+      },
+      {
+        "story_id": "story_000285",
+        "title": "Johnson's meeting request",
+        "event_key": "election-0024ca3068",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
         ]
       }
     ],
@@ -423,90 +423,6 @@
         ]
       },
       {
-        "story_id": "story_000488",
-        "title": "Pentagon mulls placing fleet of military satellites around the Moon",
-        "event_key": "war-or-military-action-75d0003c41",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "matched_existing": false,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
-        "story_id": "story_000488",
-        "title": "Pentagon mulls placing fleet of military satellites around the Moon",
-        "event_key": "war-or-military-action-75d0003c41",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "matched_existing": true,
-        "reason": "Exact event key already belongs to this story",
-        "decision_trace": [
-          "Relationship: same_event",
-          "Exact event-key mapping: true",
-          "No novel follow-up milestone: true",
-          "Confidence: 1.00"
-        ]
-      },
-      {
-        "story_id": "story_000510",
-        "title": "Jeffries pushes to restrict China chip exports in defense bill",
-        "event_key": "unknown-event-087b976287",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "matched_existing": false,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
-        "story_id": "story_000510",
-        "title": "Jeffries pushes to restrict China chip exports in defense bill",
-        "event_key": "unknown-event-087b976287",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "matched_existing": true,
-        "reason": "Exact event key already belongs to this story",
-        "decision_trace": [
-          "Relationship: same_event",
-          "Exact event-key mapping: true",
-          "No novel follow-up milestone: true",
-          "Confidence: 1.00"
-        ]
-      },
-      {
-        "story_id": "story_000537",
-        "title": "Chris Van Hollen not closing the door on Schumer challenge",
-        "event_key": "election-connecticut",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "matched_existing": false,
-        "reason": "Created new story: conservative merge requirements were not met",
-        "decision_trace": [
-          "No sufficiently supported match",
-          "Threshold: 0.78"
-        ]
-      },
-      {
-        "story_id": "story_000537",
-        "title": "Chris Van Hollen not closing the door on Schumer challenge",
-        "event_key": "election-connecticut",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "matched_existing": true,
-        "reason": "Exact event key already belongs to this story",
-        "decision_trace": [
-          "Relationship: same_event",
-          "Exact event-key mapping: true",
-          "No novel follow-up milestone: true",
-          "Confidence: 1.00"
-        ]
-      },
-      {
         "story_id": "story_000429",
         "title": "Parents, sister of far-right Kraków shooter found dead in family home - NBC News",
         "event_key": "named-person-death:united-kingdom",
@@ -559,6 +475,90 @@
         "story_id": "story_000246",
         "title": "Hegseth calls US-Iran war a 'courageous and historic effort' - Fox News",
         "event_key": "election-california",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "matched_existing": true,
+        "reason": "Exact event key already belongs to this story",
+        "decision_trace": [
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000279",
+        "title": "Melania Trump’s Amazon Gravy Train Faces a Brutal New Reality - The Daily Beast",
+        "event_key": "election-7c13a39ad0",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "matched_existing": false,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000279",
+        "title": "Melania Trump’s Amazon Gravy Train Faces a Brutal New Reality - The Daily Beast",
+        "event_key": "election-7c13a39ad0",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "matched_existing": true,
+        "reason": "Exact event key already belongs to this story",
+        "decision_trace": [
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000536",
+        "title": "Pressure builds on Thune ahead of GOP leadership elections",
+        "event_key": "election-utah",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "matched_existing": false,
+        "reason": "Created new story: conservative merge requirements were not met",
+        "decision_trace": [
+          "No sufficiently supported match",
+          "Threshold: 0.78"
+        ]
+      },
+      {
+        "story_id": "story_000536",
+        "title": "Pressure builds on Thune ahead of GOP leadership elections",
+        "event_key": "election-utah",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "matched_existing": true,
+        "reason": "Exact event key already belongs to this story",
+        "decision_trace": [
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000255",
+        "title": "The Cybertruck’s Death Is Actually Great News for EVs - WIRED",
+        "event_key": "named-person-death:texas-gigafactory",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "matched_existing": false,
+        "reason": "Created new story: conservative merge requirements were not met",
+        "decision_trace": [
+          "No sufficiently supported match",
+          "Threshold: 0.78"
+        ]
+      },
+      {
+        "story_id": "story_000255",
+        "title": "The Cybertruck’s Death Is Actually Great News for EVs - WIRED",
+        "event_key": "named-person-death:texas-gigafactory",
         "relationship": "same_event",
         "confidence": 1.0,
         "matched_existing": true,
@@ -634,12 +634,12 @@
       "us_national": 88,
       "us_state_regional": 39
     },
-    "average_priority": 19.32
+    "average_priority": 18.78
   },
   "story_lifecycle": {
     "counts": {
-      "active": 24,
-      "ongoing": 322
+      "active": 3,
+      "ongoing": 343
     }
   },
   "registry_health": {
@@ -676,7 +676,7 @@
     "unified_incident_groups_resolved": 0,
     "unified_incident_story_records_removed": 0,
     "remaining_unified_incident_groups": 0,
-    "generated_at": "2026-11-12T13:06:01Z",
+    "generated_at": "2026-11-12T23:04:55Z",
     "quarantined_story_records_retained": 17,
     "active_story_count": 584
   },
@@ -704,7 +704,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 1.123,
           "source_trust": 91,
-          "age_hours": 51.95
+          "age_hours": 61.93
         },
         "level": "breaking",
         "importance_reasons": [
@@ -753,7 +753,7 @@
           "state": "ongoing",
           "reason": "Story is older than 48 hours but remains within the active news window",
           "last_updated": "2026-11-10T09:09:12+00:00",
-          "hours_since_update": 51.95,
+          "hours_since_update": 61.93,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -771,7 +771,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 1.12,
           "source_trust": 90,
-          "age_hours": 50.77
+          "age_hours": 60.75
         },
         "level": "breaking",
         "importance_reasons": [
@@ -820,7 +820,7 @@
           "state": "ongoing",
           "reason": "Story is older than 48 hours but remains within the active news window",
           "last_updated": "2026-11-10T10:20:13+00:00",
-          "hours_since_update": 50.77,
+          "hours_since_update": 60.75,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -838,7 +838,7 @@
           "freshness_multiplier": 0.7,
           "source_multiplier": 1.12,
           "source_trust": 90,
-          "age_hours": 131.93
+          "age_hours": 141.91
         },
         "level": "breaking",
         "importance_reasons": [
@@ -882,7 +882,7 @@
           "state": "ongoing",
           "reason": "Story is older than 48 hours but remains within the active news window",
           "last_updated": "2026-11-07T01:10:14+00:00",
-          "hours_since_update": 131.93,
+          "hours_since_update": 141.91,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -900,7 +900,7 @@
           "freshness_multiplier": 0.7,
           "source_multiplier": 1.12,
           "source_trust": 90,
-          "age_hours": 96.35
+          "age_hours": 106.33
         },
         "level": "breaking",
         "importance_reasons": [
@@ -949,7 +949,7 @@
           "state": "ongoing",
           "reason": "Story is older than 48 hours but remains within the active news window",
           "last_updated": "2026-11-08T12:45:05+00:00",
-          "hours_since_update": 96.35,
+          "hours_since_update": 106.33,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -967,7 +967,7 @@
           "freshness_multiplier": 0.7,
           "source_multiplier": 1.12,
           "source_trust": 90,
-          "age_hours": 91.11
+          "age_hours": 101.09
         },
         "level": "breaking",
         "importance_reasons": [
@@ -1011,191 +1011,7 @@
           "state": "ongoing",
           "reason": "Story is older than 48 hours but remains within the active news window",
           "last_updated": "2026-11-08T17:59:28+00:00",
-          "hours_since_update": 91.11,
-          "event_count": 1,
-          "timeline_entries": 1
-        }
-      },
-      {
-        "story_id": "story_000488",
-        "title": "Pentagon mulls placing fleet of military satellites around the Moon",
-        "score": 77,
-        "editorial_priority": 74,
-        "editorial_score": 74,
-        "score_breakdown": {
-          "score": 74,
-          "importance": 77,
-          "proximity_multiplier": 1.0,
-          "freshness_multiplier": 0.85,
-          "source_multiplier": 1.123,
-          "source_trust": 91,
-          "age_hours": 65.96
-        },
-        "level": "high",
-        "importance_reasons": [
-          {
-            "code": "federal_action",
-            "label": "Federal/national government action",
-            "points": 32
-          },
-          {
-            "code": "war_diplomacy",
-            "label": "War, diplomacy or national-security consequence",
-            "points": 30
-          },
-          {
-            "code": "national_scope",
-            "label": "Nationwide U.S. scope",
-            "points": 15
-          }
-        ],
-        "audience_relevance": {
-          "scope": "us_national",
-          "score": 100,
-          "regions": [],
-          "places": []
-        },
-        "editorial_proximity": {
-          "score": 100,
-          "scope": "us_national",
-          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
-        },
-        "event_count": 1,
-        "timeline_entries": 1,
-        "relationship_decisions": 1,
-        "canonical_source_candidates": 1,
-        "lifecycle": {
-          "state": "ongoing",
-          "reason": "Story is older than 48 hours but remains within the active news window",
-          "last_updated": "2026-11-09T19:08:37+00:00",
-          "hours_since_update": 65.96,
-          "event_count": 1,
-          "timeline_entries": 1
-        }
-      },
-      {
-        "story_id": "story_000510",
-        "title": "Jeffries pushes to restrict China chip exports in defense bill",
-        "score": 77,
-        "editorial_priority": 74,
-        "editorial_score": 74,
-        "score_breakdown": {
-          "score": 74,
-          "importance": 77,
-          "proximity_multiplier": 1.0,
-          "freshness_multiplier": 0.85,
-          "source_multiplier": 1.126,
-          "source_trust": 92,
-          "age_hours": 67.52
-        },
-        "level": "high",
-        "importance_reasons": [
-          {
-            "code": "federal_action",
-            "label": "Federal/national government action",
-            "points": 32
-          },
-          {
-            "code": "war_diplomacy",
-            "label": "War, diplomacy or national-security consequence",
-            "points": 30
-          },
-          {
-            "code": "national_scope",
-            "label": "Nationwide U.S. scope",
-            "points": 15
-          }
-        ],
-        "audience_relevance": {
-          "scope": "us_national",
-          "score": 100,
-          "regions": [],
-          "places": []
-        },
-        "editorial_proximity": {
-          "score": 100,
-          "scope": "us_national",
-          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
-        },
-        "event_count": 1,
-        "timeline_entries": 1,
-        "relationship_decisions": 1,
-        "canonical_source_candidates": 1,
-        "lifecycle": {
-          "state": "ongoing",
-          "reason": "Story is older than 48 hours but remains within the active news window",
-          "last_updated": "2026-11-09T17:35:10+00:00",
-          "hours_since_update": 67.52,
-          "event_count": 1,
-          "timeline_entries": 1
-        }
-      },
-      {
-        "story_id": "story_000537",
-        "title": "Chris Van Hollen not closing the door on Schumer challenge",
-        "score": 77,
-        "editorial_priority": 74,
-        "editorial_score": 74,
-        "score_breakdown": {
-          "score": 74,
-          "importance": 77,
-          "proximity_multiplier": 1.0,
-          "freshness_multiplier": 0.85,
-          "source_multiplier": 1.126,
-          "source_trust": 92,
-          "age_hours": 65.53
-        },
-        "level": "high",
-        "importance_reasons": [
-          {
-            "code": "federal_action",
-            "label": "Federal/national government action",
-            "points": 32
-          },
-          {
-            "code": "election",
-            "label": "Major election/political consequence",
-            "points": 25
-          },
-          {
-            "code": "multi_agency",
-            "label": "Multiple agencies involved",
-            "points": 5
-          },
-          {
-            "code": "national_scope",
-            "label": "Nationwide U.S. scope",
-            "points": 15
-          }
-        ],
-        "audience_relevance": {
-          "scope": "us_national",
-          "score": 100,
-          "regions": [
-            "Connecticut",
-            "New York",
-            "Maryland"
-          ],
-          "places": [
-            "Connecticut",
-            "New York",
-            "Maryland"
-          ]
-        },
-        "editorial_proximity": {
-          "score": 100,
-          "scope": "us_national",
-          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
-        },
-        "event_count": 1,
-        "timeline_entries": 1,
-        "relationship_decisions": 1,
-        "canonical_source_candidates": 1,
-        "lifecycle": {
-          "state": "ongoing",
-          "reason": "Story is older than 48 hours but remains within the active news window",
-          "last_updated": "2026-11-09T19:34:22+00:00",
-          "hours_since_update": 65.53,
+          "hours_since_update": 101.09,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1213,7 +1029,7 @@
           "freshness_multiplier": 0.7,
           "source_multiplier": 1.123,
           "source_trust": 91,
-          "age_hours": 88.95
+          "age_hours": 98.93
         },
         "level": "breaking",
         "importance_reasons": [
@@ -1266,7 +1082,7 @@
           "state": "ongoing",
           "reason": "Story is older than 48 hours but remains within the active news window",
           "last_updated": "2026-11-08T20:09:11+00:00",
-          "hours_since_update": 88.95,
+          "hours_since_update": 98.93,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1284,7 +1100,7 @@
           "freshness_multiplier": 0.7,
           "source_multiplier": 1.015,
           "source_trust": 55,
-          "age_hours": 130.35
+          "age_hours": 140.33
         },
         "level": "breaking",
         "importance_reasons": [
@@ -1318,13 +1134,13 @@
           "scope": "us_national",
           "score": 100,
           "regions": [
-            "Washington",
             "California",
+            "Washington",
             "Florida"
           ],
           "places": [
-            "Washington",
             "California",
+            "Washington",
             "Florida"
           ]
         },
@@ -1341,7 +1157,7 @@
           "state": "ongoing",
           "reason": "Story is older than 48 hours but remains within the active news window",
           "last_updated": "2026-11-07T02:45:00+00:00",
-          "hours_since_update": 130.35,
+          "hours_since_update": 140.33,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1359,7 +1175,7 @@
           "freshness_multiplier": 0.7,
           "source_multiplier": 1.015,
           "source_trust": 55,
-          "age_hours": 131.77
+          "age_hours": 141.75
         },
         "level": "breaking",
         "importance_reasons": [
@@ -1403,7 +1219,7 @@
           "state": "ongoing",
           "reason": "Story is older than 48 hours but remains within the active news window",
           "last_updated": "2026-11-07T01:20:00+00:00",
-          "hours_since_update": 131.77,
+          "hours_since_update": 141.75,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1421,7 +1237,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 1.12,
           "source_trust": 90,
-          "age_hours": 61.66
+          "age_hours": 71.64
         },
         "level": "high",
         "importance_reasons": [
@@ -1464,7 +1280,7 @@
           "state": "ongoing",
           "reason": "Story is older than 48 hours but remains within the active news window",
           "last_updated": "2026-11-09T23:26:23+00:00",
-          "hours_since_update": 61.66,
+          "hours_since_update": 71.64,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1482,7 +1298,7 @@
           "freshness_multiplier": 0.7,
           "source_multiplier": 1.12,
           "source_trust": 90,
-          "age_hours": 134.58
+          "age_hours": 144.57
         },
         "level": "breaking",
         "importance_reasons": [
@@ -1530,7 +1346,7 @@
           "state": "ongoing",
           "reason": "Story is older than 48 hours but remains within the active news window",
           "last_updated": "2026-11-06T22:31:00+00:00",
-          "hours_since_update": 134.58,
+          "hours_since_update": 144.57,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1548,7 +1364,7 @@
           "freshness_multiplier": 0.7,
           "source_multiplier": 1.123,
           "source_trust": 91,
-          "age_hours": 119.79
+          "age_hours": 129.77
         },
         "level": "breaking",
         "importance_reasons": [
@@ -1592,7 +1408,7 @@
           "state": "ongoing",
           "reason": "Story is older than 48 hours but remains within the active news window",
           "last_updated": "2026-11-07T13:19:00+00:00",
-          "hours_since_update": 119.79,
+          "hours_since_update": 129.77,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1610,7 +1426,7 @@
           "freshness_multiplier": 0.7,
           "source_multiplier": 1.12,
           "source_trust": 90,
-          "age_hours": 74.6
+          "age_hours": 84.58
         },
         "level": "high",
         "importance_reasons": [
@@ -1658,7 +1474,7 @@
           "state": "ongoing",
           "reason": "Story is older than 48 hours but remains within the active news window",
           "last_updated": "2026-11-09T10:30:05+00:00",
-          "hours_since_update": 74.6,
+          "hours_since_update": 84.58,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1676,7 +1492,7 @@
           "freshness_multiplier": 0.7,
           "source_multiplier": 1.126,
           "source_trust": 92,
-          "age_hours": 80.02
+          "age_hours": 90.0
         },
         "level": "high",
         "importance_reasons": [
@@ -1724,7 +1540,191 @@
           "state": "ongoing",
           "reason": "Story is older than 48 hours but remains within the active news window",
           "last_updated": "2026-11-09T05:05:00+00:00",
-          "hours_since_update": 80.02,
+          "hours_since_update": 90.0,
+          "event_count": 1,
+          "timeline_entries": 1
+        }
+      },
+      {
+        "story_id": "story_000488",
+        "title": "Pentagon mulls placing fleet of military satellites around the Moon",
+        "score": 77,
+        "editorial_priority": 61,
+        "editorial_score": 61,
+        "score_breakdown": {
+          "score": 61,
+          "importance": 77,
+          "proximity_multiplier": 1.0,
+          "freshness_multiplier": 0.7,
+          "source_multiplier": 1.123,
+          "source_trust": 91,
+          "age_hours": 75.94
+        },
+        "level": "high",
+        "importance_reasons": [
+          {
+            "code": "federal_action",
+            "label": "Federal/national government action",
+            "points": 32
+          },
+          {
+            "code": "war_diplomacy",
+            "label": "War, diplomacy or national-security consequence",
+            "points": 30
+          },
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "audience_relevance": {
+          "scope": "us_national",
+          "score": 100,
+          "regions": [],
+          "places": []
+        },
+        "editorial_proximity": {
+          "score": 100,
+          "scope": "us_national",
+          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
+        },
+        "event_count": 1,
+        "timeline_entries": 1,
+        "relationship_decisions": 1,
+        "canonical_source_candidates": 1,
+        "lifecycle": {
+          "state": "ongoing",
+          "reason": "Story is older than 48 hours but remains within the active news window",
+          "last_updated": "2026-11-09T19:08:37+00:00",
+          "hours_since_update": 75.94,
+          "event_count": 1,
+          "timeline_entries": 1
+        }
+      },
+      {
+        "story_id": "story_000510",
+        "title": "Jeffries pushes to restrict China chip exports in defense bill",
+        "score": 77,
+        "editorial_priority": 61,
+        "editorial_score": 61,
+        "score_breakdown": {
+          "score": 61,
+          "importance": 77,
+          "proximity_multiplier": 1.0,
+          "freshness_multiplier": 0.7,
+          "source_multiplier": 1.126,
+          "source_trust": 92,
+          "age_hours": 77.5
+        },
+        "level": "high",
+        "importance_reasons": [
+          {
+            "code": "federal_action",
+            "label": "Federal/national government action",
+            "points": 32
+          },
+          {
+            "code": "war_diplomacy",
+            "label": "War, diplomacy or national-security consequence",
+            "points": 30
+          },
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "audience_relevance": {
+          "scope": "us_national",
+          "score": 100,
+          "regions": [],
+          "places": []
+        },
+        "editorial_proximity": {
+          "score": 100,
+          "scope": "us_national",
+          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
+        },
+        "event_count": 1,
+        "timeline_entries": 1,
+        "relationship_decisions": 1,
+        "canonical_source_candidates": 1,
+        "lifecycle": {
+          "state": "ongoing",
+          "reason": "Story is older than 48 hours but remains within the active news window",
+          "last_updated": "2026-11-09T17:35:10+00:00",
+          "hours_since_update": 77.5,
+          "event_count": 1,
+          "timeline_entries": 1
+        }
+      },
+      {
+        "story_id": "story_000537",
+        "title": "Chris Van Hollen not closing the door on Schumer challenge",
+        "score": 77,
+        "editorial_priority": 61,
+        "editorial_score": 61,
+        "score_breakdown": {
+          "score": 61,
+          "importance": 77,
+          "proximity_multiplier": 1.0,
+          "freshness_multiplier": 0.7,
+          "source_multiplier": 1.126,
+          "source_trust": 92,
+          "age_hours": 75.51
+        },
+        "level": "high",
+        "importance_reasons": [
+          {
+            "code": "federal_action",
+            "label": "Federal/national government action",
+            "points": 32
+          },
+          {
+            "code": "election",
+            "label": "Major election/political consequence",
+            "points": 25
+          },
+          {
+            "code": "multi_agency",
+            "label": "Multiple agencies involved",
+            "points": 5
+          },
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "audience_relevance": {
+          "scope": "us_national",
+          "score": 100,
+          "regions": [
+            "Connecticut",
+            "Maryland",
+            "New York"
+          ],
+          "places": [
+            "Connecticut",
+            "Maryland",
+            "New York"
+          ]
+        },
+        "editorial_proximity": {
+          "score": 100,
+          "scope": "us_national",
+          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
+        },
+        "event_count": 1,
+        "timeline_entries": 1,
+        "relationship_decisions": 1,
+        "canonical_source_candidates": 1,
+        "lifecycle": {
+          "state": "ongoing",
+          "reason": "Story is older than 48 hours but remains within the active news window",
+          "last_updated": "2026-11-09T19:34:22+00:00",
+          "hours_since_update": 75.51,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1742,7 +1742,7 @@
           "freshness_multiplier": 0.7,
           "source_multiplier": 1.12,
           "source_trust": 90,
-          "age_hours": 119.37
+          "age_hours": 129.35
         },
         "level": "high",
         "importance_reasons": [
@@ -1781,7 +1781,7 @@
           "state": "ongoing",
           "reason": "Story is older than 48 hours but remains within the active news window",
           "last_updated": "2026-11-07T13:43:44+00:00",
-          "hours_since_update": 119.37,
+          "hours_since_update": 129.35,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1799,7 +1799,7 @@
           "freshness_multiplier": 0.7,
           "source_multiplier": 1.12,
           "source_trust": 90,
-          "age_hours": 99.16
+          "age_hours": 109.14
         },
         "level": "high",
         "importance_reasons": [
@@ -1838,70 +1838,7 @@
           "state": "ongoing",
           "reason": "Story is older than 48 hours but remains within the active news window",
           "last_updated": "2026-11-08T09:56:23+00:00",
-          "hours_since_update": 99.16,
-          "event_count": 1,
-          "timeline_entries": 1
-        }
-      },
-      {
-        "story_id": "story_000479",
-        "title": "Supreme Court paves way for Trump to build a section of his border wall in the Big Bend area of Texas - NBC News",
-        "score": 62,
-        "editorial_priority": 59,
-        "editorial_score": 59,
-        "score_breakdown": {
-          "score": 59,
-          "importance": 62,
-          "proximity_multiplier": 1.0,
-          "freshness_multiplier": 0.85,
-          "source_multiplier": 1.123,
-          "source_trust": 91,
-          "age_hours": 64.82
-        },
-        "level": "high",
-        "importance_reasons": [
-          {
-            "code": "federal_action",
-            "label": "Federal/national government action",
-            "points": 32
-          },
-          {
-            "code": "court_action",
-            "label": "Significant court/criminal-justice action",
-            "points": 15
-          },
-          {
-            "code": "national_scope",
-            "label": "Nationwide U.S. scope",
-            "points": 15
-          }
-        ],
-        "audience_relevance": {
-          "scope": "us_national",
-          "score": 100,
-          "regions": [
-            "Washington",
-            "Texas"
-          ],
-          "places": [
-            "Washington",
-            "Texas"
-          ]
-        },
-        "editorial_proximity": {
-          "score": 100,
-          "scope": "us_national",
-          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
-        },
-        "event_count": 1,
-        "timeline_entries": 1,
-        "relationship_decisions": 1,
-        "canonical_source_candidates": 1,
-        "lifecycle": {
-          "state": "ongoing",
-          "reason": "Story is older than 48 hours but remains within the active news window",
-          "last_updated": "2026-11-09T20:17:00+00:00",
-          "hours_since_update": 64.82,
+          "hours_since_update": 109.14,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1919,7 +1856,7 @@
           "freshness_multiplier": 0.85,
           "source_multiplier": 1.123,
           "source_trust": 91,
-          "age_hours": 60.65
+          "age_hours": 70.63
         },
         "level": "high",
         "importance_reasons": [
@@ -1962,7 +1899,64 @@
           "state": "ongoing",
           "reason": "Story is older than 48 hours but remains within the active news window",
           "last_updated": "2026-11-10T00:27:00+00:00",
-          "hours_since_update": 60.65,
+          "hours_since_update": 70.63,
+          "event_count": 1,
+          "timeline_entries": 1
+        }
+      },
+      {
+        "story_id": "story_000285",
+        "title": "Johnson's meeting request",
+        "score": 72,
+        "editorial_priority": 57,
+        "editorial_score": 57,
+        "score_breakdown": {
+          "score": 57,
+          "importance": 72,
+          "proximity_multiplier": 1.0,
+          "freshness_multiplier": 0.7,
+          "source_multiplier": 1.126,
+          "source_trust": 92,
+          "age_hours": 150.01
+        },
+        "level": "high",
+        "importance_reasons": [
+          {
+            "code": "federal_action",
+            "label": "Federal/national government action",
+            "points": 32
+          },
+          {
+            "code": "election",
+            "label": "Major election/political consequence",
+            "points": 25
+          },
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "audience_relevance": {
+          "scope": "us_national",
+          "score": 100,
+          "regions": [],
+          "places": []
+        },
+        "editorial_proximity": {
+          "score": 100,
+          "scope": "us_national",
+          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
+        },
+        "event_count": 1,
+        "timeline_entries": 1,
+        "relationship_decisions": 1,
+        "canonical_source_candidates": 1,
+        "lifecycle": {
+          "state": "ongoing",
+          "reason": "Story is older than 48 hours but remains within the active news window",
+          "last_updated": "2026-11-06T17:04:07+00:00",
+          "hours_since_update": 150.01,
           "event_count": 1,
           "timeline_entries": 1
         }
