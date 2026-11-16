@@ -215,8 +215,8 @@ def test_false_story_identity_recovers_from_recent_verified_politics_canonical(m
     assert report["recoveries"][0]["recovered_slug"]==recent["slug"]
 
 
-def test_ordinary_section_can_recover_four_day_verified_canonical(monkeypatch, tmp_path):
-    """A poisoned Tech ID cannot prevent other sections from publishing."""
+def test_ordinary_section_can_recover_recent_verified_canonical(monkeypatch, tmp_path):
+    """A poisoned Tech ID may recover a genuinely recent same-section article."""
     import scripts.generate as g
 
     suspect = article(
@@ -231,7 +231,7 @@ def test_ordinary_section_can_recover_four_day_verified_canonical(monkeypatch, t
     )
     safe = _fresh_canonical_article(
         "Technology researchers release new cybersecurity guidance",
-        "tech", "verified-tech-archive", "story_000999", hours=100,
+        "tech", "verified-tech-archive", "story_000999", hours=30,
     )
     unrelated["source_url"] = "https://example.org/research/oversight"
     safe["source_url"] = "https://example.org/guidance"
@@ -269,6 +269,106 @@ def test_national_lead_cannot_reuse_four_day_edition(monkeypatch, tmp_path):
     with pytest.raises(RuntimeError, match="no safe recent same-section canonical recovery"):
         g.write_archives([category], category, client=object(), cache=object(),
                          material_update_entries=[])
+
+
+def test_undated_and_week_old_rss_sources_cannot_reenter_fresh_feed(monkeypatch):
+    import scripts.generate as g
+    from datetime import datetime, timedelta, timezone
+    from email.utils import format_datetime
+
+    recent = format_datetime(datetime.now(timezone.utc) - timedelta(hours=2), usegmt=True)
+    old = format_datetime(datetime.now(timezone.utc) - timedelta(days=9), usegmt=True)
+    assert not g._is_source_stale({"published": recent}, 72)
+    assert g._is_source_stale({"published": old}, 72)
+    assert g._is_source_stale({"published": ""}, 72)
+    assert g._is_source_stale({"published": "invalid source date"}, 72)
+
+
+def test_stale_archive_with_fresh_lastmod_is_not_eligible_for_backfill(monkeypatch, tmp_path):
+    """A touched page does not make a week-old event fresh again."""
+    import scripts.generate as g
+    from datetime import datetime, timedelta, timezone
+
+    now = datetime.now(timezone.utc)
+    old = _fresh_canonical_article(
+        "Week-old policy briefing", "politics", "old-weekly", "story_old", hours=200,
+    )
+    old["lastmod"] = now.date().isoformat()
+    old["source_published_raw"] = (now - timedelta(days=9)).isoformat()
+    fresh = _fresh_canonical_article(
+        "New congressional vote", "politics", "fresh-vote", "story_new", hours=6,
+    )
+    fresh["lastmod"] = now.date().isoformat()
+    category = section("politics", article("Another current lead", story_id="hero"))
+    category["cards"] = []
+    monkeypatch.setattr(g, "OUTPUT_DIR", tmp_path)
+    (tmp_path / "articles").mkdir()
+    added = g._archive_depth_backfill(
+        [category], [old, fresh], target_cards=5, max_age_days=7,
+    )
+    assert added == 1
+    assert [x["headline"] for x in category["cards"]] == [fresh["headline"]]
+
+
+def test_recency_guard_removes_old_source_cards_and_retains_current(monkeypatch):
+    import scripts.generate as g
+    from datetime import datetime, timedelta, timezone
+    from email.utils import format_datetime
+
+    now = datetime.now(timezone.utc)
+    def card(headline, hours):
+        return {
+            "headline": headline, "source_published_raw":
+            format_datetime(now - timedelta(hours=hours), usegmt=True),
+        }
+    current = card("Current story", 3)
+    stale = card("Eight day old story", 8 * 24)
+    missing = {"headline": "Undated story"}
+    category = {"category_key": "us", "category_label": "U.S.",
+                "cards": [current, stale, missing]}
+    assert g._prune_stale_surface_cards([category], [], now=now) == 2
+    assert category["cards"] == [current]
+
+
+def test_stale_hero_is_not_accepted_even_when_archive_lastmod_is_today():
+    import scripts.generate as g
+    from datetime import datetime, timedelta, timezone
+    from email.utils import format_datetime
+
+    now = datetime.now(timezone.utc)
+    old = _fresh_canonical_article(
+        "Historic data breach", "tech", "old-breach", "story_123", hours=205,
+    )
+    old["lastmod"] = now.date().isoformat()
+    hero = article("Historic data breach", story_id="story_123")
+    hero["link"] = old["source_url"]
+    hero["source_published_raw"] = format_datetime(now - timedelta(hours=205), usegmt=True)
+    with pytest.raises(RuntimeError, match="Stale or undated section lead"):
+        g._verify_surface_hero_freshness([section("tech", hero)], [old], now=now)
+
+
+def test_misbound_live_tech_hero_prefers_recent_live_card(monkeypatch):
+    import scripts.generate as g
+    from datetime import datetime, timedelta, timezone
+    from email.utils import format_datetime
+
+    now = datetime.now(timezone.utc)
+    collided = article("California sues AI vendor over agents", story_id="story_77")
+    collided["link"] = "https://example.org/new-suit"
+    old = _fresh_canonical_article(
+        "Researchers investigate unrelated AI agents", "tech", "old", "story_77", hours=98,
+    )
+    old["source_url"] = "https://example.org/old-investigation"
+    fresh = article("Software company launches new security patch", story_id="story_99")
+    fresh["source_published_raw"] = format_datetime(now - timedelta(hours=2), usegmt=True)
+    category = section("tech", collided)
+    category["cards"] = [fresh]
+    monkeypatch.setattr(g, "surface_errors", lambda item, *a, **kw: [])
+    monkeypatch.setattr(g, "_expand_verified_homepage_card", lambda client, payload: dict(payload["item"]))
+    repaired = g._repair_misbound_live_section_heroes([category], [old], client=object())
+    assert repaired == 1
+    assert category["hero"]["headline"] == fresh["headline"]
+    assert category["cards"] == []
 
 
 def test_unrelated_identity_match_cannot_use_old_or_refusal_archive_backup(monkeypatch,tmp_path):
