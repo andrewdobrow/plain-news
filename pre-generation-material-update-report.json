@@ -1,43 +1,9 @@
 {
-  "generated_at": "2026-11-12T23:02:00Z",
-  "evaluated": 3,
+  "generated_at": "2026-11-16T23:19:37Z",
+  "evaluated": 0,
   "material_updates": 0,
   "duplicates_suppressed": 0,
-  "holds_suppressed": 3,
+  "holds_suppressed": 0,
   "new_or_unmatched": 0,
-  "items": [
-    {
-      "category": "world",
-      "title": "US envoys meet Zelensky in Dublin after talks with Putin in Moscow",
-      "source_url": "https://www.bbc.co.uk/news/articles/cwrkgmymk55zo?at_medium=RSS&at_campaign=rss",
-      "action": "hold",
-      "selected_candidate_slug": "",
-      "confidence": 0.0,
-      "novel_facts": [],
-      "reason": "Semantic gate model failure; fail-closed hold: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CgysFekdyrRop18K3TGXa'}",
-      "cache_hit": false
-    },
-    {
-      "category": "us",
-      "title": "1 killed, 4 injured in shooting in Washington, D.C.'s Logan Circle neighborhood; suspect is dead - CBS News",
-      "source_url": "https://www.cbsnews.com/news/washington-dc-shooting-gym-vida/",
-      "action": "hold",
-      "selected_candidate_slug": "",
-      "confidence": 0.0,
-      "novel_facts": [],
-      "reason": "Semantic gate model failure; fail-closed hold: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CgysHdASvGUawkoAwNS7G'}",
-      "cache_hit": false
-    },
-    {
-      "category": "us",
-      "title": "US envoys meet Zelensky in Dublin after talks with Putin in Moscow",
-      "source_url": "https://www.bbc.co.uk/news/articles/cwrkgmymk55zo?at_medium=RSS&at_campaign=rss",
-      "action": "hold",
-      "selected_candidate_slug": "",
-      "confidence": 0.0,
-      "novel_facts": [],
-      "reason": "Semantic gate model failure; fail-closed hold: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CgysFekdyrRop18K3TGXa'}",
-      "cache_hit": true
-    }
-  ]
+  "items": []
 }

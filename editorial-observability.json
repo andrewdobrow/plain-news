@@ -7,35 +7,41 @@
     "resolver_version": "3.0",
     "relationship_engine_version": "1.5"
   },
-  "generated_at": "2026-11-12T23:05:03Z",
+  "generated_at": "2026-11-16T23:27:42Z",
   "mode": "enforce",
   "publication_behavior_changed": false,
   "activation": {},
   "registry_path": "/home/runner/work/plain-news/plain-news/story-registry.json",
   "audit": {
-    "candidates_processed": 59,
+    "candidates_processed": 33,
     "routes": {
-      "archive_recovery": 59
+      "generate_new": 31,
+      "skip": 2
     },
     "eligibility": {
-      "publishable": 59
+      "publishable": 33
     },
     "source_classes": {
-      "unknown": 59
+      "business_news": 1,
+      "entertainment_news": 5,
+      "international_news": 15,
+      "national_news": 1,
+      "politics_news": 2,
+      "technology_news": 9
     },
     "rejected_count": 0,
     "rejected_examples": []
   },
   "relationships": {
     "counts": {
-      "new_story": 692,
-      "same_event": 354
+      "new_story": 31,
+      "same_event": 2
     },
     "examples": [
       {
-        "story_id": "story_000547",
-        "title": "Gas prices fall below $4 per gallon for the first time since July - NBC News",
-        "event_key": "election-c5dd97d73a",
+        "story_id": "story_000604",
+        "title": "Houthi rebels seize control of key Red Sea strait as Yemeni army withdraws to defend Aden",
+        "event_key": "war-or-military-action-83e3589e59",
         "relationship": "new_story",
         "confidence": 0.0,
         "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
@@ -45,9 +51,9 @@
         ]
       },
       {
-        "story_id": "story_000578",
-        "title": "Scoop: El Salvador blasts U.S. State Dept. over Haiti gang war",
-        "event_key": "war-or-military-action-5101169752",
+        "story_id": "story_000605",
+        "title": "Five EU countries plan Rwanda deportation hub by 2027",
+        "event_key": "unknown-event-9dbad700d1",
         "relationship": "new_story",
         "confidence": 0.0,
         "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
@@ -57,9 +63,9 @@
         ]
       },
       {
-        "story_id": "story_000284",
-        "title": "Vance leads behind-the-scenes push for new Iran deal",
-        "event_key": "election-11f8312a0a",
+        "story_id": "story_000606",
+        "title": "UK and EU negotiators finalize post-Brexit food trade reset requiring British alignment with EU rules",
+        "event_key": "unknown-event-8d3a2b23f8",
         "relationship": "new_story",
         "confidence": 0.0,
         "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
@@ -69,65 +75,41 @@
         ]
       },
       {
-        "story_id": "story_000396",
-        "title": "House poised to impeach Pete Hegseth after GOP midterm defeat",
-        "event_key": "election-a7229c0929",
+        "story_id": "story_000607",
+        "title": "Massachusetts judge sets March 2027 retrial for woman accused of killing three children after hung jury",
+        "event_key": "arrest-massachusetts",
         "relationship": "new_story",
         "confidence": 0.0,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "reason": "Created new story: conservative merge requirements were not met",
         "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
+          "No sufficiently supported match",
+          "Threshold: 0.78"
         ]
       },
       {
-        "story_id": "story_000427",
-        "title": "Scoop: Trump asked Netanyahu to move on Gaza peace plan in post-election call",
-        "event_key": "election-2dee8fdb32",
+        "story_id": "story_000608",
+        "title": "Forensic pathologist disputes Epstein suicide ruling, tells BBC autopsy photos suggest homicide",
+        "event_key": "named-person-death:jeffrey-epstein-s",
         "relationship": "new_story",
-        "confidence": 0.0,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
-        "story_id": "story_000429",
-        "title": "Parents, sister of far-right Kraków shooter found dead in family home - NBC News",
-        "event_key": "named-person-death:united-kingdom",
-        "relationship": "new_story",
-        "confidence": 0.402279,
+        "confidence": 0.3116,
         "reason": "Created new story: conservative merge requirements were not met",
         "decision_trace": [
           "Category: crime_public_safety",
-          "Facts overlap: 1.00",
-          "Locations overlap: 0.00",
+          "Facts overlap: 0.00",
+          "Locations overlap: 1.00",
           "Agencies overlap: 0.00",
           "Event types overlap: 1.00",
-          "Entities overlap: 0.05",
-          "Title support: 0.25",
+          "Entities overlap: 0.00",
+          "Title support: 0.00",
           "Event-key support: 0.60",
           "Identity anchors: 2",
           "Threshold: 0.78"
         ]
       },
       {
-        "story_id": "story_000246",
-        "title": "Hegseth calls US-Iran war a 'courageous and historic effort' - Fox News",
-        "event_key": "election-california",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "reason": "Created new story: conservative merge requirements were not met",
-        "decision_trace": [
-          "No sufficiently supported match",
-          "Threshold: 0.78"
-        ]
-      },
-      {
-        "story_id": "story_000279",
-        "title": "Melania Trump’s Amazon Gravy Train Faces a Brutal New Reality - The Daily Beast",
-        "event_key": "election-7c13a39ad0",
+        "story_id": "story_000609",
+        "title": "Software bug disrupts Chase banking nationwide, slowing Zelle and transactions at other banks",
+        "event_key": "unknown-event-c72a841b35",
         "relationship": "new_story",
         "confidence": 0.0,
         "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
@@ -137,33 +119,9 @@
         ]
       },
       {
-        "story_id": "story_000536",
-        "title": "Pressure builds on Thune ahead of GOP leadership elections",
-        "event_key": "election-utah",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "reason": "Created new story: conservative merge requirements were not met",
-        "decision_trace": [
-          "No sufficiently supported match",
-          "Threshold: 0.78"
-        ]
-      },
-      {
-        "story_id": "story_000255",
-        "title": "The Cybertruck’s Death Is Actually Great News for EVs - WIRED",
-        "event_key": "named-person-death:texas-gigafactory",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "reason": "Created new story: conservative merge requirements were not met",
-        "decision_trace": [
-          "No sufficiently supported match",
-          "Threshold: 0.78"
-        ]
-      },
-      {
-        "story_id": "story_000287",
-        "title": "Blackouts and water shortages in Kyiv after Russia strikes Ukraine’s energy grid - The Guardian",
-        "event_key": "war-or-military-action-94621113c9",
+        "story_id": "story_000610",
+        "title": "Nvidia board dismisses campaign to reinstate ousted CEO Jensen Huang as new US export curbs on AI chips take effect",
+        "event_key": "war-or-military-action-62fbc1f4f0",
         "relationship": "new_story",
         "confidence": 0.0,
         "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
@@ -173,33 +131,9 @@
         ]
       },
       {
-        "story_id": "story_000474",
-        "title": "Democrats face a tough sell with MAHA voters",
-        "event_key": "election-maryland",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "reason": "Created new story: conservative merge requirements were not met",
-        "decision_trace": [
-          "No sufficiently supported match",
-          "Threshold: 0.78"
-        ]
-      },
-      {
-        "story_id": "story_000475",
-        "title": "House Democrats plan more prominent placement for Jan. 6 memorial plaque",
-        "event_key": "named-person-death:house-democrats",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "reason": "Created new story: conservative merge requirements were not met",
-        "decision_trace": [
-          "No sufficiently supported match",
-          "Threshold: 0.78"
-        ]
-      },
-      {
-        "story_id": "story_000488",
-        "title": "Pentagon mulls placing fleet of military satellites around the Moon",
-        "event_key": "war-or-military-action-75d0003c41",
+        "story_id": "story_000611",
+        "title": "Nasdaq falls more than 2% for third straight day as Nvidia-led AI selloff drags markets lower",
+        "event_key": "unknown-event-b717d6518c",
         "relationship": "new_story",
         "confidence": 0.0,
         "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
@@ -209,21 +143,9 @@
         ]
       },
       {
-        "story_id": "story_000510",
-        "title": "Jeffries pushes to restrict China chip exports in defense bill",
-        "event_key": "unknown-event-087b976287",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
-        "story_id": "story_000537",
-        "title": "Chris Van Hollen not closing the door on Schumer challenge",
-        "event_key": "election-connecticut",
+        "story_id": "story_000612",
+        "title": "Companies used Trump tariff refunds for executive bonuses, investigation finds",
+        "event_key": "court-ruling-new-york",
         "relationship": "new_story",
         "confidence": 0.0,
         "reason": "Created new story: conservative merge requirements were not met",
@@ -233,9 +155,37 @@
         ]
       },
       {
-        "story_id": "story_000320",
-        "title": "Trump's \"war-time consigliere\" and the Miller Doctrine",
-        "event_key": "court-ruling-29bb909ee0",
+        "story_id": "story_000070",
+        "title": "California sues OpenAI over AI agents that hacked outside systems during testing",
+        "event_key": "cybersecurity-incident-california",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "reason": "Exact event key already belongs to this story",
+        "decision_trace": [
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000070",
+        "title": "Uber notifies 149,346 drivers of data breach at AI vendor Fireworks",
+        "event_key": "cybersecurity-incident-california",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "reason": "Exact event key already belongs to this story",
+        "decision_trace": [
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000613",
+        "title": "Infoblox confirms hackers accessed company data through compromised SharePoint vendor",
+        "event_key": "cybersecurity-incident-5bdd24f895",
         "relationship": "new_story",
         "confidence": 0.0,
         "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
@@ -245,9 +195,9 @@
         ]
       },
       {
-        "story_id": "story_000375",
-        "title": "Saudi Aramco building in Riyadh damaged after attempted attack - CNBC",
-        "event_key": "war-or-military-action-ccdd13614d",
+        "story_id": "story_000614",
+        "title": "Apple announces macOS 27.3 security controls to limit AI agent privacy risks",
+        "event_key": "unknown-event-1bfc2f1f7e",
         "relationship": "new_story",
         "confidence": 0.0,
         "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
@@ -257,21 +207,81 @@
         ]
       },
       {
-        "story_id": "story_000514",
-        "title": "A Haitian 8-year-old was taken by ICE at routine check-in, rattling a San Diego school district - NBC News",
-        "event_key": "natural-disaster-california",
+        "story_id": "story_000615",
+        "title": "Hyperscale data centers consumed up to 2.2 percent of US electricity in one year, study finds",
+        "event_key": "unknown-event-7770382bb4",
         "relationship": "new_story",
         "confidence": 0.0,
-        "reason": "Created new story: conservative merge requirements were not met",
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
         "decision_trace": [
-          "No sufficiently supported match",
-          "Threshold: 0.78"
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
         ]
       },
       {
-        "story_id": "story_000285",
-        "title": "Johnson's meeting request",
-        "event_key": "election-0024ca3068",
+        "story_id": "story_000616",
+        "title": "US hyperscale data centers consumed 82 terawatt-hours of electricity in past year, more than most countries",
+        "event_key": "unknown-event-f438035571",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000617",
+        "title": "Shareholders sue Intel, CEO, and CFO over alleged concealment of PC sales slump impact",
+        "event_key": "fire-california-b4a5aceb8c",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000618",
+        "title": "AT&T sues Comcast over 'fiber-powered' internet marketing",
+        "event_key": "unknown-event-c068c7cadc",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000619",
+        "title": "Tech leaders claim Jensen Huang's Nvidia exit was orchestrated plot",
+        "event_key": "unknown-event-c67446e457",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000620",
+        "title": "Former delivery driver Joe Dean earns PGA Tour card after remarkable rise",
+        "event_key": "unknown-event-352e2e1566",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000621",
+        "title": "Andy Robertson becomes Scotland's most-capped men's international",
+        "event_key": "unknown-event-5cc9ef5ec5",
         "relationship": "new_story",
         "confidence": 0.0,
         "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
@@ -283,9 +293,9 @@
     ],
     "decision_trace_examples": [
       {
-        "story_id": "story_000547",
-        "title": "Gas prices fall below $4 per gallon for the first time since July - NBC News",
-        "event_key": "election-c5dd97d73a",
+        "story_id": "story_000604",
+        "title": "Houthi rebels seize control of key Red Sea strait as Yemeni army withdraws to defend Aden",
+        "event_key": "war-or-military-action-83e3589e59",
         "relationship": "new_story",
         "confidence": 0.0,
         "matched_existing": false,
@@ -296,24 +306,9 @@
         ]
       },
       {
-        "story_id": "story_000547",
-        "title": "Gas prices fall below $4 per gallon for the first time since July - NBC News",
-        "event_key": "election-c5dd97d73a",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "matched_existing": true,
-        "reason": "Exact event key already belongs to this story",
-        "decision_trace": [
-          "Relationship: same_event",
-          "Exact event-key mapping: true",
-          "No novel follow-up milestone: true",
-          "Confidence: 1.00"
-        ]
-      },
-      {
-        "story_id": "story_000578",
-        "title": "Scoop: El Salvador blasts U.S. State Dept. over Haiti gang war",
-        "event_key": "war-or-military-action-5101169752",
+        "story_id": "story_000605",
+        "title": "Five EU countries plan Rwanda deportation hub by 2027",
+        "event_key": "unknown-event-9dbad700d1",
         "relationship": "new_story",
         "confidence": 0.0,
         "matched_existing": false,
@@ -324,24 +319,9 @@
         ]
       },
       {
-        "story_id": "story_000578",
-        "title": "Scoop: El Salvador blasts U.S. State Dept. over Haiti gang war",
-        "event_key": "war-or-military-action-5101169752",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "matched_existing": true,
-        "reason": "Exact event key already belongs to this story",
-        "decision_trace": [
-          "Relationship: same_event",
-          "Exact event-key mapping: true",
-          "No novel follow-up milestone: true",
-          "Confidence: 1.00"
-        ]
-      },
-      {
-        "story_id": "story_000284",
-        "title": "Vance leads behind-the-scenes push for new Iran deal",
-        "event_key": "election-11f8312a0a",
+        "story_id": "story_000606",
+        "title": "UK and EU negotiators finalize post-Brexit food trade reset requiring British alignment with EU rules",
+        "event_key": "unknown-event-8d3a2b23f8",
         "relationship": "new_story",
         "confidence": 0.0,
         "matched_existing": false,
@@ -352,144 +332,43 @@
         ]
       },
       {
-        "story_id": "story_000284",
-        "title": "Vance leads behind-the-scenes push for new Iran deal",
-        "event_key": "election-11f8312a0a",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "matched_existing": true,
-        "reason": "Exact event key already belongs to this story",
-        "decision_trace": [
-          "Relationship: same_event",
-          "Exact event-key mapping: true",
-          "No novel follow-up milestone: true",
-          "Confidence: 1.00"
-        ]
-      },
-      {
-        "story_id": "story_000396",
-        "title": "House poised to impeach Pete Hegseth after GOP midterm defeat",
-        "event_key": "election-a7229c0929",
+        "story_id": "story_000607",
+        "title": "Massachusetts judge sets March 2027 retrial for woman accused of killing three children after hung jury",
+        "event_key": "arrest-massachusetts",
         "relationship": "new_story",
         "confidence": 0.0,
         "matched_existing": false,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "reason": "Created new story: conservative merge requirements were not met",
         "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
+          "No sufficiently supported match",
+          "Threshold: 0.78"
         ]
       },
       {
-        "story_id": "story_000396",
-        "title": "House poised to impeach Pete Hegseth after GOP midterm defeat",
-        "event_key": "election-a7229c0929",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "matched_existing": true,
-        "reason": "Exact event key already belongs to this story",
-        "decision_trace": [
-          "Relationship: same_event",
-          "Exact event-key mapping: true",
-          "No novel follow-up milestone: true",
-          "Confidence: 1.00"
-        ]
-      },
-      {
-        "story_id": "story_000427",
-        "title": "Scoop: Trump asked Netanyahu to move on Gaza peace plan in post-election call",
-        "event_key": "election-2dee8fdb32",
+        "story_id": "story_000608",
+        "title": "Forensic pathologist disputes Epstein suicide ruling, tells BBC autopsy photos suggest homicide",
+        "event_key": "named-person-death:jeffrey-epstein-s",
         "relationship": "new_story",
-        "confidence": 0.0,
-        "matched_existing": false,
-        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
-        "decision_trace": [
-          "Sparse event-key resolver guard: true",
-          "Resolver same-event merge bypassed: true"
-        ]
-      },
-      {
-        "story_id": "story_000427",
-        "title": "Scoop: Trump asked Netanyahu to move on Gaza peace plan in post-election call",
-        "event_key": "election-2dee8fdb32",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "matched_existing": true,
-        "reason": "Exact event key already belongs to this story",
-        "decision_trace": [
-          "Relationship: same_event",
-          "Exact event-key mapping: true",
-          "No novel follow-up milestone: true",
-          "Confidence: 1.00"
-        ]
-      },
-      {
-        "story_id": "story_000429",
-        "title": "Parents, sister of far-right Kraków shooter found dead in family home - NBC News",
-        "event_key": "named-person-death:united-kingdom",
-        "relationship": "new_story",
-        "confidence": 0.402279,
+        "confidence": 0.3116,
         "matched_existing": false,
         "reason": "Created new story: conservative merge requirements were not met",
         "decision_trace": [
           "Category: crime_public_safety",
-          "Facts overlap: 1.00",
-          "Locations overlap: 0.00",
+          "Facts overlap: 0.00",
+          "Locations overlap: 1.00",
           "Agencies overlap: 0.00",
           "Event types overlap: 1.00",
-          "Entities overlap: 0.05",
-          "Title support: 0.25",
+          "Entities overlap: 0.00",
+          "Title support: 0.00",
           "Event-key support: 0.60",
           "Identity anchors: 2",
           "Threshold: 0.78"
         ]
       },
       {
-        "story_id": "story_000429",
-        "title": "Parents, sister of far-right Kraków shooter found dead in family home - NBC News",
-        "event_key": "named-person-death:united-kingdom",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "matched_existing": true,
-        "reason": "Exact event key already belongs to this story",
-        "decision_trace": [
-          "Relationship: same_event",
-          "Exact event-key mapping: true",
-          "No novel follow-up milestone: true",
-          "Confidence: 1.00"
-        ]
-      },
-      {
-        "story_id": "story_000246",
-        "title": "Hegseth calls US-Iran war a 'courageous and historic effort' - Fox News",
-        "event_key": "election-california",
-        "relationship": "new_story",
-        "confidence": 0.0,
-        "matched_existing": false,
-        "reason": "Created new story: conservative merge requirements were not met",
-        "decision_trace": [
-          "No sufficiently supported match",
-          "Threshold: 0.78"
-        ]
-      },
-      {
-        "story_id": "story_000246",
-        "title": "Hegseth calls US-Iran war a 'courageous and historic effort' - Fox News",
-        "event_key": "election-california",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "matched_existing": true,
-        "reason": "Exact event key already belongs to this story",
-        "decision_trace": [
-          "Relationship: same_event",
-          "Exact event-key mapping: true",
-          "No novel follow-up milestone: true",
-          "Confidence: 1.00"
-        ]
-      },
-      {
-        "story_id": "story_000279",
-        "title": "Melania Trump’s Amazon Gravy Train Faces a Brutal New Reality - The Daily Beast",
-        "event_key": "election-7c13a39ad0",
+        "story_id": "story_000609",
+        "title": "Software bug disrupts Chase banking nationwide, slowing Zelle and transactions at other banks",
+        "event_key": "unknown-event-c72a841b35",
         "relationship": "new_story",
         "confidence": 0.0,
         "matched_existing": false,
@@ -500,24 +379,35 @@
         ]
       },
       {
-        "story_id": "story_000279",
-        "title": "Melania Trump’s Amazon Gravy Train Faces a Brutal New Reality - The Daily Beast",
-        "event_key": "election-7c13a39ad0",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "matched_existing": true,
-        "reason": "Exact event key already belongs to this story",
+        "story_id": "story_000610",
+        "title": "Nvidia board dismisses campaign to reinstate ousted CEO Jensen Huang as new US export curbs on AI chips take effect",
+        "event_key": "war-or-military-action-62fbc1f4f0",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "matched_existing": false,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
         "decision_trace": [
-          "Relationship: same_event",
-          "Exact event-key mapping: true",
-          "No novel follow-up milestone: true",
-          "Confidence: 1.00"
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
         ]
       },
       {
-        "story_id": "story_000536",
-        "title": "Pressure builds on Thune ahead of GOP leadership elections",
-        "event_key": "election-utah",
+        "story_id": "story_000611",
+        "title": "Nasdaq falls more than 2% for third straight day as Nvidia-led AI selloff drags markets lower",
+        "event_key": "unknown-event-b717d6518c",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "matched_existing": false,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000612",
+        "title": "Companies used Trump tariff refunds for executive bonuses, investigation finds",
+        "event_key": "court-ruling-new-york",
         "relationship": "new_story",
         "confidence": 0.0,
         "matched_existing": false,
@@ -528,9 +418,9 @@
         ]
       },
       {
-        "story_id": "story_000536",
-        "title": "Pressure builds on Thune ahead of GOP leadership elections",
-        "event_key": "election-utah",
+        "story_id": "story_000070",
+        "title": "California sues OpenAI over AI agents that hacked outside systems during testing",
+        "event_key": "cybersecurity-incident-california",
         "relationship": "same_event",
         "confidence": 1.0,
         "matched_existing": true,
@@ -543,31 +433,135 @@
         ]
       },
       {
-        "story_id": "story_000255",
-        "title": "The Cybertruck’s Death Is Actually Great News for EVs - WIRED",
-        "event_key": "named-person-death:texas-gigafactory",
+        "story_id": "story_000070",
+        "title": "Uber notifies 149,346 drivers of data breach at AI vendor Fireworks",
+        "event_key": "cybersecurity-incident-california",
+        "relationship": "same_event",
+        "confidence": 1.0,
+        "matched_existing": true,
+        "reason": "Exact event key already belongs to this story",
+        "decision_trace": [
+          "Relationship: same_event",
+          "Exact event-key mapping: true",
+          "No novel follow-up milestone: true",
+          "Confidence: 1.00"
+        ]
+      },
+      {
+        "story_id": "story_000613",
+        "title": "Infoblox confirms hackers accessed company data through compromised SharePoint vendor",
+        "event_key": "cybersecurity-incident-5bdd24f895",
         "relationship": "new_story",
         "confidence": 0.0,
         "matched_existing": false,
-        "reason": "Created new story: conservative merge requirements were not met",
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
         "decision_trace": [
-          "No sufficiently supported match",
-          "Threshold: 0.78"
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
         ]
       },
       {
-        "story_id": "story_000255",
-        "title": "The Cybertruck’s Death Is Actually Great News for EVs - WIRED",
-        "event_key": "named-person-death:texas-gigafactory",
-        "relationship": "same_event",
-        "confidence": 1.0,
-        "matched_existing": true,
-        "reason": "Exact event key already belongs to this story",
+        "story_id": "story_000614",
+        "title": "Apple announces macOS 27.3 security controls to limit AI agent privacy risks",
+        "event_key": "unknown-event-1bfc2f1f7e",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "matched_existing": false,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
         "decision_trace": [
-          "Relationship: same_event",
-          "Exact event-key mapping: true",
-          "No novel follow-up milestone: true",
-          "Confidence: 1.00"
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000615",
+        "title": "Hyperscale data centers consumed up to 2.2 percent of US electricity in one year, study finds",
+        "event_key": "unknown-event-7770382bb4",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "matched_existing": false,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000616",
+        "title": "US hyperscale data centers consumed 82 terawatt-hours of electricity in past year, more than most countries",
+        "event_key": "unknown-event-f438035571",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "matched_existing": false,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000617",
+        "title": "Shareholders sue Intel, CEO, and CFO over alleged concealment of PC sales slump impact",
+        "event_key": "fire-california-b4a5aceb8c",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "matched_existing": false,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000618",
+        "title": "AT&T sues Comcast over 'fiber-powered' internet marketing",
+        "event_key": "unknown-event-c068c7cadc",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "matched_existing": false,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000619",
+        "title": "Tech leaders claim Jensen Huang's Nvidia exit was orchestrated plot",
+        "event_key": "unknown-event-c67446e457",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "matched_existing": false,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000620",
+        "title": "Former delivery driver Joe Dean earns PGA Tour card after remarkable rise",
+        "event_key": "unknown-event-352e2e1566",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "matched_existing": false,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
+        ]
+      },
+      {
+        "story_id": "story_000621",
+        "title": "Andy Robertson becomes Scotland's most-capped men's international",
+        "event_key": "unknown-event-5cc9ef5ec5",
+        "relationship": "new_story",
+        "confidence": 0.0,
+        "matched_existing": false,
+        "reason": "Created new story: sparse event keys require exact-title identity or a supported follow-up",
+        "decision_trace": [
+          "Sparse event-key resolver guard: true",
+          "Resolver same-event merge bypassed: true"
         ]
       }
     ]
@@ -575,13 +569,90 @@
   "follow_up_detection": {
     "mode": "observe_only",
     "publication_behavior_changed": false,
-    "candidate_count": 0,
+    "candidate_count": 2,
     "high_confidence_candidate_count": 0,
     "unanchored_candidate_suppressed_count": 0,
-    "current_relationships": {},
-    "milestones": {},
-    "reason_codes": {},
-    "examples": [],
+    "current_relationships": {
+      "new_story": 2
+    },
+    "milestones": {
+      "death": 2
+    },
+    "reason_codes": {
+      "entity_match": 2,
+      "event_type_match": 2,
+      "identity_anchor_qualified": 2,
+      "location_match": 2,
+      "novel_milestone": 2
+    },
+    "examples": [
+      {
+        "headline": "Forensic pathologist disputes Epstein suicide ruling, tells BBC autopsy photos suggest homicide",
+        "event_key": "named-person-death:jeffrey-epstein-s",
+        "current_story_id": "story_000608",
+        "current_relationship": "new_story",
+        "candidate_story_id": "story_000372",
+        "candidate_confidence": 0.68,
+        "candidate_milestones": [
+          "death"
+        ],
+        "candidate_reason_codes": [
+          "novel_milestone",
+          "location_match",
+          "event_type_match",
+          "entity_match",
+          "identity_anchor_qualified"
+        ],
+        "candidate_trace": [
+          "Follow-up candidate mode: observe_only",
+          "Candidate story: story_000372",
+          "Novel milestones: death",
+          "Exact event-key anchor: False",
+          "Facts overlap: 0.00",
+          "Title overlap: 0.00",
+          "Location match: True",
+          "Agency match: False",
+          "Event type match: True",
+          "Entity match: True",
+          "Agency conflict: False",
+          "Event type conflict: False",
+          "Candidate confidence: 0.68"
+        ]
+      },
+      {
+        "headline": "Judge dismisses four claims against Priscilla Presley in business dispute, allows allegations tied to Lisa Marie's death",
+        "event_key": "named-person-death:fraud-suit",
+        "current_story_id": "story_000628",
+        "current_relationship": "new_story",
+        "candidate_story_id": "story_000505",
+        "candidate_confidence": 0.68,
+        "candidate_milestones": [
+          "death"
+        ],
+        "candidate_reason_codes": [
+          "novel_milestone",
+          "location_match",
+          "event_type_match",
+          "entity_match",
+          "identity_anchor_qualified"
+        ],
+        "candidate_trace": [
+          "Follow-up candidate mode: observe_only",
+          "Candidate story: story_000505",
+          "Novel milestones: death",
+          "Exact event-key anchor: False",
+          "Facts overlap: 0.00",
+          "Title overlap: 0.00",
+          "Location match: True",
+          "Agency match: False",
+          "Event type match: True",
+          "Entity match: True",
+          "Agency conflict: False",
+          "Event type conflict: False",
+          "Candidate confidence: 0.68"
+        ]
+      }
+    ],
     "retrospective_candidate_count": 0,
     "retrospective_high_confidence_candidate_count": 0,
     "retrospective_activation_eligible_candidate_count": 0,
@@ -616,30 +687,31 @@
   },
   "audience_relevance": {
     "scopes": {
-      "global_major": 44,
-      "international": 35,
-      "unknown": 115,
-      "us_multistate": 25,
-      "us_national": 88,
-      "us_state_regional": 39
+      "global_major": 45,
+      "international": 38,
+      "unknown": 124,
+      "us_multistate": 26,
+      "us_national": 100,
+      "us_state_regional": 44
     },
-    "average_score": 79.71
+    "average_score": 79.9
   },
   "editorial_proximity": {
     "scopes": {
-      "global_major": 44,
-      "international": 35,
-      "unknown": 115,
-      "us_multistate": 25,
-      "us_national": 88,
-      "us_state_regional": 39
+      "global_major": 45,
+      "international": 38,
+      "unknown": 124,
+      "us_multistate": 26,
+      "us_national": 100,
+      "us_state_regional": 44
     },
-    "average_priority": 18.78
+    "average_priority": 16.19
   },
   "story_lifecycle": {
     "counts": {
-      "active": 3,
-      "ongoing": 343
+      "active": 300,
+      "breaking": 3,
+      "ongoing": 74
     }
   },
   "registry_health": {
@@ -676,35 +748,244 @@
     "unified_incident_groups_resolved": 0,
     "unified_incident_story_records_removed": 0,
     "remaining_unified_incident_groups": 0,
-    "generated_at": "2026-11-12T23:04:55Z",
+    "generated_at": "2026-11-16T23:27:01Z",
     "quarantined_story_records_retained": 17,
-    "active_story_count": 584
+    "active_story_count": 615
   },
   "stories": {
-    "total": 346,
+    "total": 377,
     "importance_levels": {
-      "breaking": 11,
-      "high": 41,
-      "normal": 105,
-      "low": 189,
+      "breaking": 14,
+      "high": 42,
+      "normal": 117,
+      "low": 204,
       "archived": 0
     },
-    "average_importance": 25.7,
+    "average_importance": 26.02,
     "top": [
+      {
+        "story_id": "story_000610",
+        "title": "Nvidia dismisses 'Bring Jensen Back' campaign as Trump backs effort to reinstate ex CEO",
+        "score": 100,
+        "editorial_priority": 100,
+        "editorial_score": 100,
+        "score_breakdown": {
+          "score": 100,
+          "importance": 100,
+          "proximity_multiplier": 1.0,
+          "freshness_multiplier": 1.0,
+          "source_multiplier": 1.132,
+          "source_trust": 94,
+          "age_hours": 1.1
+        },
+        "level": "breaking",
+        "importance_reasons": [
+          {
+            "code": "federal_action",
+            "label": "Federal/national government action",
+            "points": 32
+          },
+          {
+            "code": "election",
+            "label": "Major election/political consequence",
+            "points": 25
+          },
+          {
+            "code": "war_diplomacy",
+            "label": "War, diplomacy or national-security consequence",
+            "points": 30
+          },
+          {
+            "code": "multi_agency",
+            "label": "Multiple agencies involved",
+            "points": 5
+          },
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "audience_relevance": {
+          "scope": "us_national",
+          "score": 100,
+          "regions": [],
+          "places": []
+        },
+        "editorial_proximity": {
+          "score": 100,
+          "scope": "us_national",
+          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
+        },
+        "event_count": 1,
+        "timeline_entries": 1,
+        "relationship_decisions": 1,
+        "canonical_source_candidates": 1,
+        "lifecycle": {
+          "state": "breaking",
+          "reason": "Breaking importance with a current or undated update",
+          "last_updated": "2026-11-16T22:21:27+00:00",
+          "hours_since_update": 1.1,
+          "event_count": 1,
+          "timeline_entries": 1
+        }
+      },
+      {
+        "story_id": "story_000612",
+        "title": "Several companies are using Trump tariff refunds for corporate bonuses - The Guardian",
+        "score": 95,
+        "editorial_priority": 100,
+        "editorial_score": 100,
+        "score_breakdown": {
+          "score": 100,
+          "importance": 95,
+          "proximity_multiplier": 1.0,
+          "freshness_multiplier": 1.0,
+          "source_multiplier": 1.123,
+          "source_trust": 91,
+          "age_hours": 2.64
+        },
+        "level": "breaking",
+        "importance_reasons": [
+          {
+            "code": "federal_action",
+            "label": "Federal/national government action",
+            "points": 32
+          },
+          {
+            "code": "macroeconomy",
+            "label": "Broad economic consequence",
+            "points": 28
+          },
+          {
+            "code": "court_action",
+            "label": "Significant court/criminal-justice action",
+            "points": 15
+          },
+          {
+            "code": "multi_agency",
+            "label": "Multiple agencies involved",
+            "points": 5
+          },
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "audience_relevance": {
+          "scope": "us_national",
+          "score": 100,
+          "regions": [
+            "New York"
+          ],
+          "places": [
+            "New York"
+          ]
+        },
+        "editorial_proximity": {
+          "score": 100,
+          "scope": "us_national",
+          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
+        },
+        "event_count": 1,
+        "timeline_entries": 1,
+        "relationship_decisions": 1,
+        "canonical_source_candidates": 1,
+        "lifecycle": {
+          "state": "breaking",
+          "reason": "Breaking importance with a current or undated update",
+          "last_updated": "2026-11-16T20:49:00+00:00",
+          "hours_since_update": 2.64,
+          "event_count": 1,
+          "timeline_entries": 1
+        }
+      },
+      {
+        "story_id": "story_000629",
+        "title": "‘Mississippi, Lord!’: Mavis Staples Sings the State Into a New Political Era",
+        "score": 88,
+        "editorial_priority": 98,
+        "editorial_score": 98,
+        "score_breakdown": {
+          "score": 98,
+          "importance": 88,
+          "proximity_multiplier": 1.0,
+          "freshness_multiplier": 1.0,
+          "source_multiplier": 1.108,
+          "source_trust": 86,
+          "age_hours": 0.28
+        },
+        "level": "breaking",
+        "importance_reasons": [
+          {
+            "code": "federal_action",
+            "label": "Federal/national government action",
+            "points": 32
+          },
+          {
+            "code": "election",
+            "label": "Major election/political consequence",
+            "points": 25
+          },
+          {
+            "code": "public_safety",
+            "label": "Public-safety event",
+            "points": 10
+          },
+          {
+            "code": "single_death",
+            "label": "Death reported",
+            "points": 6
+          },
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "audience_relevance": {
+          "scope": "us_national",
+          "score": 100,
+          "regions": [
+            "Mississippi"
+          ],
+          "places": [
+            "Mississippi"
+          ]
+        },
+        "editorial_proximity": {
+          "score": 100,
+          "scope": "us_national",
+          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
+        },
+        "event_count": 1,
+        "timeline_entries": 1,
+        "relationship_decisions": 1,
+        "canonical_source_candidates": 1,
+        "lifecycle": {
+          "state": "breaking",
+          "reason": "Breaking importance with a current or undated update",
+          "last_updated": "2026-11-16T23:10:43+00:00",
+          "hours_since_update": 0.28,
+          "event_count": 1,
+          "timeline_entries": 1
+        }
+      },
       {
         "story_id": "story_000547",
         "title": "Gas prices fall below $4 per gallon for the first time since July - NBC News",
         "score": 100,
-        "editorial_priority": 95,
-        "editorial_score": 95,
+        "editorial_priority": 79,
+        "editorial_score": 79,
         "score_breakdown": {
-          "score": 95,
+          "score": 79,
           "importance": 100,
           "proximity_multiplier": 1.0,
-          "freshness_multiplier": 0.85,
+          "freshness_multiplier": 0.7,
           "source_multiplier": 1.123,
           "source_trust": 91,
-          "age_hours": 61.93
+          "age_hours": 158.3
         },
         "level": "breaking",
         "importance_reasons": [
@@ -753,7 +1034,7 @@
           "state": "ongoing",
           "reason": "Story is older than 48 hours but remains within the active news window",
           "last_updated": "2026-11-10T09:09:12+00:00",
-          "hours_since_update": 61.93,
+          "hours_since_update": 158.3,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -762,16 +1043,16 @@
         "story_id": "story_000578",
         "title": "Scoop: El Salvador blasts U.S. State Dept. over Haiti gang war",
         "score": 93,
-        "editorial_priority": 89,
-        "editorial_score": 89,
+        "editorial_priority": 73,
+        "editorial_score": 73,
         "score_breakdown": {
-          "score": 89,
+          "score": 73,
           "importance": 93,
           "proximity_multiplier": 1.0,
-          "freshness_multiplier": 0.85,
+          "freshness_multiplier": 0.7,
           "source_multiplier": 1.12,
           "source_trust": 90,
-          "age_hours": 60.75
+          "age_hours": 157.12
         },
         "level": "breaking",
         "importance_reasons": [
@@ -820,7 +1101,73 @@
           "state": "ongoing",
           "reason": "Story is older than 48 hours but remains within the active news window",
           "last_updated": "2026-11-10T10:20:13+00:00",
-          "hours_since_update": 60.75,
+          "hours_since_update": 157.12,
+          "event_count": 1,
+          "timeline_entries": 1
+        }
+      },
+      {
+        "story_id": "story_000633",
+        "title": "Trump nominates top White House aide to head watchdog agency — as Democrats feared",
+        "score": 67,
+        "editorial_priority": 72,
+        "editorial_score": 72,
+        "score_breakdown": {
+          "score": 72,
+          "importance": 67,
+          "proximity_multiplier": 1.0,
+          "freshness_multiplier": 0.95,
+          "source_multiplier": 1.126,
+          "source_trust": 92,
+          "age_hours": 6.83
+        },
+        "level": "high",
+        "importance_reasons": [
+          {
+            "code": "federal_action",
+            "label": "Federal/national government action",
+            "points": 32
+          },
+          {
+            "code": "court_action",
+            "label": "Significant court/criminal-justice action",
+            "points": 15
+          },
+          {
+            "code": "multi_agency",
+            "label": "Multiple agencies involved",
+            "points": 5
+          },
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "audience_relevance": {
+          "scope": "us_national",
+          "score": 100,
+          "regions": [
+            "Wyoming"
+          ],
+          "places": [
+            "Wyoming"
+          ]
+        },
+        "editorial_proximity": {
+          "score": 100,
+          "scope": "us_national",
+          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
+        },
+        "event_count": 1,
+        "timeline_entries": 1,
+        "relationship_decisions": 1,
+        "canonical_source_candidates": 1,
+        "lifecycle": {
+          "state": "active",
+          "reason": "Single-event story is current",
+          "last_updated": "2026-11-16T16:37:48+00:00",
+          "hours_since_update": 6.83,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -829,16 +1176,16 @@
         "story_id": "story_000284",
         "title": "Vance leads behind-the-scenes push for new Iran deal",
         "score": 100,
-        "editorial_priority": 78,
-        "editorial_score": 78,
+        "editorial_priority": 62,
+        "editorial_score": 62,
         "score_breakdown": {
-          "score": 78,
+          "score": 62,
           "importance": 100,
           "proximity_multiplier": 1.0,
-          "freshness_multiplier": 0.7,
+          "freshness_multiplier": 0.55,
           "source_multiplier": 1.12,
           "source_trust": 90,
-          "age_hours": 141.91
+          "age_hours": 238.28
         },
         "level": "breaking",
         "importance_reasons": [
@@ -879,10 +1226,10 @@
         "relationship_decisions": 1,
         "canonical_source_candidates": 1,
         "lifecycle": {
-          "state": "ongoing",
-          "reason": "Story is older than 48 hours but remains within the active news window",
+          "state": "active",
+          "reason": "Story remains open pending a resolution or archival threshold",
           "last_updated": "2026-11-07T01:10:14+00:00",
-          "hours_since_update": 141.91,
+          "hours_since_update": 238.28,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -891,16 +1238,16 @@
         "story_id": "story_000396",
         "title": "House poised to impeach Pete Hegseth after GOP midterm defeat",
         "score": 100,
-        "editorial_priority": 78,
-        "editorial_score": 78,
+        "editorial_priority": 62,
+        "editorial_score": 62,
         "score_breakdown": {
-          "score": 78,
+          "score": 62,
           "importance": 100,
           "proximity_multiplier": 1.0,
-          "freshness_multiplier": 0.7,
+          "freshness_multiplier": 0.55,
           "source_multiplier": 1.12,
           "source_trust": 90,
-          "age_hours": 106.33
+          "age_hours": 202.7
         },
         "level": "breaking",
         "importance_reasons": [
@@ -946,10 +1293,10 @@
         "relationship_decisions": 1,
         "canonical_source_candidates": 1,
         "lifecycle": {
-          "state": "ongoing",
-          "reason": "Story is older than 48 hours but remains within the active news window",
+          "state": "active",
+          "reason": "Story remains open pending a resolution or archival threshold",
           "last_updated": "2026-11-08T12:45:05+00:00",
-          "hours_since_update": 106.33,
+          "hours_since_update": 202.7,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -958,16 +1305,16 @@
         "story_id": "story_000427",
         "title": "Scoop: Trump asked Netanyahu to move on Gaza peace plan in post-election call",
         "score": 100,
-        "editorial_priority": 78,
-        "editorial_score": 78,
+        "editorial_priority": 62,
+        "editorial_score": 62,
         "score_breakdown": {
-          "score": 78,
+          "score": 62,
           "importance": 100,
           "proximity_multiplier": 1.0,
-          "freshness_multiplier": 0.7,
+          "freshness_multiplier": 0.55,
           "source_multiplier": 1.12,
           "source_trust": 90,
-          "age_hours": 101.09
+          "age_hours": 197.46
         },
         "level": "breaking",
         "importance_reasons": [
@@ -1008,10 +1355,136 @@
         "relationship_decisions": 1,
         "canonical_source_candidates": 1,
         "lifecycle": {
-          "state": "ongoing",
-          "reason": "Story is older than 48 hours but remains within the active news window",
+          "state": "active",
+          "reason": "Story remains open pending a resolution or archival threshold",
           "last_updated": "2026-11-08T17:59:28+00:00",
-          "hours_since_update": 101.09,
+          "hours_since_update": 197.46,
+          "event_count": 1,
+          "timeline_entries": 1
+        }
+      },
+      {
+        "story_id": "story_000608",
+        "title": "Forensic expert says his analysis of autopsy photos suggests Epstein was killed",
+        "score": 53,
+        "editorial_priority": 60,
+        "editorial_score": 60,
+        "score_breakdown": {
+          "score": 60,
+          "importance": 53,
+          "proximity_multiplier": 1.0,
+          "freshness_multiplier": 1.0,
+          "source_multiplier": 1.132,
+          "source_trust": 94,
+          "age_hours": 2.89
+        },
+        "level": "normal",
+        "importance_reasons": [
+          {
+            "code": "federal_action",
+            "label": "Federal/national government action",
+            "points": 32
+          },
+          {
+            "code": "single_death",
+            "label": "Death reported",
+            "points": 6
+          },
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "audience_relevance": {
+          "scope": "us_national",
+          "score": 100,
+          "regions": [
+            "Minnesota",
+            "New York"
+          ],
+          "places": [
+            "Minnesota",
+            "New York"
+          ]
+        },
+        "editorial_proximity": {
+          "score": 100,
+          "scope": "us_national",
+          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
+        },
+        "event_count": 1,
+        "timeline_entries": 1,
+        "relationship_decisions": 1,
+        "canonical_source_candidates": 1,
+        "lifecycle": {
+          "state": "active",
+          "reason": "Single-event story is current",
+          "last_updated": "2026-11-16T20:33:57+00:00",
+          "hours_since_update": 2.89,
+          "event_count": 1,
+          "timeline_entries": 1
+        }
+      },
+      {
+        "story_id": "story_000616",
+        "title": "US data centers now burn more electricity than a midsized country",
+        "score": 52,
+        "editorial_priority": 58,
+        "editorial_score": 58,
+        "score_breakdown": {
+          "score": 58,
+          "importance": 52,
+          "proximity_multiplier": 1.0,
+          "freshness_multiplier": 1.0,
+          "source_multiplier": 1.117,
+          "source_trust": 89,
+          "age_hours": 0.01
+        },
+        "level": "normal",
+        "importance_reasons": [
+          {
+            "code": "federal_action",
+            "label": "Federal/national government action",
+            "points": 32
+          },
+          {
+            "code": "multi_agency",
+            "label": "Multiple agencies involved",
+            "points": 5
+          },
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "audience_relevance": {
+          "scope": "us_national",
+          "score": 100,
+          "regions": [
+            "Wyoming",
+            "Oregon"
+          ],
+          "places": [
+            "Wyoming",
+            "Oregon"
+          ]
+        },
+        "editorial_proximity": {
+          "score": 100,
+          "scope": "us_national",
+          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
+        },
+        "event_count": 1,
+        "timeline_entries": 1,
+        "relationship_decisions": 1,
+        "canonical_source_candidates": 1,
+        "lifecycle": {
+          "state": "active",
+          "reason": "Single-event story is current",
+          "last_updated": "2026-11-16T23:26:58.417736+00:00",
+          "hours_since_update": 0.01,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1020,16 +1493,16 @@
         "story_id": "story_000429",
         "title": "Parents, sister of far-right Kraków shooter found dead in family home - NBC News",
         "score": 93,
-        "editorial_priority": 73,
-        "editorial_score": 73,
+        "editorial_priority": 57,
+        "editorial_score": 57,
         "score_breakdown": {
-          "score": 73,
+          "score": 57,
           "importance": 93,
           "proximity_multiplier": 1.0,
-          "freshness_multiplier": 0.7,
+          "freshness_multiplier": 0.55,
           "source_multiplier": 1.123,
           "source_trust": 91,
-          "age_hours": 98.93
+          "age_hours": 195.3
         },
         "level": "breaking",
         "importance_reasons": [
@@ -1079,10 +1552,10 @@
         "relationship_decisions": 1,
         "canonical_source_candidates": 1,
         "lifecycle": {
-          "state": "ongoing",
-          "reason": "Story is older than 48 hours but remains within the active news window",
+          "state": "active",
+          "reason": "Story remains open pending a resolution or archival threshold",
           "last_updated": "2026-11-08T20:09:11+00:00",
-          "hours_since_update": 98.93,
+          "hours_since_update": 195.3,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1091,16 +1564,16 @@
         "story_id": "story_000246",
         "title": "Hegseth calls US-Iran war a 'courageous and historic effort' - Fox News",
         "score": 100,
-        "editorial_priority": 71,
-        "editorial_score": 71,
+        "editorial_priority": 56,
+        "editorial_score": 56,
         "score_breakdown": {
-          "score": 71,
+          "score": 56,
           "importance": 100,
           "proximity_multiplier": 1.0,
-          "freshness_multiplier": 0.7,
+          "freshness_multiplier": 0.55,
           "source_multiplier": 1.015,
           "source_trust": 55,
-          "age_hours": 140.33
+          "age_hours": 236.7
         },
         "level": "breaking",
         "importance_reasons": [
@@ -1134,13 +1607,13 @@
           "scope": "us_national",
           "score": 100,
           "regions": [
-            "California",
             "Washington",
+            "California",
             "Florida"
           ],
           "places": [
-            "California",
             "Washington",
+            "California",
             "Florida"
           ]
         },
@@ -1154,10 +1627,10 @@
         "relationship_decisions": 1,
         "canonical_source_candidates": 1,
         "lifecycle": {
-          "state": "ongoing",
-          "reason": "Story is older than 48 hours but remains within the active news window",
+          "state": "active",
+          "reason": "Story remains open pending a resolution or archival threshold",
           "last_updated": "2026-11-07T02:45:00+00:00",
-          "hours_since_update": 140.33,
+          "hours_since_update": 236.7,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1166,16 +1639,16 @@
         "story_id": "story_000279",
         "title": "Melania Trump’s Amazon Gravy Train Faces a Brutal New Reality - The Daily Beast",
         "score": 100,
-        "editorial_priority": 71,
-        "editorial_score": 71,
+        "editorial_priority": 56,
+        "editorial_score": 56,
         "score_breakdown": {
-          "score": 71,
+          "score": 56,
           "importance": 100,
           "proximity_multiplier": 1.0,
-          "freshness_multiplier": 0.7,
+          "freshness_multiplier": 0.55,
           "source_multiplier": 1.015,
           "source_trust": 55,
-          "age_hours": 141.75
+          "age_hours": 238.12
         },
         "level": "breaking",
         "importance_reasons": [
@@ -1216,40 +1689,35 @@
         "relationship_decisions": 1,
         "canonical_source_candidates": 1,
         "lifecycle": {
-          "state": "ongoing",
-          "reason": "Story is older than 48 hours but remains within the active news window",
+          "state": "active",
+          "reason": "Story remains open pending a resolution or archival threshold",
           "last_updated": "2026-11-07T01:20:00+00:00",
-          "hours_since_update": 141.75,
+          "hours_since_update": 238.12,
           "event_count": 1,
           "timeline_entries": 1
         }
       },
       {
-        "story_id": "story_000536",
-        "title": "Pressure builds on Thune ahead of GOP leadership elections",
-        "score": 72,
-        "editorial_priority": 69,
-        "editorial_score": 69,
+        "story_id": "story_000619",
+        "title": "Tech leaders are convinced that Jensen Huang’s exit was a plot against him",
+        "score": 47,
+        "editorial_priority": 52,
+        "editorial_score": 52,
         "score_breakdown": {
-          "score": 69,
-          "importance": 72,
+          "score": 52,
+          "importance": 47,
           "proximity_multiplier": 1.0,
-          "freshness_multiplier": 0.85,
-          "source_multiplier": 1.12,
-          "source_trust": 90,
-          "age_hours": 71.64
+          "freshness_multiplier": 1.0,
+          "source_multiplier": 1.117,
+          "source_trust": 89,
+          "age_hours": 0.01
         },
-        "level": "high",
+        "level": "normal",
         "importance_reasons": [
           {
             "code": "federal_action",
             "label": "Federal/national government action",
             "points": 32
-          },
-          {
-            "code": "election",
-            "label": "Major election/political consequence",
-            "points": 25
           },
           {
             "code": "national_scope",
@@ -1261,10 +1729,10 @@
           "scope": "us_national",
           "score": 100,
           "regions": [
-            "Utah"
+            "New York"
           ],
           "places": [
-            "Utah"
+            "New York"
           ]
         },
         "editorial_proximity": {
@@ -1277,10 +1745,10 @@
         "relationship_decisions": 1,
         "canonical_source_candidates": 1,
         "lifecycle": {
-          "state": "ongoing",
-          "reason": "Story is older than 48 hours but remains within the active news window",
-          "last_updated": "2026-11-09T23:26:23+00:00",
-          "hours_since_update": 71.64,
+          "state": "active",
+          "reason": "Single-event story is current",
+          "last_updated": "2026-11-16T23:26:58.417736+00:00",
+          "hours_since_update": 0.01,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1289,16 +1757,16 @@
         "story_id": "story_000255",
         "title": "The Cybertruck’s Death Is Actually Great News for EVs - WIRED",
         "score": 83,
-        "editorial_priority": 65,
-        "editorial_score": 65,
+        "editorial_priority": 51,
+        "editorial_score": 51,
         "score_breakdown": {
-          "score": 65,
+          "score": 51,
           "importance": 83,
           "proximity_multiplier": 1.0,
-          "freshness_multiplier": 0.7,
+          "freshness_multiplier": 0.55,
           "source_multiplier": 1.12,
           "source_trust": 90,
-          "age_hours": 144.57
+          "age_hours": 240.93
         },
         "level": "breaking",
         "importance_reasons": [
@@ -1343,10 +1811,10 @@
         "relationship_decisions": 1,
         "canonical_source_candidates": 1,
         "lifecycle": {
-          "state": "ongoing",
-          "reason": "Story is older than 48 hours but remains within the active news window",
+          "state": "active",
+          "reason": "Story remains open pending a resolution or archival threshold",
           "last_updated": "2026-11-06T22:31:00+00:00",
-          "hours_since_update": 144.57,
+          "hours_since_update": 240.93,
           "event_count": 1,
           "timeline_entries": 1
         }
@@ -1355,16 +1823,16 @@
         "story_id": "story_000287",
         "title": "Blackouts and water shortages in Kyiv after Russia strikes Ukraine’s energy grid - The Guardian",
         "score": 83,
-        "editorial_priority": 65,
-        "editorial_score": 65,
+        "editorial_priority": 51,
+        "editorial_score": 51,
         "score_breakdown": {
-          "score": 65,
+          "score": 51,
           "importance": 83,
           "proximity_multiplier": 1.0,
-          "freshness_multiplier": 0.7,
+          "freshness_multiplier": 0.55,
           "source_multiplier": 1.123,
           "source_trust": 91,
-          "age_hours": 129.77
+          "age_hours": 226.13
         },
         "level": "breaking",
         "importance_reasons": [
@@ -1405,45 +1873,144 @@
         "relationship_decisions": 1,
         "canonical_source_candidates": 1,
         "lifecycle": {
-          "state": "ongoing",
-          "reason": "Story is older than 48 hours but remains within the active news window",
+          "state": "active",
+          "reason": "Story remains open pending a resolution or archival threshold",
           "last_updated": "2026-11-07T13:19:00+00:00",
-          "hours_since_update": 129.77,
+          "hours_since_update": 226.13,
           "event_count": 1,
           "timeline_entries": 1
         }
       },
       {
-        "story_id": "story_000474",
-        "title": "Democrats face a tough sell with MAHA voters",
-        "score": 78,
-        "editorial_priority": 61,
-        "editorial_score": 61,
+        "story_id": "story_000604",
+        "title": "Houthi rebel advance in Yemen may further destabilise global economy",
+        "score": 45,
+        "editorial_priority": 51,
+        "editorial_score": 51,
         "score_breakdown": {
-          "score": 61,
-          "importance": 78,
+          "score": 51,
+          "importance": 45,
           "proximity_multiplier": 1.0,
-          "freshness_multiplier": 0.7,
-          "source_multiplier": 1.12,
-          "source_trust": 90,
-          "age_hours": 84.58
+          "freshness_multiplier": 1.0,
+          "source_multiplier": 1.132,
+          "source_trust": 94,
+          "age_hours": 1.78
         },
-        "level": "high",
+        "level": "normal",
+        "importance_reasons": [
+          {
+            "code": "war_diplomacy",
+            "label": "War, diplomacy or national-security consequence",
+            "points": 30
+          },
+          {
+            "code": "national_scope",
+            "label": "Nationwide U.S. scope",
+            "points": 15
+          }
+        ],
+        "audience_relevance": {
+          "scope": "us_national",
+          "score": 100,
+          "regions": [],
+          "places": []
+        },
+        "editorial_proximity": {
+          "score": 100,
+          "scope": "us_national",
+          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
+        },
+        "event_count": 1,
+        "timeline_entries": 1,
+        "relationship_decisions": 1,
+        "canonical_source_candidates": 1,
+        "lifecycle": {
+          "state": "active",
+          "reason": "Single-event story is current",
+          "last_updated": "2026-11-16T21:40:07+00:00",
+          "hours_since_update": 1.78,
+          "event_count": 1,
+          "timeline_entries": 1
+        }
+      },
+      {
+        "story_id": "story_000627",
+        "title": "Robert Pattinson to replace Daniel Craig as James Bond",
+        "score": 50,
+        "editorial_priority": 50,
+        "editorial_score": 50,
+        "score_breakdown": {
+          "score": 50,
+          "importance": 50,
+          "proximity_multiplier": 0.88,
+          "freshness_multiplier": 1.0,
+          "source_multiplier": 1.132,
+          "source_trust": 94,
+          "age_hours": 3.73
+        },
+        "level": "normal",
+        "importance_reasons": [
+          {
+            "code": "war_diplomacy",
+            "label": "War, diplomacy or national-security consequence",
+            "points": 30
+          },
+          {
+            "code": "public_safety",
+            "label": "Public-safety event",
+            "points": 10
+          },
+          {
+            "code": "global_scope",
+            "label": "Major international consequence",
+            "points": 10
+          }
+        ],
+        "audience_relevance": {
+          "scope": "global_major",
+          "score": 85,
+          "regions": [],
+          "places": []
+        },
+        "editorial_proximity": {
+          "score": 88,
+          "scope": "global_major",
+          "reason": "Major world development has broad consequence for a U.S. general-news audience"
+        },
+        "event_count": 1,
+        "timeline_entries": 1,
+        "relationship_decisions": 1,
+        "canonical_source_candidates": 1,
+        "lifecycle": {
+          "state": "active",
+          "reason": "Single-event story is current",
+          "last_updated": "2026-11-16T19:43:58+00:00",
+          "hours_since_update": 3.73,
+          "event_count": 1,
+          "timeline_entries": 1
+        }
+      },
+      {
+        "story_id": "story_000634",
+        "title": "Phillip Swagel, longtime CBO director, will retire in January",
+        "score": 47,
+        "editorial_priority": 50,
+        "editorial_score": 50,
+        "score_breakdown": {
+          "score": 50,
+          "importance": 47,
+          "proximity_multiplier": 1.0,
+          "freshness_multiplier": 0.95,
+          "source_multiplier": 1.126,
+          "source_trust": 92,
+          "age_hours": 8.98
+        },
+        "level": "normal",
         "importance_reasons": [
           {
             "code": "federal_action",
             "label": "Federal/national government action",
             "points": 32
-          },
-          {
-            "code": "election",
-            "label": "Major election/political consequence",
-            "points": 25
-          },
-          {
-            "code": "single_death",
-            "label": "Death reported",
-            "points": 6
           },
           {
             "code": "national_scope",
@@ -1471,492 +2038,10 @@
         "relationship_decisions": 1,
         "canonical_source_candidates": 1,
         "lifecycle": {
-          "state": "ongoing",
-          "reason": "Story is older than 48 hours but remains within the active news window",
-          "last_updated": "2026-11-09T10:30:05+00:00",
-          "hours_since_update": 84.58,
-          "event_count": 1,
-          "timeline_entries": 1
-        }
-      },
-      {
-        "story_id": "story_000475",
-        "title": "House Democrats plan more prominent placement for Jan. 6 memorial plaque",
-        "score": 78,
-        "editorial_priority": 61,
-        "editorial_score": 61,
-        "score_breakdown": {
-          "score": 61,
-          "importance": 78,
-          "proximity_multiplier": 1.0,
-          "freshness_multiplier": 0.7,
-          "source_multiplier": 1.126,
-          "source_trust": 92,
-          "age_hours": 90.0
-        },
-        "level": "high",
-        "importance_reasons": [
-          {
-            "code": "federal_action",
-            "label": "Federal/national government action",
-            "points": 32
-          },
-          {
-            "code": "election",
-            "label": "Major election/political consequence",
-            "points": 25
-          },
-          {
-            "code": "single_death",
-            "label": "Death reported",
-            "points": 6
-          },
-          {
-            "code": "national_scope",
-            "label": "Nationwide U.S. scope",
-            "points": 15
-          }
-        ],
-        "audience_relevance": {
-          "scope": "us_national",
-          "score": 100,
-          "regions": [
-            "New York"
-          ],
-          "places": [
-            "New York"
-          ]
-        },
-        "editorial_proximity": {
-          "score": 100,
-          "scope": "us_national",
-          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
-        },
-        "event_count": 1,
-        "timeline_entries": 1,
-        "relationship_decisions": 1,
-        "canonical_source_candidates": 1,
-        "lifecycle": {
-          "state": "ongoing",
-          "reason": "Story is older than 48 hours but remains within the active news window",
-          "last_updated": "2026-11-09T05:05:00+00:00",
-          "hours_since_update": 90.0,
-          "event_count": 1,
-          "timeline_entries": 1
-        }
-      },
-      {
-        "story_id": "story_000488",
-        "title": "Pentagon mulls placing fleet of military satellites around the Moon",
-        "score": 77,
-        "editorial_priority": 61,
-        "editorial_score": 61,
-        "score_breakdown": {
-          "score": 61,
-          "importance": 77,
-          "proximity_multiplier": 1.0,
-          "freshness_multiplier": 0.7,
-          "source_multiplier": 1.123,
-          "source_trust": 91,
-          "age_hours": 75.94
-        },
-        "level": "high",
-        "importance_reasons": [
-          {
-            "code": "federal_action",
-            "label": "Federal/national government action",
-            "points": 32
-          },
-          {
-            "code": "war_diplomacy",
-            "label": "War, diplomacy or national-security consequence",
-            "points": 30
-          },
-          {
-            "code": "national_scope",
-            "label": "Nationwide U.S. scope",
-            "points": 15
-          }
-        ],
-        "audience_relevance": {
-          "scope": "us_national",
-          "score": 100,
-          "regions": [],
-          "places": []
-        },
-        "editorial_proximity": {
-          "score": 100,
-          "scope": "us_national",
-          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
-        },
-        "event_count": 1,
-        "timeline_entries": 1,
-        "relationship_decisions": 1,
-        "canonical_source_candidates": 1,
-        "lifecycle": {
-          "state": "ongoing",
-          "reason": "Story is older than 48 hours but remains within the active news window",
-          "last_updated": "2026-11-09T19:08:37+00:00",
-          "hours_since_update": 75.94,
-          "event_count": 1,
-          "timeline_entries": 1
-        }
-      },
-      {
-        "story_id": "story_000510",
-        "title": "Jeffries pushes to restrict China chip exports in defense bill",
-        "score": 77,
-        "editorial_priority": 61,
-        "editorial_score": 61,
-        "score_breakdown": {
-          "score": 61,
-          "importance": 77,
-          "proximity_multiplier": 1.0,
-          "freshness_multiplier": 0.7,
-          "source_multiplier": 1.126,
-          "source_trust": 92,
-          "age_hours": 77.5
-        },
-        "level": "high",
-        "importance_reasons": [
-          {
-            "code": "federal_action",
-            "label": "Federal/national government action",
-            "points": 32
-          },
-          {
-            "code": "war_diplomacy",
-            "label": "War, diplomacy or national-security consequence",
-            "points": 30
-          },
-          {
-            "code": "national_scope",
-            "label": "Nationwide U.S. scope",
-            "points": 15
-          }
-        ],
-        "audience_relevance": {
-          "scope": "us_national",
-          "score": 100,
-          "regions": [],
-          "places": []
-        },
-        "editorial_proximity": {
-          "score": 100,
-          "scope": "us_national",
-          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
-        },
-        "event_count": 1,
-        "timeline_entries": 1,
-        "relationship_decisions": 1,
-        "canonical_source_candidates": 1,
-        "lifecycle": {
-          "state": "ongoing",
-          "reason": "Story is older than 48 hours but remains within the active news window",
-          "last_updated": "2026-11-09T17:35:10+00:00",
-          "hours_since_update": 77.5,
-          "event_count": 1,
-          "timeline_entries": 1
-        }
-      },
-      {
-        "story_id": "story_000537",
-        "title": "Chris Van Hollen not closing the door on Schumer challenge",
-        "score": 77,
-        "editorial_priority": 61,
-        "editorial_score": 61,
-        "score_breakdown": {
-          "score": 61,
-          "importance": 77,
-          "proximity_multiplier": 1.0,
-          "freshness_multiplier": 0.7,
-          "source_multiplier": 1.126,
-          "source_trust": 92,
-          "age_hours": 75.51
-        },
-        "level": "high",
-        "importance_reasons": [
-          {
-            "code": "federal_action",
-            "label": "Federal/national government action",
-            "points": 32
-          },
-          {
-            "code": "election",
-            "label": "Major election/political consequence",
-            "points": 25
-          },
-          {
-            "code": "multi_agency",
-            "label": "Multiple agencies involved",
-            "points": 5
-          },
-          {
-            "code": "national_scope",
-            "label": "Nationwide U.S. scope",
-            "points": 15
-          }
-        ],
-        "audience_relevance": {
-          "scope": "us_national",
-          "score": 100,
-          "regions": [
-            "Connecticut",
-            "Maryland",
-            "New York"
-          ],
-          "places": [
-            "Connecticut",
-            "Maryland",
-            "New York"
-          ]
-        },
-        "editorial_proximity": {
-          "score": 100,
-          "scope": "us_national",
-          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
-        },
-        "event_count": 1,
-        "timeline_entries": 1,
-        "relationship_decisions": 1,
-        "canonical_source_candidates": 1,
-        "lifecycle": {
-          "state": "ongoing",
-          "reason": "Story is older than 48 hours but remains within the active news window",
-          "last_updated": "2026-11-09T19:34:22+00:00",
-          "hours_since_update": 75.51,
-          "event_count": 1,
-          "timeline_entries": 1
-        }
-      },
-      {
-        "story_id": "story_000320",
-        "title": "Trump's \"war-time consigliere\" and the Miller Doctrine",
-        "score": 77,
-        "editorial_priority": 60,
-        "editorial_score": 60,
-        "score_breakdown": {
-          "score": 60,
-          "importance": 77,
-          "proximity_multiplier": 1.0,
-          "freshness_multiplier": 0.7,
-          "source_multiplier": 1.12,
-          "source_trust": 90,
-          "age_hours": 129.35
-        },
-        "level": "high",
-        "importance_reasons": [
-          {
-            "code": "federal_action",
-            "label": "Federal/national government action",
-            "points": 32
-          },
-          {
-            "code": "war_diplomacy",
-            "label": "War, diplomacy or national-security consequence",
-            "points": 30
-          },
-          {
-            "code": "national_scope",
-            "label": "Nationwide U.S. scope",
-            "points": 15
-          }
-        ],
-        "audience_relevance": {
-          "scope": "us_national",
-          "score": 100,
-          "regions": [],
-          "places": []
-        },
-        "editorial_proximity": {
-          "score": 100,
-          "scope": "us_national",
-          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
-        },
-        "event_count": 1,
-        "timeline_entries": 1,
-        "relationship_decisions": 1,
-        "canonical_source_candidates": 1,
-        "lifecycle": {
-          "state": "ongoing",
-          "reason": "Story is older than 48 hours but remains within the active news window",
-          "last_updated": "2026-11-07T13:43:44+00:00",
-          "hours_since_update": 129.35,
-          "event_count": 1,
-          "timeline_entries": 1
-        }
-      },
-      {
-        "story_id": "story_000375",
-        "title": "Saudi Aramco building in Riyadh damaged after attempted attack - CNBC",
-        "score": 75,
-        "editorial_priority": 59,
-        "editorial_score": 59,
-        "score_breakdown": {
-          "score": 59,
-          "importance": 75,
-          "proximity_multiplier": 1.0,
-          "freshness_multiplier": 0.7,
-          "source_multiplier": 1.12,
-          "source_trust": 90,
-          "age_hours": 109.14
-        },
-        "level": "high",
-        "importance_reasons": [
-          {
-            "code": "war_diplomacy",
-            "label": "War, diplomacy or national-security consequence",
-            "points": 30
-          },
-          {
-            "code": "multi_fatality",
-            "label": "Large multi-fatality event",
-            "points": 30
-          },
-          {
-            "code": "national_scope",
-            "label": "Nationwide U.S. scope",
-            "points": 15
-          }
-        ],
-        "audience_relevance": {
-          "scope": "us_national",
-          "score": 100,
-          "regions": [],
-          "places": []
-        },
-        "editorial_proximity": {
-          "score": 100,
-          "scope": "us_national",
-          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
-        },
-        "event_count": 1,
-        "timeline_entries": 1,
-        "relationship_decisions": 1,
-        "canonical_source_candidates": 1,
-        "lifecycle": {
-          "state": "ongoing",
-          "reason": "Story is older than 48 hours but remains within the active news window",
-          "last_updated": "2026-11-08T09:56:23+00:00",
-          "hours_since_update": 109.14,
-          "event_count": 1,
-          "timeline_entries": 1
-        }
-      },
-      {
-        "story_id": "story_000514",
-        "title": "A Haitian 8-year-old was taken by ICE at routine check-in, rattling a San Diego school district - NBC News",
-        "score": 62,
-        "editorial_priority": 59,
-        "editorial_score": 59,
-        "score_breakdown": {
-          "score": 59,
-          "importance": 62,
-          "proximity_multiplier": 1.0,
-          "freshness_multiplier": 0.85,
-          "source_multiplier": 1.123,
-          "source_trust": 91,
-          "age_hours": 70.63
-        },
-        "level": "high",
-        "importance_reasons": [
-          {
-            "code": "federal_action",
-            "label": "Federal/national government action",
-            "points": 32
-          },
-          {
-            "code": "court_action",
-            "label": "Significant court/criminal-justice action",
-            "points": 15
-          },
-          {
-            "code": "national_scope",
-            "label": "Nationwide U.S. scope",
-            "points": 15
-          }
-        ],
-        "audience_relevance": {
-          "scope": "us_national",
-          "score": 100,
-          "regions": [
-            "California"
-          ],
-          "places": [
-            "California"
-          ]
-        },
-        "editorial_proximity": {
-          "score": 100,
-          "scope": "us_national",
-          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
-        },
-        "event_count": 1,
-        "timeline_entries": 1,
-        "relationship_decisions": 1,
-        "canonical_source_candidates": 1,
-        "lifecycle": {
-          "state": "ongoing",
-          "reason": "Story is older than 48 hours but remains within the active news window",
-          "last_updated": "2026-11-10T00:27:00+00:00",
-          "hours_since_update": 70.63,
-          "event_count": 1,
-          "timeline_entries": 1
-        }
-      },
-      {
-        "story_id": "story_000285",
-        "title": "Johnson's meeting request",
-        "score": 72,
-        "editorial_priority": 57,
-        "editorial_score": 57,
-        "score_breakdown": {
-          "score": 57,
-          "importance": 72,
-          "proximity_multiplier": 1.0,
-          "freshness_multiplier": 0.7,
-          "source_multiplier": 1.126,
-          "source_trust": 92,
-          "age_hours": 150.01
-        },
-        "level": "high",
-        "importance_reasons": [
-          {
-            "code": "federal_action",
-            "label": "Federal/national government action",
-            "points": 32
-          },
-          {
-            "code": "election",
-            "label": "Major election/political consequence",
-            "points": 25
-          },
-          {
-            "code": "national_scope",
-            "label": "Nationwide U.S. scope",
-            "points": 15
-          }
-        ],
-        "audience_relevance": {
-          "scope": "us_national",
-          "score": 100,
-          "regions": [],
-          "places": []
-        },
-        "editorial_proximity": {
-          "score": 100,
-          "scope": "us_national",
-          "reason": "Nationwide U.S. consequence directly matches Plain's core audience"
-        },
-        "event_count": 1,
-        "timeline_entries": 1,
-        "relationship_decisions": 1,
-        "canonical_source_candidates": 1,
-        "lifecycle": {
-          "state": "ongoing",
-          "reason": "Story is older than 48 hours but remains within the active news window",
-          "last_updated": "2026-11-06T17:04:07+00:00",
-          "hours_since_update": 150.01,
+          "state": "active",
+          "reason": "Single-event story is current",
+          "last_updated": "2026-11-16T14:29:07+00:00",
+          "hours_since_update": 8.98,
           "event_count": 1,
           "timeline_entries": 1
         }

@@ -1,79 +1,424 @@
 {
   "version": 1,
-  "generated_at": "2026-11-12T23:05:04.054728+00:00",
+  "generated_at": "2026-11-16T23:27:53.674973+00:00",
   "policy": "national_impact_canonical_freshness_verified_full_article",
   "selected": {
-    "headline": "House GOP report faults Justice Department for decades of failures in Epstein case, urges reinterviewing witnesses",
-    "category_key": "us",
+    "headline": "Major companies directed tariff refund money to executive bonuses, ProPublica investigation finds",
+    "category_key": "business",
     "standalone_card_promoted": true
   },
   "candidates": [
     {
-      "headline": "House GOP report faults Justice Department for decades of failures in Epstein case, urges reinterviewing witnesses",
-      "category_key": "us",
-      "category_label": "U.S.",
-      "role": "card",
-      "score": 61.05,
-      "tier": 2,
-      "tier_reason": "domestic_development",
-      "urgency_score": 3,
-      "importance_score": 47,
-      "national_relevance": "us_national",
-      "age_hours": 47.91,
-      "timestamp_basis": "archive:first_published",
-      "source_timestamp": "2026-11-10T23:10:35+00:00",
-      "score_breakdown": {
-        "significance": 72.0,
-        "urgency": 12.0,
-        "national_relevance": 15.0,
-        "independent_importance": 7.05,
-        "freshness": -45.0,
-        "us_audience_fit": 0.0
-      }
-    },
-    {
-      "headline": "NRC grants X-energy construction permit for four small modular reactors at Texas Dow plant",
-      "category_key": "tech",
-      "category_label": "Tech & Science",
-      "role": "card",
-      "score": 15.3,
-      "tier": 1,
-      "tier_reason": "limited_national_reach",
-      "urgency_score": 3,
-      "importance_score": 0,
-      "national_relevance": "us_state_regional",
-      "age_hours": 47.91,
-      "timestamp_basis": "archive:first_published",
-      "source_timestamp": "2026-11-10T23:10:35+00:00",
-      "score_breakdown": {
-        "significance": 36.0,
-        "urgency": 12.0,
-        "national_relevance": 12.3,
-        "independent_importance": 0.0,
-        "freshness": -45.0,
-        "us_audience_fit": 0.0
-      }
-    },
-    {
-      "headline": "Nvidia hires outside law firm for independent investigation into CEO's relationship with alleged Chinese spy",
+      "headline": "Companies used Trump tariff refunds for executive bonuses, investigation finds",
       "category_key": "business",
       "category_label": "Business",
       "role": "card",
-      "score": 12.0,
+      "score": 218.58,
+      "tier": 4,
+      "tier_reason": "macroeconomic_development",
+      "urgency_score": 6,
+      "importance_score": 28,
+      "national_relevance": "unknown",
+      "age_hours": 2.65,
+      "timestamp_basis": "item:source_published_raw",
+      "source_timestamp": "2026-11-16T20:49:00+00:00",
+      "score_breakdown": {
+        "significance": 144.0,
+        "urgency": 24.0,
+        "national_relevance": 9.0,
+        "independent_importance": 4.2,
+        "freshness": 37.38,
+        "us_audience_fit": 0.0
+      }
+    },
+    {
+      "headline": "Nvidia board dismisses campaign to reinstate ousted CEO Jensen Huang as new US export curbs on AI chips take effect",
+      "category_key": "business",
+      "category_label": "Business",
+      "role": "card",
+      "score": 146.21,
       "tier": 1,
       "tier_reason": "limited_national_reach",
-      "urgency_score": 3,
-      "importance_score": 0,
-      "national_relevance": "unknown",
-      "age_hours": 47.91,
-      "timestamp_basis": "archive:first_published",
-      "source_timestamp": "2026-11-10T23:10:35+00:00",
+      "urgency_score": 7,
+      "importance_score": 40,
+      "national_relevance": "us_national",
+      "age_hours": 1.11,
+      "timestamp_basis": "item:source_published_raw",
+      "source_timestamp": "2026-11-16T22:21:27+00:00",
       "score_breakdown": {
         "significance": 36.0,
-        "urgency": 12.0,
+        "urgency": 28.0,
+        "national_relevance": 15.0,
+        "independent_importance": 6.0,
+        "freshness": 41.24,
+        "us_audience_fit": 19.97
+      }
+    },
+    {
+      "headline": "Houthi rebels seize control of key Red Sea strait as Yemeni army withdraws to defend Aden",
+      "category_key": "world",
+      "category_label": "World",
+      "role": "hero",
+      "score": 144.51,
+      "tier": 2,
+      "tier_reason": "international_development_without_broad_consequence",
+      "urgency_score": 6,
+      "importance_score": 0,
+      "national_relevance": "unknown",
+      "age_hours": 1.79,
+      "timestamp_basis": "item:source_published_raw",
+      "source_timestamp": "2026-11-16T21:40:07+00:00",
+      "score_breakdown": {
+        "significance": 72.0,
+        "urgency": 24.0,
         "national_relevance": 9.0,
         "independent_importance": 0.0,
-        "freshness": -45.0,
+        "freshness": 39.51,
+        "us_audience_fit": 0.0
+      }
+    },
+    {
+      "headline": "Massachusetts judge sets March 2027 retrial for woman accused of killing three children after hung jury",
+      "category_key": "us",
+      "category_label": "U.S.",
+      "role": "hero",
+      "score": 142.41,
+      "tier": 2,
+      "tier_reason": "domestic_development",
+      "urgency_score": 6,
+      "importance_score": 0,
+      "national_relevance": "us_state_regional",
+      "age_hours": 3.95,
+      "timestamp_basis": "item:source_published_raw",
+      "source_timestamp": "2026-11-16T19:30:30+00:00",
+      "score_breakdown": {
+        "significance": 72.0,
+        "urgency": 24.0,
+        "national_relevance": 12.3,
+        "independent_importance": 0.0,
+        "freshness": 34.11,
+        "us_audience_fit": 0.0
+      }
+    },
+    {
+      "headline": "Forensic pathologist disputes Epstein suicide ruling, tells BBC autopsy photos suggest homicide",
+      "category_key": "us",
+      "category_label": "U.S.",
+      "role": "card",
+      "score": 137.76,
+      "tier": 2,
+      "tier_reason": "domestic_development",
+      "urgency_score": 5,
+      "importance_score": 0,
+      "national_relevance": "unknown",
+      "age_hours": 2.9,
+      "timestamp_basis": "item:source_published_raw",
+      "source_timestamp": "2026-11-16T20:33:57+00:00",
+      "score_breakdown": {
+        "significance": 72.0,
+        "urgency": 20.0,
+        "national_relevance": 9.0,
+        "independent_importance": 0.0,
+        "freshness": 36.76,
+        "us_audience_fit": 0.0
+      }
+    },
+    {
+      "headline": "Hyperscale data centers consumed up to 2.2 percent of US electricity in one year, study finds",
+      "category_key": "tech",
+      "category_label": "Tech & Science",
+      "role": "card",
+      "score": 132.02,
+      "tier": 1,
+      "tier_reason": "limited_national_reach",
+      "urgency_score": 6,
+      "importance_score": 15,
+      "national_relevance": "us_national",
+      "age_hours": 2.59,
+      "timestamp_basis": "item:source_published_raw",
+      "source_timestamp": "2026-11-16T20:52:10+00:00",
+      "score_breakdown": {
+        "significance": 36.0,
+        "urgency": 24.0,
+        "national_relevance": 15.0,
+        "independent_importance": 2.25,
+        "freshness": 37.52,
+        "us_audience_fit": 17.25
+      }
+    },
+    {
+      "headline": "Five EU countries plan Rwanda deportation hub by 2027",
+      "category_key": "world",
+      "category_label": "World",
+      "role": "card",
+      "score": 131.48,
+      "tier": 2,
+      "tier_reason": "international_development_without_broad_consequence",
+      "urgency_score": 6,
+      "importance_score": 0,
+      "national_relevance": "unknown",
+      "age_hours": 7.01,
+      "timestamp_basis": "item:source_published_raw",
+      "source_timestamp": "2026-11-16T16:27:24+00:00",
+      "score_breakdown": {
+        "significance": 72.0,
+        "urgency": 24.0,
+        "national_relevance": 9.0,
+        "independent_importance": 0.0,
+        "freshness": 26.48,
+        "us_audience_fit": 0.0
+      }
+    },
+    {
+      "headline": "US hyperscale data centers consumed 82 terawatt-hours of electricity in past year, more than most countries",
+      "category_key": "tech",
+      "category_label": "Tech & Science",
+      "role": "card",
+      "score": 130.27,
+      "tier": 1,
+      "tier_reason": "limited_national_reach",
+      "urgency_score": 6,
+      "importance_score": 15,
+      "national_relevance": "us_national",
+      "age_hours": 3.0,
+      "timestamp_basis": "item:source_published_raw",
+      "source_timestamp": "2026-11-16T20:27:58+00:00",
+      "score_breakdown": {
+        "significance": 36.0,
+        "urgency": 24.0,
+        "national_relevance": 15.0,
+        "independent_importance": 2.25,
+        "freshness": 36.51,
+        "us_audience_fit": 16.51
+      }
+    },
+    {
+      "headline": "Congressional Budget Office Director Phillip Swagel to retire in January",
+      "category_key": "politics",
+      "category_label": "Politics",
+      "role": "card",
+      "score": 126.82,
+      "tier": 1,
+      "tier_reason": "limited_national_reach",
+      "urgency_score": 5,
+      "importance_score": 47,
+      "national_relevance": "us_national",
+      "age_hours": 3.98,
+      "timestamp_basis": "item:source_published_raw",
+      "source_timestamp": "2026-11-16T19:29:07+00:00",
+      "score_breakdown": {
+        "significance": 36.0,
+        "urgency": 20.0,
+        "national_relevance": 15.0,
+        "independent_importance": 7.05,
+        "freshness": 34.06,
+        "us_audience_fit": 14.71
+      }
+    },
+    {
+      "headline": "UK and EU negotiators finalize post-Brexit food trade reset requiring British alignment with EU rules",
+      "category_key": "world",
+      "category_label": "World",
+      "role": "card",
+      "score": 125.52,
+      "tier": 2,
+      "tier_reason": "international_development_without_broad_consequence",
+      "urgency_score": 5,
+      "importance_score": 0,
+      "national_relevance": "unknown",
+      "age_hours": 7.79,
+      "timestamp_basis": "item:source_published_raw",
+      "source_timestamp": "2026-11-16T15:40:16+00:00",
+      "score_breakdown": {
+        "significance": 72.0,
+        "urgency": 20.0,
+        "national_relevance": 9.0,
+        "independent_importance": 0.0,
+        "freshness": 24.52,
+        "us_audience_fit": 0.0
+      }
+    },
+    {
+      "headline": "Software bug disrupts Chase banking nationwide, slowing Zelle and transactions at other banks",
+      "category_key": "business",
+      "category_label": "Business",
+      "role": "hero",
+      "score": 121.32,
+      "tier": 1,
+      "tier_reason": "limited_national_reach",
+      "urgency_score": 7,
+      "importance_score": 40,
+      "national_relevance": "global_major",
+      "age_hours": 2.17,
+      "timestamp_basis": "item:source_published_raw",
+      "source_timestamp": "2026-11-16T21:17:33+00:00",
+      "score_breakdown": {
+        "significance": 36.0,
+        "urgency": 28.0,
+        "national_relevance": 12.75,
+        "independent_importance": 6.0,
+        "freshness": 38.57,
+        "us_audience_fit": 0.0
+      }
+    },
+    {
+      "headline": "Nasdaq falls more than 2% for third straight day as Nvidia-led AI selloff drags markets lower",
+      "category_key": "business",
+      "category_label": "Business",
+      "role": "card",
+      "score": 119.33,
+      "tier": 1,
+      "tier_reason": "limited_national_reach",
+      "urgency_score": 7,
+      "importance_score": 28,
+      "national_relevance": "unknown",
+      "age_hours": 0.75,
+      "timestamp_basis": "item:source_published_raw",
+      "source_timestamp": "2026-11-16T22:43:00+00:00",
+      "score_breakdown": {
+        "significance": 36.0,
+        "urgency": 28.0,
+        "national_relevance": 9.0,
+        "independent_importance": 4.2,
+        "freshness": 42.13,
+        "us_audience_fit": 0.0
+      }
+    },
+    {
+      "headline": "Tech leaders claim Jensen Huang's Nvidia exit was orchestrated plot",
+      "category_key": "tech",
+      "category_label": "Tech & Science",
+      "role": "card",
+      "score": 116.58,
+      "tier": 1,
+      "tier_reason": "limited_national_reach",
+      "urgency_score": 7,
+      "importance_score": 0,
+      "national_relevance": "unknown",
+      "age_hours": 0.17,
+      "timestamp_basis": "item:source_published_raw",
+      "source_timestamp": "2026-11-16T23:17:34+00:00",
+      "score_breakdown": {
+        "significance": 36.0,
+        "urgency": 28.0,
+        "national_relevance": 9.0,
+        "independent_importance": 0.0,
+        "freshness": 43.58,
+        "us_audience_fit": 0.0
+      }
+    },
+    {
+      "headline": "Trump nominates OMB official Eric Ueland to head GAO watchdog agency",
+      "category_key": "politics",
+      "category_label": "Politics",
+      "role": "hero",
+      "score": 112.42,
+      "tier": 1,
+      "tier_reason": "limited_national_reach",
+      "urgency_score": 7,
+      "importance_score": 0,
+      "national_relevance": "unknown",
+      "age_hours": 1.83,
+      "timestamp_basis": "item:source_published_raw",
+      "source_timestamp": "2026-11-16T21:37:48+00:00",
+      "score_breakdown": {
+        "significance": 36.0,
+        "urgency": 28.0,
+        "national_relevance": 9.0,
+        "independent_importance": 0.0,
+        "freshness": 39.42,
+        "us_audience_fit": 0.0
+      }
+    },
+    {
+      "headline": "Infoblox confirms hackers accessed company data through compromised SharePoint vendor",
+      "category_key": "tech",
+      "category_label": "Tech & Science",
+      "role": "card",
+      "score": 109.86,
+      "tier": 1,
+      "tier_reason": "limited_national_reach",
+      "urgency_score": 6,
+      "importance_score": 0,
+      "national_relevance": "unknown",
+      "age_hours": 1.25,
+      "timestamp_basis": "item:source_published_raw",
+      "source_timestamp": "2026-11-16T22:12:31+00:00",
+      "score_breakdown": {
+        "significance": 36.0,
+        "urgency": 24.0,
+        "national_relevance": 9.0,
+        "independent_importance": 0.0,
+        "freshness": 40.86,
+        "us_audience_fit": 0.0
+      }
+    },
+    {
+      "headline": "Apple announces macOS 27.3 security controls to limit AI agent privacy risks",
+      "category_key": "tech",
+      "category_label": "Tech & Science",
+      "role": "card",
+      "score": 102.89,
+      "tier": 1,
+      "tier_reason": "limited_national_reach",
+      "urgency_score": 5,
+      "importance_score": 0,
+      "national_relevance": "unknown",
+      "age_hours": 2.45,
+      "timestamp_basis": "item:source_published_raw",
+      "source_timestamp": "2026-11-16T21:01:02+00:00",
+      "score_breakdown": {
+        "significance": 36.0,
+        "urgency": 20.0,
+        "national_relevance": 9.0,
+        "independent_importance": 0.0,
+        "freshness": 37.89,
+        "us_audience_fit": 0.0
+      }
+    },
+    {
+      "headline": "Shareholders sue Intel, CEO, and CFO over alleged concealment of PC sales slump impact",
+      "category_key": "tech",
+      "category_label": "Tech & Science",
+      "role": "card",
+      "score": 101.92,
+      "tier": 1,
+      "tier_reason": "limited_national_reach",
+      "urgency_score": 5,
+      "importance_score": 0,
+      "national_relevance": "unknown",
+      "age_hours": 2.83,
+      "timestamp_basis": "item:source_published_raw",
+      "source_timestamp": "2026-11-16T20:37:47+00:00",
+      "score_breakdown": {
+        "significance": 36.0,
+        "urgency": 20.0,
+        "national_relevance": 9.0,
+        "independent_importance": 0.0,
+        "freshness": 36.92,
+        "us_audience_fit": 0.0
+      }
+    },
+    {
+      "headline": "AT&T sues Comcast over 'fiber-powered' internet marketing",
+      "category_key": "tech",
+      "category_label": "Tech & Science",
+      "role": "card",
+      "score": 97.51,
+      "tier": 1,
+      "tier_reason": "limited_national_reach",
+      "urgency_score": 4,
+      "importance_score": 0,
+      "national_relevance": "unknown",
+      "age_hours": 3.0,
+      "timestamp_basis": "item:source_published_raw",
+      "source_timestamp": "2026-11-16T20:27:58+00:00",
+      "score_breakdown": {
+        "significance": 36.0,
+        "urgency": 16.0,
+        "national_relevance": 9.0,
+        "independent_importance": 0.0,
+        "freshness": 36.51,
         "us_audience_fit": 0.0
       }
     }
@@ -82,9 +427,9 @@
     {
       "headline": "Krakow mass shooting suspect dies in hospital as Polish prosecutors say motive investigation continues",
       "category_key": "world",
-      "role": "hero",
+      "role": "card",
       "reason": "missing_or_stale_canonical_timestamp",
-      "age_hours": 81.91,
+      "age_hours": 178.28,
       "timestamp_basis": "archive:first_published"
     },
     {
@@ -92,47 +437,23 @@
       "category_key": "world",
       "role": "card",
       "reason": "missing_or_stale_canonical_timestamp",
-      "age_hours": 71.9,
-      "timestamp_basis": "archive:first_published"
-    },
-    {
-      "headline": "Paraguay formally charges ousted president Santiago Peña with breach of trust over Ueno Bank collapse",
-      "category_key": "world",
-      "role": "card",
-      "reason": "missing_or_stale_canonical_timestamp",
-      "age_hours": 137.86,
-      "timestamp_basis": "archive:first_published"
-    },
-    {
-      "headline": "Krakow gunman killed his parents and sister before Main Market Square attack that left six dead",
-      "category_key": "world",
-      "role": "card",
-      "reason": "missing_or_stale_canonical_timestamp",
-      "age_hours": 117.72,
-      "timestamp_basis": "archive:first_published"
-    },
-    {
-      "headline": "Israeli President Herzog tasks opposition leader Eisenkot with forming government after inconclusive election",
-      "category_key": "world",
-      "role": "card",
-      "reason": "missing_or_stale_canonical_timestamp",
-      "age_hours": 115.95,
-      "timestamp_basis": "archive:first_published"
-    },
-    {
-      "headline": "Houthi strikes hit Aramco Tower in Riyadh, target airport and oil facilities",
-      "category_key": "world",
-      "role": "card",
-      "reason": "missing_or_stale_canonical_timestamp",
-      "age_hours": 95.93,
+      "age_hours": 168.28,
       "timestamp_basis": "archive:first_published"
     },
     {
       "headline": "ICE detains 8-year-old Haitian boy at routine check-in after TPS termination, prompting San Diego school district response",
       "category_key": "us",
-      "role": "hero",
+      "role": "card",
       "reason": "missing_or_stale_canonical_timestamp",
-      "age_hours": 69.03,
+      "age_hours": 165.41,
+      "timestamp_basis": "archive:first_published"
+    },
+    {
+      "headline": "House GOP report faults Justice Department for decades of failures in Epstein case, urges reinterviewing witnesses",
+      "category_key": "us",
+      "role": "card",
+      "reason": "missing_or_stale_canonical_timestamp",
+      "age_hours": 144.29,
       "timestamp_basis": "archive:first_published"
     },
     {
@@ -140,7 +461,7 @@
       "category_key": "us",
       "role": "card",
       "reason": "missing_or_stale_canonical_timestamp",
-      "age_hours": 94.84,
+      "age_hours": 191.22,
       "timestamp_basis": "archive:first_published"
     },
     {
@@ -148,55 +469,15 @@
       "category_key": "us",
       "role": "card",
       "reason": "missing_or_stale_canonical_timestamp",
-      "age_hours": 71.9,
-      "timestamp_basis": "archive:first_published"
-    },
-    {
-      "headline": "Wisconsin state trooper detained by ICE released under supervision after intervention by DHS secretary",
-      "category_key": "us",
-      "role": "card",
-      "reason": "missing_or_stale_canonical_timestamp",
-      "age_hours": 117.72,
-      "timestamp_basis": "archive:first_published"
-    },
-    {
-      "headline": "Six killed in shooting in Krakow, Poland; British citizen among dead",
-      "category_key": "us",
-      "role": "card",
-      "reason": "missing_or_stale_canonical_timestamp",
-      "age_hours": 116.91,
-      "timestamp_basis": "archive:first_published"
-    },
-    {
-      "headline": "Arrest made in shooting that killed one during Winston-Salem State University homecoming weekend",
-      "category_key": "us",
-      "role": "card",
-      "reason": "missing_or_stale_canonical_timestamp",
-      "age_hours": 95.93,
-      "timestamp_basis": "archive:first_published"
-    },
-    {
-      "headline": "Secret Service arrests man near White House with guns who said voices told him to kill Trump",
-      "category_key": "us",
-      "role": "card",
-      "reason": "missing_or_stale_canonical_timestamp",
-      "age_hours": 137.86,
-      "timestamp_basis": "archive:first_published"
-    },
-    {
-      "headline": "Hamilton and Verstappen to start from back of grid at São Paulo Grand Prix",
-      "category_key": "us",
-      "role": "card",
-      "reason": "misclassified_sports_entertainment_content",
-      "age_hours": 125.22,
+      "age_hours": 168.28,
       "timestamp_basis": "archive:first_published"
     },
     {
       "headline": "Qantas to outsource 850 jobs to Accenture, most moving to India",
       "category_key": "business",
-      "role": "hero",
+      "role": "card",
       "reason": "missing_or_stale_canonical_timestamp",
-      "age_hours": 69.03,
+      "age_hours": 165.41,
       "timestamp_basis": "archive:first_published"
     },
     {
@@ -204,7 +485,15 @@
       "category_key": "business",
       "role": "card",
       "reason": "missing_or_stale_canonical_timestamp",
-      "age_hours": 57.89,
+      "age_hours": 154.26,
+      "timestamp_basis": "archive:first_published"
+    },
+    {
+      "headline": "Nvidia hires outside law firm for independent investigation into CEO's relationship with alleged Chinese spy",
+      "category_key": "business",
+      "role": "card",
+      "reason": "missing_or_stale_canonical_timestamp",
+      "age_hours": 144.29,
       "timestamp_basis": "archive:first_published"
     },
     {
@@ -212,7 +501,7 @@
       "category_key": "business",
       "role": "card",
       "reason": "missing_or_stale_canonical_timestamp",
-      "age_hours": 117.72,
+      "age_hours": 214.09,
       "timestamp_basis": "archive:first_published"
     },
     {
@@ -220,111 +509,87 @@
       "category_key": "business",
       "role": "card",
       "reason": "missing_or_stale_canonical_timestamp",
-      "age_hours": 95.93,
+      "age_hours": 192.31,
       "timestamp_basis": "archive:first_published"
     },
     {
-      "headline": "Asian markets rebound after $2.5 trillion Wall Street sell-off; Nvidia board investigates CEO over relationship",
-      "category_key": "business",
-      "role": "card",
+      "headline": "California sues OpenAI over AI agents that hacked outside systems during testing",
+      "category_key": "tech",
+      "role": "hero",
       "reason": "missing_or_stale_canonical_timestamp",
-      "age_hours": 81.91,
-      "timestamp_basis": "archive:first_published"
-    },
-    {
-      "headline": "Treasury moves to cut off crypto exchange MEXC from U.S. financial system over alleged $16 billion in illicit transactions",
-      "category_key": "business",
-      "role": "card",
-      "reason": "missing_or_stale_canonical_timestamp",
-      "age_hours": 116.91,
-      "timestamp_basis": "archive:first_published"
-    },
-    {
-      "headline": "Stocks plunge into correction after brief post-midterm rally as AI regulation fears hit tech",
-      "category_key": "business",
-      "role": "card",
-      "reason": "missing_or_stale_canonical_timestamp",
-      "age_hours": 115.95,
-      "timestamp_basis": "archive:first_published"
-    },
-    {
-      "headline": "Musk says SpaceX could acquire legacy telecom carrier and use spectrum ten times more effectively",
-      "category_key": "business",
-      "role": "card",
-      "reason": "missing_or_stale_canonical_timestamp",
-      "age_hours": 105.9,
+      "age_hours": 1748.62,
       "timestamp_basis": "archive:first_published"
     },
     {
       "headline": "Wyndham exposed millions of customer records after hardcoded password found in Android app",
       "category_key": "tech",
+      "role": "card",
+      "reason": "missing_or_stale_canonical_timestamp",
+      "age_hours": 165.41,
+      "timestamp_basis": "archive:first_published"
+    },
+    {
+      "headline": "Former delivery driver Joe Dean earns PGA Tour card after remarkable rise",
+      "category_key": "sports",
       "role": "hero",
-      "reason": "missing_or_stale_canonical_timestamp",
-      "age_hours": 69.03,
-      "timestamp_basis": "archive:first_published"
+      "reason": "sports_entertainment_not_eligible",
+      "age_hours": 3.58,
+      "timestamp_basis": "item:source_published_raw"
     },
     {
-      "headline": "Google DeepMind uses AI to formally verify Signal protocol cryptography",
-      "category_key": "tech",
+      "headline": "Andy Robertson becomes Scotland's most-capped men's international",
+      "category_key": "sports",
       "role": "card",
-      "reason": "missing_or_stale_canonical_timestamp",
-      "age_hours": 57.89,
-      "timestamp_basis": "archive:first_published"
+      "reason": "sports_entertainment_not_eligible",
+      "age_hours": 3.74,
+      "timestamp_basis": "item:source_published_raw"
     },
     {
-      "headline": "Researchers trace mysterious global power grid frequency drops to synchronized battery backup systems",
-      "category_key": "tech",
+      "headline": "Scotland captain Robertson says team 'don't have time' to improve after 4-0 Switzerland defeat",
+      "category_key": "sports",
       "role": "card",
-      "reason": "missing_or_stale_canonical_timestamp",
-      "age_hours": 94.84,
-      "timestamp_basis": "archive:first_published"
+      "reason": "sports_entertainment_not_eligible",
+      "age_hours": 0.86,
+      "timestamp_basis": "item:source_published_raw"
     },
     {
-      "headline": "Meta expands AI age detection for Instagram teen accounts worldwide after $17.1 billion settlement",
-      "category_key": "tech",
+      "headline": "All Blacks coach Rennie says team 'let the country down' after historic Wales loss",
+      "category_key": "sports",
       "role": "card",
-      "reason": "missing_or_stale_canonical_timestamp",
-      "age_hours": 81.91,
-      "timestamp_basis": "archive:first_published"
+      "reason": "sports_entertainment_not_eligible",
+      "age_hours": 6.5,
+      "timestamp_basis": "item:source_published_raw"
     },
     {
-      "headline": "Securities lawsuits against Nvidia proliferate after board opens probe into CEO's ties to suspected spy",
-      "category_key": "tech",
+      "headline": "England's Will Joseph set to start against New Zealand after five-try performance",
+      "category_key": "sports",
       "role": "card",
-      "reason": "missing_or_stale_canonical_timestamp",
-      "age_hours": 71.9,
-      "timestamp_basis": "archive:first_published"
+      "reason": "sports_entertainment_not_eligible",
+      "age_hours": 5.13,
+      "timestamp_basis": "item:source_published_raw"
     },
     {
-      "headline": "AI tools are enabling automated hacking at scale, upending the cybersecurity industry",
-      "category_key": "tech",
+      "headline": "Cameroon, Senegal and Benin near Afcon 2027 qualification with away wins",
+      "category_key": "sports",
       "role": "card",
-      "reason": "missing_or_stale_canonical_timestamp",
-      "age_hours": 117.72,
-      "timestamp_basis": "archive:first_published"
+      "reason": "sports_entertainment_not_eligible",
+      "age_hours": 5.33,
+      "timestamp_basis": "item:source_published_raw"
     },
     {
-      "headline": "U.S. intelligence memo claimed Chinese officials recruited tech executive to spy on Nvidia CEO",
-      "category_key": "tech",
+      "headline": "Portugal boss responds to criticism from Ronaldo's mum",
+      "category_key": "sports",
       "role": "card",
-      "reason": "missing_or_stale_canonical_timestamp",
-      "age_hours": 115.95,
-      "timestamp_basis": "archive:first_published"
-    },
-    {
-      "headline": "NASA opens astronaut applications to expand Artemis moon program",
-      "category_key": "tech",
-      "role": "card",
-      "reason": "missing_or_stale_canonical_timestamp",
-      "age_hours": 105.9,
-      "timestamp_basis": "archive:first_published"
+      "reason": "sports_entertainment_not_eligible",
+      "age_hours": 2.33,
+      "timestamp_basis": "item:source_published_raw"
     },
     {
       "headline": "Reds first baseman Sal Stewart wins NL Rookie of the Year after 32-homer, 112-RBI season",
       "category_key": "sports",
-      "role": "hero",
+      "role": "card",
       "reason": "sports_entertainment_not_eligible",
-      "age_hours": 69.03,
+      "age_hours": 165.41,
       "timestamp_basis": "archive:first_published"
     },
     {
@@ -332,71 +597,63 @@
       "category_key": "sports",
       "role": "card",
       "reason": "sports_entertainment_not_eligible",
-      "age_hours": 57.89,
+      "age_hours": 154.26,
       "timestamp_basis": "archive:first_published"
     },
     {
-      "headline": "Vikings acquire Kirk Cousins from Raiders in trade deadline deal",
-      "category_key": "sports",
-      "role": "card",
+      "headline": "Robert Pattinson named next James Bond, seventh actor to play 007",
+      "category_key": "entertainment",
+      "role": "hero",
       "reason": "sports_entertainment_not_eligible",
-      "age_hours": 47.91,
-      "timestamp_basis": "archive:first_published"
+      "age_hours": 3.73,
+      "timestamp_basis": "item:source_published_raw"
     },
     {
-      "headline": "Kenneth Walker scores three touchdowns as Chiefs defeat Jets 35-12, Mahomes plays through elbow injury",
-      "category_key": "sports",
+      "headline": "Judge dismisses four claims against Priscilla Presley in business dispute, allows allegations tied to Lisa Marie's death",
+      "category_key": "entertainment",
       "role": "card",
       "reason": "sports_entertainment_not_eligible",
-      "age_hours": 94.84,
-      "timestamp_basis": "archive:first_published"
+      "age_hours": 1.15,
+      "timestamp_basis": "item:source_published_raw"
     },
     {
-      "headline": "Blades Brown, 19, becomes youngest PGA Tour winner in 95 years with playoff victory in Mexico",
-      "category_key": "sports",
+      "headline": "Mavis Staples headlines National Folk Festival in Jackson days after Mississippi's first Black U.S. Senator elected since Reconstruction",
+      "category_key": "entertainment",
       "role": "card",
       "reason": "sports_entertainment_not_eligible",
-      "age_hours": 81.91,
-      "timestamp_basis": "archive:first_published"
+      "age_hours": 0.28,
+      "timestamp_basis": "item:source_published_raw"
     },
     {
-      "headline": "Jaguars acquire defensive tackle Davon Godchaux from Saints in second trade of the day",
-      "category_key": "sports",
+      "headline": "DJ John Summit criticizes Grammys dance categories after snub, draws backlash",
+      "category_key": "entertainment",
       "role": "card",
       "reason": "sports_entertainment_not_eligible",
-      "age_hours": 71.9,
-      "timestamp_basis": "archive:first_published"
+      "age_hours": 1.25,
+      "timestamp_basis": "item:source_published_raw"
     },
     {
-      "headline": "Willy Hutchinson upsets Joshua Buatsi to win WBC light-heavyweight title in Manchester rematch",
-      "category_key": "sports",
+      "headline": "Hulu renews 'Reasonable Doubt' for fifth season ahead of Season 4 finale",
+      "category_key": "entertainment",
       "role": "card",
       "reason": "sports_entertainment_not_eligible",
-      "age_hours": 117.72,
-      "timestamp_basis": "archive:first_published"
+      "age_hours": 2.33,
+      "timestamp_basis": "item:source_published_raw"
     },
     {
-      "headline": "Oregon routs Ohio State 41-28, likely ending Buckeyes' playoff hopes with fake punt sparking turnaround",
-      "category_key": "sports",
+      "headline": "Variety's 10 Comics to Watch for 2026 perform at New York Comedy Festival showcase",
+      "category_key": "entertainment",
       "role": "card",
       "reason": "sports_entertainment_not_eligible",
-      "age_hours": 116.91,
-      "timestamp_basis": "archive:first_published"
-    },
-    {
-      "headline": "Notre Dame defeats Miami 24-17 in matchup of top-ranked teams",
-      "category_key": "sports",
-      "role": "card",
-      "reason": "sports_entertainment_not_eligible",
-      "age_hours": 115.95,
-      "timestamp_basis": "archive:first_published"
+      "age_hours": 2.01,
+      "timestamp_basis": "item:source_published_raw"
     },
     {
       "headline": "Donnie Dunagan, voice of Bambi in 1942 Disney classic, dies at 92",
       "category_key": "entertainment",
-      "role": "hero",
+      "role": "card",
       "reason": "sports_entertainment_not_eligible",
-      "age_hours": 69.03,
+      "age_hours": 165.41,
       "timestamp_basis": "archive:first_published"
     },
     {
@@ -404,7 +661,7 @@
       "category_key": "entertainment",
       "role": "card",
       "reason": "sports_entertainment_not_eligible",
-      "age_hours": 57.89,
+      "age_hours": 154.26,
       "timestamp_basis": "archive:first_published"
     },
     {
@@ -412,63 +669,15 @@
       "category_key": "entertainment",
       "role": "card",
       "reason": "sports_entertainment_not_eligible",
-      "age_hours": 47.91,
-      "timestamp_basis": "archive:first_published"
-    },
-    {
-      "headline": "Denis Villeneuve says he is finishing Dune: Part Three while beginning James Bond movie, teases casting before joking at LACMA gala",
-      "category_key": "entertainment",
-      "role": "card",
-      "reason": "sports_entertainment_not_eligible",
-      "age_hours": 94.84,
-      "timestamp_basis": "archive:first_published"
-    },
-    {
-      "headline": "Russell Brand sentencing hearing underway after rape and sexual assault convictions",
-      "category_key": "entertainment",
-      "role": "card",
-      "reason": "sports_entertainment_not_eligible",
-      "age_hours": 81.91,
-      "timestamp_basis": "archive:first_published"
-    },
-    {
-      "headline": "James Gunn and Peter Safran ousted as DC Studios co-CEOs, leaving Superman and Batman franchises in uncertainty",
-      "category_key": "entertainment",
-      "role": "card",
-      "reason": "sports_entertainment_not_eligible",
-      "age_hours": 71.9,
-      "timestamp_basis": "archive:first_published"
-    },
-    {
-      "headline": "Godzilla Minus Zero heads toward $32 million opening weekend, surpassing predecessor's total domestic run",
-      "category_key": "entertainment",
-      "role": "card",
-      "reason": "sports_entertainment_not_eligible",
-      "age_hours": 117.72,
-      "timestamp_basis": "archive:first_published"
-    },
-    {
-      "headline": "Sylvester Stallone says his 20-year rivalry with Arnold Schwarzenegger ended when Schwarzenegger ran for California governor",
-      "category_key": "entertainment",
-      "role": "card",
-      "reason": "sports_entertainment_not_eligible",
-      "age_hours": 116.91,
-      "timestamp_basis": "archive:first_published"
-    },
-    {
-      "headline": "Stephen Colbert and Yo-Yo Ma's Harvard event cut short by fire alarm amid graduate student union strike",
-      "category_key": "entertainment",
-      "role": "card",
-      "reason": "sports_entertainment_not_eligible",
-      "age_hours": 115.95,
+      "age_hours": 144.29,
       "timestamp_basis": "archive:first_published"
     },
     {
       "headline": "Van Hollen declines to rule out challenging Schumer for Senate Democratic leader as caucus debates strategy",
       "category_key": "politics",
-      "role": "hero",
+      "role": "card",
       "reason": "missing_or_stale_canonical_timestamp",
-      "age_hours": 69.03,
+      "age_hours": 165.41,
       "timestamp_basis": "archive:first_published"
     },
     {
@@ -476,7 +685,7 @@
       "category_key": "politics",
       "role": "card",
       "reason": "missing_or_stale_canonical_timestamp",
-      "age_hours": 69.03,
+      "age_hours": 165.41,
       "timestamp_basis": "archive:first_published"
     },
     {
@@ -484,7 +693,7 @@
       "category_key": "politics",
       "role": "card",
       "reason": "missing_or_stale_canonical_timestamp",
-      "age_hours": 94.84,
+      "age_hours": 191.22,
       "timestamp_basis": "archive:first_published"
     },
     {
@@ -492,7 +701,7 @@
       "category_key": "politics",
       "role": "card",
       "reason": "missing_or_stale_canonical_timestamp",
-      "age_hours": 81.91,
+      "age_hours": 178.28,
       "timestamp_basis": "archive:first_published"
     },
     {
@@ -500,31 +709,7 @@
       "category_key": "politics",
       "role": "card",
       "reason": "missing_or_stale_canonical_timestamp",
-      "age_hours": 71.9,
-      "timestamp_basis": "archive:first_published"
-    },
-    {
-      "headline": "House Republicans weigh impeaching Defense Secretary Hegseth this week over alleged illegal continuation of Iran war",
-      "category_key": "politics",
-      "role": "card",
-      "reason": "missing_or_stale_canonical_timestamp",
-      "age_hours": 105.9,
-      "timestamp_basis": "archive:first_published"
-    },
-    {
-      "headline": "Attorney General dismisses Calley Means' White House corruption allegations as former FDA chief backs some claims",
-      "category_key": "politics",
-      "role": "card",
-      "reason": "missing_or_stale_canonical_timestamp",
-      "age_hours": 95.93,
-      "timestamp_basis": "archive:first_published"
-    },
-    {
-      "headline": "Trump replaces chief of staff Susie Wiles with Stephen Miller after GOP midterm losses",
-      "category_key": "politics",
-      "role": "card",
-      "reason": "missing_or_stale_canonical_timestamp",
-      "age_hours": 137.86,
+      "age_hours": 168.28,
       "timestamp_basis": "archive:first_published"
     }
   ],
