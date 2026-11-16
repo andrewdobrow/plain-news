@@ -2795,6 +2795,24 @@ def write_archives(all_categories, top_cat, *, client=None, cache=None, material
                 })
                 print(f"  {cat_label}: discarded unrelated canonical match; "
                       f"recovered verified recent article: {headline[:90]}")
+            # If the exact publisher URL already has a separately verified
+            # canonical, keep its durable identity. A stale story-registry ID
+            # cannot overwrite it during an ordinary unchanged reread.
+            incoming_source_key = re.sub(
+                r"[?#].*$", "", str(source_url).strip().rstrip("/").casefold()
+            )
+            existing_source_key = re.sub(
+                r"[?#].*$", "", str(existing.get("source_url") or "").strip().rstrip("/").casefold()
+            )
+            if (
+                not target_slug and incoming_source_key and existing_source_key
+                and incoming_source_key == existing_source_key
+                and existing.get("story_id")
+                and hero.get("story_id") != existing.get("story_id")
+            ):
+                hero["story_id"] = existing["story_id"]
+                if existing.get("event_key"):
+                    hero["event_key"] = existing["event_key"]
             slug=existing["slug"];hero["_archived_slug"]=slug
             editorial_action=str(hero.get("editorial_action") or "").casefold(); should_update=bool(target_slug) or editorial_action in {"update_existing","replace_canonical"} or (sem or {}).get("action")==ACTION_UPDATE
             if not should_update:
