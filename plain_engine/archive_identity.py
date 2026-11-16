@@ -28,6 +28,17 @@ def is_duplicate_headline(headline: str, existing_token_sets: Iterable[Iterable[
     return any(len(new_tokens & frozenset(tokens)) >= 4 for tokens in existing_token_sets)
 
 
+# Shared court/institution boilerplate cannot establish identity across cases.
+# Distinctive subject terms must overlap before a legacy fuzzy headline match
+# can reuse a public permalink (e.g. DEI appeals versus a gun-industry suit).
+_GENERIC_LEGAL_FRAME = frozenset({
+    "supreme", "court", "federal", "appeals", "appeal", "judges",
+    "declines", "declined", "hear", "hearing", "rules", "ruled",
+    "ruling", "rulings", "allows", "allowed", "leaving", "lower",
+    "intact", "challenge", "challenging", "lawsuit", "case",
+})
+
+
 def find_matching_entry(
     headline: str,
     archive: Iterable[Mapping[str, Any]],
@@ -41,11 +52,10 @@ def find_matching_entry(
     created before the registry existed.
     """
     entries = list(archive)
-    if story_id:
-        for entry in entries:
-            if str(entry.get("story_id") or "") == story_id:
-                return entry
 
+    # An exact independent source URL is stronger than a potentially poisoned
+    # story registry ID. On a later run it should return the already published
+    # article even if the persistent engine sends an old colliding ID.
     if source_url:
         def norm_url(value: str) -> str:
             return re.sub(r"[?#].*$", "", str(value or "").strip().rstrip("/").lower())
@@ -57,10 +67,16 @@ def find_matching_entry(
                 if entry.get("source_url") and norm_url(str(entry["source_url"])) == normalized:
                     return entry
 
+    if story_id:
+        for entry in entries:
+            if str(entry.get("story_id") or "") == story_id:
+                return entry
+
     tokens = signature_tokens(headline)
     if len(tokens) < 3:
         return None
     for entry in entries:
-        if len(tokens & signature_tokens(str(entry.get("headline") or ""))) >= 4:
+        common = tokens & signature_tokens(str(entry.get("headline") or ""))
+        if len(common) >= 4 and len(common - _GENERIC_LEGAL_FRAME) >= 2:
             return entry
     return None
