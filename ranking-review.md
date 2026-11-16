@@ -12,33 +12,33 @@
 
 | Rank | Current | Recommended | Score | Why |
 | ---: | --- | --- | ---: | --- |
-| 1 | Houthi rebels seize control of key Red Sea strait as Yemeni army withdraws to defend Aden | Nvidia board dismisses campaign to reinstate ousted CEO Jensen Huang as new US export curbs on AI chips take effect | 92 | importance 100; freshness 98.14; urgency 7/10 |
-| 2 | Five EU countries plan Rwanda deportation hub by 2027 | Companies used Trump tariff refunds for executive bonuses, investigation finds | 88 | importance 95; freshness 95.58; urgency 6/10 |
-| 3 | UK and EU negotiators finalize post-Brexit food trade reset requiring British alignment with EU rules | Mavis Staples headlines National Folk Festival in Jackson days after Mississippi's first Black U.S. Senator elected since Reconstruction | 84 | importance 88; freshness 99.51; urgency 5/10 |
-| 4 | Krakow mass shooting suspect dies in hospital as Polish prosecutors say motive investigation continues | Trump nominates OMB official Eric Ueland to head GAO watchdog agency | 82 | importance 67; freshness 99.99; urgency 7/10 |
-| 5 | France accuses Iran's Revolutionary Guard of orchestrating cyberattacks on European supermarket refrigeration systems | Robert Pattinson named next James Bond, seventh actor to play 007 | 74 | importance 50; freshness 99.99; urgency 7/10 |
-| 6 | Massachusetts judge sets March 2027 retrial for woman accused of killing three children after hung jury | US hyperscale data centers consumed 82 terawatt-hours of electricity in past year, more than most countries | 74 | importance 52; freshness 99.96; urgency 6/10 |
-| 7 | Forensic pathologist disputes Epstein suicide ruling, tells BBC autopsy photos suggest homicide | Tech leaders claim Jensen Huang's Nvidia exit was orchestrated plot | 74 | importance 47; freshness 99.96; urgency 7/10 |
-| 8 | ICE detains 8-year-old Haitian boy at routine check-in after TPS termination, prompting San Diego school district response | Houthi rebels seize control of key Red Sea strait as Yemeni army withdraws to defend Aden | 72 | importance 45; freshness 99.99; urgency 6/10 |
-| 9 | House GOP report faults Justice Department for decades of failures in Epstein case, urges reinterviewing witnesses | Forensic pathologist disputes Epstein suicide ruling, tells BBC autopsy photos suggest homicide | 71 | importance 53; freshness 95.16; urgency 5/10 |
-| 10 | Philadelphia boycott of Jewish-owned restaurants draws dueling protests, three arrests | Congressional Budget Office Director Phillip Swagel to retire in January | 67 | importance 47; freshness 85.02; urgency 5/10 |
-| 11 | Supreme Court allows border wall construction in Texas Big Bend region in 8-1 ruling | Massachusetts judge sets March 2027 retrial for woman accused of killing three children after hung jury | 65 | importance 30; freshness 99.99; urgency 6/10 |
-| 12 | Software bug disrupts Chase banking nationwide, slowing Zelle and transactions at other banks | Judge dismisses four claims against Priscilla Presley in business dispute, allows allegations tied to Lisa Marie's death | 68 | importance 46; freshness 98.07; urgency 5/10; -6 category saturation |
+| 1 | Germany, Denmark, Austria, Greece and Netherlands to open migrant deportation hub in Rwanda in 2027 | Mavis Staples celebrates Mississippi's first Black senator since Reconstruction at Jackson festival | 88 | importance 88; freshness 98.81; urgency 7/10 |
+| 2 | UK set to sign Brexit food trade reset with EU, aiming for £5bn economic boost | Major companies directed tariff refund money to executive bonuses, ProPublica investigation finds | 82 | importance 95; freshness 99.29; urgency 3/10 |
+| 3 | Houthi rebels seize control of key Red Sea strait as Yemeni army withdraws to defend Aden | Trump nominates OMB official Eric Ueland to head GAO watchdog agency | 77 | importance 67; freshness 99.29; urgency 5/10 |
+| 4 | Forensic expert reviewing autopsy photos says Jeffrey Epstein was strangled, not suicide | Forensic expert reviewing autopsy photos says Jeffrey Epstein was strangled, not suicide | 75 | importance 53; freshness 99.99; urgency 6/10 |
+| 5 | Massachusetts judge sets March 2027 retrial for woman accused of killing three children after hung jury | US hyperscale data centers consumed as much electricity as many mid-sized countries, study finds | 74 | importance 52; freshness 99.26; urgency 6/10 |
+| 6 | Chase, Wells Fargo, Bank of America customers report service outages | Tech leaders question circumstances of Nvidia CEO Jensen Huang's resignation | 74 | importance 47; freshness 99.26; urgency 7/10 |
+| 7 | Major companies directed tariff refund money to executive bonuses, ProPublica investigation finds | Judge dismisses four claims in Priscilla Presley fraud lawsuit, allows Lisa Marie death allegations | 68 | importance 46; freshness 97.37; urgency 5/10 |
+| 8 | Software bug disrupts Chase banking nationwide, slowing Zelle and transactions at other banks | Houthi rebels seize control of key Red Sea strait as Yemeni army withdraws to defend Aden | 65 | importance 45; freshness 99.29; urgency 3/10 |
+| 9 | Cybersecurity firm Infoblox confirms breach through compromised SharePoint migration vendor | UK set to sign Brexit food trade reset with EU, aiming for £5bn economic boost | 62 | importance 28; freshness 86.3; urgency 7/10 |
+| 10 | Microsoft says dormant bug, traffic shifts caused 24-hour Microsoft 365 outage | Chase, Wells Fargo, Bank of America customers report service outages | 62 | importance 15; freshness 99.99; urgency 6/10 |
+| 11 | Apple unveils new macOS security controls to limit AI agents' access to user data | Spider-Man: Brand New Day extended cut to hit theaters in December | 66 | importance 40; freshness 98.51; urgency 5/10; -6 category saturation |
+| 12 | US hyperscale data centers consumed as much electricity as many mid-sized countries, study finds | Massachusetts judge sets March 2027 retrial for woman accused of killing three children after hung jury | 58 | importance 30; freshness 99.29; urgency 3/10 |
 
 ## Recommended moves
 
-- **Trump nominates OMB official Eric Ueland to head GAO watchdog agency**: 47 → 4 — importance 67; freshness 99.99; urgency 7/10
-- **Congressional Budget Office Director Phillip Swagel to retire in January**: 48 → 10 — importance 47; freshness 85.02; urgency 5/10
-- **Mavis Staples headlines National Folk Festival in Jackson days after Mississippi's first Black U.S. Senator elected since Reconstruction**: 40 → 3 — importance 88; freshness 99.51; urgency 5/10
-- **Robert Pattinson named next James Bond, seventh actor to play 007**: 38 → 5 — importance 50; freshness 99.99; urgency 7/10
-- **Judge dismisses four claims against Priscilla Presley in business dispute, allows allegations tied to Lisa Marie's death**: 39 → 12 — importance 46; freshness 98.07; urgency 5/10; -6 category saturation
-- **Tech leaders claim Jensen Huang's Nvidia exit was orchestrated plot**: 28 → 7 — importance 47; freshness 99.96; urgency 7/10
-- **US hyperscale data centers consumed 82 terawatt-hours of electricity in past year, more than most countries**: 25 → 6 — importance 52; freshness 99.96; urgency 6/10
-- **Companies used Trump tariff refunds for executive bonuses, investigation finds**: 15 → 2 — importance 95; freshness 95.58; urgency 6/10
-- **Nvidia board dismisses campaign to reinstate ousted CEO Jensen Huang as new US export curbs on AI chips take effect**: 13 → 1 — importance 100; freshness 98.14; urgency 7/10
-- **UK and EU negotiators finalize post-Brexit food trade reset requiring British alignment with EU rules**: 3 → 14 — importance 28; freshness 87.0; urgency 5/10
-- **Five EU countries plan Rwanda deportation hub by 2027**: 2 → 13 — importance 0; freshness 88.31; urgency 6/10
-- **Krakow mass shooting suspect dies in hospital as Polish prosecutors say motive investigation continues**: 4 → 15 — importance 56; freshness 0.0; urgency 3/10
+- **Mavis Staples celebrates Mississippi's first Black senator since Reconstruction at Jackson festival**: 33 → 1 — importance 88; freshness 98.81; urgency 7/10
+- **Trump nominates OMB official Eric Ueland to head GAO watchdog agency**: 34 → 3 — importance 67; freshness 99.29; urgency 5/10
+- **Judge dismisses four claims in Priscilla Presley fraud lawsuit, allows Lisa Marie death allegations**: 28 → 7 — importance 46; freshness 97.37; urgency 5/10
+- **Spider-Man: Brand New Day extended cut to hit theaters in December**: 29 → 11 — importance 40; freshness 98.51; urgency 5/10; -6 category saturation
+- **Germany, Denmark, Austria, Greece and Netherlands to open migrant deportation hub in Rwanda in 2027**: 1 → 13 — importance 0; freshness 99.99; urgency 7/10
+- **Tech leaders question circumstances of Nvidia CEO Jensen Huang's resignation**: 15 → 6 — importance 47; freshness 99.26; urgency 7/10
+- **US hyperscale data centers consumed as much electricity as many mid-sized countries, study finds**: 12 → 5 — importance 52; freshness 99.26; urgency 6/10
+- **UK set to sign Brexit food trade reset with EU, aiming for £5bn economic boost**: 2 → 9 — importance 28; freshness 86.3; urgency 7/10
+- **Massachusetts judge sets March 2027 retrial for woman accused of killing three children after hung jury**: 5 → 12 — importance 30; freshness 99.29; urgency 3/10
+- **Microsoft says dormant bug, traffic shifts caused 24-hour Microsoft 365 outage**: 10 → 16 — importance 25; freshness 96.75; urgency 6/10
+- **Software bug disrupts Chase banking nationwide, slowing Zelle and transactions at other banks**: 8 → 14 — importance 15; freshness 99.29; urgency 3/10
+- **Cybersecurity firm Infoblox confirms breach through compromised SharePoint migration vendor**: 9 → 15 — importance 0; freshness 99.99; urgency 6/10
 
 ## Guardrails
 
