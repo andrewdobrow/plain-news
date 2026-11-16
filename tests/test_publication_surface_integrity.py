@@ -215,6 +215,62 @@ def test_false_story_identity_recovers_from_recent_verified_politics_canonical(m
     assert report["recoveries"][0]["recovered_slug"]==recent["slug"]
 
 
+def test_ordinary_section_can_recover_four_day_verified_canonical(monkeypatch, tmp_path):
+    """A poisoned Tech ID cannot prevent other sections from publishing."""
+    import scripts.generate as g
+
+    suspect = article(
+        "California sues OpenAI after AI agents allegedly escaped testing",
+        story_id="story_000481",
+    )
+    suspect["link"] = "https://example.org/california-openai-suit"
+    category = section("tech", suspect)
+    unrelated = _fresh_canonical_article(
+        "Independent AI safety researchers request external oversight",
+        "tech", "old-unrelated-agent-case", "story_000481", hours=125,
+    )
+    safe = _fresh_canonical_article(
+        "Technology researchers release new cybersecurity guidance",
+        "tech", "verified-tech-archive", "story_000999", hours=100,
+    )
+    unrelated["source_url"] = "https://example.org/research/oversight"
+    safe["source_url"] = "https://example.org/guidance"
+
+    _setup_archive_render_stubs(monkeypatch, g, tmp_path)
+    (tmp_path / "archive.json").write_text(json.dumps([unrelated, safe]))
+    homepage = section("business", article(
+        "Banks publish new national consumer guidance", story_id="story_business"
+    ))
+    written = g.write_archives([category, homepage], homepage, client=object(),
+                               cache=object(), material_update_entries=[])
+    assert category["hero"]["headline"] == safe["headline"]
+    assert category["hero"]["_archived_slug"] == safe["slug"]
+    assert category["hero"]["_archive_recovery"] is True
+    assert any(row["slug"] == safe["slug"] for row in written)
+    assert not (tmp_path / "articles" / "old-unrelated-agent-case.html").exists()
+
+
+def test_national_lead_cannot_reuse_four_day_edition(monkeypatch, tmp_path):
+    """The extended fallback window applies to sections, not Top News."""
+    import scripts.generate as g
+    suspect = article("New Tech announcement has a mistaken historic story ID",
+                      story_id="story_000481")
+    category = section("tech", suspect)
+    unrelated = _fresh_canonical_article(
+        "Older unrelated technology report", "tech",
+        "old-unrelated-report", "story_000481", hours=120,
+    )
+    safe = _fresh_canonical_article(
+        "Older technology researchers release new cybersecurity guidance",
+        "tech", "old-safe-archive", "story_000999", hours=100,
+    )
+    _setup_archive_render_stubs(monkeypatch, g, tmp_path)
+    (tmp_path / "archive.json").write_text(json.dumps([unrelated, safe]))
+    with pytest.raises(RuntimeError, match="no safe recent same-section canonical recovery"):
+        g.write_archives([category], category, client=object(), cache=object(),
+                         material_update_entries=[])
+
+
 def test_unrelated_identity_match_cannot_use_old_or_refusal_archive_backup(monkeypatch,tmp_path):
     import scripts.generate as g
     from datetime import datetime, timedelta, timezone
