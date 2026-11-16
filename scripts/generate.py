@@ -2599,6 +2599,101 @@ def _replace_unsafe_ordinary_hero_with_canonical(
     return matching
 
 
+def _verify_unrelated_canonical_as_new(hero, existing, working, cat_key, client):
+    """Independently verify a fresh story was incorrectly attached to an old event.
+
+    This is NOT a generic exception bypass. Before minting a new immutable story
+    identity, compare its FULL source-backed claims against the rejected
+    canonical plus recent nearby records with the terminal semantic adjudicator.
+    Provider errors, ambiguity, same-event updates and insufficient evidence
+    still fail closed. Protected material updates never enter this path.
+    """
+    if _validated_material_update_target(hero) or hero.get("pre_generation_material_update"):
+        return None
+    def normalized_url(value):
+        return re.sub(r"[?#].*$", "", str(value or "").strip().rstrip("/").casefold())
+    source_url = normalized_url(hero.get("link") or hero.get("source_url"))
+    old_url = normalized_url(existing.get("source_url"))
+    if not source_url or source_url == old_url:
+        return None
+    if any(normalized_url(row.get("source_url")) == source_url for row in working):
+        return None  # Must reuse the known canonical instead of duplicating it.
+    if str(hero.get("source_quality") or "") not in {"full", "summary"}:
+        return None
+    if word_count(hero.get("article_text") or hero.get("source_summary") or "") < MIN_SOURCE_WORDS:
+        return None
+    if surface_errors(hero, cat_key, hero=True):
+        return None
+
+    incoming = _incoming_for_gate(hero)
+    archive_candidates = [_canonical_for_gate(row) for row in working]
+    candidates = [_canonical_for_gate(existing)]
+    seen = {str(existing.get("slug") or "")}
+    for row in retrieve_recent_candidates(incoming, archive_candidates, window_days=14, max_candidates=10):
+        slug = str(row.get("slug") or "")
+        if slug not in seen:
+            candidates.append(row)
+            seen.add(slug)
+    decision = adjudicate_candidates(
+        client, model="claude-sonnet-5", incoming=incoming,
+        candidates=candidates, timeout_seconds=45,
+    )
+    if not (
+        decision.get("status") == "validated"
+        and decision.get("action") == ACTION_NEW
+        and decision.get("same_real_world_event") is False
+        and float(decision.get("confidence") or 0.0) >= 0.82
+    ):
+        return None
+
+    # Registry collisions must not hijack an existing immutable story ID.
+    # Derive a stable numeric ID from the independently verified URL/title,
+    # far outside sequential registry allocation, checking the archive for
+    # accidental collisions. The URL wins on subsequent publication runs.
+    identity = hashlib.sha256((source_url + "\n" + str(hero.get("headline") or "").casefold()).encode()).hexdigest()
+    new_id = "story_" + str(int(identity[:14], 16) + 10000000000000000)
+    occupied = {str(x.get("story_id") or "") for x in working}
+    if new_id in occupied:
+        return None
+    hero["story_id"] = new_id
+    hero["event_key"] = "independent-" + identity[:16]
+    hero["editorial_action"] = "publish_new"
+    hero.pop("_archived_slug", None)
+    hero.pop("canonical_context", None)
+    return decision
+
+
+def _stage_independent_new_hero(hero, cat_key, cat_label, working, staged, articles_dir, today, now_iso):
+    """Stage a freshly corroborated independent article without public writes."""
+    headline = str(hero.get("headline") or "").strip()
+    source_url = str(hero.get("link") or hero.get("source_url") or "")
+    existing_slugs = {x.get("slug") for x in working}
+    base = f"{today}-{slugify(headline)}"
+    slug = base
+    suffix = 1
+    while slug in existing_slugs:
+        slug = f"{base}-{suffix}"
+        suffix += 1
+    hero["_archived_slug"] = slug
+    staged.append((articles_dir / f"{slug}.html", render_article_page(hero, cat_label, cat_key, today, slug)))
+    working.append({
+        "slug": slug, "headline": headline,
+        "teaser": hero.get("teaser", "") or hero.get("body", "")[:180],
+        "body": hero.get("body", ""), "category_key": cat_key,
+        "category_label": cat_label, "date": today,
+        "first_published": now_iso, "lastmod": today,
+        "last_seen": now_iso, "image_url": hero.get("image_url", ""),
+        "source_image_url": hero.get("image_url", "") if not hero.get("is_fallback_image") else "",
+        "image_credit": hero.get("image_credit", ""),
+        "image_origin": hero.get("image_origin", ""),
+        "source_url": source_url, "source_headline": hero.get("source_title", ""),
+        "source_published_raw": hero.get("source_published_raw", ""),
+        "story_id": hero.get("story_id", ""), "event_key": hero.get("event_key", ""),
+        "editorial_action": "publish_new",
+    })
+    return slug
+
+
 def write_archives(all_categories, top_cat, *, client=None, cache=None, material_update_entries=None):
     """Canonical publication barrier: duplicate/update/new is decided before URLs write."""
     articles_dir = OUTPUT_DIR / "articles"; archive_path = OUTPUT_DIR / "archive.json"; articles_dir.mkdir(exist_ok=True)
@@ -2659,10 +2754,29 @@ def write_archives(all_categories, top_cat, *, client=None, cache=None, material
                     rejected_slug=str(existing.get("slug") or ""),
                 )
                 if not fallback:
+                    decision = _verify_unrelated_canonical_as_new(
+                        hero, existing, working, cat_key, client
+                    )
+                    if decision:
+                        new_slug = _stage_independent_new_hero(
+                            hero, cat_key, cat_label, working, staged, articles_dir, today, now_iso
+                        )
+                        new_count += 1
+                        identity_recoveries.append({
+                            "category": cat_key, "discarded_live_headline": unsafe_title,
+                            "mismatched_canonical": unsafe_target,
+                            "recovered_headline": hero.get("headline", ""),
+                            "recovered_slug": new_slug,
+                            "reason": "separate_new_event_independently_semantic_verified",
+                            "semantic_confidence": decision.get("confidence"),
+                        })
+                        print(f"  {cat_label}: independently verified separate new event, "
+                              f"rather than rewriting unrelated canonical: {unsafe_title[:95]}")
+                        continue
                     raise RuntimeError(
                         f"Terminal archive identity mismatch in {cat_key}: "
                         f"live={unsafe_title!r}; canonical={unsafe_target!r}; "
-                        "no safe recent same-section canonical recovery; refusing unrelated substitution"
+                        "no safe recent same-section canonical recovery or independently verified new event"
                     )
                 # Keep the original in-place object reference so both the
                 # section and top-page renderer see the verified replacement.
@@ -2681,6 +2795,24 @@ def write_archives(all_categories, top_cat, *, client=None, cache=None, material
                 })
                 print(f"  {cat_label}: discarded unrelated canonical match; "
                       f"recovered verified recent article: {headline[:90]}")
+            # If the exact publisher URL already has a separately verified
+            # canonical, keep its durable identity. A stale story-registry ID
+            # cannot overwrite it during an ordinary unchanged reread.
+            incoming_source_key = re.sub(
+                r"[?#].*$", "", str(source_url).strip().rstrip("/").casefold()
+            )
+            existing_source_key = re.sub(
+                r"[?#].*$", "", str(existing.get("source_url") or "").strip().rstrip("/").casefold()
+            )
+            if (
+                not target_slug and incoming_source_key and existing_source_key
+                and incoming_source_key == existing_source_key
+                and existing.get("story_id")
+                and hero.get("story_id") != existing.get("story_id")
+            ):
+                hero["story_id"] = existing["story_id"]
+                if existing.get("event_key"):
+                    hero["event_key"] = existing["event_key"]
             slug=existing["slug"];hero["_archived_slug"]=slug
             editorial_action=str(hero.get("editorial_action") or "").casefold(); should_update=bool(target_slug) or editorial_action in {"update_existing","replace_canonical"} or (sem or {}).get("action")==ACTION_UPDATE
             if not should_update:
@@ -2708,6 +2840,26 @@ def write_archives(all_categories, top_cat, *, client=None, cache=None, material
                             failure_reason="canonical_substitution_failed:" + ",".join(errors),
                         )
                         if not recovered:
+                            decision = _verify_unrelated_canonical_as_new(
+                                hero, existing, working, cat_key, client
+                            )
+                            if decision:
+                                new_slug = _stage_independent_new_hero(
+                                    hero, cat_key, cat_label, working, staged, articles_dir, today, now_iso
+                                )
+                                new_count += 1
+                                identity_recoveries.append({
+                                    "category": cat_key, "discarded_live_headline": unsafe_title,
+                                    "mismatched_canonical": str(existing.get("headline") or ""),
+                                    "recovered_headline": hero.get("headline", ""),
+                                    "recovered_slug": new_slug,
+                                    "reason": "canonical_substitution_new_event_independently_verified",
+                                    "semantic_confidence": decision.get("confidence"),
+                                    "validation_errors": errors,
+                                })
+                                print(f"  {cat_label}: declined unsafe canonical substitution; "
+                                      f"independently verified separate new event: {unsafe_title[:95]}")
+                                continue
                             raise RuntimeError(
                                 f"Unsafe canonical substitution in {cat_key}: "
                                 f"live={unsafe_title!r}; canonical={existing.get('headline')!r}; "

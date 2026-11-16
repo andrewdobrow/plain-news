@@ -144,8 +144,23 @@ def canonical_reuse_is_corroborated(item, existing):
             }
         }
     a, b = tokens(old_title), tokens(new_title)
-    shared = len(a & b)
-    return shared >= 3 and shared / max(1, min(len(a), len(b))) >= .5
+    shared_tokens = a & b
+    # "Supreme Court declines to hear ..." describes a procedural frame,
+    # not the underlying case. Independent subjects (gun-industry liability
+    # vs DEI appeals) must not become one canonical merely because the court
+    # and disposition match.
+    generic_legal_frame = {
+        "supreme", "court", "federal", "judges", "declines", "declined",
+        "hear", "hearing", "appeals", "appeal", "ruling", "rulings",
+        "allows", "allowed", "leaving", "lower", "intact",
+        "challenge", "challenging", "case", "lawsuit",
+    }
+    shared = len(shared_tokens)
+    return (
+        shared >= 3
+        and shared / max(1, min(len(a), len(b))) >= .5
+        and bool(shared_tokens - generic_legal_frame)
+    )
 
 
 def verify_category_heroes(categories, top_cat):
