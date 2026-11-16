@@ -2968,7 +2968,7 @@ def write_archives(all_categories, top_cat, *, client=None, cache=None, material
 def _is_source_stale(row, hours=72):
     raw = str(row.get("published") or "")
     if not raw:
-        return False
+        return True  # Undated feed content cannot qualify as current reporting.
     try:
         from email.utils import parsedate_to_datetime
         from datetime import timezone as _tz
@@ -2978,9 +2978,10 @@ def _is_source_stale(row, hours=72):
             from datetime import datetime as _dt, timezone as _tz
             dt = _dt.fromisoformat(raw.replace("Z", "+00:00")).astimezone(_tz.utc)
         except Exception:
-            return False
+            return True
     from datetime import datetime as _dt, timezone as _tz
-    return (_dt.now(_tz.utc) - dt).total_seconds() > hours * 3600
+    age_seconds = (_dt.now(_tz.utc) - dt).total_seconds()
+    return age_seconds > hours * 3600 or age_seconds < -3600
 
 
 def _bind_canonical_context(rows, archive):
@@ -3470,7 +3471,9 @@ def main():
     for cat_key,cfg in CATEGORIES.items():
         rows=recover_headlines(cfg["feeds"],cache=cache,limit=24,feed_documents=feed_documents,image_extractor=authoritative_extract_image)
         max_age=72 if cat_key in {"world","business","tech","sports","entertainment"} else 60
-        rows=[r for r in rows if not _is_source_stale(r,max_age)] or rows[:12]
+        # No fallback to the oldest 12 RSS items. This previously resurrected
+        # stale reporting whenever the live feeds lacked usable fresh items.
+        rows=[r for r in rows if not _is_source_stale(r,max_age)]
         _bind_canonical_context(rows,archive);source_sets[cat_key]=rows
         print(f"  {cfg['label']}: {len(rows)} exact-source candidates")
 
