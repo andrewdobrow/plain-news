@@ -377,3 +377,105 @@ def test_terminal_semantic_hold_without_safe_archive_still_fails_closed(monkeypa
     with pytest.raises(RuntimeError,match="no safe recent sports recovery"):
         g.write_archives([cat],cat,client=object(),cache=object(),material_update_entries=[])
     assert json.loads((tmp_path/"archive.json").read_text())==[]
+
+
+
+def test_supreme_court_unrelated_cases_do_not_share_legacy_fuzzy_permalink():
+    from plain_engine.archive_identity import find_matching_entry
+    old = [{
+        "slug": "old-gun-case",
+        "headline": "Supreme Court declines to hear gun industry challenge to New York liability law",
+    }]
+    fresh = "Supreme Court declines to hear three conservative appeals on DEI, leaving lower-court rulings intact"
+    assert find_matching_entry(fresh, old) is None
+    assert find_matching_entry(old[0]["headline"], old) is old[0]
+
+
+def test_exact_source_url_precedes_poisoned_registry_story_id():
+    from plain_engine.archive_identity import find_matching_entry
+    rows = [
+        {"story_id": "story_000091", "slug": "old-gun-case",
+         "headline": "Supreme Court declines to hear gun industry challenge to New York liability law",
+         "source_url": "https://example.org/gun-industry-lawsuit"},
+        {"story_id": "story_900000001", "slug": "new-dei-case",
+         "headline": "Supreme Court declines to hear three conservative appeals on DEI",
+         "source_url": "https://example.org/dei-appeals"},
+    ]
+    selected = find_matching_entry(
+        "Supreme Court declines to hear three conservative appeals on DEI",
+        rows, source_url="https://example.org/dei-appeals", story_id="story_000091",
+    )
+    assert selected is rows[1]
+
+
+def test_unrelated_supreme_court_cases_can_publish_separately_only_after_independent_validation(monkeypatch,tmp_path):
+    import scripts.generate as g
+    from plain_engine.archive_identity import find_matching_entry
+    old_title = "Supreme Court declines to hear gun industry challenge to New York liability law"
+    new_title = "Supreme Court declines to hear three conservative appeals on DEI, leaving lower-court rulings intact"
+    incoming = article(new_title, story_id="story_000091")
+    incoming["link"] = "https://example.org/dei-appeals"
+    cat = section("politics", incoming)
+    prior = _fresh_canonical_article(
+        old_title,"politics","old-gun-case","story_000091",hours=85
+    )
+    prior["source_url"] = "https://example.org/gun-industry-lawsuit"
+    before = json.loads(json.dumps(prior))
+    assert find_matching_entry(new_title,[prior],incoming["link"],incoming["story_id"]) is prior
+    _setup_archive_render_stubs(monkeypatch,g,tmp_path)
+    (tmp_path/"archive.json").write_text(json.dumps([prior]))
+    monkeypatch.setattr(g,"adjudicate_candidates",lambda *a,**kw:{
+        "status":"validated", "action":g.ACTION_NEW,
+        "same_real_world_event":False, "confidence":0.98,
+        "selected_candidate_slug":"",
+    })
+    written = g.write_archives([cat],cat,client=object(),cache=object(),
+                               material_update_entries=[])
+    assert len(written)==2
+    assert written[0]==before
+    assert written[1]["headline"]==new_title
+    assert written[1]["story_id"]!=prior["story_id"]
+    assert written[1]["source_url"]==incoming["link"]
+    assert (tmp_path/"articles"/(written[1]["slug"]+".html")).exists()
+    report=json.loads((tmp_path/"archive-identity-recovery-report.json").read_text())
+    assert report["recoveries"][0]["reason"]=="separate_new_event_independently_semantic_verified"
+    assert report["recoveries"][0]["semantic_confidence"]==0.98
+
+
+def test_unrelated_supreme_court_cases_never_bypass_hold_or_insufficient_evidence(monkeypatch,tmp_path):
+    import scripts.generate as g
+    old_title="Supreme Court declines to hear gun industry challenge to New York liability law"
+    new_title="Supreme Court declines to hear three conservative appeals on DEI, leaving lower-court rulings intact"
+    incoming=article(new_title,story_id="story_000091")
+    incoming["link"]="https://example.org/dei-appeals"
+    cat=section("politics",incoming)
+    prior=_fresh_canonical_article(old_title,"politics","old-gun-case","story_000091",hours=85)
+    prior["source_url"]="https://example.org/gun-industry-lawsuit"
+    _setup_archive_render_stubs(monkeypatch,g,tmp_path)
+    (tmp_path/"archive.json").write_text(json.dumps([prior]))
+    monkeypatch.setattr(g,"adjudicate_candidates",lambda *a,**kw:{
+        "status":"validated", "action":g.ACTION_HOLD,
+        "same_real_world_event":False, "confidence":0.4,
+    })
+    with pytest.raises(RuntimeError,match="no safe recent same-section canonical recovery"):
+        g.write_archives([cat],cat,client=object(),cache=object(),
+                         material_update_entries=[])
+    assert json.loads((tmp_path/"archive.json").read_text())==[prior]
+    assert not list((tmp_path/"articles").glob("*.html"))
+
+
+def test_same_source_url_keeps_verified_archive_identity_not_poisoned_incoming_id(monkeypatch,tmp_path):
+    import scripts.generate as g
+    headline="Federal Reserve announces nationwide rate decision"
+    canonical=_fresh_canonical_article(headline,"business","fed-rate","story_000011",hours=2)
+    canonical["source_url"]="https://example.org/federal-reserve/decision"
+    incoming=article(headline,story_id="story_000999")
+    incoming["link"]=canonical["source_url"]
+    cat=section("business",incoming)
+    _setup_archive_render_stubs(monkeypatch,g,tmp_path)
+    (tmp_path/"archive.json").write_text(json.dumps([canonical]))
+    rows=g.write_archives([cat],cat,client=object(),cache=object(),
+                          material_update_entries=[])
+    assert len(rows)==1
+    assert incoming["story_id"]=="story_000011"
+    assert rows[0]["story_id"]=="story_000011"
