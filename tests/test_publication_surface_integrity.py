@@ -271,6 +271,19 @@ def test_national_lead_cannot_reuse_four_day_edition(monkeypatch, tmp_path):
                          material_update_entries=[])
 
 
+def test_undated_and_week_old_rss_sources_cannot_reenter_fresh_feed(monkeypatch):
+    import scripts.generate as g
+    from datetime import datetime, timedelta, timezone
+    from email.utils import format_datetime
+
+    recent = format_datetime(datetime.now(timezone.utc) - timedelta(hours=2), usegmt=True)
+    old = format_datetime(datetime.now(timezone.utc) - timedelta(days=9), usegmt=True)
+    assert not g._is_source_stale({"published": recent}, 72)
+    assert g._is_source_stale({"published": old}, 72)
+    assert g._is_source_stale({"published": ""}, 72)
+    assert g._is_source_stale({"published": "invalid source date"}, 72)
+
+
 def test_stale_archive_with_fresh_lastmod_is_not_eligible_for_backfill(monkeypatch, tmp_path):
     """A touched page does not make a week-old event fresh again."""
     import scripts.generate as g
