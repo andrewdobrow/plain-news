@@ -2506,11 +2506,12 @@ def _write_publication_integrity_report(archive, *, selected_update_entries=(), 
 
 
 def _recover_safe_identity_collision_hero(cat_key, cat_label, archive, all_categories, top_cat, original_hero, *, rejected_slug=""):
-    """Recover only a recent, publication-valid SAME-SECTION canonical.
+    """Recover only a publication-valid SAME-SECTION canonical.
 
-    Never clear a corrupt story ID and publish the same uncorroborated live
-    claims as new. A poisoned persistent identity should instead restore
-    verified previously published copy or fail closed.
+    Never clear a corrupt story ID and publish uncorroborated claims as new.
+    Protect the national lead's 72-hour freshness; ordinary sections may reuse
+    verified published copy up to seven days old so one bad identity match does
+    not block unrelated fresh sections. Older or unsafe archives fail closed.
     """
     from datetime import timezone
     from plain_engine.front_page_hero import canonical_timestamp
@@ -2530,10 +2531,15 @@ def _recover_safe_identity_collision_hero(cat_key, cat_label, archive, all_categ
 
     excluded = {str(rejected_slug)} if rejected_slug else set()
     now = datetime.now(timezone.utc)
+    # A national lead must remain fresh. An ordinary section may recover a
+    # quality-validated old edition (never relabeled as newly reported) for up
+    # to seven days when a poisoned story ID blocks the current draft.
+    is_national_lead = top_cat.get("hero") is original_hero
+    max_recovery_hours = 72 if is_national_lead else 7 * 24
     for _ in range(10):
         recovered = recover_category_from_archive(
             cat_key, cat_label, archive, card_count=0,
-            max_age_days=3, excluded_slugs=excluded,
+            max_age_days=max_recovery_hours // 24, excluded_slugs=excluded,
         )
         if not recovered:
             return None
@@ -2550,7 +2556,7 @@ def _recover_safe_identity_collision_hero(cat_key, cat_label, archive, all_categ
         candidate["publication_quality_reasons"] = []
         stamp, _ = canonical_timestamp(candidate, row)
         age = (now - stamp).total_seconds() / 3600 if stamp else None
-        if age is None or age < -1 or age > 72:
+        if age is None or age < -1 or age > max_recovery_hours:
             continue
         sid = str(candidate.get("story_id") or "")
         title_key = re.sub(r"[^a-z0-9]+", " ", str(candidate.get("headline") or "").casefold()).strip()
