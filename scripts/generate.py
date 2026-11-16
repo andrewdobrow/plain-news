@@ -2510,8 +2510,8 @@ def _recover_safe_identity_collision_hero(cat_key, cat_label, archive, all_categ
 
     Never clear a corrupt story ID and publish uncorroborated claims as new.
     Protect the national lead's 72-hour freshness; ordinary sections may reuse
-    verified published copy up to seven days old so one bad identity match does
-    not block unrelated fresh sections. Older or unsafe archives fail closed.
+    verified copy up to 48 hours old. Older or unsafe archives fail closed.
+    Fresh source-backed cards are preferred by the preflight repair step.
     """
     from datetime import timezone
     from plain_engine.front_page_hero import canonical_timestamp
@@ -2531,11 +2531,10 @@ def _recover_safe_identity_collision_hero(cat_key, cat_label, archive, all_categ
 
     excluded = {str(rejected_slug)} if rejected_slug else set()
     now = datetime.now(timezone.utc)
-    # A national lead must remain fresh. An ordinary section may recover a
-    # quality-validated old edition (never relabeled as newly reported) for up
-    # to seven days when a poisoned story ID blocks the current draft.
+    # A national lead must remain fresh. Ordinary sections may only recover
+    # recent quality-validated published copy, with its original timestamp.
     is_national_lead = top_cat.get("hero") is original_hero
-    max_recovery_hours = 72 if is_national_lead else 7 * 24
+    max_recovery_hours = 48 if not is_national_lead else 72
     for _ in range(10):
         recovered = recover_category_from_archive(
             cat_key, cat_label, archive, card_count=0,
@@ -3138,14 +3137,13 @@ def _enforce_card_summary_product(categories):
     return compacted
 
 
-def recover_category_from_archive(cat_key, cat_label, archive, *, card_count=CARDS_PER_CATEGORY, max_age_days=14, excluded_slugs=()):
+def recover_category_from_archive(cat_key, cat_label, archive, *, card_count=CARDS_PER_CATEGORY, max_age_days=2, excluded_slugs=()):
     """Fail closed to already-published canonicals when live generation is unavailable.
 
     This mirrors TCT's category-level failure containment: one feed/model outage must
     not destroy the entire edition, but recovery is allowed only from Plain's own
     existing permanent archive. No new facts, URLs, or model copy are invented.
     """
-    now = datetime.utcnow()
     excluded_slugs = {str(x) for x in excluded_slugs}
     candidates=[]
     for row in archive:
@@ -3156,18 +3154,18 @@ def recover_category_from_archive(cat_key, cat_label, archive, *, card_count=CAR
             continue
         if row.get("withdrawn") or row.get("ranking_eligible") is False:
             continue
-        raw_date=str(row.get("lastmod") or row.get("date") or "").strip()
-        try:
-            dt=datetime.fromisoformat(raw_date[:10])
-            if (now-dt).days > max_age_days:
-                continue
-        except Exception:
-            pass
+        # lastmod can change when a page is regenerated without a verified
+        # material development. Never treat it as the date of the news event.
+        age = _verified_item_age_hours(row, archive_row=row)
+        if age is None or age < -1 or age > 24 * max_age_days:
+            continue
         body=_archive_article_body(row)
         if len(body.split()) < 80:
             continue
         candidates.append((row,body))
-    candidates.sort(key=lambda pair:_archive_sort_value(pair[0]),reverse=True)
+    candidates.sort(key=lambda pair: _archive_sort_value({
+        "date": pair[0].get("first_published") or pair[0].get("date") or ""
+    }), reverse=True)
     if not candidates:
         return None
 
@@ -3244,7 +3242,140 @@ def _filter_publication_ready_sources(source_sets):
     return report
 
 
-def _archive_depth_backfill(all_categories, archive, *, target_cards=CARDS_PER_CATEGORY, max_age_days=7):
+def _verified_item_age_hours(item, *, archive_row=None, now=None):
+    """Age the actual event, not lastmod or an attractive formatted date.
+
+    A regenerated canonical cannot become today's news merely because its
+    page's lastmod was refreshed. When original source and first publication
+    dates both exist, use the older timestamp. Meaningful verified updates are
+    allowed to use their latest independently dated source development.
+    """
+    from plain_engine.front_page_hero import canonical_timestamp, parse_publication_timestamp
+
+    now = now or datetime.now(timezone.utc)
+    item = item or {}
+    row = archive_row or {}
+    validated_update = bool(
+        item.get("pre_generation_material_update")
+        and _validated_material_update_target(item)
+    )
+    canonical_stamp, _ = canonical_timestamp(item, row)
+    source_stamp = parse_publication_timestamp(
+        item.get("source_published_raw")
+        or row.get("source_published_raw")
+        or item.get("published_raw")
+    )
+    if validated_update and source_stamp:
+        stamps = [source_stamp]
+    else:
+        stamps = [stamp for stamp in (canonical_stamp, source_stamp) if stamp]
+    if not stamps:
+        return None
+    return max((now - stamp).total_seconds() / 3600 for stamp in stamps)
+
+
+def _fresh_surface_item(item, archive, max_hours=48, *, now=None):
+    """Require a verifiable fresh event time on each reader-visible placement."""
+    if not isinstance(item, dict) or not item.get("headline"):
+        return False
+    linked = find_matching_entry(
+        item.get("headline", ""), archive,
+        item.get("link", ""), item.get("story_id", ""),
+    )
+    # Never let an unrelated poisoned ID provide timestamp authority.
+    row = linked if linked and canonical_reuse_is_corroborated(item, linked) else None
+    age = _verified_item_age_hours(item, archive_row=row, now=now)
+    return age is not None and -1 <= age <= max_hours
+
+
+def _prune_stale_surface_cards(categories, archive, *, max_hours=48, now=None):
+    """A thin section is preferable to misleading week-old 'latest news'."""
+    removed = 0
+    for category in categories:
+        previous = list(category.get("cards") or [])
+        category["cards"] = [
+            card for card in previous
+            if _fresh_surface_item(card, archive, max_hours, now=now)
+        ]
+        count = len(previous) - len(category["cards"])
+        removed += count
+        if count:
+            print(
+                f"  {category.get('category_label')}: omitted {count} stale/undated "
+                "supporting card(s) from current edition"
+            )
+    return removed
+
+
+def _repair_misbound_live_section_heroes(categories, archive, client):
+    """Prefer a fresh validated LIVE card to a several-day-old archive hero.
+
+    A poisoned registry ID may associate an unrelated freshly written section
+    lead with an old canonical. Promote a separate source-backed current card
+    only after expanding it into a fully validated hero article; the normal
+    terminal publication/identity checks still run afterward.
+    """
+    fixed = 0
+    for category in categories:
+        hero = category.get("hero") or {}
+        if _validated_material_update_target(hero) or hero.get("pre_generation_material_update"):
+            continue
+        matching = find_matching_entry(
+            hero.get("headline", ""), archive,
+            hero.get("link", ""), hero.get("story_id", ""),
+        )
+        if not matching or canonical_reuse_is_corroborated(hero, matching):
+            continue
+        key = category.get("category_key", "")
+        label = category.get("category_label", key)
+        for i, card in enumerate(category.get("cards") or []):
+            if card.get("pre_generation_material_update") or not _fresh_surface_item(card, archive):
+                continue
+            if surface_errors(card, key, hero=False):
+                continue
+            card_match = find_matching_entry(
+                card.get("headline", ""), archive,
+                card.get("link", ""), card.get("story_id", ""),
+            )
+            if card_match and not canonical_reuse_is_corroborated(card, card_match):
+                continue
+            try:
+                replacement = _expand_verified_homepage_card(client, {
+                    "item": card, "category_key": key, "category_label": label,
+                })
+                if not _fresh_surface_item(replacement, archive):
+                    continue
+            except Exception as exc:
+                print(f"  {label}: fresh-card hero repair declined: {type(exc).__name__}: {exc}")
+                continue
+            old_title = hero.get("headline", "")
+            hero.clear()
+            hero.update(replacement)
+            category["cards"].pop(i)
+            fixed += 1
+            print(
+                f"  {label}: replaced poisoned lead {old_title[:65]!r} "
+                f"with independently sourced fresh lead {hero.get('headline','')[:65]!r}"
+            )
+            break
+    return fixed
+
+
+def _verify_surface_hero_freshness(categories, archive, *, max_hours=72, now=None):
+    """Fail closed before publishing an out-of-date section lead."""
+    stale = [
+        (c.get("category_key", ""), (c.get("hero") or {}).get("headline", ""))
+        for c in categories
+        if not _fresh_surface_item(c.get("hero"), archive, max_hours, now=now)
+    ]
+    if stale:
+        raise RuntimeError(
+            "Stale or undated section lead(s) cannot appear as current news: "
+            + repr(stale)
+        )
+
+
+def _archive_depth_backfill(all_categories, archive, *, target_cards=CARDS_PER_CATEGORY, max_age_days=2):
     """Fill thin live sections with recent Plain canonicals, never weak generated copy.
 
     This mirrors TCT's permanent-archive section recovery: surviving current reporting
@@ -3261,7 +3392,7 @@ def _archive_depth_backfill(all_categories, archive, *, target_cards=CARDS_PER_C
             continue
         cat_key = str(category.get("category_key") or "")
         label = str(category.get("category_label") or CATEGORIES.get(cat_key, {}).get("label") or cat_key)
-        recovered = recover_category_from_archive(cat_key, label, archive, card_count=max(target_cards * 3, 24), max_age_days=max_age_days)
+        recovered = recover_category_from_archive(cat_key, label, archive, card_count=max(target_cards * 3, 24), max_age_days=min(max_age_days, 2))
         if not recovered:
             print(f"  {label}: archive depth backfill unavailable; keeping {len(cards)}/{target_cards} current cards")
             continue
@@ -3475,7 +3606,10 @@ def main():
     audit=apply_editorial_engine(all_categories,output_dir=OUTPUT_DIR,mode=os.environ.get("PLAIN_ENGINE_MODE","enforce"));counts=audit.get("counts",{});print(f"  Editorial engine: {counts.get('processed',0)} processed, {counts.get('rejected',0)} rejected, {counts.get('same_category_duplicates',0)} same-category duplicates")
 
     print("Backfilling thin sections from recent Plain canonicals...")
-    _archive_depth_backfill(all_categories, archive, target_cards=CARDS_PER_CATEGORY, max_age_days=7)
+    _archive_depth_backfill(all_categories, archive, target_cards=CARDS_PER_CATEGORY, max_age_days=2)
+    _prune_stale_surface_cards(all_categories, archive)
+    _repair_misbound_live_section_heroes(all_categories, archive, client)
+    _verify_surface_hero_freshness(all_categories, archive)
 
     rotator=FallbackRotator(OUTPUT_DIR,SITE_URL);used=set()
     for cat in all_categories:
@@ -3504,6 +3638,8 @@ def main():
     if material_update_entries:
         print(f"  Protected material-update commit queue: {len(material_update_entries)} canonical target(s)")
     final_archive=write_archives(all_categories,top_cat,client=client,cache=cache,material_update_entries=material_update_entries)
+    _prune_stale_surface_cards(all_categories, final_archive)
+    _verify_surface_hero_freshness(all_categories, final_archive)
     top_cat=enforce_final_front_page_hero(
         top_cat,all_categories,final_archive,
         audit_path=OUTPUT_DIR/"front-page-hero-selection-final.json",
