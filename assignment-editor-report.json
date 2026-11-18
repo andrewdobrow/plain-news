@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T13:10:47.923960Z",
+  "generated_at": "2026-11-18T23:08:23.584979Z",
   "assignment_editor_model": "claude-sonnet-5",
   "writer_model": "claude-sonnet-4-5",
   "categories": [
@@ -7,262 +7,110 @@
       "category_key": "world",
       "hero_source_index": 1,
       "card_source_indexes": [
+        2,
         4,
-        2
+        7,
+        3,
+        8,
+        6
       ],
       "diagnostics": {
         "model": "claude-sonnet-5",
         "writer_model": "claude-sonnet-4-5",
-        "rejected": [],
-        "writer_failures": [
+        "rejected": [
           {
-            "source_index": 3,
-            "reason": [
-              "card_body_over_140_words"
-            ]
+            "source_index": 5,
+            "reason": "Duplicate coverage of the same Gaza ground operation reported in source 1; not a distinct event."
           }
         ],
+        "writer_failures": [],
         "protected_material_update_repairs": [],
         "hero_recovery_attempts": [],
         "hero_recovered": false,
-        "editor_selected_card_count": 3,
+        "editor_selected_card_count": 6,
         "section_depth_target": 8,
-        "section_depth_accepted_cards": 2,
-        "section_depth_shortfall": 6,
+        "section_depth_accepted_cards": 6,
+        "section_depth_shortfall": 2,
         "depth_backfill_writer_attempts": 0,
-        "writer_card_attempts": 3,
-        "duration_seconds": 28.011
+        "writer_card_attempts": 6,
+        "duration_seconds": 44.487
       }
     },
     {
       "category_key": "us",
-      "hero_source_index": 1,
+      "hero_source_index": null,
+      "card_source_indexes": [],
+      "diagnostics": {
+        "status": "archive_recovery",
+        "reason": "Live source/generation path unavailable; reused recent published canonicals."
+      }
+    },
+    {
+      "category_key": "business",
+      "hero_source_index": 2,
       "card_source_indexes": [],
       "diagnostics": {
         "model": "claude-sonnet-5",
         "writer_model": "claude-sonnet-4-5",
         "rejected": [],
-        "writer_failures": [],
+        "writer_failures": [
+          {
+            "source_index": 1,
+            "reason": [
+              "person_first_reference_not_full_name"
+            ]
+          }
+        ],
         "protected_material_update_repairs": [],
         "hero_recovery_attempts": [],
         "hero_recovered": false,
-        "editor_selected_card_count": 0,
+        "editor_selected_card_count": 1,
         "section_depth_target": 8,
         "section_depth_accepted_cards": 0,
         "section_depth_shortfall": 8,
         "depth_backfill_writer_attempts": 0,
-        "writer_card_attempts": 0,
-        "duration_seconds": 8.084
-      }
-    },
-    {
-      "category_key": "business",
-      "hero_source_index": 4,
-      "card_source_indexes": [
-        3,
-        1
-      ],
-      "diagnostics": {
-        "model": "claude-sonnet-5",
-        "writer_model": "claude-sonnet-4-5",
-        "rejected": [],
-        "writer_failures": [
-          {
-            "source_index": 5,
-            "reason": [
-              "generated_copy_drifted_from_source_focus",
-              "headline_percentage_claim_missing_from_lead"
-            ]
-          },
-          {
-            "source_index": 2,
-            "reason": [
-              "generated_copy_drifted_from_source_focus"
-            ]
-          }
-        ],
-        "protected_material_update_repairs": [],
-        "hero_recovery_attempts": [
-          {
-            "source_index": 1,
-            "reason": [
-              "generated_copy_drifted_from_source_focus"
-            ]
-          },
-          {
-            "source_index": 5,
-            "reason": [
-              "generated_copy_drifted_from_source_focus",
-              "headline_entity_missing_from_lead"
-            ]
-          }
-        ],
-        "hero_recovered": true,
-        "editor_selected_card_count": 4,
-        "section_depth_target": 8,
-        "section_depth_accepted_cards": 2,
-        "section_depth_shortfall": 6,
-        "depth_backfill_writer_attempts": 1,
-        "writer_card_attempts": 4,
-        "duration_seconds": 49.203
+        "writer_card_attempts": 1,
+        "duration_seconds": 14.464
       }
     },
     {
       "category_key": "tech",
-      "hero_source_index": 12,
-      "card_source_indexes": [
-        1,
-        2,
-        6,
-        4,
-        5,
-        9,
-        7
-      ],
-      "diagnostics": {
-        "model": "claude-sonnet-5",
-        "writer_model": "claude-sonnet-4-5",
-        "rejected": [
-          {
-            "source_index": 3,
-            "reason": "Duplicate of the Voyager 1 light-day milestone covered more thoroughly in the selected hero (source 12)."
-          },
-          {
-            "source_index": 8,
-            "reason": "Duplicate coverage of the same Grand Theft Auto VI launch event as other selected GTA VI sources; redundant review angle."
-          },
-          {
-            "source_index": 10,
-            "reason": "Duplicate coverage of the same Grand Theft Auto VI launch event; a third angle on the same release is excessive alongside two other GTA VI cards already selected."
-          }
-        ],
-        "writer_failures": [
-          {
-            "source_index": 11,
-            "reason": [
-              "generated_copy_drifted_from_source_focus"
-            ]
-          }
-        ],
-        "protected_material_update_repairs": [],
-        "hero_recovery_attempts": [],
-        "hero_recovered": false,
-        "editor_selected_card_count": 8,
-        "section_depth_target": 8,
-        "section_depth_accepted_cards": 7,
-        "section_depth_shortfall": 1,
-        "depth_backfill_writer_attempts": 0,
-        "writer_card_attempts": 8,
-        "duration_seconds": 61.41
-      }
-    },
-    {
-      "category_key": "sports",
       "hero_source_index": 2,
       "card_source_indexes": [
-        1,
+        3,
         5,
-        7,
-        10,
         4,
-        9
-      ],
-      "diagnostics": {
-        "model": "claude-sonnet-5",
-        "writer_model": "claude-sonnet-4-5",
-        "rejected": [
-          {
-            "source_index": 8,
-            "reason": "Feature comparing fan experience at three US Grand Prix locations; lifestyle/travel piece without a meaningful competitive result, decision, or athletic achievement."
-          }
-        ],
-        "writer_failures": [
-          {
-            "source_index": 3,
-            "reason": [
-              "person_first_reference_not_full_name"
-            ]
-          },
-          {
-            "source_index": 6,
-            "reason": [
-              "person_first_reference_not_full_name"
-            ]
-          },
-          {
-            "source_index": 8,
-            "reason": [
-              "card_body_over_140_words"
-            ]
-          }
-        ],
-        "protected_material_update_repairs": [],
-        "hero_recovery_attempts": [],
-        "hero_recovered": false,
-        "editor_selected_card_count": 8,
-        "section_depth_target": 8,
-        "section_depth_accepted_cards": 6,
-        "section_depth_shortfall": 2,
-        "depth_backfill_writer_attempts": 1,
-        "writer_card_attempts": 9,
-        "duration_seconds": 66.628
-      }
-    },
-    {
-      "category_key": "entertainment",
-      "hero_source_index": 3,
-      "card_source_indexes": [
-        14,
-        8,
         1,
-        5,
-        13,
-        2,
-        17,
-        4
+        6,
+        10,
+        7,
+        11
       ],
       "diagnostics": {
         "model": "claude-sonnet-5",
         "writer_model": "claude-sonnet-4-5",
         "rejected": [
           {
-            "source_index": 4,
-            "reason": "Niche film-industry trade coverage of a festival mentorship program with no national relevance to a U.S. audience."
-          },
-          {
-            "source_index": 6,
-            "reason": "Festival trade-press piece on Oscar-campaign strategy at Marrakech; largely overlaps with source 4 and lacks distinct consequential news for U.S. readers."
-          },
-          {
-            "source_index": 7,
-            "reason": "UK reality show (I'm a Celebrity) cast member recounting a past on-set incident involving an unnamed actor; thin, unverifiable, and of limited national relevance."
-          },
-          {
-            "source_index": 9,
-            "reason": "Trade announcement of a festival partnership between Saudi and Egyptian film festivals; no U.S. relevance or broad consequence."
-          },
-          {
-            "source_index": 10,
-            "reason": "UK domestic broadcasting personnel story (BBC Radio 4 host's final episode) with no national U.S. relevance."
+            "source_index": 8,
+            "reason": "Primarily a geopolitics and foreign policy story about Trump's diplomatic trip and land use in the Philippines; tech angle (AI hub/chip fabs) is secondary to political and human rights framing, better suited to World or Politics."
           },
           {
             "source_index": 11,
-            "reason": "Regional theater interview about a Scottish stage production of My Fair Lady; no national significance."
-          },
-          {
-            "source_index": 12,
-            "reason": "Niche Baltic TV industry awards coverage with no U.S. relevance or audience interest."
-          },
-          {
-            "source_index": 16,
-            "reason": "Duplicate of source 14's Glastonbury 2027 lineup announcement; same event already selected as a card."
+            "reason": "Minor incremental product feature update (Instagram Stories editing) lacking national consequence or significant technological weight."
           }
         ],
         "writer_failures": [
           {
-            "source_index": 15,
+            "source_index": 9,
             "reason": [
               "person_first_reference_not_full_name"
+            ]
+          },
+          {
+            "source_index": 8,
+            "reason": [
+              "card_body_over_140_words",
+              "headline_named_measure_missing_from_lead"
             ]
           }
         ],
@@ -273,22 +121,23 @@
         "section_depth_target": 8,
         "section_depth_accepted_cards": 8,
         "section_depth_shortfall": 0,
-        "depth_backfill_writer_attempts": 1,
-        "writer_card_attempts": 9,
-        "duration_seconds": 62.969
+        "depth_backfill_writer_attempts": 2,
+        "writer_card_attempts": 10,
+        "duration_seconds": 66.368
       }
     },
     {
-      "category_key": "politics",
-      "hero_source_index": 9,
+      "category_key": "sports",
+      "hero_source_index": 3,
       "card_source_indexes": [
-        5,
-        7,
         6,
-        3,
-        8,
+        7,
+        5,
+        2,
         4,
-        2
+        8,
+        10,
+        1
       ],
       "diagnostics": {
         "model": "claude-sonnet-5",
@@ -296,11 +145,11 @@
         "rejected": [
           {
             "source_index": 1,
-            "reason": "Primarily a foreign diplomacy/summit story centered on US-China-Russia relations; belongs in World rather than Politics, and duplicates coverage better suited there."
+            "reason": "Routine transfer gossip roundup with unconfirmed rumors, not meaningful results or decisions."
           },
           {
-            "source_index": 2,
-            "reason": "Same underlying event as source 5 (Garcia's document-retention letters to Trump officials); source 5 is the more complete, detailed version so this is a duplicate."
+            "source_index": 9,
+            "reason": "Sponsorship controversy over a brand ambassador choice is a commercial/reputational story, not a sports outcome or athletic achievement."
           }
         ],
         "writer_failures": [],
@@ -309,11 +158,69 @@
         "hero_recovered": false,
         "editor_selected_card_count": 7,
         "section_depth_target": 8,
-        "section_depth_accepted_cards": 7,
-        "section_depth_shortfall": 1,
+        "section_depth_accepted_cards": 8,
+        "section_depth_shortfall": 0,
+        "depth_backfill_writer_attempts": 1,
+        "writer_card_attempts": 8,
+        "duration_seconds": 50.831
+      }
+    },
+    {
+      "category_key": "entertainment",
+      "hero_source_index": 7,
+      "card_source_indexes": [
+        5,
+        1,
+        2,
+        3,
+        4,
+        6
+      ],
+      "diagnostics": {
+        "model": "claude-sonnet-5",
+        "writer_model": "claude-sonnet-4-5",
+        "rejected": [],
+        "writer_failures": [
+          {
+            "source_index": 8,
+            "reason": [
+              "headline_entity_missing_from_lead"
+            ]
+          }
+        ],
+        "protected_material_update_repairs": [],
+        "hero_recovery_attempts": [],
+        "hero_recovered": false,
+        "editor_selected_card_count": 7,
+        "section_depth_target": 8,
+        "section_depth_accepted_cards": 6,
+        "section_depth_shortfall": 2,
         "depth_backfill_writer_attempts": 0,
         "writer_card_attempts": 7,
-        "duration_seconds": 49.259
+        "duration_seconds": 47.613
+      }
+    },
+    {
+      "category_key": "politics",
+      "hero_source_index": 1,
+      "card_source_indexes": [
+        2
+      ],
+      "diagnostics": {
+        "model": "claude-sonnet-5",
+        "writer_model": "claude-sonnet-4-5",
+        "rejected": [],
+        "writer_failures": [],
+        "protected_material_update_repairs": [],
+        "hero_recovery_attempts": [],
+        "hero_recovered": false,
+        "editor_selected_card_count": 1,
+        "section_depth_target": 8,
+        "section_depth_accepted_cards": 1,
+        "section_depth_shortfall": 7,
+        "depth_backfill_writer_attempts": 0,
+        "writer_card_attempts": 1,
+        "duration_seconds": 11.101
       }
     }
   ]

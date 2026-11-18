@@ -1,63 +1,65 @@
 {
-  "generated_at": "2026-11-18T13:02:19.472262Z",
+  "generated_at": "2026-11-18T23:02:19.296514Z",
   "categories": {
     "world": {
-      "incoming": 18,
-      "publishable": 4,
-      "rejected": 14,
+      "incoming": 19,
+      "publishable": 8,
+      "rejected": 11,
       "rejected_by_quality": {
-        "brief": 3,
-        "discovery_only": 10,
-        "thin": 1
+        "brief": 6,
+        "discovery_only": 5
       }
     },
     "us": {
-      "incoming": 3,
+      "incoming": 5,
       "publishable": 1,
-      "rejected": 2,
+      "rejected": 4,
       "rejected_by_quality": {
-        "discovery_only": 1,
-        "thin": 1
+        "brief": 4
       }
     },
     "business": {
-      "incoming": 12,
-      "publishable": 5,
-      "rejected": 7,
+      "incoming": 15,
+      "publishable": 2,
+      "rejected": 13,
       "rejected_by_quality": {
-        "brief": 6,
-        "discovery_only": 1
+        "brief": 3,
+        "discovery_only": 9,
+        "thin": 1
       }
     },
     "tech": {
-      "incoming": 14,
-      "publishable": 12,
-      "rejected": 2,
-      "rejected_by_quality": {
-        "thin": 2
-      }
-    },
-    "sports": {
-      "incoming": 12,
-      "publishable": 10,
+      "incoming": 13,
+      "publishable": 11,
       "rejected": 2,
       "rejected_by_quality": {
         "brief": 2
       }
     },
-    "entertainment": {
+    "sports": {
       "incoming": 18,
-      "publishable": 18,
-      "rejected": 0,
-      "rejected_by_quality": {}
-    },
-    "politics": {
-      "incoming": 18,
-      "publishable": 9,
-      "rejected": 9,
+      "publishable": 10,
+      "rejected": 8,
       "rejected_by_quality": {
         "brief": 6,
-        "thin": 3
+        "thin": 2
+      }
+    },
+    "entertainment": {
+      "incoming": 16,
+      "publishable": 8,
+      "rejected": 8,
+      "rejected_by_quality": {
+        "brief": 8
+      }
+    },
+    "politics": {
+      "incoming": 15,
+      "publishable": 2,
+      "rejected": 13,
+      "rejected_by_quality": {
+        "brief": 11,
+        "thin": 2
       }
     }
   }
