@@ -1,82 +1,25 @@
 {
-  "generated_at": "2026-11-16T23:45:20Z",
-  "evaluated": 6,
+  "generated_at": "2026-11-18T13:02:19Z",
+  "evaluated": 1,
   "material_updates": 0,
-  "duplicates_suppressed": 4,
-  "holds_suppressed": 2,
+  "duplicates_suppressed": 0,
+  "holds_suppressed": 1,
   "new_or_unmatched": 0,
   "items": [
     {
-      "category": "world",
-      "title": "Houthi rebel advance in Yemen may further destabilise global economy",
-      "source_url": "https://www.bbc.co.uk/news/articles/cmy97qperq9eo?at_medium=RSS&at_campaign=rss",
-      "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-11-16-houthi-rebels-seize-control-of-key-red-sea-strait-as-yemeni-army-withdraws-to-de",
-      "confidence": 0.98,
-      "novel_facts": [],
-      "reason": "This is the same BBC wire piece (identical source_url and source_headline) covering the Houthi advance on the Bab al-Mandab Strait and Aden, with identical quotes and analysis already captured in the existing canonical article. No new facts are present beyond what the canonical already reports.",
-      "cache_hit": false
-    },
-    {
-      "category": "us",
-      "title": "Lindsay Clancy to face retrial next year for deaths of her three children",
-      "source_url": "https://www.bbc.co.uk/news/articles/cw5y1v8de35go?at_medium=RSS&at_campaign=rss",
-      "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-11-16-massachusetts-judge-sets-march-2027-retrial-for-woman-accused-of-killing-three-c",
-      "confidence": 0.98,
-      "novel_facts": [],
-      "reason": "This is the same BBC source article reporting identical facts about the retrial date, judge's ruling, and case background as the existing canonical published the same day. No new material facts are introduced beyond what the canonical already covers.",
-      "cache_hit": false
-    },
-    {
       "category": "entertainment",
-      "title": "The Next Bond Girl: From Zendaya to Florence Pugh, 19 Actresses Who Could Join Robert Pattinson",
-      "source_url": "https://variety.com/lists/bond-girl-predictions-robert-pattinson-007/",
+      "title": "Jeff Bezos says he was ‘heavily involved’ in picking the new James Bond, Robert Pattinson - NBC News",
+      "source_url": "https://www.nbcnews.com/pop-culture/pop-culture-news/jeff-bezos-heavily-involved-casting-robert-pattinson-james-bond-amazon-rcna609958",
       "action": "hold",
       "selected_candidate_slug": "2026-11-16-robert-pattinson-named-next-james-bond-seventh-actor-to-play-007",
-      "confidence": 0.62,
+      "confidence": 0.75,
       "novel_facts": [
-        "Speculative list of 19 actresses who could play the Bond Girl opposite Pattinson",
-        "Commentary on individual actresses' filmographies (Adria Arjona, Emily Blunt, Gemma Chan, Marion Cotillard, Chase Infiniti, etc.)",
-        "Editorial opinion/prediction content, not factual reporting of a casting decision"
+        "Jeff Bezos personally describing his direct involvement in the casting decision",
+        "Details of the screen-test process (five finalists, scenes with full costume/sets)",
+        "Bezos's quotes from Semafor event revealing selection process and initial bias against Pattinson's fame",
+        "Named other finalists considered: Callum Turner, Josh O'Connor, Jack Lowden, Nicholas Hoult"
       ],
-      "reason": "While this Variety listicle references the same",
-      "cache_hit": false
-    },
-    {
-      "category": "entertainment",
-      "title": "Robert Pattinson Said in 2012 That He’d ‘Definitely’ Want to Be James Bond in ‘Like 20 Years’ When He’s Not So ‘Fresh-Faced’",
-      "source_url": "https://variety.com/2026/film/news/robert-pattinson-james-bond-interview-2012-1236949282/",
-      "action": "hold",
-      "selected_candidate_slug": "2026-11-16-robert-pattinson-named-next-james-bond-seventh-actor-to-play-007",
-      "confidence": 0.72,
-      "novel_facts": [
-        "2012 Shortlist/People interview quote where Pattinson said he'd want to play Bond in 'like 20 years'",
-        "Pattinson reportedly beat out Jack Lowden, Callum Turner, Josh O'Connor and Nicholas Hoult in final rounds"
-      ],
-      "reason": "This is a retrospective/trivia angle built around a resurfaced 2012 quote, distinct enough as a standalone human-interest piece rather than a routine restatement of the casting news; it adds a genuinely new historical anecdote and audition details not in the original casting announcement, making it independently newsworthy as a feature rather than a duplicate update.",
-      "cache_hit": false
-    },
-    {
-      "category": "entertainment",
-      "title": "Robert Pattinson to replace Daniel Craig as James Bond",
-      "source_url": "https://www.bbc.co.uk/news/articles/cwx2ev0pxmvjo?at_medium=RSS&at_campaign=rss",
-      "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-11-16-robert-pattinson-named-next-james-bond-seventh-actor-to-play-007",
-      "confidence": 0.98,
-      "novel_facts": [],
-      "reason": "Identical source article (same BBC URL and headline) reporting the same announcement that Robert Pattinson will be the next James Bond. No new facts beyond what the canonical already covers; minor extra quotes from Buckingham Palace and producers do not change the core news.",
-      "cache_hit": false
-    },
-    {
-      "category": "politics",
-      "title": "Trump nominates top White House aide to head watchdog agency — as Democrats feared",
-      "source_url": "https://www.politico.com/news/2026/11/16/trump-gao-eric-ueland-impoundment-01168372",
-      "action": "duplicate_use_existing_canonical",
-      "selected_candidate_slug": "2026-11-16-trump-nominates-omb-official-eric-ueland-to-head-gao-watchdog-agency",
-      "confidence": 0.98,
-      "novel_facts": [],
-      "reason": "This is the same Politico article about Trump nominating Eric Ueland as GAO comptroller general, with identical facts, quotes, and source URL as the existing canonical. No new developments are reported beyond what's already captured.",
+      "reason": "This is the same underlying casting announcement, but the incoming article introduces a distinct, newsworthy angle: Bezos's unusual personal involvement in selecting Bond, revealing insider details about the selection process and his influence as studio owner over a major cultural franchise decision. This raises its own public-interest question about corporate/executive influence on creative decisions, distinct from the original casting news, warranting its own story rather than folding into the original announcement.",
       "cache_hit": false
     }
   ]
