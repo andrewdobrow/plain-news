@@ -1,9 +1,54 @@
 {
-  "generated_at": "2026-11-18T23:02:19Z",
-  "evaluated": 0,
+  "generated_at": "2026-11-19T23:01:45Z",
+  "evaluated": 4,
   "material_updates": 0,
   "duplicates_suppressed": 0,
-  "holds_suppressed": 0,
+  "holds_suppressed": 4,
   "new_or_unmatched": 0,
-  "items": []
+  "items": [
+    {
+      "category": "world",
+      "title": "Anthropic becomes one of world's most valuable public companies in stock market debut",
+      "source_url": "https://www.bbc.co.uk/news/articles/c3x29ggenz12o?at_medium=RSS&at_campaign=rss",
+      "action": "hold",
+      "selected_candidate_slug": "",
+      "confidence": 0.0,
+      "novel_facts": [],
+      "reason": "Semantic gate model failure; fail-closed hold: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011ChD7twJ258zJ2ugEWApjd'}",
+      "cache_hit": false
+    },
+    {
+      "category": "us",
+      "title": "Road closures reported across Central Florida amid widespread flooding - WESH",
+      "source_url": "https://www.wesh.com/article/road-closures-flooding-central-florida-brevard-county/74475372",
+      "action": "hold",
+      "selected_candidate_slug": "",
+      "confidence": 0.0,
+      "novel_facts": [],
+      "reason": "Semantic gate model failure; fail-closed hold: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011ChD7vD6oeC2PbF8PbSyfp'}",
+      "cache_hit": false
+    },
+    {
+      "category": "us",
+      "title": "Anthropic becomes one of world's most valuable public companies in stock market debut",
+      "source_url": "https://www.bbc.co.uk/news/articles/c3x29ggenz12o?at_medium=RSS&at_campaign=rss",
+      "action": "hold",
+      "selected_candidate_slug": "",
+      "confidence": 0.0,
+      "novel_facts": [],
+      "reason": "Semantic gate model failure; fail-closed hold: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011ChD7twJ258zJ2ugEWApjd'}",
+      "cache_hit": true
+    },
+    {
+      "category": "business",
+      "title": "Anthropic becomes one of world's most valuable public companies in stock market debut",
+      "source_url": "https://www.bbc.co.uk/news/articles/c3x29ggenz12o?at_medium=RSS&at_campaign=rss",
+      "action": "hold",
+      "selected_candidate_slug": "",
+      "confidence": 0.0,
+      "novel_facts": [],
+      "reason": "Semantic gate model failure; fail-closed hold: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011ChD7twJ258zJ2ugEWApjd'}",
+      "cache_hit": true
+    }
+  ]
 }
